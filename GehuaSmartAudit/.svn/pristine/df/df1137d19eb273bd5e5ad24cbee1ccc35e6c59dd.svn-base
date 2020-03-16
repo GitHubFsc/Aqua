@@ -1,0 +1,534 @@
+.home {
+    width: 100%;
+    height: 100%;
+}
+.home #btn_show {
+    width: 60px;
+    height: 30px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+/* 详情页css */
+.particular {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: #fff;
+    z-index: 99;
+    cursor: default;
+}
+.particular .title_head {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    display: flex;
+    background-color: #e8eeef;
+}
+.particular .title_head .title {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    font-size: 14px;
+    color: #434343;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.particular .title_head .middle {
+    flex: 1;
+}
+.particular .title_head .right {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+    padding-top: 2px;
+}
+.particular .title_head .right .btn {
+    width: 60px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #b4b6b6;
+    border-radius: 5px;
+    background-color: #efefef;
+    color: #787878;
+    cursor: pointer;
+}
+.particular .title_head .right .btn.icon {
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 30px;
+    background-image: url('../../image/particular/particular_close.png');
+    background-size: 14px;
+    background-position: 8px center;
+    background-repeat: no-repeat;
+    font-size: 14px;
+}
+.particular .container {
+    padding: 0 20px 10px;
+    background-color: #fff;
+}
+.particular .container .audit_result, .particular .container .result_detail {
+    width: 100%;
+    height: 200px;
+    margin-top: 30px;
+    position: relative;
+    border: 1px solid #b7b7b7;
+    border-radius: 5px;
+    display: flex;
+}
+.particular .audit_result .title, .particular .result_detail .title {
+    width: 100px;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 10px;
+    position: absolute;
+    top: -13px;
+    left: 30px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 14px;
+    color: #434343;
+}
+.particular .audit_result .info {
+    padding-top: 30px;
+    margin-left: 270px;
+    flex: 1;
+    display: flex;
+    font-size: 12px;
+}
+.particular .audit_result .info .info_message {
+    flex: 1;
+}
+.particular .audit_result .info_message .content {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+}
+.particular .audit_result .info_message .content .label {
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    color: #666;
+}
+.particular .audit_result .info_message .message .label {
+    vertical-align: top;
+    position: relative;
+    top: 20px;
+}
+.particular .audit_result .info_message .content .text {
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    display: inline-block;
+}
+.particular .audit_result .info_message .content .status {
+    width: 240px;
+    height: 30px;
+    line-height: 30px;
+}
+.particular .audit_result .info_message .content .pass {
+    color: #03d40d;
+}
+.particular .audit_result .info_message .content .block {
+    color: #f80c0c;
+}
+.particular .audit_result .info_message .content .review {
+    color: #777777;
+}
+.particular .audit_result .info_message .content .description {
+    /*width: 89%;*/
+    flex: 1;
+    height: 100px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.particular .audit_result .info .btn {
+    width: 100px;
+    padding-top: 65px;
+    display: none;
+}
+.particular .audit_result .info .btn .pass, .particular .audit_result .info .btn .block {
+    width: 40px;
+    height: 35px;
+    line-height: 35px;
+    padding-left: 40px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+.particular .audit_result .info .btn .pass {
+    background-color: #1de10e;
+    background-image: url('../../image/particular/icon_audit_pass.png');
+}
+.particular .audit_result .info .btn .block {
+    margin-top: 15px;
+    background-color: #f66755;
+    background-image: url('../../image/particular/icon_audit_block.png');
+}
+.particular .audit_result .info .btn .icon {
+    background-position: 8px center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.particular .result_detail .content {
+    padding: 25px 0;
+}
+.particular .result_detail .content .list_table{
+    margin-left: 20px;
+}
+.particular .result_detail .content #detail_table .detail_pass {
+    height: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../image/particular/icon_pass.png');
+}
+.particular .result_detail .content #detail_table .detail_block {
+    height: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../image/particular/icon_block.png');
+}
+.particular .result_detail .content #detail_table .detail_review {
+    height: 36px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../../image/particular/icon_review.png');
+}
+.particular .particular_content {
+    margin-top: 15px;
+    border: 1px solid #b7b7b7;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.particular .particular_content .header {
+    height: 44px;
+    padding: 0 10px;
+    background-color: #fbfbfb;
+    display: flex;
+}
+.particular .particular_content .header .select {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 6px;
+    color: #777;
+}
+.particular .particular_content .header .select {
+    border-radius: 20px;
+}
+.particular .particular_content #recognition_select .select-header {
+    border-radius: 15px;
+}
+.particular .particular_content #recognition_select .select-box ul {
+    border-radius: 20px;
+}
+.particular .particular_content #recognition_select .select-header, .particular .particular_content #recognition_select .select-content li {
+    padding: 0 10px;
+}
+.particular .particular_content #recognition_select .select-header .select-header-content {
+    font-size: 12px;
+    color: #777;
+}
+.particular .particular_content .header .middle {
+    flex: 1;
+}
+.particular .particular_content .header .btn {
+    width: 130px;
+    height: 28px;
+    line-height: 28px;
+    margin-top: 6px;
+    display: flex;
+}
+.particular .particular_content .header .btn .icon {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    margin: 0 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.particular .particular_content .header .btn .poster {
+    background-image: url('../../image/particular/icon_poster.png');
+}
+.particular .particular_content .header .btn .poster_checked {
+    background-color: #fe931f;
+    background-image: url('../../image/particular/icon_poster_checked.png');
+}
+.particular .particular_content .header .btn .list {
+    background-image: url('../../image/particular/icon_list.png');
+}
+.particular .particular_content .header .btn .list_checked {
+    background-color: #fe931f;
+    background-image: url('../../image/particular/icon_list_checked.png');
+}
+.particular .particular_content .header .btn .list_margin {
+    margin-left: 47px;
+}
+.particular .particular_content .header .btn .json {
+    background-image: url('../../image/particular/icon_json.png');
+}
+.particular .particular_content .header .btn .json_checked {
+    background-color: #fe931f;
+    background-image: url('../../image/particular/icon_json_checked.png');
+}
+.particular .particular_content .header .btn .icon {
+    background-size: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.particular .particular_content .content {
+    padding: 15px 5px 35px 15px;
+}
+.particular .particular_content .content .content_poster {
+    display: flex;
+}
+.particular .particular_content .content .content_poster, .particular .particular_content .content .content_list, .particular .particular_content .content .content_json {
+    display: none;
+}
+.particular .particular_content .content_poster .poster_left {
+    height: 610px;
+    padding-bottom: 5px;
+    /*flex: 1;*/
+    flex: 11;
+    border: 1px solid #ccc;
+    background-color: #f5f5f5;
+}
+.particular .particular_content #particular_poster_content .row {
+    display: flex;
+}
+.particular .particular_content #particular_poster_content .col {
+    height: 140px;
+    flex: 1;
+    margin: 10px 10px 1px 10px;
+    border: 1px solid #c9c9c9;
+    background-color: #eee;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+.particular .particular_content #particular_poster_content .col_checked {
+    margin: 9px 9px 0 9px;
+    border: 2px solid #00eaff;
+    box-shadow: 3px 4px 5px 1px #c9c9c9;
+}
+.particular .particular_content #particular_poster_content .col .background_img {
+    height: 136px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.particular .particular_content #particular_poster_content .col .background_time {
+    width: 100%;
+    position: absolute;
+    top: 62px;
+}
+.particular .particular_content #particular_poster_content .col .creat_time {
+    width: 40px;
+    height: 15px;
+    margin: 0 auto;
+    line-height: 15px;
+    padding: 2px 10px;
+    background: rgba(27, 27, 27, 0.3);
+    color: #fff;
+}
+.particular .particular_content .content_poster .poster_right {
+    /*width: 784px;*/
+    flex: 14;
+    margin-left: 10px;
+}
+.particular .particular_content .content_poster .poster_right .right_img {
+    border: 1px solid #ccc;
+    background-color: #eee;
+}
+.particular .particular_content .content_poster .poster_right .poster_right_img_content {
+    height: 440px;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.particular .particular_content .content_poster .poster_right .right_list {
+    height: 165px;
+    margin-top: 10px;
+}
+.particular .particular_content .content_list, .particular .particular_content .content_json {
+    height: 610px;
+}
+.particular .particular_content .content_json pre {
+    padding: 5px;
+    margin: 5px;
+}
+
+
+/* 视频标签表格头部样式 */
+.particular .particular_content .content_list .tag_table_head {
+    display: none;
+}
+.particular .particular_content .content_list .tag_table_head table {
+    width: 100%;
+    table-layout: fixed;
+    empty-cells: show;
+    border-collapse: collapse;
+}
+.particular .particular_content .content_list .tag_table_head table tr{
+    width: 100%;
+    display: flex;
+}
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(1) td{
+    background-color: #f8f8f8;
+}
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(2) td{
+    background-color: #78dcf5;
+    color: #fff;
+}
+.particular .particular_content .content_list .tag_table_head table td:nth-child(1),
+.particular .particular_content .content_list .tag_table_head table td:nth-child(2),
+.particular .particular_content .content_list .tag_table_head table td:nth-child(3),
+.particular .particular_content .content_list .tag_table_head table td:nth-child(4),
+.particular .particular_content .content_list .tag_table_head table td:nth-child(5) {
+    flex: 3;
+}
+.particular .particular_content .content_list .tag_table_head table td:nth-child(6),
+.particular .particular_content .content_list .tag_table_head table td:nth-child(7),
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(2) td:nth-child(5),
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(2) td:nth-child(6)  {
+    flex: 5;
+}
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(2) td:nth-child(1) {
+    flex: 6;
+    /* 抵消缺少的border */
+    padding-right: 1px;
+}
+.particular .particular_content .content_list .tag_table_head table td {
+    border-top: 1px solid #efefef;
+    border-left: 1px solid #efefef;
+}
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(1) td:nth-child(7),
+.particular .particular_content .content_list .tag_table_head table tr:nth-child(2) td:nth-child(6) {
+    border-right: 1px solid #efefef;
+}
+.particular .particular_content .content_list .tag_table_head table td {
+    height: 34px;
+    line-height: 34px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    font-size: 12px;
+    color: #666666;
+    font-weight: bold;
+}
+/* JSON格式化 */
+
+/* JSON格式化,不同类型格式加颜色 */
+/* .particular .particular_content .content_json .string {
+    color: green; 
+}
+.particular .particular_content .content_json .number {
+    color: darkorange; 
+}
+.particular .particular_content .content_json .boolean {
+    color: blue; 
+}
+.particular .particular_content .content_json .null {
+    color: magenta; 
+}
+.particular .particular_content .content_json .key {
+    color: red; 
+} */
+
+/* 更改styleable_list */
+.particular .list_table .styleable_list_controls {
+    display: none;
+}
+.particular .list_table .styleable_list_row .styleable_list_col {
+    color: #777
+}
+.particular .list_table .styleable_list_title .styleable_list_col_tag {
+    height: 36px;
+    color: #747474;
+    font-size: 12px;
+    font-weight: normal;
+}
+/*alert_dialog*/
+#audit_alert_dialog .row {
+    height: 40px;
+    margin-bottom: 10px;
+}
+#audit_alert_dialog .row.textarea {
+    height: 100px;
+}
+#audit_alert_dialog .result {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+}
+#audit_alert_dialog .result_pass {
+    color: #03d40d;
+}
+#audit_alert_dialog .result_block {
+    color: #f80c0c;
+}
+#audit_alert_dialog #audit_alert_dialog_textarea {
+    width: 450px;
+    height: 90px;
+    padding: 5px  10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+}
+#audit_alert_dialog .foot .btn {
+    border: 0;
+    box-shadow: none;
+}
+#audit_alert_dialog .foot .btn.cancle {
+    background-color: #7dd8ef;
+}
+#audit_alert_dialog .foot .btn.set {
+    background-color: #1ec3ec;
+    background-image: url('../../image/particular/icon_set.png');
+}
+/*alert_image*/
+#alert_image body {
+    padding: 0;
+}
+#alert_image .particular_alert_image {
+    width: 500px;
+    height: 340px;
+    margin: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+/*匹配滚动条的样式*/
+.mCustomScrollbar .mCustomScrollBox .mCSB_scrollTools {
+    width: 10px;
+}
+.mCustomScrollbar .mCustomScrollBox.mCSB_inside > .mCSB_container {
+    margin-right: 15px;
+}
+.mCustomScrollbar .mCustomScrollBox .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 5px;
+    border: 1px solid #c5c5c5;
+    background-color: #fff;
+}
+.mCustomScrollbar .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerRail {
+    width: 4px;
+    background-color: #ececec;
+}

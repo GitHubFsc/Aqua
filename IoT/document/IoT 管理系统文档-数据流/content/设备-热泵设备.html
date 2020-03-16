@@ -1,0 +1,2712 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../js/prettify/prettify.css">
+<script src="../js/prettify/run_prettify.js"></script>
+<title>设备-热泵设备</title>
+<link rel="stylesheet" href="../style/util.css" type="text/css"/>
+<script src="../js/nav.js"></script>
+</head>
+<body onload="setNav()">
+<h1>设备-热泵设备</h1>
+<hr />
+<ol id="navs"></ol>
+<hr />
+<ol>
+<li>
+<h2>获取热泵的属性</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint"></pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET 	http://172.16.20.62:8200/aquapaas/rest/thingdef/single/mgd.gehua/ReBeng?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>ReBeng</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingdef/single/mgd.gehua/ReBeng?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: EdWJIF62QxsKBrMVcXkMp5YNqVg=
+Referer: http://127.0.0.1:8020/IoT/index.html
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1800
+Access-Control-Allow-Methods: GET,POST,DELETE,PUT,OPTIONS,HEAD
+Access-Control-Allow-Headers: x-aqua-sign
+x-trace-info: trace_id=69add6d3-03b2-4dbe-a839-78be96a873e7&rpc_id=0
+Allow: DELETE,POST,GET,PUT,OPTIONS,HEAD
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Content-Length: 0
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+    "id": "5c218987dafd8e003881ba10",
+    "thingDefID": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "热泵",
+    "description": "空气源热泵",
+    "creator": "admin",
+    "createTime": "2018-12-25T09:36:07+0800",
+    "lastUpdateTime": "2018-12-25T09:44:04+0800",
+    "metadata":
+    {
+        "m1": "v1",
+        "m2": "v2"
+    },
+    "events": null,
+    "actions": null,
+    "properties": [
+    {
+        "name": "DTUID",
+        "displayName": "DTU编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "DTU编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "region",
+        "displayName": "区域",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": "enum_region",
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "区域",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "address_coord",
+        "displayName": "百度摩卡托坐标",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "coord_bd09mc",
+        "metric": null,
+        "description": "百度摩卡托坐标",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "devID",
+        "displayName": "设备编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "设备编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "manufacture",
+        "displayName": "厂商编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "5",
+        "values": null,
+        "valuesEnumDefName": "enum_manufacture",
+        "enumFilterFields": ["/thingDefID"],
+        "appDataType": null,
+        "metric": null,
+        "description": "厂商编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "model",
+        "displayName": "设备型号编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "5",
+        "values": null,
+        "valuesEnumDefName": "enum_model",
+        "enumFilterFields": ["/thingDefID", "/metadata/manufacture"],
+        "appDataType": null,
+        "metric": null,
+        "description": "设备型号编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "installDate",
+        "displayName": "安装日期",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "安装日期",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "softwareVersion",
+        "displayName": "软件版本",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "软件版本",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "protocolVersion",
+        "displayName": "协议版本",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "协议版本",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "timeUTCSec",
+        "displayName": "数据采集时间",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": "秒",
+        "description": "数据采集时间",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "indoorTemp",
+        "displayName": "室内温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "室内温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "outdoorTemp",
+        "displayName": "室外温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "室外温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "setTemp",
+        "displayName": "设定温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "设定温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "intoWaterTemp",
+        "displayName": "入水温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "入水温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "outWaterTemp",
+        "displayName": "出水温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "出水温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "switchState",
+        "displayName": "开关机状态",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "开关机状态",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "waterFlow",
+        "displayName": "水流量",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "水流量",
+        "metric": null,
+        "description": "水流量",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "usedPower",
+        "displayName": "已使用电量",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "电量",
+        "metric": null,
+        "description": "已使用电量",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "failureFlag",
+        "displayName": "故障标志",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "故障标志",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "failureWarning",
+        "displayName": "故障代码",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "故障代码",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "alarmTimeUTCSec",
+        "displayName": "告警产生时间",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "告警产生时间",
+        "readOnly": true,
+        "importantType": "2"
+    }]
+}
+</pre>
+</li>
+<li>
+<h2>获取热泵厂商的值列表</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.5 	LIST_Thing_Enum_Def_Items
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"]}
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_manufacture</td><td>取值热泵属性manufacture的valuesEnumDefName</td></tr>
+<tr><td>enum_device</td><td>enumFilterFields /thingDefID对应的过滤条件，取值热泵thingDefID</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: I2Tw5kz2Hf2gScdwhRYl0IvzRv8=
+Referer: http://127.0.0.1:8020/IoT/index.html
+Content-Length: 26
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=4f4f65f8-073f-4a8c-9650-85ae4596d1d8&rpc_id=0
+Content-Type: application/json
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "北京华业新能源有限公司",
+    "metadata":
+    {
+        "contact": "李某某",
+        "telephone": "13325685588"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "354242be6a5149c5af7df6d6acecc603"
+},
+{
+    "value": "2",
+    "displayName": "深圳派沃新能源科技股份有限公司",
+    "metadata":
+    {
+        "contact": "王某某",
+        "telephone": "13388855669"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "ce41c1da6f13462ab981642fbb027025"
+},
+{
+    "value": "3",
+    "displayName": "浙江中广电器股份有限公司",
+    "metadata":
+    {
+        "contact": "张某某",
+        "telephone": "13355588776"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "6008c1a1d594470f859484be57302218"
+}]
+</pre>
+</li>
+<li><h2>热泵列表一页的数据-thingSearch返回字段值非小写</h2>
+<h3>请求名称</h3>
+<pre class="prettyprint">
+5.2 	SEARCH_THING
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET 	http://172.16.20.62:8200/aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=DTUID&sort_mode=a&user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>namespace</td><td>热泵的namespace，取值已有配置项</td></tr>
+<tr><td>thing_def_id</td><td>热泵的thingDefID，取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=DTUID&sort_mode=a&user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: PpmD0lKl0YE1Rek4DV5k0pmrjwA=
+Referer: http://127.0.0.1:8020/IoT/index.html
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1800
+Access-Control-Allow-Methods: GET,POST,DELETE,PUT,OPTIONS,HEAD
+Access-Control-Allow-Headers: content-type,x-aqua-sign
+x-trace-info: trace_id=539d9297-839a-490d-9fc9-2f5a4acc8150&rpc_id=0
+Allow: DELETE,POST,GET,PUT,OPTIONS,HEAD
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Content-Length: 0
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "devID": 1,
+    "devAddr": "67c494e7",
+    "controlWord": 33,
+    "DTUID": "0020118092500282253",
+    "setTemp": 33,
+    "gwEui": "d896e0fff0000283",
+    "devEui": "d896e0ff00011d94",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d94",
+    "mtype": 2,
+    "ext_id": "1.d896e0ff00011d94",
+    "datr": "SF7BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "2",
+    "outWaterTemp": 32.4,
+    "stateAndMode": 1,
+    "rssi": -98,
+    "timeUTCSec": 1548290981,
+    "visible": true,
+    "fcnt": 518,
+    "outdoorTemp": 9.6,
+    "indoorTemp": 25.5,
+    "manufacture": "1",
+    "intoWaterTemp": 32.4,
+    "fport": 11,
+    "snr": -4.2,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d94",
+    "switchState": 1,
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d94"
+},
+{
+    "devID": "1",
+    "visible": true,
+    "DTUID": "0020118092500282254",
+    "parent_ext_id": "d896e0ff00011d95",
+    "manufacture": "1",
+    "ext_id": "1.d896e0ff00011d95",
+    "def_id": "ReBeng",
+    "name": "mgd.gehua.1.d896e0ff00011d95",
+    "namespace": "mgd.gehua",
+    "model": "2",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d95"
+},
+{
+    "devID": "1",
+    "visible": true,
+    "DTUID": "0020118092500282255",
+    "parent_ext_id": "d896e0ff00011d96",
+    "manufacture": "1",
+    "ext_id": "1.d896e0ff00011d96",
+    "def_id": "ReBeng",
+    "name": "mgd.gehua.1.d896e0ff00011d96",
+    "namespace": "mgd.gehua",
+    "model": "3",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d96"
+},
+{
+    "devID": "1",
+    "visible": true,
+    "DTUID": "0020118092500282256",
+    "parent_ext_id": "d896e0ff00011d97",
+    "manufacture": "1",
+    "ext_id": "1.d896e0ff00011d97",
+    "def_id": "ReBeng",
+    "name": "mgd.gehua.1.d896e0ff00011d97",
+    "namespace": "mgd.gehua",
+    "model": "1",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d97"
+},
+{
+    "devID": 1,
+    "devAddr": "660f0b72",
+    "controlWord": 33,
+    "DTUID": "0020118092500282258",
+    "setTemp": 34,
+    "gwEui": "d896e0fff000028f",
+    "devEui": "d896e0ff00011d99",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d99",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011d99",
+    "datr": "SF7BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "2",
+    "outWaterTemp": 35.2,
+    "stateAndMode": 1,
+    "rssi": -87,
+    "timeUTCSec": 1548318174,
+    "visible": true,
+    "fcnt": 26,
+    "outdoorTemp": 5,
+    "manufacture": "3",
+    "intoWaterTemp": 35.1,
+    "fport": 11,
+    "snr": 5.2,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d99",
+    "switchState": 1,
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d99"
+},
+{
+    "devID": 1,
+    "devAddr": "676834de",
+    "controlWord": 33,
+    "DTUID": "0020118092500282259",
+    "setTemp": 33,
+    "gwEui": "d896e0fff0000290",
+    "devEui": "d896e0ff00011d9a",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d9a",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011d9a",
+    "datr": "SF7BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "2",
+    "outWaterTemp": 36.1,
+    "stateAndMode": 1,
+    "rssi": -96,
+    "timeUTCSec": 1548318884,
+    "visible": true,
+    "fcnt": 54,
+    "outdoorTemp": 4.5,
+    "manufacture": "3",
+    "intoWaterTemp": 30.8,
+    "fport": 11,
+    "snr": 2,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9a",
+    "switchState": 1,
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9a"
+},
+{
+    "devID": 1,
+    "devAddr": "67381ade",
+    "controlWord": 33,
+    "DTUID": "0020118092500282260",
+    "setTemp": 32,
+    "gwEui": "d896e0fff0000290",
+    "devEui": "d896e0ff00011d9b",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d9b",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011d9b",
+    "datr": "SF7BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "2",
+    "outWaterTemp": 35.8,
+    "stateAndMode": 1,
+    "rssi": -79,
+    "timeUTCSec": 1548318429,
+    "visible": true,
+    "fcnt": 131,
+    "outdoorTemp": 3.3,
+    "manufacture": "3",
+    "intoWaterTemp": 35.3,
+    "fport": 11,
+    "snr": 9.8,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9b",
+    "switchState": 1,
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9b"
+},
+{
+    "devID": 1,
+    "devAddr": "67087146",
+    "controlWord": 33,
+    "DTUID": "0020118092500282261",
+    "setTemp": 37,
+    "gwEui": "d896e0fff0100538",
+    "devEui": "d896e0ff00011d9c",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d9c",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011d9c",
+    "datr": "SF12BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "3",
+    "outWaterTemp": 35.8,
+    "stateAndMode": 1,
+    "rssi": -123,
+    "timeUTCSec": 1548318189,
+    "visible": true,
+    "fcnt": 1794,
+    "outdoorTemp": 7.2,
+    "manufacture": "3",
+    "intoWaterTemp": 35.7,
+    "fport": 11,
+    "snr": -17.5,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9c",
+    "switchState": 1,
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9c"
+},
+{
+    "devID": 1,
+    "devAddr": "679a163c",
+    "controlWord": 33,
+    "DTUID": "0020118092500282262",
+    "setTemp": 32,
+    "gwEui": "d896e0fff0000290",
+    "devEui": "d896e0ff00011d9d",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d9d",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011d9d",
+    "datr": "SF7BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "2",
+    "outWaterTemp": 29.6,
+    "stateAndMode": 1,
+    "rssi": -81,
+    "timeUTCSec": 1548318481,
+    "visible": true,
+    "fcnt": 5,
+    "outdoorTemp": 4.6,
+    "manufacture": "3",
+    "intoWaterTemp": 29.3,
+    "fport": 11,
+    "snr": 8.5,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9d",
+    "switchState": 1,
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9d"
+},
+{
+    "devID": 1,
+    "devAddr": "6675a371",
+    "controlWord": 33,
+    "DTUID": "0020118092500282263",
+    "gwEui": "d896e0fff0000290",
+    "devEui": "d896e0ff00011d9e",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011d9e",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011d9e",
+    "datr": "SF7BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "1",
+    "stateAndMode": 8,
+    "rssi": -95,
+    "timeUTCSec": 1548318070,
+    "visible": true,
+    "fcnt": 230,
+    "manufacture": "3",
+    "snr": 2.2,
+    "fport": 11,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9e",
+    "switchState": 0,
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9e"
+},
+{
+    "devID": "1",
+    "visible": true,
+    "DTUID": "0020118092500282264",
+    "parent_ext_id": "d896e0ff00011d9f",
+    "manufacture": "1",
+    "ext_id": "1.d896e0ff00011d9f",
+    "def_id": "ReBeng",
+    "name": "mgd.gehua.1.d896e0ff00011d9f",
+    "namespace": "mgd.gehua",
+    "model": "2",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9f"
+},
+{
+    "devID": 1,
+    "devAddr": "66ddf1ef",
+    "controlWord": 33,
+    "DTUID": "0020118092500282265",
+    "setTemp": 47,
+    "gwEui": "d896e0fff000028f",
+    "devEui": "d896e0ff00011da0",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011da0",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011da0",
+    "datr": "SF8BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "2",
+    "outWaterTemp": 12.1,
+    "stateAndMode": 0,
+    "rssi": -83,
+    "timeUTCSec": 1548317725,
+    "visible": true,
+    "fcnt": 71,
+    "outdoorTemp": 9.1,
+    "manufacture": "3",
+    "intoWaterTemp": 14,
+    "snr": -5,
+    "fport": 11,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da0",
+    "switchState": 0,
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da0"
+},
+{
+    "devID": 1,
+    "devAddr": "6604d912",
+    "controlWord": 33,
+    "DTUID": "0020118092500282266",
+    "setTemp": 30,
+    "gwEui": "d896e0fff0000290",
+    "devEui": "d896e0ff00011da1",
+    "dataMarker": 2,
+    "parent_ext_id": "d896e0ff00011da1",
+    "mtype": 4,
+    "ext_id": "1.d896e0ff00011da1",
+    "datr": "SF9BW125",
+    "joinEui": "d896e0e0000039a8",
+    "model": "3",
+    "outWaterTemp": 10.5,
+    "stateAndMode": 0,
+    "rssi": -85,
+    "timeUTCSec": 1548318312,
+    "visible": true,
+    "fcnt": 255,
+    "outdoorTemp": 3.5,
+    "manufacture": "3",
+    "intoWaterTemp": 10.8,
+    "snr": 10.8,
+    "fport": 11,
+    "def_id": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da1",
+    "switchState": 0,
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da1"
+},
+{
+    "devID": "1",
+    "visible": true,
+    "DTUID": "0020118092500282267",
+    "parent_ext_id": "d896e0ff00011da2",
+    "manufacture": "1",
+    "ext_id": "1.d896e0ff00011da2",
+    "def_id": "ReBeng",
+    "name": "mgd.gehua.1.d896e0ff00011da2",
+    "namespace": "mgd.gehua",
+    "model": "1",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da2"
+}]
+</pre>
+</li>
+<li>
+<h2>获取热泵型号的值列表</h2>
+<h3>请求名称</h3>
+<pre class="prettyprint">
+7.5 	LIST_Thing_Enum_Def_Items
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_model?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"],"enum_manufacture":["1"]}
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_model</td><td>取值热泵属性model的valuesEnumDefName</td></tr>
+<tr><td>enum_device</td><td>enumFilterFields /thingDefID对应的过滤条件，取值热泵thingDefID</td></tr>
+<tr><td>enum_manufacture</td><td>enumFilterFields /metadata/manufacture对应的过滤条件，取值对应热泵的manufacture</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_model?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: rrTncY1nrQPeD2EgdAxwKmriLe8=
+Referer: http://127.0.0.1:8020/IoT/index.html
+Content-Length: 51
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=daeec722-4827-43cd-83de-536f3077153f&rpc_id=0
+Content-Type: application/json
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "1703",
+    "metadata":
+    {
+        "power": "100"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "bb3883c3fac947f7b83c73fbdaf5d9ac"
+},
+{
+    "value": "2",
+    "displayName": "1705",
+    "metadata":
+    {
+        "power": "200"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "fd94129d212d45b683659e3c54392004"
+},
+{
+    "value": "3",
+    "displayName": "1706",
+    "metadata":
+    {
+        "power": "300"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "ca964f4800894a3f8ddcaa927cab4180"
+}]
+</pre>
+</li>
+<li>
+<h2>热泵列表一页的数据-thingSearch返回字段值小写</h2>
+<h3>请求名称</h3>
+<pre class="prettyprint">
+5.2 	SEARCH_THING
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET 	http://172.16.20.201:8090/aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=dtuid&sort_mode=a&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03%3A13%3A41Z
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=dtuid&sort_mode=a&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03%3A13%3A41Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: YJdFX3A88J/kjOCHHnrPXLwKjn8=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 03:08:39 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 2519
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "devid": "1",
+    "outwatertemp": "36",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "",
+    "mtype": "2",
+    "indoortemp": "26.4",
+    "endpoint": "",
+    "ext_id": "",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "35.8",
+    "rssi": "-129",
+    "visible": true,
+    "settemp": "34",
+    "gweui": "d896e0fff0100539",
+    "fcnt": "2045",
+    "deveui": "d896e0ff00011d94",
+    "manufacture": "1",
+    "devaddr": "67c494e7",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-18.2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282253",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d94",
+    "timeutcsec": "1551585625",
+    "outdoortemp": "8.8",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d94"
+},
+{
+    "devid": "1",
+    "protocolversion": "",
+    "visible": true,
+    "softwareversion": "",
+    "states": "",
+    "parent_ext_id": "",
+    "manufacture": "1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d95",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282254",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d95",
+    "model": "2",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d95"
+},
+{
+    "devid": "1",
+    "visible": true,
+    "states": "",
+    "parent_ext_id": "",
+    "manufacture": "1",
+    "endpoint": "",
+    "ext_id": "",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282255",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d96",
+    "model": "3",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d96"
+},
+{
+    "devid": "1",
+    "protocolversion": "",
+    "installdate": "2019-02-13T04:05:06+0800",
+    "visible": true,
+    "softwareversion": "",
+    "states": "",
+    "parent_ext_id": "",
+    "manufacture": "1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d97",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282256",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d97",
+    "model": "1",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d97"
+},
+{
+    "devid": "1",
+    "protocolversion": "",
+    "outwatertemp": "37",
+    "softwareversion": "",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d99",
+    "datr": "SF7BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "36.8",
+    "rssi": "-77",
+    "visible": true,
+    "settemp": "35",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "64",
+    "deveui": "d896e0ff00011d99",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "660f0b72",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "9.5",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282258",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d99",
+    "timeutcsec": "1551616583",
+    "outdoortemp": "7",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d99"
+},
+{
+    "devid": "1",
+    "stateandmode": "8",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011d9a",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9a",
+    "datr": "SF10BW125",
+    "switchstate": "0",
+    "model": "2",
+    "rssi": "-93",
+    "visible": true,
+    "gweui": "d896e0fff000028f",
+    "fcnt": "120",
+    "deveui": "d896e0ff00011d9a",
+    "manufacture": "3",
+    "devaddr": "676834de",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-13",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282259",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9a",
+    "timeutcsec": "1551616013",
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9a"
+},
+{
+    "devid": "1",
+    "outwatertemp": "35.3",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0400",
+    "parent_ext_id": "d896e0ff00011d9b",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9b",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "35",
+    "rssi": "-85",
+    "visible": true,
+    "settemp": "33",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "2380",
+    "deveui": "d896e0ff00011d9b",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "67381ade",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-7.2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282260",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9b",
+    "timeutcsec": "1551616088",
+    "outdoortemp": "8.6",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9b"
+},
+{
+    "devid": "1",
+    "outwatertemp": "29.4",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011d9c",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9c",
+    "datr": "SF7BW125",
+    "switchstate": "1",
+    "model": "3",
+    "intowatertemp": "29.3",
+    "rssi": "-88",
+    "visible": true,
+    "settemp": "30",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "12",
+    "deveui": "d896e0ff00011d9c",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "67087146",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "9",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282261",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9c",
+    "timeutcsec": "1551616186",
+    "outdoortemp": "7",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9c"
+},
+{
+    "devid": "1",
+    "outwatertemp": "32.1",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011d9d",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9d",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "31.7",
+    "rssi": "-80",
+    "visible": true,
+    "settemp": "31",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "101",
+    "deveui": "d896e0ff00011d9d",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "679a163c",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282262",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9d",
+    "timeutcsec": "1551615299",
+    "outdoortemp": "6",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9d"
+},
+{
+    "devid": "1",
+    "stateandmode": "8",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011d9e",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9e",
+    "datr": "SF7BW125",
+    "switchstate": "0",
+    "model": "1",
+    "rssi": "-90",
+    "visible": true,
+    "gweui": "d896e0fff000028f",
+    "fcnt": "64",
+    "deveui": "d896e0ff00011d9e",
+    "manufacture": "3",
+    "devaddr": "6675a371",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282263",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9e",
+    "timeutcsec": "1551616136",
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9e"
+},
+{
+    "devid": "1",
+    "visible": true,
+    "states": "",
+    "parent_ext_id": "d896e0ff00011d9f",
+    "manufacture": "1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9f",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282264",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9f",
+    "model": "2",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9f"
+},
+{
+    "devid": "1",
+    "outwatertemp": "46.8",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011da0",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da0",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "41.6",
+    "rssi": "-87",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "22",
+    "deveui": "d896e0ff00011da0",
+    "manufacture": "3",
+    "devaddr": "66ddf1ef",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "4.8",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282265",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da0",
+    "timeutcsec": "1551616151",
+    "outdoortemp": "5",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da0"
+},
+{
+    "devid": "1",
+    "outwatertemp": "39.1",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011da1",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da1",
+    "datr": "SF9BW125",
+    "switchstate": "1",
+    "model": "3",
+    "intowatertemp": "39",
+    "rssi": "-89",
+    "visible": true,
+    "settemp": "38",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "142",
+    "deveui": "d896e0ff00011da1",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "6604d912",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "1.2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282266",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da1",
+    "timeutcsec": "1551615388",
+    "outdoortemp": "6.4",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da1"
+},
+{
+    "devid": "1",
+    "visible": true,
+    "states": "",
+    "parent_ext_id": "d896e0ff00011da2",
+    "manufacture": "1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da2",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282267",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da2",
+    "model": "1",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da2"
+}]
+</pre>
+</li>
+<li>
+<h2>热泵按厂商搜索</h2>
+<h3>请求名称</h3>
+<pre class="prettyprint">
+5.2 	SEARCH_THING
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET 	http://172.16.20.201:8090/aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=dtuid&sort_mode=a&manufacture=%E6%B5%99%E6%B1%9F%E4%B8%AD%E5%B9%BF%E7%94%B5%E5%99%A8%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8&manufacture_op=enum&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03%3A16%3A26Z
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>manufacture</td><td>搜索字段，厂商</td></tr>
+<tr><td>manufacture_op</td><td>搜索操作符，enum</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/users/access_token/refresh_token?refresh_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:17:30.187Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json, text/javascript, */*; q=0.01
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: wYjlhzNOu3hDLmL99e8zYBP0y0Q=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 03:11:21 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 217
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "devid": "1",
+    "protocolversion": "",
+    "outwatertemp": "37",
+    "softwareversion": "",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d99",
+    "datr": "SF7BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "36.8",
+    "rssi": "-77",
+    "visible": true,
+    "settemp": "35",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "64",
+    "deveui": "d896e0ff00011d99",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "660f0b72",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "9.5",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282258",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d99",
+    "timeutcsec": "1551616583",
+    "outdoortemp": "7",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d99"
+},
+{
+    "devid": "1",
+    "stateandmode": "8",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011d9a",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9a",
+    "datr": "SF10BW125",
+    "switchstate": "0",
+    "model": "2",
+    "rssi": "-93",
+    "visible": true,
+    "gweui": "d896e0fff000028f",
+    "fcnt": "120",
+    "deveui": "d896e0ff00011d9a",
+    "manufacture": "3",
+    "devaddr": "676834de",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-13",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282259",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9a",
+    "timeutcsec": "1551616013",
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9a"
+},
+{
+    "devid": "1",
+    "outwatertemp": "35.3",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0400",
+    "parent_ext_id": "d896e0ff00011d9b",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9b",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "35",
+    "rssi": "-85",
+    "visible": true,
+    "settemp": "33",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "2380",
+    "deveui": "d896e0ff00011d9b",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "67381ade",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-7.2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282260",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9b",
+    "timeutcsec": "1551616088",
+    "outdoortemp": "8.6",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9b"
+},
+{
+    "devid": "1",
+    "outwatertemp": "29.4",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011d9c",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9c",
+    "datr": "SF7BW125",
+    "switchstate": "1",
+    "model": "3",
+    "intowatertemp": "29.3",
+    "rssi": "-88",
+    "visible": true,
+    "settemp": "30",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "12",
+    "deveui": "d896e0ff00011d9c",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "67087146",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "9",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282261",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9c",
+    "timeutcsec": "1551616186",
+    "outdoortemp": "7",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9c"
+},
+{
+    "devid": "1",
+    "outwatertemp": "32.1",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011d9d",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9d",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "31.7",
+    "rssi": "-80",
+    "visible": true,
+    "settemp": "31",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "101",
+    "deveui": "d896e0ff00011d9d",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "679a163c",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282262",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9d",
+    "timeutcsec": "1551615299",
+    "outdoortemp": "6",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9d"
+},
+{
+    "devid": "1",
+    "stateandmode": "8",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011d9e",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011d9e",
+    "datr": "SF7BW125",
+    "switchstate": "0",
+    "model": "1",
+    "rssi": "-90",
+    "visible": true,
+    "gweui": "d896e0fff000028f",
+    "fcnt": "64",
+    "deveui": "d896e0ff00011d9e",
+    "manufacture": "3",
+    "devaddr": "6675a371",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282263",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011d9e",
+    "timeutcsec": "1551616136",
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011d9e"
+},
+{
+    "devid": "1",
+    "outwatertemp": "46.8",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011da0",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da0",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "41.6",
+    "rssi": "-87",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "22",
+    "deveui": "d896e0ff00011da0",
+    "manufacture": "3",
+    "devaddr": "66ddf1ef",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "4.8",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282265",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da0",
+    "timeutcsec": "1551616151",
+    "outdoortemp": "5",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da0"
+},
+{
+    "devid": "1",
+    "outwatertemp": "39.1",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011da1",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da1",
+    "datr": "SF9BW125",
+    "switchstate": "1",
+    "model": "3",
+    "intowatertemp": "39",
+    "rssi": "-89",
+    "visible": true,
+    "settemp": "38",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "142",
+    "deveui": "d896e0ff00011da1",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "6604d912",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "1.2",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282266",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da1",
+    "timeutcsec": "1551615388",
+    "outdoortemp": "6.4",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da1"
+},
+{
+    "devid": "1",
+    "outwatertemp": "42",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011da4",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da4",
+    "datr": "SF7BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "37.3",
+    "rssi": "-82",
+    "visible": true,
+    "settemp": "36",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "52",
+    "deveui": "d896e0ff00011da4",
+    "manufacture": "3",
+    "devaddr": "66a50158",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "9",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282269",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da4",
+    "timeutcsec": "1551616649",
+    "outdoortemp": "6.2",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da4"
+},
+{
+    "devid": "1",
+    "outwatertemp": "40.8",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011da6",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da6",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "35",
+    "rssi": "-81",
+    "visible": true,
+    "settemp": "35",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "27",
+    "deveui": "d896e0ff00011da6",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "66fddc7e",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "8.5",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282271",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da6",
+    "timeutcsec": "1551616126",
+    "outdoortemp": "5.5",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da6"
+},
+{
+    "devid": "1",
+    "stateandmode": "8",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011da7",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da7",
+    "datr": "SF7BW125",
+    "switchstate": "0",
+    "model": "2",
+    "rssi": "-87",
+    "visible": true,
+    "gweui": "d896e0fff0000290",
+    "fcnt": "18",
+    "deveui": "d896e0ff00011da7",
+    "manufacture": "3",
+    "devaddr": "67a41289",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "8.5",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282272",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da7",
+    "timeutcsec": "1551615083",
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da7"
+},
+{
+    "devid": "1",
+    "outwatertemp": "36.2",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011da8",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011da8",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "36.1",
+    "rssi": "-90",
+    "visible": true,
+    "settemp": "35",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "150",
+    "deveui": "d896e0ff00011da8",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "671e7ace",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "8.8",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282273",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011da8",
+    "timeutcsec": "1551615601",
+    "outdoortemp": "9.1",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011da8"
+},
+{
+    "devid": "1",
+    "outwatertemp": "28.4",
+    "stateandmode": "1",
+    "datamarker": "2",
+    "states": "",
+    "failurewarning": "0020",
+    "parent_ext_id": "d896e0ff00011daa",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011daa",
+    "datr": "SF8BW125",
+    "switchstate": "1",
+    "model": "3",
+    "intowatertemp": "24.1",
+    "rssi": "-94",
+    "visible": true,
+    "settemp": "35",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "52",
+    "deveui": "d896e0ff00011daa",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "66676bce",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "11",
+    "snr": "-1",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282275",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011daa",
+    "timeutcsec": "1551615666",
+    "outdoortemp": "7.4",
+    "status": "Normal",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011daa"
+},
+{
+    "devid": "1",
+    "outwatertemp": "14.9",
+    "stateandmode": "0",
+    "datamarker": "2",
+    "states": "",
+    "parent_ext_id": "d896e0ff00011dab",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011dab",
+    "datr": "SF10BW125",
+    "switchstate": "0",
+    "model": "2",
+    "intowatertemp": "13.1",
+    "rssi": "-90",
+    "visible": true,
+    "settemp": "47",
+    "gweui": "d896e0fff000028f",
+    "fcnt": "117",
+    "deveui": "d896e0ff00011dab",
+    "manufacture": "3",
+    "devaddr": "67408013",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-5",
+    "fport": "11",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282276",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011dab",
+    "timeutcsec": "1551616303",
+    "outdoortemp": "7.6",
+    "status": "Offline",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011dab"
+}]
+</pre>
+</li>
+<li>
+<h2>热泵列表过滤告警状态(status)</h2>
+<h3>请求名称</h3>
+<pre class="prettyprint">
+5.2 	SEARCH_THING
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET 	http://172.16.20.201:8090/aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=dtuid&sort_mode=a&status=Warning&status_op=eq&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03%3A19%3A12Z
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>status</td><td>Normal, Offline, Warning</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingsearch/things?start=0&end=13&thing_def_id=ReBeng&namespace=mgd.gehua&sort_by=dtuid&sort_mode=a&status=Warning&status_op=eq&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03%3A19%3A12Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: WCxZqOzRBUyBmMjiXgs4i8f1iQY=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 03:14:07 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 23
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "devid": "1",
+    "outwatertemp": "9.1",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011e00",
+    "mtype": "4",
+    "indoortemp": "8.1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011e00",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "1",
+    "intowatertemp": "8.4",
+    "rssi": "-79",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "6247",
+    "deveui": "d896e0ff00011e00",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "67a22ff7",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "9",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282361",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011e00",
+    "timeutcsec": "1551528795",
+    "outdoortemp": "7.1",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011e00"
+},
+{
+    "devid": "1",
+    "outwatertemp": "10.7",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011e05",
+    "mtype": "4",
+    "indoortemp": "9.1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011e05",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "1",
+    "intowatertemp": "9.8",
+    "rssi": "-111",
+    "visible": true,
+    "settemp": "40",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "5523",
+    "deveui": "d896e0ff00011e05",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "67f3ca98",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "6.2",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118092500282366",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011e05",
+    "timeutcsec": "1551578150",
+    "outdoortemp": "9.4",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011e05"
+},
+{
+    "devid": "1",
+    "outwatertemp": "27.9",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011eb3",
+    "mtype": "4",
+    "indoortemp": "23.2",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011eb3",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "27.4",
+    "rssi": "-129",
+    "visible": true,
+    "settemp": "25",
+    "gweui": "d896e0fff0100539",
+    "fcnt": "4055",
+    "deveui": "d896e0ff00011eb3",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "66ea0c10",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-3.5",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286465",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011eb3",
+    "timeutcsec": "1551604970",
+    "outdoortemp": "5.4",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011eb3"
+},
+{
+    "devid": "1",
+    "outwatertemp": "8.6",
+    "stateandmode": "4",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011eac",
+    "mtype": "4",
+    "indoortemp": "9.4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011eac",
+    "datr": "SF12BW125",
+    "switchstate": "4",
+    "model": "2",
+    "intowatertemp": "8",
+    "rssi": "-129",
+    "visible": true,
+    "settemp": "35",
+    "gweui": "d896e0fff0100539",
+    "fcnt": "3167",
+    "deveui": "d896e0ff00011eac",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "66aebb45",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-14.5",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286474",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011eac",
+    "timeutcsec": "1551546818",
+    "outdoortemp": "7.1",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011eac"
+},
+{
+    "devid": "1",
+    "outwatertemp": "10.4",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff0001288f",
+    "mtype": "4",
+    "indoortemp": "9.3",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff0001288f",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "1",
+    "intowatertemp": "9.3",
+    "rssi": "-89",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "846",
+    "deveui": "d896e0ff0001288f",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "67b2590a",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "6.5",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286575",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff0001288f",
+    "timeutcsec": "1551558676",
+    "outdoortemp": "8.7",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff0001288f"
+},
+{
+    "devid": "1",
+    "outwatertemp": "11.2",
+    "stateandmode": "4",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00012889",
+    "mtype": "4",
+    "indoortemp": "12.7",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00012889",
+    "datr": "SF12BW125",
+    "switchstate": "4",
+    "model": "2",
+    "intowatertemp": "11.9",
+    "rssi": "-99",
+    "visible": true,
+    "settemp": "28",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "827",
+    "deveui": "d896e0ff00012889",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "67a5b118",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "4.5",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286644",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00012889",
+    "timeutcsec": "1551582181",
+    "outdoortemp": "8.9",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00012889"
+},
+{
+    "devid": "1",
+    "outwatertemp": "12.3",
+    "stateandmode": "0",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "0400",
+    "parent_ext_id": "d896e0ff00012833",
+    "mtype": "4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00012833",
+    "datr": "SF7BW125",
+    "switchstate": "0",
+    "model": "3",
+    "intowatertemp": "12.5",
+    "rssi": "-87",
+    "visible": true,
+    "settemp": "43",
+    "gweui": "d896e0fff0000290",
+    "fcnt": "30",
+    "deveui": "d896e0ff00012833",
+    "manufacture": "3",
+    "failureflag": "2",
+    "devaddr": "67f3b6bb",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "6.8",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286733",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00012833",
+    "timeutcsec": "1551615502",
+    "outdoortemp": "5.5",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00012833"
+},
+{
+    "devid": "1",
+    "outwatertemp": "10.6",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff0001215f",
+    "mtype": "4",
+    "indoortemp": "9.2",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff0001215f",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "10.1",
+    "rssi": "-97",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "1997",
+    "deveui": "d896e0ff0001215f",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "678a3fb5",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "9.8",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286828",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff0001215f",
+    "timeutcsec": "1551568533",
+    "outdoortemp": "10.9",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff0001215f"
+},
+{
+    "devid": "1",
+    "outwatertemp": "21.2",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011f32",
+    "mtype": "4",
+    "indoortemp": "14.4",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011f32",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "1",
+    "intowatertemp": "21.1",
+    "rssi": "-126",
+    "visible": true,
+    "settemp": "19",
+    "gweui": "d896e0fff0100539",
+    "fcnt": "2545",
+    "deveui": "d896e0ff00011f32",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "672e6a7a",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-13",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600286917",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011f32",
+    "timeutcsec": "1551595513",
+    "outdoortemp": "7.9",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011f32"
+},
+{
+    "devid": "1",
+    "outwatertemp": "15",
+    "stateandmode": "4",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011ffa",
+    "mtype": "4",
+    "indoortemp": "16.1",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011ffa",
+    "datr": "SF12BW125",
+    "switchstate": "4",
+    "model": "2",
+    "intowatertemp": "13.8",
+    "rssi": "-94",
+    "visible": true,
+    "settemp": "23",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "844",
+    "deveui": "d896e0ff00011ffa",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "6742ac3a",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "fport": "63",
+    "snr": "3.2",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600287008",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011ffa",
+    "timeutcsec": "1551583134",
+    "outdoortemp": "16.1",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011ffa"
+},
+{
+    "devid": "1",
+    "outwatertemp": "8",
+    "stateandmode": "4",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00012145",
+    "mtype": "4",
+    "indoortemp": "8.3",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00012145",
+    "datr": "SF12BW125",
+    "switchstate": "4",
+    "model": "2",
+    "intowatertemp": "7.6",
+    "rssi": "-92",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "6326",
+    "deveui": "d896e0ff00012145",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "66ac256e",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "3",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600287028",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00012145",
+    "timeutcsec": "1551589498",
+    "outdoortemp": "5.8",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00012145"
+},
+{
+    "devid": "1",
+    "outwatertemp": "10.1",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff0001206a",
+    "mtype": "4",
+    "indoortemp": "9.2",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff0001206a",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "9.7",
+    "rssi": "-103",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "1960",
+    "deveui": "d896e0ff0001206a",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "661d90dd",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-4.2",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600287050",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff0001206a",
+    "timeutcsec": "1551568913",
+    "outdoortemp": "10.8",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff0001206a"
+},
+{
+    "devid": "1",
+    "outwatertemp": "15.9",
+    "stateandmode": "4",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011e47",
+    "mtype": "4",
+    "indoortemp": "14.6",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011e47",
+    "datr": "SF12BW125",
+    "switchstate": "4",
+    "model": "1",
+    "intowatertemp": "15.2",
+    "rssi": "-103",
+    "visible": true,
+    "settemp": "41",
+    "gweui": "d896e0fff0000283",
+    "fcnt": "5451",
+    "deveui": "d896e0ff00011e47",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "67dccf4b",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-11.2",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600287097",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011e47",
+    "timeutcsec": "1551568273",
+    "outdoortemp": "15.6",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011e47"
+},
+{
+    "devid": "1",
+    "outwatertemp": "7.5",
+    "stateandmode": "1",
+    "datamarker": "4",
+    "states": "",
+    "failurewarning": "00400000",
+    "parent_ext_id": "d896e0ff00011e29",
+    "mtype": "4",
+    "indoortemp": "6.9",
+    "endpoint": "",
+    "ext_id": "1.d896e0ff00011e29",
+    "datr": "SF12BW125",
+    "switchstate": "1",
+    "model": "2",
+    "intowatertemp": "7.8",
+    "rssi": "-126",
+    "visible": true,
+    "settemp": "45",
+    "gweui": "d896e0fff010053b",
+    "fcnt": "5212",
+    "deveui": "d896e0ff00011e29",
+    "manufacture": "1",
+    "failureflag": "4",
+    "devaddr": "66c82acf",
+    "controlword": "33",
+    "joineui": "d896e0e0000039a8",
+    "snr": "-18",
+    "fport": "63",
+    "def_id": "ReBeng",
+    "dtuid": "0020118102600287132",
+    "namespace": "mgd.gehua",
+    "name": "mgd.gehua.1.d896e0ff00011e29",
+    "timeutcsec": "1551566663",
+    "outdoortemp": "6.5",
+    "status": "Warning",
+    "doc_type": "thing",
+    "doc_id": "mgd.gehua.1.d896e0ff00011e29"
+}]
+</pre>
+</li>
+<li>
+<h2>热泵最近告警状态(event history)</h2>
+<h3>请求名称</h3>
+<pre class="prettyprint">
+4.4 	GET_THING_EVENT_HISTORY
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET 	http://172.16.20.201:8090/aquapaas/rest/thinghistory/event?start=0&end=1&order-mode=1&ext_id=1.d896e0ff00011e00&namespace=mgd.gehua&thingdefid=ReBeng&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T05%3A09%3A10Z
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thinghistory/event?start=0&end=1&order-mode=1&ext_id=1.d896e0ff00011e00&namespace=mgd.gehua&thingdefid=ReBeng&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T05%3A09%3A10Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: Ro02d4ntk466qaNcUnu2V40uX78=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 05:04:05 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 522
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "id": "5c7bc240192aa50039eb313a",
+    "thing_id": "mgd.gehua.1.d896e0ff00011e00",
+    "ext_id": "1.d896e0ff00011e00",
+    "namespace": "mgd.gehua",
+    "create_time": "2019-03-03T20:04:59+0800",
+    "status": "Warning",
+    "thing_def_id": "ReBeng",
+    "event":
+    {
+        "event_type": "3",
+        "create_time": "2019-03-03T20:04:59+0800",
+        "payload": "00400000",
+        "status": "Warning"
+    },
+    "thing_metadata":
+    {
+        "devID": "1",
+        "manufacture": "1",
+        "DTUID": "0020118092500282361",
+        "failureWarning": "00400000",
+        "model": "1"
+    }
+},
+{
+    "id": "5c7bbb52192aa50039eb258c",
+    "thing_id": "mgd.gehua.1.d896e0ff00011e00",
+    "ext_id": "1.d896e0ff00011e00",
+    "namespace": "mgd.gehua",
+    "create_time": "2019-03-03T19:35:25+0800",
+    "status": "Warning",
+    "thing_def_id": "ReBeng",
+    "event":
+    {
+        "event_type": "3",
+        "create_time": "2019-03-03T19:35:25+0800",
+        "payload": "00400000",
+        "status": "Warning"
+    },
+    "thing_metadata":
+    {
+        "devID": "1",
+        "manufacture": "1",
+        "DTUID": "0020118092500282361",
+        "failureWarning": "00400000",
+        "model": "1"
+    }
+}]
+</pre>
+</li>
+</ol>
+</body>
+</html>

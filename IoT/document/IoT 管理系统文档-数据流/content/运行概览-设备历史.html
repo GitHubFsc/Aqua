@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../js/prettify/prettify.css">
+  <script src="../js/prettify/run_prettify.js"></script>
+  <title>运行概览-设备历史</title>
+</head>
+<body>
+  <h1>运行概览-设备历史</h1>
+  <hr>
+  <ol>
+    <li>
+      <a href='#n1'>页面逻辑</a>
+    </li>
+    <li>
+      <a href='#n2'>设备类型的下拉框（7.5接口）</a>
+    </li>
+    <li>
+      <a href="#n3">设备历史的表格（4.3接口）</a>
+    </li>
+  </ol>
+  <hr>
+  <fieldset id='n1'>
+    <legend>页面逻辑</legend>
+    <h3></h3>
+    <pre class="prettyprint">
+      >> li.fang@xor-media.tv 2019/2/13
+     如果用户在“设备类型”上选择了“DTU”，那么“设备编号”是灰色不可输入处理，其他选项全都可输入
+     如果用户在“设备类型”上选择了“ReBeng”，那么所有选项都可输入
+
+      >> li.fang@xor-media.tv 2019/2/15
+      关于热泵设备类型下，表格的列表头按照8-查看历史运行.jpg
+      它来自\\歌华Iot\5-设备\2-热泵设备, 是一个热泵的运行历史信息
+
+
+      >> li.fang@xor-media.tv 2019/2/19
+      DTU的温度折线表只需要显示设备的设备环境温度字段值，电池电量显示电池电量字段值
+      ReBeng的温度折线表则需要显示设备的室外温度，室内温度，设定温度，入水温度，出水温度字段值
+      电池电量则显示已使用电量字段值
+
+      >>2019_2_20目前联调下来的数据
+      DTU返回数据 数据采集时间 全部为空
+      ReBeng返回数据 已使用电量 全部为空
+
+
+      >>2019_2_22
+      DTU只有表格和电池电量折线表
+      ReBeng只有表格和温度折线表
+
+    </pre>
+  </fieldset>
+  <fieldset id='n2'>
+    <legend>设备类型的下拉框（7.5接口）</legend>
+    <h3>7.5章节 设备类型的下拉框 接口对应7.5接口</h3>
+    <pre class="prettyprint">
+    POST http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_device?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-02-14T08:18:34.073Z
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {}
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua(目前写死)
+      enumDefID = enum_device(同样写死)
+    </pre>
+    <h3>请求头和响应头</h3>
+
+    <pre class="prettyprint">
+          Accept: application/json
+          Content-Type: application/json
+          Origin: http://192.168.7.143:8080
+          Referer: http://192.168.7.143:8080/Iot_zh/
+          User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+          x-aqua-sign: //3oHK9EfWLF7Ilj7G7WjrzWHlE=
+
+          HTTP/1.1 200 OK
+          Access-Control-Allow-Credentials: true
+          Access-Control-Allow-Origin: *
+          Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+          Content-Type: application/json
+          Date: Thu, 14 Feb 2019 08:16:15 GMT
+          Server: Jetty(9.2.22.v20170606)
+          Transfer-Encoding: chunked
+          x-trace-info: trace_id=e9acd42c-780d-43d6-9dd4-f635ac984bb8&rpc_id=0
+      </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+[{
+    "value": "DTU",
+    "displayName": "DTU",
+    "metadata": null,
+    "filterValues": null,
+    "id": "d52025c903be4eea8ca87453f08be6ec"
+}, {
+    "value": "ReBeng",
+    "displayName": "ReBeng",
+    "metadata": null,
+    "filterValues": null,
+    "id": "0a856d9b94aa4c2db75692547cddcccc"
+}]
+    </pre>
+
+    <h3>列表中字段与返回数据对应说明</h3>
+    <pre class="prettyprint">
+    </pre>
+    <h3>更改历史</h3>
+    <pre class="prettyprint">
+    </pre>
+  </fieldset>
+  <fieldset id='n3'>
+    <legend>点击“查询”，设备历史的表格（4.3接口）</legend>
+    <h3>4.3章节 GET_THING_STATUS_HISTORY</h3>
+    <pre class="prettyprint">
+    GET http://172.16.20.62:8200/aquapaas/rest/thinghistory/status?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-02-20T03:32:22.772Z&ext_id=d896e0ff00011f68&namespace=mgd.gehua&thingdefid=DTU&start_time=2019-02-01T00:00:00%2B0800&end_time=2019-02-20T23:59:59%2B0800&DTUID=0020118102600287388&DTUID_op=eq&devEUI=d896e0ff00011f68&devEUI_op=eq&start=0&end=4
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      ext_id =
+        DevEUI // thingdefid = DTU
+        devID + "." + devEUI // thingdefid = ReBeng
+      namespace = mgd.gehua //写死
+      thingdefid =
+        DTU //设备类型为DTU时
+        ReBeng //设备类型为ReBeng时
+      start_time  //开始时间
+      end_time    //结束时间
+      DTUID       //DTU编号
+      DTUID_op=eq //精确匹配
+      DevEUI      //DevEUI
+      DTUID_op=eq //精确匹配
+      devID       //设备编号
+      devID_op=eq //精确匹配
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        Accept: application/json
+        Content-Type: application/json
+        Origin: http://192.168.7.143:8080
+        Referer: http://192.168.7.143:8080/Iot_zh/
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36
+        x-aqua-sign: QumPtqajlVu05qQgzC/QgvntLVM=
+
+        HTTP/1.1 200 OK
+        Access-Control-Allow-Credentials: true
+        Access-Control-Allow-Origin: *
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+        Content-Type: application/json
+        Date: Wed, 20 Feb 2019 03:32:17 GMT
+        Server: Jetty(9.2.22.v20170606)
+        Transfer-Encoding: chunked
+        x-aqua-total-count: 67
+        x-trace-info: trace_id=31a5162d-fb7b-40e9-8abe-6bc569a0e0cf&rpc_id=0
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      [{
+          "id": "5c6a3c91d7ec0c003c065f65",
+          "thing_id": "mgd.gehua.d896e0ff00011f68",
+          "ext_id": "d896e0ff00011f68",
+          "namespace": "mgd.gehua",
+          "create_time": "2019-02-18T13:06:22+0800",
+          "status": "Normal",
+          "thing_def_id": "DTU",
+          "metadata": {
+              "devAddr": "67f84d85",
+              "rssi": "-63",
+              "DTUFunPos": "1",
+              "controlWord": "33",
+              "DTUWorkMode": "3",
+              "DTUID": "0020118102600287388",
+              "gwEui": "d896e0fff0000290",
+              "alarmCode": "0",
+              "fcnt": "10",
+              "intervalMin": "61",
+              "devEui": "d896e0ff00011f68",
+              "devEUI": "d896e0ff00011f68",
+              "deviceNum": "1",
+              "dataMarker": "3",
+              "mtype": "4",
+              "rate": "0",
+              "datr": "SF7BW125",
+              "fport": "61",
+              "joinEui": "d896e0e0000039a8",
+              "snr": "9.2",
+              "batteryPower": "255",
+              "enviTemp": "27"
+          }
+      }, {
+          "id": "5c6a2e70d7ec0c003c064bc6",
+          "thing_id": "mgd.gehua.d896e0ff00011f68",
+          "ext_id": "d896e0ff00011f68",
+          "namespace": "mgd.gehua",
+          "create_time": "2019-02-18T12:06:05+0800",
+          "status": "Normal",
+          "thing_def_id": "DTU",
+          "metadata": {
+              "devAddr": "67f84d85",
+              "rssi": "-65",
+              "DTUFunPos": "1",
+              "controlWord": "33",
+              "DTUWorkMode": "3",
+              "DTUID": "0020118102600287388",
+              "gwEui": "d896e0fff0000290",
+              "alarmCode": "0",
+              "fcnt": "7",
+              "intervalMin": "61",
+              "devEui": "d896e0ff00011f68",
+              "devEUI": "d896e0ff00011f68",
+              "deviceNum": "1",
+              "dataMarker": "3",
+              "mtype": "4",
+              "rate": "0",
+              "datr": "SF7BW125",
+              "fport": "61",
+              "joinEui": "d896e0e0000039a8",
+              "snr": "8.8",
+              "batteryPower": "255",
+              "enviTemp": "27"
+          }
+      }, {
+          "id": "5c6a2456d7ec0c003c0639be",
+          "thing_id": "mgd.gehua.d896e0ff00011f68",
+          "ext_id": "d896e0ff00011f68",
+          "namespace": "mgd.gehua",
+          "create_time": "2019-02-18T11:05:47+0800",
+          "status": "Normal",
+          "thing_def_id": "DTU",
+          "metadata": {
+              "devAddr": "67f84d85",
+              "rssi": "-64",
+              "DTUFunPos": "1",
+              "controlWord": "33",
+              "DTUWorkMode": "3",
+              "DTUID": "0020118102600287388",
+              "gwEui": "d896e0fff0000290",
+              "alarmCode": "0",
+              "fcnt": "4",
+              "intervalMin": "61",
+              "devEui": "d896e0ff00011f68",
+              "devEUI": "d896e0ff00011f68",
+              "deviceNum": "1",
+              "dataMarker": "3",
+              "mtype": "4",
+              "rate": "0",
+              "datr": "SF7BW125",
+              "fport": "61",
+              "joinEui": "d896e0e0000039a8",
+              "snr": "9",
+              "batteryPower": "255",
+              "enviTemp": "27"
+          }
+      }, {
+          "id": "5c6a244cd7ec0c003c06311d",
+          "thing_id": "mgd.gehua.d896e0ff00011f68",
+          "ext_id": "d896e0ff00011f68",
+          "namespace": "mgd.gehua",
+          "create_time": "2019-02-18T10:05:31+0800",
+          "status": "Normal",
+          "thing_def_id": "DTU",
+          "metadata": {
+              "devAddr": "67f84d85",
+              "rssi": "-64",
+              "DTUFunPos": "1",
+              "controlWord": "33",
+              "DTUWorkMode": "3",
+              "DTUID": "0020118102600287388",
+              "gwEui": "d896e0fff0000290",
+              "alarmCode": "0",
+              "fcnt": "0",
+              "intervalMin": "61",
+              "devEui": "d896e0ff00011f68",
+              "devEUI": "d896e0ff00011f68",
+              "deviceNum": "1",
+              "dataMarker": "3",
+              "mtype": "4",
+              "rate": "0",
+              "datr": "SF7BW125",
+              "fport": "61",
+              "joinEui": "d896e0e0000039a8",
+              "snr": "9.2",
+              "batteryPower": "255",
+              "enviTemp": "27"
+          }
+      }, {
+          "id": "5c6a2448d7ec0c003c062b84",
+          "thing_id": "mgd.gehua.d896e0ff00011f68",
+          "ext_id": "d896e0ff00011f68",
+          "namespace": "mgd.gehua",
+          "create_time": "2019-02-18T09:28:26+0800",
+          "status": "Normal",
+          "thing_def_id": "DTU",
+          "metadata": {
+              "devAddr": "67f84d85",
+              "rssi": "-65",
+              "DTUFunPos": "1",
+              "controlWord": "33",
+              "DTUWorkMode": "3",
+              "DTUID": "0020118102600287388",
+              "gwEui": "d896e0fff0000290",
+              "alarmCode": "0",
+              "fcnt": "245",
+              "intervalMin": "61",
+              "devEui": "d896e0ff00011f68",
+              "devEUI": "d896e0ff00011f68",
+              "deviceNum": "1",
+              "dataMarker": "3",
+              "mtype": "4",
+              "rate": "0",
+              "datr": "SF9BW125",
+              "fport": "61",
+              "joinEui": "d896e0e0000039a8",
+              "snr": "13",
+              "batteryPower": "255",
+              "enviTemp": "27"
+          }
+      }]
+    </pre>
+
+
+    <h3>列表中字段与返回数据对应说明</h3>
+    <pre class="prettyprint">
+      (DTU需要参考dtu_thingdef_1224.json)
+      数据采集时间 metadata.timeUTCSec（目前两种设备类型都能正常返回该字段值了 2019/2/22）（ 目前只有rebeng有timeUTCSec， DTU没有 junwei.wo@xor-media.tv 2019/2/13）
+      工作模式 metadata.DTUWorkMode
+      功能位 metadata.DTUFunPos
+      射频波特率 metadata.rate
+      心跳时间间隔 metadata.intervalMin
+      下挂设备数量 metadata.deviceNum（由metadata.deviceInstallNum改为metadata.deviceNum，2019/2/22）
+      设备环境温度 metadata.enviTemp
+      电池电量 metadata.batteryPower
+
+      (ReBeng需要参考rebeng_thingdef_1224.json)
+      数据采集时间 metadata.timeUTCSec
+      开关机状态 metadata.switchState
+      室外温度 metadata.outdoorTemp
+      室内温度 metadata.indoorTemp
+      设定温度 metadata.setTemp
+      入水温度 metadata.intoWaterTemp
+      出水温度 metadata.outWaterTemp
+      水流量 metadata.waterFlow
+      已使用电量 metadata.usedPower
+    </pre>
+
+    <h3>thingdefid为DTU时的对应关系（dtu_thingdef_1224.json）</h3>
+    <pre class="prettyprint">
+      {
+        "thingDefID":"DTU",
+        "namespace":"mgd.gehua",
+        "name":"DTU",
+        "description":"采集器通过内置LORAWAN无线传输模块与网关进行无线通信，把热泵出入水温、室内温度、开关机状态等信息无线传输到网关",
+        "creator":"admin",
+        "metadata":{"m1":"v1","m2":"v2"},
+        "properties":[{
+            "name":"DTUID",
+            "displayName":"DTU编号",
+            "description":"DTU编号",
+            "fieldType":"1",
+            "importantType":"2",
+            "dataType":"3",
+            "displayGroup":"基本信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"devEUI",
+            "displayName":"devEUI",
+            "description":"DTU在LORAWAN协议中的唯一编号",
+            "fieldType":"1",
+            "importantType":"2",
+            "dataType":"3",
+            "displayGroup":"基本信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"pinCode",
+            "displayName":"pinCode",
+            "description":"pinCode",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"基本信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"manufacture",
+            "displayName":"厂商编号",
+            "description":"厂商编号",
+            "path":"/metadata",
+            "fieldType":"1",
+            "importantType":"2",
+            "dataType":"5",
+            "displayGroup":"基本信息",
+            "valuesEnumDefName":"enum_manufacture",
+            "enumFilterFields":["/thingDefID"]
+          },
+          {
+            "name":"dateOfManufacture",
+            "displayName":"生产日期",
+            "description":"生产日期",
+            "fieldType":"2",
+            "dataType":"5",
+            "displayGroup":"基本信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"installDate",
+            "displayName":"安装日期",
+            "description":"安装日期",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"userName",
+            "displayName":"用户名",
+            "description":"用户名",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"userPhone",
+            "displayName":"联系电话",
+            "description":"联系电话",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"region",
+            "displayName":"区域",
+            "description":"区域",
+            "fieldType":"1",
+            "importantType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata",
+            "valuesEnumDefName":"enum_region"
+          },
+          {
+            "name":"address",
+            "displayName":"安装地址",
+            "description":"安装地址(门牌号)",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata",
+            "appDataType":"address"
+          },
+          {
+            "name":"coordinate",
+            "displayName":"地理位置",
+            "description":"地理位置(经纬度)",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"address_coord",
+            "displayName":"百度摩卡托坐标",
+            "description":"百度摩卡托坐标",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata",
+            "appDataType":"coord_bd09mc"
+          },
+          {
+            "name":"deviceInstallNum",
+            "displayName":"下挂设备数量",
+            "description":"下挂设备数量",
+            "fieldType":"2",
+            "dataType":"1",
+            "displayGroup":"安装信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"smartcard",
+            "displayName":"智能卡号",
+            "description":"智能卡号",
+            "fieldType":"2",
+            "dataType":"3",
+            "displayGroup":"安装信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"hardwareVersion",
+            "displayName":"硬件版本",
+            "description":"硬件版本",
+            "fieldType":"3",
+            "dataType":"3",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"softwareVersion",
+            "displayName":"软件版本",
+            "description":"软件版本",
+            "fieldType":"3",
+            "dataType":"3",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"DTUWorkMode",
+            "displayName":"DTU工作模式",
+            "description":"DTU工作模式",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"DTUFunPos",
+            "displayName":"DTU功能位",
+            "description":"DTU功能位",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"rate",
+            "displayName":"射频波特率",
+            "description":"射频波特率",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"intervalMin",
+            "displayName":"心跳时间间隔",
+            "description":"心跳时间间隔",
+            "fieldType":"3",
+            "dataType":"1",
+            "metric":"分",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"intervalReportMin",
+            "displayName":"上报时间间隔",
+            "description":"上报时间间隔",
+            "fieldType":"3",
+            "dataType":"1",
+            "metric":"分",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"deviceNum",
+            "displayName":"当前设备数量",
+            "description":"当前设备数量",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"enviTemp",
+            "displayName":"设备环境温度",
+            "description":"设备环境温度",
+            "fieldType":"3",
+            "dataType":"2",
+            "displayGroup":"状态信息",
+            "metric":"摄氏度",
+            "path":"/metadata",
+            "appDataType":"温度"
+          },
+          {
+            "name":"batteryPower",
+            "displayName":"电池电量",
+            "description":"电池电量",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"状态信息",
+            "path":"/metadata",
+            "appDataType":"电量"
+          },
+          {
+            "name":"timeUTCSec",
+            "displayName":"数据采集时间",
+            "description":"数据采集时间",
+            "fieldType":"3",
+            "dataType":"3",
+            "metric":"秒",
+            "displayGroup":"状态信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"alarmCode",
+            "displayName":"DTU告警代码",
+            "description":"DTU告警代码",
+            "fieldType":"3",
+            "importantType":"2",
+            "dataType":"1",
+            "displayGroup":"告警信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"alarmTimeUTCSec",
+            "displayName":"告警产生时间",
+            "description":"告警产生时间",
+            "fieldType":"3",
+            "importantType":"2",
+            "dataType":"1",
+            "displayGroup":"告警信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"cfg_DTUWorkMode",
+            "displayName":"DTU工作模式",
+            "description":"DTU工作模式",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"配置信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"cfg_DTUFunPos",
+            "displayName":"DTU功能位",
+            "description":"DTU功能位",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"配置信息",
+            "path":"/metadata"
+          },
+          {
+            "name":"cfg_rate",
+            "displayName":"射频波特率",
+            "description":"射频波特率",
+            "fieldType":"3",
+            "dataType":"1",
+            "displayGroup":"配置信息",
+    </pre>
+
+    <h3>thingdefid为ReBeng时的对应关系（rebeng_thingdef_1224.json）</h3>
+    <pre class="prettyprint">
+{
+	"thingDefID":"ReBeng",
+	"namespace":"mgd.gehua",
+	"name":"热泵",
+	"description":"空气源热泵",
+	"creator":"admin",
+	"metadata":{"m1":"v1","m2":"v2"},
+	"properties":[{
+			"name":"DTUID",
+			"displayName":"DTU编号",
+			"description":"DTU编号",
+			"fieldType":"1",
+			"importantType":"2",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata"
+		},{
+			"name":"region",
+			"displayName":"区域",
+			"description":"区域",
+			"fieldType":"1",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata",
+			"valuesEnumDefName":"enum_region"
+		},
+		{
+			"name":"address_coord",
+			"displayName":"百度摩卡托坐标",
+			"description":"百度摩卡托坐标",
+			"fieldType":"2",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata",
+			"appDataType":"coord_bd09mc"
+		},
+		{
+			"name":"devID",
+			"displayName":"设备编号",
+			"description":"设备编号",
+			"fieldType":"1",
+			"importantType":"2",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata"
+		},{
+			"name":"manufacture",
+			"displayName":"厂商编号",
+			"description":"厂商编号",
+			"fieldType":"1",
+			"importantType":"2",
+			"dataType":"5",
+			"displayGroup":"基本信息",
+			"path":"/metadata",
+			"valuesEnumDefName":"enum_manufacture",
+			"enumFilterFields":["/thingDefID"]
+		},{
+			"name":"model",
+			"displayName":"设备型号编号",
+			"description":"设备型号编号",
+			"fieldType":"1",
+			"importantType":"2",
+			"dataType":"5",
+			"displayGroup":"基本信息",
+			"path":"/metadata",
+			"valuesEnumDefName":"enum_model",
+			"enumFilterFields":["/thingDefID","/metadata/manufacture"]
+		},{
+			"name":"installDate",
+			"displayName":"安装日期",
+			"description":"安装日期",
+			"fieldType":"2",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata"
+		},
+		{
+			"name":"softwareVersion",
+			"displayName":"软件版本",
+			"description":"软件版本",
+			"fieldType":"2",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata"
+		},{
+			"name":"protocolVersion",
+			"displayName":"协议版本",
+			"description":"协议版本",
+			"fieldType":"2",
+			"dataType":"3",
+			"displayGroup":"基本信息",
+			"path":"/metadata"
+		},{
+			"name":"timeUTCSec",
+			"displayName":"数据采集时间",
+			"description":"数据采集时间",
+			"fieldType":"3",
+			"dataType":"3",
+			"metric":"秒",
+			"displayGroup":"状态信息",
+			"path":"/metadata"
+		},{
+			"name":"indoorTemp",
+			"displayName":"室内温度",
+			"description":"室内温度",
+			"fieldType":"3",
+			"dataType":"2",
+			"metric":"摄氏度",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"温度"
+		},{
+			"name":"outdoorTemp",
+			"displayName":"室外温度",
+			"description":"室外温度",
+			"fieldType":"3",
+			"dataType":"2",
+			"metric":"摄氏度",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"温度"
+		},{
+			"name":"setTemp",
+			"displayName":"设定温度",
+			"description":"设定温度",
+			"fieldType":"3",
+			"dataType":"2",
+			"metric":"摄氏度",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"温度"
+		},{
+			"name":"intoWaterTemp",
+			"displayName":"入水温度",
+			"description":"入水温度",
+			"fieldType":"3",
+			"dataType":"2",
+			"metric":"摄氏度",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"温度"
+		},{
+			"name":"outWaterTemp",
+			"displayName":"出水温度",
+			"description":"出水温度",
+			"fieldType":"3",
+			"dataType":"2",
+			"metric":"摄氏度",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"温度"
+		},{
+			"name":"switchState",
+			"displayName":"开关机状态",
+			"description":"开关机状态",
+			"fieldType":"3",
+			"dataType":"1",
+			"displayGroup":"状态信息",
+			"path":"/metadata"
+		},{
+			"name":"waterFlow",
+			"displayName":"水流量",
+			"description":"水流量",
+			"fieldType":"3",
+			"dataType":"1",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"水流量"
+		},{
+			"name":"usedPower",
+			"displayName":"已使用电量",
+			"description":"已使用电量",
+			"fieldType":"3",
+			"dataType":"1",
+			"displayGroup":"状态信息",
+			"path":"/metadata",
+			"appDataType":"电量"
+		},{
+			"name":"failureFlag",
+			"displayName":"故障标志",
+			"description":"故障标志",
+			"fieldType":"3",
+			"dataType":"1",
+			"displayGroup":"告警信息",
+			"path":"/metadata"
+		},{
+			"name":"fai
+    </pre>
+  </fieldset>
+  <div onclick='javascript:document.documentElement.scrollTop=0;' style='position: fixed; right: 5px;bottom: 10px;background-color: grey;color: #fff;cursor: pointer;padding: 5px;'>Top</div>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+{
+	"text": {
+		"normal": {
+			"type": "relative",
+			"width": -2,
+			"height": -1,
+			"top": 0,
+			"left": 0,
+			"elements": [
+				{
+					"type": "text",
+					"zIndex": 0,
+					"index": 0,
+					"text": "$normalText$",
+					"top": 0,
+					"left": 0,
+					"right": 0,
+					"bottom": 0,
+					"width": -2,
+					"height": -1,
+					"textColor": "$normalTextColor$",
+					"shapeBgColor": "$normalShapeBgColor$",
+					"shapeBorderColor": "$normalShapeBorderColor$",
+					"shapeBorderWidth": "0",
+					"padding": "13,10,13",
+					"textSize": 24
+				}
+			]
+		},
+		"focus": {
+			"type": "relative",
+			"width": -2,
+			"height": -1,
+			"top": 0,
+			"left": 0,
+			"elements": [
+				{
+					"type": "text",
+					"zIndex": 0,
+					"index": 0,
+					"text": "$focusText$",
+					"top": 0,
+					"left": 0,
+					"right": 0,
+					"bottom": 0,
+					"width": -2,
+					"height": -1,
+					"textColor": "$focusTextColor$",
+					"shapeBgColor": "$focusShapeBgColor$",
+					"shapeBorderColor": "$focusShapeBorderColor$",
+					"shapeBorderWidth": "0",
+					"padding": "13,10,13",
+					"textSize": 24
+				}
+			]
+		},
+		"selected": {
+			"type": "relative",
+			"width": -2,
+			"height": -1,
+			"top": 0,
+			"left": 0,
+			"elements": [
+				{
+					"zIndex": 0,
+					"index": 0,
+					"top": 0,
+					"left": 0,
+					"right": 0,
+					"bottom": 0,
+					"width": -2,
+					"height": -1,
+					"textColor": "$selectTextColor$",
+					"shapeBgColor": "$selectShapeBgColor$",
+					"shapeBorderColor": "$selectShapeBorderColor$",
+					"shapeBorderWidth": "0",
+					"padding": "13,10,13",
+					"textSize": 24,
+					"type": "text",
+					"text": "$selectText$"
+				}
+			]
+		}
+	},
+	"image": {
+		"normal": {
+			"type": "relative",
+			"elements": [
+				{
+					"index": 0,
+					"type": "image",
+					"zIndex": 0,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$normalPoster$",
+					"isVisible": true
+				},
+				{
+					"index": 1,
+					"type": "image",
+					"zIndex": 1,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$focusPoster$",
+					"isVisible": false
+				},
+				{
+					"index": 2,
+					"type": "image",
+					"zIndex": 2,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$selectPoster$",
+					"isVisible": false
+				}
+			]
+		},
+		"focus": {
+			"type": "relative",
+			"elements": [
+				{
+					"index": 0,
+					"type": "image",
+					"zIndex": 0,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$normalPoster$",
+					"isVisible": false
+				},
+				{
+					"index": 1,
+					"type": "image",
+					"zIndex": 1,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$focusPoster$",
+					"isVisible": true
+				},
+				{
+					"index": 2,
+					"type": "image",
+					"zIndex": 2,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$selectPoster$",
+					"isVisible": false
+				}
+			]
+		},
+		"selected": {
+			"type": "relative",
+			"elements": [
+				{
+					"index": 0,
+					"type": "image",
+					"zIndex": 0,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$normalPoster$",
+					"isVisible": false
+				},
+				{
+					"index": 1,
+					"type": "image",
+					"zIndex": 1,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$focusPoster$",
+					"isVisible": false
+				},
+				{
+					"index": 2,
+					"type": "image",
+					"zIndex": 2,
+					"top": 0,
+					"left": 0,
+					"width": -1,
+					"height": -1,
+					"url": "$selectPoster$",
+					"isVisible": true
+				}
+			]
+		}
+	},
+	"emptyTitleItemContent": {
+		"actionIntent": {
+			"intentName": "ReqFocus",
+			"slots": {
+				"direction": "down"
+			}
+		},
+		"data": {
+			"title": "精彩推荐"
+		}
+	},
+	"titleItemActionIntent": {
+		"intentName": "OpenRecommand",
+		"slots": {
+			"type": "$type$",
+			"folderFullPath": "$folderFullPath$",
+			"templateId": "$templateId$",
+			"pid": "$pid$",
+			"paid": "$paid$"
+		}
+	}
+}

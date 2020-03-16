@@ -1,0 +1,12 @@
+.query_dialog._dialog {height: auto;}
+.combo {width: 190px;}
+.combo td{border: 1px solid #c6c6c6;background-color: #fff;}
+.date_picker {width: 190px;}
+._dialog_foot ._btn {margin-left: 25px;}
+#self_define {height: 26px;color: #2ea2d7;border-bottom: 1px solid #2ea2d7;border-top: 1px solid transparent;cursor: pointer;}
+._dialog_center {margin-top: 54px;}
+
+.detail_dialog label {line-height: 37px;font-size: 14px;color: #727272;}
+.detail_dialog ._dialog_body {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+.detail_dialog ._dialog_row {padding: 0 8px; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;}
+.detail_dialog ._dialog_row > * {margin: 0 22px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;height: 30px;}

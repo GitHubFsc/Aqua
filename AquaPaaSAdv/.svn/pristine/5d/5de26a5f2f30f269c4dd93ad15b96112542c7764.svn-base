@@ -1,0 +1,246 @@
+<style>
+    .StatCountContent_Header{
+        height: 42px;
+        width: calc(100% - 12px);
+        background: rgb(94, 160, 192);
+        margin: 6px;
+        display: flex;
+    }
+    .StatCountContent_Header_Title{
+        flex:1;
+        font-weight: bold;
+        line-height: 42px;
+        color: rgb(254, 254, 252);
+        text-shadow: 0 0 0 1px rgb(68, 137, 168);
+        padding-left: 15px;
+    }
+    .StatCountContent_Header_ButtonGroup_Container{
+        width:108px;
+    }
+    .StatCountContent_Header_ButtonGroup{
+        width: 88px;
+        margin: 7px;
+        height: 25px;
+        border: 0px;
+        box-shadow: 0 0 0 1px rgb(68, 137, 168);
+        border-radius: 5px;
+        display: flex;
+    }
+    .StatCountContent_Header_Button{
+        border-left:1px solid rgb(68, 137, 168);
+        background: linear-gradient(rgb(165, 214, 231), rgb(73, 156, 198));
+        background: -ms-linear-gradient(rgb(165, 214, 231), rgb(73, 156, 198));
+        flex:1;
+        height: 25px;
+        cursor: pointer;
+    }
+    .StatCountContent_Header_Button img{
+        width: 20px;
+        height: 20px;
+        margin-top:3px;
+        margin-left:3px;
+    }
+    .StatCountContent_Header_Button:first-child{
+        border-left:0px solid rgb(68, 137, 168);
+        border-top-left-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomleft: 4px;
+    }
+    .StatCountContent_Header_Button:last-child{
+        border-top-right-radius: 4px;
+        -moz-border-radius-topright: 4px;
+        border-bottom-right-radius: 4px;
+        -moz-border-radius-bottomright: 4px;
+    }
+    .StatCountContent_Header_Button.focus{
+        background: rgb(92,161,195);
+    }
+
+    .StatCountContent_Content {
+        position: relative;
+    }
+
+    .StatCountContent_Content > canvas {
+        position: absolute;
+        left: 0;
+        top: 0;
+        pointer-events:none;
+    }
+    .StatCountContent_Content .stats-fig-dati-block {
+        vertical-align: top;
+    }
+
+    .StatCountContent_Content .stats-fig-dati-block .stats-fig-block-name{
+        white-space: normal;
+        word-break: break-all;
+    }
+
+
+    .chartAreaWrapper {
+        overflow-x: auto;
+        position: relative;
+        width: 100%;
+    }
+
+    .chartAreaWrapper2 {
+
+        position: relative;
+        height: 450px;
+    }
+
+    .chart_head{
+        width:100%;
+        display:flex;
+        height:26px;
+        line-height: 26px;
+        margin-top : 5px;
+        margin-bottom : 5px;
+        position: absolute;
+    }
+    .chart_head_left{
+        flex:1;
+        height:26px;
+        line-height: 26px;
+        color:rgb(46, 192, 263);
+        font-size: 16px;
+        padding-left: 15px;
+    }
+    .chart_head_right{
+        width:70px;
+        height:26px;
+        line-height: 26px;
+        display: flex;
+    }
+    .chart_head_right .chart_head_right_icon{
+        width:20px;
+        height:20px;
+        background:rgb(94, 160, 192);
+        border-radius: 4px;
+        margin-top:3px;
+        margin-right:3px;
+    }
+    .chart_head_right .chart_head_right_text{
+        flex:1;
+        height:26px;
+        line-height: 26px;
+        font-size: 14px;
+    }
+    .StatCountContent_Content .mCSB_inside > .mCSB_container {
+        margin-right: 1px;
+    }
+
+    .chart_foot{
+        width: 50px;
+        position: absolute;
+        top: 400px;
+        height: 26px;
+        line-height: 26px;
+        color: rgb(46, 192, 263);
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .pieChartContainer{
+        width: 100%;
+        display: flex;
+        height: 500px;
+        background: #FAFAFA;
+        background-size: cover;
+    }
+
+    .pieChartContainer_Left{
+        flex: 1;
+    }
+
+    .pieChartContainer_Right{
+        flex: 2;
+        padding:10px;
+    }
+
+    #stateCount_container #statCountSite{
+        display: none;
+    }
+    #stateCount_container #adv_toufang_time_tabswitch{
+        right: 592px;
+        position:absolute;
+        height:37px;
+        width:auto;
+        top:14px;
+    }
+
+    #stateCount_container.showSite #statCountSite{
+        left:276px;
+        position:absolute;
+        height:37px;
+        width:110px;
+        top:14px;
+        z-index: 800;
+        display: block;
+    }
+    #stateCount_container.showSite #adv_toufang_time_tabswitch{
+        right: 592px;
+        position:absolute;
+        height:37px;
+        width:auto;
+        top:14px;
+    }
+
+    #StatCountContent_Content table td span.spanInTd{
+        width: 100%;
+        display: block;
+        color: inherit;
+        text-align: center;
+        word-break: keep-all;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        position: relative;
+        background-color: inherit;
+        overflow: hidden;
+        padding-left: 8px;
+        box-sizing: border-box;
+    }
+
+</style>
+<div id="stateCount_container" class="panel_container adv_page_main_style">
+    <div id="toufang_baogao_topContainer_tabSwitch" class="panel_page_options" style="width:264px"></div>
+    <div id="adv_toufang_addPosition" class="adv_gradient_blue_button"
+         style="    border: 1px #4488a7 solid;height: 32px;line-height: 32px;width: 90px;top: 14px;right: 5px;">
+        {{STATCOUNT_DAOCHUBAOBIAO}}
+    </div>
+    <div id="adv_toufang_baogao_top_end_time" style="z-index:5000;width:128px;height:34px;position:absolute;top:14px;right:107px"></div>
+    <div style="width:15px;text-align:center;height:34px;line-height:34px;top:14px;right:236px;position:absolute">-</div>
+    <div id="adv_toufang_baogao_top_start_time" style="z-index:5000;width:128px;height:34px;position:absolute;top:14px;right:251px"></div>
+    <div id="adv_toufang_nextDay" class="adv_gradient_blue_button"
+         style="text-align:left;padding-left:14px;background-image:url('image/gradient_color_button_innerRightArrow.png');border:1px #4488a7 solid;height:32px;line-height:32px;width:76px;top:14px;right:385px">
+        {{TOUFANGBAOGAO_HOUYITIAN}}
+    </div>
+    <div id="adv_toufang_preDay" class="adv_gradient_blue_button"
+         style="text-align:left;padding-left:10px;background-image:url('image/gradient_color_button_innerLeftArrow.png');border:1px #4488a7 solid;height:32px;padding-left:27px;line-height:32px;width:63px;top:14px;right:485px">
+        {{TOUFANGBAOGAO_QIANYITIAN}}
+    </div>
+    <div id="adv_toufang_time_tabswitch" style=""></div>
+    <div id="statCountSite" style=""></div>
+
+    <div id = "StatCountContent" class = "panel_page_list_container" style="background:white">
+        <div class = "StatCountContent_Header">
+            <div class = "StatCountContent_Header_Title">{{STATCOUNT_GUANGGAOWEI}}{{STATCOUNT_BAOGUANGCISHUHUIZONG}}</div>
+            <div class = "StatCountContent_Header_ButtonGroup_Container">
+                <div class = "StatCountContent_Header_ButtonGroup">
+                    <div class = "StatCountContent_Header_Button focus" name="Table">
+                        <img src="./image/StatCount_Table_Icon.png" alt=""/>
+                    </div>
+                    <div class = "StatCountContent_Header_Button" name="PieChart">
+                        <img src="./image/StatCount_PieChart_Icon.png" alt=""/>
+                    </div>
+                    <div class = "StatCountContent_Header_Button" name="Bar">
+                        <img src="./image/StatCount_Bar_Icon.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="StatCountContent_Content" class = "StatCountContent_Content" style="width:calc(100% - 12px);margin-left:6px;height:calc(100% - 70px);background:white">
+
+        </div>
+    </div>
+</div>

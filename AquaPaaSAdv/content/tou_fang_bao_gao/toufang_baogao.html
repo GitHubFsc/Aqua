@@ -1,0 +1,65 @@
+<head>
+  <style type="text/css">
+    @IMPORT url("content/tou_fang_bao_gao/tou_fang_bao_gao.css");
+  </style>
+</head>
+<div id="adv_toufang_report_container" class="panel_container adv_page_main_style" style="display:none">
+    <div style="height:60px;width:100%;position:absolute:top:0">
+			<div style="display:block;float:left;margin-top:12px;margin-left:9px;width:281px;box-sizing:border-box" class="input_search_container_">
+				<div class="filterSelect" id="toufangbaogao_select"></div>
+				<input type="text" class="panel_top_search_box_input" id="toufang_top_search_input" style="width:128px">
+				<div class="panel_top_search_box_handle" id="toufang_top_search_button"></div>
+			</div>
+			<div style="float: left;margin-top:12px;margin-left:15px;" id="adv_toufang_time_tabswitch"><div class="toufang_tab_toggle_unit toufang_tab_focus_style" style="width:38px;border-bottom-left-radius:17px;border-top-left-radius:17px;">{{TOUFANGBAOGAO_JINTIAN}}</div><div class="toufang_tab_toggle_unit toufang_tab_unfocus_style">{{TOUFANGBAOGAO_ZUOTIAN}}</div><div class="toufang_tab_toggle_unit toufang_tab_unfocus_style">{{TOUFANGBAOGAO_BENZHOU}}</div><div class="toufang_tab_toggle_unit toufang_tab_unfocus_style">{{TOUFANGBAOGAO_BENYUE}}</div><div class="toufang_tab_toggle_unit toufang_tab_unfocus_style" style="width:52px;border-bottom-right-radius:17px;border-top-right-radius:17px;">{{TOUFANGBAOGAO_ZUIJINSANSHITIAN}}</div></div>
+			<div style="background-image:url('content/tou_fang_bao_gao/images/gradient_color_button_left_arrow.png');float:left;margin-top:12px;margin-left:11px;" class="toufang_next_pre_button" id="toufang_pre_day">
+        {{TOUFANGBAOGAO_QIANYITIAN}}
+			</div>
+			<div style="background-image:url('content/tou_fang_bao_gao/images/gradient_color_button_right_arrow.png');float:left;margin-top:12px;margin-left:10px;padding-left:8px;width:42px;background-position:-2px 0px" class="toufang_next_pre_button" id="toufang_next_day">
+        {{TOUFANGBAOGAO_HOUYITIAN}}
+			</div>
+			<div id="toufang_panel_calendar_selectors" class="toufang_panel_calendar_selectors" style="margin-top:12px;">
+				<div class="panel_calendar_selitem">
+				<div class="panel_calendar_container">
+					<input type="text" class="panel_calendar_input" readonly="readonly" name="date-from"/>
+					<div class="panel_calendar_icon"></div>
+				</div>
+				<div class="panel_timesel_container">
+					<input type="text" class="panel_timesel_input" readonly="readonly" name="time-from"/>
+					<div class="panel_timesel_icon"></div>
+				</div>
+				</div>
+				<div class="panel_calendar_dash">
+					-
+				</div>
+				<div class="panel_calendar_selitem">
+				<div class="panel_calendar_container">
+					<input type="text" class="panel_calendar_input" readonly="readonly" name="date-to"/>
+					<div class="panel_calendar_icon"></div>
+				</div>
+				<div class="panel_timesel_container">
+					<input type="text" class="panel_timesel_input" readonly="readonly" name="time-to"/>
+					<div class="panel_timesel_icon"></div>
+				</div>
+				</div>
+				<div class="panel_calendar_time_container">
+					<div id="panel_time_picker_calendar"></div>
+					<div class="panel_time_picker_times">
+						<div class="panel_time_picker_selector" id="stat_timesel_hour"></div>
+						<div class="panel_time_picker_tlabel">{{STATS_TMLABEL_HOUR}}</div>
+						<div class="panel_time_picker_selector" id="stat_timesel_mins"></div>
+						<div class="panel_time_picker_tlabel">{{STATS_TMLABEL_MINS}}</div>
+						<div class="panel_time_picker_selector" id="stat_timesel_sec"></div>
+						<div class="panel_time_picker_tlabel">{{STATS_TMLABEL_SECS}}</div>
+					</div>
+					<div class="panel_content_line_split"></div>
+					<div class="panel_normal_btn" id="stattrend_timepicker_confirm">{{STATS_BTN_OK}}</div>
+				</div>
+			</div>
+			<!--div id="adv_toufang_baogao_top_start_time" style="float:left;z-index:5000;width:146px;height:34px;margin-top:12px;margin-left:10px"></div>
+			<div id="toufang_validtime_hour_begin" class="toufang_dropdown" style="float:left;margin-top:12px;margin-left:6px"></div-->
+		</div>
+</div>
+<!--div>
+    Developing...
+</div-->
+

@@ -1,0 +1,22 @@
+<link href="content/CMS/dialog.css" rel="stylesheet">
+<div style="height:258px" class="_dialog">
+        <style>
+          label {margin-left: 0;}
+          textarea, input {outline: none}
+        </style>
+        <div class="_dialog_title">
+          <div class="_dialog_title_label">{{CMS_SUBMIT_AUDIT}}</div>
+          <div class="_dialog_span"></div>
+          <div id="cms_asset_admin_audit_dialog_close"class="wp_panel_dialog_close_cms"></div>
+        </div>
+        <div style="margin: 19px 34px;flex-flow: column;display: flex;justify-content: space-evenly;" class="_dialog_body _dialog_span">
+          <div class="_dialog_col">
+          <label>{{CMS_ASSET_VERSION_DESC}}</label>
+          <textarea style="width: 410px;height: 60px;border: 1px solid #e2e2e2;color: #797979;resize: none;" id="cms_version_desc"></textarea>
+          </div>
+        </div>
+        <div class="_dialog_foot">
+          <div class="btn cancel">{{CMS_CANCEL_BUTTON}}</div>
+          <div id="cms_audit_submit" class="btn confirm">{{CMS_CREATE_BUTTON}}</div>
+        </div>
+      </div>

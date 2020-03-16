@@ -1,0 +1,1052 @@
+check start
+command line is:
+link.sh advanced_develop BCM7019 CONFIG_ADVANCED_BCM7019_HFYX_90242 win32embedded /cygdrive/e/ipanel_rcc2/build_www/download/90242-v10008-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-2013_06_09_14_55_43 224
+current dir is:
+/cygdrive/e/ipanel_rcc2/shell
+current time is:
+Sun Jun  9 14:55:54     2013
+host ip is:
+192.168.118.1
+192.168.6.1
+192.168.18.127
+host name is:
+compiler-18-48
+branch: advanced_develop 
+platform: BCM7019 
+config: CONFIG_ADVANCED_BCM7019_HFYX_90242 
+mode: win32embedded 
+build module: project 
+output: /cygdrive/e/ipanel_rcc2/build_www/download/90242-v10008-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-2013_06_09_14_55_43.zip 
+checking branch: advanced_develop ...
+ok
+update build dir first
+CHECKING MODULE: project ...
+project ok
+CHECKING BRANCH: advanced_develop ...
+advanced_develop ok
+checking time mark: 2013_06_09_14_55_56 ...
+ok
+          UPDATE START
+=======================================
+SRC DIR IS :
+     src/project/advanced_develop
+HOST IP IS :
+     192.168.118.1 192.168.6.1 192.168.18.127
+HOST NAME IS :
+     compiler-18-48
+=======================================
+---------------------------------------
+[[project]]
+/cygdrive/e/ipanel_rcc2/src/project/advanced_develop/project
+---------------------------------------
+BCM7019  CONFIG_ADVANCED_BCM7019_HFYX_90242  exited
+cvs up -l -r advanced_develop -D 2013-06-09 14:45:38
+? project_info.h
+cd BCM7019
+cvs up -r advanced_develop select_config.h
+cvs up -r advanced_develop select_platform.h
+cvs up -r advanced_develop platform_specific.h
+cd CONFIG_ADVANCED_BCM7019_HFYX_90242
+cvs up -l -r advanced_develop -D 2013-06-09 14:45:38
+---------------------------------------
+[[includeExport]]
+/cygdrive/e/ipanel_rcc2/src/project/advanced_develop/includeExport/porting
+---------------------------------------
+includeExport/porting existed
+cvs up -d -P -r advanced_develop -D 2013-06-09 14:45:38
+=======================================
+=======================================
+          UPDATE END
+checking platform: BCM7019 ...
+ok
+checking config: CONFIG_ADVANCED_BCM7019_HFYX_90242 ...
+ok
+checking mode: win32embedded ...
+ok
+mode change to win32embedded
+checking output: /cygdrive/e/ipanel_rcc2/build_www/download/90242-v10008-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-2013_06_09_14_55_43.zip ...
+full path is: /cygdrive/e/ipanel_rcc2/build_www/download/90242-v10008-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-2013_06_09_14_55_43.zip
+ok
+check end
+============================================================
+unzip the lib file
+module list:
+advanced_JavaEngine
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_44.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine/lib_advanced_JavaEngine_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine/lib_advanced_JavaEngine_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine/lib_advanced_JavaEngine_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine/flag.txt  
+advanced_ThirdParty
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_53_01.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty/lib_advanced_ThirdParty_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty/lib_advanced_ThirdParty_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty/lib_advanced_ThirdParty_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty/flag.txt  
+advanced_VideoAudio
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_17.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio/lib_advanced_VideoAudio_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio/lib_advanced_VideoAudio_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio/lib_advanced_VideoAudio_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio/flag.txt  
+advanced_application
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_27.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application/lib_advanced_application_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application/lib_advanced_application_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application/lib_advanced_application_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application/flag.txt  
+advanced_ca
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_37.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca/lib_advanced_ca_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca/lib_advanced_ca_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca/lib_advanced_ca_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca/flag.txt  
+advanced_dvb
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_48.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb/lib_advanced_dvb_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb/lib_advanced_dvb_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb/lib_advanced_dvb_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb/flag.txt  
+advanced_graphics
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_33.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics/lib_advanced_graphics_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics/lib_advanced_graphics_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics/lib_advanced_graphics_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics/flag.txt  
+advanced_image
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_00.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image/lib_advanced_image_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image/lib_advanced_image_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image/lib_advanced_image_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image/flag.txt  
+advanced_jsplugin
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_12.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin/lib_advanced_jsplugin_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin/lib_advanced_jsplugin_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin/lib_advanced_jsplugin_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin/flag.txt  
+advanced_network
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_54_19.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network/lib_advanced_network_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network/lib_advanced_network_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network/lib_advanced_network_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network/flag.txt  
+advanced_sdk
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_55.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/lib_advanced_sdk_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/lib_advanced_sdk_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/lib_advanced_sdk_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/project_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/project_info.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/flag.txt  
+advanced_stock
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_53_39.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock/lib_advanced_stock_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock/lib_advanced_stock_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock/lib_advanced_stock_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock/flag.txt  
+advanced_ui
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ui-advanced_develop-BCM7019-advanced_ui-win32embedded-2013_06_09_14_52_13.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ui/xbrowser.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ui/xbrowser.dat  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ui/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ui/flag.txt  
+advanced_vod
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_52_32.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod/lib_advanced_vod_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod/lib_advanced_vod_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod/lib_advanced_vod_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod/flag.txt  
+advanced_window
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_04.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window/lib_advanced_window_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window/lib_advanced_window_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window/lib_advanced_window_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window/flag.txt  
+advanced_wrapperOS
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_05.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS/lib_advanced_wrapperOS_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS/lib_advanced_wrapperOS_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS/lib_advanced_wrapperOS_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS/flag.txt  
+webengine_bindings
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_29.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/lib_bindings_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/lib_bindings_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/lib_bindings_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/flag.txt  
+webengine_bytecode
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_43.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/lib_bytecode_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/lib_bytecode_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/lib_bytecode_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/flag.txt  
+webengine_css1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_02.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/lib_css1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/lib_css1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/lib_css1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/flag.txt  
+webengine_css2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_18.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/lib_css2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/lib_css2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/lib_css2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/flag.txt  
+webengine_dom1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_44.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/lib_dom1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/lib_dom1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/lib_dom1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/flag.txt  
+webengine_dom2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_43.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/lib_dom2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/lib_dom2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/lib_dom2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/flag.txt  
+webengine_editing
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_48.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/lib_editing_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/lib_editing_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/lib_editing_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/flag.txt  
+webengine_generated1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_38.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/lib_generated1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/lib_generated1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/lib_generated1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/flag.txt  
+webengine_generated2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_51_56.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/lib_generated2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/lib_generated2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/lib_generated2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/flag.txt  
+webengine_generated3
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_17.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/lib_generated3_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/lib_generated3_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/lib_generated3_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/flag.txt  
+webengine_generated4
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_30.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/lib_generated4_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/lib_generated4_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/lib_generated4_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/flag.txt  
+webengine_generated5
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_05.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/lib_generated5_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/lib_generated5_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/lib_generated5_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/flag.txt  
+webengine_generated6
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_59.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/lib_generated6_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/lib_generated6_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/lib_generated6_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/flag.txt  
+webengine_html1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_54.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/lib_html1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/lib_html1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/lib_html1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/flag.txt  
+webengine_html2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_23.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/lib_html2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/lib_html2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/lib_html2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/flag.txt  
+webengine_loader
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_22.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/lib_loader_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/lib_loader_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/lib_loader_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/flag.txt  
+webengine_misc1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_03.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/lib_misc1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/lib_misc1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/lib_misc1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/flag.txt  
+webengine_misc2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_42.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/lib_misc2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/lib_misc2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/lib_misc2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/flag.txt  
+webengine_misc3
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_29.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/lib_misc3_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/lib_misc3_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/lib_misc3_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/flag.txt  
+webengine_other1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_04.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/lib_other1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/lib_other1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/lib_other1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/flag.txt  
+webengine_other2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_50_25.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/lib_other2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/lib_other2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/lib_other2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/flag.txt  
+webengine_page
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_35.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/lib_page_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/lib_page_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/lib_page_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/flag.txt  
+webengine_parser
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_48_41.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/lib_parser_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/lib_parser_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/lib_parser_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/flag.txt  
+webengine_platform
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_35.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/lib_platform_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/lib_platform_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/lib_platform_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/flag.txt  
+webengine_rendering1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_48_55.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/lib_rendering1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/lib_rendering1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/lib_rendering1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/flag.txt  
+webengine_rendering2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_49_49.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/lib_rendering2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/lib_rendering2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/lib_rendering2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/flag.txt  
+webengine_rendering3
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_48_46.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/lib_rendering3_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/lib_rendering3_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/lib_rendering3_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/flag.txt  
+webengine_runtime
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_48_32.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/lib_runtime_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/lib_runtime_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/lib_runtime_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/flag.txt  
+webengine_svg1
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_48_10.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/lib_svg1_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/lib_svg1_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/lib_svg1_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/flag.txt  
+webengine_svg2
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_47_44.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/lib_svg2_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/lib_svg2_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/lib_svg2_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/flag.txt  
+webengine_webkit
+Archive:  /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit-advanced_develop-BCM7019-CONFIG_ADVANCED_BCM7019_HFYX_90242-win32embedded-2013_06_09_14_47_47.zip
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/lib_webkit_embedded.lib  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/lib_webkit_embedded.lib.sym  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/ipanel_vane_config.h  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/lib_webkit_info.txt  
+  inflating: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/logfile.log  
+ extracting: /cygdrive/e/ipanel_rcc2/linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/flag.txt  
+unzip the ipaneltv zip file
+unzip the applications zip file, just for embedded
+unzip the platforms zip file, just for win32
+unzip the ipanel zip file, just for embedded
+/cygdrive/e/ipanel_rcc2/build/link
+==================  >+++(> ======================
+synchronize time with cvs server first
+Sun Jun  9 14:56:50     2013
+make start
+chmod 777 ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/../../../../shell/createKeyLib.sh
+../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/../../../../shell/createKeyLib.sh ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded
+[Star ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/../../../../shell/createKeyLib.sh]
+cd ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/../../../../../shell/license/file/../
+cvs up license.exe
+cvs update: warning: license.exe was lost
+U license.exe
+
+======================================
+[eis-cvs] current server time mark is:
+		2013_06_09_14_56_55
+======================================
+../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/../../../../../shell/license/file/ipanel_get_license.c was created.
+[End ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/../../../../shell/createKeyLib.sh]
+make win32embedded
+make[1]: Entering directory `/cygdrive/e/ipanel_rcc2/build/link'
+chmod 777 ../../src/project/advanced_develop/project/win32/make.sh
+#../../src/project/advanced_develop/project/win32/make.sh -f vane_muppetlauncher.mak deps MODULE=muppetlauncher DST_ROOT=../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded WIN32CONFIG=embedded
+no src=IpanelAdvanced
+succ=SUCC
+no src=IpanelVane
+succ=SUCC
+no src=docs
+succ=SUCC
+no src=lib
+succ=SUCC
+hava src=muppetlauncher
+
+E:\ipanel_rcc2\build\link>"d:\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat"
+Setting environment for using Microsoft Visual Studio 2005 x86 tools.
++ pwd
+/cygdrive/e/ipanel_rcc2/build/link
++ make -f vane_muppetlauncher.mak deps MODULE=muppetlauncher DST_ROOT=../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded WIN32CONFIG=embedded
+make[2]: Entering directory `/cygdrive/e/ipanel_rcc2/build/link'
+echo cd ../../src/project/advanced_develop/project/../platform export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../platform export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../platform;export CVS_RSH=ssh;cvs up -d
+? docs/CodeStyleʹ÷.doc
+? docs/advanced 开发指南.ppt
+? docs/advanced ָ.ppt
+? docs/ģ鸺ˡģȨޡͼV3.pptx
+? docs/ģ鸺ˡģȨޡͼV4.pptx
+? docs/ģ˵--20120711.pptx
+? docs/ģֹ--20120711.xlsx
+? docs/ģֹ--20120910.xlsx
+? docs/ģϵ.xlsx
+? docs/模块依赖关系.xlsx
+? docs/模块负责人、模块权限、层次图V3.pptx
+? docs/模块负责人、模块权限、层次图V4.pptx
+? docs/项目配置事宜.pptx
+? docs/Ŀ.pptx
+cvs update: Updating .
+cvs update: Updating IpanelAdvanced
+cvs update: Updating IpanelVane
+cvs update: cannot open directory /cvs/platform/IpanelVane: No such file or directory
+cvs update: skipping directory IpanelVane
+cvs update: Updating docs
+cvs update: Updating lib
+cvs update: Updating muppetlauncher
+cvs update: Updating muppetlauncher/workspace
+cvs update: Updating muppetlauncher/workspace/inc
+cvs update: Updating muppetlauncher/workspace/src
+cvs update: Updating porting
+cvs update: Updating porting/client
+cvs update: Updating porting/device
+cvs update: Updating porting/device/dvb
+cvs update: Updating porting/device/dvb/client
+cvs update: Updating porting/device/graphics
+cvs update: Updating porting/device/graphics2
+cvs update: Updating porting/device/graphics3d
+cvs update: Updating porting/device/graphics3d/common
+cvs update: Updating porting/device/graphics3d/compiler
+cvs update: Updating porting/device/graphics3d/compiler/depgraph
+cvs update: Updating porting/device/graphics3d/compiler/preprocessor
+cvs update: Updating porting/device/graphics3d/compiler/preprocessor/new
+cvs update: Updating porting/device/graphics3d/compiler/timing
+cvs update: Updating porting/device/graphics3d/d3dinc
+cvs update: Updating porting/device/graphics3d/libEGL
+cvs update: Updating porting/device/graphics3d/libGLESv2
+cvs update: Updating porting/device/graphics3d/libGLESv2/shaders
+cvs update: Updating porting/device/graphics3d/project
+cvs update: Updating porting/device/graphics3d/vs2008proj
+cvs update: Updating porting/device/input
+cvs update: Updating porting/device/inputbox
+cvs update: Updating porting/device/media
+cvs update: Updating porting/device/media/player
+cvs update: Updating porting/device/media/player/ffmpeg
+cvs update: Updating porting/device/media/player/ffmpeg/bin
+cvs update: Updating porting/device/media/player/ffmpeg/include
+cvs update: Updating porting/device/media/player/ffmpeg/include/SDL
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavcodec
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavdevice
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavfilter
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavformat
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavutil
+cvs update: Updating porting/device/media/player/ffmpeg/include/libpostproc
+cvs update: Updating porting/device/media/player/ffmpeg/include/libswresample
+cvs update: Updating porting/device/media/player/ffmpeg/include/libswscale
+cvs update: Updating porting/device/media/player/ffmpeg/lib
+cvs update: Updating porting/device/media/player/ffmpeg/lib/pkgconfig
+cvs update: Updating porting/device/media/player/ffmpeg/share
+cvs update: Updating porting/device/media/player/include
+cvs update: Updating porting/device/media/player/src
+cvs update: Updating porting/device/sound
+cvs update: Updating porting/device/storage
+cvs update: Updating porting/include
+cvs update: Updating porting/lib
+cvs update: Updating porting/porting
+cvs update: Updating porting/src
+cvs update: Updating porting/support
+cvs update: Updating porting/support/CodeStyle
+cvs update: Updating porting/support/CodeStyle/src
+cvs update: Updating porting/support/CodeStyle/workspace
+cvs update: Updating porting/support/angleproject
+cvs update: Updating porting/support/angleproject/common
+cvs update: Updating porting/support/angleproject/compiler
+cvs update: Updating porting/support/angleproject/compiler/depgraph
+cvs update: Updating porting/support/angleproject/compiler/preprocessor
+cvs update: Updating porting/support/angleproject/compiler/preprocessor/new
+cvs update: Updating porting/support/angleproject/compiler/timing
+cvs update: Updating porting/support/angleproject/d3dinc
+cvs update: Updating porting/support/angleproject/libEGL
+cvs update: Updating porting/support/angleproject/libGLESv2
+cvs update: Updating porting/support/angleproject/libGLESv2/shaders
+cvs update: Updating porting/support/angleproject/third_party
+cvs update: Updating porting/support/angleproject/third_party/compiler
+cvs update: Updating porting/support/angleproject/vs2005proj
+cvs update: Updating porting/support/angleproject/vs2008proj
+cvs update: Updating porting/support/angleproject/vs2010proj
+cvs update: Updating porting/workspace
+cvs update: Updating porting/workspace/inc
+cvs update: Updating porting/workspace/src
+cvs update: Updating script
+cvs update: Updating script/style
+cvs update: Updating script/style/webkitpy
+cvs update: Updating tools
+
+======================================
+[eis-cvs] current server time mark is:
+		2013_06_09_14_57_11
+======================================
+pwd
+/cygdrive/e/ipanel_rcc2/build/link
+echo cd ../../src/project/advanced_develop/project/../includeExport export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../includeExport export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../includeExport;export CVS_RSH=ssh;cvs up -d
+cvs update: Updating .
+cvs update: Updating UPnP
+cvs update: Updating adis
+cvs update: Updating appmgrx
+cvs update: Updating avmgr
+cvs update: Updating bootad
+cvs update: Updating browserapp
+cvs update: Updating ca
+cvs update: Updating cairo
+cvs update: Updating cares
+cvs update: Updating cfgmgr
+cvs update: Updating control
+cvs update: Updating curl
+cvs update: Updating cwmp
+cvs update: Updating cybercloud
+cvs update: Updating download
+cvs update: Updating dvbcore
+cvs update: Updating dvbcore/MIS
+cvs update: Updating dvbpts
+cvs update: Updating font
+cvs update: Updating freetype
+cvs update: Updating freetype/config
+cvs update: Updating freetype/internal
+cvs update: Updating freetype/internal/services
+cvs update: Updating game
+cvs update: Updating httpdownload
+cvs update: Updating httpupgrade
+cvs update: Updating image
+cvs update: Updating ime
+cvs update: Updating ipsp
+cvs update: Updating java
+cvs update: Updating json
+cvs update: Updating jsplugin
+cvs update: Updating leveldb
+cvs update: Updating libgif
+cvs update: Updating libjpeg
+cvs update: Updating libmpeg2
+cvs update: Updating libpng
+cvs update: Updating libxml
+cvs update: Updating libxslt
+cvs update: Updating loader
+cvs update: Updating mc
+cvs update: Updating misc
+cvs update: Updating mp3
+cvs update: Updating multimscreen
+cvs update: Updating neighbor
+cvs update: Updating netdevice
+cvs update: Updating npplugin
+cvs update: Updating opengl
+cvs update: Updating opengl/EGL
+cvs update: Updating opengl/GLES
+cvs update: Updating opengl/GLES2
+cvs update: Updating opengl/GLSLANG
+cvs update: Updating opengl/KHR
+cvs update: Updating plugins
+cvs update: Updating porting
+cvs update: Updating pthread
+cvs update: Updating qos
+cvs update: Updating remotectl
+cvs update: Updating sdk
+cvs update: Updating socket
+cvs update: Updating softkeyboard
+cvs update: Updating soundeffect
+cvs update: Updating sqlite
+cvs update: Updating standby
+cvs update: Updating stock
+cvs update: Updating stock/client
+cvs update: Updating storage
+cvs update: Updating subtitle
+cvs update: Updating transport
+cvs update: Updating tts
+cvs update: Updating tvstick
+cvs update: Updating udc
+cvs update: Updating unicode
+cvs update: Updating unitetime
+cvs update: Updating vod
+cvs update: Updating voip
+cvs update: Updating volume
+cvs update: Updating wartermark
+cvs update: Updating watermark
+cvs update: Updating webkit
+cvs update: Updating window
+cvs update: Updating zlib
+
+======================================
+[eis-cvs] current server time mark is:
+		2013_06_09_14_57_22
+======================================
+pwd
+/cygdrive/e/ipanel_rcc2/build/link
+echo mkdir -p ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher
+mkdir -p ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher
+mkdir -p ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher
+CL /nologo /MTd /W3 /FD /EHsc /GS- /Zc:wchar_t- /c /Zi /errorReport:prompt /nologo -DWIN32 -DNDEBUG -DUSE_VANE_STATICLIB /D "_UNICODE" /D "UNICODE" -DPORT_BCM7019 -DCONFIG_ADVANCED_BCM7019_HFYX_90242 -DIPANEL_RCC2  -I../../src/project/advanced_develop/project -I../../src/project/advanced_develop/project/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242 -I../../src/project/advanced_develop/includeExport -DNO_EIS_DEF -DEMBEDDED -c ../../src/project/advanced_develop/project/../platform/muppetlauncher/workspace/src/win32_launcher1.cpp -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/win32_launcher1.obj
+win32_launcher1.cpp
+rc -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/MuppetLauncher.res -I "../../src/project/advanced_develop/project/../platform/muppetlauncher/workspace/src" ../../src/project/advanced_develop/project/../platform/muppetlauncher/workspace/src/../MuppetLauncher.rc
+echo SUCC > ./flag.txt
+make[2]: Leaving directory `/cygdrive/e/ipanel_rcc2/build/link'
+succ=SUCC
+hava src=porting
+
+E:\ipanel_rcc2\build\link>"d:\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat"
+Setting environment for using Microsoft Visual Studio 2005 x86 tools.
++ pwd
+/cygdrive/e/ipanel_rcc2/build/link
++ make -f vane_muppetlauncher.mak deps MODULE=porting DST_ROOT=../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded WIN32CONFIG=embedded
+make[2]: Entering directory `/cygdrive/e/ipanel_rcc2/build/link'
+echo cd ../../src/project/advanced_develop/project/../platform export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../platform export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../platform;export CVS_RSH=ssh;cvs up -d
+? docs/CodeStyleʹ÷.doc
+? docs/advanced 开发指南.ppt
+? docs/advanced ָ.ppt
+? docs/ģ鸺ˡģȨޡͼV3.pptx
+? docs/ģ鸺ˡģȨޡͼV4.pptx
+? docs/ģ˵--20120711.pptx
+? docs/ģֹ--20120711.xlsx
+? docs/ģֹ--20120910.xlsx
+? docs/ģϵ.xlsx
+? docs/模块依赖关系.xlsx
+? docs/模块负责人、模块权限、层次图V3.pptx
+? docs/模块负责人、模块权限、层次图V4.pptx
+? docs/项目配置事宜.pptx
+? docs/Ŀ.pptx
+cvs update: Updating .
+cvs update: Updating IpanelAdvanced
+cvs update: Updating IpanelVane
+cvs update: cannot open directory /cvs/platform/IpanelVane: No such file or directory
+cvs update: skipping directory IpanelVane
+cvs update: Updating docs
+cvs update: Updating lib
+cvs update: Updating muppetlauncher
+cvs update: Updating muppetlauncher/workspace
+cvs update: Updating muppetlauncher/workspace/inc
+cvs update: Updating muppetlauncher/workspace/src
+cvs update: Updating porting
+cvs update: Updating porting/client
+cvs update: Updating porting/device
+cvs update: Updating porting/device/dvb
+cvs update: Updating porting/device/dvb/client
+cvs update: Updating porting/device/graphics
+cvs update: Updating porting/device/graphics2
+cvs update: Updating porting/device/graphics3d
+cvs update: Updating porting/device/graphics3d/common
+cvs update: Updating porting/device/graphics3d/compiler
+cvs update: Updating porting/device/graphics3d/compiler/depgraph
+cvs update: Updating porting/device/graphics3d/compiler/preprocessor
+cvs update: Updating porting/device/graphics3d/compiler/preprocessor/new
+cvs update: Updating porting/device/graphics3d/compiler/timing
+cvs update: Updating porting/device/graphics3d/d3dinc
+cvs update: Updating porting/device/graphics3d/libEGL
+cvs update: Updating porting/device/graphics3d/libGLESv2
+cvs update: Updating porting/device/graphics3d/libGLESv2/shaders
+cvs update: Updating porting/device/graphics3d/project
+cvs update: Updating porting/device/graphics3d/vs2008proj
+cvs update: Updating porting/device/input
+cvs update: Updating porting/device/inputbox
+cvs update: Updating porting/device/media
+cvs update: Updating porting/device/media/player
+cvs update: Updating porting/device/media/player/ffmpeg
+cvs update: Updating porting/device/media/player/ffmpeg/bin
+cvs update: Updating porting/device/media/player/ffmpeg/include
+cvs update: Updating porting/device/media/player/ffmpeg/include/SDL
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavcodec
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavdevice
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavfilter
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavformat
+cvs update: Updating porting/device/media/player/ffmpeg/include/libavutil
+cvs update: Updating porting/device/media/player/ffmpeg/include/libpostproc
+cvs update: Updating porting/device/media/player/ffmpeg/include/libswresample
+cvs update: Updating porting/device/media/player/ffmpeg/include/libswscale
+cvs update: Updating porting/device/media/player/ffmpeg/lib
+cvs update: Updating porting/device/media/player/ffmpeg/lib/pkgconfig
+cvs update: Updating porting/device/media/player/ffmpeg/share
+cvs update: Updating porting/device/media/player/include
+cvs update: Updating porting/device/media/player/src
+cvs update: Updating porting/device/sound
+cvs update: Updating porting/device/storage
+cvs update: Updating porting/include
+cvs update: Updating porting/lib
+cvs update: Updating porting/porting
+cvs update: Updating porting/src
+cvs update: Updating porting/support
+cvs update: Updating porting/support/CodeStyle
+cvs update: Updating porting/support/CodeStyle/src
+cvs update: Updating porting/support/CodeStyle/workspace
+cvs update: Updating porting/support/angleproject
+cvs update: Updating porting/support/angleproject/common
+cvs update: Updating porting/support/angleproject/compiler
+cvs update: Updating porting/support/angleproject/compiler/depgraph
+cvs update: Updating porting/support/angleproject/compiler/preprocessor
+cvs update: Updating porting/support/angleproject/compiler/preprocessor/new
+cvs update: Updating porting/support/angleproject/compiler/timing
+cvs update: Updating porting/support/angleproject/d3dinc
+cvs update: Updating porting/support/angleproject/libEGL
+cvs update: Updating porting/support/angleproject/libGLESv2
+cvs update: Updating porting/support/angleproject/libGLESv2/shaders
+cvs update: Updating porting/support/angleproject/third_party
+cvs update: Updating porting/support/angleproject/third_party/compiler
+cvs update: Updating porting/support/angleproject/vs2005proj
+cvs update: Updating porting/support/angleproject/vs2008proj
+cvs update: Updating porting/support/angleproject/vs2010proj
+cvs update: Updating porting/workspace
+cvs update: Updating porting/workspace/inc
+cvs update: Updating porting/workspace/src
+cvs update: Updating script
+cvs update: Updating script/style
+cvs update: Updating script/style/webkitpy
+cvs update: Updating tools
+
+======================================
+[eis-cvs] current server time mark is:
+		2013_06_09_14_57_36
+======================================
+pwd
+/cygdrive/e/ipanel_rcc2/build/link
+echo cd ../../src/project/advanced_develop/project/../includeExport export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../includeExport export CVS_RSH=ssh cvs up -d
+cd ../../src/project/advanced_develop/project/../includeExport;export CVS_RSH=ssh;cvs up -d
+cvs update: Updating .
+cvs update: Updating UPnP
+cvs update: Updating adis
+cvs update: Updating appmgrx
+cvs update: Updating avmgr
+cvs update: Updating bootad
+cvs update: Updating browserapp
+cvs update: Updating ca
+cvs update: Updating cairo
+cvs update: Updating cares
+cvs update: Updating cfgmgr
+cvs update: Updating control
+cvs update: Updating curl
+cvs update: Updating cwmp
+cvs update: Updating cybercloud
+cvs update: Updating download
+cvs update: Updating dvbcore
+cvs update: Updating dvbcore/MIS
+cvs update: Updating dvbpts
+cvs update: Updating font
+cvs update: Updating freetype
+cvs update: Updating freetype/config
+cvs update: Updating freetype/internal
+cvs update: Updating freetype/internal/services
+cvs update: Updating game
+cvs update: Updating httpdownload
+cvs update: Updating httpupgrade
+cvs update: Updating image
+cvs update: Updating ime
+cvs update: Updating ipsp
+cvs update: Updating java
+cvs update: Updating json
+cvs update: Updating jsplugin
+cvs update: Updating leveldb
+cvs update: Updating libgif
+cvs update: Updating libjpeg
+cvs update: Updating libmpeg2
+cvs update: Updating libpng
+cvs update: Updating libxml
+cvs update: Updating libxslt
+cvs update: Updating loader
+cvs update: Updating mc
+cvs update: Updating misc
+cvs update: Updating mp3
+cvs update: Updating multimscreen
+cvs update: Updating neighbor
+cvs update: Updating netdevice
+cvs update: Updating npplugin
+cvs update: Updating opengl
+cvs update: Updating opengl/EGL
+cvs update: Updating opengl/GLES
+cvs update: Updating opengl/GLES2
+cvs update: Updating opengl/GLSLANG
+cvs update: Updating opengl/KHR
+cvs update: Updating plugins
+cvs update: Updating porting
+cvs update: Updating pthread
+cvs update: Updating qos
+cvs update: Updating remotectl
+cvs update: Updating sdk
+cvs update: Updating socket
+cvs update: Updating softkeyboard
+cvs update: Updating soundeffect
+cvs update: Updating sqlite
+cvs update: Updating standby
+cvs update: Updating stock
+cvs update: Updating stock/client
+cvs update: Updating storage
+cvs update: Updating subtitle
+cvs update: Updating transport
+cvs update: Updating tts
+cvs update: Updating tvstick
+cvs update: Updating udc
+cvs update: Updating unicode
+cvs update: Updating unitetime
+cvs update: Updating vod
+cvs update: Updating voip
+cvs update: Updating volume
+cvs update: Updating wartermark
+cvs update: Updating watermark
+cvs update: Updating webkit
+cvs update: Updating window
+cvs update: Updating zlib
+
+======================================
+[eis-cvs] current server time mark is:
+		2013_06_09_14_57_46
+======================================
+pwd
+/cygdrive/e/ipanel_rcc2/build/link
+echo mkdir -p ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher
+mkdir -p ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher
+mkdir -p ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher
+CL /nologo /MTd /W3 /FD /EHsc /GS- /Zc:wchar_t- /c /Zi /errorReport:prompt /nologo -DWIN32 -DNDEBUG -DUSE_VANE_STATICLIB /D "_UNICODE" /D "UNICODE" -DPORT_BCM7019 -DCONFIG_ADVANCED_BCM7019_HFYX_90242 -DIPANEL_RCC2  -I../../src/project/advanced_develop/project -I../../src/project/advanced_develop/project/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242 -I../../src/project/advanced_develop/includeExport -DNO_EIS_DEF -DEMBEDDED -I../../src/project/advanced_develop/includeExport/opengl/ -I../../src/project/advanced_develop/includeExport/pthread/ -I../../src/project/advanced_develop/platform/porting/device/graphics3d/ -D_WIN32_WINNT=0x0500 -c ../../src/project/advanced_develop/project/../platform/porting/workspace/src/device_part00.cpp -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/device_part00.obj
+device_part00.cpp
+CL /nologo /MTd /W3 /FD /EHsc /GS- /Zc:wchar_t- /c /Zi /errorReport:prompt /nologo -DWIN32 -DNDEBUG -DUSE_VANE_STATICLIB /D "_UNICODE" /D "UNICODE" -DPORT_BCM7019 -DCONFIG_ADVANCED_BCM7019_HFYX_90242 -DIPANEL_RCC2  -I../../src/project/advanced_develop/project -I../../src/project/advanced_develop/project/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242 -I../../src/project/advanced_develop/includeExport -DNO_EIS_DEF -DEMBEDDED -I../../src/project/advanced_develop/includeExport/opengl/ -I../../src/project/advanced_develop/includeExport/pthread/ -I../../src/project/advanced_develop/platform/porting/device/graphics3d/ -D_WIN32_WINNT=0x0500 -c ../../src/project/advanced_develop/project/../platform/porting/workspace/src/device_part01.cpp -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/device_part01.obj
+device_part01.cpp
+CL /nologo /MTd /W3 /FD /EHsc /GS- /Zc:wchar_t- /c /Zi /errorReport:prompt /nologo -DWIN32 -DNDEBUG -DUSE_VANE_STATICLIB /D "_UNICODE" /D "UNICODE" -DPORT_BCM7019 -DCONFIG_ADVANCED_BCM7019_HFYX_90242 -DIPANEL_RCC2  -I../../src/project/advanced_develop/project -I../../src/project/advanced_develop/project/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242 -I../../src/project/advanced_develop/includeExport -DNO_EIS_DEF -DEMBEDDED -I../../src/project/advanced_develop/includeExport/opengl/ -I../../src/project/advanced_develop/includeExport/pthread/ -I../../src/project/advanced_develop/platform/porting/device/graphics3d/ -D_WIN32_WINNT=0x0500 -c ../../src/project/advanced_develop/project/../platform/porting/workspace/src/porting_part00.cpp -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/porting_part00.obj
+porting_part00.cpp
+CL /nologo /MTd /W3 /FD /EHsc /GS- /Zc:wchar_t- /c /Zi /errorReport:prompt /nologo -DWIN32 -DNDEBUG -DUSE_VANE_STATICLIB /D "_UNICODE" /D "UNICODE" -DPORT_BCM7019 -DCONFIG_ADVANCED_BCM7019_HFYX_90242 -DIPANEL_RCC2  -I../../src/project/advanced_develop/project -I../../src/project/advanced_develop/project/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242 -I../../src/project/advanced_develop/includeExport -DNO_EIS_DEF -DEMBEDDED -I../../src/project/advanced_develop/includeExport/opengl/ -I../../src/project/advanced_develop/includeExport/pthread/ -I../../src/project/advanced_develop/platform/porting/device/graphics3d/ -D_WIN32_WINNT=0x0500 -c ../../src/project/advanced_develop/project/../platform/porting/workspace/src/porting_part01.cpp -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/porting_part01.obj
+porting_part01.cpp
+echo SUCC > ./flag.txt
+make[2]: Leaving directory `/cygdrive/e/ipanel_rcc2/build/link'
+succ=SUCC
+no src=script
+succ=SUCC
+no src=tools
+succ=SUCC
+fail=`cat ./flag.txt | grep FAIL`; \
+	if [ "$fail" = "FAIL" ]; then \
+	echo "ERROR,no make win32advanced"; \
+	else \
+	../../src/project/advanced_develop/project/win32/make.sh -f link.mak win32advanced WIN32CONFIG=embedded; \
+	fi
+cat: ./flag.txt: No such file or directory
+
+E:\ipanel_rcc2\build\link>"d:\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat"
+Setting environment for using Microsoft Visual Studio 2005 x86 tools.
++ pwd
+/cygdrive/e/ipanel_rcc2/build/link
++ make -f link.mak win32advanced WIN32CONFIG=embedded
+make[2]: Entering directory `/cygdrive/e/ipanel_rcc2/build/link'
+CL /nologo /MTd /W3 /FD /EHsc /GS- /Zc:wchar_t- /c /Zi /errorReport:prompt /nologo -DWIN32 -DNDEBUG -DUSE_VANE_STATICLIB /D "_UNICODE" /D "UNICODE" -DEIS_PLATFORM="\"PORT_BCM7019\"" -DEIS_CONFIG="\"CONFIG_ADVANCED_BCM7019_HFYX_90242\"" -D_WINDOWS  -c ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/../../../../shell/license/file/ipanel_get_license.c -Fo../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/key.lib
+ipanel_get_license.c
+LINK  /nologo /incremental:no /subsystem:windows /NODEFAULTLIB:"libc.lib" /subsystem:windows  /libpath:../../src/project/advanced_develop/platform/lib /out:../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/EIS_IPANEL_EMBEDDED.exe  ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/MuppetLauncher.res kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib  ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_JavaEngine/lib_advanced_JavaEngine_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ThirdParty/lib_advanced_ThirdParty_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_VideoAudio/lib_advanced_VideoAudio_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_application/lib_advanced_application_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ca/lib_advanced_ca_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_dvb/lib_advanced_dvb_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_graphics/lib_advanced_graphics_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_image/lib_advanced_image_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_jsplugin/lib_advanced_jsplugin_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_network/lib_advanced_network_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/lib_advanced_sdk_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_stock/lib_advanced_stock_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_vod/lib_advanced_vod_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_window/lib_advanced_window_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_wrapperOS/lib_advanced_wrapperOS_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bindings/lib_bindings_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_bytecode/lib_bytecode_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css1/lib_css1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_css2/lib_css2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom1/lib_dom1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_dom2/lib_dom2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_editing/lib_editing_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated1/lib_generated1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated2/lib_generated2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated3/lib_generated3_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated4/lib_generated4_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated5/lib_generated5_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_generated6/lib_generated6_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html1/lib_html1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_html2/lib_html2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_loader/lib_loader_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc1/lib_misc1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc2/lib_misc2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_misc3/lib_misc3_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other1/lib_other1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_other2/lib_other2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_page/lib_page_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_parser/lib_parser_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_platform/lib_platform_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering1/lib_rendering1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering2/lib_rendering2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_rendering3/lib_rendering3_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_runtime/lib_runtime_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg1/lib_svg1_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_svg2/lib_svg2_embedded.lib ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/webengine_webkit/lib_webkit_embedded.lib  ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/device_part00.obj ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/device_part01.obj ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/porting_part00.obj ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/porting_part01.obj ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/muppetlauncher/win32_launcher1.obj ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/key.lib
+LINK : warning LNK4068: δָ�� /MACHINE��Ĭ������Ϊ X86
+   ���ڴ����� ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/EIS_IPANEL_EMBEDDED.lib �Ͷ��� ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/EIS_IPANEL_EMBEDDED.exp
+make[2]: Leaving directory `/cygdrive/e/ipanel_rcc2/build/link'
+make[1]: Leaving directory `/cygdrive/e/ipanel_rcc2/build/link'
+make zip
+make[1]: Entering directory `/cygdrive/e/ipanel_rcc2/build/link'
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/EIS_IPANEL_EMBEDDED.exe
+  adding: EIS_IPANEL_EMBEDDED.exe (deflated 63%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../src/project/advanced_develop/platform/tools/*.*
+  adding: CodeStyle.exe (deflated 61%)
+  adding: HAL-Hi.dll (deflated 54%)
+  adding: HAL2020.dll (deflated 54%)
+  adding: I2C2020.dll (deflated 53%)
+  adding: NewControl.dll (deflated 70%)
+  adding: TSIP.dll (deflated 52%)
+  adding: TunerC.dll (deflated 53%)
+  adding: avcodec-52.dll (deflated 62%)
+  adding: avutil-50.dll (deflated 47%)
+  adding: config-ini-all.xls (deflated 69%)
+  adding: config_demo.ini (deflated 57%)
+  adding: d3dcompiler_43.dll (deflated 56%)
+  adding: d3dx9_43.dll (deflated 55%)
+  adding: ipanel_windevice.ini (deflated 54%)
+  adding: libEGL.dll (deflated 51%)
+  adding: libGLESv2.dll (deflated 56%)
+  adding: project_def.h (deflated 77%)
+  adding: project_undef.h (deflated 78%)
+  adding: pthreadVCE2.dll (deflated 76%)
+  adding: stt&tts_resource.rar (deflated 0%)
+  adding: swscale-0.dll (deflated 55%)
+  adding: xfont_freetype.dat (deflated 54%)
+  adding: xfont_sino.dat (deflated 27%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP /cygdrive/d/Microsoft\ Visual\ Studio\ 8/VC/redist/x86/Microsoft.VC80.CRT/Microsoft.VC80.CRT.manifest
+  adding: Microsoft.VC80.CRT.manifest (deflated 68%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP /cygdrive/d/Microsoft\ Visual\ Studio\ 8/VC/redist/x86/Microsoft.VC80.CRT/msvcp80.dll
+  adding: msvcp80.dll (deflated 73%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP /cygdrive/d/Microsoft\ Visual\ Studio\ 8/VC/redist/x86/Microsoft.VC80.CRT/msvcr80.dll
+  adding: msvcr80.dll (deflated 49%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/VANEWIN32LIB.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/*/*.lib
+  adding: lib_advanced_JavaEngine_embedded.lib (deflated 59%)
+  adding: lib_advanced_ThirdParty_embedded.lib (deflated 67%)
+  adding: lib_advanced_VideoAudio_embedded.lib (deflated 66%)
+  adding: lib_advanced_application_embedded.lib (deflated 66%)
+  adding: lib_advanced_ca_embedded.lib (deflated 72%)
+  adding: lib_advanced_dvb_embedded.lib (deflated 68%)
+  adding: lib_advanced_graphics_embedded.lib (deflated 70%)
+  adding: lib_advanced_image_embedded.lib (deflated 65%)
+  adding: lib_advanced_jsplugin_embedded.lib (deflated 76%)
+  adding: lib_advanced_network_embedded.lib (deflated 70%)
+  adding: lib_advanced_sdk_embedded.lib (deflated 64%)
+  adding: lib_advanced_stock_embedded.lib (deflated 66%)
+  adding: lib_advanced_vod_embedded.lib (deflated 67%)
+  adding: lib_advanced_window_embedded.lib (deflated 68%)
+  adding: lib_advanced_wrapperOS_embedded.lib (deflated 67%)
+  adding: lib_bindings_embedded.lib (deflated 85%)
+  adding: lib_bytecode_embedded.lib (deflated 86%)
+  adding: lib_css1_embedded.lib (deflated 86%)
+  adding: lib_css2_embedded.lib (deflated 84%)
+  adding: lib_dom1_embedded.lib (deflated 86%)
+  adding: lib_dom2_embedded.lib (deflated 85%)
+  adding: lib_editing_embedded.lib (deflated 82%)
+  adding: lib_generated1_embedded.lib (deflated 86%)
+  adding: lib_generated2_embedded.lib (deflated 84%)
+  adding: lib_generated3_embedded.lib (deflated 88%)
+  adding: lib_generated4_embedded.lib (deflated 87%)
+  adding: lib_generated5_embedded.lib (deflated 86%)
+  adding: lib_generated6_embedded.lib (deflated 88%)
+  adding: lib_html1_embedded.lib (deflated 84%)
+  adding: lib_html2_embedded.lib (deflated 82%)
+  adding: lib_loader_embedded.lib (deflated 85%)
+  adding: lib_misc1_embedded.lib (deflated 85%)
+  adding: lib_misc2_embedded.lib (deflated 81%)
+  adding: lib_misc3_embedded.lib (deflated 80%)
+  adding: lib_other1_embedded.lib (deflated 86%)
+  adding: lib_other2_embedded.lib (deflated 83%)
+  adding: lib_page_embedded.lib (deflated 85%)
+  adding: lib_parser_embedded.lib (deflated 82%)
+  adding: lib_platform_embedded.lib (deflated 84%)
+  adding: lib_rendering1_embedded.lib (deflated 86%)
+  adding: lib_rendering2_embedded.lib (deflated 85%)
+  adding: lib_rendering3_embedded.lib (deflated 84%)
+  adding: lib_runtime_embedded.lib (deflated 83%)
+  adding: lib_svg1_embedded.lib (deflated 87%)
+  adding: lib_svg2_embedded.lib (deflated 86%)
+  adding: lib_webkit_embedded.lib (deflated 82%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/key.lib
+  adding: key.lib (deflated 48%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/*/*.dll
+
+zip error: Nothing to do! (../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP)
+make[1]: [zip] Error 12 (ignored)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/project_info.h
+  adding: project_info.h (deflated 72%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_sdk/project_config.h
+  adding: project_config.h (deflated 60%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_ui/xbrowser.dat
+  adding: xbrowser.dat (deflated 25%)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_cvm/cvm.exe
+	zip warning: name not matched: ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_cvm/cvm.exe
+
+zip error: Nothing to do! (../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP)
+make[1]: [zip] Error 12 (ignored)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_cvm/cvmi.dll
+	zip warning: name not matched: ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/win32embedded/advanced_cvm/cvmi.dll
+
+zip error: Nothing to do! (../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP)
+make[1]: [zip] Error 12 (ignored)
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/VANEWIN32LIB.ZIP
+  adding: VANEWIN32LIB.ZIP (deflated 1%)
+#����../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/VANEWIN32LIB.ZIP���ɾ��������ռ�÷������ռ�
+rm -f ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/VANEWIN32LIB.ZIP
+zip -j ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/WIN32.ZIP ../../src/project/advanced_develop/project/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/config.ini
+  adding: config.ini (deflated 61%)
+make[1]: Leaving directory `/cygdrive/e/ipanel_rcc2/build/link'
+echo SUCC > ../../linkout/advanced_develop/BCM7019/CONFIG_ADVANCED_BCM7019_HFYX_90242/flag.txt
+make end
+synchronize time with cvs server again
+Sun Jun  9 14:58:46     2013
+==================  >+++(> ======================

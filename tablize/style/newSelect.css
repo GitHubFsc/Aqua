@@ -1,0 +1,8 @@
+.select-box {float: left;position: relative;}
+.select-status .select-header {width: 88px;height: 38px;border: 1px solid rgb(198, 198, 198);padding-right: 26px;background: url(../uiWidget/images/arrow.png) no-repeat #f9f9f9;background-position: 95% 14px;line-height: 38px;text-indent: 14px;font-size: 14px;color: #797979;cursor: pointer;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow: hidden;}
+.select-status .select-header1 {width: 88px;height: 38px;border: 1px solid rgb(198, 198, 198);padding-right: 26px;background: url(../images/lecture/lectureListselect.png) no-repeat #f9f9f9;background-position: 95% 6px;line-height: 38px;text-indent: 14px;font-size: 14px;color: #a9a9a9;cursor: pointer;overflow: hidden;}
+.select-status .select-arrow {background-position: 95% -9px;}
+.select-status .select-arrow1 {background-position: 95% 7px;}
+.select-status .select-content {border-left: 1px solid #eaeaea;border-right: 1px solid #eaeaea;top: 38px;left: 0;z-index: 99;display: none;background-color: #f9f9f9;position: absolute;}
+.select-status .select-content li {list-style: none;width: 114px;height: 30px;margin: 0;border-bottom: 1px solid #eaeaea;line-height: 38px;text-indent: 14px;background-color: #f9f9f9;font-size: 16px;cursor: pointer;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow: hidden;}
+.select-status .select-content li:first-child {border-top: 1px solid #eaeaea;}

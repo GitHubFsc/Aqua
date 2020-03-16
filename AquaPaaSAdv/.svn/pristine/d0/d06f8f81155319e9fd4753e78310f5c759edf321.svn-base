@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="style/adPolicyManage.css" media="screen" title="no title" charset="utf-8">
+<!-- <link rel="stylesheet" href="uiWidget/styles/select.css" media="screen" title="no title" charset="utf-8"> -->
+<div class="adPolicyManageMenu">
+  <div class="policy_type">
+    <div name="type" id="policy_img">{{ADPOLICYMANAGE_POLICYTYPE_IMG}}</div>
+    <div name="type" id="policy_video">{{ADPOLICYMANAGE_POLICYTYPE_VIDEO}}</div>
+    <div name="type" id="policy_txt">{{ADPOLICYMANAGE_POLICYTYPE_SUBTITLE}}</div>
+  </div>
+  <div class="menu_split">
+  </div>
+  <div class="policy_filter">
+    <div  id="policy_filter"></div>
+  </div>
+  <div class="policy_status">
+    <div  id="policy_state"></div>
+  </div>
+  <div class="policy_search" id='search_by_name'>
+    <input type="text" name="policy_search" id="policy_searchInput" value="" placeholder="{{ADPOLICYMANAGE_POLICYSEARCH_NAME_PLACEHOLDER}}">
+    <div class="policy_searchBtn" name="policy_search" id="policy_searchBtn"></div>
+  </div>
+  <div class="policy_search" id='search_by_user'>
+    <input type="text" name="policy_search" id="policy_searchInput" value="" placeholder="{{ADPOLICYMANAGE_POLICYSEARCH_USER_PLACEHOLDER}}">
+    <div class="policy_searchBtn" name="policy_search" id="policy_searchBtn"></div>
+  </div>
+  <div style="flex:1;"></div>
+  <div class="policy_add" id="policy_add_btn">
+    <div class="policy_add_icon"></div>
+    <div class="policy_add_text" name="policy_search">{{ADPOLICYMANAGE_POLICYTYPE_ADDPOLICY}}</div>
+    <div class='policy_choose_user'>
+      <div name='admin'>{{ADPOLICYMANAGE_USE_ADMIN}}</div>
+      <div name='adv'>{{ADPOLICYMANAGE_USE_ADV}}</div>
+    </div>
+  </div>
+</div>
+<div class="adPolicyManageBody">
+  <div class="adPolicyManageTable" id="adPolicyManageTable"></div>
+</div>
+<div id="ad-disites-layer" class="ad-disites-layer" style="display: none;"></div>
+<div id="ad-connect-layer" style="display:none;"></div>

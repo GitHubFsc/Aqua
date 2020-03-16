@@ -1,0 +1,79 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.app {
+	width: 1280px;
+	height: 720px;
+}
+
+.dialog {
+	position: absolute;
+	left: 340px;
+	top: 190px;
+	width: 600px;
+	height: 340px;
+	background-image: url(../img/bg.png);
+	background-repeat: no-repeat;
+	color: #fff;
+}
+
+.name-txt {
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	font-size: 32px;
+}
+
+.choice-row {
+	position: relative;
+	line-height: 55px;
+	height: 55px;
+	font-size: 24px;
+	width: 542px;
+	background-repeat: no-repeat;
+	margin-left: 29px;
+}
+.choice-row.focus {
+	background-image: url(../img/row_focus.png);
+}
+
+.choice-name {
+	float: left;
+	height: 55px;
+	width: 272px;
+	margin-left: 30px;
+}
+
+.choice-caro {
+	float: left;
+	width: 226px;
+	height: 55px;
+	text-align: center;
+	background-image: url(../img/bi_arrow.png);
+	background-repeat: no-repeat;
+}
+
+.btn-ok {
+	position: absolute;
+	left: 210px;
+	top: 246px;
+	width: 180px;
+	height: 58px;
+	line-height: 58px;
+	text-align: center;
+	font-size: 22px;
+	background-repeat: no-repeat;
+	background-image: url(../img/btn_default.png);
+}
+
+.btn-ok.focus {
+	background-image: url(../img/btn_focus.png);
+}

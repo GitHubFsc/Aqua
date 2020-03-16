@@ -1,0 +1,13 @@
+.query_dialog_cancelAuthoSingle._authmng_dialog.query_dialog {height: auto;}
+.query_dialog_cancelAuthoSingle .combo {width: 190px;}
+.query_dialog_cancelAuthoSingle .combo td{border: 1px solid #c6c6c6;background-color: #fff;}
+.query_dialog_cancelAuthoSingle .date_picker {width: 190px;}
+.query_dialog_cancelAuthoSingle ._dialog_foot ._btn {margin-left: 25px;}
+.query_dialog_cancelAuthoSingle #cancelAuthoSingle_self_define {height: 26px;color: #2ea2d7;border-bottom: 1px solid #2ea2d7;border-top: 1px solid transparent;cursor: pointer;}
+.query_dialog_cancelAuthoSingle ._dialog_center {margin-top: 54px;}
+
+
+.query_dialog_cancelAuthoSingle.detail_dialog label {line-height: 37px;font-size: 14px;color: #727272;}
+.query_dialog_cancelAuthoSingle.detail_dialog ._dialog_body {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+.query_dialog_cancelAuthoSingle.detail_dialog ._dialog_row {padding: 0 8px; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;}
+.query_dialog_cancelAuthoSingle.detail_dialog ._dialog_row > * {margin: 0 22px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;height: 30px;}

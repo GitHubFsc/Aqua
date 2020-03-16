@@ -1,0 +1,75 @@
+* {margin: 0;padding: 0;list-style: none;}
+html, body{height: 720px;width: 1280px;position: relative;font-family: 'Microsoft YaHei';}
+body{background-image: url(../img/背景.png);background-repeat: no-repeat;}
+
+#poster {position: absolute;left: 54px;top: 40px;width: 260px;height: 370px;background-repeat: no-repeat;background-position: center;background-size: 100% 100%;}
+#title {position: absolute;left: 60px;top: 45px;font-size: 30px;color: #fff;line-height: 30px;display: none;}
+#name {position: absolute;left: 346px;top: 40px;font-size: 30px;color: #fff;}
+#info {position: absolute;left: 346px;top: 110px;color: #fff;font-size: 24px;}
+#info span {margin-bottom: 7px;display: -webkit-box;}
+#type::before {content: '类型：'}
+#director::before {content: '导演：'}
+#actors::before {content: '主演：'}
+#summary::before {content: '简介：'}
+#summary {overflow: hidden;width: 890px;text-overflow: ellipsis;white-space: normal;word-break: normal;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;color: #fff;line-height: 31px;}
+.btns{position: absolute;left: 346px;top: 365px;}
+.btns > div {float: left;height: 48px;width: 128px;font-size: 18px;color: #fff;text-align: center;background-position: center;background-repeat: no-repeat;margin-right: 10px;display: none;}
+.btns > div.visible {display: block;}
+
+.btns > div[name=order] {background-image: url(../img/detail/订购.png);}
+.btns > div[name=preview] {background-image: url(../img/detail/试播.png);}
+.btns > div[name=play] {background-image: url(../img/detail/播放.png);}
+.btns > div[name=choose] {background-image: url(../img/detail/选集框.png);}
+.btns > div[name=favorite] {background-image: url(../img/detail/收藏框.png);}
+.btns > div[name=favorite].favorite {background-image: url(../img/detail/已收藏.png);}
+.btns > div[name=order].focus {background-image: url(../img/detail/订购.png), url(../img/detail/详情页播放焦点.png);}
+.btns > div[name=preview].focus {background-image: url(../img/detail/试播.png), url(../img/detail/详情页播放焦点.png);}
+.btns > div[name=play].focus {background-image: url(../img/detail/播放.png), url(../img/detail/详情页播放焦点.png);}
+.btns > div[name=choose].focus {background-image: url(../img/detail/选集框.png), url(../img/detail/详情页播放焦点.png);}
+.btns > div[name=favorite].focus {background-image: url(../img/detail/收藏框.png), url(../img/detail/详情页播放焦点.png);}
+.btns > div[name=favorite].favorite.focus {background-image: url(../img/detail/已收藏.png), url(../img/detail/详情页播放焦点.png);}
+
+#choose_asset.focus {background-image: url(../img/detail/选集框.png), url(../img/detail/详情页播放焦点.png);}
+
+#asset_list {position: absolute;height: 220px;width: 594px;transition-duration: 300ms;left: 390px;top: 250px;color: #fff;display: none;background-image: url(../img/detail/选集方块.png);}
+#asset_list.show {display: block;}
+#asset_range {position: absolute;left: 18px;top: 162px;display: flex;display: -webkit-box;}
+.serial {width: 73px;height: 48px;line-height: 48px;text-align: center;font-size: 18px;margin-right: 20px;}
+.serial.focus {background-image: url(../img/detail/选集.png);background-size: 73px 48px;}
+#asset_ids {position: absolute;left: 13.75px;top: 13.5px;height: 146px;width: 565.5px;display: table;}
+#asset_ids td{text-align: center;}
+.asset {width: 48px;height: 48px;font-size: 18px;line-height: 48px;text-align: center;}
+.asset.focus {background-image: url(../img/detail/选集.png);}
+
+#ad {width: 1114px;height: 237px;background-image: url(../img/detail/detail/adv.jpg);position: absolute;top: 448px;left: 76px;background-repeat: no-repeat;background-position: center;}
+
+.recommend_hint {position: absolute;left: 63px;top: 424px;color: #FFF;font-size: 23px;}
+.recommend {position: absolute;left: 56px;top: 455px;right: 56px;bottom: 20px;display: flex;flex-flow: row;justify-content: space-between;display: -webkit-box;-webkit-box-pack: justify;}
+.recommend .poster {width: 181px;height: 258px;}
+.recommend .poster img {width: 168px;height: 240px;margin: 9px 6.5px;}
+.recommend .poster.focus {background-image: url(../img/detail/详情页推荐焦点.png);background-position: center;}
+.recommend .poster.focus img {width: 177px;height: 254px;margin: 2px;}
+
+.alert {position: absolute;color: #FFF;background-image: url(../img/detail/选集方块.png);}
+.alert.show {display: block !important;}
+.alert > div {text-align: center;}
+.alert .title {font-size: 31px;}
+.alert .content {font-size: 24px;}
+.alert .confirm {height: 47px;background-image: url(../img/detail/确定.png);background-repeat: no-repeat;background-position: center;}
+
+.alert[name=online] {top: 239px;left: 364px;width: 588px;height: 255px;display: none;background-size: 588px 255px;}
+.alert[name=online] .title {margin-top: 44px;}
+.alert[name=online] .content {margin-top: 25px;}
+.alert[name=online] .confirm {margin-top: 31px;}
+
+.alert[name=offline] {top: 269px;left: 360px;width: 580px;height: 240px;display: none;background-size: 580px 240px;}
+.alert[name=offline] .title {margin-top: 22px;font-size: 30px;}
+.alert[name=offline] .content {margin-top: 19px;font-size: 23px;}
+.alert[name=offline] .content2 {margin-top: 7px;}
+.alert[name=offline] .confirm {margin-top: 19px;height: 58px;}
+
+.alert[name=buy] {top: 269px;left: 360px;width: 580px;height: 240px;display: none;background-size: 580px 240px;}
+.alert[name=buy] .title {margin-top: 22px;font-size: 30px;}
+.alert[name=buy] .content {margin-top: 19px;font-size: 23px;}
+.alert[name=buy] .content2 {margin-top: 7px;}
+.alert[name=buy] .confirm {margin-top: 19px;height: 58px;}

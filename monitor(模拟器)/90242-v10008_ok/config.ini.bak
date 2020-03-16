@@ -1,0 +1,438 @@
+#*******************************************************************************
+#  配置文件说明：如需要添加另外的配置名称请添加说明:配置名称，如何配置等
+#	 chenhui  2011-6-8
+#  建议：关键字统一采用 小写单词 + 减号
+#  整理：yuxj 2011-10-08 
+#  本次整理涵盖当前所有的关键字，并把绝大部分的关键字书写按上述规则做了修改，除了：
+#  local_mac/local_ip/proxy_user/proxy_passwd/proxy_type/keymap_url/iPadUserAgent，
+#  以及打印控制的总控和模块控制关键字（为尽量少的影响正在使用ini的所有人员）。
+#*******************************************************************************
+
+#****************************************************
+# 		homepage 和 eventpage
+#****************************************************
+#homepage =http://218.185.196.105:8030/vod-Inner/vod/play.action?poid=585&id=A1001061694&uid=1001061694&type=6&name=%CC%A6%CB%BF%A3%A81998%A3%A9(%B8%DF%C7%E5)&ServiceGroup=18161&CAID=8551102367128493
+#homepage=http://218.185.196.105:8030/vod-Inner/vod/index.htm?poid=561&CAID=8551102596833772
+#homepage=http://yuyin.hfcatv.com.cn/web/VODSearch.aspx?Videotitle=%e8%a5%bf%e6%b8%b8%e8%ae%b0&url=http://172.16.31.18/Server/video.aspx?videoname=%e8%a5%bf%e6%b8%b8%e8%ae%b0&CAID=8551102367128493
+#homepage = http://218.185.196.105:8030/vod-Inner/vod/index.htm?poid=585&CAID=8551102596833772
+#homepage = http://www.eis/
+#homepage=http://218.185.196.105:8080/vod/vod.do?method=vodStart&poid=561&code=0&CAID=8551102528260623
+#homepage=http://218.185.196.105:8080/tstv-hd/shiyi.do?method=shiyiStart&menu_pos=0&CAID=8551102528260623
+#homepage=http://218.185.196.105:8080/vod/vod.do?method=vodStart&poid=585&code=0&CAID=8551102528260623
+#homepage=http://218.185.196.105:8080/tstv-hd/shiyi.do?method=shiyiStart&menu_pos=0&CAID=8551102528260623
+homepage=http://218.185.196.101/tvote/tvportal/indexImg.jsp
+## 设置事件获取页面地址 
+## 设置了eventframe地址,就不用eventpage
+## 没有eventframe就再设置eventpage
+#eventpage = 
+
+##设置事件获取的页面
+#eventframe = file:////.\eventpage.htm
+
+## 分辨率
+screen-width=1280
+screen-height=720
+
+#http 页面保存
+page-save-path=D:\terminal operation\hefei\web_cntv
+
+
+#****************************************************
+# 			ipanel ui文件
+#****************************************************
+## ui文件(与exe文件同级，不要附加路径)
+#ipanel-ui-file=xbrowser.dat
+
+## 是否启用外挂UI
+test-external-ui = yes
+
+## 外挂UI地址
+test-external-ui-localpath = D:\terminal operation\hefei\UI2\HF_ADVANCE
+#test-external-ui-localpath = D:\IPANEL-UI\BCM7019\CONFIG_ADVANCED_BCM7019_HFYX_90242\HF_ADVANCE
+
+#****************************************************
+# 			ipanel vane 字体设置
+#****************************************************
+## vane字体文件
+ipanel-font-file=xfont_sino.dat
+
+## 可不用
+#file-font-name = 
+
+## 是否启用外挂字体(yes(启用)/no(不启用))
+#test-external-font = yes
+
+## 外挂字体的路径
+#test-external-font-localpath = D:\test\font
+
+
+#****************************************************
+# 			设置IP和MAC地址
+#****************************************************
+## 设置MAR地址
+#local_mac = 
+
+## 设置IP地址
+#local_ip = 192.168.29.89
+
+
+#****************************************************
+# 			代理设置
+#****************************************************
+## 代理服务器IP
+#proxy-server-ip    = 192.168.10.245
+## 端口
+#proxy-server-port = 3128 
+## 用户名
+#proxy_user =
+## 密码
+#proxy_passwd = 
+## 类型
+#proxy_type = http
+
+
+#****************************************************
+#   		弹出框  
+#****************************************************
+## alert 弹出框地址
+#webalert = http://192.168.29.38/alert.htm
+
+## confirm 弹出框地址
+#webconfirm = 
+
+## prompt 弹出框地址
+#webprompt = 
+
+#配置弹出框地址，使用本功能必须启用本配置，本功能需要启用js_dialog.cpp。现一般不需启用这个功能。
+#请使用confirm/alert/prompt替代此功能（weie）。
+#webdialog = 
+
+
+#****************************************************
+#   		输入法  
+#****************************************************
+## 设置输入法字体类型
+#ime-font-name = heiti
+
+
+#****************************************************
+#   		cookie 
+#****************************************************
+## cookie 文件存放的路径，如果设置了，就保存到指定的文件，否则，不保存。
+## 一个是curl用，一个webcore用，建议要么都设置，要么都不设置。
+##因无法预知cookie的大小，故这里暂时先保留，留待用户根据实情自行决断。
+#cookie = D:\cookie\cookie.dat
+#cookie-curl = D:\cookie\cookie_curl.dat
+
+## 用于vane 和3.0的切换,设置3.0的文件路径
+## 现阶段不知是否有测试，暂时保留
+#ipanel3-path = D:\cookie\vane_30\ipanel2vane\ipanel3
+
+
+
+#****************************************************
+# 			打印控制 
+#****************************************************
+## 下面以debug打头的，都是用来控制打印输出
+## debug_level (取值为0-)为0不打印，
+## 用来控制总的打印输出, 如果为0, 所有打印都不会输出, 数字越大，打印的信息越多 
+## 为7全打印 默认全打印
+#debug_level = 0
+debug-jscore = yes
+#no-jsexception-throw = yes
+use-get-year=1
+
+## 下面9个为 CVS application 模块, 名字同 vcproj的名字
+#debug_appmgrX_level
+#debug_cfgmgr_level
+#debug_cwmp_level
+#debug_ime_level
+#debug_misc_level
+#debug_soundeffect_level
+#debug_storage_level
+#debug_subtitle_level
+#debug_tts_level
+
+## 下面1个为 CVS ca 模块, 名字同 vcproj的名字
+#debug_ca_level
+
+## 下面1个为 CVS dvb 模块, 名字同 vcproj的名字
+#debug_dvbcore_level
+
+## 下面6个为 CVS graphics 模块, 名字同 vcproj的名字
+#debug_cairo_level
+#debug_fontManager_level
+#debug_freetype_level
+#debug_opengl_level
+#debug_pixman_level
+#debug_sinofont_level
+
+## 下面3个为 CVS image 模块, 名字同 vcproj的名字
+#debug_imageManager_level
+#debug_libjpeg_level
+#debug_libpng_level
+
+## 下面3个为 CVS JavaEngine 模块, 名字同 vcproj的名字
+#debug_cvm_level
+#debug_j2meapp_level
+#debug_kvm_level
+
+## 下面3个为 CVS jsplugin 模块, 名字同 vcproj的名字
+#debug_cajsi_level
+#debug_commonjsi_level
+#debug_dvbjsi_level
+
+## 下面5个为 CVS network 模块, 名字同 vcproj的名字
+#debug_libcurl_level = 100
+#debug_netdev_level
+#debug_openssl_level
+#debug_socket_level
+#debug_transport_level
+
+## 下面1个为 CVS p2p 模块, 名字同 vcproj的名字
+#debug_libp2p_level
+
+## 下面3个为 CVS sdk 模块, 名字同 vcproj的名字
+#debug_libsdk_level
+#debug_unicode_level
+#debug_zlib_level
+
+## 下面3个为 CVS ThirdParty 模块, 名字同 vcproj的名字
+#debug_libxml2_level
+#debug_libxslt_level
+#debug_sqlite_level
+
+## 下面1个为 CVS vane 模块, 名字同 vcproj的名字
+#debug_vane_level
+
+## 下面2个为 CVS VideoAudio 模块, 名字同 vcproj的名字
+#debug_avmgr_level
+#debug_libmp3_level
+
+## 下面1个为 CVS vod 模块, 名字同 vcproj的名字
+#debug_libvod_level
+
+## 下面3个为 CVS WebEngine 模块, 名字同 vcproj的名字
+#debug_jscore_level
+#debug_webcore_level
+#debug_webclient_level
+
+## 下面1个为 CVS window 模块, 名字同 vcproj的名字
+#debug_window_level
+
+## 下面4个为 CVS wrapperOS 模块, 名字同 vcproj的名字
+#debug_dontex_level
+#debug_kontex_level
+#debug_matrix_level
+#debug_montex_level
+
+##设置打印保存的位置和文件名
+#print-save-path=
+
+##设置打印用printf 直接打印
+#use-printf=yes
+
+##设置打印用ipanel_porting_dprintf直接打印
+#use-porting-dprintf=yes
+
+##设置打印用puts 直接打印
+#use-puts=yes
+
+#调试因打印引起的问题，不带参数，配置后启用。一般情况下不配置，需要时，代码调试人员会提示或咨询代码调试人员。
+#debug-log-position
+
+#是否启用win32下的DebugBreak功能，在程序中某条语句增加sdk_debug_break()，可使程序在执行该语句时，
+#进入debug状态，BREAKPOINT中使用且仅在win32下有效。不带参数，配置后启用（不推荐启用）。
+#debug-break
+
+#是否开放webkit的打印，默认（或不配置）允许打印，配置成0或者N或者n开头的字符串，禁止打印
+#debug-webkit = YES
+
+#是否启用强制写缓存到文件，非win32下使用，配置成yes是启用，否则不启用；一般情况下未启用。
+#use-fflush = no
+
+#是否启用系统测试项，包括：1、int type 的大小端；2、double type 的大小端；3、打印输出测试等等
+#配置成yes时启用，否则不启用；一般未启用。
+#system-test = yes
+
+#测试系统内存，阶段性调试宏，无需关注，非调试人员不要配置。
+#memtest = test2
+
+#纯粹调试宏，不带参数，无需关注，非调试人员不要配置。
+#test-no-loop
+
+#是否启用内置的开机广告或者开机图片，配置成yes时启用，否则不启用；一般未启用。
+#vane-init = yes
+
+#调试配置，配置成yes时启用，否则不启用；非调试人员不要配置。
+#vane-init-continue = yes
+
+#调试配置，不带参数，无需关注，非调试人员不要配置(vod::socket)。
+#lost-packet-rate
+
+#****************************************************
+# 			其它
+#****************************************************
+## 将浏览器窗口的内容以图片的形式保存
+## 但是必须添加宏OPTION_FRAMEBUFFER_TO_BMP配置
+#frame-to-bmp = yes
+
+## 键值转换   
+#keymap_url = keyConvert.xml
+
+#tts-resource = 暂时不用 tqt
+
+#****************************************************
+## 暂时不用，没有看到使用的地方
+#ssl-verify-server=0
+#ssl-ca-file=D:/ssl/ca.crt
+#****************************************************
+
+
+# transport模块输出porting传给中间件的section的详细信息
+#transport-section-log = yes
+
+
+#*********************************************************
+# 以下为mass_config.mcfg配置移到ini 中来配置，这些配置基本上不用修改，
+#也不用配置，只需要再视频显示调整是修改。
+#*********************************************************
+#gfx.frame = 2					
+#gfx.frame.main =0
+#gfx.frame[0].display = 0
+#gfx.frame[0].layer = 0
+
+# 显示模式高宽
+#gfx.frame[0].width = 1280
+#gfx.frame[0].height = 720
+#gfx.frame[0].buffer_size = 1
+
+#颜色格式
+#gfx.frame[0].pixel_format = argb8888
+
+# 显示模式0的开始位置
+#gfx.frame[0].margin.x = 0
+#gfx.frame[0].margin.y = 0
+
+# 显示模式0的开始高宽
+#gfx.frame[0].margin.width = 1280
+#gfx.frame[0].margin.height = 720
+#gfx.frame[1].display = 0
+#gfx.frame[1].layer = 0
+
+# 显示模式高宽
+#gfx.frame[1].width = 720
+#gfx.frame[1].height = 576
+#gfx.frame[1].buffer_size = 1
+
+#颜色格式
+#gfx.frame[1].pixel_format = argb8888
+
+# 显示模式1的开始位置
+#gfx.frame[1].margin.x = 40
+#gfx.frame[1].margin.y = 25
+
+# 显示模式1的开始高宽
+#gfx.frame[1].margin.width = 640
+#gfx.frame[1].margin.height = 526
+
+
+#**********************************************
+#              资源目录
+#**********************************************
+#配置资源目录，以前固定为“/storage”，现在优先取这里的配置，如果没有，默认为“/storage”
+#source-location = /storage
+
+#配置是否启用默认的资源路径前缀 
+#==no或者不配置时将自动添加前缀source-location(“/storage”),这与目前广东省网使用的是一致的，!=no||(==yes)时不添加前缀
+#此配置用于调整文件路径过渡时期使用，一旦调整测试完毕，就会取消掉该配置功能(将在河南项目上测试)
+no-use-source-path-prefix = no
+
+#设置debug文件路径和名称，一般未使用，未配置时系统会取默认值
+#source-location-debug = debug_vane.cfg
+
+#**********************************************
+#              插件目录
+#**********************************************
+#是存放插件库so/dll的路径, 如果没有设置, 还是按照在执行文件下plugins子目录里面
+#npplugin-path = /plugins
+
+
+#**********************************************
+#              cvm目录
+#**********************************************
+#配置cvm所在的路径，默认情况是跟vane的可执行文件放在同一个目录下面
+#cvm-location = /storage
+
+
+#**********************************************
+#              Navigator下面的几个定义
+#**********************************************
+#配置应用程序名字，配置后生效，一般未配置，此时为“Netscape”。
+#app-name = vane
+
+#配置应用程序版本号，配置后生效，一般未配置，此时由系统默认决定。
+#app-version = 
+
+#配置应用程序代码名称，配置后生效，一般未配置，此时为“Mozilla”。
+#app-code-name =
+
+#配置用户代理字符串，配置后生效，一般未配置，此时为“iPanel/3.0 (Windows; U; Linux; ...”。
+#user-agent=  
+
+
+#**********************************************
+#            新增以前未添加进来的
+#**********************************************
+#缺省的线程休眠的时间(主要在dvb模块中使用),一般未配置。
+#sleep-thread = 10
+
+#配置config文件的路径，仅在win32下使用，一般未配置。
+#external-config = 
+
+#从代码看这是用来控制timer是否跑到qos模块来的，但qos有专门的宏控制。
+#也就是说，如果想在编译了qos功能的情况下禁用qos，可以设置这个字段。
+#不带参数，配置后生效，一般不配置。
+#disable-qos 
+
+#配置webcore的timer处理程序的睡眠时间，配置后生效，一般不用配置，此时不睡眠，非调试人员最好不配置。
+#sleep-time = 10
+
+#配置kvm_javeheap的最大最小值以及默认值，配置后生效，一般不配置，此时将使用程序里的默认值。
+#kvm-javaheap-minszie = 
+#kvm-javaheap-maxsize = 
+#kvm-javaheap-defalutsize = 
+
+#这个是给duanwb用的，用来配置Navigator.platform，不带参数，一般未配置。
+#platform
+
+#配置最大的socket链接数量，配置后生效，一般未配置，此时默认为6。
+#http-sock-num = 6
+
+#配置证书包的路径，配置后生效，一般未配置。
+#curl-ca-bundle-path = 
+
+#配置下载管理器最大同时下载资源的数量，一般未配置，默认是10。
+#max-running-jobs = 10
+
+#配置是否忽略SSL错误，不带参数，配置后生效，一般未配置；
+#webkit-ignore-ssl-errors 
+
+#是否启用iPad视频播放（配置后，可以通过html标签获取视频地址，而无需通过swf插件播放视频，盒子一般不具备这个插件），
+#不带参数，一般未设置（大概是广东省网专用的）
+#iPadUserAgent
+
+#配置inspector应用的地址，配置后生效，一般不配置（该功能现阶段不能使用）。
+#webinspector = file:///D:/inspector11.html
+
+#配置默认情况下堆内存的大小，配置后生效，一般不配置，未配时系统自动取默认值。
+#system-mem = 32
+
+#禁用指定名称的线程运行，配置后有效，一般不用配置，非调试人员最好不要自行配置。
+#disable-thread = SDNT
+
+#graphics模块装用调试配置，不带参数，非调试人员不要配置。
+#print-loop-event 
+
+#开机启动优化, 可以减少黑屏时间. 提前打开 main frame page时, 要求必须是file/ui或本地文件, 是http的页面不能用这个功能
+#init-optimization=yes

@@ -1,0 +1,221 @@
+<div class="panel_page_head">
+	<div class="panel_page_head_left" style="left:18px;">
+		<div class="panel_page_head_title_lead"></div>
+		<div class="panel_page_head_title" id="po-editor-title" style="margin-left:3px;"></div>
+	</div>
+	<div class="po-step-options">
+		<div class="po-step-option" data-step="1">
+			<div class="po-step-option-ord">1</div>
+			<div class="po-step-option-label">策略信息</div>
+		</div>
+		<div class="po-step-spacer"></div>
+		<div class="po-step-option" data-step="2">
+			<div class="po-step-option-ord">2</div>
+			<div class="po-step-option-label">购买选项</div>
+		</div>
+		<div class="po-step-spacer"></div>
+		<div class="po-step-option" data-step="3">
+			<div class="po-step-option-ord">3</div>
+			<div class="po-step-option-label">周期性限次</div>
+		</div>
+	</div>
+</div>
+<div class="panel_page_body" style="border-width:0;">
+	<div class="po-editor-content">
+		<div class="po-editor-step-box" data-step="1">
+			<table class="po-edit-layout-column" cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td style="width:93px;">营销策略ID</td>
+						<td colspan="2"><input type="text" id="po-id" class="po-short-in" disabled="disabled"/></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td>策略名称</td>
+						<td colspan="2"><input type="text" id="po-name" class="po-short-in"/></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td>策略类型</td>
+						<td colspan="2"><input type="text" id="po-type" class="po-short-in" /></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td colspan="2" style="width:158px;">内容适用范围（标签）</td>
+						<td><input type="text" id="po-rule-asset-tag" class="po-long-in" /></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td colspan="2">内容适用范围（属性）</td>
+						<td><input type="text" id="po-rule-asset-extra" class="po-long-in" /></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td colspan="2">用户适用范围（标签）</td>
+						<td><input type="text" id="po-rule-user-tag" class="po-long-in" /></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td colspan="2">策略使用范围（标签）</td>
+						<td><input type="text" id="po-rule-offering-tag" class="po-long-in" /></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td>描述</td>
+						<td colspan="2"><textarea name="" id="po-descript" class="po-area-in"></textarea></td>
+					</tr>
+					<tr><td></td><td></td><td></td></tr>
+					<tr>
+						<td>元数据</td>
+						<td colspan="2"><input type="text" class="po-disable-in" id="po-meta-num" disabled="disabled"/>
+							<div class="po-in-btn" id="po-meta-edit">编辑</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="po-layout-spacer"></div>
+			<table class="po-edit-layout-column" cellpadding="0" cellspacing="0" style="left:50%;margin-left:38px;">
+				<tbody>
+					<tr>
+						<td style="width:93px;">生效时间</td>
+						<td>
+							<div class="po-time-box" style="z-index:900;">
+								<div class="po-time-picker" id="po-efftime-picker"></div>
+								<div class="po-time-select" id="po-efftime-hour"></div>
+								<div class="po-time-label">时</div>
+								<div class="po-time-select" id="po-efftime-min"></div>
+								<div class="po-time-label">分</div>
+								<div class="po-time-select" id="po-efftime-sec"></div>
+								<div class="po-time-label">秒</div>
+							</div>
+						</td>
+					</tr>
+					<tr><td></td><td></td></tr>
+					<tr>
+						<td>失效时间</td>
+						<td>
+							<div class="po-time-box" style="z-index:800;">
+								<div class="po-time-picker" id="po-exptime-picker"></div>
+								<div class="po-time-select" id="po-exptime-hour"></div>
+								<div class="po-time-label">时</div>
+								<div class="po-time-select" id="po-exptime-min"></div>
+								<div class="po-time-label">分</div>
+								<div class="po-time-select" id="po-exptime-sec"></div>
+								<div class="po-time-label">秒</div>
+							</div>
+						</td>
+					</tr>
+					<tr><td></td><td></td></tr>
+					<tr>
+						<td>设置范围</td>
+						<td>
+							<div id="po-big-cycle"></div>
+						</td>
+					</tr>
+					<tr><td></td><td></td></tr>
+					<tr>
+						<td colspan="2">
+							<div class="po-second-cycle" data-cycle="month">
+								<div class="po-second-cyle-label">设置有效日期</div>
+								<div id="po-secy-month"></div>
+							</div>
+							<div class="po-second-cycle" data-cycle="week">
+								<div class="po-second-cyle-label">设置有效周日</div>
+								<div id="po-secy-week"></div>
+							</div>
+							<div class="po-second-cycle" data-cycle="day">
+								<div class="po-second-cyle-label">设置有效时间段</div>
+								<div id="po-secy-day"></div>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="po-editor-step-box" data-step="2">
+			<table class="po-edit-layout-column" cellspacing="0" cellpadding="0">
+				<tbody>
+					<tr>
+						<td colspan="4" style="width:158px;">是否允许重复购买</td>
+						<td><div id="po-rep-purchase"></div></td>
+					</tr>
+					<tr><td></td><td style="width:13px;"></td><td style="width:30px;"></td><td></td><td></td></tr>
+					<tr>
+						<td style="width:92px;">价格单位</td>
+						<td colspan="4"><div id="po-pri-cur"></div></td>
+					</tr>
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr>
+						<td>价格类型</td>
+						<td colspan="4"><div id="po-pri-type"></div></td>
+					</tr>
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr>
+						<td><span id="po-pri-tlab"></span></td>
+						<td colspan="4"><input type="text" id="po-price-in" /></td>
+					</tr>
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr>
+						<td colspan="3">Ticket有效期类型</td>
+						<td colspan="2"><div id="po-ticket-efftype"></div></td>
+					</tr>
+					<tr><td></td><td></td><td></td><td></td><td></td></tr>
+					<tr>
+						<td colspan="2">Ticket有效期</td>
+						<td colspan="3">
+							<input type="text" id="po-ticket-life-in" />
+							<div id="po-ticket-life-unit"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="po-layout-spacer"></div>
+		</div>
+		<div class="po-editor-step-box" data-step="3">
+			<table class="po-edit-layout-column" cellspacing="0" cellpadding="0">
+				<tr>
+					<td colspan="2" style="width:180px;">是否启用周期性限次设置</td>
+					<td><div id="po-limit-useoff"></div></td>
+				</tr>
+				<tr><td></td><td></td><td></td></tr>
+				<tr>
+					<td style="width:106px;">周期次数上限</td>
+					<td colspan="2"><input type="text" id="po-limit-upto" /></td>
+				</tr>
+				<tr><td></td><td></td><td></td></tr>
+				<tr>
+					<td>配额</td>
+					<td colspan="2"><input type="text" id="po-limit-count" /></td>
+				</tr>
+				<tr><td></td><td></td><td></td></tr>
+				<tr>
+					<td>配额周期</td>
+					<td colspan="2">
+						<div id="po-lcount-num"></div>
+						<div id="po-lcount-lab"></div>
+					</td>
+				</tr>
+				<tr><td></td><td></td><td></td></tr>
+				<tr>
+					<td>是否立即开通</td>
+					<td colspan="2"><div id="po-ls-imm"></div></td>
+				</tr>
+				<tr><td></td><td></td><td></td></tr>
+				<tr>
+					<td>总配额上限</td>
+					<td colspan="2">
+						<input type="text" id="po-ltotal-count" />
+					</td>
+				</tr>
+			</table>
+			<div class="po-layout-spacer"></div>
+		</div>
+	</div>
+	<div class="po-editor-footer">
+		<div class="po-editor-btn po-editor-btn-dim po-editor-cancel" id="po-editor-btn-cancel">取&nbsp;&nbsp;消</div>
+		<div class="po-editor-btn po-editor-cancel" id="po-editor-back">返&nbsp;&nbsp;回</div>
+		<div class="po-editor-btn" id="po-editor-btn-next">下一步</div>
+		<div class="po-editor-btn" id="po-editor-btn-add">新&nbsp;&nbsp;增</div>
+		<div class="po-editor-btn" id="po-editor-btn-update">更&nbsp;&nbsp;新</div>
+	</div>
+</div>

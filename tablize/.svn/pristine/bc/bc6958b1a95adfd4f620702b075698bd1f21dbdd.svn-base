@@ -1,0 +1,10 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+	<div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+		<div class="wp_panel_dialog_title_label">{{USER_ADMIN_USER_TAG}}</div>
+		<div class="wp_panel_dialog_close popup_dialog_clear"></div>
+	</div>
+	<div class="wp_panel_dialog_content">
+		<div class="user-admin-group-box" id="user-admin-group-list"></div>
+		<div class="lecture_recommend_dialog_submit popup_dialog_clear"style="right:15px;bottom:18px;">{{DIALOG_CLOSE_DL}}</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="panel_dialog" style="font-family:'微软雅黑';color:#8a8a8a">
+	<div class="toufang_panel_dialog_title">
+		<div id="toufang_coordinate_map_title" class="panel_dialog_title_text" style="font-size:16px">
+			
+		</div>
+		<div id="toufang_coordinate_map_close_icon" class="panel_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div id="toufang_coordinate_map" style="position:absolute;left:14px;top:52px;border:1px #d9d9d9 solid;width:715px;height:454px">
+	</div>
+	<div id="toufang_coordinate_map_select" style="background-color:#fff;border:1px solid #e2e2e2;position:absolute;right:40px;top:137px;display:none" class="adPos_dialog_ne_dfAd_selector panel_dialog_block_selector_space">
+
+	</div>
+	<div id="toufang_coordinate_map_close_button" class="panel_dialog_cancel popup_dialog_clear" style="bottom:20px;background-color:rgb(93, 161, 192);border: 1px solid rgb(89, 127, 137);color:white;right:32px">{{TOUFANGBAOGAO_GUANBI}}</div>
+</div>

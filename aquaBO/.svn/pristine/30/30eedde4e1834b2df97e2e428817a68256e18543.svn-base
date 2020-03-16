@@ -1,0 +1,38 @@
+<div class="page-rel-container">
+  <div class="page-rel-header">
+    <div class="panel_page_head_left">
+      <div class="panel_page_head_title_lead"></div>
+      <div class="panel_page_head_title">{{OA_INDEX_SUM_DAY}}</div>
+    </div>
+    <div class="panel_page_head_right">
+      <div id="oa-sum-day-datepicker" class="page-norm-calendar"></div>
+    </div>
+  </div>
+  <div class="page-rel-content">
+    <div class="day-sum-block">
+      <div class="day-sum-ititle">
+        <div class="day-sum-ititle-main">{{OA_INDEX_SUM_DAY}}</div>
+        <div class="day-sum-ititle-tail">{{DAY_SUM_DS_TITLE_TAIL}}</div>
+      </div>
+      <div class="oa-sumday-layout-left">
+        <table cellpadding="0" cellspacing="15 12">
+          <tbody><tr>
+            <td><div class="oa-sumday-dtmain" id="oa-sum-day-main-activity"><div class="oa-sum-day-main-label">{{OA_SUM_DAY_LABEL_ACTIVE_PNUM}}</div>
+            <div class="oa-sum-day-main-num"></div>
+            </div></td>
+            <td><div class="oa-sumday-dtmain" id="oa-sum-day-main-newp"><div class="oa-sum-day-main-label">{{OA_SUM_DAY_LABEL_VCOUNT}}</div>
+            <div class="oa-sum-day-main-num"></div></div></td>
+          </tr>
+          <tr>
+            <td><div class="oa-sumday-dtmain" id="oa-sum-day-main-tcactive"><div class="oa-sum-day-main-label">{{OA_SUM_DAY_LABEL_AVERAGE_VCOUNT}}</div>
+            <div class="oa-sum-day-main-num"></div></div></td>
+            <td><div class="oa-sumday-dtmain" id="oa-sum-day-main-pcactive"><div class="oa-sum-day-main-label">{{OA_SUM_DAY_LABEL_VLEN}}</div>
+            <div class="oa-sum-day-main-num"></div></div></td>
+          </tr></tbody>
+        </table>
+      </div>
+      <div class="oa-sumday-layout-right">
+      </div>
+    </div>
+  </div>
+</div>

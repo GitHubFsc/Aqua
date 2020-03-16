@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" href="content/guang_gao_pai_qi/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="content/guang_gao_pai_qi/daterangepicker.css"/>
+<link rel="stylesheet" href="style/dvEvn.css"/>
+<link rel="stylesheet" href="content/guang_gao_pai_qi/schedule.css"/>
+<div id="sche_title_container" class="seachUI_" style="position:relative">
+    <div class="downMenu_title_" id="schedule_site_downMenu" style="display:none">
+        <div class="value">{{SCHEDULE_FILTERSITE}}</div>
+    </div>
+    <div class="schedule_siteBody" id="schedule_siteBody" style="height:242px;left:15px;top:52px;display:none">
+        <div id="schedule_siteBodyTitle" class="schedule_siteBodyTitle" style="height:28px"></div>
+				<div id="schedule_siteContainer_container" style="height:155px"></div>
+        <div style="background-color:#dddddd;height:1px;margin-left:6px;margin-right:6px"></div>
+        <div style="overflow:hidden;margin-top:13px">
+            <div id="schedule_siteBody_butA" class="adv_small_button_light" style="float:right;margin-right:6px">{{ADV_SYSUSER_QUEDING}}</div>
+            <div id="schedule_siteBody_butB" class="adv_small_button_dark" style="float:right;margin-right:6px;display:none">{{ADV_SYSUSER_QUXIAO}}</div>
+        </div>
+    </div>
+    <div class="schedule_siteBody" id="schedule_advIdBody" style="left:15px;top:52px;display:none;height:auto;font-size:14px">
+        <div id="schedule_advIdBodyTitle" class="schedule_siteBodyTitle" style="height:28px"></div>
+        <div id="schedule_advIdContainer_container" class="scheduleAdvContainer" style="height:155px;"></div>
+        <div style="background-color:#dddddd;height:1px;margin-left:6px;margin-right:6px"></div>
+				<div id="schedule_choosedRegion_adv_container" class="schedule_choosed_adv_container" style="min-height:40px;max-height:155px;background-color:white;padding-left:12px;width:calc(100% - 12px)">
+					<div style="overflow:hidden;width:100%;height:auto">
+						<div style="float:left;margin-top:11px">{{SCHEDULE_YIXUANGUANGGAOWEI}}：</div>
+						 <div id="schedule_choosedRegion_adv" class="schedule_flex_wrap_container" style="margin-left:4px;width:calc(100% - 90px);height:auto;float:left;margin-top:-8px"></div>
+					</div>
+				</div>
+        <div style="overflow:hidden;background-color:white;margin-bottom:10px;margin-top:2px">
+            <div id="schedule_adv_butA" class="adv_small_button_light" style="float:right;margin-right:6px">{{ADV_SYSUSER_QUEDING}}</div>
+            <div id="schedule_adv_butB" class="adv_small_button_dark" style="float:right;margin-right:6px">{{SCHEDULE_QINGKONG}}</div>
+        </div>
+    </div>
+    <div class="downMenu_title_" id="schedule_advId_downMenu" style="display:none">
+        <div class="value">{{SCHEDULE_FILTEADV}}</div>
+    </div>
+	<div id="sche_panel_calendar_selectors" class="panel_calendar_selectors">
+		<div style="height: 36px; width: 148px; margin-top: 14px; position: relative;" id="sche__start" class="panel_calendar_selitem calendarStyle_">
+			<input type="text" id="sche__start-datepicker-input" class="datepicker-input" style="color: inherit; border-width: 1px; border-style: solid; width: 138px; height: 34px; border-color: rgb(226, 226, 226);" readonly="readonly">
+			<img src="image/adv_calendar_icon.png" style="position: absolute; top: 8px; left: 118px; width: 20px; height: 20px; cursor: pointer;" />
+		</div>
+		<div class="panel_calendar_dash">
+			-
+		</div>
+		<div style="height: 36px; width: 148px; margin-top: 14px; position: relative;" id="sche__end" class="panel_calendar_selitem calendarStyle_">
+			<input type="text" id="sche__end-datepicker-input" class="datepicker-input" style="color: inherit; border-width: 1px; border-style: solid; width: 138px; height: 34px; border-color: rgb(234, 234, 234);" readonly="readonly">
+			<img src="image/adv_calendar_icon.png" style="position: absolute; top: 8px; left: 118px; width: 20px; height: 20px; cursor: pointer;" />
+		</div>
+	</div>
+    <div id="sche_searchByConditions" class="adv_gradient_blue_button" style="border:1px #4488a7 solid;height:32px;line-height:32px;width:58px;top:14px;right:4px">{{SCHEDULE_CHAXUN}}</div>
+</div>
+<div class="panel_page_list_container" style="height:calc(100% - 62px)">
+  <div style="margin-left:5px;height:100%;width:calc(100% - 5px);background-color:#ffffff">
+		<div id="sche_regionA" style="height:46%">
+				<div class="Title_aboveTable" style="display:none">
+						<span style="float:left;margin-left:14px;height:42px;line-height:42px;">{{SCHEDULE_CONTITION}}</span>
+				</div>
+		<div id="schedule_tableB_container" style="overflow-y:auto;height:100%;width:100%"></div>
+		 </div>
+		<div id="sche_regionA__" style="height:54%;">
+				<div class="Title_aboveTable" id="Title_aboveTable__" style="overflow:hidden;background-color:#82b2c8;height:28px;">
+					<span style="margin-left:14px;height:28px;line-height:28px;">{{SCHEDULE_POLICYDETAIL}}</span><span id="sche_shot_detail_adv_name" style="margin-left:20px;height:28px;line-height:28px;"></span><span id="sche_shot_detail_current_date" style="margin-left:24px;height:28px;line-height:28px;"></span>		
+			<img class="shrink_img" src="image/shrinkDown.png" style="float:right;margin-top:2px;margin-right:7px">
+		</div>
+				<div id="schedule_tableC_container" style="overflow-y:auto;height:calc(100% - 31px);width:100%"></div>
+		</div>
+	</div>
+</div>

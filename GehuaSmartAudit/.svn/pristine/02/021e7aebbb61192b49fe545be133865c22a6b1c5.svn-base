@@ -1,0 +1,15 @@
+.menu_video_audit {
+	background-image: url(../image/index/menu_icon/video_audit_dark.png);
+}
+
+.main_menu_focus .menu_video_audit {
+	background-image: url(../image/index/menu_icon/video_audit_white.png);
+}
+
+.menu_basis {
+	background-image: url(../image/index/menu_icon/basis_dark.png);
+}
+
+.main_menu_focus .menu_basis {
+	background-image: url(../image/index/menu_icon/basis_white.png);
+}

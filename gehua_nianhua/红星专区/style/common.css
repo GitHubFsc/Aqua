@@ -1,0 +1,48 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.app {
+	width: 1280px;
+	height: 720px;
+}
+
+.hidden {
+	display: none;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+#logBackground {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	width: 440px;
+	height: 440px;
+	z-index: 10;
+	background-color: green;
+	filter: alpha(opacity=30);
+	opacity: 0.3;
+}
+
+#log {
+	position: absolute;
+	height: 400px;
+	top: 70px;
+	left: 70px;
+	width: 400px;
+	z-index: 15;
+	overflow: auto;
+	color: yellow;
+	font-size: 18px;
+	word-break: break-all;
+	white-space: pre-wrap;
+}

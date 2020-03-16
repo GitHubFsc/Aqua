@@ -1,0 +1,22 @@
+<div id='ce_lue_qi_ting'>
+    <link rel="stylesheet" href="style/adPolicyAudit.css" media="screen" title="no title" charset="utf-8">
+    <div class="adPolicyAuditMenu ceLueQiTingMenu">
+        <div class="policy_type">
+            <div name="type" id="ce_lue_qi_ting_img">{{ADPOLICYAUDIT_POLICYTYPE_IMG}}</div>
+            <div name="type" id="ce_lue_qi_ting_video">{{ADPOLICYAUDIT_POLICYTYPE_VIDEO}}</div>
+            <div name="type" id="ce_lue_qi_ting_txt">{{ADPOLICYAUDIT_POLICYTYPE_SUBTITLE}}</div>
+        </div>
+        <div class="menu_split"></div>
+        <div class="policy_status">
+            <div name="status" id="ce_lue_qi_ting_enabled">{{ADPOLICYAUDIT_POLICYSTATUE_ENABLE}}</div>
+            <div name="status" id="ce_lue_qi_ting_disabled">{{ADPOLICYAUDIT_POLICYSTATUE_DISABLE}}</div>
+        </div>
+        <div class="policy_search">
+            <input type="text" name="policy_search" id="ce_lue_qi_ting_searchInput" value="">
+            <div class="policy_searchBtn" name="policy_search" id="ce_lue_qi_ting_searchBtn"></div>
+        </div>
+    </div>
+    <div class="adPolicyAuditBody ceLueQiTingBody">
+        <div class="ceLueQiTingTable" id="ceLueQiTingTable"></div>
+    </div>
+</div>

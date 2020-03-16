@@ -1,0 +1,712 @@
+.regist-star{
+    line-height: 32px;
+    height: 32px;
+    position: absolute;
+    margin-left: -1em;
+    font-family: simsun;
+    color: #f30;
+    display:none;
+    font-size: 14px;
+}
+
+.jobManage_option_halfRow {
+    display: inline-block;
+    font-size: 0px;
+    line-height: 0px;
+    width: calc(50% - 56px);
+    padding: 0px 30px 0px 26px;
+    vertical-align: top;
+    counter-reset: index;
+}
+.jobManage_option_halfRow.oneRow {
+    width: calc(100% - 56px);
+}
+.jobManage_option_halfRow > div {
+    display: block;
+    font-size: 14px;
+    vertical-align: middle;
+}
+.jobManage_option_label {
+    color: rgb(121, 121, 121);
+    line-height: 32px;
+    height: 32px;
+    margin-right: 20px;
+    width: 100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.jobManage_option_halfRow .input {
+    color: rgb(121, 121, 121);
+    background-color: white;
+    border: 1px solid rgb(198, 198, 198);
+    height: 32px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+}
+.jobManage_option_halfRow .datepicker-input {
+    color: rgb(121, 121, 121);
+    background-color: white;
+    border: 1px solid rgb(198, 198, 198);
+    height: 32px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+}
+.jobManage_dialog_cancel, .jobManage_dialog_submit {
+    width: 149px;
+    height: 38px;
+    bottom: 23px;
+    color: white;
+    border: 1px solid rgb(89, 127, 137);
+    cursor: pointer;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+}
+.jobManage_dialog_cancel {
+    margin-top: 20px;
+    background: rgb(94, 160, 192);
+    margin-left: 130px;
+}
+.jobManage_dialog_submit {
+    margin-top: 20px;
+    background: rgb(46, 161, 215);
+}
+
+.option_type_list{
+    width: calc(100% - 50px);
+    margin-left: 50px;
+    height: 32px;
+    line-height: 32px;
+    display: flex;
+    margin-bottom: 10px;
+}
+.option_type_list:before{
+    content: counter(index);
+    counter-increment: index;
+    width: 30px;
+    height:30px;
+    border:1px solid rgb(198, 198, 198);
+    color: #737373;
+    line-height: 30px;
+    position: absolute;
+    margin-left: -50px;
+    text-align: center;
+}
+.option_type_list .content{
+    flex: 1;
+}
+.option_type_list .option_list_button{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+.option_type_list .option_list_button img{
+    display: block;
+    width:100%;
+}
+
+#jobManage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+#jobManage .panel_page_head {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+}
+#jobManage .panel_page_head_left {
+    position: absolute;
+    left: 18px;
+    height: 36px;
+    top: 50%;
+    margin-top: -18px;
+}
+#jobManage .panel_page_head_title_lead {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 22px;
+    background-color: rgb(44, 167, 222);
+}
+#jobManage .panel_page_head_title {
+    display: inline-block;
+    vertical-align: middle;
+    height: 36px;
+    line-height: 36px;
+    color: rgb(73, 75, 88);
+    margin-left: 9px;
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#jobManage .panel_page_body {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-color: rgb(237, 237, 219);
+    border-width: 1px 1px 0 1px;
+    background-color: rgb(252, 252, 242);
+}
+#jobManage .panel_top_search_box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+    height: 36px;
+    margin-left: 0px;
+    position: relative;
+}
+#jobManage .panel_top_search_box_input {
+    position: absolute;
+    width: 298px;
+    height: 34px;
+    border: 1px solid rgb(234, 234, 234);
+    background-color: rgb(244, 244, 244);
+    color: rgb(121, 121, 121);
+    padding-left: 10px;
+    padding-right: 30px;
+    font-size: 14px;
+    outline: none;
+}
+#jobManage .panel_page_head_right {
+    position: absolute;
+    right: 8px;
+    height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    text-align: right;
+}
+#jobManage .panel_page_head_right > div {
+    vertical-align: middle;
+    display: inline-block;
+}
+#jobManage .panel_page_head_button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 115px;
+    background-color: rgb(46, 162, 215);
+    color: white;
+    height: 36px;
+    border: 1px solid #597F88;
+    line-height: 34px;
+    padding: 0 0 0 35px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    background-image: url(../../images/offering/create.png);
+    background-repeat: no-repeat;
+    background-position: 10px 9px;
+}
+#jobManage .panel_page_head_button.create {
+    background-image: url(../../images/offering/create.png);
+    background-repeat: no-repeat;
+    background-position: 10px 9px;
+}
+#jobManage .panel_page_head_button.back {
+    width: 110px;
+    padding-left: 50px;
+    background-image: url(../../images/lecture_list/left_arrow.png);
+    background-position: 19px center;
+    background-repeat: no-repeat;
+}
+
+
+#jobManage .panel_page_body {
+}
+#jobManage_list{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    padding: 11px 6px;
+}
+#jobManage_list .list_head {
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    color: white;
+    display: flex;
+    background: #12A0EA;
+}
+#jobManage_list .list_head .title {
+    width: 96px;
+    height: 38px;
+    line-height: 38px;
+    color: white;
+    text-align: center;
+}
+#jobManage_list .list_head .empty {
+    flex: 1;
+    height: 38px;
+    line-height: 38px;
+}
+#jobManage_list .list_head .calendars {
+    width: 315px;
+    height: 38px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+}
+#jobManage_list .list_head .calendars .calendar {
+    position: relative;
+    width: 143px;
+    height: 30px;
+    display: inline-block;
+    z-index: 99;
+    color: #848484;
+}
+#jobManage_list .list_head .calendars .calendar input {
+    background-image: url(../../images/operateanalyze/oa-dp-ibg.png);
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    font-size: 14px;
+}
+#jobManage_list .list_head .selects {
+    width: 530px;
+    height: 38px;
+    line-height: 38px;
+    display: flex;
+    align-items: center;
+}
+#jobManage_list .list_head .selects .select {
+    margin-left: 11px;
+}
+#jobManage_list .list_table {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 550px;
+    top: 56px;
+    font-size: 14px;
+}
+#jobManage_list .list_table > table > tbody > tr > td:last-child {
+    overflow: visible !important;
+}
+#jobManage_list .list_table tr .opr {
+    color: rgb(46, 162, 215);
+    margin: 0 8px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+#jobManage_list .list_table tr .opr:last-child {
+    margin: 0 0px;
+}
+#jobManage_list .list_table tr .opr img {
+    vertical-align: middle;
+}
+#jobManage_list .list_table tr .opr_more {
+    display: inline-block;
+    background: inherit
+}
+#jobManage_list .list_table tr .opr_more .opr_more_detail {
+    display: none;
+    position: absolute;
+    width: 73px;
+    box-sizing: border-box;
+    border: 1px solid #E2E2E2;
+    z-index: 2;
+    background: inherit;
+    top: 6px;
+    right: 14px;
+    text-align: right;
+}
+#jobManage_list .list_table tr .opr_more .opr_more_detail .opr {
+    height: 24px;
+    line-height: 24px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E2E2E2;
+    display: block;
+    margin: 0px;
+    padding-right: 10px;
+}
+#jobManage_list .list_table tr .opr_more .opr_more_detail .opr:last-child {
+    border-bottom: 0px solid #E2E2E2;
+}
+#jobManage_list .list_table tr .opr_more.open .opr_more_detail {
+    display: block;
+}
+
+#jobManage_task {
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
+#jobManage_task .options_conent{
+    position: absolute;
+    padding: 11px 12px 11px 34px;
+    height: 550px;
+    display: flex;
+    border-bottom: 1px solid #ECEDDD;
+    font-size: 14px;
+    top:0px;
+    left:0px;
+    right:0px;
+    box-sizing: border-box;
+}
+#jobManage_task .bottom{
+    position: absolute;
+    top: 551px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    background: white;
+    padding-right: 40px;
+}
+#jobManage_task .bottom .jobManage_task_button {
+    width: 151px;
+    height: 40px;
+    color: white;
+    border: 1px solid rgb(89, 127, 137);
+    cursor: pointer;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+    background: #5CA1C0;
+    float:right;
+    margin-top:10px;
+    margin-left: 17px;
+}
+#jobManage_task .options_conent .left {
+    width: 489px;
+    padding-top: 10px;
+    border-right: 1px solid #E4E3DE
+}
+#jobManage_task .options_conent .left .option {
+    width: calc(100% - 12px);
+    display: flex;
+    margin-bottom: 23px;
+}
+#jobManage_task .options_conent .left .option .option_title {
+    text-align: left;
+    width: 80px;
+    height: 34px;
+    line-height: 34px;
+    color: #7C7C7A;
+}
+#jobManage_task .options_conent .left .option .option_content {
+    width: calc(100% - 80px);
+    display: flex;
+}
+#jobManage_task .options_conent .left .option .option_content .option_content_input {
+    height: 34px;
+    line-height: 32px;
+    padding: 9px 5px;
+    border: 1px solid #CECDCB;
+    outline: none;
+    color: #797979
+}
+#jobManage_task .options_conent .left .option .option_content .option_content_input[readonly] {
+    background:#EBEBEB
+}
+#jobManage_task .options_conent .right {
+    flex: 1;
+    padding-left: 27px;
+    padding-top: 10px;
+}
+#jobManage_task .options_conent .right .task_list_head {
+    display: flex;
+    height: 34px;
+    line-height: 34px;
+}
+#jobManage_task .options_conent .right .task_list_head .title {
+    flex: 1;
+    text-align: left;
+    height: 34px;
+    line-height: 34px;
+    color: #7C7C7A;
+}
+#jobManage_task .options_conent .right .task_list_head .button {
+    width: 80px;
+    text-align: right;
+    height: 34px;
+    line-height: 34px;
+    padding-right: 28px;
+    color: rgb(46, 162, 215);
+    cursor: pointer;
+    text-decoration: underline
+}
+
+#jobManage_option_job_Schedule_crontab .item{
+    vertical-align:top;
+    height: 34px;
+    border: 1px solid #D3D3D3;
+    display: inline-block;
+    line-height: 34px;
+    font-size: 16px;
+    color:#565656;
+    text-align: center;
+    background:white;
+    background: -ms-linear-gradient(top, #fff, #E5E5E5);
+    background: -moz-linear-gradient(top,#fff,#E5E5E5);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#fff), to(#E5E5E5));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#E5E5E5));
+    background: -webkit-linear-gradient(top, #fff, #E5E5E5);
+    background: -o-linear-gradient(top, #fff, #E5E5E5);
+    margin-left: -1px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+#jobManage_option_job_Schedule_crontab .item:first-child{
+    margin-left: 0px;
+}
+#jobManage_option_job_Schedule_crontab .item.readonly{
+    background:#EBEBEB;
+    color:#565656;
+}
+#jobManage_option_job_Schedule_crontab .item.selected{
+    background: #43B5E0;
+    color: white;
+}
+#jobManage_option_job_Schedule_crontab .month,.oddeven,.week,.day{
+    font-size: 0px;
+    line-height: 0px;
+}
+#jobManage_option_job_Schedule_crontab .container{
+    margin-bottom: 10px;
+    font-size: 0px;
+    line-height: 0px;
+}
+#jobManage_option_job_Schedule_crontab .container .oddeven{
+    display: inline-block;
+    margin-right: 34px;
+}
+#jobManage_option_job_Schedule_crontab .container .week{
+    display: inline-block;
+}
+#jobManage_option_job_Schedule_crontab .month .item{
+    width: 39px;
+}
+#jobManage_option_job_Schedule_crontab .oddeven .item{
+    width: 76px;
+    margin-right: 10px;
+}
+#jobManage_option_job_Schedule_crontab .oddeven .item:last-child{
+    margin-right: 0px;
+}
+#jobManage_option_job_Schedule_crontab .week .item{
+    width: 39px;
+}
+#jobManage_option_job_Schedule_crontab .day .item{
+    width: 39px;
+    font-size: 14px;
+}
+#jobManage_option_job_Schedule_crontab .day .row{
+    margin-top: -1px;
+}
+#jobManage_option_job_Schedule_crontab .item:first-child{
+    margin-top: 0px;
+}
+#jobManage_option_job_Schedule_crontab .hour_minute{
+    display: flex;
+    line-height: 34px;
+    font-size: 14px;
+    color: #7C7C7A;
+}
+#jobManage_option_job_Schedule_crontab .hour_minute .hour{
+    width: 67px;
+}
+#jobManage_option_job_Schedule_crontab .hour_minute .minute{
+    width: 67px;
+}
+#jobManage_option_job_Schedule_crontab .hour_minute .unit{
+    width: 35px;
+    line-height: 34px;
+    height: 34px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#jobManage_option_job_Schedule_interval .interval_container{
+    display: flex;
+    font-size: 14px;
+    height: 34px;
+    line-height: 34px;
+    color: #7C7C7A;
+}
+
+#jobManage_task .options_conent .right .task_list_body {
+    height: 490px;
+    overflow-y: auto;
+}
+#jobManage_task .options_conent .right .task_list_body .background {
+    counter-reset: index;
+    background: #F3F3F3;
+    min-height: 485px;
+    box-sizing:border-box;
+    border-radius: 5px;
+    width: calc(100% - 30px);
+    border: 1px solid #F3F3F3;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item {
+    margin: 0px 15px;
+    counter-increment:sectioncounter;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item:first-child .nextStep{
+    display: none;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .nextStep {
+    height: 54px;
+    text-align: center;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .nextStep img{
+    display: inline-block;
+    height:54px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background{
+    margin: 0px 15px;
+    background: white;
+    border-radius: 4px;
+    padding-top: 9px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_head {
+    display: flex;
+    height: 35px;
+    line-height: 35px;
+    border-bottom: 1px solid #E8E8E8;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_head .task_id {
+    width: 74px;
+    text-align: center;
+    position: relative;
+    color: #8D8D8D;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_head .task_id::before {
+    content:"";
+    right: 0px;
+    top: 9px;
+    bottom: 9px;
+    width: 1px;
+    background: #E1E1E1;
+    position: absolute;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_head .task_id::after {
+    content:counter(sectioncounter);
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_head .task_name {
+    flex: 1;
+    text-align: left;
+    padding-left:10px;
+    position: relative;
+    color: #8D8D8D;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_head .task_del {
+    width: 100px;
+    text-align: right;
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline;
+    color: rgb(46, 162, 215);
+    padding-right: 18px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_body {
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_body .jobManage_option_halfRow {
+    height: auto;
+    padding: 0px;
+    width: calc(50% - 40px);
+    margin: 0px 20px 13px 20px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_body .jobManage_option_halfRow.oneRow {
+    width: calc(100% - 56px);
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_body .jobManage_option_halfRow .input {
+    color: #828282;
+    width: 100%;
+    margin-right: 0px;
+}
+#jobManage_task .options_conent .right .task_list_body .background .task_list_item .task_list_item_background .task_list_item_body .jobManage_option_halfRow .input.readonly {
+    background:#EBEBEB
+}
+
+#jobManage_task .options_conent .right .task_list_body .mCSB_dragger_bar {
+    background-color: #55909E;
+}
+#jobManage_task .options_conent .right .task_list_body .mCSB_draggerRail {
+    background-color: #E6F0F1;
+}
+
+#jobManage_task .jobHistory_content{
+    position: absolute;
+    padding: 14px 14px 0px 14px;
+    height: 550px;
+    display: flex;
+    border-bottom: 1px solid #ECEDDD;
+    font-size: 14px;
+    top:0px;
+    left:0px;
+    right:0px;
+    box-sizing: border-box;
+}
+#jobManage_task .jobHistory_content .left{
+    width:477px;
+    box-sizing: border-box;
+    border:1px solid #E4E3DE;
+    height: 535px;
+    border-bottom:0px;
+    border-right:0px;
+    background: white;
+}
+#jobManage_task .jobHistory_content .right{
+    flex:1;
+    box-sizing: border-box;
+    border:1px solid #E4E3DE;
+    height: 535px;
+    border-bottom:0px;
+    background: white;
+}
+#jobManage_task .jobHistory_content .table{
+    padding: 14px 10px 10px 10px;
+}
+#jobManage_task .jobHistory_content .table .scrollBarList_Body tr.selected td{
+    background: #80DAF1!important;
+    color:white!important;;
+}
+#jobManage_task .jobHistory_content .table tr .opr {
+    color: rgb(46, 162, 215);
+    margin: 0 8px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+#jobManage_task .jobHistory_content .mCSB_scrollTools{
+    width:6px;
+}
+#jobManage_task .jobHistory_content .mCSB_dragger_bar {
+    background-color: #5192A6;
+}
+#jobManage_task .jobHistory_content .mCSB_draggerRail {
+    background-color: #E6F0F1;
+}
+
+
+
+
+

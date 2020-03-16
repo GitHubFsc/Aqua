@@ -1,0 +1,205 @@
+<div class="popupCenterDivFlex batch" id="batch">
+  <div class="popupCenterDivTop">
+    <div class="popupCenterDivTopLeft">
+      查询条件
+    </div><img src="images/cross.png" style=
+    "cursor:pointer;float:right;margin-top:10px;margin-right:17px;"
+    alt="关闭">
+  </div>
+  <div class="popupCenterDivBody" style=
+  "margin-left:0px;height: auto;">
+    <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+      <div style="width:92px;margin-left: 54px;">
+        日期范围&nbsp;:
+      </div>
+      <div style="width:180px;z-index: 2;background-color: #fff;"
+      id="dateRangeSelector"></div><a id="setCustomize" class=
+      "customize"></a>
+    </div>
+    <div id="start_date_row" class="popupCenterDivBodyRow" style=
+    "margin-top: 24px;display: none;">
+      <div style="width:92px;margin-left: 54px;">
+        开始日期&nbsp;:
+      </div>
+      <div style="width:180px;/*border:1px solid #d3d3d3;*/">
+        <div style=
+        "position: absolute;width:180px;height:30px;z-index:1;" id=
+        "multiDetailList_start_date"></div>
+      </div>
+    </div>
+    <div id="end_date_row" class="popupCenterDivBodyRow" style=
+    "margin-top: 24px;display: none;">
+      <div style="width:92px;margin-left: 54px;">
+        结束日期&nbsp;:
+      </div>
+      <div style="width:180px;/*border:1px solid #d3d3d3;*/">
+        <div style=
+        "position: absolute;width:180px;height:30px;z-index:1;" id=
+        "multiDetailList_end_date"></div>
+      </div>
+    </div>
+    <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+      <div style="width:92px;margin-left: 54px;">
+        组合类型&nbsp;:
+      </div>
+      <div style="width:104px">
+        <div class="radio" name="radio1" value="0">
+        </div>预设组合
+      </div>
+      <div style="width:104px">
+        <div class="radio" name="radio1" value="1"></div>自定义
+      </div>
+    </div>
+    <div class="group type0">
+      <div class="popupCenterDivBodyRow" style=
+      "margin-top: 24px;align-items: flex-start;">
+        <div style="width:92px;margin-left: 54px;">
+          预设组合&nbsp;:
+        </div>
+        <div id="selection_list" style="">
+          <div class="selection_item"></div>
+          <div class="selection_item"></div>
+          <div class="selection_item"></div>
+        </div>
+      </div>
+      <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+        <div style="width:92px;margin-left: 54px;">
+          点播类型&nbsp;:
+        </div>
+        <div style="width:180px;background-color: #fff;z-index: 2;"
+        id="poTypeSelector"></div>
+      </div>
+      <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+        <div id="po_ids">
+          <input name='poIdsValue' class='dropDownListValue'>
+        </div>
+      </div>
+    </div>
+    <div class="popupCenterDivBodyRow" id=
+    "popupCenterDiv_exportRadio" style=
+    "margin-top: 24px;display:none">
+      <div style="visibility:hidden;width:92px;margin-left: 54px;">
+      </div>
+      <div name="cardID_" style="width:104px">
+        <div name="radio" class="radio" value="0"></div>导入文件
+      </div>
+      <div name="cardID_" style="width:104px">
+        <div name="radio" class="radio_selected" value="1">
+        </div>提供卡号
+      </div>
+    </div>
+    <form enctype="multipart/form-data" method="post" action=""
+    style="overflow:hidden;width:100%;margin: 4px 0;display:none"
+    id="submitForm" name="submitForm">
+      <input type="text" name="job_name">
+      <input type="text" name="start_date">
+      <input type="text" name="end_date">
+      <input type="text" name="smart_card_ids" id="smart_card_ids">
+      <input type="text" name="po_type">
+      <input type="text" name="servicePackInput">
+      <input type="text" name="servicePack">
+      <!-- <input type="text" name="poids"> -->
+       <input type="file" name="file" id="file">
+       <input type="submit" value="提交">
+    </form>
+    <div class="popupCenterDivBodyRow" id="cardIDInput" style=
+    "margin-top: 24px;">
+      <div style="width:92px;margin-left: 54px;">
+        智能卡号&nbsp;:
+      </div>
+      <div style="width:180px;border:1px solid #d3d3d3;">
+        <input type="text" name="smartCardInput" style=
+        'border: 0;width: 100%;padding-left: 10px;'>
+      </div>
+      <div class='pageTitleContainerRightButt' style=
+      'margin: 0 0 0 6px;color:#ffffff;width: 90px;' name=
+      'addSmartCard'>
+        添&nbsp;加
+      </div>
+    </div>
+    <div class="popupCenterDivBodyRow" id="popupDiv_import" style=
+    "margin-top: 24px;display:none">
+      <div style="width:92px;margin-left: 54px;">
+        导入文件&nbsp;:
+      </div>
+      <div style=
+      "position:relative;width:242px;border:1px solid #d3d3d3;">
+        <img id="aquaBO_importFile" src="images/import.png" style=
+        "position:absolute;width:100%;height:100%"> <span id=
+        "aquaBO_importFileText" style=
+        "position:absolute;width:242px;left:9px;height:30px;line-height:30px;font-family:'微软雅黑';font-size:12px;color:#eaf6eb">
+        </span>
+      </div><span style=
+      "margin-top:2px;text-align:left;width:auto;margin-left:11px;float:left;text-decoration:underline;cursor:pointer;color:#2ea2d7"
+      name="inputFileBtn" id="aquaBOexport_importFile">导入</span>
+    </div>
+    <div class="" name="smartCardContainer" style=
+    "padding: 10px 20px 0 20px;height: 120px;margin: 0;">
+      <div class="smart_card_table_title">
+        <table>
+          <thead>
+            <tr>
+              <td width="32%">
+                智能卡号
+              </td>
+              <td width="18%">
+                操作
+              </td>
+              <td width="32%">
+                智能卡号
+              </td>
+              <td width="18%">
+                操作
+              </td>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="smart_card_table_body" style="height: 90px;">
+        <table>
+          <tbody>
+            <tr>
+              <td width="32%"></td>
+              <td width="18%"></td>
+              <td width="32%"></td>
+              <td width="18%"></td>
+            </tr>
+            <tr>
+              <td width="32%"></td>
+              <td width="18%"></td>
+              <td width="32%"></td>
+              <td width="18%"></td>
+            </tr>
+            <tr>
+              <td width="32%"></td>
+              <td width="18%"></td>
+              <td width="32%"></td>
+              <td width="18%"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="popupCenterDivBodyRow" id="missionDescContainer"
+  style="margin-top: 24px;display:none">
+    <div style="width:92px;margin-left: 54px;">
+      任务描述&nbsp;:
+    </div>
+    <div style="width:286px;border:1px solid #d3d3d3;">
+      <input type="text" id="missionDesc" style=
+      'border: 0;width: 100%;padding-left: 10px;'>
+    </div>
+  </div>
+  <div class="popupCenterDivbottom" style=
+  "width:100%;height: 50px;">
+    <div class="pageTitleContainerRightButt" style=
+    "margin-right:19px" name="popUpQueryBtn">
+      查询
+    </div>
+    <div class="pageTitleContainerRightButt" style=
+    "margin-right:19px" name="popUpCancelBtn">
+      取消
+    </div>
+  </div>
+</div>

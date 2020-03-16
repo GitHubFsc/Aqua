@@ -1,0 +1,20 @@
+<div class='_frame _flex program_update'>
+  <link rel='stylesheet' href='style/dialog.css'>
+  <link rel='stylesheet' href='style/newSelect.css'>
+  <link rel='stylesheet' href='style/frame.css'>
+  <link rel='stylesheet' href='content/asset/program_update/index.css'>
+  <div class='header _flex'>
+    <div class='header_item logo'>{{MENU_PROGRAMUPDATEMANAGEMENT}}</div>
+    <div class='header_item span'></div>
+    <div class='header_item tab' name='today'>{{PUM_TODAY}}</div>
+    <div class='header_item tab' name='yesterday'>{{PUM_YESTERDAY}}</div>
+    <div class='header_item tab' name='curweek'>{{PUM_CURWEEK}}</div>
+    <div class='header_item span'></div>
+    <div class='header_item data_picker' style='width: 140px;' name='filter' id='time_s'></div>
+    <div class="header_item">-</div>
+    <div class='header_item data_picker' style='width: 140px;' name='filter' id='time_e'></div>
+  </div>
+  <div class='body'>
+    <div id='program_update_list_table' class='list_table'></div>
+  </div>
+</div>

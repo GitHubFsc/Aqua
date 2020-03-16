@@ -1,0 +1,69 @@
+<div class="_dialog meta">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{ASSET_META_DIALOG_TITLE_ADD}}</div>
+    <div class="_dialog_span"></div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body">
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_NAME}}</label>
+      <label for="">{{ASSET_META_DIALOG_TITLE}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" id="name">
+      <input type="text" id="title">
+    </div>
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_TYPE}}</label>
+      <label for="">{{ASSET_META_DIALOG_MANDATORY}}</label>
+    </div>
+    <div class="_dialog_row">
+      <div class="_dialog_col" id="type"></div>
+      <div class="_dialog_col" id="mandatory"></div>
+    </div>
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_READONLY}}</label>
+      <label for="">{{ASSET_META_DIALOG_READONLYCONTEXTUSERTAG}}</label>
+    </div>
+    <div class="_dialog_row">
+      <div class="_dialog_col" id="readonly"></div>
+      <input type="text" id="readonly_value">
+    </div>
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_MULTIPLEVALUE}}</label>
+      <label for="">{{ASSET_META_DIALOG_VALUEDEFINITION}}</label>
+    </div>
+    <div class="_dialog_row">
+      <div class="_dialog_col" id="multi"></div>
+      <input type="text" id="enum_values">
+    </div>
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_VALUEDEFINITIONMAX}}</label>
+      <label for="">{{ASSET_META_DIALOG_VALUEDEFINITIONMIN}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" id="max_value">
+      <input type="text" id="min_value">
+    </div>
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_GROUPTITLE}}</label>
+      <label for="">{{ASSET_META_DIALOG_SEQ}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" id="group_name">
+      <input type="text" id="group_seq">
+    </div>
+    <div class="_dialog_row">
+      <label for="">{{ASSET_META_DIALOG_ISTREE}}</label>
+      <label for=""></label>
+    </div>
+    <div class="_dialog_row">
+      <div class="_dialog_col" id="tree"></div>
+      <input type="text" style="visibility: hidden;">
+    </div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="btn _cancel">{{AUTH_MNG_DIALOG_CANCEL}}</div>
+    <div class="btn _confirm">{{AUTH_MNG_DIALOG_DETAIL_CONFIRM}}</div>
+  </div>
+</div>

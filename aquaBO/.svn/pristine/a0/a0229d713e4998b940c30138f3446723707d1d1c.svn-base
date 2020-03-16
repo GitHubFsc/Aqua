@@ -1,0 +1,145 @@
+<div class="product_offering _flex">
+  <link rel="stylesheet" href="content/productOffering/main.css">
+  <div class="main_page _flex _column">
+    <div class="header _flex">
+      <div class="header_item logo">{{MENU_PRODUCT_OFFERING}}</div>
+      <div class="header_item split"></div>
+      <div class="header_item search_bar">
+        <input type="text" class="search_input">
+        <div class="search_btn"></div>
+      </div>
+      <div class="header_item span"></div>
+      <div class="header_item dropdown" id="validity_filter"></div>
+      <div class="header_item dropdown" id="enable_filter"></div>
+      <div class="header_item btn" id="create" data-type="create">{{PRODUCTOFFERING_QUERYBTN_CREATEOFFERING}}</div>
+    </div>
+    <div class="body">
+      <div id="list_table"></div>
+    </div>
+  </div>
+  <div class="product_policy_dialog _flex _column" style="display: none;">
+    <div class="header _flex">
+      <div class="header_item logo">{{MENU_PRODUCT_OFFERING}}</div>
+      <div class="header_item span"></div>
+    </div>
+    <div class="body _flex _row">
+      <div class="col">
+        <div class="row _flex _row">
+          <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_POLICY_ID}}</label>
+          <input class="value_input" id="policy_id" disabled />
+        </div>
+        <div class="row _flex _row">
+          <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_NAME}}</label>
+          <input type="text" class="value_input" id="name">
+        </div>
+        <div class="row _flex _row">
+          <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_EFFECTIVE_TIME}}</label>
+          <div id="effective_date_picker" style="width: 288px;z-index: 1;"></div>
+        </div>
+        <div class="row _flex _row">
+          <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_EXPIRATION_TIME}}</label>
+          <div id="expiration_date_picker"style="width: 288px;"></div>
+        </div>
+        <div class="row _flex _row">
+          <label for="" style="width: 158px;">{{PRODUCTOFFERING_DIALOG_LABEL_ASSET_TAGS}}</label>
+          <input type="text" class="value_input" id="asset_tags">
+        </div>
+        <div class="row _flex _row">
+          <label for="" style="width: 158px;">{{PRODUCTOFFERING_DIALOG_LABEL_ASSET_EXTRA}}</label>
+          <input type="text" class="value_input" id="asset_extra">
+        </div>
+        <div class="row _flex _row">
+          <label for="" style="width: 158px;">{{PRODUCTOFFERING_DIALOG_LABEL_USER_TAGS}}</label>
+          <input type="text" class="value_input" id="user_tags">
+        </div>
+        <div class="row _flex _row">
+          <label for="" style="width: 158px;">{{PRODUCTOFFERING_DIALOG_LABEL_ALLOW_REPEAT}}</label>
+          <div class="combo" id="allow_repeat_purchase"></div>
+        </div>
+        <label for="" style="display: block;padding-top: 13px;padding-bottom: 6px;">{{PRODUCTOFFERING_DIALOG_LABEL_DESCRIPTION}}</label>
+        <textarea name="desc" rows="2" cols="80" class="value_input" style="resize:none;height: 91px;width: 454px;border: 1px solid #e2e2e2;"></textarea>
+      </div>
+      <div class="spliter"></div>
+      <div class="col">
+        <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_PURCHASE_OPTS}}</label>
+        <div class="group">
+          <div class="row _flex _row">
+            <div class="col1">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_PRICE_CURRENCY}}</label>
+              <div class="combo" id="price_currency"></div>
+            </div>
+            <div class="col2">
+              <label for=""></label>
+            </div>
+          </div>
+          <div class="row _flex _row">
+            <div class="col1">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_PRICE_TYPE}}</label>
+              <div class="combo" id="price_type"></div>
+            </div>
+            <div class="col2">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_DISCOUNT}}</label>
+              <input type="text" class="value_input" id="discount" />
+            </div>
+          </div>
+          <div class="row _flex _row">
+            <div class="col1">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_TICKET_LIFETIME_TYPE}}</label>
+              <div class="combo" id="ticket_type"></div>
+            </div>
+            <div class="col2">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_TICKET_LIFETIME}}</label>
+              <div class="_flex _row">
+                <input type="text" id="ticket_num" class="value_input">
+                <div id="ticket" class="combo" style="width: 68px;margin-left: 14px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_LIMITSETTING}}</label>
+        <div class="group">
+          <div class="row _flex _row">
+            <div class="col1">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_ENABLELIMIT}}</label>
+              <div id="limit_use_offering" class="combo"></div>
+            </div>
+            <div class="col2">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_ZHOUQICISHUSHANGXIAN}}</label>
+              <input type="text" class="value_input" id="limit_time_range_count">
+            </div>
+          </div>
+          <div class="row _flex _row">
+            <div class="col1">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_PEIE}}</label>
+              <input type="text" class="value_input" id="limit_count" />
+            </div>
+            <div class="col2">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_PEIEZHOUQI}}</label>
+              <div class="_flex _row">
+                <div id="limit_time_range_num" class="combo" style="-webkit-box-flex: 1;-ms-flex: 1;flex: 1;"></div>
+                <div id="limit_time_range_unit" class="combo" style="width: 68px;margin-left: 14px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row _flex _row">
+            <div class="col1">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_OPEN}}</label>
+              <div class="combo" id="limit_from_natural_time"></div>
+            </div>
+            <div class="col2">
+              <label for="">{{PRODUCTOFFERING_DIALOG_LABEL_PEIESHANGXIAN}}</label>
+              <input type="text" class="value_input" id="limit_total_count" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot _flex">
+      <div class="btn cancel">{{PRODUCTOFFERING_DIALOG_BTN_CANCEL}}</div>
+      <div class="btn back">{{PRODUCTOFFERING_DIALOG_BTN_BACK}}</div>
+      <div class="btn confirm">{{PRODUCTOFFERING_DIALOG_BTN_CONFIRM}}</div>
+      <div class="btn update">{{PRODUCTOFFERING_DIALOG_BTN_UPDATE}}</div>
+    </div>
+  </div>
+  <div id="po-editor-page" class="page-has-calendar" style="display:none;"></div>
+</div>

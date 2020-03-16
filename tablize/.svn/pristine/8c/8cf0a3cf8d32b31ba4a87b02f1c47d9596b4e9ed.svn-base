@@ -1,0 +1,23 @@
+<div class="user-complext-page" id="userAdmin-user-admin-root">
+	<div class="user-simple-page" id="userAdmin-user-admin-index">
+		<div class="page-rel-container">
+			<div class="page-rel-header">
+				<div class="panel_page_head_left">
+					<div class="panel_page_head_title_lead"></div>
+					<div class="panel_page_head_title">用户管理</div>
+					<div class="user-admin-search">
+						<input id="user-admin-list-search" />
+						<div class="user-admin-search-icon"></div>
+					</div>
+				</div>
+				<div class="user-admin-export-btn" id="user-admin-user-export">导出用户</div>
+				<div class="panel_page_add_btn" id="user-admin-user-add">新增用户</div>
+			</div>
+			<div class="page-rel-content">
+				<div class="page-inner-content" style="border-width:1px 1px 0 1px; margin:0;">
+					<div id="user-admin-user-list"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,180 @@
+<head>
+  <style type="text/css">
+    @IMPORT url("content/self_service_adviser_manage/self_service_adviser_manage.css");
+		#popup_audit .content{
+			line-height: 0px;
+			font-size: 0px;
+			font-family: '微软雅黑';
+
+			padding-left: 31px;
+			padding-right: 31px;
+			padding-top: 12px;
+		}
+		#popup_audit .oneRow{
+			width: 100%;
+			display: flex;
+		}
+		#popup_audit .oneRow .label{
+			color: rgb(121, 121, 121);
+			line-height: 26px;
+			height: 26px;
+			margin-right: 20px;
+			margin-top: 5px;
+			width: 100%;
+			overflow:hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+			display: block;
+			font-size: 14px;
+			vertical-align: middle;
+		}
+		#popup_audit .oneRow .input {
+			color: rgb(121, 121, 121);
+			background-color: white;
+			border: 1px solid rgb(198, 198, 198);
+			height: 32px;
+			width: 100%;
+			padding: 0 10px;
+			font-size: 14px;
+			outline: none;
+			box-sizing: border-box;
+		}
+		#popup_audit .oneRow .input[readonly] {
+			background: #f0f0f0;
+			border: 1px solid #E3E3E3;
+		}
+		#popup_audit .oneRow .textarea {
+			color: rgb(121, 121, 121);
+			width: 100%;
+			border: 1px solid rgb(198, 198, 198);
+			height: 86px;
+			font-size: 14px;
+			outline: none;
+			padding: 0 10px;
+			background-color: white;
+			resize:none;
+			line-height: 28px;
+			box-sizing: border-box;
+		}
+		#popup_audit .oneRow .textarea[readonly] {
+			background: #f0f0f0;
+			border: 1px solid #E3E3E3;
+		}
+		#popup_audit .oneRow .halfRow{
+			font-size: 0px;
+			line-height: 0px;
+			width: calc(50% - 49px);
+			vertical-align: top;
+			counter-reset: index;
+			position: relative;
+		}
+		#popup_audit .oneRow .halfRow:nth-child(2){
+			padding-left: 98px;
+		}
+		#popup_audit .oneRow .customizeRow{
+
+			font-size: 0px;
+			line-height: 0px;
+			vertical-align: top;
+			counter-reset: index;
+		}
+
+		#popup_audit .content .mCSB_inside > .mCSB_container{ margin-right: 30px; }
+		#popup_audit .content .mCSB_dragger_bar {
+			background-color: #5192A6;
+		}
+		#popup_audit .content .mCSB_draggerRail {
+			background-color: #E6F0F1;
+		}
+		#popup_audit .content .mCSB_dragger:hover .mCSB_dragger_bar {
+			background-color: #5192A6;
+		}
+		#popup_audit .content .mCSB_draggerRail {
+			background-color: #E6F0F1;
+		}
+  </style>
+</head>
+<div style="background-color:white;" class="adv_page_main_style adv_dialog_container" >
+	<div class="advUserManage_sysManage_popupContainer" style="width:760px;background-color:white;height:644px">
+		<div class="adv_popupDialogue_title_container">
+			<span id="popupAudit_title"></span>
+			<div id="popupAuditClose" class="adv_popupDialogue_title_close"></div>
+		</div>
+		<div id="popup_audit" style="color:#717171;">
+			<div class="content"  style="">
+				<div class="oneRow row1">
+					<div class="halfRow">
+						<div class="label">用户名</div>
+						<input id="popupAudit_username" class="input" type="text" readonly>
+					</div>
+					<div class="halfRow">
+						<div class="label">创建时间</div>
+						<input id="popupAudit_createTime" class="input" type="text" readonly>
+					</div>
+				</div>
+				<div class="oneRow">
+					<div class="halfRow">
+						<div class="label">商家名称</div>
+						<input id="popupAudit_companyName" class="input" type="text" readonly>
+					</div>
+					<div class="halfRow">
+						<div class="label">所属行业</div>
+						<input id="popupAudit_industry" class="input" type="text" readonly>
+					</div>
+				</div>
+				<div class="oneRow">
+					<div class="halfRow">
+						<div class="label">联系姓名</div>
+						<input id="popupAudit_contactName" class="input" type="text" readonly>
+					</div>
+					<div class="halfRow">
+						<div class="label">联系方式</div>
+						<input id="popupAudit_contactPhone" class="input" type="text" readonly>
+					</div>
+				</div>
+
+				<div class="oneRow">
+					<div class="customizeRow" style="width:calc(100% - 152px)">
+						<div class="label">详细地址</div>
+						<input id="popupAudit_Address" class="input" type="text" readonly>
+					</div>
+					<div class="customizeRow customizeRow1" style="margin-left: 22px;width:130px">
+						<div class="label">{{SELF_SERVICE_ADVISER_MANAGE_PROMOTE_CODE}}</div>
+						<input id="popupAudit_promote_code" class="input" type="text" readonly>
+					</div>
+				</div>
+
+				<div class="oneRow">
+					<div class="halfRow">
+						<div class="label">门脸照片</div>
+						<div id="popupAudit_storeNamePic" style="height:167px;position:relative;display: inline-block;">
+						</div>
+					</div>
+					<div class="halfRow">
+						<div class="label">营业执照照片</div>
+						<div id="popupAudit_license" style="height:167px;position:relative;display: inline-block;">
+						</div>
+					</div>
+				</div>
+
+				<div class="oneRow" style="padding-bottom: 12px;">
+					<div class="halfRow">
+						<div class="label">身份证照片</div>
+						<div id="popupAudit_id_front_Pic" style="position:relative;height:167px;display: inline-block;"></div>
+					</div>
+					<div class="halfRow">
+						<div class="label"> </div>
+						<div id="popupAudit_id_back_Pic" style="position:relative;height:167px;display: inline-block;"></div>
+					</div>
+				</div>
+
+			</div>
+
+			<div style="margin-top:15px;height:33px;font-family:'微软雅黑';font-size: 14px;">
+				<div id="popupAudit_popupButton_deny" class="adv_small_button_dark" style="float:left;margin-left:525px;border-radius:2px;display:none;margin-top:2px;border-color:#6faac4" onclick="">{{SELF_SERVICE_ADVISER_MANAGE_FOUJUE}}</div>
+				<div id="popupAudit_popupButton_pass" class="adv_small_button_light" style="float:left;margin-left:18px;border-radius:2px;display:none;margin-top:2px" onclick="">{{SELF_SERVICE_ADVISER_MANAGE_TONGGUO}}</div>
+				<div id="popupAudit_popupButton_close" class="adv_small_button_light" style="float:left;margin-left:636px;border-radius:2px;display:none;margin-top:2px" onclick="">{{SELF_SERVICE_ADVISER_MANAGE_GUANBI}}</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,533 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>年华影院广告页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <style type="text/css">
+        body {
+            width: 1280px;
+            height: 720px;
+            margin-left: 0px;
+            margin-top: 0px;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        
+        video {
+            width: 1240px;
+            height: 700px;
+            position: fixed;
+            top:10px;
+            left:20px;
+        }
+    </style>
+    <script language="javascript">
+        //盒子内核
+        var STBType = "";
+        //返回由客户机发送服务器的user-agent 头部的值
+        var explorer = navigator.userAgent;
+        console.log("explorer="+explorer);
+        //$("testdiv").innerHTML = explorer;
+        //是从右向左查某个指定的字符串在字符串中
+        //最后一次出现的位置（也就是从后往前查）
+        if (explorer.lastIndexOf("iPanel") > -1) {
+            STBType = "Linux";
+            // $("info1").innerHTML += STBType;
+            var smartcardID = CA.card.serialNumber;
+            //var smartcardID = "1370495919";
+        } else {
+            STBType = "Android";
+            // $("info1").innerHTML += STBType;
+            var id = (new Date()).getTime();
+            //document.write("<script type='text/javascript' src='http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js?id=" + id + "'><\/script>");
+            var mp1 = null;
+            var nativePlayerInstanceID = null;
+        }
+
+        var playing = false;
+        //document.onkeypress = grabEvent;
+        //document.onirkeypress = grabEvent;
+
+        function grabEvent(event) {
+            var keyCode = event.which || event.keycode;
+            switch (keyCode) {
+                case 339:
+                case 340:
+                case 8:
+                case 27:
+                    break;
+                case 5202: //setup成功
+                    var text = "setup 200 ok!";
+                    //open_app(text);
+                    //$("ad").style.visibility = "hidden";
+                    media.AV.play();
+                    break;
+                case 5203: //setup失败
+                    var text = "播放失败 5203";
+                    open_app(text);
+                    return 0;
+                    break;
+                case 5205: //播放成功
+                    playing = true;
+                    //media.sound.value = 48;
+                    //$('ad').style.visibility = 'hidden';
+                    window.setTimeout("$('ad').style.visibility = 'hidden';", 1500);
+                    //window.setTimeout("open_app('timeout quit!');", 15000);
+                    return 0;
+                    break;
+                case 5206: //播放失败
+                    //showOverMain("视频打开失败");
+                    var text = "播放失败 5206";
+                    open_app(text);
+                    return 0;
+                    break;
+                case 5225:
+                    var p2 = event.modifiers;
+                    if (p2 == 500 || p2 == 503 || p2 == 404) {
+                        //var text = "播放失败 5225:"+p2;
+                        var text = "播放失败 5225:" + p2;
+                        open_app(text);
+                    }
+                    return 0;
+                    break;
+                case 5226:
+                    return 0;
+                    break;
+                case 5227:
+                    var text = "播放失败 5227";
+                    open_app(text);
+                    return 0;
+                    break;
+                case 5210: //播放完毕
+                    var text = "播放结束 5210";
+                    open_app(text);
+                    return 0;
+                    break;
+            }
+        }
+
+        function grabEventA(event) {
+            var keyCode = event.which || event.keyCode;
+            switch (keyCode) {
+                case 13001: //媒体源路径有效
+                    break;
+                case 13002: //媒体源路径无效
+                    var text = "播放失败 13002";
+                    open_app(text);
+                    break;
+                case 13003: //开始播放成功
+                    playing = true;
+                    window.setTimeout('$("ad").style.visibility = "hidden";', 3000);
+                    break;
+                case 13004: //开始播放失败
+                    var text = "播放失败 13003";
+                    open_app(text);
+                    break;
+                case 13015: //播放到媒体源结尾处
+                    var text = "播放结束 13015";
+                    playing = false;
+                    mp1.stop(); //停止播放
+                    mp1.unbindPlayerInstance(nativePlayerInstanceID);
+                    open_app(text);
+                    break;
+            }
+        }
+
+        function init() {
+             debug();  //debug
+              console.log("浏览器版本号="+navigator.userAgent);
+            //show_ad_img();
+            //$("ad").style.visibility = "hidden";
+            //$("info1").innerHTML = "init Start"
+            //lastIndexOf 是从右向左查某个指定的字符串在字符串中最后一次出现的位置（也就是从后往前查）
+            if (explorer.lastIndexOf("iPanel") > -1) {
+                //JS捕获机顶盒的遥控器按键
+                document.onkeydown = grabEvent;
+                document.onsystemevent = grabEvent;
+                window.setTimeout("hide_ad_img();", 1500);
+            } else {
+                document.onsystemevent = grabEventA;
+                document.onkeydown = grabEventA;
+                //$("info1").innerHTML = "CyberCloud="+typeof(CyberCloud);
+                //CyberCloud 字面意思网络云
+                if (typeof(CyberCloud) != "undefined") {
+                    window.setTimeout("hide_ad_img();", 4000);
+                } else {
+                    window.setTimeout("hide_ad_img();", 2000);
+                }
+            }
+            //$("info1").innerHTML = "CyberCloud="+typeof(CyberCloud);
+            //window.setTimeout("hide_ad_img();",5000);
+        }
+
+        // function show_ad_img() {
+
+        // }
+
+        function hide_ad_img() {
+            //$("ad").style.visibility = "hidden";
+            if (STBType == "Linux") {
+                getUserData();
+            } else if (STBType == "Android") {
+                //$("ad").style.visibility = "hidden";
+                // var assetID = "FTIT0120190508231564";
+                // var assetID = "FTIT0120190528234914";
+                // var assetID = "FTIT0120190529235044";
+                // var providerID = "30000";
+                var assetID = "GTIT0120181103200001";
+                var providerID = "10054";
+                //$("info1").innerHTML += "<br>assetID=" + assetID + "providerID" + providerID;
+                //aquapaas/rest/vod/contents?provider_asset_id=xxxx&provider_id=xxxx
+                // var url = "http://api.xor-live.io/aquapaas/rest/vod/contents?provider_asset_id=" +
+                //     assetID + "&playType=1&providerID=" + providerID + "&resolution=1280*720&terminalType=7&version=V002";
+                var url = "http://api.xor-live.io/aquapaas/rest/vod/contents?provider_id=" +
+                    providerID + "&provider_asset_id=" + assetID + "&app_key=aquaBO&timestamp=" + new Date().toISOString();
+                //$("info1").innerHTML += "<br>hls media url request=" + url;
+                createXMLHttpRequest(url, startPlay);
+            }
+        }
+
+        function getUserData() {
+            var url = "http://172.16.188.76:80/stbservlet?attribute=json_libs_oss_get_user_data&device_id=" + smartcardID;
+            createXMLHttpRequest(url, getHomeId);
+        }
+
+        function requestRTSPURL() { //请求json
+            var ServiceGroup = Math.floor(VOD.server.nodeGroupId);
+            var url = "http://172.16.188.76:80/stbservlet?attribute=ewf_json_ote_get_server_load_info&node_group=" + ServiceGroup;
+            createXMLHttpRequest(url, getRtsp);
+        }
+
+        //原生ajax (兼容各个浏览器)
+        function createXMLHttpRequest(__url, __callBack) {
+            // $("info1").innerHTML += "<br>sign:"+sign;
+            var xmlhttp;
+            var txt, x, xx, i;
+            //浏览器兼容问题
+            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            /*当请求被发送到服务器时，我们需要执行一些基于响应的任务。
+                每当 readyState 改变时，就会触发 onreadystatechange 事件。*/
+            xmlhttp.onreadystatechange = function() {
+                // $("info1").innerHTML += "<br>"+"xmlhttp.readyState = "+xmlhttp.readyState+";xmlhttp.status = "+xmlhttp.status;
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var tempStr = xmlhttp.responseText;
+                    console.log("tempStr(createXMLHttpRequest)="+tempStr);
+                    if (tempStr.length > 0) {
+                        __callBack(tempStr);
+                    }
+                }
+            }
+            console.log("__url(createXMLHttpRequest)="+__url);
+            xmlhttp.open("GET", __url, true);
+            //xmlhttp.setRequestHeader("Content-Type", "application/json");  (估计不兼容)
+            xmlhttp.send(null);
+        }
+
+        function getHomeId(__text) {
+            eval("homeIdInfo = " + __text);
+            var homeId = homeIdInfo.DataArea[0].tagAttribute.homeID;
+            HOMEID = homeId;
+            // $("info1").innerHTML = "<br>homeId="+homeId;
+            if (homeId != "undefined") {
+                requestRTSPURL();
+            }
+        }
+
+        function getRtsp(__text) {
+            eval("serverLoad = " + __text);
+            var rtspAddr = "rtsp://" + serverLoad.DataArea.ListOfServerList[0].tagAttribute.IPAddress + ":" + serverLoad.DataArea.ListOfServerList[0].tagAttribute.Port;
+            // $("info1").innerHTML += "<br>rtspAddr="+rtspAddr;
+            //var rtspAddr = "rtsp://172.16.188.81:554"
+            startSetup(rtspAddr);
+        }
+
+        function startSetup(rtspAddr) {
+            var videoPID = "30000";
+            //var videoPAID = "FTIT0120190508231564";
+            //var videoPAID = "FTIT0120190528234914";
+            var videoPAID = 'FTIT0120190529235044';
+            var rtspURL = rtspAddr + "/60010000?";
+            var transport = "MP2T/DVBC/QAM;unicast";
+            //var smartcardID = CA.card.serialNumber;
+            var ServiceGroup = Math.floor(VOD.server.nodeGroupId);
+            var client_mac = network.ethernets[0].MACAddress;
+            var url = rtspURL + "asset=" + videoPID + "#" + videoPAID + "&folderId=" + "&transport=" + transport + "&ServiceGroup=" + ServiceGroup + "&smartcard-id=" + smartcardID + "&device-id=" + smartcardID + "&home-id=" + HOMEID + "&client_mac=" +
+                client_mac + "&purchase-id=" + "&Longlink=no";
+            // iPanel.debug("____rtspurl=" + url);
+            //$("info1").innerHTML += "<br>fullRtspUrl="+url;
+            media.video.fullScreen();
+            media.AV.open(url, "VOD");
+            // $("info1").innerHTML += "<br>media.AV.open";
+        }
+
+        function startPlay(ret) {
+            //$("info1").innerHTML += "NGB-H MediaPlayer Test......";
+            var mediaURL = ret;
+            //$("info1").innerHTML += "<br>mediaURL=" + ret;
+            eval("var tmp = " + mediaURL);
+            // var retcode = tmp[0].url;
+            var playURL = tmp[0].url;
+            //$("info1").innerHTML += "<br>media request return code:" + retcode +" retcode type:" + typeof(retcode);
+            // if (retcode != "0") {
+            //     //open_app('media request error:'+retcode);
+            //     //return ;
+            // }
+            //$("info1").innerHTML += "<br>retcode = " + retcode;
+            //$("info1").innerHTML += "<br>tmp.ret=" + tmp.ret;
+            //$("info1").innerHTML += "<br>tmp.bitPlayUrlList=" + tmp.bitPlayUrlList[0].url;
+            // var playURL = tmp.bitPlayUrlList[0].url; //m3u8文件 (不是视频)
+            // console.log("playURL", playURL);
+            //$("info1").innerHTML += "<br>playURL="+playURL;
+            if (typeof(CyberCloud) != "undefined") {
+                var PlayParam = {
+                    "Top": 0,
+                    "Left": 0,
+                    "Width": 1280,
+                    "Height": 720,
+                    "AutoPlay": false,
+                    "Url": playURL
+                };
+
+                function PlayStateChangeCallback(PlayState) {
+                    //$("info1").innerHTML += PlayState;
+                    if (PlayState == "Stopped") {
+                        // GHWEBAPI.WindowPlayer_Uninit();
+                        playing = false;
+                        open_app('success');
+                    }
+                };
+                // var retInfo = GHWEBAPI.WindowPlayer_Init(PlayParam, PlayStateChangeCallback);
+                // var retInfo1 = GHWEBAPI.WindowPlayer_Play();
+                // if (retInfo1.ResultCode == "0") {
+                //     playing = true;
+                //     window.setTimeout(function() {
+                //         playing = false;
+                //         GHWEBAPI.WindowPlayer_Stop();
+                //         GHWEBAPI.WindowPlayer_Uninit();
+                //         open_app('success');
+                //     }, 18900);
+                // }
+            } else {
+                try{
+                    // var ad = $("ad");
+                    var ad_img = $("ad_img"); /// autoplay='autoplay'
+                    var video = $("ad_video");
+                    console.log("playURL="+playURL);
+                    ad.removeChild(ad_img);
+                    video.style.display = "block";
+                    video.src = "https://www.apple.com/105/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/films/feature/iphone-x-feature-tpl-cc-us-20170912_1920x1080h.mp4";//本地测试
+                    // video.src = playURL;
+                    // setTimeout(function() {
+                       // if (document.getElementById("ad_video").readyState) {
+                        // var video_time = document.getElementById("ad_video").duration;
+                        setTimeout(function() {
+                            var url = "./index1.html";
+                            location.href = url;
+                            // }, video_time * 1000 - 1000);
+                        }, 15000);
+                        // }
+                    // }, 100);
+                }catch(e){
+                    console.log(e);
+                }finally{
+                    function isInsalledFFVLC(){  
+                         var numPlugins=navigator.plugins.length;  
+                         for  (i=0;i<numPlugins;i++){   
+                              plugin=navigator.plugins[i];  
+                              if(plugin.name.indexOf("VideoLAN") > -1 || plugin.name.indexOf("VLC") > -1){   
+                                 return true;  
+                            }  
+                         }  
+                         return false;  
+                    }  
+                    console.log("vlc插件"+isInsalledFFVLC());
+                    //video.play();
+                     // console.log("播放");
+                }
+                
+
+
+                // $('info1').innerHTML += '<br>error message:';
+                // var CAID = CAManager.cardSerialNumber; //瘦终端没有卡号
+                // $("info1").innerHTML += "CAID="+CAID;
+                // var serviceGroupId = 0;
+                // var systemPropertyTableId = DataAccess.getSystemPropertyTable();
+                // $("info1").innerHTML += "<br>systemPropertyTableId="+systemPropertyTableId;
+                // serviceGroupId = DataAccess.getProperty(systemPropertyTableId, "ServiceGroup");
+                // $("info1").innerHTML += "<br>serviceGroupId="+serviceGroupId;
+                // mp1 = new MediaPlayer();
+                // $("info1").innerHTML += "mp1="+typeof(mp1);
+                // nativePlayerInstanceID = mp1.getPlayerInstanceID();
+                // $("info1").innerHTML += "<br>nativePlayerInstanceID="+nativePlayerInstanceID;
+                // GlobalVarManager.setItemValue(.PLAYER_INSTANCE_ID., nativePlayerInstanceID);
+                // mp1.bindPlayerInstance(nativePlayerInstanceID);
+                // mp1.setMediaSource(playURL); //.....
+                // mp1.play(); //....
+            }
+            // try {
+            //     if (CyberCloud) {
+            //         //$('info1').innerHTML += 'start thinclient'
+            //         var ret = GHWEBAPI.WindowPlayer_Init({
+            //             Top: 0,
+            //             Left: 0,
+            //             Width: 1280,
+            //             Height: 720,
+            //             AutoPlay: true,
+            //             Url: playURL
+            //         }, function(state) {
+            //             //$('info1').innerHTML += state
+            //             if (state == 'Stopped') {
+            //                 //$('info1').innerHTML += 'Stopped';
+            //                 GHWEBAPI.WindowPlayer_Uninit();
+            //                 playing = false;
+            //                 open_app('success');
+            //             }
+            //         })
+            //         if (ret.ResultCode == '0') {
+            //             GHWEBAPI.WindowPlayer_Play();
+            //             playing = true
+            //             window.setTimeout('$("ad").style.visibility = "hidden";', 10000);
+            //             setTimeout(function() {
+            //                 //$('info1').innerHTML += 'setTimeout';
+            //                 playing = false;
+            //                 GHWEBAPI.WindowPlayer_Stop();
+            //                 GHWEBAPI.WindowPlayer_Uninit();
+            //                 open_app('success')
+            //             }, 18500)
+            //         } else {
+            //             //$('info1').innerHTML += '<br>gh init fail:' + ret.Description
+            //         }
+            //     }
+            // } catch (e) {
+            //     $('info1').innerHTML += '<br>error message:';
+            //     // var CAID = CAManager.cardSerialNumber; //瘦终端没有卡号
+            //     // $("info1").innerHTML += "CAID="+CAID;
+            //     var serviceGroupId = 0;
+            //     var systemPropertyTableId = DataAccess.getSystemPropertyTable();
+            //     //$("info1").innerHTML += "<br>systemPropertyTableId="+systemPropertyTableId;
+            //     serviceGroupId = DataAccess.getProperty(systemPropertyTableId, "ServiceGroup");
+            //     //$("info1").innerHTML += "<br>serviceGroupId="+serviceGroupId;
+            //     mp1 = new MediaPlayer();
+            //     //$("info1").innerHTML += "mp1="+typeof(mp1);
+            //     nativePlayerInstanceID = mp1.getPlayerInstanceID();
+            //     //$("info1").innerHTML += "<br>nativePlayerInstanceID="+nativePlayerInstanceID;
+            //     //GlobalVarManager.setItemValue(.PLAYER_INSTANCE_ID., nativePlayerInstanceID);
+            //     mp1.bindPlayerInstance(nativePlayerInstanceID);
+            //     mp1.setMediaSource(playURL); //.....
+            //     mp1.play(); //....
+            // } finally {
+
+            // }
+        }
+
+        //播放完毕跳转到红星首页
+        // function open_app(text) {
+        //     //$("info1").innerHTML += text;
+        //     if (playing) {
+        //         if (STBType == "Linux") {
+        //             media.AV.close();
+        //         } else if (STBType == "Android") {
+        //             try {
+        //                 if (CyberCloud) {
+        //                 }
+        //             } catch (e) {
+        //                 mp1.stop(); //停止播放
+        //                 mp1.unbindPlayerInstance(nativePlayerInstanceID);
+        //             } finally {
+
+        //             }
+        //         }
+        //     }
+            // $("info1").innerHTML += text;
+            // var url = "./index1.html" + location.search
+            // location.href = url
+        // }
+        function debug(str){
+                var paneLog = document.querySelector('#log');
+                var paneLog = document.createElement('div');
+                paneLog.id = 'log';
+                paneLog.style.width = '800px';
+                paneLog.style.height = '500px';
+                paneLog.style.position = 'fixed';
+                paneLog.style.top = '10px';
+                paneLog.style.left = '20px';
+                paneLog.style.zIndex = '10';
+                paneLog.style.color = '#fff';
+                paneLog.style.fontSize = '20px';
+                paneLog.style.backgroundColor = 'rgba(1, 1, 1, 0.5)';
+                paneLog.style.opacity = '0.7';
+                paneLog.style.wordWrap = 'auto';
+                paneLog.style.wordBreak = 'break-all';
+                paneLog.style.overflow = 'auto';
+                paneLog.style.display = 'block';
+                document.body.appendChild(paneLog);
+
+                console.log = function(str){
+                    var log = document.getElementById('log')
+                    log.innerHTML += str + '<br>';
+                    while(log.scrollHeight > log.clientHeight){
+                        log.removeChild(log.childNodes[0]);
+                    }
+                }
+        }
+        // function exitPage() {
+        //     if (playing) {
+        //         if (STBType == "Linux") {
+        //             media.AV.close();
+        //         } else if (STBType == "Android") {
+        //             mp1.stop(); //停止播放
+        //             mp1.unbindPlayerInstance(nativePlayerInstanceID);
+        //         }
+        //     }
+        // }
+        //辅助方法 获取id标签
+        function $(id) {
+            return document.getElementById(id);
+        }
+        //辅助方法 获取url中的参数
+        function getUrlParam(key) {
+            var url = location.href
+            var ret = '';
+            var hasUrlParam = url.indexOf('?') !== -1 ? true : false
+            if (hasUrlParam) {
+                var search = url.slice(url.indexOf('?') + 1)
+                var searchList = search.split('&').map(function(item) {
+                    var key = item.split('=')[0]
+                    var value = item.split('=')[1]
+                    return {
+                        key: key,
+                        value: value
+                    }
+                })
+                for (var i = 0; i < searchList.length; i++) {
+                    var item = searchList[i]
+                    if (item.key == key) {
+                        ret = item.value
+                    }
+                }
+            }
+            return ret;
+        }
+    </script>
+</head>
+
+<body bgcolor="transparent" onLoad="init();" >
+    <div id="ad" style="position:absolute; left:0px; top:0px; width:1280px; height:720px;">
+        <img id="ad_img" src="./ad1.jpg">
+        <video id="ad_video" autoplay controls style="display: none"></video>
+    </div>
+    <div id="info1" style="position:absolute; left:90px; top:199px; font-size:20px; color:#f00;"></div>
+</body>
+
+</html>
+<!-- onUnload="exitPage();" -->

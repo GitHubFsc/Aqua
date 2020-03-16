@@ -1,0 +1,572 @@
+<style type="text/css">
+  #trendAnalysis .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  #trendAnalysis .mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #e8edef;
+  }
+  #trendAnalysis .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  #trendAnalysis .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  #trendAnalysis .mCSB_inside > .mCSB_container {
+    margin-right: 0px;
+  }
+  #trendAnalysis .page-rel-header .panel_page_head_right {
+    position: absolute;
+    right: 18px;
+    height: 42px;
+    top: 50%;
+    margin-top: -21px;
+  }
+  #trendAnalysis .page-rel-header .panel_page_head_right .filterOptionsButton {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    width: 126px;
+    height: 38px;
+    line-height: 38px;
+    background-color: #2dbce8;
+    border: 2px #11a8d7 solid;
+  }
+  #trendAnalysis .day-sum-block {
+    margin-top: 5px;
+  }
+  #trendAnalysis_calendar_start, #trendAnalysis_calendar_end {
+    position: relative;
+    width: 143px;
+    height: 30px;
+    display: inline-block;
+    z-index: 99;
+    color: #848484;
+  }
+  #trendAnalysis_calendar_start input, #trendAnalysis_calendar_end input {
+    background-image: url(./images/operateanalyze/oa-dp-ibg.png);
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    font-size: 14px;
+  }
+  #trendAnalysis_calendar_start-datepicker-calendar {
+    width: 250px;
+  }
+  #trendAnalysis_calendar_end-datepicker-calendar {
+    width: 250px;
+  }
+  #trendAnalysis .day-sum-block .options {
+    padding: 13px 12px;
+    background-color: #ffffff;
+    height: 234px;
+    color: #727272;
+    box-sizing: border-box
+  }
+  #trendAnalysis .day-sum-block .options .left {
+    width: calc(100% - 128px);
+    float: left;
+    height: 208px;
+  }
+  #trendAnalysis .day-sum-block .options .left > .nano-content {}
+  #trendAnalysis .day-sum-block .options .left > .nano-pane   { width:10px;background: rgba(0,0,0,0); }
+  #trendAnalysis .day-sum-block .options .left > .nano-pane > .nano-slider { background: #a6dff1; }
+
+  #trendAnalysis .day-sum-block .options .left .option {
+    width: calc(100% - 12px);
+    font-size: 16px;
+    display: flex;
+    margin-bottom: 13px;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_title {
+    font-weight: bold;
+    text-align: left;
+    width: 57px;
+    height: 30px;
+    line-height: 30px;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_content {
+    width: calc(100% - 50px);
+    display: flex;
+  }
+  #trendAnalysis .day-sum-block .options .left .option.quota .option_content {
+    width: calc(100% - 130px);
+    display: flex;
+  }
+  #trendAnalysis .day-sum-block .options .left .option.grouping .option_content {
+    width: calc(100% - 130px);
+    display: flex;
+  }
+  #trendAnalysis .day-sum-block .options .left .option.filtration .option_content {
+    width: calc(100% - 130px);
+    display: flex;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_content .option_content_left {
+    float: left;
+    margin-right: 10px;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_content .option_content_left.option_subTitle {
+    float: left;
+    margin-right: 10px;
+    height: 30px;
+    line-height: 30px;
+    min-width: 90px;
+    font-size: 14px;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_content .option_content_right {
+    overflow: hidden;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_content .sub_option_content:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button {
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #ffffff;
+    width: 70px;
+    height: 30px;
+    line-height: 28px;
+    background-color: #2dbce8;
+    border: 2px #11a8d7 solid;
+    box-sizing: border-box;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button .text {
+    height: 26px;
+    line-height: 26px;
+    margin-left: 4px;
+    font-size: 12px;
+    font-family: '微软雅黑';
+    float: left;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button img {
+    float:left;
+    margin-left: 5px;
+    width: 21px;
+    height: 26px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button img.default {
+    display:block;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button img.disabled {
+    display:none;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button.disabled {
+    color: #B8B7B7;
+    background-color: #F6F6F6;
+    border: 2px #E2DFDF solid;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button.disabled img.default {
+    display:none;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button.disabled img.disabled {
+    display:block;
+  }
+  #trendAnalysis .day-sum-block .options .left .option .option_button.grouping {
+    background-color: white;
+    border-color: #EBEDEC;
+    color: #8692A0;
+  }
+  #trendAnalysis .day-sum-block .options .middleLine {
+    width: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #eaeaea;
+    float: left;
+    height: 187px
+  }
+  #trendAnalysis .day-sum-block .options .right {
+    width: 127px;
+    float: left;
+    position: relative;
+  }
+  #trendAnalysis .day-sum-block .options .right .clearButton{
+    cursor:pointer;
+    color:#32C0F0;
+    height: 20px;
+    line-height: 20px;
+    font-size: 14px;
+    top:0px;
+    right: 3px;
+    position: absolute;
+  }
+  #trendAnalysis .day-sum-block .options .right .searchButton{
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+    color:#ffffff;
+    width:100px;
+    height:61px;
+    line-height:61px;
+    background-color:#2dbce8;
+    border:2px #11a8d7 solid;
+    position: absolute;
+    top: 140px;
+    right: 3px;
+  }
+  #trendAnalysis .day-sum-block .options .right .searchButton img{
+    margin-left:13px;margin-top:20px;float:left
+  }
+  #trendAnalysis .day-sum-block .options .right .searchButton .label{
+    height:38px;line-height:38px;margin-left:8px;font-size:19.76px;font-weight:bold;font-family:'微软雅黑';float:left;height:61px;line-height:61px
+  }
+  #trendAnalysis_display_container_fenzu .select-header {
+    border-radius: 4px;
+  }
+  #trendAnalysis .trendAnalysis_calendar {
+    width: 142px;
+    font-size: 14px;
+    height: 30px;
+    display: flex;
+  }
+  #trendAnalysis .trendAnalysis_calendar input {
+    -webkit-appearance: none;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    color: #848484;
+    font-size: inherit;
+    display: inline-block;
+    line-height: 1;
+    outline: none;
+    transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+    width: calc(100% - 31px);
+    text-indent: 5px;
+  }
+  #trendAnalysis .trendAnalysis_calendar .icon {
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+    border-left: 0px;
+  }
+  #trendAnalysis .trendAnalysis_calendar .icon img {
+    display: block;
+    width: 100%;
+  }
+  #trendAnalysis .day-sum-block .title_head {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 100%;
+    height: 31px;
+    display: flex;
+  }
+  #trendAnalysis .day-sum-block .title_head .left {
+    flex: 1;
+    display: flex;
+  }
+  #trendAnalysis .day-sum-block .title_head .title_ {
+    font-size: 16px;
+    font-family: 微软雅黑;
+    line-height: 31px;
+  }
+  #trendAnalysis .day-sum-block .title_head .subtitle_ {
+    background: #2DBCE8;
+    font-size: 10px;
+    border-radius: 4px;
+    width: 99px;
+    height: 20px;
+    margin-top: 5px;
+    color: white;
+    line-height: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  #trendAnalysis .day-sum-block .title_head .right {
+    padding-right: 10px;
+    display: flex;
+  }
+  #trendAnalysis .time_button {
+    width: 79px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #EAEFF0;
+    border-radius: 5px;
+    color: #808FA4;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+  #trendAnalysis .time_button.focus {
+    width: 79px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #FFB014;
+    border-radius: 5px;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    cursor: pointer;
+    background: #FFB014;
+  }
+  .trendAnalysis_checkbox {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 26px;
+  }
+  .trendAnalysis_checkbox .checkbox {
+    font-size: 0;
+    height: 30px;
+    position: relative;
+    width: 16px;
+    margin-right: 12px;
+    float: left;
+    line-height: 30px;
+  }
+  .trendAnalysis_checkbox .checkbox:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .trendAnalysis_checkbox .checkbox input {
+    display: none;
+  }
+  .trendAnalysis_checkbox .checkbox label {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background: white;
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+  .trendAnalysis_checkbox .checkbox label:after {
+    opacity: 0.2;
+    content: '\2002';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: grey;
+    top: 2px;
+    left: 2px;
+  }
+  .trendAnalysis_checkbox .checkbox label:hover::after {
+  }
+  .trendAnalysis_checkbox .checkbox input:checked + label:after {
+    background: #32BEEA;
+    opacity: 1;
+  }
+  .trendAnalysis_checkbox .checkbox input[type=checkbox] + label {
+    border-radius: 0px;
+  }
+  .trendAnalysis_checkbox .checkbox input[type=checkbox] + label:after {
+    border-radius: 0px;
+  }
+  .trendAnalysis_checkbox .checkbox input[type=radio] + label {
+    border-radius: 7px;
+  }
+  .trendAnalysis_checkbox .checkbox input[type=radio] + label:after {
+    border-radius: 6px;
+  }
+  .trendAnalysis_checkbox .checkboxLabel {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #828282;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-left:28px;
+  }
+  #trendAnalysis_display_container_zhibiao{
+    margin-bottom: -10px;
+  }
+  #trendAnalysis_display_container_zhibiao:empty{
+    margin-bottom: 0px;
+  }
+  #trendAnalysis_display_container_zhibiao .trendAnalysis_checkbox {
+    min-width: 134px;
+    margin-bottom: 10px;
+  }
+  #trendAnalysis_display_container_fenzu{
+    margin-bottom: -10px;
+  }
+  #trendAnalysis_display_container_fenzu:empty{
+    margin-bottom: 0px;
+  }
+  #trendAnalysis_display_container_fenzu .trendAnalysis_checkbox {
+    min-width: 80px;
+    margin-bottom: 10px;
+  }
+  #trendAnalysis_filter_display_container .trendAnalysis_checkbox {
+    min-width: 94px;
+    margin-bottom: 10px;
+  }
+  #trendAnalysis_filter_display_container .sub_option_content{
+    margin-bottom: -10px;
+  }
+  .trendAnalysis_lineChart {
+    width: 100%;
+    height: 360px;
+  }
+  .trendAnalysis_table {
+    background: #F9F9F9;
+    height: 386px;
+    margin-left: 11px;
+    margin-right: 11px;
+    width: calc(100% - 22px);
+  }
+  #trendAnalysis_table .td {
+    width: 89px;
+    text-align: left;
+  }
+  #trendAnalysis_table .td input {
+    border: none;
+    text-align: center;
+    zoom: 1;
+    outline: medium;
+    width: 89px;
+    height: 100%;
+    font-size: 12px;
+    background: inherit;
+    color:inherit;
+    font-family: Myriad, Helvetica, Tahoma, Arial, clean, sans-serif;
+  }
+  #trendAnalysis_table .td.equal input {
+    color: #666666;
+  }
+  #trendAnalysis_table .td.up input {
+    color: #ff66cc
+  }
+  #trendAnalysis_table .td.down input {
+    color: #33cc00
+  }
+  #trendAnalysis_table .mCSB_dragger_bar {
+    background-color: #A6DFF1;
+  }
+  #trendAnalysis_table .mCSB_draggerRail {
+    background-color: #E8EDEF;
+  }
+  #trendAnalysis_table tr td:nth-child(1) {
+    padding-left:10px;
+    padding-right:10px;
+    text-align: left!important;
+  }
+</style>
+<div id="trendAnalysis" class="page-rel-container">
+  <div class="page-rel-header">
+    <div class="panel_page_head_left">
+      <div class="panel_page_head_title_lead"></div>
+      <div class="panel_page_head_title">{{TRENDANALYSIS_TITLE}}</div>
+    </div>
+  </div>
+  <div class="page-rel-content">
+    <div class="day-sum-block">
+      <div class="options">
+        <div class="left nano">
+          <div id="trendAnalysis_left_container" class="nano-content">
+            <!--日期-->
+            <div class="option date">
+              <div class="option_title">{{TRENDANALYSIS_RIQI}}</div>
+              <div class="option_content">
+                <div id="trendAnalysis_calendar_start" class=""></div>
+                <div style="margin-left: 5px;margin-right: 5px;height: 30px;line-height: 30px">—</div>
+                <div id="trendAnalysis_calendar_end" class=""></div>
+              </div>
+            </div>
+            <!--指标-->
+            <div class="option quota" style="margin-top:10px;">
+              <div class="option_title">{{TRENDANALYSIS_ZHIBIAOB}}</div>
+              <div class="option_content">
+                <div id="trendAnalysis_display_container_zhibiao" style="overflow:hidden;height:auto;width:100%"></div>
+              </div>
+              <div id="trendAnalysis_quota_button" class="option_button">
+                <img class="default" src="images/trendAnalysis/zhibiao_icon.png">
+                <div class="text">{{TRENDANALYSIS_QUOTA_SPACE}}</div>
+              </div>
+            </div>
+            <!--分组-->
+            <div class="option grouping" style="margin-top:10px;">
+              <div class="option_title">{{TRENDANALYSIS_FENZUB}}</div>
+              <div class="option_content">
+                <div id="trendAnalysis_display_container_fenzu" style="height:auto;width:100%;"></div>
+              </div>
+              <div id="trendAnalysis_grouping_checkboxtype_button" class="option_button grouping" data-tag="0">
+                <img class="img1" src="images/trendAnalysis/checkbox_icon.png" style="">
+                <img class="img2" src="images/trendAnalysis/radio_icon.png" style="display:none">
+                <div class="text">{{TRENDANALYSIS_CHECKBOX_SPACE}}</div>
+              </div>
+            </div>
+            <!--过滤-->
+            <div class="option filtration" style="margin-top:10px;">
+              <div class="option_title">{{TRENDANALYSIS_GUOLVB}}</div>
+              <div class="option_content">
+                <div id="trendAnalysis_filter_display_container" style="height:auto;width:100%;overflow:hidden;"></div>
+              </div>
+              <div id="trendAnalysis_filtration_button" class="option_button disabled">
+                <img class="default" src="images/trendAnalysis/filter_icon.png">
+                <img class="disabled" src="images/trendAnalysis/filter_icon_disabled.png">
+                <div class="text">{{TRENDANALYSIS_FILTER_SPACE}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="middleLine"></div>
+        <div class="right">
+          <div id="trendAnalysis_clearButton" class="clearButton">{{TRENDANALYSIS_CLEAR}}</div>
+          <div id="trendAnalysis_searchButton" class="searchButton">
+            <img src="images/trendAnalysis/searchIcon.png">
+            <div class="label">{{TRENDANALYSIS_FILTER_SEARCH}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="day-sum-block" style="margin-top: 10px;height: 455px;">
+      <div class="title_head">
+        <div class="left">
+          <div class="title_" style="margin-left: 17px">{{TRENDANALYSIS_TITLE}}</div>
+          <div class="subtitle_" style="margin-left: 10px;margin-right: 10px;">Trend records</div>
+        </div>
+        <div class="right">
+          <div id="trendAnalysis_topN" style="display:none"></div>
+          <div id="trendAnalysis_yType" style="margin-left: 10px;"></div>
+          <div class="time_button" data-value="hour" name="lineChartTimeType" style="width:44px;margin-left: 10px;">
+            {{TRENDANALYSIS_HOUR}}
+          </div>
+          <div class="time_button focus" data-value="day" name="lineChartTimeType"
+               style="width:31px;margin-left: 10px;">{{TRENDANALYSIS_DAY}}
+          </div>
+          <div class="time_button" data-value="week" name="lineChartTimeType" style="width:31px;margin-left: 10px;">
+            {{TRENDANALYSIS_WEEK}}
+          </div>
+          <div class="time_button" data-value="month" name="lineChartTimeType" style="width:31px;margin-left: 10px;">
+            {{TRENDANALYSIS_MONTH}}
+          </div>
+        </div>
+      </div>
+      <div id="trendAnalysis_lineChart" class="trendAnalysis_lineChart"></div>
+    </div>
+    <div id="trendAnalysis_table" class="trendAnalysis_table">
+    </div>
+  </div>
+</div>

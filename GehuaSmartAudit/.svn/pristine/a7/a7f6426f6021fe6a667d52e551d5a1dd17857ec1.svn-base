@@ -1,0 +1,55 @@
+FOR ALL VERSIONS
+
+A. 关于浏览器支持：
+
+  1. 目前只能运行于支持HTML 5的浏览器，推荐浏览器是 FireFox
+
+================================================================================================
+PRODUCTION NAME: 歌华智能审核系统
+    VERSION NO.: 1.0.0.0
+    RELEASE DATE: 2019-03-07
+    RELEASER: Fu YuBin
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+      1)  depends aquapaas-common:v1.1.15.0-334573(或以上)
+      2)  depends aquapaas-gateway:v1.1.14.0-34337(或以上)
+      3)  depends aquapaas-job:v1.6.0.0-34591(或以上)
+      4)  depends aquapaas-user:v1.1.15.0-34592(或以上)
+
+
+    - OPERATION STEPS
+
+      1) 解压安装包置于Server的webapps/GehuaSmartAudit目录下。
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 发布模块
+             自助审核
+
+      2. config.js 配置项
+        var localeLanguage = 'zh_CN.json';
+
+        var paasHostIP = '192.168.7.143';
+        var paasHostPort = '8080';
+        var paasHost = 'http://' + paasHostIP + ':' + paasHostPort;
+
+        var paasAppKey = 'aquaBO';
+        var paasAppSecret = 'b27fbdd2d67783398f94c4bb7e80ab83e51c38dc393f90587d31974723b2';
+        var paasTokenRefreshInterval = 10 * 60 * 1000;
+
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+
+        1. 测试歌华智能审核系统 Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备

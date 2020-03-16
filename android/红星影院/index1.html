@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" style='background-color: black;'>
+
+<head>
+    <meta charset="utf-8">
+    <title>红星影院首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script type="text/javascript">
+        (function() {
+            var csses = ['style/index.css']
+            var jses = [
+                    'config.js',
+                    // 'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js',
+                    // '../bigdata/reportData.js',
+                    'js/utils.js',
+                    'js/index.js'
+                ]
+                // if (navigator.userAgent.lastIndexOf('iPanel') == -1) {
+                //   jses = ['http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js',
+                //    '../bigdata/stream/collect.js'].concat(jses)
+                // } else {
+            jses = ['../bigdata/ipanel/collect.js'].concat(jses);
+                // }
+            for (var i = 0; i < csses.length; i++) {
+                document.write('<link rel="stylesheet" href="' + csses[i] + '?t=' + new Date().getTime() + '">')
+            }
+            for (var i = 0; i < jses.length; i++) {
+                document.write('<script type="text/javascript" src="' + jses[i] + '?t=' + new Date().getTime() + '"><\/script>')
+            }
+        }())
+    </script>
+</head>
+
+<body onload="app.init()">
+
+    <!-- 分类聚焦框 -->
+    <div id="menuactive">
+        <div id="menu1" style="top: 58px; left:82px"></div>
+        <div id="menu2" style="top: 1px; left:1px"></div>
+    </div>
+
+    <div class="menu active" name='hot' style='left: 39px;top: 130px;'>
+        <div class='middle'>热播<br>电影</div>
+    </div>
+
+    <div class="menu" name='movie' style='left: 39px;top: 316px;'>
+        <div class="free"></div>
+        <div class='middle'>经典<br>电影</div>
+    </div>
+
+    <div class="menu" name='tv' style='left: 39px;top: 488px;'>
+        <div class="free"></div>
+        <div class='middle'>经典<br>剧集</div>
+    </div>
+
+
+
+
+
+
+
+    <!-- 节目选中黄框 -->
+    <div id="focus"></div>
+
+    <div class="large folder" style='left: 210px;top: 110px;'>
+        <div class='mask'></div>
+    </div>
+    <div class="large text" style='position: absolute; left: 370px;top: 370px; display: none;'></div>
+
+    <div class="large folder" style='left: 717px;top: 110px;'>
+        <div class='mask'></div>
+    </div>
+    <div class="large text"  style='position: absolute; left: 950px;top: 370px; display: none;'></div>
+
+    <div class="small folder" style='left: 210px; top: 420px;'>
+        <div class='mask'></div>
+    </div>
+
+    <div class="small text" style='left: 210px; top: 670px;'></div>
+
+    <div class="small folder" style='left: 410px; top: 420px;'>
+        <div class='mask'></div>
+    </div>
+
+    <div class="small text" style='left: 410px; top: 670px;'></div>
+
+    <div class="small folder" style='left: 610px; top: 420px;'>
+        <div class='mask'></div>
+    </div>
+
+    <div class="small text" style='left: 610px; top: 670px;'></div>
+
+    <div class="small folder" style='left: 810px; top: 420px;'>
+        <div class='mask'></div>
+    </div>
+
+    <div class="small text" style='left: 810px; top: 670px;'></div>
+
+    <div class="small folder" style='left: 1010px; top: 420px;'>
+        <div class='mask'></div>
+    </div>
+
+    <div class="small text" style='left: 1010px; top: 670px;'>
+        <div class='mask'></div>
+    </div>
+
+    <div class="right_indicator"></div>
+    <image id='ad' src='./resource/asset/exit_ad.jpg' style='display: none;'></image>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+    <div class="popupCenterDiv batch" id="batch" style=
+    "height:auto;">
+      <div class="popupCenterDivTop">
+        <div class="popupCenterDivTopLeft">
+          创建用户导出任务
+        </div><img src="images/cross.png" style=
+        "cursor:pointer;float:right;margin-top:10px;margin-right:17px;"
+        alt="关闭">
+      </div>
+      <div class="popupCenterDivBody" style=
+      "margin-left:0px;height:auto">
+        <div class="popupCenterDivBodyRow" style=
+        "margin-top: 21px;">
+          <div style=
+          "text-align: right;width: 90px;margin-left: 5px;">
+            任务描述&nbsp;:
+          </div>
+    			<div style="width: 190px;border:1px solid #d3d3d3;margin-left: 20px;">
+    				<input type="text" name="jobNameInput" style='border: 0;width: 100%;padding-left: 10px;'>
+    			</div>
+        </div>
+        <div class="popupCenterDivBodyRow" style=
+        "margin-top: 29px;">
+          <div style=
+          "text-align: right;width: 90px;margin-left: 5px;">
+            开始日期&nbsp;:
+          </div>
+          <div style="width: 190px;margin-left: 22px;">
+            <div style=
+            "position: absolute;width:190px;height:30px;z-index:2;"
+            id="start_date"></div>
+          </div>
+        </div>
+        <div class="popupCenterDivBodyRow" style=
+        "margin-top: 29px;">
+          <div style=
+          "text-align: right;width: 90px;margin-left: 5px;">
+            结束日期&nbsp;:
+          </div>
+          <div style="width:190px;margin-left: 22px;">
+            <div style=
+            "position: absolute;width:190px;height:30px;z-index:1;"
+            id="end_date"></div>
+          </div>
+        </div>
+        <div class="popupCenterDivBodyRow" style=
+        "margin-top: 29px;">
+          <div style=
+          "text-align: right;width: 90px;margin-left: 5px;">
+            导出类型&nbsp;:
+          </div>
+          <div style=
+          "width: 190px;border:1px solid #d3d3d3;margin-left: 20px;">
+          <div name='exportTypeValue' class='dropDownListValue' style="width:150px;"></div>
+            <div name='exportTypeBtn' class='dropDownListBtn'></div>
+          </div>
+          <dl style=
+          "z-index: 3; position: absolute; margin: 30px 0px 0px; left: 115px; width: 192px; display: none;"
+          id="export_types">
+            <dd>
+              有点播记录
+            </dd>
+            <dd>
+              无点播记录
+            </dd>
+          </dl>
+        </div>
+        <form enctype="multipart/form-data" method="post" action=""
+        style=
+        "overflow:hidden;width:100%;margin: 4px 0;display:none" id=
+        "submitForm" name="submitForm"><input type="text"
+          name="job_name"> <input type="text" name="start_date">
+          <input type="text" name="end_date"><input type=
+          "text" name="export_type"><input type=
+          "submit" value="提交">
+        </form>
+      </div>
+      <div class="popupCenterDivbottom" style="width:100%;margin-top:23px;height:67px;">
+        <div class="pageTitleContainerRightButt" style=
+        "margin-right:28px;margin-bottom:2px;" name=
+        "popUpQueryBtn">
+          创建
+        </div>
+        <div class="pageTitleContainerRightButt" style=
+        "margin-right:19px;margin-bottom:2px;" name=
+        "popUpCancelBtn">
+          取消
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,19 @@
+<div class="wp_panel_dialog" >
+  <div class="wp_panel_dialog_title" style = "background-color: rgb(46,161,215)">
+    <div class="wp_panel_dialog_title_label" id="jobManage_taskDialog_title">
+      {{JOBMANAGE_ADDTASK}}
+    </div>
+    <div class="wp_panel_dialog_close popup_dialog_clear">
+    </div>
+  </div>
+  <div class="wp_panel_dialog_content" style="padding-top: 5px;font-size: 0px;line-height: 0px;">
+    <div class="jobManage_option_halfRow">
+      <div class="jobManage_option_label">{{JOBMANAGE_TASKNAME}}</div>
+      <div id="jobManage_dialog_taskName"></div>
+    </div>
+    <div id="jobManage_taskDialog_options">
+    </div>
+    <div class="jobManage_dialog_cancel popup_dialog_clear" style="position: absolute;bottom: 20px;right: 200px;">{{LECTURETICKET_QUNBSPNBSPXIAO}}</div>
+    <div class="jobManage_dialog_submit" id="jobManage_dialog_task_confirm" style="position: absolute;bottom: 20px;right: 20px;">{{LECTURETICKET_QUENBSPNBSPDING}}</div>
+  </div>
+</div>

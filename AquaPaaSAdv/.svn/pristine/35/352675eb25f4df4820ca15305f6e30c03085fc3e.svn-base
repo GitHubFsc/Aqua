@@ -1,0 +1,27 @@
+<div class="_dialog contract">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{CONTRACTS_DIALOG_NEW}}</div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body">
+    <div class="_dialog_row"><label for="">{{CONTRACTS_DIALOG_NO}}</label><label for="">{{CONTRACTS_DIALOG_DETAIL}}</label></div>
+    <div class="_dialog_row"><input type="text" id="contract_id"><input type="text" id="ad_content"></div>
+    <div class="_dialog_row"><label for="">{{CONTRACTS_DIALOG_TYPE}}</div>
+    <div class="_dialog_row select"><div id="contract_type"></div><div id="contract_info">{{CONTRACTS_DIALOG_CONTRACTS_INFO}}</div></div>
+    <div class="_dialog_row"><label for="">{{CONTRACTS_DIALOG_FIRSTPARTY}}</label><label for="">{{CONTRACTS_DIALOG_SECONDPARTY}}</label></div>
+    <div class="_dialog_row"><input type="text" id="first_party"><input type="text" id="second_party"></div>
+    <div class="_dialog_row"><label for="">{{CONTRACTS_DIALOG_AFFECTIVETIME}}</label><label for="">{{CONTRACTS_DIALOG_EXPIRETIME}}</label></div>
+    <div class="_dialog_row"><div id="active_time"></div><div id="expire_time"></div></div>
+    <div class="_dialog_row">
+      <label for="">{{CONTRACTS_DIALOG_ATTACHMENT}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" style="flex: 1" disabled placeholder="{{CONTRACTS_DIALOG_ATTACHMENT_INFO}}" id="contract_file_url">
+      <div id="file_uploader" class="_btn">{{CONTRACTS_DIALOG_BROWSER}}</div>
+    </div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="_btn cancel">{{CONTRACTS_DIALOG_BTN_CANCEL}}</div>
+    <div class="_btn confirm">{{CONTRACTS_DIALOG_BTN_CONFIRM}}</div>
+  </div>
+</div>

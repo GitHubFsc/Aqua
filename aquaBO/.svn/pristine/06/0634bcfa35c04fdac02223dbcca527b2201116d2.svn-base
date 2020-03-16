@@ -1,0 +1,28 @@
+<div class="au_analysis_content_head">
+	<p class="au_analysis_content_titletxt">
+		频道时段收视率
+	</p>
+	<p id="channel_history_duration_indicator">
+		
+	</p>
+	<div id="channel_history_channel_filter">
+	
+	</div>
+	<div id="channel_history_time_filter">
+		
+	</div>
+</div>
+<div id="channel_history_content_container" class="au_analysis_content_body">
+	<div id="channel_history_chart_container">
+		
+	</div>
+	<div id="channel_history_chart_content">
+		
+	</div>
+	<div class="channel_history_content_spliter">
+		
+	</div>
+	<div id="channel_history_list_container">
+		
+	</div>
+</div>

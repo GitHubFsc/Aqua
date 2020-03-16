@@ -1,0 +1,154 @@
+var AssetContent = (function ($, Table) {
+  class Pane {
+    constructor(api, model) {
+      this.api = api;
+      this.model = model
+    }
+    init({container, provider_id, provider_asset_id, title}){
+      var id = 'asset_content_' + new Date().getTime();
+      var dom = `<div class='_frame' id='${id}'>
+        <style>
+          #${id} {position: absolute;top: 0;left: 0;right: 0;bottom: 0;z-index: 2;}
+          #${id} .btn[name=back] {padding-left: 35px;background-image: url(./images/asset/back.png);background-position: 15px center;background-repeat: no-repeat;}
+        </style>
+        <div class='header _flex'>
+          <div class='header_item btn' name='back'>${i18n('ASSETCONTENT_BACK')}</div>
+          <div class='header_item split'></div>
+          <div class='header_item'>${title}${i18n('ASSETCONTENT_CONTENT')}</div>
+        </div>
+        <div class='body'>
+          <div class='list_table' id='table_${id}'></div>
+        </div>
+      </div>`
+      $(container).append(dom);
+      var table = this.initTable(id);
+      this.bindEvents(id);
+      table.create();
+      this.api.getList(provider_id, provider_asset_id, (resp) => {
+        table.update(this.model.list(resp))
+      })
+    }
+    initTable(id) {
+      var title = [{
+        label: i18n('ASSETCONTENT_TABLE_USAGE')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_EXTID')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_NAME')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_AVAILABLE')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_STATE')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_CREATETIME')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_LASTUPLOADFAILINFO')
+      }, {
+        label: i18n('ASSETCONTENT_TABLE_BITRATE')
+      }],
+      style = {
+        borderColor: "#E2E2E2",
+        borderWidth: 1,
+        titleBg: "#45d1f4",
+        titleColor: "#FFFFFF",
+        titleHeight: 31,
+        cellBg: "white",
+        evenBg: "#F5FDFF",
+        cellColor: "#797979",
+        cellHeight: 34,
+        footBg: "#FFFFFF",
+        footColor: "#797979",
+        inputBg: "#FFFFFF",
+        inputBorder: "1px solid #CBCBCB",
+        iconColor: "#0099CB",
+        columnsWidth: [0.1, 0.1, 0.2, 0.08, 0.13, 0.17, 0.13, 0.09]
+      }
+      var table = new Table({
+        containerId: 'table_' + id,
+        rows: 16,
+        columns: title.length,
+        titles: title,
+        styles: style,
+        listType: 0,
+        data: []
+        // async: true
+      })
+      return table;
+    }
+    bindEvents(id) {
+      $('#' + id)
+      .on('click', '.header .btn[name=back]', ({currentTarget, target}) => {
+        if (currentTarget == target) {
+          $('#' + id).remove();
+        }
+      })
+    }
+  }
+  class API {
+    getList(pid, paid, callback) {
+      var method = 'Get',
+          url = aquapaas_host + '/aquapaas/rest/content/contents',
+          urlParam = [];
+      urlParam.push('app_key=' + paasAppKey)//应用授权
+      urlParam.push('timestamp=' + new Date().toISOString())//应用授权
+      urlParam.push('title_provider_id=' + pid)
+      urlParam.push('title_provider_asset_id=' + paid)
+      url += '?' + urlParam.join('&')
+      $.ajax({
+        type: method,
+        async: true,
+        url: url,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).always((resp, status, xhr) => {
+        if (status == 'success') {
+          callback && callback(resp)
+        }
+      })
+    }
+  }
+  class Model {
+    list(dataset) {
+      var ds = [];
+      for (var i = 0, len = dataset.length; i < len; i++) {
+        var {usage, ext_id, name, available, state, create_time, last_upload_fail_info, metadata:{Bit_Rate}} = dataset[i],
+            row = []
+        row.push({
+          label: usage
+        })
+        row.push({
+          label: `<div title='${ext_id}'>${ext_id}</div>`
+        })
+        row.push({
+          label: `<div title='${name}'>${name}</div>`
+        })
+        row.push({
+          label: i18n('ASSETCONTENT_TABLE_AVAILABLE_' + String(available).toUpperCase())
+        })
+        row.push({
+          label: i18n('ASSETCONTENT_TABLE_STATE_' + String(state).toUpperCase())
+        })
+        row.push({
+          label: convertTimeString(create_time)
+        })
+        row.push({
+          label: last_upload_fail_info
+        })
+        row.push({
+          label: Bit_Rate
+        })
+        ds.push(row)
+      }
+      return ds
+    }
+  }
+  function frame (opts) {
+    var api = new API();
+    var model = new Model();
+    var pane = new Pane(api, model);
+    pane.init(opts)
+  }
+  return frame
+})(jQuery, StyledList)

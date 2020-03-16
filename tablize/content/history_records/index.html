@@ -1,0 +1,100 @@
+<div class="history_records_dialog">
+    <div class="history_records_dialog_title">
+        <div class="history_records_dialog_title_text">
+            {{HISTORYRECORDS_TITLE}}
+        </div>
+        <div class="history_records_dialog_close popup_dialog_clear_"></div>
+    </div>
+    <div class="history_records_dialog_content">
+        <div class="history_records_dialog_content_item" style="height: 130px;">
+            <div class="flex_items" style="padding-top:12px;padding-bottom:12px;">
+                <div style="width: 901px;border-right:1px solid #EAEAEA;height: 106px;">
+                    <div class="history_records_option">
+                        <div class="history_records_option_title">时间范围 :</div>
+                        <div class="history_records_option_content">
+                            <div id="history_records_calendar_start" style="position: relative">
+                                <div id="history_records_calendar_start_input" class="history_records_calendar" style="margin-left: 5px;">
+                                    <input autocomplete="off" placeholder="" size="" name=""  type="text"
+                                           rows="2" readonly>
+                                    <div class="icon"><img src="./images/history_records/calender.png" alt=""></div>
+                                </div>
+                                <div id="history_records_calendar_start_select" class="date-selector"></div>
+                            </div>
+                            <div style="margin-left: 5px;"> —</div>
+                            <div id="history_records_calendar_end" style="position: relative">
+                                <div id="history_records_calendar_end_input" class="history_records_calendar" style="margin-left: 5px;">
+                                    <input autocomplete="off" placeholder="" size="" name=""  type="text"
+                                           rows="2" readonly>
+                                    <div class="icon"><img src="./images/history_records/calender.png" alt=""></div>
+                                </div>
+                                <div id="history_records_calendar_end_select" class="date-selector"></div>
+                            </div>
+                            <div class="history_records_time_button focus" data-value="1hour" name="searchTime" style="margin-left: 18px;">最近一小时</div>
+                            <div class="history_records_time_button" data-value="1day" name="searchTime" style="margin-left: 9px;">最近一天</div>
+                        </div>
+                    </div>
+                    <div class="history_records_option">
+                        <div class="history_records_option_title">分组 :</div>
+                        <div class="history_records_option_content">
+                            <label role="checkbox" class="history_records_radio" style="margin-right:30px">
+                                <span class="history_records_radio_icon">
+                                    <input type="radio" value="1" data-type="1" name="history_records_groupType_radio"
+                                           id="history_records_radio_1" checked="true">
+                                    <span for="history_records_radio_1"></span>
+                                </span>
+                                <span class="history_records_radio_label">不分组</span>
+                            </label>
+                            <label role="checkbox" class="history_records_radio" style="margin-right:30px">
+                                <span class="history_records_radio_icon">
+                                    <input type="radio" value="2" data-type="2" name="history_records_groupType_radio"
+                                           id="history_records_radio_2">
+                                    <span for="history_records_radio_2"></span>
+                                </span>
+                                <span class="history_records_radio_label">API类型</span>
+                            </label>
+                            <label role="checkbox" class="history_records_radio" style="margin-right:30px">
+                                <span class="history_records_radio_icon">
+                                    <input type="radio" value="3" data-type="3" name="history_records_groupType_radio"
+                                           id="history_records_radio_3">
+                                    <span for="history_records_radio_3"></span>
+                                </span>
+                                <span class="history_records_radio_label">响应时间</span>
+                            </label>
+                            <label role="checkbox" class="history_records_radio" style="margin-right:30px">
+                                <span class="history_records_radio_icon">
+                                    <input type="radio" value="4" data-type="4" name="history_records_groupType_radio"
+                                           id="history_records_radio_4">
+                                    <span for="history_records_radio_4"></span>
+                                </span>
+                                <span class="history_records_radio_label">响应状态</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 106px;">
+                    <button type="button" id="history_records_search_button" style="margin-left:23px;margin-top: 34px;" class="history_records_search_button">
+                        <i class="history_records_search_button_icon"></i>
+                        <span>查询</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="history_records_dialog_content_item" style="margin-top: 15px;height: 420px;">
+            <div class="history_records_dialog_content_item_head">
+                <div class="left">
+                    <div class="title" style="margin-left: 17px">历史记录</div>
+                    <div class="subtitle" style="margin-left: 10px">Historical records</div>
+                </div>
+                <div class="right">
+                    <div class="history_records_time_button focus" data-value="1hour" name="lineChartTimeType" style="width:44px;">分钟</div>
+                    <div class="history_records_time_button"  data-value="1day" name="lineChartTimeType" style="width:44px;margin-left: 10px;">小时</div>
+                    <div class="history_records_time_button" data-value="" name="lineChartTimeType" style="width:31px;margin-left: 10px;">天</div>
+                </div>
+            </div>
+            <div id="history_records_lineChart" class="history_records_lineChart"></div>
+        </div>
+        <div id="history_records_table" class="history_records_table">
+
+        </div>
+    </div>
+</div>

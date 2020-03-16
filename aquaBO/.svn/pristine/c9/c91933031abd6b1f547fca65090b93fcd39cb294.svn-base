@@ -1,0 +1,49 @@
+{
+  "text": {
+    "normal": {
+      "type": "relative",
+      "width": -2,
+      "height": -1,
+      "top": 0,
+      "left": 0,
+      "elements": [
+        {
+          "type": "text",
+          "zIndex": 0,
+          "index": 0,
+          "text": "$normalText$",
+          "top": 0,
+          "left": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": -2,
+          "height": -1,
+          "textColor": "$normalTextColor$",
+          "shapeBgColor": "$normalShapeBgColor$",
+          "shapeBorderColor": "$normalShapeBorderColor$",
+          "shapeBorderWidth": "0",
+          "padding": "0,0,0,20",
+          "textSize": 34
+        }
+      ]
+    }
+  },
+  "image": {
+    "normal": {
+      "type": "relative",
+      "elements": [
+        {
+          "index": 0,
+          "type": "image",
+          "zIndex": 0,
+          "top": 0,
+          "left": 0,
+          "width": -1,
+          "height": -1,
+          "url": "$normalPoster$",
+          "isVisible": true
+        }
+      ]
+    }
+  }
+}

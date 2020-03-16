@@ -1,0 +1,40 @@
+.psdAuditMenu{display:flex;font-size: 16px;font-weight: bold;}
+.menu_split{width: 1px;height: 36px;margin: 14px 9px;background-color: #E9E9E9;}
+.policy_type{display: flex;text-align: center;line-height: 36px;}
+.policy_type div[name=type]{height: 36px; border: 1px solid #D1D1D1; background: -moz-linear-gradient(center top , #F4F4F4, #E4E4E4); width: 88px; border-radius: 1px;cursor: pointer;color: #494B58;}
+.policy_type div.focus[name=type]{background: #75B8D6;border: 1px solid #4488A7;color: #FFFFFF;}
+.policy_type #policy_img{margin: 14px 0px 14px 9px;}
+.policy_type #policy_video{margin: 14px 0px 14px 0px;}
+.policy_type #policy_subtitle{margin: 14px 9px 14px 0px;}
+.policy_status{display: flex;text-align: center;line-height: 36px;}
+.policy_status div[name=status]{height: 36px; border-width: 1px ;border-style: solid ;border-color: #EAEAEA; background: -moz-linear-gradient(center top , #FEFEFE, #E0E0E3); width: 96px;margin-top: 14px;margin-bottom: 14px;cursor: pointer;color: #494B58;}
+.policy_status div[name=status].focus{background: #75B8D6;border-color: #75B8D6;color: #FFFFFF;}
+.policy_status #policy_firstAudit{border-top-left-radius: 18px;border-bottom-left-radius: 18px;margin-left: 10px;border-right: none;}
+.policy_status #policy_disable{border-top-right-radius: 18px;border-bottom-right-radius: 18px;margin-right: 10px;border-left: none;}
+.policy_search{display: flex;}
+.policy_search [name=policy_search]{height: 36px;margin: 14px 0px;padding: 0;border: 1px solid #EAEAEA;background-color: #F4F4F4;}
+.policy_search #policy_searchInput{width: 166;border-right: none;padding-left: 5px;}
+.policy_search #policy_searchBtn{width: 40px;border-left: none;background-image: url(../image/psdAudit/searchBtn.png);background-position: left center;background-repeat: no-repeat;cursor: pointer;}
+.psdAuditBody{position: absolute;top: 64px;left: 4px;right: 0px;bottom: 0px;border: 1px solid #EDEDDB;background-color: #FCFCF2;}
+.psdAuditBody #psdAuditTable{margin: 2px;position: absolute;top: 0px;left: 0px;right: 0px;bottom: 0px;}
+.psdAuditTable span{text-decoration: underline;margin: 0 5px;cursor: pointer;color: #3C94BB;}
+
+.auditDialog{background-color: #FFFFFF;border: 1px solid #76969F;position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;}
+.auditDialogTitle{height: 33px;background-color: #5DA1C0;display: flex;}
+.auditDialogTitleText{height: 33px;flex: 1;line-height: 33px;font-size: 15px;color: #FFFFFF;padding-left: 12px;}
+.auditDialogCloseBtn{width: 41px;height: 33px;cursor: pointer;background-image: url(../image/psdAudit/closeBtn.png);}
+.auditDialogDeneyReason{border: 1px solid #90BDD2;height: calc(100% - ( 6px + 11px + 1px ) * 2 - 33px - 55px);margin: 6px 7px;;overflow-y: scroll;position: absolute;resize: none;width: calc(100% - (7px + 1px + 13px) * 2);font-size: 12px;color: #727272;padding: 11px 13px;}
+.auditDialogFoot{height: 55px;position: absolute;bottom: 0px;left: 0px;right: 0px;display: flex;font-size: 12px;color: #FFFFFF;line-height: 30px;}
+.auditDialogFlexDiv{flex:1;}
+.auditDialogCancelBtn{background-color: #88C5E0;height: 30px;margin: 8px 7px 1px 1px;text-align: center;width: 90px;cursor: pointer;border: 1px solid #597F89;}
+.auditDialogSubmitBtn{background-color: #5DA1C0;height: 30px;margin: 8px 7px 1px 1px;text-align: center;width: 90px;cursor: pointer;border: 1px solid #597F89;}
+.psd_view_dialog{border: 1px solid #76969F;position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;background-color: #FFFFFF;}
+.psd_view_dialog_title{height: 33px;display: flex;background-color: #5DA1C0;}
+.psd_view_dialog_title #psd_name{flex: 1;padding-left: 12px;color: #FFFFFF;font-size: 16px;line-height: 33px;height: 33px;}
+.psd_view_dialog_title .close_btn{width: 41px;height: 33px;background-image: url(../image/psdAudit/closeBtn.png);}
+.psd_view_dialog .psd_container{position: absolute;top: 33px;right: 0;bottom: 0px;left: 0px;}
+.psd_view_dialog #video_container{display: none;width: 100%;height: calc(100% - 33px);}
+.psd_view_dialog #subtutle_container{display: none;width: 100%;height: calc(100% - 33px);}
+@media (max-width:1440px) {
+  .psdAuditTable span{text-decoration: underline;margin: 0 8px;cursor: pointer;color: #3C94BB;}
+}

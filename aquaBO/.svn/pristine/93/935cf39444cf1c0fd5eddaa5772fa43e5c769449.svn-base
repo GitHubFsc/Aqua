@@ -1,0 +1,164 @@
+<div class="page-rel-container">
+	<div class="page-rel-header">
+		<div class="panel_page_head_left">
+			<div class="panel_page_head_title_lead"></div>
+			<div class="panel_page_head_title">统计页面管理</div>
+		</div>
+	</div>
+	<div class="page-rel-content">
+		<div class="page-inner-content">
+			<div class="authstats-upper">
+				<div class="authstats-ccl">
+					<div class="authstats-ccl-ititle">比例分布</div>
+					<div class="authstats-ccl-itail">Proportions distribution</div>
+				</div>
+				<div class="authstats-sums">
+					<div class="authstats-sumsome">
+						<div class="authstats-sum-iname">
+							<div class="authstats-sum-iname-label">授权信息</div>
+							<div class="authstats-sum-iname-idec">index</div>
+						</div>
+						<table cellpadding="0" cellspacing="0" class="authstats-sum-ilayout">
+							<tbody>
+								<tr>
+									<td rowspan="2" style="width: 220px;">
+										<div class="authstats-rosepie" id="authstats-authori-rosepie"></div>
+									</td>
+									<td style="width: 172px;"><div class="authstats-sum-total">
+										<div class="authstats-sum-ilabel">授权总数</div>
+										<div class="authstats-sum-ilabel" id="authstats-authori-total"></div>
+									</div></td>
+									<td><div class="authstats-sum-percent">
+										<div class="authstats-sum-ilabel">授权成功比例</div>
+										<div class="authstats-sum-ilabel" id="authstats-authori-sper"></div>
+										<div class="authstats-sum-perpie" id="authstats-authori-perpie"></div>
+									</div></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table class="authstats-sum-ilist">
+											<thead>
+												<tr><td>图例</td><td>分组</td><td>次数</td></tr>
+											</thead>
+											<tbody>
+												<tr><td><div class="authstats-coli-suc"></td><td>授权成功次数</td><td>
+													<div class="authstats-ilist-count" id="authstats-authori-cs"></div>
+												</td></tr>
+												<tr><td><div class="authstats-coli-fail"></td><td>授权失败次数</td><td>
+													<div class="authstats-ilist-count" id="authstats-authori-cf"></div>
+												</td></tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="authstats-sumsome">
+						<div class="authstats-sum-iname">
+							<div class="authstats-sum-iname-label">鉴权信息</div>
+							<div class="authstats-sum-iname-idec">index</div>
+						</div>
+						<table cellpadding="0" cellspacing="0" class="authstats-sum-ilayout">
+							<tbody>
+								<tr>
+									<td rowspan="2" style="width: 220px;">
+										<div class="authstats-rosepie" id="authstats-authenti-rosepie"></div>
+									</td>
+									<td style="width: 172px;"><div class="authstats-sum-total">
+										<div class="authstats-sum-ilabel">鉴权总数</div>
+										<div class="authstats-sum-ilabel" id="authstats-authenti-total"></div>
+									</div></td>
+									<td><div class="authstats-sum-percent">
+										<div class="authstats-sum-ilabel">鉴权成功比例</div>
+										<div class="authstats-sum-ilabel" id="authstats-authenti-sper"></div>
+										<div class="authstats-sum-perpie" id="authstats-authenti-perpie"></div>
+									</div></td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										<table class="authstats-sum-ilist">
+											<thead>
+												<tr><td>图例</td><td>分组</td><td>次数</td></tr>
+											</thead>
+											<tbody>
+												<tr><td><div class="authstats-coli-suc"></div></td><td>鉴权成功次数</td><td>
+													<div class="authstats-ilist-count" id="authstats-authenti-cs"></div>
+												</td></tr>
+												<tr><td><div class="authstats-coli-fail"></div></td><td>鉴权失败次数</td><td>
+													<div class="authstats-ilist-count" id="authstats-authenti-cf"></div>
+												</td></tr>
+											</tbody>
+										</table>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="authstats-pickers">
+					<div class="authstats-time-pickers">
+						<div class="authstats-queryin-label" style="line-height: 31px;">时间范围：</div>
+						<div class="authstats-time-ipicks">
+							<div class="authstats-date-picker" id="authstats-date-from"></div>
+							<div class="authstats-picker-sin"></div>
+							<div class="authstats-date-picker" id="authstats-date-to"></div>
+						</div>
+					</div>
+					<div class="authstats-ops" id="authstats-time-shortcuts">
+					<div class="authstats-op" data-sign="lasthour">最近一小时</div>
+						<div class="authstats-op" data-sign="lastday">最近一天</div>
+					</div>
+					<div class="authstats-queryins">
+						<div class="authstats-queryin">
+							<div class="authstats-queryin-label">智能卡号：</div>
+							<input type="text" class="authstats-queryin-input" id="authstats-cardid-in"/>
+						</div>
+						<div class="authstats-queryin">
+							<div class="authstats-queryin-label">App_key:</div>
+							<input type="text" class="authstats-queryin-input" id="authstats-appkey-in"/>
+						</div>
+					</div>
+					<div class="authstats-propo-btns">
+						<div class="authstats-propo-btn" id="authstats-query-btn">
+							<div class="authstats-propo-btn-img"></div>
+							<div class="authstats-propo-btn-txt">查询</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="authstats-lower">
+				<div class="authstats-ccl">
+					<div class="authstats-ccl-ititle">实时走势</div>
+					<div class="authstats-ccl-itail">Real time trend</div>
+				</div>
+				<div class="authstats-sums">
+					<div class="authstats-sumsome" id="authstats-trend-authori">
+						<div class="authstats-sum-iname">
+							<div class="authstats-sum-iname-label">授权信息</div>
+							<div class="authstats-sum-iname-idec">index</div>
+						</div>
+						<div class="authstats-chart" id="authstats-chart-authori"></div>
+						<div class="authstats-ops">
+							<div class="authstats-op" data-num="10min">10分钟</div>
+							<div class="authstats-op" data-num="30min">30分钟</div>
+							<div class="authstats-op" data-num="1hr">1小时</div>
+						</div>
+					</div>
+					<div class="authstats-sumsome" id="authstats-trend-authenti">
+						<div class="authstats-sum-iname">
+							<div class="authstats-sum-iname-label">鉴权信息</div>
+							<div class="authstats-sum-iname-idec">index</div>
+						</div>
+						<div class="authstats-chart" id="authstats-chart-authenti"></div>
+						<div class="authstats-ops">
+							<div class="authstats-op" data-num="10min">10分钟</div>
+							<div class="authstats-op" data-num="30min">30分钟</div>
+							<div class="authstats-op" data-num="1hr">1小时</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

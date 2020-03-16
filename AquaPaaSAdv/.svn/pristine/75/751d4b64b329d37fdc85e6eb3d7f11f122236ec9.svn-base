@@ -1,0 +1,38 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div class="panel_dialog_title_text">{{SITE_ADMIN_VIEWSITE}}</div>
+		<div class="panel_dialog_close popup_dialog_clear"></div>
+	</div>
+	<div style="position:absolute;top:38px;left:0;right:0;bottom:0;">
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_ID}}</div>
+			<input type="text" id="siteAdmin_siteId" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_NAME}}</div>
+			<input type="text" id="siteAdmin_siteName" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_IP}}</div>
+			<input type="text" id="siteAdmin_siteIP" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{SITE_ADMIN_SITEPORT}}</div>
+			<input type="text" id="siteAdmin_sitePort" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_MONITOR_LINK}}</div>
+			<input type="text" id="siteAdmin_MonitorLink" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-sitead">
+				<div class="site-admin-dialog-ilabel">{{SITE_ADMIN_AD_STATE}}</div>
+				<div id="siteAdmin_siteAdState" class="site-admin-state-rect"></div>
+			</div>
+			<div class="site-admin-sitedm">
+				<div class="site-admin-dialog-ilabel">{{SITE_ADMIN_DM_STATE}}</div>
+				<div id="siteAdmin_siteDmState" class="site-admin-state-rect"></div>
+			</div>
+		</div>
+	</div>
+</div>

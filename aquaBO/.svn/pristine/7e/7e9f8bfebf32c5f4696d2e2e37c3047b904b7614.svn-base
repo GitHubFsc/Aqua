@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="./content/jobManage/index.css">
+<div id="jobManage">
+  <div class="panel_page_head">
+    <div class="panel_page_head_left">
+      <div id="panel_page_head_joblist">
+        <div class="panel_page_head_title_lead">
+        </div>
+        <div class="panel_page_head_title">
+          {{JOBMANAGE_JOBMANAGE}}
+        </div>
+        <div class="panel_top_search_box">
+          <input id="job_list_search" class="panel_top_search_box_input" type="text"/>
+          <div id="job_list_search_handle" class="panel_top_search_box_handle">
+          </div>
+        </div>
+      </div>
+      <div id="panel_page_head_jobHistory" style="display: none">
+        <div class="panel_page_head_button back">{{MNG_BACK}}</div>
+        <div class="panel_page_head_title_lead" style="width:1px;"></div>
+        <div class="panel_page_head_title"></div>
+      </div>
+    </div>
+    <div class="panel_page_head_right">
+      <div id="jobManage_new_btn" class="panel_page_head_button create">{{JOBMANAGE_CREATEJOB}}</div>
+    </div>
+  </div>
+  <div class="panel_page_body">
+    <div id="jobManage_list">
+      <div class="list_head">
+        <div class="title">{{JOBMANAGE_JOBLIST}}</div>
+        <div class="empty"></div>
+        <div class="calendars">
+          <div id="jobManage_calendar_start" class="calendar"></div>
+          <div style="margin-left: 5px;margin-right: 5px;height: 30px;line-height: 30px">—</div>
+          <div id="jobManage_calendar_end" class="calendar"></div>
+        </div>
+        <div class="selects">
+          <div id="jobManage_select_taskName" class="select"></div>
+          <div id="jobManage_select_isTiming" class="select"></div>
+          <div id="jobManage_select_startStatus" class="select"></div>
+          <div id="jobManage_select_type" class="select"></div>
+        </div>
+      </div>
+      <div class="list_table" id="jobManage_list_table"></div>
+    </div>
+    <div id="jobManage_task" style="display:none">
+    </div>
+  </div>
+</div>

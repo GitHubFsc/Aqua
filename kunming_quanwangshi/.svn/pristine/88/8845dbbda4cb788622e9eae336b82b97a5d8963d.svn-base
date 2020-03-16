@@ -1,0 +1,39 @@
+* {margin: 0;padding: 0;list-style: none;}
+html, body{height: 720px;width: 1280px;position: relative;font-family: 'Microsoft YaHei';}
+body {background-image: url(../img/背景.png);background-repeat: no-repeat;}
+
+.logo {position: absolute;background-repeat: no-repeat;}
+.logo.app {left: 86px;top: 15px;width: 146px;height: 49px;background-image: url(../img/logo.png);}
+#search {width: 42px;height: 38px;top: 22px;left: 1108px;background-image: url(../img/home/search_dark.png);}
+#search.focus {background-image: url(../img/home/search_white.png);}
+#mine {width: 42px;height: 38px;top: 21px;left: 1178px;background-image: url(../img/home/mine_dark.png);}
+#mine.focus {background-image: url(../img/home/mine_white.png);}
+
+.column_header {position: absolute;left: 26px;top: 91px;width: 125px;height: 530px;}
+.column_header > div {height: 48px;width: 122px;margin-bottom: 12px;line-height: 48px;text-align: center;color: rgba(255, 255, 255, 0.302);font-size: 26px;overflow: hidden;}
+.column_header > div.selected {color: #FFF;}
+.column_header_focus {position: absolute;display: none;width: 122px;height: 48px;background-image: url(../img/column/二级选中框.png);}
+.column_content_focus {position: absolute;display: none;width: 197px;height: 275px;background-image: url(../img/column/一级页面节目焦点.png);}
+
+img.poster {width: 174px;height: 247px;position: absolute;}
+img.poster.invisible {visibility: hidden;}
+#vod_1 {left: 160px;top: 103px}
+#vod_2 {left: 346px;top: 103px}
+#vod_3 {left: 532px;top: 103px}
+#vod_4 {left: 718px;top: 103px}
+#vod_5 {left: 903px;top: 103px}
+#vod_6 {left: 1090px;top: 103px}
+#vod_7 {left: 160px;top: 362px}
+#vod_8 {left: 346px;top: 362px}
+#vod_9 {left: 532px;top: 362px}
+#vod_10 {left: 718px;top: 362px}
+#vod_11 {left: 903px;top: 362px}
+#vod_12 {left: 1090px;top: 362px}
+
+.page_split {position: absolute;width: 218px;height: 48px;left: 606px;top: 626px;}
+.page_split > * {display: inline-block;vertical-align: middle;}
+.page {background-repeat: no-repeat;background-position: center;width: 48px;height: 48px;}
+.page[name=page_up] {background-image: url(../img/column/上方键.png);}
+.page[name=page_down] {background-image: url(../img/column/下方键.png);}
+#cur_page, #tot_page, .split {line-height: 48px;font-size: 22px;color: #FFF;width: 30px;text-align: center;}
+.page_focus {background-image: url(../img/column/搜索节目焦点.png);position: absolute;width: 48px;height: 48px;display: none;}

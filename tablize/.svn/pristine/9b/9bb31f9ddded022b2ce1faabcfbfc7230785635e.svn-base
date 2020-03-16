@@ -1,0 +1,144 @@
+<div class="popupCenterDiv batch" id="batch" style="width:750px;height:auto;margin-left:-375px;margin-top:-339px">
+	<div class="popupCenterDivTop">
+		<div class="popupCenterDivTopLeft">创建批量导出任务</div>
+		<img src="images/cross.png" style="cursor:pointer;float:right;margin-top:10px;margin-right:17px;" alt="关闭"/>
+	</div>
+	<div class="popupCenterDivBody" style="margin-left:0px;height:auto">
+		<div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+			<div style="text-align: right;width: 102px;margin-left: 35px;">任务描述&nbsp;:</div>
+			<div style="width: 180px;border:1px solid #d3d3d3;margin-left: 20px;">
+				<input type="text" name="jobNameInput" style='border: 0;width: 100%;padding-left: 10px;'>
+			</div>
+			<div style="text-align: right;width: 102px;margin-left: 54px;">导出内容&nbsp;:</div>
+			<div style="width:104px;margin-left: 10px;">
+				<!-- <input type="radio" style="background-color:red" name="sex" value="male" style="float:left"/>  -->
+				<div class="radio_selected" name="radio1" value="0"></div>
+				导出统计
+			</div>
+			<div style="width:104px;">
+				<div class="radio" name="radio1" value="1"></div>
+				导出详单
+			</div>
+		</div>
+		 <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+			<div style="text-align: right;width: 102px;margin-left: 35px;">日期范围&nbsp;:</div>
+			<div style="width: 180px;border:1px solid #d3d3d3;margin-left: 20px;">
+				<div name='dateRangeValue' class='dropDownListValue'></div>
+				<div name='dropDownListBtn' class='dropDownListBtn'></div>
+			</div>
+			<dl style="z-index: 3; position: absolute; margin: 30px 0px 0px; left: 157px; width: 183px; display: none;" id="date_range_list">
+				<dd>自定义</dd>
+				<dd>一个月</dd>
+				<dd>二个月</dd>
+				<dd>三个月</dd>
+				<dd>六个月</dd>
+				<dd>一年</dd>
+			</dl>
+			
+		</div>
+		<div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+			<!-- <form enctype="multipart/form-data" method="POST" action="http://172.16.20.155:8080/aquapaas/rest/multiapp/viewhistory/batch_job/detail" style="overflow:hidden;width:100%;margin: 4px 0;"> -->
+			<div style="text-align: right;width: 102px;margin-left: 35px;">开始日期&nbsp;:</div>
+			<div style="width: 180px;margin-left: 20px;">
+				<!-- <div name='date' class='dropDownListValue' id="start_date">2014-12-01</div>
+				<div name='calendarIcon' class='calendarIcon'></div> -->
+				<div style="position: absolute;width:180px;height:30px;z-index:1;" id="start_date"></div>
+			</div>
+			<div style="text-align: right;width:102px;margin-left: 54px;">结束日期&nbsp;:</div>
+			<div style="width:180px;margin-left: 20px;">
+				<!-- 	<div name='date' class='dropDownListValue' id="end_date">2014-12-31</div>
+				<div name='calendarIcon' class='calendarIcon'></div> -->
+				<div style="position: absolute;width:180px;height:30px;z-index:1;" id="end_date"></div>
+			</div>
+			<!-- </form> -->
+		</div>
+		 <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+			<div style="text-align: right;width: 102px;margin-left: 35px;">组合类型&nbsp;:</div>
+			<div style="width: 180px;border:1px solid #d3d3d3;margin-left: 20px;">
+				<div name='selectionTypeValue' class='dropDownListValue'></div>
+				<div name='selectionTypeListBtn' class='dropDownListBtn'></div>
+			</div>
+			<dl style="z-index: 3; position: absolute; margin: 30px 0px 0px; left: 157px; width: 183px; display: none;" id="selection_type_list">				
+				<dd>自定义组合</dd>
+				<dd>预设组合</dd>
+			</dl>
+			
+		</div>
+		<div id="selection_list" style="display:none;left: 157px;">
+			<div class="selection_item"></div>
+			<div class="selection_item"></div>
+			<div class="selection_item"></div>
+		</div>
+		 <div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+			<div style="text-align: right;width: 102px;margin-left: 35px;">点播类型&nbsp;:</div>
+			<div style="width: 180px;border:1px solid #d3d3d3;margin-left: 20px;">
+				<div name='potypesValue' class='dropDownListValue'></div>
+				<div name='potypesBtn' class='dropDownListBtn'></div>
+			</div>
+			<dl style="z-index: 3; position: absolute; margin: 30px 0px 0px; left: 157px; width: 183px; display: none;" id="potypes_list">				
+				<dd>SVOD</dd>
+				<dd>RVOD</dd>
+			</dl>
+			
+		</div>
+		<div class="popupCenterDivBodyRow" style="margin-top: 24px;"id="ServicePack">
+			<div style="text-align: right;width: 102px;margin-left: 35px;">服务包&nbsp;:</div>
+			<div style="width: 180px;border:1px solid #d3d3d3;margin-left: 20px;">
+				<div name='servicePackValue' class='dropDownListValue'></div>
+				<div name='servicePackBtn' class='dropDownListBtn'></div>
+			</div>
+			<dl style="z-index: 3; position: absolute; margin: 30px 0px 0px; left: 157px; width: 183px; display: none;" id="service_pack_list">
+			    <dd>ServicePackage</dd>
+				<dd>POID</dd> 			
+			</dl>
+			
+		</div>
+		<div style="position:absolute;left: 365px;top: 341px;height: 30px;width: 341px;margin-left: 42px;" id="ServicePackInputDiv">
+			<div style="width: 288px;border:1px solid #d3d3d3;height:28px;">
+				<input type="text" name="servicePackInput" id="servicePackInput" style='border: 0;width: 100%;padding-left: 10px;height: 28px;line-height: 28px;float:left;outline:medium none;'>		
+			</div>
+			<div style="width:220px;height:10px;">
+			<span style="font-size:smaller;color:#828282">您可以输入多值，用","号分隔</span>
+			</div>
+			</div>
+		<div class="popupCenterDivBodyRow" style="margin-top: 24px;">
+			<!-- <form enctype="multipart/form-data" method="POST" action="http://172.16.20.155:8080/aquapaas/rest/multiapp/viewhistory/batch_job/detail" style="overflow:hidden;width:100%;margin: 4px 0;"> -->
+			<div style="text-align: right;width:117px;margin-left: 20px;">已导入文件&nbsp;:</div>
+			<div id="inputfile" class='dropDownListValue' style="width:165px;border:1px solid #d3d3d3;margin-left: 20px;position:relative;"></div>
+			<div name="inputFileBtn" style="width: 33px; background-image: url(images/add_skyblue.png); background-repeat: no-repeat; background-position: center center; margin: 0px 0px 0px 13px;" class="pageTitleContainerRightButt">
+				<!-- <input type="file" style="opacity: 0;width:100%;cursor:pointer;" onchange="javascript:document.getElementById('inputfilevalue').innerHTML=this.value"> -->
+			</div>
+			<!-- </form> -->
+		</div>
+		<form enctype="multipart/form-data" method="POST" action="" style="overflow:hidden;width:100%;margin: 4px 0;display:none" id="submitForm">
+
+		<!-- <form enctype="multipart/form-data" method="POST" action="http://172.16.20.155:8080/aquapaas/rest/multiapp/viewhistory/batch_job/detail" style="overflow:hidden;width:100%;margin: 4px 0;display:none" id="submitForm"> -->			<input type="text" name="job_name">
+			<input type="text" name="start_date">
+			<input type="text" name="end_date">
+			<input type="text" name="smart_card_ids" id="smart_card_ids">
+			<input type="text" name="po_type">
+			<input type="text" name="servicePackInput">
+			<input type="text" name="servicePack">
+			<!-- <input type="text" name="poids"> -->
+			<input type="file" name="file" id="file">
+			
+			<input type="submit" value="提交" >
+		</form>
+		<div class="popupCenterDivBodyRow" style="margin-top: 24px;background-color: #ECECEC;padding: 4px 0;">
+			<!-- <form enctype="multipart/form-data" method="POST" action="http://172.16.20.155:8080/aquapaas/rest/multiapp/viewhistory/batch_job/detail" style="overflow:hidden;width:100%;margin: 4px 0;"> -->
+			<div style="text-align: right;width: 102px;margin-left: 35px;">智能卡号&nbsp;:</div>
+			<div style="width: 180px;border:1px solid #d3d3d3;margin-left: 20px;">
+				<input type="text" name="smartCardInput" style='border: 0;width: 100%;padding-left: 10px;'>
+			</div>
+			<div class='pageTitleContainerRightButt' style='margin: 0 0 0 6px;float: left;color:#ffffff;' name='addSmartCard'>添&nbsp;加</div>
+			<!-- </form> -->
+		</div>
+		<div class="popupCenterDivBodyRow" name="smartCardContainer" style="padding: 10px 0 0 20px;;height: 126px;margin: 0;width:730px;">
+			<!-- <div class='smartCardFloatDiv'><div class='deleteIcon'></div>10004698564</div> -->
+		</div>
+	</div>
+	<div class="popupCenterDivbottom" style="width:100%;">
+		<div class="pageTitleContainerRightButt" style="margin-right:19px;margin-bottom:2px;" name="popUpQueryBtn">创建</div>
+		<div class="pageTitleContainerRightButt" style="margin-right:19px;margin-bottom:2px;" name="popUpCancelBtn">取消</div>
+	</div>
+</div>

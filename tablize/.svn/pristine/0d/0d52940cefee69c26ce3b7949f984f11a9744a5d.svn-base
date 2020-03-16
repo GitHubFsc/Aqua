@@ -1,0 +1,10 @@
+<div class="jobHistory_content">
+  <div class="left">
+    <div id="jobManage_jobHistory_Table" class="table"></div>
+  </div>
+  <div class="right">
+    <div id="jobManage_taskHistory_Table" class="table"></div>
+  </div>
+</div>
+<div class="bottom">
+</div>

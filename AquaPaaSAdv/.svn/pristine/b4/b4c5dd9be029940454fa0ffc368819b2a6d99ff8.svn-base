@@ -1,0 +1,160 @@
+<style>
+	.lecture_ticket_dialog.wp_panel_dialog {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		border: 1px solid #177ba9;
+		font-size: 14px;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog  input:not([type="image"]), textarea {
+		box-sizing: border-box;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog  .date-selector {
+		background-color: white;
+		position: absolute;
+		z-index: 99;
+		left: 0;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_title {
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		height: 40px;
+		background-color: #2ea2d7;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_title_label {
+		position: absolute;
+		height: 40px;
+		line-height: 40px;
+		top: 0;
+		left: 20px;
+		font-size: 19px;
+		color: white;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_content {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		top: 40px;
+		background-color: white;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_close {
+		position: absolute;
+		width: 38px;
+		height: 38px;
+		right: 15px;
+		background-image: url('./image/ticket/manage_dialog_close.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_cancel, .wp_panel_dialog_submit {
+		position: absolute;
+		border: 1px solid #597f89;
+		bottom: 10px;
+		color: white;
+		cursor: pointer;
+		font-size: 17px;
+		height: 38px;
+		line-height: 38px;
+		text-align: center;
+		width: 149px;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_cancel {
+		right: 215px;
+		background-color: #5da1c0;
+	}
+	.lecture_ticket_dialog.wp_panel_dialog .wp_panel_dialog_submit {
+		background-color: #2ea2d7;
+		right: 39px;
+	}
+</style>
+<div class="wp_panel_dialog lecture_ticket_dialog">
+	<div class="wp_panel_dialog_title lecture_ticket_dialog_title" style = "background-color: rgb(46,161,215)">
+		<div class="wp_panel_dialog_title_label">
+			{{LECTURETICKET_SHENGCHENGKECHENGQUAN}}
+		</div>
+		<div class="wp_panel_dialog_close popup_dialog_clear">
+
+		</div>
+	</div>
+	<div class="wp_panel_dialog_content lecture_ticket_dialog_content_add_and_edit" style="padding-top: 10px">
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_LEIXING}}</div>
+			<div id="lecture_ticket_search_type"></div>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+		</div>
+		<div class="lecture_ticket_dialog_label_row" id="search_option1" style="width:calc(38% - 35px);">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_PID}}</div>
+			<input class="input" type="text" id="lecture_ticket_pid_input" style="width:220px"/>
+		</div>
+		<div class="lecture_ticket_dialog_label_row" id="search_option2" style="width:calc(62% - 35px);;">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_PAID}}</div>
+			<input class="input" type="text" id="lecture_ticket_paid_input" style="width:220px;margin-right:60px;"/>
+			<div id="lecture_ticket_dialog_get_info">{{LECTURETICKET_HUOQUXINXI}}</div>
+		</div>
+		<div class="lecture_ticket_dialog_label_row" id="search_option3" style="width:calc(100% - 35px);">
+			<div class="lecture_ticket_dialog_label" id="asset_name_label">{{LECTURETICKET_JIEMUMINGCHENG}}</div>
+			<input class="input" type="text" id="lecture_ticket_item_name" disabled="disabled" style="width:701px"/>
+		</div>
+		<div class="lecture_ticket_dialog_label_row" id="search_option4" style="width:calc(100% - 35px);display: none">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_BIAOQIANMINGCHENG}}</div>
+			<input class="input" type="text" id="lecture_ticket_tags_name" style="width:701px"/>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_XUHAOQIANZHUI}}</div>
+			<input class="input"  type="text" id="lecture_ticket_item_prefix" />
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_XUHAOCHUSHIZHI}}</div>
+			<input class="input" type="text" id="lecture_ticket_item_start_num"/>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_PICIXIANSHIMINGCHEN}}</div>
+			<input class="input" type="text" id="lecture_ticket_batch_name"/>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_PICIMINGCHEN}}</div>
+			<input class="input" type="text" id="lecture_ticket_batch_no"/>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_SHULIANG}}</div>
+			<input class="input" type="text" id="lecture_ticket_item_number" />
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_YOUXIAORIQI}}</div>
+			<div class="date-container" style="    width: 164px;float: initial;">
+				<input id="lecture_ticket_date_input_from" type="text" readonly="true">
+
+				<div class="date-icon-from" style="left: 290px;"></div>
+				<div id="lecture_ticket_date_selector" class="date-selector"></div>
+			</div>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_ZHEKOULEIXING}}</div>
+			<div id="lecture_ticket_item_type"></div>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_ZHEKOUDUIYING}}</div>
+			<input class="input" type="text" id="lecture_ticket_item_type_count" />
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_DUIHUANLEIXINGSHULIANG}}</div>
+			<div style="inline-height:30px;height:30px;">
+				<div id="lecture_ticket_exchange_price_type" style="display: inline-block"></div>
+				<input class="input" type="text" id="lecture_ticket_item_exchange_price_value" style="width:160px;vertical-align: top"/>
+			</div>
+		</div>
+		<div class="lecture_ticket_dialog_label_row">
+			<div class="lecture_ticket_dialog_label">{{LECTURETICKET_DISANFANG}}</div>
+			<input class="input" type="text" id="lecture_ticket_item_third_party" />
+		</div>
+		<div class="lecture_ticket_dialog_cancel popup_dialog_clear" style="position: absolute;bottom: 20px;right: 200px;">{{LECTURETICKET_QUNBSPNBSPXIAO}}</div>
+		<div class="lecture_ticket_dialog_submit" id="lecture_ticket_dialog_confirm" style="position: absolute;bottom: 20px;right: 20px;">{{LECTURETICKET_QUENBSPNBSPDING}}</div>
+	</div>
+</div>

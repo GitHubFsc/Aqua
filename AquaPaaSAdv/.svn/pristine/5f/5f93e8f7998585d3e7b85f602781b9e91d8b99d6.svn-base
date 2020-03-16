@@ -1,0 +1,91 @@
+<style>
+    #adv_sys_user_manage_position_list{
+        overflow: visible !important;
+    }
+
+    #adv_sys_user_manage_position_list table {
+        overflow: visible !important;
+    }
+
+    #adv_sys_user_manage_position_list table > tbody > tr > td:last-child {
+        overflow: visible !important;
+    }
+    #adv_sys_user_manage_position_list tr .opr {
+        color: #3b95ba;
+        margin: 0 8px;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        text-decoration: underline;
+    }
+    #adv_sys_user_manage_position_list tr .opr:last-child {
+        margin: 0 0px;
+    }
+    #adv_sys_user_manage_position_list tr .opr img {
+        vertical-align: middle;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more {
+        display: inline-block;
+        background: inherit
+    }
+    #adv_sys_user_manage_position_list tr .opr_more .opr_more_detail {
+        display: none;
+        position: absolute;
+        width: 73px;
+        box-sizing: border-box;
+        border: 1px solid #E2E2E2;
+        z-index: 2;
+        background: inherit;
+        top: 12px;
+        right: 22px;
+        text-align: right;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more .opr_more_detail .opr {
+        height: 24px;
+        line-height: 24px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #E2E2E2;
+        display: block;
+        margin: 0px;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more .opr_more_detail .opr:last-child {
+        border-bottom: 0px solid #E2E2E2;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more.open .opr_more_detail {
+        display: block;
+    }
+</style>
+<div class="panel_container adv_page_main_style">
+    <div id="adv_sysUserManage_topContainer_tabSwitch" class="panel_page_options" style="width:230px">
+        <!--div id="adPos_adKind_tuwen" class="panel_page_option" name="adPosKindTuwen">
+            {{ADPOS_OPTION_TUWEN}}
+        </div>
+        <div id="adPos_adKind_tiepian" class="panel_page_option" name="adPosKindTiepian">
+            {{ADPOS_OPTION_TIEPIAN}}
+        </div-->
+    </div>
+    <div class="panel_page_v_splitter" style="left:246px">
+
+    </div>
+    <div class="panel_search_input_container" id="panel_search_input_container" style="display:none;left:257px">
+        <input id="adPos_search_input" class="panel_search_input" type="text"  onkeyup="system_user_management.search_user(event.keyCode)"/>
+        <div id="adPos_search_input_icon" class="panel_search_input_icon" onclick="system_user_management.search_user(event.keyCode)">
+        </div>
+    </div>
+    <div id="adPos_addPosition" class="panel_page_button" style="display:none;font-weight:bold" onclick="system_user_management.open_popup_create_system_user()">
+        <div class="panel_page_button_icon" style="left:8px">
+
+        </div>
+        <div class="panel_page_button_text" style="left:29px">
+            {{ADV_SYSUSER_XINGJIANXITONGYONGHU}}
+        </div>
+    </div>
+    <div class="panel_page_list_container" id="adv_sys_user_manage_table_Conainer">
+        <div id="adv_sys_user_manage_position_list" class="panel_page_list">
+
+        </div>
+    </div>
+    <div id="site_instruction" style="display:none" class="panel_page_list_container" style="right:5px;border-right:1px solid #efefde"></div>
+</div>

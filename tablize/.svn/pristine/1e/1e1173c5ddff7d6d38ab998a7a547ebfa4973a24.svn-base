@@ -1,0 +1,27 @@
+.query_dialog_authoInfo.query_dialog {height: auto;}
+.query_dialog_authoInfo .combo {width: 190px;}
+.query_dialog_authoInfo .combo td{border: 1px solid #c6c6c6;background-color: #fff;}
+.query_dialog_authoInfo .date_picker {width: 190px;}
+.query_dialog_authoInfo ._dialog_foot ._btn {margin-left: 25px;}
+.query_dialog_authoInfo #authoInfo_self_define {height: 26px;color: #2ea2d7;border-bottom: 1px solid #2ea2d7;border-top: 1px solid transparent;cursor: pointer;}
+.query_dialog_authoInfo ._dialog_center {margin-top: 54px;}
+
+
+.query_dialog_authoInfo.detail_dialog label {line-height: 37px;font-size: 14px;color: #727272;}
+.query_dialog_authoInfo.detail_dialog ._dialog_body {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+.query_dialog_authoInfo.detail_dialog ._dialog_row {padding: 0 8px; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between;}
+.query_dialog_authoInfo.detail_dialog ._dialog_row > * {margin: 0 22px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;height: 30px;}
+.query_dialog_authoInfo #authoInfo_smartcard_id {margin-right: 10px;}
+
+.query_dialog_authoInfo ._table {width: 376px;margin: 12px auto;font-size: 14px;}
+.query_dialog_authoInfo ._table_header{background-color: #45d1f4;}
+.query_dialog_authoInfo ._table_header ._table_cell{color: #fff;}
+.query_dialog_authoInfo ._table_body {height: 33px;overflow: auto;}
+.query_dialog_authoInfo ._table_row {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-flow: row;flex-flow: row;}
+.query_dialog_authoInfo ._table_cell {border: 1px solid #e2e2e2;text-align: center;color: #545454;height: 31px;line-height: 31px;}
+.query_dialog_authoInfo ._table_row ._table_cell:nth-child(1) {width: 118px;}
+.query_dialog_authoInfo ._table_row ._table_cell:nth-child(2) {width: 61px;}
+.query_dialog_authoInfo ._table_row ._table_cell:nth-child(3) {width: 118px;}
+.query_dialog_authoInfo ._table_row ._table_cell:nth-child(4) {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+
+.query_dialog_authoInfo.query_dialog ._dialog_body ._btn._add {color: #fff;}

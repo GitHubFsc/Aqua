@@ -1,0 +1,59 @@
+<div class="_dialog_autheInfo detail_dialog">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{AUTH_MNG_QUERYTABLE_OPR_DETAIL}}</div>
+    <div class="_dialog_close"></div>
+  </div>
+  <div class="_dialog_body">
+    <div class="_dialog_row" style="height: auto;">
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_USERID}}</label>
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_TICKET}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" disabled id="autheInfo_card_id">
+      <input type="text" disabled id="autheInfo_ticket_id">
+    </div>
+    <div class="_dialog_row" style="height: auto;">
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_TYPE}}</label>
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_ASSET}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" disabled id="autheInfo_asset_type">
+      <input type="text" disabled id="autheInfo_asset_id">
+    </div>
+    <div class="_dialog_row" style="height: auto;">
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_APPKEY}}</label>
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_PRODUCT}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" disabled id="autheInfo_app_key">
+      <input type="text" disabled id="autheInfo_product_id">
+    </div>
+    <div class="_dialog_row" style="height: auto;">
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_BUNDLE}}</label>
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_HOME}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" disabled id="autheInfo_bundle_id">
+      <input type="text" disabled id="autheInfo_home_id">
+    </div>
+    <div class="_dialog_row" style="height: auto;">
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_EFFECTIVETIME}}</label>
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_EXPIRETIME}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" disabled id="autheInfo_effective_time">
+      <input type="text" disabled id="autheInfo_expire_time">
+    </div>
+    <div class="_dialog_row" style="height: auto;">
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_CREATETIME}}</label>
+      <label for="">{{AUTH_MNG_DIALOG_DETAIL_STATE}}</label>
+    </div>
+    <div class="_dialog_row">
+      <input type="text" disabled id="autheInfo_create_time">
+      <input type="text" disabled id="autheInfo_state">
+    </div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="_btn _cancel">{{AUTH_MNG_DIALOG_DETAIL_CONFIRM}}</div>
+  </div>
+</div>

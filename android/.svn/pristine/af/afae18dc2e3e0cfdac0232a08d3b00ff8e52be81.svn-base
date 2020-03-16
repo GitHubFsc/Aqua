@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr" style='background-color: black;'>
+  <head>
+    <meta charset="utf-8">
+    <title>红星影院列表页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script type="text/javascript">
+      (function(){
+        var csses = ['style/second.css']
+        var jses = [
+          'config.js',
+          // 'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js',
+          // '../bigdata/reportData.js',
+          'js/utils.js',
+          'js/second.js']
+          // if (navigator.userAgent.lastIndexOf('iPanel') == -1) {
+          //   jses = ['http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js', '../bigdata/stream/collect.js'].concat(jses)
+          // } else {
+            jses = ['../bigdata/ipanel/collect.js'].concat(jses)
+          // }
+          for (var i = 0; i < csses.length; i++) {
+            document.write('<link rel="stylesheet" href="' + csses[i] + '?t=' + new Date().getTime() + '">')
+          }
+          for (var i = 0; i < jses.length; i++) {
+            document.write('<script type="text/javascript" src="' + jses[i] + '?t=' + new Date().getTime() + '"><\/script>')
+        }
+      }())
+    </script>
+  </head>
+  <body onload="app.init()">
+    <div id='focus'></div>
+    <div class="pageturn up"></div>
+    <div class="folder" style='top: 82px;left: 139px'></div>
+    <div class="text" style='top: 325px;left: 139px'></div>
+    <div class="folder" style='top: 82px;left: 339px'></div>
+    <div class="text" style='top: 325px;left: 339px'></div>
+    <div class="folder" style='top: 82px;left: 539px'></div>
+    <div class="text" style='top: 325px;left: 539px'></div>
+    <div class="folder" style='top: 82px;left: 739px'></div>
+    <div class="text" style='top: 325px;left: 739px'></div>
+    <div class="folder" style='top: 82px;left: 939px'></div>
+    <div class="text" style='top: 325px;left: 939px'></div>
+    <div class="folder" style='top: 365px;left: 139px'></div>
+    <div class="text" style='top: 608px;left: 139px'></div>
+    <div class="folder" style='top: 365px;left: 339px'></div>
+    <div class="text" style='top: 608px;left: 339px'></div>
+    <div class="folder" style='top: 365px;left: 539px'></div>
+    <div class="text" style='top: 608px;left: 539px'></div>
+    <div class="folder" style='top: 365px;left: 739px'></div>
+    <div class="text" style='top: 608px;left: 739px'></div>
+    <div class="folder" style='top: 365px;left: 939px'></div>
+    <div class="text" style='top: 608px;left: 939px'></div>
+    <div class="page_info">
+      第
+      <span id='page_num'>&nbsp;&nbsp;</span>
+      页&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;共
+      <span id='page_size'>&nbsp;&nbsp;</span>
+      页
+    </div>
+    <div class="pageturn down"></div>
+  </body>
+</html>

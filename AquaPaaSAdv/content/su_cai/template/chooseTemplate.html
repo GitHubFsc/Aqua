@@ -1,0 +1,209 @@
+<style>
+  .sucai_img_chooseTemplate_dialog_content{
+    height:522px;
+    border-bottom: 1px solid #E1E1E1;
+    display: flex;
+    padding-top: 15px;
+    box-sizing: border-box;
+  }
+
+  .sucai_img_chooseTemplate_dialog_content .button{
+    width:92px;
+    height:32px;
+    border:1px solid #5C7D86;
+    box-sizing: border-box;
+    background: #5ca1c0;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left{
+    width: 905px;
+    border-right: 1px solid #E1E1E1;
+    height: 100%;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_preview{
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    position: relative;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_preview .template_preview_content{
+    height:100%;
+    background: url(./image/sucai/template/background.gif) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_detail{
+    display: flex;
+    height: calc(100% - 430px);
+    align-items: center;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_detail .template_detail_Container{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_detail .template_detail_Container .item{
+    flex: 1;
+    height: 32px;
+    line-height: 32px;
+    display: flex;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_detail .template_detail_Container .item .key{
+    width: 90px;
+    text-align: right;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_detail .template_detail_Container .item .value{
+    flex: 1;
+    padding-left: 10px;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_left .template_detail .button.refresh{
+    margin-right: 11px;
+  }
+
+  .sucai_img_chooseTemplate_dialog_content .template_items{
+    flex:1;
+    height: 100%;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_items .mCSB_dragger_bar {
+    background-color: #55909E!important;
+  }
+  .sucai_img_chooseTemplate_dialog_content .template_items .mCSB_draggerRail {
+    background-color: #E6F0F1!important;
+  }
+
+
+  .sucai_img_chooseTemplate_dialog_content .radio {
+    height: 37px;
+    line-height: 37px;
+    display: inline-block;
+    margin-right: 26px;
+    vertical-align: bottom;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox {
+    font-size: 0;
+    height: 37px;
+    position: relative;
+    width: 16px;
+    margin-right: 12px;
+    float: left;
+    line-height: 37px;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox input {
+    display: none;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox label {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background: white;
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox label:after {
+    opacity: 0.2;
+    content: '\2002';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: grey;
+    top: 2px;
+    left: 2px;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox label:hover::after {
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox input:checked + label:after {
+    background: rgb(93, 161, 192);
+    opacity: 1;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox input[type=checkbox] + label {
+    border-radius: 0px;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox input[type=checkbox] + label:after {
+    border-radius: 0px;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox input[type=radio] + label {
+    border-radius: 7px;
+  }
+  .sucai_img_chooseTemplate_dialog_content .radio .checkbox input[type=radio] + label:after {
+    border-radius: 6px;
+  }
+
+
+  #sucai_template_type{
+    margin-left:9px;
+    height: 42px;
+  }
+  #sucai_template_type_items_container{
+    height: calc(100% - 42px)
+  }
+  #sucai_template_type_items_container .item{
+    display: flex;
+    width: 291px;
+    height: 39px;
+    border: 1px solid #E2E2E2;
+    border-top: 0px;
+    box-sizing: border-box;
+    margin-left: 9px;
+  }
+  #sucai_template_type_items_container .item:first-child{
+    border: 1px solid #E2E2E2;
+  }
+  #sucai_template_type_items_container .item:last-child{
+    /*border-bottom: 0px;*/
+  }
+  #sucai_template_type_items_container .item .radio{
+    width: 41px;
+    border-right: 1px solid #E2E2E2;
+    padding-left: 10px;
+    box-sizing: border-box;
+  }
+  #sucai_template_type_items_container .item .item_label{
+    height: 39px;
+    line-height: 39px;
+    color: #727272;
+  }
+
+
+</style>
+<div class="sucai_create_dialog">
+  <div class="sucai_dialog_title">
+    <div class="sucai_dialog_title_text">
+      {{SUCAITEMPLATE_SUCAIEDIT}}
+    </div>
+    <div class="sucai_dialog_close popup_dialog_clear_">
+    </div>
+  </div>
+  <div class="sucai_img_chooseTemplate_dialog_content">
+    <div class="template_left">
+      <div class="template_preview">
+        <div class="template_preview_content"></div>
+      </div>
+    </div>
+    <div class="template_items">
+      <div id="sucai_template_type"></div>
+      <div id="sucai_template_type_items_container">
+      </div>
+    </div>
+  </div>
+  <div class="sucai_dialog_create_opition">
+    <div class="option_bottom  popup_dialog_clear_">{{SUCAI_QUXIAO}}</div>
+    <div id="sucai_img_chooseTemplate_dialog_confirm" class="option_bottom confirm_bottom">{{SUCAITEMPLATE_SUCAIEDIT}}</div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+.menu_location {
+	background-image: url(../image/index/menu_icon/location_dark.png);
+}
+
+.main_menu_focus .menu_location {
+	background-image: url(../image/index/menu_icon/location_white.png);
+}
+
+.menu_home {
+	background-image: url(../image/index/menu_icon/home_dark.png);
+}
+
+.main_menu_focus .menu_home {
+	background-image: url(../image/index/menu_icon/home_white.png);
+}
+
+.menu_device {
+	background-image: url(../image/index/menu_icon/device_dark.png);
+}
+
+.main_menu_focus .menu_device {
+	background-image: url(../image/index/menu_icon/device_white.png);
+}
+
+.menu_runs {
+	background-image: url(../image/index/menu_icon/running_dark.png);
+}
+
+.main_menu_focus .menu_runs {
+	background-image: url(../image/index/menu_icon/running_white.png);
+}
+
+.menu_users {
+	background-image: url(../image/index/menu_icon/users_dark.png);
+}
+
+.main_menu_focus .menu_users {
+	background-image: url(../image/index/menu_icon/users_white.png);
+}
+
+.menu_ticket {
+	background-image: url(../image/index/menu_icon/ticket_dark.png);
+}
+
+.main_menu_focus .menu_ticket {
+	background-image: url(../image/index/menu_icon/ticket_white.png);
+}
+
+.menu_log {
+	background-image: url(../image/index/menu_icon/log_dark.png);
+}
+
+.main_menu_focus .menu_log {
+	background-image: url(../image/index/menu_icon/log_white.png);
+}
+
+.menu_warning {
+	background-image: url(../image/index/menu_icon/warning_dark.png);
+}
+
+.main_menu_focus .menu_warning {
+	background-image: url(../image/index/menu_icon/warning_white.png);
+}
+
+.menu_basis {
+	background-image: url(../image/index/menu_icon/basis_dark.png);
+}
+
+.main_menu_focus .menu_basis {
+	background-image: url(../image/index/menu_icon/basis_white.png);
+}

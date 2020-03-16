@@ -1,0 +1,337 @@
+/**dialog model***/
+#cms_app_admin_app_table >table tbody tr td:nth-child(1){
+	text-align: left!important;
+	padding-left:17px
+}
+#cms_app_admin_app_table >table tbody tr td:nth-child(2){
+	text-align: left!important;
+	padding-left:17px;
+}
+.adv_dialog_container {
+  color: #727272;
+}
+.adv_input_region {
+  border: 1px solid #e2e2e2;
+  color: #727272;
+  height: 32px;
+	line-height: 32px;
+  padding-left: 11px;
+  width: 285px;
+}
+.cms_app_admin_table_head{
+	color:#ffffff;
+	background-color:#80daf1;
+	height:40px;
+}
+.cms_app_admin_tab{
+	text-align:center;
+	height:26px;
+	line-height:26px;
+	border:1px #e2e2e2 solid;
+	background-color:#f8f8f8;
+	display:inline-block;
+	width:106px;
+	border-top-left-radius:8px;
+  border-top-right-radius:8px;
+	vertical-align:bottom;
+	cursor:pointer
+}
+.cms_app_admin_tab_interval{
+	width:6px;
+	height:28px;
+	border-bottom:1px #e2e2e2 solid;
+	display:inline-block;
+	vertical-align:bottom
+}
+.cms_app_admin_tab_focus{
+	border-bottom:0;
+	background-color:ffffff;
+	color:#0099cb;
+}
+.cms_app_admin_save_img{
+	background-image: url("images/save_button.png");
+}
+.cms_app_admin_button{
+	background-color:#2ea2d7;
+	color:#ffffff;
+	border-radius:8px;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	width:94px;
+	border:1px #a5d1de solid;
+	margin-top:4px;
+	cursor:pointer
+}
+.cms_app_admin_thread{
+	color: white; 
+	background-color: rgb(69, 209, 244); 
+	text-align: center; 
+	overflow: hidden; 
+	font-weight: bold; 
+	word-break: keep-all; 
+	white-space: nowrap; 
+	text-overflow: ellipsis; 
+	height:34px;
+}
+.cms_app_admin_td{
+	color: rgb(121, 121, 121); 
+	text-align: center; 
+	overflow: hidden; 
+	word-break: keep-all; 
+	white-space: nowrap; 
+	text-overflow: ellipsis; 
+	position: relative; 
+	height: 42px; 
+	background-color: white;
+}
+.cms_app_admin_td_button{
+	color:#2ea2d7;
+	cursor:pointer
+}
+.cms_app_admin_td_button_grey{
+	color:#797979;
+	cursor:default
+}
+.cms_app_admin_upload_pic{
+	display:block;
+	cursor:pointer
+}
+.cms_app_admin_upload_pic_down_menu{
+	color: #727272;
+	height: 32px;
+	position: relative;
+	width: 298px;
+	z-index: 99;
+	margin-top:7px
+}
+
+.cms_app_admin_upload_pic_down_menu .styled-selector-inputbox {
+   border: 1px solid rgb(211, 211, 211);
+   color: rgb(121, 121, 121);
+   padding-left: 5px;
+   padding-right: 25px;
+}
+
+.cms_app_admin_upload_pic_down_menu .styled-selector-dropbox td {
+   background-color: white;
+   color: rgb(121, 121, 121);
+   padding-left: 5px;
+}
+.cms_app_admin_upload_pic_down_menu .styled-selector-dropbox {
+   border: 1px solid rgb(211, 211, 211);
+   margin-top: -1px;
+}
+.cms_app_admin_upload_pic_down_menu .styled-selector-dropbox td :hover{
+   background-color: #dcdcdc;
+}
+.cms_app_admin_dialog_submit{
+	background-color: rgb(46, 162, 215);
+	border: 1px solid rgb(89, 127, 137);
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	width: 149px;
+}
+.cms_app_admin_grey_block{
+	background-color:#eeeeee; 
+	border:1px #c6c6c6 solid;
+	width:calc(100% - 2px);
+}
+.cms_app_admin_title_type_text{
+	display:none
+}
+.cms_app_admin_middle_block{
+	width:calc(100% - 36px);
+	margin-left:18px;
+	margin-right:18px;
+}
+.cms_app_admin_color_input_left{
+	text-align: right;
+	height:100%;
+	width:19px;
+	display:inline-block;
+	color:#999999;
+	line-height:30px;
+}
+.cms_app_admin_color_input_text{
+	border: 0 none;
+  color: #999999;
+  vertical-align: top;
+  width: calc(100% - 20px);
+	height:30px;
+	line-height:30px;
+}
+.cms_app_admin_align_left{
+	text-align: left;
+	padding-left:13px
+}
+.cms_app_admin_radio_box_outer{
+	margin:auto;
+	border-radius:10px;
+	width:14px;
+	height:14px;
+	border:1px #bcc1c5 solid;
+	cursor:pointer
+}
+.cms_app_admin_radio_box_inner{
+	display:block;
+	border-radius:10px;
+	background-color:#4eb5d6;
+	width:10px;
+	height:10px;
+	margin:2px;
+	display:none
+}
+.cms_app_admin_table_tr_firstRow,.cms_app_admin_table_tr,.cms_app_admin_table_tr_default,.cms_app_admin_table_tr_hover{
+  border-bottom:1px #e2e2e2 solid;
+	padding-left:19px;
+	overflow: hidden; 
+	word-break: keep-all; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+  height:38px;
+	line-height:38px;
+}
+.cms_app_admin_table_tr_firstRow{
+	padding-left:19px;
+	color:#797979	
+}
+.cms_app_admin_table_tr{
+	padding-left:56px;
+	background-image: url("images/tr_dash.png");
+	background-position: 24px 0;
+	background-repeat: no-repeat;
+	color:#797979;
+  cursor:pointer	
+}
+.cms_app_admin_table_tr_hover{
+  background-color:#80daf1;
+	padding-left:56px;
+	background-position: 24px 0, 434px 12px;
+	background-image:url("images/tr_dash.png"),url("images/click.png");
+	background-repeat: no-repeat,no-repeat;
+	color:#ffffff;
+	cursor:pointer
+}
+.cms_app_admin_table_tr_firstRow{
+	padding-left:56px;
+	background-image: url("images/tr_dash2.png");
+	background-position: 24px 32px;
+	background-repeat: no-repeat;
+}
+.cms_app_admin_layout_container{
+	background-color:#f1f1f1;
+	border:1px #c6c6c6 solid;
+	width:100%;
+	height:421px;
+	overflow-y:auto
+}
+.cms_app_admin_layout{
+	width:590px;
+	height:auto;
+	margin-top:14px;
+	cursor:pointer;
+	margin-left:auto;
+	margin-right:auto
+}
+
+.cms_app_admin_layout_top_blue{
+	border:2px #63d8fe solid;
+	margin-top:-1px;
+	margin-left:-1px;
+}
+.cms_app_admin_layout_top_grey{
+	border:1px #cccccc solid;
+}
+.cms_app_admin_layout_bottom_blue{
+	margin-top:-1px
+}
+.cms_app_admin_layout_top_son{
+	width:100%;
+	height:100%;
+	display:block
+}
+.cms_app_admin_layout_bottom{
+	height:36px;
+	line-height:36px;
+	text-align:center
+}
+.cms_app_admin_last_card_layout_appear{
+	background-image: url("images/white.png");
+}
+.cms_app_admin_last_card_layout_appear_when_last_card_expand,.cms_app_admin_page_white_block{
+  background-color: white;
+  bottom: 1px;
+  height: 40px;
+  left: 0;
+  position: absolute;
+  width: 10px;
+}
+
+#cms_app_admin_column_choose_tree .styled-selector-inputbox {
+   padding-left: 9px;
+}
+
+
+.wp_panel_dialog_close_cms {
+	background-image: url("../../images/manage_dialog_close.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	height: 38px;
+	width: 38px;
+}
+
+.cms_app_focus_div{
+	background-color:#80daf1
+}
+.cms_app_admin_audit_publish_table tr td:nth-child(4){
+	text-align:left;
+	padding-left:12px
+}
+#cms_app_admin_page1 >table tbody tr td:nth-child(1){
+	text-align: left!important;
+	padding-left:17px
+}
+#cms_app_admin_page1 >table tbody tr td:nth-child(2){
+	text-align: left!important;
+	padding-left:14px;
+}
+
+.cms_app_admin_display_container_after_click_tab .mCSB_inside > .mCSB_container {
+    margin-right: 2px;
+}
+.cms_app_admin_display_container_after_click_tab .mCSB_scrollTools .mCSB_draggerRail {
+    border-radius: 16px;
+    height: 100%;
+    margin: 0 auto;
+    width: 5px;
+		background-color:#e6eff2;
+}
+.cms_app_admin_display_container_after_click_tab .mCSB_scrollTools {
+    bottom: 0;
+    height: auto;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+}
+.cms_app_admin_display_container_after_click_tab .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #5391a6!important;
+}
+.cms_app_admin_display_container_after_click_tab .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar:hover {
+    background-color: #5391a6!important;
+}
+
+.cms_app_admin_display_container_after_click_tab .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	 border-radius: 2px;
+	 width:5px
+}
+.cms_app_admin_display_container_after_click_tab:nth-child(11) .mCSB_inside > .mCSB_container{
+	overflow: visible;
+}

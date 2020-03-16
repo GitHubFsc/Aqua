@@ -1,0 +1,292 @@
+<style>
+	#stattrend .et{
+		position: relative;
+		overflow: hidden;
+		box-sizing: border-box;
+		flex: 1;
+		width: 100%;
+		max-width: 100%;
+		background-color: #fff;
+	}
+	#stattrend .et:before {
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: 1px;
+	}
+	#stattrend .et .el-scrollbar__wrap {
+		overflow: scroll;
+		height: 100%
+	}
+	#stattrend .et .et__body{
+		table-layout: fixed;
+		border-collapse: separate;
+	}
+
+	#stattrend .et table colgroup col[name='gutter']{
+		display: none;
+	}
+	#stattrend .et table.has-gutter colgroup col[name='gutter']{
+		display: table-cell;
+	}
+	#stattrend .et table thead th.gutter{
+		display: none;
+	}
+	#stattrend .et table.has-gutter thead th.gutter{
+		display: table-cell;
+	}
+
+	#stattrend .et .et_header-wrapper{
+		overflow: hidden;
+	}
+	#stattrend .et .et_header-wrapper table {
+		background-color: white;
+	}
+	#stattrend .et .et_header-wrapper table thead th{
+		color: white;
+		background-color: rgb(94, 160, 192);
+		text-align: center;
+		font-weight: normal;
+		word-break: keep-all;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		height: 46px;
+	}
+
+	#stattrend .et .et_body-wrapper{
+		position: relative;
+		overflow: hidden;
+	}
+	#stattrend .et.et-scrollable-y .et_body-wrapper {
+		overflow-y: auto
+	}
+
+	#stattrend .et .et_body-wrapper table {
+		background-color: rgb(225, 225, 225);
+	}
+	#stattrend .et .et_body-wrapper table tbody tr td{
+		color: rgb(114, 114, 114);
+		text-align: center;
+		word-break: keep-all;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		position: relative;
+		height: 46px;
+		background-color: rgb(245, 245, 245)
+	}
+	#stattrend .et .et_body-wrapper table tbody tr:nth-child(2n) td{
+    background-color: rgb(245, 245, 245)
+	}
+	#stattrend .et .et_body-wrapper table tbody tr:nth-child(2n+1) td{
+    background-color: white;
+  }
+
+	#stattrend .et .et_foot-wrapper{
+		overflow: hidden;
+	}
+	#stattrend .et.et-scrollable-x .et_foot-wrapper {
+		overflow-x: auto
+	}
+	#stattrend .et .et_foot-wrapper table {
+		background-color: white;
+	}
+	#stattrend .et .et_foot-wrapper table thead th{
+		color: white;
+		background-color: rgb(94, 160, 192);
+		text-align: center;
+		font-weight: normal;
+		word-break: keep-all;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		height: 46px;
+	}
+
+	#stattrend .et .et_fixed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		box-shadow: 0 0 10px rgba(0,0,0,.12);
+	}
+	#stattrend .et .et_fixed-header-wrapper {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 3;
+	}
+	#stattrend .et .et_fixed-header-wrapper table {
+		background-color: white;
+	}
+	#stattrend .et .et_fixed-header-wrapper table thead th{
+		color: white;
+		background-color: rgb(94, 160, 192);
+		text-align: center;
+		font-weight: normal;
+		word-break: keep-all;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		height: 46px;
+	}
+
+	#stattrend .et .et_fixed-body-wrapper {
+		position: absolute;
+		left: 0;
+		top: 48px;
+		overflow: hidden;
+		z-index: 2
+	}
+	#stattrend .et .et_fixed-body-wrapper table {
+		background-color: rgb(225, 225, 225);
+		/*margin-bottom: 1px;*/
+	}
+	#stattrend .et .et_fixed-body-wrapper table tbody tr td{
+		color: rgb(114, 114, 114);
+		text-align: center;
+		word-break: keep-all;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		position: relative;
+		height: 46px;
+		background-color: rgb(245, 245, 245)
+	}
+	#stattrend .et .et_fixed-body-wrapper table tbody tr:nth-child(2n) td{
+    background-color: rgb(245, 245, 245)
+	}
+	#stattrend .et .et_fixed-body-wrapper table tbody tr:nth-child(2n+1) td{
+    background-color: white;
+  }
+
+	#stattrend .et .et_fixed-foot-wrapper {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		z-index: 3;
+	}
+	#stattrend .et .et_fixed-foot-wrapper table {
+		background-color: white;
+	}
+	#stattrend .et .et_fixed-foot-wrapper table thead th{
+		color: white;
+		background-color: rgb(94, 160, 192);
+		text-align: center;
+		font-weight: normal;
+		word-break: keep-all;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		height: 46px;
+	}
+
+	#stattrend .et .et_body-wrapper.is-scrolling-left~.et_fixed,.et_body-wrapper.is-scrolling-none~.et_fixed,.et_body-wrapper.is-scrolling-none~.et_fixed-right,.et_body-wrapper.is-scrolling-right~.et_fixed-right {
+		box-shadow: none
+	}
+	#stattrend .et .et_body-wrapper .el-table--border.is-scrolling-right~.et_fixed-right {
+		border-left: 1px solid #ebeef5
+	}
+	#stattrend .et .et_body-wrapper .el-table--border.is-scrolling-left~.et_fixed {
+		border-right: 1px solid #ebeef5
+	}
+
+  #stattrend table td span.spanInTd{
+    width: inherit;
+    display: block;
+    color: inherit;
+    text-align: center;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    background-color: inherit;
+    overflow: hidden;
+    padding-left: 8px;
+    box-sizing: border-box;
+  }
+  #stattrend table td span.spanInTd.ta_left{
+    text-align: left;
+  }
+  #stattrend table td span.spanInTd.pdleft_space{
+    padding-left: 38px;
+    text-align: left;
+  }
+
+</style>
+<div id="stattrend" class="panel_container" style="">
+	<div class="panel_page_options" style="width:266px;">
+		<div class="panel_page_option" name="adpos">
+			{{STATS_TRD_FILT_ADPOS}}
+		</div>
+		<div class="panel_page_option" name="aditem">
+			{{STATS_TRD_FILT_ADITEM}}
+		</div>
+		<div class="panel_page_option" name="contract">
+			{{STATS_TRD_FILT_CONTRACT}}
+		</div>
+	</div>
+	<div class="panel_page_v_splitter" style="left:295px;">
+	</div>
+	<div class="panel_header_after_left" style="left:296px;">
+		<div id="stats_site_filter" class="adv-site-filter" style="display: none;"></div>
+		<div id="stats_interval_filter" class="stats_arrlike_selector"></div>
+		<div id="stats_interval_day_shortcuts" class="panel_set_shortcuts">
+			<div class="panel_set_shortcut" data-filter="tw">{{STATS_TRD_SHRC_CWEEK}}</div>
+			<div class="panel_set_shortcut" data-filter="ld30">{{STATS_TRD_SHRC_LAT30}}</div>
+			<div class="panel_set_shortcut" data-filter="tm">{{STATS_TRD_SHRC_CMONT}}</div>
+		</div>
+		<div id="stats_interval_hour_shortcuts" class="panel_set_shortcuts">
+			<div class="panel_set_shortcut" data-filter="td">{{STATS_TRD_SHRC_TODAY}}</div>
+			<div class="panel_set_shortcut" data-filter="yd">{{STATS_TRD_SHRC_YESTD}}</div>
+		</div>
+	</div>
+	<div class="panel_calendar_selectors">
+		<div class="panel_calendar_selitem">
+		<div class="panel_calendar_container">
+			<input type="text" class="panel_calendar_input" readonly="readonly" name="date-from"/>
+			<div class="panel_calendar_icon"></div>
+		</div>
+		<div class="panel_timesel_container">
+			<input type="text" class="panel_timesel_input" readonly="readonly" name="time-from"/>
+			<div class="panel_timesel_icon"></div>
+		</div>
+		</div>
+		<div class="panel_calendar_dash">
+			-
+		</div>
+		<div class="panel_calendar_selitem">
+		<div class="panel_calendar_container">
+			<input type="text" class="panel_calendar_input" readonly="readonly" name="date-to"/>
+			<div class="panel_calendar_icon"></div>
+		</div>
+		<div class="panel_timesel_container">
+			<input type="text" class="panel_timesel_input" readonly="readonly" name="time-to"/>
+			<div class="panel_timesel_icon"></div>
+		</div>
+		</div>
+		<div class="panel_calendar_time_container">
+			<div id="panel_time_picker_calendar"></div>
+			<div class="panel_time_picker_times">
+				<div class="panel_time_picker_selector" id="stat_timesel_hour"></div>
+				<div class="panel_time_picker_tlabel">{{STATS_TMLABEL_HOUR}}</div>
+				<div class="panel_time_picker_selector" id="stat_timesel_mins"></div>
+				<div class="panel_time_picker_tlabel">{{STATS_TMLABEL_MINS}}</div>
+				<div class="panel_time_picker_selector" id="stat_timesel_sec"></div>
+				<div class="panel_time_picker_tlabel">{{STATS_TMLABEL_SECS}}</div>
+			</div>
+			<div class="panel_content_line_split"></div>
+			<div class="panel_normal_btn" id="stattrend_timepicker_confirm">{{STATS_BTN_OK}}</div>
+		</div>
+	</div>
+	<div class="panel_gradient_btn" id="statsTrendExport">{{STATS_TRD_EXPT_BTN}}</div>
+	<div class="panel_page_list_container" >
+		<div class="panel_page_content_title">
+			<div id="stats_list_info_msg"></div>
+			<div class="stats_fig_types_container">
+				<div class="stats_fig_type" name="list"></div>
+				<div class="stats_fig_type" name="lines"></div>
+				<div class="stats_fig_type" name="bar"></div>
+			</div>
+		</div>
+		<div id="stats_figure_container">
+
+		</div>
+	</div>
+</div>

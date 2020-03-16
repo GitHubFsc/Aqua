@@ -1,0 +1,24 @@
+<link href="content/asset/assetTagLib/add.css" rel="stylesheet">
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title" style="height:38px">
+    <div id="cms_app_admin_program_title" class="wp_panel_dialog_title_label"></div>
+    <div class="wp_panel_dialog_close" id="cms-app-admin-msg-close"></div>
+  </div>
+  <div class="wp_panel_dialog_content" style="font-family:'宋体';top:38px;font-size:14.01px;color:#ffffff">
+    <div style="position:absolute;top:17px;bottom:77px">
+			<div style="width:924px;height:100%;margin-left:15px;position:relative">
+				<div style="margin:1px;background-color:#1db4da;height:36px;line-height:36px;width:calc(100% - 2px);font-size:14px">
+					<div style="margin-left: 3px;width:280px" class="sucai_dialog_create_search_title">
+						<input placeholder="" style="height:30px;margin-top:3px;width:214px;background: white" class="sucai_list_search" id="cms_asset_admin_choose_program_input"/>
+						<div class="sucai_list_search_botton_div" style="background-color:#2ea2d7;left:10px;margin-top:3px;height:28px;line-height:28px" id="cms_asset_admin_choose_program_search">查询</div>
+						<div style="clear: both"></div>
+					</div>
+				</div>
+				<div id="cms_view_result_table" style="height:489px;width:100%;margin-top:-1px">
+				</div>
+			</div>
+		</div>
+		<div id="user-admin-dialog-cancel" class="lecture_recommend_dialog_cancel popup_dialog_clear" style="right:185px;bottom:18px">{{CMS_CANCEL}}</div>
+    <div class="lecture_recommend_dialog_submit" id="cms_asset_admin_choose_program_submit" style="right:13px;bottom:18px;cursor:pointer">{{CMS_CHOOSE}}</div>
+  </div>
+</div>

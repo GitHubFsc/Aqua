@@ -1,0 +1,251 @@
+/**
+ * 查看审核历史
+ * @author yubin.fu
+ * @example
+ * var dialog = new AuditHis({
+ *                type: '',//素材:ad_item 素材增强审核:ad_item_2 策略: ad_policy
+ *                id: '' //素材/策略的id
+ *              })
+ */
+(function(global, factory) {
+  global.AuditHis = factory(jQuery, OverlayDialog)
+}(this, function($, Dialog) {
+  var Pane = {
+    init(){
+      var dialog = this.initDialog();
+      dialog.create();
+    },
+    initDialog() {
+      var dialogId = 'audit_his_' + new Date().getTime()
+      var dom = `<div class='_dialog' id='${dialogId}'>
+          <style>
+            #${dialogId} ._dialog_body {padding: 16px 32px;overflow: auto;}
+            #${dialogId} ._dialog_row {height: 60px;font-size: 14px;color: #727272;}
+            #${dialogId} ._dialog_col {flex: 1;justify-content: space-around;}
+            #${dialogId} label {line-height: 14px;margin: 0px;}
+            #${dialogId} input {height: 30px;outline: none;padding-left: 5px;width: 296px;border: 1px solid #e2e2e2;color: inherit;}
+            #${dialogId} textarea {height: 90px;outline: none;padding: 5px;width: 643px;resize: none;border: 1px solid #e2e2e2;color: inherit;}
+            #${dialogId} .group {border-image: url('./image/title_bar.png') 1 0 repeat;position: relative;height: auto;border-width: 1px 0 0;border-style: solid;border-color: transparent;padding-top: 22px;margin-top: 20px;}
+            #${dialogId} .group::before {content: attr(name);padding: 0 28px;position: absolute;top: -10px;left: calc(50% - 40px);background-color: #fff;font-size: 12px;color: #666666;}
+          </style>
+          <div class='_dialog_title'>
+            <div class='_dialog_title_label'>${i18n('ADPOLICYAUDIT_TABLE_OPERATION_AUDITHIS')}</div>
+            <div class='_dialog_span'></div>
+            <div class='_dialog_close'></div>
+          </div>
+          <div class='_dialog_body'>
+            <div class='_dialog_row'>
+              <div class='_dialog_col'>
+                <label>提交审核时间</label>
+                <input class='input' id='submit_time'>
+              </div>
+              <div class='_dialog_col'>
+                <label>提交人</label>
+                <input class='input' id='creator'>
+              </div>
+            </div>
+          </div>
+          <div class='_dialog_foot'>
+            <div class='btn confirm'>${i18n('ADPOLICYAUDIT_DIALOG_CANCEL')}</div>
+          </div>
+        </div>
+        <div class='_dialog_loading'></div>
+      `;
+      var dialog = new Dialog({
+        id: dialogId,
+        content: dom,
+        local: true,
+        context: this,
+        width: 760,
+        height: 797,
+        callback: () => {
+          this.dialogLoading(dialog, true);
+          this.api.getData(this.type, this.id, (resp) => {
+            this.type = resp.type
+            var userIds = this.model.getUserIds(resp);
+            this.api.getUserNames(userIds, (result) => {
+              this.dialogLoading(dialog, false);
+              var data = this.model.getFormatedData(resp, result);
+              this.loadPage(dialog, data)
+              if (data.audit.length < 2) {
+                dialog.resize({
+                  height: 489
+                }, true)
+              }
+            })
+          });
+          this.bindEvents({dialog});
+        }
+      })
+      return dialog;
+    },
+    bindEvents({dialog}) {
+      $('#' + dialog.dialogId)
+      .on('click', '._dialog_title ._dialog_close', ({currentTarget, target}) => {
+        if (currentTarget == target) {
+          dialog.close()
+        }
+      })
+      .on('click', '._dialog_foot .btn.confirm', ({currentTarget, target}) => {
+        if (currentTarget == target) {
+          dialog.close();
+        }
+      })
+    },
+    dialogLoading(dialog, isLoading) {
+      if (isLoading) {
+        $('#' + dialog.dialogId + ' ._dialog_loading').show();
+      } else {
+        $('#' + dialog.dialogId + ' ._dialog_loading').hide();
+      }
+    },
+    loadPage(dialog, data) {
+      $('#' + dialog.dialogId + ' #submit_time').val(data.submit_time)
+      $('#' + dialog.dialogId + ' #creator').val(data.creator)
+      for (var i = 0; i < data.audit.length; i++) {
+        var ds = data.audit[i],name = ''
+        if (this.type == 'ad_policy') {
+          name = 'ADPOLICYMANAGE_TABLE_STATE_' + ds.step.toUpperCase()
+        } else {
+          if (SUCAI_AUDIT_LEVEL == 1) {
+            name = 'ADPOLICYMANAGE_TABLE_STATE_AUDIT'
+          } else {
+            if (this.type == 'ad_item_2') {
+              switch (ds.step.toLowerCase()) {
+                case 'first_audit':
+                  name = 'ADPOLICYMANAGE_TABLE_STATE_FIRST_AUDIT'
+                  break;
+                case 'second_audit':
+                  name = 'ADPOLICYMANAGE_TABLE_STATE_THIRD_AUDIT'
+                  break;
+                case 'third_audit':
+                  name = 'ADPOLICYMANAGE_TABLE_STATE_FABU'
+                  break;
+                default:
+
+              }
+            } else {
+              name = (ds.step.toLowerCase() == 'first_audit' ? 'ADPOLICYMANAGE_TABLE_STATE_FIRST_AUDIT': 'ADPOLICYMANAGE_TABLE_STATE_THIRD_AUDIT')
+            }
+          }
+        }
+        $('#' + dialog.dialogId + ' ._dialog_body').append(this.model.audit(name, ds))
+      }
+    }
+  }
+  var API = {
+    getData(type, id, callback) {
+      var method = 'Get',
+          url = paasHost + '/aquapaas/rest/auditflow/instance/' + type + '/' + id,
+          urlParam = [];
+      urlParam.push('user_id=' + my.paas.user_id)
+      $.ajax({
+        type: method,
+        url: url,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      }).always((resp, status, xhr) => {
+        if (status == 'success') {
+          callback && callback(resp)
+        } else {
+          callback && callback({step:[{}]})
+        }
+      })
+    },
+    getUserNames(ids, callback) {
+      var method = 'Get',
+          url = paasHost + '/aquapaas/rest/users/public',
+          urlParam = [];
+          urlParam.push('user_ids=' + ids)
+          urlParam.push('app_key=' + paasAppKey)//应用授权
+          urlParam.push('timestamp=' + new Date().toISOString())//应用授权
+          urlParam.push('user_id=' + my.paas.user_id)//用户授权
+          urlParam.push('access_token=' + my.paas.access_token)//用户授权
+          url += '?' + urlParam.join('&')
+      $.ajax({
+        type: method,
+        url: url,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'x-aqua-sign': getPaaS_x_aqua_sign(method, url)
+        }
+      }).always((resp, status, xhr) => {
+        if (status == 'success') {
+          callback && callback(resp)
+        } else {
+          callback && callback([])
+        }
+      })
+    }
+  }
+  var Model = {
+    getFormatedData(data, names) {
+      var {getNameById} = this;
+      var ret = {
+        submit_time: convertTimeString(data.create_time),
+        creator: getNameById(names, data.create_user_id),//data.create_user_id,
+        audit: []
+      }
+      for (var i = 0; i < data.step.length; i++) {
+        var step = data.step[i]
+        ret.audit.push({
+          step: step.name||'first_audit',
+          result: step.status||'prepare_audit',
+          time: convertTimeString(step.audit_time),
+          person: getNameById(names, step.audit_user_id),//step.audit_user_id,
+          reason: step.reason||''
+        })
+      }
+      return ret
+    },
+    getUserIds(resp) {
+      var ids = [];
+      ids.push(resp.create_user_id);
+      for (var i = 0; i < resp.step.length; i++) {
+        ids.push(resp.step[i].audit_user_id)
+      }
+      return ids.filter(item => item).join(',');
+    },
+    getNameById(src, id) {
+      return src.filter(item => item.user_id == id).map(item => item.user_name).join('')
+    },
+    audit(name, data) {
+      var {result, person, time, reason} = data;
+      var dom = `<div class='group' name='${i18n(name)}'>
+        <div class='_dialog_row'>
+          <div class='_dialog_col'>
+            <label>审核结果</label>
+            <input value='${i18n('ADPOLICYMANAGE_TABLE_RESULT_' + String(result).toUpperCase())}'>
+          </div>
+          <div class='_dialog_col'></div>
+        </div>
+        <div class='_dialog_row'>
+          <div class='_dialog_col'>
+            <label>${i18n(name + '_TIME')}</label>
+            <input value='${time}'>
+          </div>
+          <div class='_dialog_col'>
+            <label>审核人</label>
+            <input  value='${person}'>
+          </div>
+        </div>
+        <div class='_dialog_row' style='height: 130px;'>
+          <div class='_dialog_col'>
+            <label>审核意见</label>
+            <textarea>${reason}</textarea>
+          </div>
+      </div>`
+      return $(dom)
+    }
+  }
+  var frame = function({type, id}) {
+    var api = $.extend(true, API, {})
+    var model = $.extend(true, Model, {})
+    var pane = $.extend(true, Pane, {api: api, model: model, type: type, id: id})
+    pane.init()
+  }
+  return frame
+}))

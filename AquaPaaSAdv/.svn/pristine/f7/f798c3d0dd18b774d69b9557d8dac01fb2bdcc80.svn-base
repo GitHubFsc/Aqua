@@ -1,0 +1,67 @@
+<style>
+  #sucai_container .sucai_list_search{
+    background: white;
+    font-size: 16px;
+    padding-left: 15px;
+    width: 150px;
+    padding-right: 30px;
+  }
+  #sucai_container input.sucai_list_search::-webkit-input-placeholder {
+    color: #cccccc;
+  }
+  #sucai_container input.sucai_list_search::-moz-input-placeholder {
+    color: #cccccc;
+  }
+  #sucai_container input.sucai_list_search::-ms-input-placeholder {
+    color: #cccccc;
+  }
+</style>
+<div id="sucai_container" class="manage_blue">
+  <div class="sucai_head">
+    <div class="sucai_head_left">
+      <div class="sucai_head_center" id="sucai_menu_select">
+        <ul style="margin:0;padding:0">
+          <li data-type="img" class="sucai_menu_selected">{{SUCAI_TUPIAN}}</li>
+          <li data-type="video" >{{SUCAI_TIEPIAN}}</li>
+          <li data-type="subtitle" >{{SUCAI_ZIMU}}</li>
+        </ul>
+      </div>
+      <div id="sucai_site_filter" class="sucai-site-filter" style="display: none"></div>
+      <div id="sucai-header-select"></div>
+      <div class="sucai_search_Container">
+        <input id="sucai_list_search" class="sucai_list_search" placeholder="输入名称搜索" onkeyup=""/>
+        <div id="sucai_list_search_botton" class="sucai_search_icon" style=""></div>
+      </div>
+      <div class="sucai_search_Container">
+        <input id="sucai_list_search_username" class="sucai_list_search" placeholder="输入创建者搜索" onkeyup=""/>
+        <div id="sucai_list_search_username_botton" class="sucai_search_icon" style=""></div>
+      </div>
+    </div>
+    <div class="sucai_head_right">
+      <div id="sucai_add_class_btn" class="sucai_add_class_btn" style="display: none">
+        <image style="height:100%" src="image/sucai/sucai_add_btn.png"/>
+        <span style="height: 36px;line-height: 36px;vertical-align: top">{{SUCAI_TIANJIASUCAI}}</span>
+      </div>
+      <div id="sucai_add_class_btn_user_type1" class="sucai_add_class_btn" style="width:130px;">
+        <div class="select_header">
+          <img class="select_header_add_icon" src="./image/sucai/sucai_add_btn.png"/>
+          <span class="select_header_content">{{SUCAI_TIANJIASUCAI}}</span>
+          <img class="select_header_open_icon" src="./image/down_arrow_white.png"/>
+        </div>
+        <ul class="select-content">
+          <li data-key="0">用管理员身份</li>
+          <li data-key="1">用广告主身份</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div id="sucai_content" class="panel_page_list_container" style="">
+    <div id="sucai_content_table"
+         style="height:100%;position: relative;padding-top: 5px;padding-left: 5px;padding-right: 5px;">
+    </div>
+  </div>
+  <div id="sucai_context_grade_mapping_book_inner_grid_all_subjec"></div>
+  <div id="sucai_context_grade_mapping_subject_inner_grid_all_subjec"></div>
+  <div id="ad-disites-layer" style="display:none;"></div>
+</div>

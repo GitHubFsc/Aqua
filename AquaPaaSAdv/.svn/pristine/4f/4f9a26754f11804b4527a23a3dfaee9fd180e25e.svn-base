@@ -1,0 +1,52 @@
+<style>
+	#sucai_dialog_sucaizu_selectable .mCSB_inside > .mCSB_container {
+		margin-right: 0px;
+	}
+</style>
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title">
+		<div class="sucai_dialog_title_text" id ="sucai_dialog_title_text">
+			{{SUCAI_XINJIANSUCAIZU}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_others">
+		<div class="sucai_dialog_create_size">
+			<div class = "sucai_dialog_create_name_title_span">{{SUCAI_SUCAIZUMINGCHEN}}</div>
+			<input id="sucai_dialog_create_input_sucaizuname_value" class = "sucai_dialog_create_input"/>
+		</div>
+		<div class="sucai_dialog_create_morenguanggaowei">
+			<div class = "sucai_dialog_create_name_title_span">{{SUCAI_SUCAIZULEIXING}}</div>
+			<div id="sucai_dialog_create_sucaizu_type_select"></div>
+		</div>
+		<div class="sucai_dialog_clear"></div>
+	</div>
+	<div class = "sucai_dialog_create_search">
+		<div class="sucai_dialog_create_search_title">{{SUCAI_SUCAILIEBIAO}}</div>
+		<div class="sucai_dialog_create_search_title" style = "width:340px">
+			<input id  = "sucai_list_search" class = "sucai_list_search" style = "height:30px;margin-top:2px;width:214px;background: white" placeholder = "" onkeyup = "" />
+			<div id  = "sucai_list_search_botton" class = "sucai_list_search_botton_div">{{SUCAI_CHAXUN}}</div>
+			<div style = "clear: both"></div>
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_move_sucai">
+		<div id = "sucai_dialog_sucaizu_selectable_cotainer" class="sucai_dialog_create_move_sucai_one">
+			<div id="sucai_dialog_sucaizu_selectable" class = "styled-flow-list-container"></div>
+		</div>
+		<div class="sucai_dialog_create_move_sucai_two">
+			<div id="sucai_dialog_create_move_add" style = "margin-top:60px">{{SUCAI_TIANJIA}} > </div>
+			<div id="sucai_dialog_create_move_addall"> {{SUCAI_TIANJIAQUANBU}} >> </div>
+			<div id="sucai_dialog_create_move_delete"  style = "margin-top:60px"> < {{SUCAI_SHANCHU}}</div>
+			<div id="sucai_dialog_create_move_deleteall"> << {{SUCAI_QUANBUSHANCHU}} </div>
+		</div>
+		<div id = "sucai_dialog_sucaizu_selected_container" class="sucai_dialog_create_move_sucai_three">
+			<div id="sucai_dialog_sucaizu_selected" class = "styled-flow-list-container"></div>
+		</div>
+		<div style = "clear: both"></div>
+	</div>
+	<div class = "sucai_dialog_create_opition">
+		<div class  = "option_bottom popup_dialog_clear">{{SUCAI_QUXIAO}}</div>
+		<div id = "sucai_dialog_create_botton_click" class  = "option_bottom confirm_bottom">{{SUCAI_QUEREN}}</div>
+	</div>
+</div>

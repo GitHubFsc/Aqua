@@ -1,0 +1,39 @@
+.panel_dialog_block_selector_space .styled-selector-inputbox, .panel_dialog_block_selector_space td {
+    padding-left: 12px;
+}
+.panel_dialog .styled-selector-inputbox {
+    border: 1px solid rgb(226, 226, 226);
+    color: rgb(114, 114, 114);
+}
+
+.panel_dialog_block_selector_space .styled-selector-inputbox, .panel_dialog_block_selector_space td {
+    padding-left: 12px;
+	font-size:14px
+}
+.panel_dialog_block_selector .styled-selector-inputbox {
+    border: 1px solid rgb(226, 226, 226);
+    color: rgb(114, 114, 114);
+}
+.panel_dialog_block_selector .styled-selector-dropbox {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgb(226, 226, 226);
+    border-image: none;
+    border-style: solid;
+    border-width: 0 1px 1px;
+}
+.panel_dialog_block_selector .styled-selector-dropbox td {
+    background-color: white;
+    color: rgb(114, 114, 114);
+}
+.panel_dialog_block_selector_space .styled-selector-inputbox, .panel_dialog_block_selector_space td {
+    padding-left: 12px;
+}
+.adv_user_manage_surplus_item{
+	white-space:nowrap;
+	max-width: 248px;
+	overflow:hidden;
+	text-overflow:ellipsis
+}

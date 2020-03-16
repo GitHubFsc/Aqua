@@ -1,0 +1,51 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label" id="user-admin-user-dialog-title"></div>
+    <div class="wp_panel_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="wp_panel_dialog_content">
+    <table class="user-admin-dialog-layout" cellpadding="0" cellspacing="0">
+      <tbody>
+        <tr><td style="width:298px;">
+          <label for="" class="user-admin-layout-label">所属域</label>
+          <div id="user-admin-user-domain-selector"></div>
+        </td><td style="width:42px;"></td><td style="width:298px;">
+          <label for="" class="user-admin-layout-label">用户名</label>
+          <input type="text" class="user-admin-layout-in" id="user-admin-user-name"/>
+        </td></tr>
+        <tr style="display:none;"><td>
+          <label for="" class="user-admin-layout-label">用户密码</label>
+          <input type="password" class="user-admin-layout-in" id="user-admin-user-pwd"/>
+        </td><td></td><td>
+          <label for="" class="user-admin-layout-label">确认密码</label>
+          <input type="password" class="user-admin-layout-in" id="user-admin-user-pwd-check"/>
+        </td></tr>
+        <tr><td>
+          <label for="" class="user-admin-layout-label">home ID</label>
+          <input type="text" class="user-admin-layout-in" id="user-admin-user-homeid"/>
+        </td><td></td><td>
+          <label for="" class="user-admin-layout-label">昵称</label>
+          <input type="text" class="user-admin-layout-in" id="user-admin-user-nickname"/>
+        </td></tr>
+        <tr><td>
+          <label for="" class="user-admin-layout-label">手机号</label>
+          <input type="text" class="user-admin-layout-in" id="user-admin-user-mobile"/>
+        </td><td></td><td></td></tr>
+        <tr><td>
+          <label for="" class="user-admin-layout-label">用户来源</label>
+          <input type="text" class="user-admin-layout-in" id="user-admin-user-source"/>
+        </td><td></td><td>
+          <label for="" class="user-admin-layout-label">用户类型</label>
+          <div id="user-admin-user-type-selector"></div>
+        </td></tr>
+        <tr><td colspan="3">
+          <label for="" class="user-admin-layout-label">metadata</label>
+          <div id="user-admin-metadata-list"></div>
+          <div id="user-admin-meta-edit" style="display: none;">编辑</div>
+        </td></tr>
+      </tbody>
+    </table>
+    <div class="lecture_recommend_dialog_cancel popup_dialog_clear" id="user-admin-dialog-cancel" style="right:187px;bottom:18px;display:none;">取&nbsp;&nbsp;消</div>
+    <div class="lecture_recommend_dialog_submit" id="user-admin-dialog-submit" style="right:16px;bottom:18px;"></div>
+  </div>
+</div>

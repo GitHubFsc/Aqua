@@ -1,0 +1,20 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+	<div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+		<div class="wp_panel_dialog_title_label">
+			{{LECTURETICKET_LIJISHIXIAO}}
+		</div>
+		<div class="wp_panel_dialog_close popup_dialog_clear">
+
+		</div>
+	</div>
+	<div class="wp_panel_dialog_content">
+		<div class="manage_book_dialog_del_icon">
+		
+		</div>
+		<div class="manage_book_dialog_del_info">
+			{{LECTURETICKET_NINSHIFUQUEDINGYAOLIJISHIXIAOGAIPIKECHENGQUAN}}
+		</div>
+		<div class="lecture_recommend_dialog_cancel popup_dialog_clear" id="lecture_recommend_del_cancel">{{LECTURETICKET_QUNBSPNBSPXIAO}}</div>
+		<div class="lecture_recommend_dialog_submit" id="lecture_recommend_del_confirm">{{LECTURETICKET_QUENBSPNBSPDING}}</div>
+	</div>
+</div>

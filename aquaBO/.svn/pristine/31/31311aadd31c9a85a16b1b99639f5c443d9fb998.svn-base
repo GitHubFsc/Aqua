@@ -1,0 +1,24 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label">新增有效时间段</div>
+    <div class="wp_panel_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="wp_panel_dialog_content">
+  	<div class="po-cyc-edit-dialog">
+  		<div class="po-cy-time-label">有效时间段</div>
+  		<div class="po-time-box">
+				<div class="po-time-select" id="po-cyctime-hour-start"></div>
+				<div class="po-time-label">时</div>
+				<div class="po-time-select" id="po-cyctime-min-start"></div>
+				<div class="po-time-label">分</div>
+				<div class="po-cy-time-lnk">-</div>
+				<div class="po-time-select" id="po-cyctime-hour-end"></div>
+				<div class="po-time-label">时</div>
+				<div class="po-time-select" id="po-cyctime-min-end"></div>
+				<div class="po-time-label">分</div>
+			</div>
+  	</div>
+    <div class="lecture_recommend_dialog_cancel popup_dialog_clear" style="right:189px;bottom:18px;">取&nbsp;&nbsp;消</div>
+    <div class="lecture_recommend_dialog_submit" id="po-editor-cyt-submit" style="right:13px;bottom:18px;">新&nbsp;&nbsp;增</div>
+  </div>
+</div>

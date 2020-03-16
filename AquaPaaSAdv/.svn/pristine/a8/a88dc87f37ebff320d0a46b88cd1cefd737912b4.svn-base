@@ -1,0 +1,172 @@
+<head>
+  <style type="text/css">
+      @IMPORT url("content/xi_tong_yong_hu_guan_li/zTreeStyleuser.css");
+	   @IMPORT url("content/xi_tong_yong_hu_guan_li/common.css");
+  </style>
+</head>
+<style>
+    #adv_sys_user_manage_position_list{
+        overflow: visible !important;
+    }
+
+    #adv_sys_user_manage_position_list table {
+        overflow: visible !important;
+    }
+
+    #adv_sys_user_manage_position_list table > tbody > tr > td:last-child {
+        overflow: visible !important;
+    }
+    #adv_sys_user_manage_position_list tr .opr {
+        color: #3b95ba;
+        margin: 0 8px;
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        text-decoration: underline;
+    }
+    #adv_sys_user_manage_position_list tr .opr:last-child {
+        margin: 0 0px;
+    }
+    #adv_sys_user_manage_position_list tr .opr img {
+        vertical-align: middle;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more {
+        display: inline-block;
+        background: inherit
+    }
+    #adv_sys_user_manage_position_list tr .opr_more .opr_more_detail {
+        display: none;
+        position: absolute;
+        width: 73px;
+        box-sizing: border-box;
+        border: 1px solid #E2E2E2;
+        z-index: 2;
+        background: inherit;
+        top: 12px;
+        right: 22px;
+        text-align: right;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more .opr_more_detail .opr {
+        height: 24px;
+        line-height: 24px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #E2E2E2;
+        display: block;
+        margin: 0px;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more .opr_more_detail .opr:last-child {
+        border-bottom: 0px solid #E2E2E2;
+    }
+    #adv_sys_user_manage_position_list tr .opr_more.open .opr_more_detail {
+        display: block;
+    }
+	.btn_confirm {
+		background-color: #2ea2d7;
+		border: 1px solid #597f89;
+		color: #fff;
+	}
+	.btn_cancel, .btn_confirm {
+		cursor: pointer;
+		height: 38px;
+		line-height: 38px;
+		text-align: center;
+		width: 149px;
+	}
+	.btn_cancel {
+		background-color: #5da1c0;
+		border: 1px solid #597f89;
+		color: #fff;
+	}
+	.menu_right_auth_div,.menu_right_auth_div_gray{
+		text-align: center;
+		font-size:16px;
+		display:inline-block;
+		width:177px;
+		color:#ffffff;
+		border-right:1px #e2e2e2 solid
+	}
+	.menu_right_auth_div{
+		background-color: #78bad8;
+	}
+	.menu_right_auth_div_gray{
+		background-color:#aaaaaa
+	}
+	.menu_right_auth_div_l2,.menu_right_auth_div_l2_gray{
+		text-align: center;
+		font-size:16px;
+		width:177px;
+		color:#ffffff;
+		border-right:1px #e2e2e2 solid
+	}
+	.menu_right_auth_div_l2{
+		background-color: #78bad8;
+	}
+	.menu_right_auth_div_l2_gray{
+	 background-color:#aaaaaa
+	}
+
+</style>
+<div id="adv_sysUserManage_index_page" class="panel_container adv_page_main_style">
+    <div id="adv_sysUserManage_topContainer_tabSwitch" class="panel_page_options" style="width:230px">
+        <!--div id="adPos_adKind_tuwen" class="panel_page_option" name="adPosKindTuwen">
+            {{ADPOS_OPTION_TUWEN}}
+        </div>
+        <div id="adPos_adKind_tiepian" class="panel_page_option" name="adPosKindTiepian">
+            {{ADPOS_OPTION_TIEPIAN}}
+        </div-->
+    </div>
+    <div class="panel_page_v_splitter" style="left:246px">
+
+    </div>
+    <div class="panel_search_input_container" id="panel_search_input_container" style="display:none;left:257px">
+        <input id="adPos_search_input" class="panel_search_input" type="text"  onkeyup="system_user_management.search_user(event.keyCode)"/>
+        <div id="adPos_search_input_icon" class="panel_search_input_icon" onclick="system_user_management.search_user(event.keyCode)">
+        </div>
+    </div>
+    <div id="adPos_addPosition" class="panel_page_button" style="display:none;font-weight:bold" onclick="system_user_management.open_popup_create_system_user()">
+        <div class="panel_page_button_icon" style="left:8px">
+
+        </div>
+        <div class="panel_page_button_text" style="left:29px">
+            {{ADV_SYSUSER_XINGJIANXITONGYONGHU}}
+        </div>
+    </div>
+    <div class="panel_page_list_container" id="adv_sys_user_manage_table_Conainer">
+        <div id="adv_sys_user_manage_position_list" class="panel_page_list">
+
+        </div>
+    </div>
+    <div id="site_instruction" style="display:none" class="panel_page_list_container" style="right:5px;border-right:1px solid #efefde"></div>
+</div>
+<div id="adv_sysUserManage_auth_container" style="display:none;position:relative;width:100%;height:100%;background-color: rgb(252, 252, 242);">
+	<div style="position:relative;height:60px;background-color:#ffffff">
+		<div id="adv_sysUserManage_auth_return" class="layer-btn-head-left" style="font-family:'宋体'">返回</div>
+		<div class="layer-head-spacer"></div>
+        <div id="adv_sysUserManage_company_name"  class="layer-head-title" style="font-family:'宋体'"></div>
+	</div>
+	<div style="height: calc(100% - 60px);position: relative; ">
+		<div style="height: calc(100% - 76px); position: absolute; top: 14px; left: 15px; right: 15px; background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226);">
+			<div style="width:100%;height:100%">
+				<div style="float:left;width:467px;height:100%;overflow:auto;border-right:1px #e2e2e2 solid;visibility:visible;position:relative">
+					<div id="sys-user-admin-page2-part2-menu-tree-table" class="sys-user-admin-page2-part2-menu-tree-table" style="width:100%;height:auto;position:absolute;margin-left:0px;">
+						<!--div style="height:40px;width:100%"></div-->
+					</div>
+					<div id="sys-user-admin-page2-part2-menu-tree" class="ztree" style="width:auto;height:auto;margin-left:6px;position:absolute;margin-top:0;padding-top:0;">
+					
+					</div>
+					<div style="width:100%;height:13px;position:absolute;background-color:white"></div>
+				</div>
+				<div id="sys-user-admin-page2-part2-menu-tree-right" style="float:right;width:calc(100% - 471px);height:100%;overflow:auto;background-color:#eaeaea">
+					<div id="sys-user-admin-page2-part2-menu-tree-right_1"></div> 
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="sys-user-admin-page2-bottom" style="display:none;border-top:1px #e2e2e2 solid;height:56px;bottom:0;position:absolute;width:100%;background-color:#ffffff">
+	<div id="sys-user-admin-page2-btn-confirm" class="btn_confirm" style="float:right;margin-right:43px;margin-top:8px">{{SYS_USER_SAVE}}</div>
+	<div id="sys-user-admin-page2-btn-cancel" class="btn_cancel" style="float:right;margin-right:15px;margin-top:8px">{{SYS_USER_CANCEL}}</div>
+	<div id="sys-user-admin-page2-part2-hiddenWords"  style="display:none;float:left;margin-left:15px;width:auto;margin-top:16px;color:#797979">注:一个都不选择表示都授权</div>
+</div>

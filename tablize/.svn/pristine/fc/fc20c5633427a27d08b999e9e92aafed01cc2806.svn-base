@@ -1,0 +1,53 @@
+﻿<div id="singleQuery_pageAllContainer" class="pageAllContainer" style="font-size:14px;font-family:'宋体'">
+	<div id="singleQuery_boRecord_pageSingleSearch" class="pageTitleContainer">
+        <div class="small_blue_bar" style="margin-left:18px;margin-top:19px;float:left"></div>
+		<div class="pageTitleContainerTitleDiv" style="margin-top:18px;margin-left:9px;color:#494b58;font-size:16px;font-family:'微软雅黑';font-weight:bold">单人</div>
+		<div id = "singleQuery_SingleQuery_Bottom" class="pageTitleContainerRightButt" style="font-family:'微软雅黑';font-weight:bold;font-size:16px;background-color:#2ea1d7" onclick="brodecaSingleSearch.popup_newSearch()">新查询</div>
+		<!--div class="pageTitleContainerRightButtDark">新查询</div-->
+	</div>
+	<div id="singleQuery_pageAllBody">
+		<div id="singleQuery_pageAllBodyContainer" class="pageAllBodyContainer" style="visibility:hidden">
+			<div class="pageAllBodyContainerTitle" id="singleQuery_pageAllBodyContainerTitle" style="background-color:#12a0ea">
+				<div class="ContainerTitleLeftTitle" >查询条件:</div>
+				<div class="ContainerTitleLeftTitle" id="singleQuery_cardID-result" style="margin-left:0;"></div>
+				<div class="ContainerTitleLeftTitle" id="singleQuery_begindate-result" style="margin-left:11px;"></div>
+				<div class="ContainerTitleLeftTitle" id="singleQuery_enddate-result" style="margin-left:0;"></div>
+			</div>
+			<div class="spanDivContainer">
+				<div class="spanDiv"><div style="height:40%">帐号编号</div><div id="singleQuery_spanAccID" class="inputShift" style="height:60%;color:#006592"></div></div>
+				<div class="spanDiv"><div style="height:40%">账户名称</div><div id="singleQuery_spanAccName" class="inputShift" style="height:60%;color:#006592"></div></div>
+				<div class="spanDiv"><div style="height:40%">智能卡号</div><div id="singleQuery_spanCardNo" class="inputShift" style="height:60%;color:#006592"></div></div>
+				<div class="spanDiv"><div style="height:40%">成功购买总数</div><div id="singleQuery_spanBuyCount" class="inputShift" style="height:60%;color:#006592"></div></div>
+				<div class="spanDiv"><div style="height:40%">总发生金额</div><div id="singleQuery_spanTurnover" class="inputShift" style="height:60%;color:#006592"></div></div>
+				<div class="spanDiv"><div style="height:40%">播放总次数</div><div id="singleQuery_spanBroCount" class="inputShift" style="height:60%;color:#006592"></div></div>
+				<div class="spanDiv"><div style="height:40%">播放总时长</div><div id="singleQuery_spanBroTime" class="inputShift" style="height:60%;color:#006592"></div></div>	
+			</div>
+			<div id="singleQuery_resultTable" style="position:relative;top:5px;right:0px;bottom:0px;left:0px;width:100%;overflow-x:auto">
+				<div id="singleQuery_tableContentOuterr" style="width:calc(100% + 329px);max-height:420px;height:auto">
+					<table class="brodecastRecordTable_B" id="singleQuery_tableContentOuter" style="width:100%">
+						<thead id="singleQuery_brodecastRecordTableTread" style="background-color:#3ab7f9;height:31px">
+							<td style="width:93px">帐号编号</td>
+							<td style="width:69px" >账户名称</td>
+							<td style="width:89px">智能卡号</td>
+							<td style="width:109px">影片名称</td>
+							<td style="width:129px">购买时间</td>
+							<td style="width:36px">金额</td>
+							<td style="width:129px">开始时间</td>
+							<td style="width:129px">结束时间</td>
+							<td style="width:37px">时长</td>
+							<td style="width:70px">产品信息</td>
+							<td style="width:71px">剧集信息</td>
+							<td style="width:95px">节目供应商</td>
+							<td style="width:87px">PID</td>
+							<td style="width:92px">PAID</td>
+							<td style="width:150px">URL</td>						
+						</thead>
+						<tbody id="singleQuery_tableContent" class="tableContent" style="visibility:hidden;width:100%;color:#797979;text-align:center;">
+						</tbody>
+					</table>
+				</div>	
+			</div>
+			<div id="singleQuery_buttonDown" class="pageTitleContainerRightButt" style="font-family:'微软雅黑';font-size:16.8px;margin-top:14px;margin-right:24px;background-color:#979797" onclick="brodecaSingleSearch.exportResult()">下载到本地</div>
+		</div>
+	</div>
+</div>

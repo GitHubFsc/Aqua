@@ -1,0 +1,138 @@
+<div class="panel_dialog" id="adPos_dialog_subtitle">
+	<div class="panel_dialog_title">
+		<div id="adPos_dialog_ne_title" class="panel_dialog_title_text">
+		</div>
+		<div id="adPos_dialog_ne_close" class="panel_dialog_close popup_dialog_clear">
+
+		</div>
+	</div>
+	<div class="panel_dialog_body">
+		<table class="panel_dialog_body_layout">
+			<tbody>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_ID}}
+							</div>
+							<input id="adPos_dialog_ne_id" class="panel_dialog_block_space_input" type="text"/>
+							<div class="adPos_admaster_ifopen">
+								<div id="adPos_admaster_check"></div>
+								<span>{{ADPOS_ADMASTER_IF_OPEN}}</span>
+							</div>
+						</div>
+					</td><td></td><td></td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_NAME}}
+							</div>
+							<input id="adPos_dialog_ne_name" class="panel_dialog_block_space_input" type="text"/>
+						</div>
+					</td><td></td><td></td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_FONT_SIZE}}
+							</div>
+							<input id="adPos_dialog_ne_font_size" class="panel_dialog_block_input input_subtitle_shorter" style="padding-left:12px;width:138px" type="text"/>
+							<span>px</span>
+						</div>
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_FONT_COLOR}}
+							</div>
+							<span style="display:inline-block;position:absolute;left:-14px;line-height:30px;">#</span>
+							<input id="adPos_dialog_ne_font_color" class="panel_dialog_block_space_input" style="width:170px;" type="text" placeholder="{{ADPOS_DIALOG_COLOR_RANGE}}"/>
+						</div>
+					</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td colspan="3">
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_BGIMG}}
+							</div>
+							<input id="adPos_dialog_ne_bgimg" readonly="readonly" style="background-color: #e3e3e3; cursor: default;" class="panel_dialog_block_space_input" type="text" placeholder="{{ADPOS_DIALOG_LABEL_BGINPUT_INFO}}"/>
+							<div id="adPos_dialog_subtitle_bg_btn">
+								{{ADPOS_DIALOG_BTN_BROWSE}}
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_OPACITY}}
+							</div>
+							<input id="adPos_dialog_ne_opacity" class="panel_dialog_block_space_input input_subtitle_shorter" type="text" placeholder="{{ADPOS_DIALOG_OPACITY_RANGE}}" disabled="disabled" style="width:138px"/>
+						</div>
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_MAX_PLACEMENT_COUNT}}
+							</div>
+							<input id="adPos_dialog_ne_max_placement_count" class="panel_dialog_block_space_input" type="text"/>
+						</div>
+						<!--<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_DEFAULT_AD}}
+							</div>
+							<div id="adPos_dialog_ne_dfAd_selector" class="panel_dialog_block_selector adPos_dialog_ne_dfAd_selector">
+
+							</div>
+						</div>-->
+					</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_MOVE_STEP}}
+							</div>
+							<input id="adPos_dialog_ne_move_step" class="panel_dialog_block_input input_subtitle_shorter" type="text" style="padding-left:12px;width:138px"/>
+							<span>px</span>
+						</div>
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_MOVE_INTERVAL}}
+							</div>
+							<input id="adPos_dialog_ne_move_interval" class="panel_dialog_block_space_input input_subtitle_shorter" type="text"/>
+							<span>ms</span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<!--<div class="panel_dialog_block">
+							<span>{{ADPOS_DIALOG_IS_STARTING_UP}}</span>
+							<input type="checkbox" id="adPos_is_starting_up" class="adPos_dialog_checkbox_default"/>
+						</div>-->
+					</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div id="adPos_dialog_ne_cancel" class="panel_dialog_cancel popup_dialog_clear" style="bottom:18px">
+		{{ADPOS_DIALOG_CANCEL}}
+	</div>
+	<div id="adPos_dialog_ne_submit" class="panel_dialog_submit" style="bottom:18px">
+	</div>
+</div>

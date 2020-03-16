@@ -1,0 +1,600 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    list-style: none; 
+}
+.menuVideoAudit{
+    width: 100%;
+    height: 100%;
+}
+.menuVideoAudit_content {
+    position: relative;
+    width: 100%;
+    height: 729px;
+    background-color: #F5F5F5;
+    padding-top: 4px;
+    padding-bottom: 25px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header {
+    position: relative;
+    z-index: 1;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 13px;
+    background-color: #fff;
+    box-shadow: 0 0 2px 2px #ededed; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options {
+    padding: 16px 16px;
+    background-color: #ffffff;
+    height: 135px;
+    color: #727272;
+    box-sizing: border-box; 
+    display:flex;
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left {
+    width: calc(100% - 129px);
+    font-size: 0px;
+    line-height: 0px;
+    padding-left: 10px;
+    padding-top: 8px; 
+    display:flex;
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left_left {
+    width: 356px;
+    height: 103px;
+    font-size: 0px;
+    line-height: 0px;
+    padding-left: 10px;
+    padding-top: 8px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .option {
+    width: 356px;
+    font-size: 0px;
+    display: inline-block;
+    height: 32px;
+    line-height: 0px;
+    margin-bottom: 24px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .option .option_title {
+    text-align: left;
+    width: 75px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top; 
+    cursor: default;
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .option .option_content {
+    width: calc(100% - 150px);
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght {
+    width: 736px;
+    height: 103px;
+    font-size: 0px;
+    line-height: 0px;
+    padding-left: 10px;
+    padding-top: 8px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .date_input{
+    width: 393px !important;
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option .option_title {
+    text-align: left;
+    width: 75px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content {
+    width:310px !important;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content #menuVideoAudit_DataRange_start, 
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content #menuVideoAudit_DataRange_end {
+    position: relative;
+    width: 140px;
+    height: 32px;
+    display: inline-block;
+    z-index: 99;
+    color: #848484;
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .MediaName{
+    width: 736px;
+    font-size: 0px;
+    display: inline-block;
+    height: 32px;
+    line-height: 0px;
+    margin-bottom: 24px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .MediaName .MediaName_title{
+    text-align: left;
+    width: 75px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .MediaName .MediaName_content{
+    min-width: 652px;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .MediaName .MediaName_content .menuVideoAudit_MediaName{
+    width: 100%;
+    height: 32px;
+    line-height: 28px;
+    padding-left: 5px;
+    border: 1px solid#CECDCB;
+    outline: none;
+    color:#797979;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: auto;
+}
+
+
+/*日历控件 自定义css 控制页面 与输入框距离*/
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content #menuVideoAudit_DataRange_start>div, 
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content #menuVideoAudit_DataRange_end>div{
+   top: 7px;
+   left: 1px;
+}
+/*控制输入框无选中边框*/
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content input{
+    outline: none;
+}
+/*上下月按钮父盒子*/
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content .back_forw_month_container{
+    width: 90px;
+    height: 31px;
+    float: right;
+    margin-top: 23px;
+    margin-right: 20px;
+}
+/*上下月按钮 之间距离*/
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option #Date_option_content .back_forw_month_button {
+    width: 35px;
+    height: 31px;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .left .left_reght .option .option_content .menuVideoAudit_MediaName {
+    width: 660px;
+    height: 32px;
+    line-height: 28px;
+    padding-left: 5px;
+    border: 1px solid #CECDCB;
+    outline: none;
+    color: #797979;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: auto; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menuVideoAudit_content .menuVideoAudit_header .header_options .middleLine {
+    width: 1px;
+    background-color: #eaeaea;
+    float: left;
+    height: 103px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .right {
+    width: 118px;
+    float: left;
+    position: relative; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .right .menuVideoAudit_searchButton {
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #ffffff;
+    width: 100px;
+    height: 61px;
+    line-height: 61px;
+    background-color: #2dbce8;
+    border: 2px #11a8d7 solid;
+    position: absolute;
+    top: 37px;
+    right: 3px; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .right .menuVideoAudit_searchButton img {
+    margin-left: 13px;
+    margin-top: 20px;
+    float: left; 
+}
+.menuVideoAudit_content .menuVideoAudit_header .header_options .right .menuVideoAudit_searchButton .label {
+    height: 38px;
+    line-height: 38px;
+    margin-left: 8px;
+    font-size: 19.76px;
+    font-weight: bold;
+    font-family: '微软雅黑';
+    float: left;
+    height: 61px;
+    line-height: 61px; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer {
+    font-size: 14px;
+    background: #FFFFFF;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    box-shadow: 0 0 2px 2px #ededed; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header {
+    width: 100%;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    height: 53px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E8E8E8;
+    background: #FBFBFB;
+    display: flex; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left {
+    width: calc(100% - 80px);
+    display: flex; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left .title_ {
+    font-family: 微软雅黑;
+    line-height: 30px;
+    font-size: 14px;
+    color: #777777;
+    position: relative;
+    padding-left: 13px;
+    margin-left: 19px; 
+    cursor: default;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left .title_::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    left: 0px;
+    top: 7px;
+    bottom: 7px;
+    background: #1EC3EC;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left .legend {
+    width: 192px;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 30px; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left .legend .legend_Pass {
+    width: 56px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 3px;
+    background-color: #1de10e;
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left .legend .legend_Suspect {
+    width: 56px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 3px;
+    background-color: #f9aa4c; 
+    cursor: default;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .left .legend .legend_Violation {
+    width: 56px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 3px;
+    background-color: #f76856; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .right {
+    width: 80px;
+    display: flex; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_header .right .right_tab {
+    width: 38px; 
+    cursor: pointer;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer {
+    width: 100%;
+    height: 420px; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster {
+    width: 100%;
+    height: 420px;
+    overflow: auto; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container {
+    display: flex;
+    flex-wrap: wrap; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult {
+    width: 24%;
+    height: 270px;
+    box-shadow: 0px 0px 4px #a0a0a0;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-bottom: 4px; 
+    cursor: pointer;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .poster {
+    width: 92.5%;
+    height: 61.89%;
+    margin: 10px auto;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    overflow: hidden; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .poster img {
+    width: 100%;
+    height: 100%; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults {
+    width: 94%;
+    height: 82px;
+    float: right;
+    margin-top: -3px;
+    display: flex;
+    justify-content: space-between; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults p {
+    width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #828282;
+    margin-bottom: 3px; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults .HumanTrialResult {
+    width: 77px;
+    height: 82px; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults .legend {
+    width: 192px;
+    height: 30px;
+    display: flex;
+    justify-content: start; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults .legend .legend_Pass {
+    width: 40px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 3px;
+    margin-right: 5px;
+    background-color: #1de10e; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults .legend .legend_Suspect {
+    width: 40px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 3px;
+    margin-right: 5px;
+    background-color: #f9aa4c; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_poster .mCustomScrollBox .mCSB_container .RecognitionResult .AuditResults .legend .legend_Violation {
+    width: 40px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 3px;
+    margin-right: 5px;
+    background-color: #f76856; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table {
+    width: 100%;
+    height: 420px;
+    overflow: auto; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .styleable_list .styleable_list_title .styleable_list_col{
+    cursor: default;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .text_left {
+    text-align: left;
+    padding-left: 20px; 
+    cursor: default;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .legend {
+    width: 80%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .legend .legend_Pass {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 3px 3px;
+    background-color: #1de10e; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .legend .legend_Suspect {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 3px 3px;
+    background-color: #f9aa4c; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .legend .legend_Violation {
+    width: 35px;
+    height: 25px;
+    text-align: center;
+    line-height: 24px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 3px 3px;
+    background-color: #f76856; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .table_pass {
+    color: #1cd00e;
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .table_prepare {
+    color: #777777;
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .table_violation {
+    color: #fc2f15;
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_title_footer .menuVideoAudit_table_content .menuVideoAudit_table_content_table .menuVideoAudit_table_content_list .table_operating a {
+    color: #47c0de;
+    cursor: pointer; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination {
+    width: 100%;
+    height: 56px;
+    line-height: 56px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_total {
+    width: 120px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 56px;
+    margin-right: 14px;
+    color: #9e9e9e; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_Capacity {
+    width: 180px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 56px;
+    margin-left: 16px;
+    color: #9e9e9e; 
+    cursor: default; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_Capacity span {
+    display: inline-block;
+    width: 35px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center; 
+    cursor: pointer;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_Capacity .selected {
+    color: #68c4d9; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_page :after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_page {
+    height: 30px; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_page li {
+    width: 27px;
+    height: 27px;
+    float: left;
+    margin: 0 5px; 
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_page li span {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 27px; 
+    cursor: pointer;
+}
+.menuVideoAudit_content .menuVideoAudit_footer .menuVideoAudit_table_Pagination .Pagination_page li a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 27px; 
+}
+/*匹配滚动条的样式*/
+.mCustomScrollbar .mCustomScrollBox .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    width: 5px;
+    border: 1px solid #c5c5c5;
+    background-color: #fff;
+}
+.mCustomScrollbar .mCustomScrollBox .mCSB_scrollTools .mCSB_draggerRail {
+    width: 4px;
+    background-color: #ececec;
+}
+.menuVideoAudit_table_content_poster .mCSB_inside > .mCSB_container {
+    margin-right: 6px;
+}
+.menuVideoAudit_table_content_table .mCSB_inside > .mCSB_container {
+    margin-right: 11px;
+}

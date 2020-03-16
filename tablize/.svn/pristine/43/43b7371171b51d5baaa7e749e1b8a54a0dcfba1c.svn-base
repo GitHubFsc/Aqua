@@ -1,0 +1,17 @@
+<div class="user-simple-page" id="user-admin-device-page">
+	<div class="panel_page_head">
+		<div class="panel_page_head_left" style="left:8px;">
+			<div class="panel_page_back_btn" id="user_admin_device_page_back">返回</div>
+			<div class="panel_page_head_title_follower"></div>
+			<div class="panel_page_head_title" id="user-admin-device-title"></div>
+			<div class="user-admin-options">
+				<div class="user-admin-option" data-type="default">应用设备</div>
+				<div class="user-admin-option" data-type="thirdparty">第三方</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel_page_body">
+		<div id="user-admin-user-device-list">
+		</div>
+	</div>
+</div>

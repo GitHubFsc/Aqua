@@ -1,0 +1,13 @@
+<div id="compSitesLayer" class="panel-layer-container" style="z-index:1;position:absolute;left:0;top:0;">
+	<div class="panel-layer-head">
+		<div id="compSitesBack" class="layer-btn-head-left">{{OPS_TEXT_BACK}}</div>
+		<div class="layer-head-spacer"></div>
+		<div id="compSitesTitle" class="layer-head-title"></div>
+	</div>
+	<div class="panel-layer-body">
+		<div id="compSitesList" class="panel_page_list">
+		</div>
+	</div>
+</div>
+<div id="compSiteHistory" style="display:none;z-index:10;position:absolute;left:0;top:0;width:100%;height:100%;">
+</div>

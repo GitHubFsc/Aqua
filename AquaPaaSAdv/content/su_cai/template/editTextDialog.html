@@ -1,0 +1,49 @@
+<style>
+  .sucai_img_template_editTextDialog{
+    padding-top: 13px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .sucai_img_template_editTextDialog .item{
+    margin-bottom: 17px;
+  }
+  .sucai_img_template_editTextDialog .title{
+    font-size: 14px;
+    color: #6F6F6F;
+    height: 26px;
+    line-height: 26px;
+  }
+  .sucai_img_template_editTextDialog .content{
+  }
+  .sucai_img_template_editTextDialog .content.half{
+    width: 50%;
+  }
+  .sucai_img_template_editTextDialog .content input{
+    font-size: 14px;
+    width: 100%;
+    outline: none;
+    height: 32px;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    color: #6F6F6F;
+  }
+  .sucai_img_template_editTextDialog .content input[readonly]{
+    background: #ECECEC;
+  }
+</style>
+<div class="sucai_create_dialog">
+  <div class="sucai_dialog_title">
+    <div class="sucai_dialog_title_text" id = "sucai_img_template_dialog">
+      {{SUCAITEMPLATE_EDITTEXT}}
+    </div>
+    <div class="sucai_dialog_close popup_dialog_clear_">
+    </div>
+  </div>
+  <div class="sucai_img_template_editTextDialog"></div>
+  <div class="sucai_dialog_create_opition">
+    <div class="option_bottom  popup_dialog_clear_">{{SUCAI_QUXIAO}}</div>
+    <div id="replaceImgDialog_confirm" class="option_bottom confirm_bottom">{{SUCAI_QUEREN}}</div>
+  </div>
+</div>

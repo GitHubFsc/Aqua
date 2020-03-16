@@ -1,0 +1,77 @@
+<head>
+  <style type="text/css">
+    @IMPORT url("content/self_service_adviser_manage/self_service_adviser_manage.css");
+
+		.input_search_container_{
+			border: 1px #eaeaea solid;
+			color: #737373;
+			background-color: #f4f4f4;
+			height: 34px;
+			border-radius: 2px;
+			position: relative;
+		}
+		.input_search_container_ .filterSelect {
+			 display: inline-block;
+			 vertical-align: middle;
+			 width: 105px;
+			 height: 30px;
+			 margin-left: 0px;
+			 position: relative;
+			 padding-top: 2px;
+			 padding-left: 2px;
+		 }
+		.input_search_container_ .filterSelect .select-box{
+			border-radius: 5px;
+		}
+		.input_search_container_ .filterSelect .select-header{
+			border-radius: 4px;
+		}
+		.input_search_container_ .panel_top_search_box_input {
+			position: absolute;
+			width: calc(300px - 20px - 40px - 5px);
+			height: 34px;
+			border: 0px solid rgb(234, 234, 234);
+			background-color: rgb(244, 244, 244);
+			color: rgb(121, 121, 121);
+			padding-left: 10px;
+			padding-right: 30px;
+			font-size: 14px;
+			outline: none;
+		}
+		.input_search_container_ .panel_top_search_box_handle {
+			width: 16px;
+			height: 16px;
+			cursor: pointer;
+			background-image: url(./image/search_handle.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			position: absolute;
+			top: 50%;
+			margin-top: -8px;
+			right: 11px;
+		}
+  </style>
+</head>
+<div style="position:relative;height:100%;width:100%">
+	<div id="self_service_adviser_manage_part1">
+		<div style="height:60px;width:100%;position:absolute:top:0">
+			<div class="dropDownHeader" style="position:relative;float:left;margin-top:12px;margin-left:9px;cursor:pointer;background-position:94px center;width:119px">
+				<div id="selfServiceAdviserManage_title" style="position:absolute;left:0;top:0;margin-left:9px;width:85px;line-height:34px">
+					{{SELF_SERVICE_ADVISER_MANAGE_SUOYOUZHUANGTAI}}
+				</div>
+				<div id="selfServiceAdviserManage_top" style="position:absolute;left:0;top:0;margin-left:9px;width:117px;height:34px"></div>
+				<div id="selfServiceAdviserManage_menu" class="dropDownBodyContainer" style="display:none">
+				</div>
+			</div>
+			<div class="input_search_container_" style="display:block;float:left;margin-top:12px;margin-left:9px;width:400px;">
+				<div id="selfServiceAdviserManage_select" class="filterSelect"></div>
+				<input id="selfServiceAdviserManage_search_input" class="panel_top_search_box_input" type="text">
+				<div id="selfServiceAdviserManage_search_button" class="panel_top_search_box_handle"></div>
+			</div>
+		</div>
+		<div class="panel_page_list_container">
+			<div class="panel_page_list" id="selfServiceAdviserManage_tableContainer"></div>
+		</div>
+	</div>
+	<div id="self_service_adviser_manage_part2" style="display: none"></div>
+</div>

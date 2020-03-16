@@ -1,0 +1,11 @@
+<div class="dialog alert _flex _column">
+  <div class="title _flex _row">
+    <div class="title_text">{{PRODUCTOFFERING_DIALOG_ALERT_TITLE}}</div>
+    <div class="dialog_close popup_dialog_clear image"></div>
+  </div>
+  <div class="body"></div>
+  <div class="foot _flex">
+    <div class="btn cancel">{{PRODUCTOFFERING_DIALOG_BTN_CANCEL}}</div>
+    <div class="btn confirm">{{PRODUCTOFFERING_DIALOG_BTN_CONFIRM}}</div>
+  </div>
+</div>

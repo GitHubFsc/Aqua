@@ -1,0 +1,93 @@
+<div id="poster_audit" class="poster_audit">
+	<!-- 详情页(海报) -->
+	<link rel="stylesheet" href="content/menuVideoAudit/poster_audit/poster_audit.css">
+    <!-- title -->
+    <div class="title_head">
+        <div class="title" id="audit_poster_audit_title"></div>
+        <div class="middle"></div>
+        <div class="right">
+            <div class="icon btn">{{PARTICULAR_CLOSE}}</div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- 审核结果 -->
+        <div class="audit_result">
+            <div class="title">{{PARTICULAR_AUDIT_RESULT}}</div>
+            <div class="video" id="video_player"></div>
+            <div class="info">
+                <div class="info_message">
+                    <div class="content result">
+                        <div class="label">{{PARTICULAR_AUDIT_RESULT}}</div>
+                        <div class="text status" id="audit_result_text"></div>
+                    </div>
+                    <div class="content message">
+                        <div class="label">{{PARTICULAR_AUDIT_DESCRIPTION}}</div>
+                        <div class="text description" id="audit_message_description"></div>
+                    </div>
+                </div>
+                <div class="btn" id="poster_audit_audit_result_btn">
+                    <div class="pass icon">{{PARTICULAR_AUDIT_PASS}}</div>
+                    <div class="block icon">{{PARTICULAR_AUDIT_BLOCK}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 识别结果明细 -->
+        <div class="result_detail">
+            <div class="title">{{PARTICULAR_RESULT_DETAIL}}</div>
+            <div class="content" id="result_detail_content">
+                <div class="list_table" id="detail_table"></div>
+            </div>
+        </div>
+        <!-- 识别详情内容 -->
+        <div class="poster_audit_content">
+            <div class="header">
+                <div class="select" id="recognition_select"></div>
+                <div class="middle"></div>
+                <div class="btn" id="poster_audit_content_btn">
+                    <div class="icon poster poster_checked" id="poster_audit_content_poster"></div>
+                    <div class="icon list"></div>
+                    <div class="icon json"></div>
+                </div>
+            </div>
+            <div class="content">
+                <!-- 海报式详情 -->
+                <div class="content_poster" id="poster_audit_poster">
+                    <div class="poster_left" id="poster_audit_poster_content"> </div>
+                    <div class="poster_right">
+                        <div class="right_img">
+                            <div class="poster_right_img_content" id="poster_audit_poster_content_img"></div>
+                        </div>
+                        <div class="list_table right_list" id="poster_audit_poster_content_list"></div>
+                    </div>
+                </div>
+                <!-- 列表式详情 -->
+                <div class="content_list" id="poster_audit_list">
+                    <div class="tag_table_head" id="content_list_table_tag">
+                        <table>
+                            <tr>
+                                <td>{{PARTICULAR_TAG_START_TIME}}</td>
+                                <td>{{PARTICULAR_TAG_END_TIME}}</td>
+                                <td>{{PARTICULAR_TAG_CATEGORY}}</td>
+                                <td>{{PARTICULAR_TAG_ENGLISH}}</td>
+                                <td>{{PARTICULAR_TAG_RELIABILITY}}</td>
+                                <td>{{PARTICULAR_TAG_CN_LABEL}}</td>
+                                <td>{{PARTICULAR_TAG_EN_LABEL}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_CATEGORY}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_ENGLISH}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_RELIABILITY}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_CN_LABEL}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_EN_LABEL}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="list_table" id="content_list_table"></div>
+                </div>
+                <!-- json式列表 -->
+                <div class="content_json" id="poster_audit_json"></div>
+            </div>
+        </div>
+    </div>
+</div>

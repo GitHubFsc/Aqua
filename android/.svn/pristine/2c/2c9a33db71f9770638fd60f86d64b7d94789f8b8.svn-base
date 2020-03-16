@@ -1,0 +1,555 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>无标题文档</title>
+<script>
+document.onkeypress = grabEvent;
+document.onirkeypress = grabEvent;
+document.onsystemevent = grabEvent;
+var videoPID = "";
+var videoPAID = "";
+var uid = "";
+var videoName = "测试视频";
+var url = window.location.href;
+if(url.indexOf("?")>=0){
+	url = url.split("?");
+	videoPID = url[1];
+	videoPAID = url[2];
+	videoName = url[3];
+}
+var showPfTime = -1;
+var currenttime = 0;
+var totaltime = 0;
+var showTime = -1;
+var startus ="";
+var rtsp_url = "";
+var playFlag = false;
+var channelName = "测试视频";
+var seekn = 0;
+var data=null;
+var opened=false;
+//iPanel.pageWidgets.create("volume","volume1.htm");
+var smartcardID = CA.card.serialNumber;
+//var smartcardID = "8551102201021011";
+
+
+var volume = new iPanel.eventFrame.volume();
+volume.changeModeImageFlag = true;
+volume.modeimages = ["ui://sound1.png", "ui://sound2.png", "ui://sound0.png"];
+var currVolume = volume.getCurrVolume();
+var mute_status = volume.getMuteStatus(); //0表示未静音，1表示静音
+var TrackTimeout=-1;
+
+var flag_5203 = false;
+function grabEvent(event){
+	var keyCode = event.which;
+	//alert(keyCode)
+	iPanel.debug("keyCode_vod_play="+keyCode);
+	switch(keyCode){
+		case 3:
+		case 1029:
+			if(playFlag){
+				backwardPlay(2);
+			}
+			return 0;
+			break;
+		case 4:
+		case 1028:
+			if(playFlag){
+				forwardPlay(2);
+			}
+			return 0;
+			break;
+		case 1024:
+			if(playFlag){
+				startus = media.AV.status;
+				if(startus != "play"){
+					media.AV.play();	
+				}
+				seekn = 0;
+				showPF(1);
+			}
+			return 0;
+			break;
+		case 1026:
+			if(playFlag){
+				startus = media.AV.status;
+				if(startus != "pause"){
+					media.AV.pause();
+					showAvStatus("pause");
+				}
+				seekn = 0;
+				showPF(1);
+			}
+			return 0;
+			break;
+		case 13:
+			if(playFlag){
+				doSelect();
+			}
+			return 0;
+			break;
+		case 340:
+		case 1025:
+			//iPanel.back();
+			history.back();
+			//window.location.href = "../movie.htm";
+			return 0;
+			break;
+		case 339:
+			//iPanel.back();
+			history.back();
+			//window.location.href = "../movie.htm";
+			return 0;
+			break;
+		case 512:
+			window.location.href = "../index.htm";
+			return 0;
+			break;
+		case 1://
+		case 595://音量+
+			iPanel.debug("_______volumetest___volup");
+			changeVolume(1);
+			return 0;
+			break;
+		case 2:
+		case 596://音量-
+			iPanel.debug("_______volumetest___voldown");
+			changeVolume(-1);
+			return 0;
+			break;
+		case 597://静音
+			//alert("静音");
+			iPanel.debug("_______volumetest___mute");
+			mute_status = volume.actionMute();
+			iPanel.debug("_______mute"+mute_status);
+			iPanel.debug("_______ismute"+media.sound.isMute);
+			return 0;
+			break;
+		case 598://声道
+		case 802://功能键？
+			iPanel.debug("_______volumetest___audiomode");
+			show_track();
+			iPanel.debug("_______checktrack"+media.sound.mode);
+			return 0;
+			break;
+		case 5202://setup成功
+			$("loading").style.visibility = "hidden";
+			play();
+			return 0;
+			break;
+		case 5203://setup失败
+			flag_5203 = true;
+			showOverMain("视频连接失败");
+			return 0;
+			break;
+		case 5205://播放成功
+			media.sound.value = 48;
+			startus =  media.AV.status ;
+			showAvStatus(startus);
+			return 0;
+			break;
+		case 5206://播放失败
+			//showOverMain("视频打开失败");
+			return 0;
+			break;
+		case 5225:
+			var p2 = event.modifiers;
+			if(p2 == 500 || p2 == 503 || p2 == 404){
+				var text = "播放失败 5225:"+p2;
+				showOverMain(text);
+			}
+			//alert("5225:"+p2);
+			return 0;
+			break;
+		case 5226:
+			hiddenOverMain();
+			return 0;
+			break;
+		case 5227:
+			showOverMain("数据连接失败");
+			return 0;
+			break;
+		case 5210://播放完毕
+			showOverOk("节目播放完毕,3秒后退出");
+			playFlag = false;
+			setTimeout(function(){window.location.href = "../movie.htm";},3000);
+			return 0;
+			break;
+	}
+        return 0;
+}
+
+function requestRTSPURL(){//请求json
+	//var ConvenienceURL = "http://218.185.196.69:8881/vip/jac.do?method=Menu&CAID="+CAID;
+	var ConvenienceURL = "http://218.185.196.69:8881/vip/jac.do?method=RtspUrl&CAID="+smartcardID+"&id="+videoID;
+	iPanel.debug("ConvenienceURL="+ConvenienceURL);
+	createXMLHttpRequest(ConvenienceURL,getObj);
+}
+
+function createXMLHttpRequest(__url,__callBack){
+	ajaxHttp=new XMLHttpRequest();
+	ajaxHttp.onreadystatechange = function(){
+		if(ajaxHttp.readyState == 4){
+			if(ajaxHttp.status == 200){
+				__callBack(ajaxHttp.responseText);
+			}
+		}
+	};
+	ajaxHttp.open("GET", __url, true);
+	ajaxHttp.send(null);
+}
+
+function getObj(__text){
+	//alert(__text);
+	var tempURL = __text;
+	var MAC = network.ethernets[0].MACAddress;
+	var curr_nodGroupID = Math.floor((VOD.server.nodeGroupId)/16);
+	var rtspURL = tempURL+"&ServiceGroup="+curr_nodGroupID+"&smartcard-id="+smartcardID+"&device-id="+smartcardID;
+	iPanel.debug("---------play.htm-------------init-------");
+	media.video.fullScreen();
+	iPanel.debug("---------play.htm-------------init-----0000--");
+	showPF(0);
+	iPanel.debug("---------play.htm-------------init---11----");
+	media.AV.open(rtspURL,"VOD");
+}
+
+function startSetup(){
+	//alert("videoPID="+videoPID);
+	//alert("videoPAID="+videoPAID);
+	//alert("videoName="+videoName);
+	//var rtspURL = "rtsp://10.5.0.179:554/60010000?";
+	//var rtspURL = "rtsp://10.50.10.52:554/60010000?";
+	//var rtspURL = "rtsp://172.30.64.25:554/60010000?";
+	var rtspURL = "rtsp://seachangecc.hunanitv.com:554/60010000?";
+	var transport = "MP2T/DVBC/QAM;unicast";
+	//var ServiceGroup = Math.floor((VOD.server.nodeGroupId)/32);
+	var ServiceGroup = 105;//按照演示现场的IPQAM直接写死
+	var DEVICEID = "8731203589241396";//需现场提供，或者使用60010000的applicationID跳过购买验证
+	var HOMEID = "310010095443";//
+	var client_mac = network.ethernets[0].MACAddress;
+	var ticketID = "6530138";
+	//var url=rtspURL + "asset=" + programs[current_program_pos].providerID + "#" + programs[current_program_pos].providerAssetID + "&transport=" + transport + "&ServiceGroup=" +  ServiceGroup +"&smartcard-id=" + DEVICEID + "&device-id=" + DEVICEID + "&home-id=" +  HOMEID + "&client_mac=" + client_mac + "&purchase-id=" + "&Longlink=no";
+	//var url = rtspURL + "asset=" + videoPID + "#" + videoPAID + "&transport=" + transport + "&ServiceGroup=" +  ServiceGroup +"&smartcard-id=" + DEVICEID + "&device-id=" + DEVICEID + "&home-id=" +  HOMEID + "&client_mac=" + client_mac + "&Longlink=no";
+	//var url = rtspURL + "asset=HN31#GTIT2012101710323614" + "&transport=" + transport + "&ServiceGroup=" +  ServiceGroup +"&smartcard-id=" + DEVICEID + "&device-id=" + DEVICEID + "&home-id=" +  HOMEID + "&client_mac=" + client_mac + "&Longlink=no";
+	var url = "rtsp://172.30.64.25:554/60010000?asset=GDJK#GDJK2016090616090101&transport=MP2T/DVBC/QAM;unicast&ServiceGroup=105&smartcard-id=8731202953056307&device-id=8731202953056307&home-id=360002098443&client_mac=2C-6E-85-CD-7D-05&Longlink=no"
+	iPanel.debug("URL = "+url);
+	media.video.fullScreen();
+	iPanel.debug("---------play.htm-------------init-----0000--");
+	showPF(0);
+	media.AV.open(url,"VOD");
+}
+
+function init(){
+	startSetup();
+}
+
+// 播放
+function play(){
+	opened=true;
+	media.AV.play();
+	//$("name").innerText = "正在播放："+iPanel.misc.interceptString(videoName,48);
+	if(videoName.indexOf("（高清）")>=0 || videoName.indexOf("（标清）")>=0){
+		iPanel.debug("include string HD or SD");
+	}
+	$("name").innerText = iPanel.misc.interceptString(videoName,48);
+	/*if(iPanel.misc.interceptString(videoName,24) == videoName){
+		$("name").innerHTML = "正在播放："+videoName;
+	}
+	else{
+		$("name").innerHTML = "<marquee behavior='scroll' width='440' startposition='90%'>" + "正在播放：" + videoName + "</marquee>";
+		
+	}*/
+	process();
+	setTimeout("getPlayTime()",3000);
+}
+
+function getPlayTime(){
+	playFlag = true;
+	currenttime = media.AV.elapsed;
+	totaltime = media.AV.duration;
+	showPF(1);
+	showCurrTime();
+}
+
+function showCurrTime(){
+	process();
+	currenttime = strTimeSplit(media.AV.elapsed);
+	$("currtime").innerHTML = '<font color="#FFFFFF">'+currenttime+'</font>/'+strTimeSplit(totaltime);
+	showTime = setTimeout("showCurrTime()",5000);
+}
+
+function strTimeSplit(sec){
+	iPanel.debug("play.htm----------strTimeSplit----------sec="+sec);
+	var tempSec = typeof(sec) =="undefined"?0:sec;
+	var h = Math.floor(tempSec/3600);
+	var m = Math.floor(tempSec/60)-h*60;
+	var s = tempSec - 60*m-3600*h;
+	if(h < 10)
+		h ="0"+h;
+	if(m <10)
+		m ="0"+m;
+	if(s <10)
+		s ="0"+s;
+	return h+":"+m+":"+s;
+}
+
+function show_track(){
+	var currTrack = "";
+	if(media.sound.mode) currTrack = media.sound.mode;
+	var change_currTrack;
+	if(currTrack == "stereo") change_currTrack ="left";
+	else if(currTrack == "left") change_currTrack ="right";
+	else if(currTrack == "right") change_currTrack = "stereo";
+	media.sound.mode = change_currTrack;
+	switch(change_currTrack){
+		case "stereo":
+			$("audio_mode").style.backgroundImage = "url(ui://sound0.png)";
+			$("audio_mode").style.visibility = "visible";
+			clearTimeout(TrackTimeout);
+			TrackTimeout = setTimeout("hideTrackVolumn()", 1500);
+			break;
+		case "left":
+			$("audio_mode").style.backgroundImage = "url(ui://sound1.png)";
+			$("audio_mode").style.visibility = "visible";
+			clearTimeout(TrackTimeout);
+			TrackTimeout = setTimeout("hideTrackVolumn()", 1500);
+			break;
+		case "right":
+			$("audio_mode").style.backgroundImage = "url(ui://sound2.png)";
+			$("audio_mode").style.visibility = "visible";
+			clearTimeout(TrackTimeout);
+			TrackTimeout = setTimeout("hideTrackVolumn()", 1500);
+			break;
+	}
+}
+
+function hideTrackVolumn(){
+	$("audio_mode").style.visibility = "hidden";
+}
+
+
+
+//重新播放
+function replay(){
+	media.AV.seek("0");
+}
+
+//快进
+function forwardPlay(n){
+	seekn +=n;
+	if(seekn>6)
+		seekn = 6;
+	$("playtext").innerText = "快进"+seekn+"倍速度播放";
+	media.AV.forward(seekn);
+}
+
+function doSelect(){
+	startus = media.AV.status;
+	if(startus == "play"){
+		media.AV.pause();
+		showAvStatus("pause");	
+	}else {
+		media.AV.play();
+	}	
+	seekn = 0;
+	
+	showPF(1);
+}
+
+function showAvStatus(sta){
+	iPanel.debug("play.htm-------------sta="+sta);
+	switch(sta){
+		case "play":
+			$("playflag").src = "play1.png";
+			$("next").src = "next.png";
+			$("pre").src = "previous.png";
+			$("playtext").innerText = "正常速度播放";
+			$("fastLogo").style.visibility = "hidden";
+			break;
+		case "pause":
+			$("playflag").src = "stop.png";
+			$("next").src = "next.png";
+			$("pre").src = "previous.png";
+			$("playtext").innerText = "暂停状态";
+			$("fastLogo").style.visibility = "hidden";
+			break;
+		case "forward":
+			$("next").src = "next1.png";//next1.png
+			$("pre").src = "previous.png";
+			$("playflag").src = "play.png";
+			$("playtext").innerText = "快进状态";
+			$("fastLogo").style.visibility = "visible";
+			$("fastLogo").innerText = "正在快进";
+			break;
+		case "backward":
+			$("next").src = "next.png";
+			$("pre").src = "previous1.png";//previous1.png
+			$("playflag").src = "play.png";
+			$("playtext").innerText = "快退状态";
+			$("fastLogo").style.visibility = "visible";
+			$("fastLogo").innerText = "正在快退";
+			break;
+	}
+}
+
+//快退
+function backwardPlay(num){
+	seekn +=num;
+	if(seekn > 6)
+		seekn = 6;
+	$("playtext").innerText = "快退"+seekn+"倍速度播放";
+	media.AV.backward(seekn);
+}
+
+//flag:1，显示，0：隐藏
+function showPF(flag){
+	iPanel.debug("play.htm---------------showPF-----flag="+flag);
+	clearTimeout(showPfTime);
+	pfInfo(flag);
+	if(flag == 1)
+		showPfTime = setTimeout(function(){pfInfo(0)},5000);
+}
+
+function  pfInfo(flag){
+	if(flag){
+		$("pf").style.webkitTransitionDuration ="200ms";
+		$("pf").style.webkitTransform = "scale(1)";
+	}else{
+		$("pf").style.webkitTransitionDuration ="200ms";
+		$("pf").style.webkitTransform = "scale(0)";
+	}
+}
+
+function process(){
+	var proce = media.AV.progress;
+	if(proce ==0 || typeof(proce)=="undefined")
+		proce = 127;
+	$("process").style.width = Math.floor(1000*proce/100)+"px";
+}
+
+function exitPage(){
+	if(opened) media.AV.close();
+}
+
+function showOverMain(str){
+	$("fastLogo").style.visibility = "hidden";
+	$("loading").style.visibility = "hidden";
+	$("overMain").style.visibility = "visible";
+	$("reminderText").innerText = str;
+	$("overMain").style.webkitTransitionDuration = "200ms";
+	$("overMain").style.webkitTransform = "scale(1)";
+}
+
+function hiddenOverMain(){
+	$("overMain").style.webkitTransitionDuration = "200ms";
+	$("overMain").style.webkitTransform = "scale(0)";
+}
+
+function showOverOk(str){
+	$("overok").style.visibility = "visible";
+	$("overokretext").innerText = str;
+	$("overok").style.webkitTransitionDuration = "200ms";
+	$("overok").style.webkitTransform = "scale(1)";
+}
+
+function hiddenOverOk(){
+	$("overok").style.webkitTransitionDuration = "200ms";
+	$("overok").style.webkitTransform = "scale(0)";
+}
+
+var volTimer = -1;
+function changeVolume(__num){
+	//$("volumeBox").style.visibility = "visible";
+	//alert(__num)
+	window.clearTimeout(volTimer);
+	showVolBox();
+	vol = media.sound.value;
+	if(vol==100&&__num>0)return;
+	if(vol==0&&__num<0)return;
+	vol+=__num*4;
+	if(vol<0)vol=0;
+	if(vol>100)vol=100;
+	media.sound.value = vol;
+	$("vol").style.width = Math.floor(vol/100*522)+"px";
+	$("volNum").innerText = Math.floor(vol/4);
+	volTimer = window.setTimeout("hideVolBox()",3000);
+	/*var volumeWidget = iPanel.pageWidgets.getByName("volume");
+	iPanel.debug("----changeVolume---"+typeof(volumeWidget));
+	volumeWidget.show();*/
+}
+
+function showVolBox(){
+	$("volumeBox").style.visibility = "visible";
+	//alert($("volumeBox").style.visibility)
+}
+
+function hideVolBox(){
+	$("volumeBox").style.visibility = "hidden";
+}
+
+function $(id){
+	return document.getElementById(id);
+}
+</script>
+</head>
+
+<body leftmargin="0" topmargin="0" bgcolor="transparent" style="width:1280px; height:720px; top:0px; left:0px;" onUnload="exitPage()" onLoad="init()">
+<div id="fastLogo" style="position:absolute; left:961px; top:42px; width:270px; height:67px; background-image:url(tck_bg.png); text-align:center; line-height:67px; color:#FFFFFF; font-size:32px; visibility:hidden;">正在快进</div>
+<!--loading-->
+<div id="loading" style="position:absolute; left:0px; top:0px; width:1280px; height:720px; background-color:#000000; z-index:1">
+<div style="position:absolute; left:580px; top:300px; height:120px; width:120px;"><img src="ui://loadingIcon.gif" width="120" height="120" /></div>
+<div style="position:absolute; left:520px; top:430px; height:40px; width:240px; color:#FFFFFF; font-size:32px; text-align:center;">正在请求测试视频</div>
+</div>
+<div style="position:absolute; left:290px; top:229px; height:261px; width:699px; background-image: url(tck.png); visibility: hidden;" id="overMain">
+  <div style="position:absolute; left:74px; top:5px; width:550px; height:40px; text-align:center; color:#FFFF00; font-size:39px;">温 馨 提 示</div>
+  <div style="position:absolute; left:74px; top:75px; height:151px; width:550px;">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="34%" height="55"><img src="wrong.png" width="144" height="145" hspace="5" /></td>
+        <td width="66%" align="center" style="font-size:48px; color:#ffffff;" id="reminderText">操作失败</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div style="position:absolute; left:290px; top:229px; height:261px; width:699px; background-image: url(tck.png); visibility: hidden;" id="overok">
+  <div style="position:absolute; left:74px; top:59px; height:151px; width:550px;">
+    <table width="100%" border="0"  height="100%"cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="100%" align="center" style="font-size:48px; color:#ffffff;" id="overokretext">播放完毕</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div style="position:absolute; left:15px; top:594px; height:75px; width:1249px; background-image: url(pf_bg.png);" id="pf">
+<div style="position:absolute; left:154px; top:-5px; height:11px; width:217px;" id="process"><img src="bar.png" width="100%" height="11" /></div>
+<div style="position:absolute; left:548px; top:19px; height:36px; width:40px;"><img src="previous.png" width="40" height="36" id="pre" /></div>
+<div style="position:absolute; left:596px; top:2px; height:70px; width:70px;"><img src="play1.png" width="70" height="70" id="playflag"/></div>
+<div style="position:absolute; left:674px; top:19px; height:36px; width:40px;"><img src="next.png" width="40" height="36" id="next"/></div>
+<div style="position:absolute; left:0px; top:0px; height:72px; width:1152px;">
+    <table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="539" height="50" valign="middle" style="font-size:20px; color:#f5fbff; padding-left:5px;" id="name">正在播放：</td>
+          <td width="272" rowspan="2">&nbsp;</td>
+          <td width="440" align="right" valign="bottom" style="font-size:22px; color:#ffffff;"></td>
+        </tr>
+        <tr style="font-size:18px; color:#92c1c8;">
+          <td align="right" valign="bottom" id="currtime"><font color="#FFFFFF">00:00</font>/00:00</td>
+          <td valign="bottom" id="playtext">正常速度播放</td>
+        </tr>
+      </table>
+     </div>
+</div>
+<div id="volumeBox" style="position:absolute; left:300px; top:540px; width:680px; height:58px; background:url(audio_bg.png) no-repeat; z-index:6; visibility:hidden;">
+<div style="position:absolute; left:59px; top:13px; width:542px; height:27px;"><img src="audio_bar1.gif" width="10" height="27"><img id="vol" src="audio_bar2.gif" width="10" height="27"><img src="audio_bar3.gif" width="10" height="27"></div>
+
+<div style="position:absolute; left:605px; top:9px; width:60px; height:34px; line-height:34px; text-align:center; font-size:28px; color:#11476A" id="volNum"></div>
+</div>
+
+<div id="audio_mode" style="position:absolute; width:129px; height:164px; left:1087px; top:22px; background-image:url(sound0.png); visibility: hidden;"></div>
+
+<div id="mute_icon" style="position:absolute; width:129px; height:164px; left:46px; top:22px; background-image:url(mute.png); visibility: hidden;"></div>
+</body>
+</html>

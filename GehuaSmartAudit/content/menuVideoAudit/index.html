@@ -1,0 +1,97 @@
+<link rel="stylesheet" href="content/menuVideoAudit/index.css">
+<div class="menuVideoAudit" id="menuVideoAudit">
+    <div class="menuVideoAudit_content">
+        <div class="menuVideoAudit_header" style="z-index: 1">
+            <div class="header_options">
+                <div  class="left">
+                    <div class="left_left">
+                        <!--识别结果-->
+                        <div class="option">
+                            <div class="option_title">{{REVIEW_RECOGNITION_RESULT}}</div>
+                            <div class="option_content" id="menuVideoAudit_RecognitionResult">
+                            </div>
+                        </div>
+                        <!--内容类型-->
+                        <div class="option">
+                            <div class="option_title">{{REVIEW_CONTENT_TYPE}}</div>
+                            <div class="option_content" id="menuVideoAudit_ContentType">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left_reght">
+                        <div style="display:flex;">
+                            <!--审核结果-->
+                            <div class="option">
+                                <div class="option_title">{{REVIEW_AUDIT_RESULTS}}</div>
+                                <div class="option_content" id="menuVideoAudit_AuditResults">
+                                </div>
+                            </div>
+                            <!--日期范围-->
+                            <div class="option date_input" style="display:flex;">
+                                <div class="option_title">{{REVIEW_DATE_RANGE}}</div>
+                                <div class="option_content" id="Date_option_content">
+                                    <div id="menuVideoAudit_DataRange_start"></div>
+                                    <div style="display: inline-block;margin-left: 5px;margin-right: 5px;height: 30px;line-height: 30px;font-size: 12px;">—</div>
+                                    <div id="menuVideoAudit_DataRange_end"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display:flex;">
+                            <!--媒体名称-->
+                            <div class="MediaName">
+                                <div class="MediaName_title">{{REVIEW_MEDIA_NAME}}</div>
+                                <div class="MediaName_content">
+                                    <input id="menuVideoAudit_MediaName" class="menuVideoAudit_MediaName" name="menuVideoAudit_MediaName" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="middleLine"></div>
+                <div class="right">
+                    <!--查询-->
+                    <div id="menuVideoAudit_searchButton" class="menuVideoAudit_searchButton">
+                        <img src="image/runningStatistic/searchIcon.png">
+                        <div class="label">{{REVIEW_INQUIRE}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="menuVideoAudit_footer">
+            <div class="menuVideoAudit_title_header" id="menuVideoAudit_title_header">
+                <div class="left">
+                    <div class="title_">{{REVIEW_AUDIT_RESULTS_LIST}}</div>
+                    <div class="legend">
+                        <div class="legend_Pass">{{REVIEW_PASSED}}</div>
+                        <div class="legend_Suspect">{{REVIEW_SUSPECT}}</div>
+                        <div class="legend_Violation">{{REVIEW_VIOLATION}}</div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="right_tab" id="right_tab_poster">
+                        <img src="image/runningStatistic/right_tab_00.png" alt="节目海报">
+                    </div>
+                    <div class="right_tab" id="right_tab_list">
+                        <img src="image/runningStatistic/right_tab_03.png" alt="节目列表">
+                    </div>
+                </div>
+            </div>
+            <div class="menuVideoAudit_title_footer" id="menuVideoAudit_title_footer">
+                <div class="menuVideoAudit_table_content" id="menuVideoAudit_table_content">
+                    <div class="menuVideoAudit_table_content_poster" id="menuVideoAudit_table_content_poster"></div>
+                    <!--审核详情-海报展示-->
+                    <div class="menuVideoAudit_table_content_table" id="menuVideoAudit_table_content_table" style="display: none"></div>
+                    <!--审核详情-列表展示-->
+                </div>
+            </div>
+            <!--分页-->
+            <div class="menuVideoAudit_table_Pagination" id="menuVideoAudit_table_Pagination">
+                <div class="Pagination_total" id="Pagination_total">{{REVIEW_TOTAL}}<span>0</span>{{REVIEW_RESULTS}}</div>
+                <ul class="Pagination_page" id="Pagination_page"></ul>
+                <div class="Pagination_Capacity" id="Pagination_Capacity">{{REVIEW_SHOW_EVERY_PAGE}}
+                    <span class="selected">20</span>|<span>50</span>|<span>100</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

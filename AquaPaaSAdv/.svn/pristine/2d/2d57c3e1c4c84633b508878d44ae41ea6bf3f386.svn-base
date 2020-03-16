@@ -1,0 +1,23 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div class="panel_dialog_title_text">
+			{{ADPOS_DIALOG_TITLE_DELETE}}
+		</div>
+		<div class="panel_dialog_close popup_dialog_clear">
+
+		</div>
+	</div>
+	<div class="adPos_dialog_del_img">
+		
+	</div>
+	<div class="adPos_dialog_del_confirm_info">
+		
+	</div>
+	
+	<div class="panel_dialog_cancel popup_dialog_clear">
+		{{ADPOS_DIALOG_CANCEL}}
+	</div>
+	<div id="adPos_dialog_del_submit" class="panel_dialog_submit">
+		{{ADPOS_DIALOG_SUBMIT}}
+	</div>
+</div>

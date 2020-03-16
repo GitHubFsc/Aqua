@@ -1,0 +1,33 @@
+.common_mcsb_container_style .mCSB_inside > .mCSB_container {
+    margin-right: 2px;
+}
+.common_mcsb_container_style .mCSB_scrollTools .mCSB_draggerRail {
+    border-radius: 16px;
+    height: 100%;
+    margin: 0 auto;
+    width: 5px;
+		background-color:#e6eff2;
+}
+.common_mcsb_container_style .mCSB_scrollTools {
+    bottom: 0;
+    height: auto;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+}
+.common_mcsb_container_style .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #5391a6!important;
+}
+.common_mcsb_container_style .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar:hover {
+    background-color: #5391a6!important;
+}
+
+.common_mcsb_container_style .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	 border-radius: 2px;
+	 width:5px
+}
+.common_mcsb_container_style .mCSB_inside > .mCSB_container{
+	overflow: visible;
+}

@@ -1,0 +1,10 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div class="panel_dialog_title_text">{{ADPOS_ADMASTER_OPEN_CONFIRM}}</div>
+		<div class="panel_dialog_close" id="adPos_dialog_warn_close"></div>
+	</div>
+	<div class="adPos_dialog_warn_img"></div>
+	<div class="adPos_dialog_warn_msg">{{ADPOS_ADMASTER_CONFIRM_MSG}}</div>
+	<div class="panel_dialog_cancel" id="adPos_dialog_warn_cancel" style="right:144px;">{{ADPOS_ADMASTER_OPCANCEL}}</div>
+	<div id="adPos_dialog_warn_submit" class="panel_dialog_submit" style="right:34px;">{{ADPOS_ADMASTER_OPNEXT}}</div>
+</div>

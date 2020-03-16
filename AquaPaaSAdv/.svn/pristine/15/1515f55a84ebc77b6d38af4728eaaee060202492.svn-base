@@ -1,0 +1,190 @@
+<style>
+  .sucai_img_template_replaceImgDialog{
+    height: 573px;
+    border-bottom: 1px solid #E1E1E1;
+    display: flex;
+    padding-top: 15px;
+    box-sizing: border-box;
+  }
+  .sucai_img_template_replaceImgDialog .button{
+    width:92px;
+    height:32px;
+    border:1px solid #5C7D86;
+    box-sizing: border-box;
+    background: #5ca1c0;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  .sucai_img_template_replaceImgDialog .template_left{
+    width: 917px;
+    border-right: 1px solid #E1E1E1;
+    height: 100%;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_preview{
+    height: 506px;
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    position: relative;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_preview:after{
+    content: " ";
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    right: 5px;
+    height:0px;
+    width: calc(100% - 10px);
+    border-top: 1px solid #E1E1E1;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_preview .template_preview_content{
+    width: 886px;
+    height: 500px;
+    background: black;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_preview .template_preview_content img{
+    max-width: 100%;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_detail{
+    display: flex;
+    height: calc(100% - 506px);
+    align-items: center;
+    justify-content: center;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_detail .operateButtons{
+    height: 36px;
+    display: flex;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_detail .operateButtons .cbutton{
+    min-width: 42px;
+    height: 36px;
+    border: 1px solid #4488A7;
+    background: #a6d6e7;
+    background: -ms-linear-gradient(top, #a6d6e7, #479BC6);
+    background: -moz-linear-gradient(top,#a6d6e7,#479BC6);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#a6d6e7), to(#479BC6));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#a6d6e7), to(#479BC6));
+    background: -webkit-linear-gradient(top, #a6d6e7, #479BC6);
+    background: -o-linear-gradient(top, #a6d6e7, #479BC6);
+    display: flex;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_detail .operateButtons .cbutton img{
+    display: block;
+    width: 34px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_detail .operateButtons .cbutton .label{
+    display: block;
+    flex: 1;
+    /* margin-left: 3px; */
+    margin-right: 13px;
+    height: 36px;
+    line-height: 34px;
+    color: white;
+    font-size: 16px;
+    font-family: "微软雅黑";
+  }
+  .sucai_img_template_replaceImgDialog .template_left .template_detail .operateButtons .cbutton .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+
+  .sucai_img_template_replaceImgDialog .template_items{
+    flex:1;
+    height: 100%;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .mCSB_dragger_bar {
+    background-color: #55909E!important;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .mCSB_draggerRail {
+    background-color: #E6F0F1!important;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .detail_item{
+    font-size: 12px;
+    color: #989898;
+    padding-left: 10px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    line-height: 20px;
+    overflow: hidden;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .detail_item .title{
+    font-size: 14px;
+    color: #6b6b6b;
+    float: left;
+    padding-right: 10px;
+    height: 30px;
+    line-height: 30px;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .detail_item .content{
+    overflow: hidden;
+    font-size: 14px;
+    color: #6b6b6b;
+    line-height: 18px;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .detail_item .content input{
+    width: calc(100% - 75px);
+    outline: none;
+    height: 30px;
+    line-height: 28px;
+    padding-left: 10px;
+    border: 1px solid #E2E2E2;
+    color: #6b6b6b;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .detail_item .content input[readonly]{
+    background: #ECECEC;
+  }
+  .sucai_img_template_replaceImgDialog .template_items .detail_item .content span{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 10px;
+  }
+</style>
+<div class="sucai_create_dialog">
+  <div class="sucai_dialog_title">
+    <div class="sucai_dialog_title_text" id = "sucai_img_template_dialog">
+      {{SUCAITEMPLATE_EDITTEMPLATE}}
+    </div>
+    <div id="replaceImgDialog_close" class="sucai_dialog_close popup_dialog_clear_">
+    </div>
+  </div>
+  <div class="sucai_img_template_replaceImgDialog">
+    <div class="template_left">
+      <div class="template_preview">
+        <div class="template_preview_content"></div>
+      </div>
+      <div class="template_detail">
+        <div class="operateButtons">
+          <div class="cbutton operate" data-type="zoomout" style="margin-right: 10px;"><img src="./image/sucai/template/zoomout.png"/></div>
+          <div class="cbutton operate" data-type="zoomin" style="margin-right: 35px;"><img src="./image/sucai/template/zoomin.png"/></div>
+          <label class="cbutton" for="replaceImgDialog_inputImage" style="margin-right: 35px;">
+            <input class="sr-only" type="file" style="" id="replaceImgDialog_inputImage" name="file" accept="image/*">
+            <img src="./image/sucai/template/upload.png"/>
+            <div class="label">{{SUCAITEMPLATE_CHOOSEIMAGE}}</div>
+          </label>
+          <div class="cbutton operate" data-type="anticlockwise" style="margin-right: 10px;"><img src="./image/sucai/template/anticlockwise.png"/></div>
+          <div class="cbutton operate" data-type="clockwise"><img src="./image/sucai/template/clockwise.png"/></div>
+        </div>
+      </div>
+    </div>
+    <div class="template_items"></div>
+  </div>
+  <div class="sucai_dialog_create_opition">
+    <div class="option_bottom  popup_dialog_clear_">{{SUCAI_QUXIAO}}</div>
+    <div id="replaceImgDialog_confirm" class="option_bottom confirm_bottom">{{SUCAI_QUEREN}}</div>
+  </div>
+</div>

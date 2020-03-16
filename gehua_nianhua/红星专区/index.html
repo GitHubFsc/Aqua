@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="Cache-Control" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+	<title>ylsh</title>
+	<script type="text/javascript">
+		var fileTime = new Date().getTime();
+
+		function loadStyle(){
+			var styles = [
+				'style/common.css',
+				'style/index.css'
+			];
+
+			for(var i = 0, len = styles.length; i < len; i+=1){
+				document.write('<link rel="stylesheet" type="text/css" href="' + styles[i] + '?t='+ fileTime +'" />');
+			}
+		}
+
+		function loadScript(){
+			var jses = [
+				'config.js',
+				'js/app.js',
+				'js/common/endecodebase64.js',
+				'js/common/sha1.js',
+				'js/common/keyvalue.js',
+				'js/common/util.js',
+				'js/my.paas.js',
+				'js/my.storage.js',
+				'js/vtil.js',
+				'js/index.js',
+				'../bigdata/reportData.js',
+				'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js'
+			];
+
+			for(var i = 0, len = jses.length; i < len; i+=1){
+				document.write('<script type="text/javascript" src="' + jses[i] + '?t=' + fileTime + '"><\/script>');
+			}
+		}
+
+		loadStyle();
+		loadScript();
+
+	</script>
+	<script type="text/javascript">
+		if(navigator.userAgent.lastIndexOf('iPanel') > -1){
+			DeviceType = 3;
+			document.write('<script type="text/javascript" src="../bigdata/ipanel/collect.js?t='+ fileTime +'"><\/script>');
+		} else {
+			DeviceType = 1;
+			if(typeof CyberCloud != 'undefined'){
+				DeviceType = 2;
+			}
+			document.write('<script type="text/javascript" src="http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js?t='+ fileTime +'"><\/script>');
+			document.write('<script type="text/javascript" src="../bigdata/stream/collect.js?t=' + fileTime + '"><\/script>');
+		}
+	</script>
+</head>
+<body onload="init()">
+	<div class="app">
+		<div id="tab_focus"></div>
+		<div id="tab_0" class="invisible"><img src="" alt="" id="poster_0" class="vid_poster"/></div>
+		<div id="tab_1" class="invisible"><img src="" alt="" id="poster_1" class="vid_poster"/></div>
+	</div>
+<!--
+	<div id="logBackground"></div>
+	<div id="log"></div>
+-->
+</body>
+</html>

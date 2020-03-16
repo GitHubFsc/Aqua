@@ -1,0 +1,14 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label" id="user-group-admin-user-dialog-title"></div>
+    <div class="wp_panel_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="wp_panel_dialog_content">
+    <div style="width:80%;margin:20px auto;">
+      <div><label for="" class="user-admin-layout-label">{{USERTAG_USERTAGNAME}}</label></div>
+      <div><input type="text" class="user-admin-layout-in" id="user-group-admin-user-name"/></div>
+    </div>
+    <div class="lecture_recommend_dialog_cancel popup_dialog_clear" id="user-group-admin-user-dialog-title-admin-dialog-cancel" style="right:187px;bottom:18px;">{{USERGROUP_QUXIAO}}</div>
+    <div class="lecture_recommend_dialog_submit" id="user-group-admin-dialog-submit" style="right:16px;bottom:18px;"></div>
+  </div>
+</div>

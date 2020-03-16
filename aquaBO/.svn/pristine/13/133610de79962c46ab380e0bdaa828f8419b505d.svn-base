@@ -1,0 +1,75 @@
+﻿<div id="pageAllContainer" class="pageAllContainer" style="font-size:14px;height:100%">
+	<div class="pageTitleContainer">
+		<div class="pageTitleContainerTitleDiv">多人详单</div>
+		<div id = "BatchQuery_Bottom" alt="newQuery" class="pageTitleContainerRightButt" onclick="batchQuery.openQueryWin(this)">新查询</div>
+	</div>
+	<div id="pageAllBody" class="pageAllBodyContainer">
+		<div class="pageAllBodyContainerTitle">
+			<div class="ContainerTitleLeftTitle">查询条件:</div>
+			<div style="float:left" name='requestPanel'></div>
+		</div>
+		<table class="brodecastRecordTable" style="position:relative;top:5px;">
+			<thead>
+				<td width="10%">帐号编号</td>
+				<td width="6%">账户名称</td>
+				<td width="6%">智能卡号</td>
+				<td width="6%">影片名称</td>
+				<td width="6%">购买时间</td>
+				<td width="6%">发生金额</td>
+				<td width="10%">开始时间</td>
+				<td width="10%">结束时间</td>
+				<td width="4%">时长</td>
+				<td width="8%">产品信息</td>
+				<td width="8%">剧集信息</td>
+				<td width="8%">PID</td>
+				<td width="6%">PAID</td>
+				<td width="6%">URL</td>
+			</thead>
+		</table>
+		<div id="resultTable" style="position:relative;top:5px;right:0px;bottom:0px;left:0px;">
+			<!-- <table class="brodecastRecordTable">
+				<tbody>
+					<tr>
+						<td width="12%">&nbsp;</td><td width="12%">&nbsp;</td><td width="12%">&nbsp;</td><td width="12%">&nbsp;</td><td width="12%">&nbsp;</td><td width="12%">&nbsp;</td><td width="12%">&nbsp;</td><td width="16%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table> -->
+		</div>
+	</div>
+</div>

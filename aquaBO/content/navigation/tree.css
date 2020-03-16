@@ -1,0 +1,29 @@
+/* #nav_tree li span.button {background-size: 320px 194px;} */
+#nav_tree li span.button.switch.level0 {width: 0px;}
+/* #nav_tree li .level0 span.button.ico_open {width: 0px;} */
+#nav_tree li ul.level0 {padding-left: 0;}
+#nav_tree li ul {padding-left: 34px;}
+#nav_tree li ul.line {background: url(../../images/tree/line_conn.gif) 14px 0 repeat-y;}
+
+#nav_tree li > a.level0 {width: 100%}
+#nav_tree li > a.level0 > .node_del {visibility: hidden;}
+#nav_tree li > a {display: inline-block;width: calc(100% - 34px);height: 38px;border: 1px solid #e2e2e2;text-decoration: none;position: relative;}
+#nav_tree li a > .node_del {background-image: url(../../images/navigation/node_del.png);background-position: center;background-repeat: no-repeat;width: 18px;height: 18px;position: absolute;top: calc(50% - 9px);right: 9px;}
+#nav_tree li a.curSelectedNode {background-color: #80daf1;}
+#nav_tree li a.curSelectedNode > span.node_name {color: #fff;}
+#nav_tree li a.curSelectedNode > .node_del {background-image: url(../../images/navigation/node_del_white.png);}
+#nav_tree li span{height: 38px;display: inline-block;line-height: 38px;}
+#nav_tree li span.button {height: 38px;width: 34px;background-image: url(../../images/tree/tree.png);}
+
+/* #nav_tree li a.curSelectedNode {background-color: #80daf1;border: none;} */
+
+
+/* #nav_tree li span.button {width: 36px;height: 36px;} */
+/* #nav_tree li span.button.center_docu {background-position: -112px -36px;}
+#nav_tree li span.button.center_open {background-position: -184px -36px;} */
+#nav_tree li span.button.ico_open {background-position: -112px -34px;}
+#nav_tree li span.button.ico_close {background-position: -112px 0px;}
+#nav_tree li span.button.center_open {background-position: -79px -30px}
+#nav_tree li span.button.center_close {background-position: -45px -30px;}
+#nav_tree li span.button.bottom_open {background-position: -79px -66px;}
+#nav_tree li span.button.bottom_close {background-position: -45px -66px;}

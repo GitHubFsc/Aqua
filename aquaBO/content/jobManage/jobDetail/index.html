@@ -1,0 +1,161 @@
+<div class="options_conent">
+  <div class="left">
+    <div class="option">
+      <div class="option_title"><span class="regist-star">*</span>{{JOBMANAGE_JOBTYPE}}</div>
+      <div class="option_content">
+        <input id="job_type" class="option_content_input" value="{{JOBMANAGE_JOBTYPE_USER}}" readonly style="width:164px"/>
+      </div>
+    </div>
+    <div class="option" id="option_job_name">
+      <div class="option_title"><span class="regist-star">*</span>{{JOBMANAGE_JOBNAME}}</div>
+      <div class="option_content">
+        <input id="job_name" class="option_content_input"  style="width:295px"/>
+      </div>
+    </div>
+    <div class="option" id="option_job_isTiming">
+      <div class="option_title"><span class="regist-star">*</span>{{JOBMANAGE_ISTIMING}}</div>
+      <div class="option_content">
+        <div id="job_isTiming"></div>
+      </div>
+    </div>
+    <div class="option" id="option_job_schedule">
+      <div class="option_title"><span class="regist-star">*</span>Schedule</div>
+      <div class="option_content">
+        <div id="job_schedule"></div>
+      </div>
+    </div>
+    <div id="option_job_schedule_crontab">
+      <span class="regist-star">*</span>
+      <div class="container month">
+        <div class="item" data-value="1">{{JOBMANAGE_MONTH_1}}</div>
+        <div class="item" data-value="2">{{JOBMANAGE_MONTH_2}}</div>
+        <div class="item" data-value="3">{{JOBMANAGE_MONTH_3}}</div>
+        <div class="item" data-value="4">{{JOBMANAGE_MONTH_4}}</div>
+        <div class="item" data-value="5">{{JOBMANAGE_MONTH_5}}</div>
+        <div class="item" data-value="6">{{JOBMANAGE_MONTH_6}}</div>
+        <div class="item" data-value="7">{{JOBMANAGE_MONTH_7}}</div>
+        <div class="item" data-value="8">{{JOBMANAGE_MONTH_8}}</div>
+        <div class="item" data-value="9">{{JOBMANAGE_MONTH_9}}</div>
+        <div class="item" data-value="10">{{JOBMANAGE_MONTH_10}}</div>
+        <div class="item" data-value="11">{{JOBMANAGE_MONTH_11}}</div>
+        <div class="item" data-value="12">{{JOBMANAGE_MONTH_12}}</div>
+      </div>
+      <div class="container">
+        <div class="oddeven">
+          <div class="item" data-type="odd">{{JOBMANAGE_ODD}}</div>
+          <div class="item" data-type="even">{{JOBMANAGE_EVEN}}</div>
+        </div>
+        <div class="week">
+          <div class="item" data-value="0">{{JOBMANAGE_WEEK0}}</div>
+          <div class="item" data-value="1">{{JOBMANAGE_WEEK1}}</div>
+          <div class="item" data-value="2">{{JOBMANAGE_WEEK2}}</div>
+          <div class="item" data-value="3">{{JOBMANAGE_WEEK3}}</div>
+          <div class="item" data-value="4">{{JOBMANAGE_WEEK4}}</div>
+          <div class="item" data-value="5">{{JOBMANAGE_WEEK5}}</div>
+          <div class="item" data-value="6">{{JOBMANAGE_WEEK6}}</div>
+        </div>
+      </div>
+      <div class="container day">
+        <div class="row">
+          <div class="item" data-value="1">1</div>
+          <div class="item" data-value="2">2</div>
+          <div class="item" data-value="3">3</div>
+          <div class="item" data-value="4">4</div>
+          <div class="item" data-value="5">5</div>
+          <div class="item" data-value="6">6</div>
+          <div class="item" data-value="7">7</div>
+          <div class="item" data-value="8">8</div>
+          <div class="item" data-value="9">9</div>
+          <div class="item" data-value="10">10</div>
+          <div class="item" data-value="11">11</div>
+          <div class="item" data-value="12">12</div>
+        </div>
+        <div class="row">
+          <div class="item" data-value="13">13</div>
+          <div class="item" data-value="14">14</div>
+          <div class="item" data-value="15">15</div>
+          <div class="item" data-value="16">16</div>
+          <div class="item" data-value="17">17</div>
+          <div class="item" data-value="18">18</div>
+          <div class="item" data-value="19">19</div>
+          <div class="item" data-value="20">20</div>
+          <div class="item" data-value="21">21</div>
+          <div class="item" data-value="22">22</div>
+          <div class="item" data-value="23">23</div>
+          <div class="item" data-value="24">24</div>
+        </div>
+        <div class="row">
+          <div class="item" data-value="25">25</div>
+          <div class="item" data-value="26">26</div>
+          <div class="item" data-value="27">27</div>
+          <div class="item" data-value="28">28</div>
+          <div class="item" data-value="29">29</div>
+          <div class="item" data-value="30">30</div>
+          <div class="item" data-value="31">31</div>
+          <div class="item" data-value=""> </div>
+          <div class="item" data-value=""> </div>
+          <div class="item" data-value=""> </div>
+          <div class="item" data-value=""> </div>
+          <div class="item" data-value=""> </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="option" style="margin-bottom: 0px;">
+          <div class="option_content">
+            <div class="hour_minute">
+              <div class="hour">
+                <input id="option_job_schedule_crontab_hour" class="option_content_input" value="" style="width:67px"/>
+              </div>
+              <div class="unit">{{JOBMANAGE_HOUR}}</div>
+              <div class="minute">
+                <input id="option_job_schedule_crontab_minute" class="option_content_input" value="" style="width:67px"/>
+              </div>
+              <div class="unit">{{JOBMANAGE_MINUTE}}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="option_job_schedule_interval" style="display: none">
+      <div class="option">
+        <div class="option_title"></div>
+        <div class="option_content">
+          <div class="interval_container">
+            <span class="regist-star">*</span>
+            <div style="width: 43px">{{JOBMANAGE_EVERYTIME}}</div>
+            <div style="width: 116px">
+              <input id="option_job_schedule_interval_every" class="option_content_input" value="" style="width:102px"/>
+            </div>
+            <div id="option_job_schedule_interval_period"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="option" id="option_job_taskType">
+      <div class="option_title"><span class="regist-star">*</span>{{JOBMANAGE_TASKTYPE}}</div>
+      <div class="option_content" style="width:calc(100% - 160px - 150px)">
+        <div id="job_taskType"></div>
+      </div>
+      <div class="option_title"><span class="regist-star">*</span>超时时间</div>
+      <div class="option_content" style="width:100px">
+        <input id="job_timeout" class="option_content_input" type="number" style="width: 92px"/>
+      </div>
+      <div class="option_title" style="width:50px;">分钟</div>
+    </div>
+  </div>
+  <div class="right">
+    <div class="task_list_head" id="option_job_tasks">
+      <div class="title"><span class="regist-star">*</span>{{JOBMANAGE_TASKLIST}}</div>
+      <div id="createNewTaskButton" class="button">{{JOBMANAGE_ADDTASK}}</div>
+    </div>
+    <div class="task_list_body" id="task_list_container">
+      <div class="background" ></div>
+    </div>
+  </div>
+</div>
+<div class="bottom">
+  <div class="jobManage_task_button" id="jobManage_task_updatebutton" style="display:none;background: #2fa2d8;">{{JOBMANAGE_UPDATE}}</div>
+  <div class="jobManage_task_button" id="jobManage_task_savebutton" style="display:none;background: #2fa2d8;">{{JOBMANAGE_SAVE}}</div>
+  <div class="jobManage_task_button" id="jobManage_task_cancelbutton" style="display:none;">{{LECTURETICKET_QUNBSPNBSPXIAO}}</div>
+</div>

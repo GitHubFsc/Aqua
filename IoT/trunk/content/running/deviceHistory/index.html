@@ -1,0 +1,414 @@
+<link rel="stylesheet" href="./style/dialog.css">
+<style type="text/css">
+  #deviceHistory .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  #deviceHistory .mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #e8edef;
+  }
+  #deviceHistory .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  #deviceHistory .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  #deviceHistory .mCSB_inside > .mCSB_container {
+    margin-right: 0px;
+  }
+  #deviceHistory .page-rel-content {
+    position: relative;
+    width: 100%;
+    background-color: #F5F5F5;
+    padding-top: 4px;
+    padding-bottom: 25px;
+  }
+  #deviceHistory .day-sum-block {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 13px;
+    background-color: #fff;
+    box-shadow: 0 0 2px 2px #ededed;
+  }
+  #deviceHistory_option_DataRange_start, #deviceHistory_option_DataRange_end {
+    position: relative;
+    width: 135px;
+    height: 30px;
+    display: inline-block;
+    z-index: 99;
+    color: #848484;
+  }
+  #deviceHistory_option_DataRange_start input, #deviceHistory_option_DataRange_end input {
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    font-size: 14px;
+    outline: none;
+    border-radius: 4px;
+  }
+  #deviceHistory_option_DataRange_start-datepicker-calendar {
+    width: 250px;
+  }
+  #deviceHistory_option_DataRange_end-datepicker-calendar {
+    width: 250px;
+  }
+  #deviceHistory .calendar_month_label{
+    height:40px;
+    line-height: 40px;
+  }
+  #deviceHistory .back_forw_month_container{
+    margin-top: 5px;
+  }
+  #deviceHistory .day-sum-block .options {
+    padding: 16px 16px;
+    background-color: #ffffff;
+    height: 135px;
+    color: #727272;
+    box-sizing: border-box
+  }
+  #deviceHistory .day-sum-block .options .left {
+    width: calc(100% - 129px);
+    float: left;
+    height: 103px;
+    font-size: 0px;
+    line-height: 0px;
+    padding-left: 10px;
+    padding-top: 8px;
+  }
+  #deviceHistory .day-sum-block .options .left .option {
+    width: 33%;
+    font-size: 0px;
+    display: inline-block;
+    height:30px;
+    line-height: 0px;
+    margin-bottom: 24px;
+  }
+  #deviceHistory .day-sum-block .options .left .option .option_title {
+    text-align: left;
+    width: 75px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  #deviceHistory .day-sum-block .options .left .option .option_content {
+    width: calc(100% - 150px);
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+  }
+  #deviceHistory .day-sum-block .options .left .option .option_content .option_content_input{
+    width: 100%;
+    height: 30px;
+    line-height: 28px;
+    padding-left: 5px;
+    border: 1px solid #CECDCB;
+    outline: none;
+    color: #797979;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor: auto;
+  }
+  #deviceHistory .day-sum-block .options .left .option .option_content .option_content_input[readonly] {
+    background: #EBEBEB;
+  }
+
+  #deviceHistory .day-sum-block .options .middleLine {
+    width: 1px;
+    background-color: #eaeaea;
+    float: left;
+    height: 103px
+  }
+  #deviceHistory .day-sum-block .options .right {
+    width: 118px;
+    float: left;
+    position: relative;
+  }
+  #deviceHistory .day-sum-block .options .right .searchButton{
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+    color:#ffffff;
+    width:100px;
+    height:61px;
+    line-height:61px;
+    background-color:#2dbce8;
+    border:2px #11a8d7 solid;
+    position: absolute;
+    top: 37px;
+    right: 3px;
+  }
+  #deviceHistory .day-sum-block .options .right .searchButton img{
+    margin-left: 13px;
+    margin-top: 20px;
+    float: left
+  }
+  #deviceHistory .day-sum-block .options .right .searchButton .label{
+    height: 38px;
+    line-height: 38px;
+    margin-left: 8px;
+    font-size: 19.76px;
+    font-weight: bold;
+    font-family: '微软雅黑';
+    float: left;
+    height: 61px;
+    line-height: 61px
+  }
+
+  #deviceHistory .checkbox_container {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    margin-right: 40px;
+  }
+  #deviceHistory .checkbox_container .checkbox {
+    font-size: 0;
+    height: 30px;
+    position: relative;
+    width: 25px;
+    margin-right: 5px;
+    float: left;
+    line-height: 30px;
+  }
+  #deviceHistory .checkbox_container .checkbox:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  #deviceHistory .checkbox_container .checkbox input {
+    display: none;
+  }
+  #deviceHistory .checkbox_container .checkbox label {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background: white;
+    border: 1px solid #ddd;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+  }
+  #deviceHistory .checkbox_container .checkbox label:after {
+    opacity: 0.2;
+    content: '\2002';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: grey;
+    top: 2px;
+    left: 2px;
+  }
+  #deviceHistory .checkbox_container .checkbox label:hover::after {
+  }
+  #deviceHistory .checkbox_container .checkbox input:checked + label:after {
+    background: #32BEEA;
+    opacity: 1;
+  }
+  #deviceHistory .checkbox_container .checkbox input[type=checkbox] + label {
+    border-radius: 0px;
+  }
+  #deviceHistory .checkbox_container .checkbox input[type=checkbox] + label:after {
+    border-radius: 0px;
+  }
+  #deviceHistory .checkbox_container .checkbox input[type=radio] + label {
+    border-radius: 7px;
+  }
+  #deviceHistory .checkbox_container .checkbox input[type=radio] + label:after {
+    border-radius: 6px;
+  }
+  #deviceHistory .checkbox_container .checkboxLabel {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    color: #828282;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 30px)
+  }
+
+  #option_content_deviceType{
+    margin-bottom: -10px;
+  }
+  #option_content_deviceType:empty{
+    margin-bottom: 0px;
+  }
+  #option_content_grouping{
+    margin-bottom: -10px;
+  }
+  #option_content_grouping:empty{
+    margin-bottom: 0px;
+  }
+  #option_content_deviceType .checkbox_container {
+    min-width: 80px;
+    margin-bottom: 10px;
+  }
+  #option_content_grouping .checkbox_container {
+    min-width: 80px;
+    margin-bottom: 10px;
+  }
+
+  #deviceHistory .search_result{
+    font-size: 14px;
+    background: #FFFFFF;
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    box-shadow: 0 0 2px 2px #ededed;
+  }
+  #deviceHistory .search_result .title_head{
+    width: 100%;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    height: 53px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E8E8E8;
+    background: #FBFBFB;
+    display: flex;
+  }
+  #deviceHistory .search_result .title_head .left{
+    width: calc(100% - 180px);
+    display: flex;
+  }
+  #deviceHistory .search_result .title_head .title_ {
+    font-family: 微软雅黑;
+    line-height: 30px;
+    font-size: 14px;
+    color: #777777;
+    position: relative;
+    padding-left:13px;
+    margin-left: 19px;
+  }
+  #deviceHistory .search_result .title_head .title_::before {
+    content: " ";
+    position: absolute;
+    width: 8px;
+    left: 0px;
+    top: 7px;
+    bottom: 7px;
+    background: #1EC3EC;
+    border: 1px solid #E9E9E9;
+    box-sizing: border-box;
+  }
+  #deviceHistory .search_result .title_head .right {
+    width: 192px;
+    display: flex;
+  }
+  #deviceHistory .search_result .title_head .time_button {
+    height: 30px;
+    line-height: 28px;
+    border: 1px solid #EAEFF0;
+    border-radius: 5px;
+    color: #808FA4;
+    font-size: 12px;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    background:white;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #deviceHistory .search_result .title_head .time_button.focus {
+    border: 1px solid #FFB014;
+    color: white;
+    background: #FFB014;
+  }
+  #deviceHistory .search_result .search_result_content{
+    width: 100%;
+    height: 465px;
+  }
+  #deviceHistory .search_result .search_result_content .content{
+    margin: 13px 9px;
+    font-size: 12px;
+  }
+  #deviceHistory .search_result .search_result_content .mCSB_container .content{
+    margin: 13px 24px 13px 9px;
+  }
+
+</style>
+<div id="deviceHistory" class="page-rel-container">
+  <div class="page-rel-content">
+    <div class="day-sum-block" style="z-index: 1">
+      <div class="options">
+        <div class="left">
+          <div id="left_container">
+            <!--设备类型-->
+            <div class="option">
+              <div class="option_title">{{DEVICEDISTORY_DEVICETYPE}}</div>
+              <div class="option_content" id="deviceHistory_option_deviceType">
+              </div>
+            </div>
+            <!--DTU编号-->
+            <div class="option">
+              <div class="option_title">{{DEVICEDISTORY_DTUID}}</div>
+              <div class="option_content">
+                <input id="deviceHistory_option_DTUID"  class="option_content_input" name="deviceHistory_option_input" data-type="DTUID"/>
+              </div>
+            </div>
+            <!--DevEUI-->
+            <div class="option">
+              <div class="option_title">{{DEVICEDISTORY_DEVEUI}}</div>
+              <div class="option_content">
+                <input id="deviceHistory_option_DevEUI"  class="option_content_input" name="deviceHistory_option_input"  data-type="DevEUI"/>
+              </div>
+            </div>
+            <!--设备编号-->
+            <div class="option">
+              <div class="option_title">{{DEVICEDISTORY_DEVICEID}}</div>
+              <div class="option_content">
+                <input id="deviceHistory_option_DevID"  class="option_content_input" name="deviceHistory_option_input"  data-type="DevID"/>
+              </div>
+            </div>
+            <!--日期范围-->
+            <div class="option" style="width:66%">
+              <div class="option_title">{{DEVICEDISTORY_DATERANGE}}</div>
+              <div class="option_content">
+                <div id="deviceHistory_option_DataRange_start" style="display: inline-block"></div>
+                <div style="display: inline-block;margin-left: 5px;margin-right: 5px;height: 30px;line-height: 30px;font-size: 12px;">—</div>
+                <div id="deviceHistory_option_DataRange_end" style="display: inline-block"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="middleLine"></div>
+        <div class="right">
+          <div id="deviceHistory_searchButton" class="searchButton">
+            <img src="image/runningStatistic/searchIcon.png">
+            <div class="label">{{DEVICEDISTORY_SEARCH}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="search_result">
+      <div class="title_head" id="deviceHistory_result_title_head">
+        <div class="left">
+          <div class="title_">{{DEVICEDISTORY_DATAHISTORY}}</div>
+        </div>
+        <div class="right">
+        </div>
+      </div>
+      <div class="search_result_content" name="deviceHistory_result" data-type="table">
+        <div class="content" id="deviceHistory_result_table_content"></div>
+      </div>
+      <div class="search_result_content" name="deviceHistory_result" data-type="temperature" style="display: none">
+        <div class="content" style="height: 465px;" id="deviceHistory_result_temperature_content"></div>
+      </div>
+      <div class="search_result_content" name="deviceHistory_result" data-type="battery" style="display: none">
+        <div class="content" style="height: 465px;" id="deviceHistory_result_battery_content"></div>
+      </div>
+    </div>
+  </div>
+</div>

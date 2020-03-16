@@ -1,0 +1,115 @@
+.app{
+    overflow: hidden;
+}
+
+.app .mask{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+}
+.app .mask img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.grid_el {
+    width: 195px;
+    height: 278px;
+    position: absolute;
+    top: 387px;
+    left: 2000px;
+}
+
+.grid_el:nth-child(1) {
+    left: -142px;
+}
+
+.grid_el:nth-child(2) {
+    left: 85px;
+}
+
+.grid_el:nth-child(3) {
+    left: 314px;
+}
+
+.grid_el:nth-child(4) {
+    left: 543px;
+}
+
+.grid_el:nth-child(5) {
+    left: 770px;
+}
+
+.grid_el:nth-child(6) {
+    left: 997px;
+}
+
+.grid_el:nth-child(7) {
+    left: 1224px;
+}
+
+.grid_el.grid_focus {
+    width: 209px;
+    height: 298px;
+    top:372px;
+}
+
+.grid_el_txt {
+    position: absolute;
+    background: white;
+    color: black;
+    box-sizing: border-box;
+    width: 100%;
+    height: 39px;
+    background-size: 100%;
+    bottom: 0;
+    font-size: 22px;
+    line-height: 39px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: none;
+}
+
+.grid_el.grid_focus .grid_el_txt{
+    display: block;
+}
+
+
+img.poster {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.grid_el_poster {
+    width: 100%;
+    height: 100%;
+}
+
+.grid_el_poster>img {
+    /*border-radius: 3px;*/
+}
+
+.star_grid_focus {
+    border: 1px solid white;
+    position: absolute;
+    display: none;
+    width: 213px;
+    height: 302px;
+    top:369px;
+    left: 74px;
+}
+.star_grid_focus .star_grid_focus_inner{
+    border: 2px solid black;
+    width: 209px;
+    height: 298px;
+}
+
+
+.txt_marquee + .txt_marquee_placer {
+    display: none;
+}

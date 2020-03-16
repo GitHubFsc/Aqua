@@ -1,0 +1,17 @@
+* {margin: 0;padding: 0;list-style: none;}
+/* html {zoom: 0.5;border: 1px solid red;} */
+html, body {width: 1280px;height: 720px;}
+body {width: 1280px;position: relative;background-image: url(../resource/asset/bg_lv2.jpg);background-size: 100% 100%;}
+
+.pageturn {width: 116px;background-repeat: no-repeat;background-position: center;height: 100%;position: absolute;}
+.pageturn.up.active {background-image: url(../resource/asset/left.png);left: 23px;}
+.pageturn.down.active {background-image: url(../resource/asset/right.png);right: 23px;}
+
+.folder {position: absolute;width: 186px;height: 235px;background-size: 100% 100%;}
+.text {position: absolute;width: 186px;height: 22px;color: #9fa0a0;text-align: center;font-size: 18px;}
+.text.focus {color: #fff;}
+.folder.free .mask{background-image: url(../resource/asset/free.png);background-size: 43px 45px;background-position: right bottom;background-repeat: no-repeat;width: 43px;height: 45px;position: absolute;right: 0;bottom: 0;z-index: 1;}
+
+.page_info {width: 100%;height: 63px;text-align: center;color: #fff;font-size: 22px;line-height: 63px;opacity: 0.37;top: 630px;position: absolute;}
+
+#focus {transition-duration: 300ms;position: absolute;width: 203px;height: 251px;background-image: url(../resource/asset/focus.png);z-index: 1;-webkit-transition-duration: 300ms;display: none;background-repeat: no-repeat;}

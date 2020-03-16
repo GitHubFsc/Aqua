@@ -1,0 +1,136 @@
+*{margin: 0;padding: 0;}
+.adPolicyManageMenu input {outline: none;}
+.adPolicyManageMenu{display:-webkit-box;display:-ms-flexbox;display:flex;font-size: 16px;font-weight: bold;}
+.menu_split{width: 1px;height: 36px;margin: 14px 9px;background-color: #E9E9E9;}
+.policy_type{display: -webkit-box;display: -ms-flexbox;display: flex;text-align: center;line-height: 36px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.policy_type div[name=type]{height: 36px; border: 1px solid #D1D1D1; background: -moz-linear-gradient(center top , #F4F4F4, #E4E4E4); width: 88px; border-radius: 1px;cursor: pointer;color: #494B58;}
+.policy_type div.focus[name=type]{background: #75B8D6;border: 1px solid #4488A7;color: #FFFFFF;}
+.policy_type #policy_img{margin: 0px 0px 0px 9px;}
+.policy_type #policy_txt{margin: 0px 9px 0px 0px;}
+.policy_filter{display: -webkit-box;display: -ms-flexbox;display: flex;text-align: center;line-height: 36px;width: 130px;z-index: 1;}
+.policy_filter div#policy_filter{margin: 14px 9px;color: #494B58;position: relative;}
+.policy_status{display: -webkit-box;display: -ms-flexbox;display: flex;text-align: center;line-height: 36px;}
+.policy_status div#policy_state{margin: 14px 9px;color: #494B58;position: relative;}
+.policy_search{display: -webkit-box;display: -ms-flexbox;display: flex;padding: 0 5px;}
+.policy_search input::placeholder {color: #e2e2e2;padding-left: 5px;}
+.policy_search [name=policy_search]{height: 36px;margin: 14px 0px;padding: 0;border: 1px solid #EAEAEA;/*background-color: #F4F4F4;*/}
+.policy_search #policy_searchInput{width: 166;border-right: none;padding-left: 5px;}
+.policy_search #policy_searchBtn{width: 40px;border-left: none;background-image: url(../image/adPolicyManage/searchBtn.png);background-position: left center;background-repeat: no-repeat;cursor: pointer;}
+.policy_add{margin: 14px;height: 36px;border: 1px solid #8FC31F; background-color: #8FC31F; display: -webkit-box; display: -ms-flexbox; display: flex;cursor: pointer;padding-right: 5px;}
+.policy_add .policy_add_icon{height: 36px;width: 36px;background-image: url(../image/adPolicyManage/add.png);background-position: center;background-repeat: no-repeat;}
+.policy_add .policy_add_text{-webkit-box-flex: 1;-ms-flex: 1;flex: 1;line-height: 36px;color: #FFFFFF;}
+.policy_add .policy_choose_user {width: 21px;height: 100%;background-image: url(../image/down_arrow_white.png);background-position: center;position: relative;background-repeat: no-repeat;margin: 0 5px;}
+.policy_add .policy_choose_user.open {background-image: url(../image/up_arrow_white.png);}
+.policy_add .policy_choose_user.open > div {display: block;}
+.policy_add .policy_choose_user > div {position: absolute;width: 182px;height: 36px;line-height: 36px;text-align: right;padding-right: 10px;color: #727272;border: 1px solid #e2e2e2;top: 36px;z-index: 1;background-color: #fff;right: -6px;display: none;}
+.policy_add .policy_choose_user > div:hover {background-color: #6DBBE1;color: #fff;}
+.policy_add .policy_choose_user [name=adv] {top: 74px;border-top: none;}
+.adPolicyManageBody{position: absolute;top: 64px;left: 4px;right: 0px;bottom: 0px;border: 1px solid #EDEDDB;background-color: #FCFCF2;}
+.adPolicyManageBody #adPolicyManageTable{margin: 2px;position: absolute;top: 0px;left: 0px;right: 0px;bottom: 0px;}
+.adPolicyManageTable span{text-decoration: underline;margin: 0 3px;cursor: pointer;color: #3C94BB;}
+.adPolicyManageTable span.more::before {content: attr(name); background-image: url(../image/more_down_arrow.png);background-repeat: no-repeat;background-position: 34px center;padding-right: 20px;}
+
+.editDialog{background-color: #ffffff;border: 1px solid #76969F;position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;}
+.editDialog .select-status .select-header {font-size: 14px;text-indent: 6px;}
+.editDialog .select-status .select-content li {font-size: 14px;}
+.editDialogTitle{height: 33px;background-color: #5DA1C0;display: -webkit-box;display: -ms-flexbox;display: flex;}
+.editDialogTitleText{height: 33px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;line-height: 33px;font-size: 15px;color: #FFFFFF;padding-left: 12px;}
+.editDialogCloseBtn{width: 41px;height: 33px;cursor: pointer;background-image: url(../image/adPolicyManage/closeBtn.png);}
+.editDialogBody .controls {height: 36px;margin: 14px 0 19px;display: flex;justify-content: center;line-height: 36px;}
+.editDialogBody .controls .btn{height: 100%;width: 122px;text-align: center;cursor: pointer;border: 1px solid rgb(209, 209, 209);color: rgb(73, 75, 88);text-shadow: 0 -1px 0 rgb(1, 1, 1);background: linear-gradient(180deg, rgb(244, 244, 244) 0%, rgb(228, 228, 228) 100%);border-radius: 2px;font-size: 16px;font-family: 'Microsoft YaHei'}
+.editDialogBody .controls .btn.focus {border-color: rgb(68, 136, 167);background: linear-gradient(180deg, rgb(117, 184, 214) 0%, rgb(117, 184, 214) 100%);color: #fff;}
+.editDialogBody .info_pane {margin: 0 18px;border: 1px solid #e4e4e4;display: none;}
+.editDialogBody .row{height: 64px;display: -webkit-box;display: -ms-flexbox;display: flex;}
+.editDialogBody .row .column1{width: 382px;height: 100%;}
+.editDialogBody .row .column2{-webkit-box-flex: 1;-ms-flex: 1;flex: 1;height: 100%;}
+.editDialogBody .row .text{height: 12px;font-size: 12px;color: #727272;margin: 0 0 7px;}
+.column1,.column2{padding: 12px 0px 0px 13px;color: #727272;}
+.editDialogBody input.value{width: 290px;height: 30px;border: 1px solid #E2E2E2;color: #727272;padding-left: 6px;font-size: 14px;}
+.editDialogBody #policy_type,.editDialogBody #policy_weight{position: relative;}
+.editDialogBody .time_group{display: -webkit-box;display: -ms-flexbox;display: flex;line-height: 32px;}
+.editDialogBody .time_group .date{width: 120px;height: 34px;position: relative;margin: 0 5px 0 0;}
+.editDialogBody .time_group .date .datepicker-input {padding-left: 6px;}
+.editDialogBody .time_group #validtime_date > div,.editDialogBody .time_group #invalidtime_date > div{position: absolute;z-index: 1;}
+.editDialogBody .time_group .dropdown{width: 70px;height: 32px;position: relative;}
+.editDialogBody .time_group .timesplit{text-align: center;width: 11px;}
+.editDialogBody .bindadv_container{display: -webkit-box;display: -ms-flexbox;display: flex;}
+.editDialogBody .bindadv_container #policy_bindadv{position: relative;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;background-color: #f0f0f0;border: 1px solid #e2e2e2;color: #adadad;line-height: 36px;padding-left: 6px;}
+.editDialogBody .bindadv_container .check_box{margin: 10px 10px 10px 0;height: 14px;width: 14px;border: 1px solid #E2E2E2;cursor: pointer;}
+.editDialogBody .bindadv_container .check_box.checked{background-image: url(../image/adPolicyManage/check.png);}
+.editDialogBody .bindadv_container .bindadv_hint{height: 32px;line-height: 34px;font-size: 12px;margin-right: 25px;width: 75px;}
+.editDialogBody .policy_channel{display: -webkit-box;display: -ms-flexbox;display: flex;}
+.editDialogBody .policy_channel #channel_type{position: relative;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;background-color: #f0f0f0;border: 1px solid #e2e2e2;color: #adadad;line-height: 36px;max-width: 258px;overflow: hidden;text-overflow: ellipsis;}
+.editDialogBody .policy_bind_container{display: -webkit-box;display: -ms-flexbox;display: flex;}
+.editDialogBody .policy_bind_container .hint{height: 32px;width: 90px;line-height: 32px;margin: 0 10px 0 0;}
+.editDialogBody .policy_bind_container .radio{background-clip: content-box;border: 1px solid #E3E3E3;border-radius: 10px;cursor: pointer;height: 12px;margin: 8px 8px 8px 0;padding: 2px;width: 12px;}
+.editDialogBody .policy_bind_container .radio.select{background-color: #76969F;}
+.editDialogBody .policy_bind_container #el_name{position: relative;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;background-color: #f0f0f0;border: 1px solid #e2e2e2;color: #adadad;line-height: 30px;padding-left: 6px;}
+.editDialogFoot{height: 55px;position: absolute;bottom: 0px;left: 0px;right: 0px;display: -webkit-box;display: -ms-flexbox;display: flex;font-size: 12px;color: #FFFFFF;line-height: 30px;}
+.editDialogFlexDiv{-webkit-box-flex:1;-ms-flex:1;flex:1;}
+.editDialogFoot .btn{height: 30px;margin: 8px 7px 1px 1px;text-align: center;width: 90px;cursor: pointer;border: 1px solid #597F89;background-color: #5DA1C0;display: none;}
+.editDialogFoot .editDialogCancelBtn{background-color: #88C5E0 !important;}
+.policy_create_dialog {position: relative;width: 100%;height: 100%;border: 1px solid rgb(93,161,192);background-color: white;font-family: 宋体;font-size:14px;color:#727272;}
+.policy_dialog_title {width: 100%;height: 34px;background-color: rgb(93,161,192);}
+.policy_dialog_title_text {position: absolute;left: 10px;height: 34px;line-height: 34px;color: white;cursor: default;color: white;}
+.policy_dialog_close {position: absolute;background-image: url(../image/sucai/sucai_dialog_close.png);background-position: center;background-repeat: no-repeat;width: 16px;height: 34px;top: 0;right: 10px;cursor: pointer;}
+.policy_dialog_create_name, .policy_dialog_create_others, .policy_dialog_create_source,.policy_dialog_create_opition{margin-top:16px;margin-left:26px;}
+.policy_dialog_create_opition{float:right;}
+.policy_dialog_create_name_title_span{padding-bottom: 6px;}
+.policy_dialog_create_input{height: 30px;width: 300px;line-height: 30px;border: 1px #e2e2e2 solid;font-size: 14px;padding-left: 7px;vertical-align: middle;outline: none medium;color:#8a8a8a}
+.policy_dialog_create_others{width:100%;}
+.policy_dialog_create_size{float:left;width:50%;}
+.policy_dialog_create_morenguanggaowei{float:left;width:50%;}
+.policy_dialog_clear{clear : both;}
+.policy_dialog_content_IMG{float: left;width: 50%;text-align: center;margin-top: 40px;}
+.policy_dialog_content_text{float: left;width: 50%;text-align: left;height: 170px;font-size: 16px;font-family: 宋体;display: flex;align-items: center;justify-content: left;}
+.policy_dialog_img_content{width:100%;height:calc(100% - 36px)}
+.policy_choose {font-size: 15px;line-height: 36px;text-align: right;width: 38px;color: #3c94bb;text-decoration: underline;cursor: pointer;margin-right:16px;}
+
+/*************对话框的确认取消***************/
+.option_bottom{width: 92px;height: 31px;background-color: #88c5e0;line-height: 31px;text-align: center;color: white;float: left;font-size:14px;font-family:宋体;margin-right: 16px;border:1px solid #6faac4;cursor: pointer;}
+.confirm_bottom{background-color: #5da1c0;border:1px solid  #597f89;}
+
+/********************选择窗体样式**********************/
+.select_dialog {height: 100%;width: 100%;background-color: #ffffff;border: 1px solid #76969f;}
+.select_dialog_title {background-color: #5da1c0;height: 33px;display: -webkit-box;display: -ms-flexbox;display: flex;}
+.title_content {line-height: 33px;padding-left: 20px;color: #ffffff;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+.select_dialog_title .close_btn{width: 33px;cursor: pointer;background-image: url(../image/adPolicyManage/closeBtn.png);background-position: center;background-repeat: no-repeat;}
+.query_tab {-webkit-box-align: center;-ms-flex-align: center;align-items: center;background-color: #5da1c0;border: 1px solid #e2e2e2;border-bottom: none;color: #ffffff;display: -webkit-box;display: -ms-flexbox;display: flex;height:37px;margin: 9px 10px 0;}
+.tab_context {text-align: center;width: 91px;}
+.query_input {background-color: #ffffff;border: 1px solid #e2e2e2;border-right: none;height:26px;width: 175px;line-height: 26px;padding-left: 10px;color: #949494;}
+.query_btn {background-color: #7cb7d2;border: 1px solid #e2e2e2;height: 26px;line-height: 26px;text-align: center;width: 49px;cursor: pointer;}
+.result_table {height: 420px;margin: 0 10px;}
+.result_table span {color: #5da1c0;text-decoration: underline;cursor: pointer;}
+.result_table span.selected {color: #797979;text-decoration: none;cursor: default;}
+.foot {-webkit-box-align: center;-ms-flex-align: center;align-items: center;display: -webkit-box;display: -ms-flexbox;display: flex;height: 40px;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;}
+.cancel_btn {border: 1px solid #6faac4;background-color: #88c5e0;}
+.confirm_btn {border: 1px solid #597f89;background-color: #5da1c0;}
+.select_dialog_btn {height: 30px;line-height: 30px;width: 78px;padding-left: 12px;letter-spacing: 12px;margin: 0 10px;color: #ffffff;border-radius: 1px;text-align: center;cursor: pointer;}
+
+.conflict_dialog {height: 266px;width: 478px;border: 1px solid #76969f;background-color: #ffffff;}
+.conflict_dialog .dialog_title {height: 33px;background-color: #5da1c0;}
+.conflict_dialog .close_btn{width: 33px;cursor: pointer;background-image: url(../image/adPolicyManage/closeBtn.png);background-position: center;background-repeat: no-repeat;}
+.conflict_dialog .content {display: -webkit-box;display: -ms-flexbox;display: flex;height: 173px;}
+.conflict_dialog .content_logo {width: 189px;background-image: url(../image/adPolicyManage/conflict_icon.png);background-position: 22px center;background-repeat: no-repeat;}
+.conflict_dialog .content_text{padding-top: 55px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;line-height: 32px;color: #727272;}
+
+.auditDialog{background-color: #ffffff;border: 1px solid #76969F;position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;}
+.auditDialogTitle{height: 33px;background-color: #5DA1C0;display: -webkit-box;display: -ms-flexbox;display: flex;}
+.auditDialogTitleText{height: 33px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;line-height: 33px;font-size: 15px;color: #FFFFFF;padding-left: 12px;}
+.auditDialogCloseBtn{width: 41px;height: 33px;cursor: pointer;background-image: url(../image/adPolicyAudit/closeBtn.png);}
+.auditDialogDeneyReason{border: 1px solid #90BDD2;height: calc(100% - ( 6px + 11px + 1px ) * 2 - 33px - 55px);margin: 6px 7px;;overflow-y: scroll;position: absolute;resize: none;width: calc(100% - (7px + 1px + 13px) * 2);font-size: 12px;color: #727272;padding: 11px 13px;}
+.auditDialogFoot{height: 55px;position: absolute;bottom: 0px;left: 0px;right: 0px;display: -webkit-box;display: -ms-flexbox;display: flex;font-size: 12px;color: #FFFFFF;line-height: 30px;}
+.auditDialogFlexDiv{-webkit-box-flex:1;-ms-flex:1;flex:1;}
+.auditDialogCancelBtn{background-color: #88C5E0;height: 30px;margin: 8px 7px 1px 1px;text-align: center;width: 90px;cursor: pointer;border: 1px solid #597F89;}
+.auditDialogSubmitBtn{background-color: #5DA1C0;height: 30px;margin: 8px 7px 1px 1px;text-align: center;width: 90px;cursor: pointer;border: 1px solid #597F89;}
+
+#map_accurate ._dialog_body {padding: 15px 28px 18px 13px;position: relative;}
+#map_accurate label {margin: 0;}
+#map_accurate .map {width: 715px;height: 454px;border: 1px solid #d9d9d9;margin-top: 10px;}
+#map_accurate #map_style {position: absolute;top: 95px;right: 35px;border: 1px solid #e2e2e2;background-color: #fff;}
+
+
+.opDropDown {position: absolute;display: flex;flex-flow: column;z-index: 1;background-color: #FFFFFF;border: 1px solid #E2E2E2;border-bottom: none;width: 88px;}
+.opDropDown .more{background-image: url(../image/more_up_arrow.png);background-repeat: no-repeat;background-position: 74px center;}
+.opDropDown > span {height: 29px;border-bottom: 1px solid #E2E2E2;line-height: 29px;color: #3C94BB;text-align: right;padding-right: 20px;cursor: pointer;}
+.opDropDown > span:hover {background-color: #DEF5FF;}

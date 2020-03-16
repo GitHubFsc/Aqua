@@ -1,0 +1,6 @@
+.asset_export_all .header_item.logo {color: #494b58;}
+.asset_export_all .body  {background:url("../../../images/asset/asset_export_all.png")no-repeat;background-size:100% 100%;}
+#asset_export_all {position: relative;top: 27%;left: 7%;width: 250px;}
+.alltextdiv {font-size: 36px;color: #2d51ae; margin-bottom: 10px;}
+.alltextp { font-size: 20px;color: #0e3496;margin-top: 10px;margin-bottom: 10px;font-weight: 600}
+.asset_export_all_btn {width: 213px;height: 55px;margin-top: 30px;font-size: 20px;color: #FFFFFF !important;border-radius: 28px;cursor: pointer;line-height: 56px;text-align: center;background: url(../../../images/asset/asset_export_all_btn.png)no-repeat;}

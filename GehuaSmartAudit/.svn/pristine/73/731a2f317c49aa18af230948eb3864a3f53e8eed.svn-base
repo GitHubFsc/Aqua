@@ -1,0 +1,10 @@
+.default_frame {/*position: absolute;*/width: calc(100% - 30px);height: calc(100% - 36px);margin: 18px 15px;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-flow: column;flex-flow: column;}
+.default_frame .table_title {height: 52px;border-bottom: 1px solid #f1f1f1;width: calc(100% - 13px);display: -webkit-box;display: -ms-flexbox;display: flex;padding-left: 13px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;background-color: #fff;-webkit-box-shadow: 0px 0px 5px RGBA(12, 6, 14, 0.1);box-shadow: 0px 0px 5px RGBA(12, 6, 14, 0.1);}
+.default_frame .table_title_icon {height: 14px;width: 6px;border: 1px solid rgba(41, 41, 41, 0.35);background-color: #1ec3ec;background-clip: content-box;margin: 0 6px;}
+.default_frame .table_title_label {color: #777777;font-size: 14px;cursor: default;width: 125px;}
+.default_frame .table_title_span {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;height: 100%;}
+.default_frame .search_bar {width: 300px;height: 32px;position: relative;}
+.default_frame .search_input {padding-left: 14px;width: 284px;border: 1px solid #d9d9d9;height: 30px;color: #666666;font-size: 12px;border-radius: 6px;}
+.default_frame .search_icon {position: absolute;width: 29px;height: 18px;border-left: 1px solid #e2e2e2;background-image: url(../image/heatpump/search.png);background-repeat: no-repeat;background-position: 8px 2px;right: 0;top: 7px;cursor: pointer;}
+
+.default_frame .list_table {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;width: 100%;background-color: #fff;-webkit-box-shadow: 0px 0px 5px RGBA(12, 6, 14, 0.1);box-shadow: 0px 0px 5px RGBA(12, 6, 14, 0.1);}

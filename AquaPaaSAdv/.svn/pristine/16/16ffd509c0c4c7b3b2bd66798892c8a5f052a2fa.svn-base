@@ -1,0 +1,22 @@
+<div class="policy_create_dialog">
+	<div class="policy_dialog_title">
+		<div class="policy_dialog_title_text">
+			{{ADPOLICYMANAGE_DIALOG_DELETE}}
+		</div>
+		<div class="policy_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div class="policy_dialog_content">
+		<div class="policy_dialog_content_IMG">
+			<img src = 'image/sucai/delete_sucai.png'/>
+		</div>
+		<div class="policy_dialog_content_text" id='delete_dialog_policy_name'>
+		</div>
+		<div class="policy_dialog_content_clear">
+		</div>
+	</div>
+	<div class = "policy_dialog_create_opition">
+		<div class  = "option_bottom" id="policy_dialog_cancel_botton_click">{{ADPOLICYMANAGE_DIALOG_CANCEL}}</div>
+		<div id = "policy_dialog_delete_botton_click" class  = "option_bottom confirm_bottom">{{ADPOLICYMANAGE_DIALOG_CONFIRM}}</div>
+	</div>
+</div>

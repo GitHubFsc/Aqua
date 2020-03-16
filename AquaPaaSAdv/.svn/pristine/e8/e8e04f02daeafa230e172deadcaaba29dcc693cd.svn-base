@@ -1,0 +1,131 @@
+<style>
+
+
+  #adv_changePasswordDialog .panel_dialog_body{
+    top: 40px;
+  }
+  #adv_changePasswordDialog .content{
+    line-height: 0px;
+    font-size: 0px;
+    font-family: '微软雅黑';
+    /*
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 12px;
+    */
+  }
+  #adv_changePasswordDialog .oneRow{
+    width: 100%;
+    display: flex;
+  }
+  #adv_changePasswordDialog .oneRow .label{
+    color: rgb(121, 121, 121);
+    line-height: 26px;
+    height: 26px;
+    margin-right: 20px;
+    margin-top: 5px;
+    width: 100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  #adv_changePasswordDialog .regist-star {
+    line-height: 32px;
+    height: 32px;
+    position: absolute;
+    margin-left: -1em;
+    font-family: simsun;
+    color: #f30;
+    display: none;
+    font-size: 14px;
+  }
+  #adv_changePasswordDialog .oneRow .input {
+    color: rgb(121, 121, 121);
+    background-color: white;
+    border: 1px solid rgb(198, 198, 198);
+    height: 32px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  #adv_changePasswordDialog .oneRow .input[readonly] {
+    background: #f0f0f0;
+    border: 1px solid #E3E3E3;
+  }
+  #adv_changePasswordDialog .oneRow .textarea {
+    color: rgb(121, 121, 121);
+    width: 100%;
+    border: 1px solid rgb(198, 198, 198);
+    height: 86px;
+    font-size: 14px;
+    outline: none;
+    padding: 0 10px;
+    background-color: white;
+    resize:none;
+    line-height: 28px;
+    box-sizing: border-box;
+  }
+  #adv_changePasswordDialog .oneRow .textarea[readonly] {
+    background: #f0f0f0;
+    border: 1px solid #E3E3E3;
+  }
+  #adv_changePasswordDialog .oneRow .halfRow{
+    font-size: 0px;
+    line-height: 0px;
+    width: calc(50% - 49px);
+    vertical-align: top;
+    counter-reset: index;
+    position: relative;
+  }
+  #adv_changePasswordDialog .oneRow .halfRow:nth-child(2){
+    padding-left: 98px;
+  }
+  #adv_changePasswordDialog .oneRow .customizeRow{
+
+    font-size: 0px;
+    line-height: 0px;
+    vertical-align: top;
+    counter-reset: index;
+  }
+
+  .panel_dialog_cancel{
+    bottom: 20px;
+    right: 127px;
+  }
+
+  .panel_dialog_submit{
+    bottom: 20px;
+    right: 15px;
+  }
+</style>
+<div id="adv_changePasswordDialog" class="panel_dialog">
+  <div class="panel_dialog_title">
+    <div class="panel_dialog_title_text">
+      {{MAIN_PAGE_USER_CHANGEPASSWORD}}
+    </div>
+    <div class="panel_dialog_close popup_dialog_clear">
+
+    </div>
+  </div>
+  <div class="panel_dialog_body">
+    <div class="content">
+      <div class="oneRow">
+        <div id="adv_changePasswordDialog_newpassword" class="customizeRow" style="width:298px;">
+          <div class="label">新密码</div>
+          <span class="regist-star" >*</span><input  class="input" type="password" >
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel_dialog_cancel popup_dialog_clear">
+    {{ADPOLICYMANAGE_DIALOG_CANCEL}}
+  </div>
+  <div id="adv_changePassword_submit" class="panel_dialog_submit">
+    {{ADPOLICYMANAGE_DIALOG_CONFIRM}}
+  </div>
+</div>

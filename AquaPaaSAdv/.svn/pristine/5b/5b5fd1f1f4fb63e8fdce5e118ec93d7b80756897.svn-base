@@ -1,0 +1,17 @@
+<div id="contracts_management" class="_frame">
+  <link rel="stylesheet" href="style/frame.css">
+  <link rel="stylesheet" href="style/dialog.css">
+  <link rel="stylesheet" href="content/contracts/main.css">
+  <div class="_frame_header">
+    <div class="_frame_header_item _border_radius_default" id="search_widget">
+            <input />
+            <div class="search_btn"></div>
+    </div>
+    <div class="clear_condition">{{CONTRACTS_CLEAR_Q}}</div>
+    <div class="_span"></div>
+    <div id="" class="_query _btn _border_radius_default _frame_header_item" style="margin-right: 5px;">{{CONTRACTS_ADD}}</div>
+  </div>
+  <div class="_frame_body">
+    <div id="list_table"></div>
+  </div>
+</div>

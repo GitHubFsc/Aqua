@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="pragma" content="no-cache"/>
+	<meta http-equiv="Cache-Control" content="no-cache"/>
+	<meta http-equiv="Expires" content="0"/>
+	<title>戏曲年华</title>
+	<script type="text/javascript">
+		var fileTime = new Date().getTime();
+
+		function loadStyle(){
+			var styles = [
+				'style/common.css',
+				'style/index.css'
+			];
+
+			for(var i = 0, len = styles.length; i < len; i+=1){
+				document.write('<link rel="stylesheet" type="text/css" href="' + styles[i] + '?t='+ fileTime +'" />');
+			}
+		}
+
+		function loadScript(){
+			var jses = [
+				'config.js',
+				'js/app.js',
+				'js/common/endecodebase64.js',
+				'js/common/sha1.js',
+				'js/common/keyvalue.js',
+				'js/common/util.js',
+				'js/my.paas.js',
+				'js/my.storage.js',
+				'js/vtil.js',
+				'js/index.js',
+				// '../bigdata/reportData.js',
+				// 'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js'
+			];
+
+			for(var i = 0, len = jses.length; i < len; i+=1){
+				document.write('<script type="text/javascript" src="' + jses[i] + '?t=' + fileTime + '"><\/script>');
+			}
+		}
+
+		loadStyle();
+		loadScript();
+
+	</script>
+	<script type="text/javascript">
+		if(navigator.userAgent.lastIndexOf('iPanel') > -1){
+			DeviceType = 3;
+			// document.write('<script type="text/javascript" src="../bigdata/ipanel/collect.js?t='+ fileTime +'"><\/script>');
+		} else {
+			DeviceType = 1;
+			if(typeof CyberCloud != 'undefined'){
+				DeviceType = 2;
+			}
+			// document.write('<script type="text/javascript" src="http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js?t='+ fileTime +'"><\/script>');
+			// document.write('<script type="text/javascript" src="../bigdata/stream/collect.js?t=' + fileTime + '"><\/script>');
+		}
+	</script>
+</head>
+<body onload="init()">
+	<div class="app">
+		<div class="tabs">
+			<div id="tab_select"></div>
+			<div class="tab_default" id="tab_0"></div>
+			<div class="tab_default" id="tab_1"></div>
+			<div id="tab_focus" class="invisible"></div>
+		</div>
+		<div class="grid">
+			<div id="grid_cell_0" class="grid_cell invisible">
+				<img src="" alt="" id="grid_poster_0" class="grid_poster"/>
+				<div id="grid_txt_0" class="grid_txt">
+					<span class="txt_marquee_placer"></span>
+				</div>
+			</div>
+			<div id="grid_cell_1" class="grid_cell invisible">
+				<img src="" alt="" id="grid_poster_1" class="grid_poster"/>
+				<div id="grid_txt_1" class="grid_txt">
+					<span class="txt_marquee_placer"></span>
+				</div>
+			</div>
+			<div id="grid_cell_2" class="grid_cell invisible">
+				<img src="" alt="" id="grid_poster_2" class="grid_poster"/>
+				<div id="grid_txt_2" class="grid_txt">
+					<span class="txt_marquee_placer"></span>
+				</div>
+			</div>
+			<div id="grid_cell_3" class="grid_cell invisible">
+				<img src="" alt="" id="grid_poster_3" class="grid_poster"/>
+				<div id="grid_txt_3" class="grid_txt">
+					<span class="txt_marquee_placer"></span>
+				</div>
+			</div>
+			<div id="grid_cell_4" class="grid_cell invisible">
+				<img src="" alt="" id="grid_poster_4" class="grid_poster"/>
+				<div id="grid_txt_4" class="grid_txt">
+					<span class="txt_marquee_placer"></span>
+				</div>
+			</div>
+			<div id="grid_cell_5" class="grid_cell invisible">
+				<img src="" alt="" id="grid_poster_5" class="grid_poster"/>
+				<div id="grid_txt_5" class="grid_txt">
+					<span class="txt_marquee_placer"></span>
+				</div>
+			</div>
+			<div id="grid_page_indicator"></div>
+			<div id="grid_focus" class="invisible"></div>
+		</div>
+	</div>
+
+	<!-- <div id="logBackground"></div> -->
+	<!-- <div id="log"></div> -->
+
+</body>
+</html>

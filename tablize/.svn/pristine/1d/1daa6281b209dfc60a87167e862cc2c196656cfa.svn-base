@@ -1,0 +1,15 @@
+<div class="_frame _flex" id="nav_tree_nav_version">
+  <link rel="stylesheet" href="style/frame.css">
+  <link rel="stylesheet" href="style/dialog.css">
+  <div class="header _flex">
+    <div class="header_item logo">{{NAVIGATIONVERSION}}</div>
+    <div class="header_item search_bar">
+      <input class="search_input" />
+      <div class="search_btn"></div>
+    </div>
+    <div class="header_item span"></div>
+  </div>
+  <div class="body">
+    <div id="nav_tree_nav_version_list_table" class='list_table' style='margin: 5px;'></div>
+  </div>
+</div>

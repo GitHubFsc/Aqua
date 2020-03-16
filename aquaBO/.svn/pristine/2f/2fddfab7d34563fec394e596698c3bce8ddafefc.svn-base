@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="style/dialog.css">
+<style>
+  #navigation_add_asset ._dialog_title_label {font-size: 16px;}
+  #navigation_add_asset ._dialog_body {padding: 8px 16px 18px 16px;flex: 1;}
+  #navigation_add_asset ._dialog_body .search_bar {display: flex;height: 38px;align-items: center;padding-left: 6px;margin: 0;background-color: #1db4da;width: calc(100% - 6px);}
+  #navigation_add_asset ._dialog_body .search_bar input {height: 30px;width: 307px;border: 1px solid #e2e2e2;padding-left: 10px;outline: none;}
+  #navigation_add_asset ._dialog_body .search_bar .btn {height: 28px;border: 1px solid #e2e2e2;padding: 0 13px;line-height: 28px;color: #fff;font-size: 14px;margin: 0 10px;cursor: pointer;}
+  #navigation_add_asset .i-check {margin: 0 auto;}
+  #navigation_add_asset .i-check label {margin: 0;}
+  #navigation_add_asset .i-check input[type=checkbox] + label:after {background: #e7e7e7;opacity: 1;}
+  #navigation_add_asset .i-check input[type=checkbox]:checked + label:after {background:#45d1f4;}
+  ._dialog_foot ._cancel {background-color: #5da1c0;font-weight: bolder;}
+  ._dialog_foot ._confirm {background-color: #2ea2d7;font-weight: bolder;}
+
+  .i-check {width: 15px;height: 15px;position: relative;margin: 11px auto;}
+  .i-check label {width: 13px;height: 13px;position: absolute;top: 0;left: 0;background: #fff;border-radius: 1px;border: 1px solid #e4e4e4;margin: 0;}
+  .i-check  label:after {content: '';width: 9px;height: 9px;position: absolute;top: 2px;left: 2px;background: #45d1f4;opacity: 0;border-radius: 1px;}
+  .i-check input[type=checkbox]:checked + label:after {opacity: 1;}
+  .i-check input[type=checkbox] {opacity: 0;position: absolute;z-index: 2;left: 0;top: 0;width: 100%;height: 100%;margin: 0;cursor: pointer;}
+
+  #navigation_add_asset ._dialog_body .timeBar {margin-bottom: 11px;}
+  #navigation_add_asset ._dialog_body .timeBar .title{font-size: 14px;line-height: 32px;color:rgb(121,121,121)}
+  #navigation_add_asset ._dialog_body .timeBar .content{display: block;font-size: 0px;line-height: 0px;}
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar{display: inline-block;width: 178px;height:32px;line-height: 32px;font-size: 14px;margin-right:13px;}
+  #navigation_add_asset ._dialog_body .timeBar .content .time_select{display: inline-block;width: 67px;line-height: 32px;font-size: 14px;}
+  #navigation_add_asset ._dialog_body .timeBar .content .unit{display: inline-block;width: 33px;line-height: 32px;font-size: 14px;text-align: center;color:rgb(121,121,121)}
+
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar input[data-type=date] {
+    padding-left: 12px;
+    padding-right: 35px;
+    font-size: 14px;
+    outline: none;
+    margin-right: 5px;
+    border: 1px solid #CECDCB;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_calendar_time_container {
+    width: 298px;
+    position: absolute;
+    top: 36px;
+    right: 5px;
+    background-color: #efefef;
+    border: 1px solid #cbcbcb;
+    display: none;
+    z-index: 15;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_time_picker_calender {
+    width: 282px;
+    height: 185px;
+    position: relative;
+    margin: 5 auto;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_time_picker_times {
+    position: relative;
+    height: 38px;
+    margin: 0 8px;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_content_line_split {
+    height: 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    background-color: #d0d0d0;
+    border-width: 1px 0 0 0;
+    margin: 0 8px;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_normal_btn {
+    width: 86px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #2e88b7;
+    background-color: #5da1c0;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 8px 10px 8px auto;
+    text-align: center;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_time_picker_selector {
+    width: 110px;
+    height: 30px;
+    float: left;
+    position: relative;
+    color: #797979;
+    background-color: #ffffff;
+    z-index: 99;
+    margin-left: 1px;
+  }
+  #navigation_add_asset ._dialog_body .timeBar .content .calendar .panel_time_picker_tlabel {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    color: #797979;
+    float: left;
+  }
+</style>
+<div class="_dialog" id="navigation_add_asset">
+  <link rel="stylesheet" href="style/dialog.css">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{ASSET_ASSET_DIALOG_TITLE}}</div>
+    <div class="_dialog_span"></div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body _dialog_col">
+    <div class="timeBar">
+      <div class="title">{{NAVMNGSLIDER_STARTTIME}}</div>
+      <div class="content">
+        <div id="navigation_add_asset_calendar" class="calendar"></div><div id="navigation_add_asset_hourselect" class="time_select hour"></div><div class="unit">{{NAVMNGSLIDER_HOUR}}</div><div id="navigation_add_asset_minuteselect" class="time_select minute"></div><div class="unit">{{NAVMNGSLIDER_MINUTE}}</div><div id="navigation_add_asset_secondselect" class="time_select second"></div><div class="unit">{{NAVMNGSLIDER_SECOND}}</div>
+      </div>
+    </div>
+    <div class='search_bar'>
+      <input id='search_input' />
+      <div class='btn'>{{ASSET_ASSET_DIALOG_QUERY}}</div>
+    </div>
+    <div id='navigation_asset_list'></div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="btn _cancel">{{NAVIGATION_CANCEL}}</div>
+    <div class="btn _confirm">{{NAVIGATION_ADD}}</div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<div class="au_analysis">
+	<div class="au_analysis_head"> 
+		<img id="au_analysis_titletxt"/>
+		<p id="au_analysis_clock"> </p>
+	</div>
+	<div class="au_analysis_body">
+		<div id="au_analysis_content">
+		</div>
+	</div>
+</div>

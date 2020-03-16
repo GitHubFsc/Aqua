@@ -1,0 +1,9 @@
+<div style="background-color:white;padding-bottom:23px" class="adv_page_main_style adv_dialog_container" >
+	<div style="width:760px;background-color:white">
+		<div class="adv_popupDialogue_title_container">
+			<span>{{ADV_SYSUSER_ZIZHIWENJIAN}}</span>
+			<div id="manage_dialog_warn_close_btn" class="adv_popupDialogue_title_close" onclick="system_user_management.close_popup_create_system_user()"></div>
+        </div>
+    </div>
+    <div id="adv_zizhi_file_body" style="background-repeat: no-repeat;width:100%;height:calc(100% - 12px);background-color:white;"></div>
+</div>

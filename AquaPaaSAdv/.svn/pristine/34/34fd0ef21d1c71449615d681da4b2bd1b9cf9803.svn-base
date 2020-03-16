@@ -1,0 +1,21 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div id="utils_dialog_info_title" class="panel_dialog_title_text">
+			{{SUCAITEMPLATE_TISHI}}
+		</div>
+		<div class="panel_dialog_close popup_dialog_clear_">
+
+		</div>
+	</div>
+	<div class="adPos_dialog_del_img">
+
+	</div>
+	<div id="utils_dialog_info_msg" class="adPos_dialog_del_confirm_info" style="font-size: 16px;font-family:微软雅黑;color:rgb(150,154,176)"></div>
+
+	<div class="panel_dialog_cancel popup_dialog_clear_">
+		{{DIALOG_CANCEL}}
+	</div>
+	<div id="utils_dialog_info_submit" class="panel_dialog_submit">
+		{{DIALOG_OK}}
+	</div>
+</div>

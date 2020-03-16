@@ -1,0 +1,69 @@
+<div class="centerPopupStyle" id="centerPopupStyle" style="font-family:'微软雅黑';font-size:16px;height:284px">
+	<div class="popupCenterDivTop" style="background-color:#2ea2d7;font-weight:normal;font-family:'Hiragino'">
+		<div class="popupCenterDivTopLeft">查询条件</div>
+		<img src="images/cross.png" onclick="batchExport.closeCenterDiv()" style="cursor:pointer;float:right;margin-top:10px;margin-right:17px;" alt="关闭"/>
+	</div>
+	<div class="popupCenterDivBody batch" id="singleSearchPopBody" style="margin-left:36px;color:#545454;height:266px;">
+        <div id="singleSearch_broadType_containerCombine" class="popupCenterDivBodyRow popup_rowStyle" style="margin-top:32px;">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" style="width:87px;float:left">用户选择 :</div>
+                <div id="radioB1" class="radioContainer" onclick="batchExport.switchRedio(this)" style="width:104px">
+                    <div class="radioB_selected" name="radio1" value="0"></div>
+                    活跃用户
+                </div>
+                <div id="radioB2" class="radioContainer" onclick="batchExport.switchRedio(this)" style="width:104px">
+                    <div class="radioB_noSelected" name="radio1" value="1"></div>
+                    沉默用户
+                </div>
+            </div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" style="margin-top:20px">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" style="width:87px;float:left">日期范围&nbsp;:</div>
+                <div class="popupCenterDivRowInput" id="broSingle_dateRegion" style="background-color:'#ffffff'"onclick="batchExport.mopen(this,'down_Menu','father')">
+                    <div style="overflow:hidden">
+                        <div id="down_Menu_text" name="inputTitle" style="display:block;float:left;margin-left:16px;width:auto;height:100%">一个月</div>
+                        <img src="images/downArrow-SkyBlue.png" class="smallArrowInDiv" style="margin-top:4.5px">
+                    </div>
+                </div>
+                <span id="broSingle_selfDefine" onclick="batchExport.userDefined(this)" style="margin-top:2px;text-align:left;width:auto;margin-left:11px;float:left;text-decoration:underline;cursor:pointer;color:#2ea2d7">自定义</span>
+            </div>
+            <div class="downMenu" id="down_Menu" style="top:30px;background-color:#ffffff;height:auto;width:190px;z-index:10010;left:87px">
+                <div style="height:30px;border-top:0" onclick="batchExport.mopen(this,'down_Menu');batchExport.month_(1)">一个月</div>
+                <div style="height:30px" onclick="batchExport.mopen(this,'down_Menu');batchExport.month_(2);">二个月</div>
+                <div style="height:30px" onclick="batchExport.mopen(this,'down_Menu');batchExport.month_(3);">三个月</div>
+                <div style="height:30px" onclick="batchExport.mopen(this,'down_Menu');batchExport.month_(6);">六个月</div>
+                <div style="height:30px" onclick="batchExport.mopen(this,'down_Menu');batchExport.month_(12);">一年</div>
+            </div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" id="broSingle_start" style="position:relative;display:none;height:24px;margin-top:20px">
+            <div class="popupCenterDivRowName" style="width:87px;position:absolute;top:0">开始日期&nbsp;:</div>
+            <div class="popupCenterDivRowInputB" style="top:0;left:87px;border:0;position:absolute">
+                <div style="z-index:10001;float:left;width:100%;height:100%;border:0;" class="begindate-input" id="date-input-from"></div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" id="broSingle_end" style="position:relative;display:none;height:24px;margin-top:20px">
+            <div class="popupCenterDivRowName" style="top:0;width:87px;position:absolute">结束日期&nbsp;:</div>
+            <div class="popupCenterDivRowInputB" style="top:0;left:87px;border:0;position:absolute">
+                <div style="z-index:10000;float:left;width:100%;height:100%;border:0;" class="begindate-input" id="date-input-to"></div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="popupCenterDivBodyRow" id="missionDescContainer" style=
+                "margin-top: 24px;">
+            <div style="width:87px">
+                任务描述&nbsp;:
+            </div>
+            <div style="width:286px;border:1px solid #d3d3d3;">
+                <input type="text"  id="missionDesc" style=
+                        'border: 0;width: 100%;padding-left: 10px;'>
+            </div>
+        </div>
+        <div class="popupCenterDivbottom" id="broad_singleSearch_popupCenterDivbottom" style="float:right;margin-right:19px;width:100%;margin-top:19px;overflow:hidden">
+            <div class="pageTitleContainerRightButt" style="border-color:#597f89;width:149px;margin-right:0px;background-color:#2ea2d7" onclick="batchExport.createUserExportTask()">查询</div>
+            <div class="pageTitleContainerRightButt" style="border-color:#597f89;width:149px;margin-right:25px;background-color:#5da1c0" onclick="batchExport.closeCenterDiv()">取消</div>
+        </div>
+        <div style="clear:both"></div>
+	</div>
+</div>

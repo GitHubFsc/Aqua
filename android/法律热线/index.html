@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>法律热线</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script type="text/javascript">
+        (function () {
+            var csses = ['index.css'];
+            var jses = [
+                'config.js',
+                //'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js',
+                '../bigdata/reportData.js',
+                'utils.js',
+                'index.js'
+            ];
+            jses = ['../bigdata/ipanel/collect.js'].concat(jses)
+            // if (navigator.userAgent.lastIndexOf('iPanel') == -1) {
+            //     jses = ['http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js', '../bigdata/stream/collect.js'].concat(jses)
+            // } else {
+            //     jses = ['../bigdata/ipanel/collect.js'].concat(jses)
+            // }
+            for (var i = 0; i < csses.length; i++) {
+                var css = csses[i]
+                document.write('<link rel="stylesheet" href="' + css + '?t=' + new Date().getTime() + '" \/>')
+            }
+            for (var i = 0; i < jses.length; i++) {
+                var js = jses[i]
+                document.write('<script src="' + js + '?t=' + new Date().getTime() + '" charset="utf-8"><\/script>')
+            }
+        }())
+    </script>
+</head>
+
+<body onload='app.init()'>
+    <div id="focus"></div>
+    <img class="folder" id="folder1" style='left: 111px;top: 178px;' />
+    <img class="folder" id="folder2" style='left: 657px;top: 178px;' />
+    <img class="folder" id="folder3" style='left: 111px;top: 412px;' />
+    <img class="folder" id="folder4" style='left: 657px;top: 412px;' />
+    </div>
+    <div class="page_hint"></div>
+    <div class="page_info">
+        <span href="">第</span>
+        <span href="" id="curPage"></span>
+        <span href="">页</span>
+        <span href="">/</span>
+        <span href="">共</span>
+        <span href="" id="totalPage"></span>
+        <span href="">页</span>
+    </div>
+</body>
+
+</html>

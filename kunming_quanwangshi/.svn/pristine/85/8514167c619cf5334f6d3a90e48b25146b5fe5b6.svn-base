@@ -1,0 +1,483 @@
+/*
+*1.查看历史记录
+*2.清空历史记录
+*3.跳转到详情页
+*4.返回首页
+*/
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ?
+        exports.module = factory(utils) :
+        typeof define === 'function' && define.amd ?
+            define(['utils'], factory) : (global.app = factory(utils))
+})(this, function (){
+	var deepClone = utils.deepClone,
+		getJson = utils.getJson,
+		addEvent = utils.addEvent,
+		debug = utils.debug,
+		history_store = MyStorage.getStorage({type:'cookie'}),
+		store_data = history_store.getValue('current_data');
+	var frame = function (){
+		var pane = deepClone({}, Pane),
+        	api = deepClone({}, API),
+        	model = deepClone({}, Model);
+        pane.api = api;
+        pane.model = model;
+		pane.init();
+	}
+	var Pane = {
+		curIndex: 0,
+		totalIndex: 0,  //总数据
+		curtotalIndex: 0, //当前页总数据
+		curPage: 0,   //当前页
+		totalPage: 0,  //总页数
+		operation: 'false', //是否打开操作对话框
+		operationIndex: 0, // 选中操作
+		posterImgs: [
+			{l: 90, t: 130},
+			{l: 275, t: 130},
+			{l: 460, t: 130},
+			{l: 645, t: 130},
+			{l: 830, t: 130},
+			{l: 1015, t: 130},
+			{l: 90, t: 385},
+			{l: 275, t: 385},
+			{l: 460, t: 385},
+			{l: 645, t: 385},
+			{l: 830, t: 385},
+			{l: 1015, t: 385}
+		],
+		posterFocus: [
+			{l: 84, t: 124},
+			{l: 269, t: 124},
+			{l: 454, t: 124},
+			{l: 639, t: 124},
+			{l: 824, t: 124},
+			{l: 1009, t: 124},
+			{l: 84, t: 379},
+			{l: 269, t: 379},
+			{l: 454, t: 379},
+			{l: 639, t: 379},
+			{l: 824, t: 379},
+			{l: 1009, t: 379}
+		],
+		pageIndex: 0,   //分页按键
+		isPage: 'false', //是否进入了分页
+		pageFocus: [
+			{l: 550, t: 660},
+			{l: 690, t: 660}
+		],
+		init: function (){
+			console.log("2019.12.17版本 黑底白字");
+			console.log('navigator.userAgent=='+navigator.userAgent);
+			if (navigator.userAgent.lastIndexOf('iPanel') > -1) {// linux
+				console.log('CAID=='+CA.card.serialNumber);
+            } 
+			setupPaaS(function() {
+				console.log('paas ready')
+			});
+			this.loadData();
+		},
+		// 加载页面海报
+		loadData: function (){
+			var _this = this;
+			if(store_data){
+				var curData = JSON.parse(store_data);
+				_this.curIndex = curData.curIndex;
+				_this.curPage = curData.curPage;
+			}
+			_this.api.list(function (resp){  //获取pid_paid
+				_this.model.list(resp);
+				_this.loadPage(_this.curPage);
+				_this.bindEvents();
+			});
+		},
+		// 事件绑定
+		bindEvents: function (){
+			var _this = this;
+			addEvent({
+                left: function () {
+                	if(_this.operation == 'false'){
+                		if(_this.isPage == 'false'){
+                			if(_this.curIndex == 0){
+		                    	_this.setPosterFocus(_this.curIndex);
+		                    } else {
+		                    	_this.setPosterFocus(_this.curIndex - 1);
+		                    }
+                		} else {
+                			if(_this.pageIndex == 0){
+                				_this.setPageFocus(_this.pageIndex);
+                			} else {
+                				_this.setPageFocus(_this.pageIndex - 1);
+                			}
+                		}
+                	} else {
+                		if(_this.operationIndex == 0){
+                			_this.menuOperation(_this.operationIndex);
+                		} else {
+                			_this.menuOperation(_this.operationIndex - 1);
+                		}
+                	}
+                },
+                right: function () {
+                	if(_this.operation == 'false'){
+                		if(_this.isPage == 'false'){
+                			if((_this.curIndex + 1) == _this.curtotalIndex){
+					            _this.setPageFocus(_this.pageIndex);
+                			} else {
+                				if(_this.curIndex < 11){
+	                				_this.setPosterFocus(_this.curIndex + 1);
+			                    } else {
+			                    	_this.setPosterFocus(_this.curIndex);
+			                    }
+                			}
+                		} else {
+                			if(_this.pageIndex == 1){
+                				_this.setPageFocus(_this.pageIndex);
+                			} else {
+                				_this.setPageFocus(_this.pageIndex + 1);
+                			}
+                		}
+                	} else {
+                		if(_this.operationIndex == 2){
+                			_this.menuOperation(_this.operationIndex);
+                		} else {
+                			_this.menuOperation(_this.operationIndex + 1);
+                		}
+                	}
+                },
+                up: function () {
+                	if(_this.isPage == 'false'){
+                		if(_this.curIndex >= 5){
+	                    	_this.setPosterFocus(_this.curIndex - 6);
+	                    } else {
+							_this.curIndex = 0;
+	                    	_this.setPosterFocus(_this.curIndex);
+	                    }
+                	} else {// 跳出分页
+           				_this.isPage = 'false';
+           				_this.curIndex = 0;
+           				_this.pageIndex = 0;
+                		_this.setPosterFocus(_this.curIndex);
+                	}
+                },
+                down: function () {
+                	if(_this.isPage == 'false'){
+                		if((_this.curIndex + 1) == _this.curtotalIndex){
+				            _this.setPageFocus(_this.pageIndex);
+            			} else {
+            				if(_this.curIndex <= 5){
+		                    	_this.setPosterFocus(_this.curIndex + 6);
+		                    } else {
+		                    	_this.setPosterFocus(_this.curtotalIndex - 1);
+		                    }
+            			}
+                	}
+                },
+                enter: function () {
+                    if(_this.operation == 'false'){
+                    	if(_this.isPage == 'false'){
+							var curData = {
+								curIndex: _this.curIndex,
+								curPage: _this.curPage
+							}
+							history_store.setValue('current_data', JSON.stringify(curData));
+							var index = _this.curPage * 12 + _this.curIndex;
+							var pid = _this.model.data[index].provider_id;
+							var paid = _this.model.data[index].provider_asset_id;
+							var url = location.href.slice(0, location.href.lastIndexOf('/') + 1);
+							location.href = url + 'detail.html?provider_id=' + pid + '&provider_asset_id=' + paid + '&backUrl=' + url + 'history.html';
+                    	} else {
+                    		switch (_this.pageIndex) {
+	                    		case 0:
+		                    		this.pageup();
+		                    		break;
+		                    	case 1:
+		                    		this.pagedown();
+		                    		break;
+		                    	default:
+	            					break;
+		                    	
+	                    	};
+                    	}
+                    } else {
+                    	switch (_this.operationIndex) {
+                    		case 0:
+	                    		_this.menuEmpty();
+	                    		break;
+	                    	case 1:
+	                    		_this.menuCancle();
+	                    		break;
+	                    	default:
+	            				break;
+                    	};
+                    };
+                },
+                menu: function () {
+                	// 通过_this.operation判断弹框是否打开，控制menu打开或关闭操作
+                    if(_this.operation == 'false'){
+                    	_this.operation = 'true';
+                    	document.getElementById('histroy_dialog').style.display = 'block';
+                    	_this.menuOperation(_this.operationIndex);
+                    } else {
+                    	_this.operation = 'false';
+                    	document.getElementById('histroy_dialog').style.display = 'none';
+                    }
+                },
+                pageup: function () {
+                    if(_this.curPage == 0){
+                    	_this.loadPage(_this.curPage);
+                    } else {
+                    	_this.loadPage(_this.curPage - 1);
+                    }
+                },
+                pagedown: function () {
+                    if((_this.curPage + 1) == _this.totalPage){
+                    	_this.loadPage(_this.curPage);
+                    } else {
+                    	_this.loadPage(_this.curPage + 1);
+                    }
+                },
+                back: function (){
+					var curData = {
+						curIndex: 0,
+						curPage: 0
+					}
+					history_store.setValue('current_data', JSON.stringify(curData));
+					var url = location.href.slice(0, location.href.lastIndexOf('/') + 1);
+					location.href = url + 'index.html';
+                },
+            })
+		},
+		// 加载页面
+		loadPage: function (page){
+			var _this = this;
+			var p = page, data = _this.model.data;
+			if(p < 0 || p >= _this.totalPage){
+				p = _this.curPage;
+			}
+			var post_data = data.slice(p * 12, (p + 1) * 12);
+			_this.totalIndex = data.length;
+			_this.curtotalIndex = post_data.length;
+			_this.totalPage = Math.ceil(_this.totalIndex / 12);
+			if(post_data.length > 0){
+				var ids = _this.model.listIds(post_data);
+				_this.api.listPoster(ids, function (resp){  //获取海报
+					var poster_srcs = _this.model.listPoster(resp);
+					for(var i = 0; i < 12; i++){
+						var item = post_data[i];
+						if(item){
+							var history_poster_img = document.getElementById('history_poster_img' + i);
+							history_poster_img.style.display = 'block';
+							history_poster_img.src = poster_srcs[i];
+							history_poster_img.style.left = _this.posterImgs[i].l + 'px';
+							history_poster_img.style.top = _this.posterImgs[i].t + 'px';
+						} else {
+							document.getElementById('history_poster_img' + i).style.display = 'none';
+						}
+					}
+					_this.curPage = p;
+					document.getElementById('history_current_page').innerHTML = _this.curPage + 1;
+					document.getElementById('history_total_page').innerHTML = _this.totalPage;
+					if(_this.isPage == 'false'){
+						_this.setPosterFocus(_this.curIndex);
+					} else {
+						_this.setPageFocus(_this.pageIndex);
+					}
+				});
+			}
+		},
+		//海报聚焦
+		setPosterFocus: function (idx){
+			var _this = this;
+			var focus, index;
+            if (0 <= idx < 12) {
+                index = idx;
+            } else {
+                index = _this.curIndex;
+			}
+			while (index < 0) {
+                index = 0;
+			}
+			while (index >= Math.min(_this.model.data.length - _this.curPage * 12, 12)) {
+                index--;
+			}
+			if(_this.model.data.length > 0){
+				document.getElementById('history_page_focus').style.display = 'none';
+				for(var i = 0; i < 12; i++){
+					var history_poster_img = document.getElementById('history_poster_img' + i);
+					history_poster_img.style.left = _this.posterImgs[i].l + 'px';
+					history_poster_img.style.top = _this.posterImgs[i].t + 'px';
+					history_poster_img.classList.remove('history_poster_img_checked');
+				}
+				var poster_focus = document.getElementById('history_poster_focus');
+				poster_focus.style.display = 'block';
+				poster_focus.style.left = _this.posterFocus[index].l + 'px';
+				poster_focus.style.top = _this.posterFocus[index].t + 'px';
+				var history_poster_img = document.getElementById('history_poster_img' + index);
+				history_poster_img.style.left = _this.posterFocus[index].l + 'px';
+				history_poster_img.style.top = _this.posterFocus[index].t + 'px';
+				history_poster_img.classList.add("history_poster_img_checked");
+				_this.curIndex = index;
+			}
+		},
+		// 分页聚焦
+		setPageFocus: function (index){
+			var _this = this;
+			_this.isPage = 'true';
+            var poster_focus = document.getElementById('history_poster_focus');
+            poster_focus.style.display = 'none';
+            for(var i = 0; i < 12; i++){
+            	var history_poster_img = document.getElementById('history_poster_img' + i);
+            	history_poster_img.style.left = _this.posterImgs[i].l + 'px';
+				history_poster_img.style.top = _this.posterImgs[i].t + 'px';
+            	history_poster_img.classList.remove('history_poster_img_checked');
+            }
+			var page_focus = document.getElementById('history_page_focus');
+            page_focus.style.display = 'block';
+            page_focus.style.left = _this.pageFocus[index].l + 'px';
+            page_focus.style.top = _this.pageFocus[index].t + 'px';
+            _this.pageIndex = index;
+		},
+		// menu操作
+		menuOperation: function (index){
+			var _this = this;
+			switch (index) {
+	          case 0:
+	            document.getElementById('histroy_empty').style.backgroundImage = 'url("img/history/empty_checked.png")';
+	            document.getElementById('histroy_cancel').style.backgroundImage = 'url("img/history/cancel.png")';
+	            break;
+	          case 1:
+	            document.getElementById('histroy_empty').style.backgroundImage = 'url("img/history/empty.png")';
+	            document.getElementById('histroy_cancel').style.backgroundImage = 'url("img/history/cancel_checked.png")';
+	            break;
+	          default:
+	            break;
+	        };
+	        _this.operationIndex = index;
+		},
+		// 清空记录
+		menuEmpty: function (){
+			var _this = this;
+			_this.api.menuDelete(function (status){
+				if(status == 'success'){
+					_this.loadData();
+					_this.operation = 'false';
+					document.getElementById('histroy_dialog').style.display = 'none';
+				}
+			})
+		},
+		// 取消
+		menuCancle: function (){
+			var _this = this;
+			_this.operation = 'false';
+        	document.getElementById('histroy_dialog').style.display = 'none';
+		},
+	};
+	var API = {
+		list: function (callback){
+			var _this = this;
+			// var smard_card_id = utils.getParam();  //家里盒子为 8731202503292774没有数据
+			var smard_card_id = '1372466432';
+			var start_date = '1970-01-01';
+			// var end_date = utils.formatDate();
+			var end_date = '2019-12-17';
+			// var url = paasHost + '/aquapaas/rest/multiapp/viewhistory/subscriber/' + smard_card_id;
+			var url = 'http://172.16.20.155:8080/aquapaas/rest/multiapp/viewhistory/subscriber/' + smard_card_id;
+			var opts = [];
+	      	opts.push('start_date=' + start_date);
+	      	opts.push('end_date=' + end_date);
+	      	// opts.push('view_delete_flag=' + 'true');   //过滤标记删除的
+	      	opts.push('view_delete_flag=' + 'false');  //用于测试
+	      	opts.push('app_key=' + paasAppKey);
+	      	opts.push('timestamp=' + new Date().toISOString());
+			url += "?" + opts.join('&');
+			console.log('list_url=='+url);
+			var type = 'get';
+			var Accept = 'application/multiapp-viewhistory';
+			getJson(type, url, Accept, function (resp) {
+                callback && callback(resp);
+            });
+		},
+		listPoster: function (ids, callback){
+			var _this = this;
+			var doc_type = 'vod';
+			var url =  paasHost + '/aquapaas/rest/search/content_by_id/' + doc_type;
+			// var url = 'http://api.xor-live.io/aquapaas/rest/search/content_by_id/' + doc_type;
+			var opts = [];
+	      	opts.push('ids=' + ids);
+	      	opts.push('app_key=' + paasAppKey);
+	      	opts.push('timestamp=' + new Date().toISOString());
+			url += "?" + opts.join('&');
+			var type = 'get';
+			var Accept = 'application/json';
+			getJson(type, url, Accept, function (resp) {
+				// callback && callback(resp);
+				var data = [];
+				for(var i = 0; i < ids.length; i++){
+					data[i] = {
+						"packageposterboard": "http://api.xor-live.io/aqua/rest/cdmi/default/netdisk/zgd/paas/vod/zgd/image/7A1/ZGD_7A15DBF16DFE8B3B18DD99BABD66716CT00.jpg,http://api.xor-live.io/aqua/rest/cdmi/default/netdisk/zgd/paas/vod/zgd/image/7A1/ZGD_7A15DBF16DFE8B3B18DD99BABD66716CI00.jpg,http://api.xor-live.io/aqua/rest/cdmi/default/netdisk/zgd/paas/vod/zgd/image/7A1/ZGD_7A15DBF16DFE8B3B18DD99BABD66716CP00.jpg",
+					}
+				}
+				callback && callback(data);
+            });
+		},
+		menuDelete: function (callback){
+			var _this = this;
+			// var smard_card_id = utils.getParam();
+			var smard_card_id = '1372466432';
+			// var end_date = utils.formatDate();
+			var end_date = '2019-12-17';
+			// var url = paasHost + '/aquapaas/rest/multiapp/viewhistory/deleteflag/' + smard_card_id;
+			var url = 'http://172.16.20.155:8080/aquapaas/rest/multiapp/viewhistory/deleteflag/' + smard_card_id;
+			var opts = [];
+	      	opts.push('end_date=' + end_date);
+	      	opts.push('app_key=' + paasAppKey);
+	      	opts.push('timestamp=' + new Date().toISOString());
+			url += "?" + opts.join('&');
+			var type = 'get';
+			var Accept = 'application/multiapp-viewhistory';
+			getJson(type, url, Accept, function (resp, status) {
+				callback && callback(status);
+            });
+		}
+	};
+	var Model = {
+		data: [],
+		list: function (ret){
+			var ids = [];
+			if(ret && ret.details){
+				// 拿到更多数据
+				var arr01 = ret.details;
+				var arr02 = ret.details;
+				this.data = arr01.concat(arr02);
+				// this.data = ret.details;
+			}
+		},
+		listIds: function (data){
+			var ids = [];
+			for(var i = 0; i < data.length; i++){
+				var pid_paid = data[i].provider_id + '_' + data[i].provider_asset_id;
+				ids.push(pid_paid);
+			}
+			return ids;
+		},
+		listPoster: function (ret){
+			var _this = this;
+			var poster_srcs = [];
+			for(var i = 0; i < ret.length; i++){
+				if(ret[i].posterboard){
+					poster_srcs.push(ret[i].posterboard);
+				} else if(ret[i].packageposterboard){
+					poster_srcs.push(ret[i].packageposterboard.split(',')[0]);
+				}
+			}
+			return poster_srcs;
+		}
+	};
+	return {
+        init: function () {
+        	debug(printLog);
+            var app = new frame();
+        }
+    }
+})

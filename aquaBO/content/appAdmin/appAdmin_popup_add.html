@@ -1,0 +1,88 @@
+<head>
+  <style type="text/css">
+    @IMPORT url("content/appAdmin/app_admin.css");
+  </style>
+</head>
+<div class="centerPopupStyle_appAdmin" id="centerPopupStyle" style="color:#727272;font-family:'微软雅黑';background-color:#ffffff;font-size:14px;height:100%;width:100%">
+    <div class="popupCenterDivTop" style="background-color:#2ea2d7;font-weight:normal;">
+        <div class="popupCenterDivTopLeft" id="popupCenterDivTopLeft" style="font-size:16px">新增应用</div>
+        <img src="images/cross.png" onclick="addAdmin.closeCenterDiv()" style="cursor:pointer;float:right;margin-top:10px;margin-right:17px;" alt="关闭"/>
+    </div>
+    <div style="margin-left:30px;width:638px;height:542px;width:100%">
+        <div style="height:60px;width:100%;margin-top:10px;position:relative">
+            <div style="height:auto;width:342px;position:absolute">
+                <div style="height:20px;line-height:20px;width:auto">App Key</div>
+                <input class="app_admin_input_edit" type="text" id="appAdmin_appKey" style="color:#727272;margin-top:5px;border:1px solid #d3d3d3;width:297px;height:32px"/>
+            </div>
+            <!--div id="addAdmin_appSecret" style="display:none;height:auto;width:250px;position:absolute;left:341px">
+                <div style="height:20px;line-height:20px;width:auto">App Secret</div>
+                <input id="addAdmin_appSecret_son" type="text" style="color:#727272;margin-top:5px;border:1px solid #d3d3d3;width:250px;height:32px"/>
+            </div>
+            <span id="addAdmin_resetSecret" onclick="addAdmin.resetAppSecret()" style="cursor:pointer;display:none;top:27px;height:auto;width:250px;text-align:left;position:absolute;left:604px;font-size:14px;color:#2ea2d7;text-decoration:underline">
+                重置
+            </span-->
+        </div>
+        <div style="height:78px;width:100%;margin-top:6px;position:relative">
+            <div style="height:auto;width:342px;position:absolute">
+                <div style="height:20px;line-height:20px;width:auto">App Name</div>
+                <input id="appAdmin_appName" class="app_admin_input_edit" type="text" style="color:#727272;margin-top:5px;border:1px solid #d3d3d3;width:297px;height:32px"/>
+            </div>
+            <div style="height:auto;width:342px;position:absolute;left:341px">
+                <div style="height:20px;line-height:20px;width:auto">Token检查</div>
+                <div id="app_admin_token_check_container" style="margin-top:5px;width:297px;position:relative;height:32px;border:1px #e2e2e2 solid">
+                    <!--div id="appAdmin_tokenCheck" class="app_admin_input_edit" onclick="addAdmin.mopen(this,'downMenu','father')" style="width:100%;position:absolute;border:1px solid #d3d3d3;padding-left:0px;">
+                        <div style="overflow:hidden;height:32px;">
+                            <div id="downMenu_head_token" style="height:32px;line-height:30px;display:block;float:left;margin-left:10px;width:auto;height:100%" name="inputTitle">否</div>
+                            <img class="smallArrowInDiv" style="margin-top:4.5px" src="images/downArrow-SkyBlue.png">
+                        </div>
+                    </div>
+                    <div class="downMenu downMenuB" id="downMenu" style="left:0px;top:34px;display:none;width:190px;z-index:10010;">
+                        <div style="background:white;width:281px;height:30px;line-height:30px;border-top:0" onclick="addAdmin.mopen(this,'downMenu')">否</div>
+                        <div style="background:white;width:281px;height:30px;line-height:30px" onclick="addAdmin.mopen(this,'downMenu')">是</div>
+                    </div-->
+                </div>
+            </div>
+        </div>
+				<div style="display:none;height:78px;width:638px;margin-top:-12px;">
+          <div id="addAdmin_appSecret" style="height:auto;width:100%;display:inline-block">
+							<div style="height:20px;line-height:20px;width:auto">App Secret</div>
+							<input id="addAdmin_appSecret_son" class="app_admin_input_edit" type="text" style="color:#727272;margin-top:5px;border:1px solid #d3d3d3;width:100%;height:32px"/>
+					</div><div id="addAdmin_resetSecret" onclick="addAdmin.resetAppSecret()" style="display:inline-block;cursor:pointer;display:none;height:100%;width:37px;text-align:left;margin-left:11px;font-size:14px;color:#2ea2d7;text-decoration:underline">重置</div>
+        </div>
+        <div style="height:auto;width:100%;margin-top:-8px;">
+            <div style="height:20px;line-height:20px;width:auto">授权范围</div>
+        </div>
+        <div id="appAdmin_mainTable" style="visibility:hidden;margin-top:7px;height:173px;width:639px">
+            <table cellspacing="0" cellpadding="0" style="background-color:#ffffff;width:calc(100% - 2px);height:calc(100% - 2px);table-layout:fixed" class="page_style_TABLE" id="macroCourse_page_style_TABLE">
+                <thead>
+                    <tr><th style="width:5.8%"> </th>
+                        <th style="width:24%">scope_id</th>
+                        <th style="width:31.39%">scope_name</th>
+                        <th style="width:38.3%">scope_description</th>
+                    </tr>
+                </thead>
+                <tbody class="popup_app_tableRegion" id="popup_app_tableRegion">
+                    <!--tr><td><div class="squareChoosed_outer"><div class="squareChoosed_inner"></div></div></td><td></td><td></td><td></td></tr>
+                    <tr><td><div class="squareChoosed_outer"><div style="display:none" class="squareChoosed_inner"></div></div></td><td></td><td></td><td></td></tr>
+                    <tr><td><div class="squareChoosed_outer"><div style="display:none" class="squareChoosed_inner"></div></div></td><td></td><td></td><td></td></tr>
+                    <tr><td><div class="squareChoosed_outer"><div style="display:none" class="squareChoosed_inner"></div></div></td><td></td><td></td><td></td></tr-->
+                </tbody>
+            </table>
+        </div>
+        <div style="height:auto;width:100%;margin-top:5px;">
+            <div style="height:20px;line-height:20px;width:auto">Description</div>
+        </div>
+        <div class="lectureCreatePage_info_unit" style="height:84px;width:639px;overflow: visible;margin-top:3px">
+            <div class="lectureCreatePage_info_unit_con" style="height:100%;width: 100%">
+                <textarea class="app_admin_input_edit app_admin_input_white" id="lectureCreatePage_info_course_description_value" style="color:#727272;height:100%;width: 100%;padding-left:0"></textarea>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div id="broad_singleSearch_popupCenterDivbottom" class="popupCenterDivbottom" style="margin-right:19px;width:651px;;margin-top:12px;overflow:hidden">
+            <div class="pageTitleContainerRightButt" id="appAdmin_button_commit" onclick="addAdmin.commit_()" style="border-color:#597f89;width:149px;margin-right:0px;background-color:#2ea2d7"></div>
+            <div class="pageTitleContainerRightButt" onclick="addAdmin.closeCenterDiv()" style="border-color:#597f89;width:149px;margin-right:25px;background-color:#5da1c0">取消</div>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+    </div>
+</div>

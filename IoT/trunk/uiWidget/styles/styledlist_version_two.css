@@ -1,0 +1,32 @@
+.table_basic{
+	table-layout: fixed;
+	font-size:12px
+}
+.table_td_basic{
+	text-align:center;
+}
+.table_td_basic_two{
+	text-align:left;
+}
+.table_td_basic,.table_td_basic_two{
+	overflow:hidden;
+	word-break:keep-all;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+	font-size: 12px;
+}
+.table_foot_table{
+	visibility:hidden;
+	font-family:微软雅黑;
+	font-size:14px;
+	background-color:white
+}
+.table_foot_ele_basic{
+	height:25px;
+	text-align:center;
+	line-height:25px
+}
+.table_foot_border_and_font{
+	border:1px #dddddd solid;
+	color:#e0e0e0
+}

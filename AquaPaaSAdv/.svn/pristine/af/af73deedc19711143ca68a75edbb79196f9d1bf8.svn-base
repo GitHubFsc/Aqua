@@ -1,0 +1,103 @@
+#sche__start-datepicker-input,#sche__end-datepicker-input{
+	padding-left:8px
+}
+.sche_inline_block,.sche_inline_block_b{
+	width:auto;
+	margin-top:19px;
+	cursor:pointer
+	/*display:table;*/
+}
+
+.sche_inline_block_checkbox,.sche_inline_block_checkbox_b{
+	float:left;
+	height:13px;
+	width:13px;
+	/*display:table-cell;*/
+}.schedula_site_checkbox_b div {
+    background-color: #83b0c5;
+    height: 11px;
+    left: 1px;
+    position: absolute;
+    top: 1px;
+    width: 11px;
+}
+
+.sche_inline_block_text,.sche_inline_block_text_b{
+	margin-left:5px;
+	width:calc(100% - 20px); 
+	max-width:calc(100% - 20px);
+	word-break:break-all;
+	float:left;
+	min-height:17px;
+	line-height:17px
+}
+
+.tr_style_s{
+	overflow:hidden
+}
+
+.sche_table_td_style{
+	border-right:1px #e3e3e3 solid;
+	border-top:1px #e3e3e3 solid;
+	width:20px;
+	height:27px;
+	line-height:27px;
+	text-align:center
+}
+.sche_table_td_white{
+	background-color:#ffffff;
+}
+.sche_table_td_colored{
+	background-color:#9bd8f4;
+	cursor:pointer
+}
+.sche_table_td_colored_choosed{
+	background-color:#5da1c0;
+	cursor:pointer
+}
+.sche_table_td_white_border_none{
+	background-color:#ffffff;
+	border:0
+}
+
+.schedula_site_checkbox {
+  border: 1px solid rgb(195, 197, 199);
+	margin-top:1px;
+  height: 13px;
+  position: relative;
+  width: 13px;
+}
+
+.schedule_flex_wrap_container{
+	display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+	-webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  -o-flex-wrap: wrap;
+  flex-wrap:wrap;
+}
+
+.scheduleAdvContainer .mCSB_dragger,.schedule_choosed_adv_container .mCSB_dragger,.schedule_siteContainer .mCSB_dragger{
+	height:53px;
+	
+}
+.scheduleAdvContainer .mCSB_dragger_bar,.schedule_choosed_adv_container .mCSB_dragger_bar,.schedule_siteContainer .mCSB_dragger_bar{
+	background-color:#5391a6!important;
+	width:5px!important;
+	border-radius: 0px!important;
+}
+
+.scheduleAdvContainer .mCSB_draggerRail,.schedule_choosed_adv_container .mCSB_draggerRail,.schedule_siteContainer  .mCSB_draggerRail{
+	width:5px!important;
+}
+.sche_datepicker_calendar{
+	font-size:14px;
+	background-color:#efefef;
+	position:absolute;
+}
+.sche_transform_y{
+	background-image: url("images/up_arrow.png");
+} 

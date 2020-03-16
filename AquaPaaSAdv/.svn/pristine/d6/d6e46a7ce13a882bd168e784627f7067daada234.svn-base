@@ -1,0 +1,14 @@
+<div class="conflict_dialog">
+  <div class="dialog_title">
+    <div class="title_content">{{ADPOLICYMANAGE_CONFLICT_TITLE}}</div>
+    <div class="close_btn"></div>
+  </div>
+  <div class="content">
+    <div class="content_logo"></div>
+    <div class="content_text">{{ADPOLICYMANAGE_CONFLICT_CONTENT}}</div>
+  </div>
+  <div class="foot">
+    <div class="cancel_btn select_dialog_btn">{{ADV_SYSUSER_QUXIAO}}</div>
+    <div class="confirm_btn select_dialog_btn">{{ADV_SYSUSER_QUEDING}}</div>
+  </div>
+</div>

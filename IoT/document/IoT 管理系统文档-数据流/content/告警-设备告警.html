@@ -1,0 +1,1683 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../js/prettify/prettify.css">
+<script src="../js/prettify/run_prettify.js"></script>
+<title>告警-设备告警</title>
+<link rel="stylesheet" href="../style/util.css" type="text/css"/>
+<script src="../js/nav.js"></script>
+</head>
+<body onload="setNav()">
+<h1>告警-设备告警</h1>
+<hr />
+<ol id="navs"></ol>
+<hr />
+<ol>
+<li>
+<h2>获取热泵的属性</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thingdef/single/mgd.gehua/ReBeng?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>接口简称:thingdef接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>ReBeng</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingdef/single/mgd.gehua/ReBeng?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: EdWJIF62QxsKBrMVcXkMp5YNqVg=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1800
+Access-Control-Allow-Methods: GET,POST,DELETE,PUT,OPTIONS,HEAD
+Access-Control-Allow-Headers: x-aqua-sign
+x-trace-info: trace_id=69add6d3-03b2-4dbe-a839-78be96a873e7&rpc_id=0
+Allow: DELETE,POST,GET,PUT,OPTIONS,HEAD
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Content-Length: 0
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+    "id": "5c218987dafd8e003881ba10",
+    "thingDefID": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "热泵",
+    "description": "空气源热泵",
+    "creator": "admin",
+    "createTime": "2018-12-25T09:36:07+0800",
+    "lastUpdateTime": "2018-12-25T09:44:04+0800",
+    "metadata":
+    {
+        "m1": "v1",
+        "m2": "v2"
+    },
+    "events": null,
+    "actions": null,
+    "properties": [
+    {
+        "name": "DTUID",
+        "displayName": "DTU编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "DTU编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "region",
+        "displayName": "区域",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": "enum_region",
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "区域",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "address_coord",
+        "displayName": "百度摩卡托坐标",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "coord_bd09mc",
+        "metric": null,
+        "description": "百度摩卡托坐标",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "devID",
+        "displayName": "设备编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "设备编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "manufacture",
+        "displayName": "厂商编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "5",
+        "values": null,
+        "valuesEnumDefName": "enum_manufacture",
+        "enumFilterFields": ["/thingDefID"],
+        "appDataType": null,
+        "metric": null,
+        "description": "厂商编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "model",
+        "displayName": "设备型号编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "5",
+        "values": null,
+        "valuesEnumDefName": "enum_model",
+        "enumFilterFields": ["/thingDefID", "/metadata/manufacture"],
+        "appDataType": null,
+        "metric": null,
+        "description": "设备型号编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "installDate",
+        "displayName": "安装日期",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "安装日期",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "softwareVersion",
+        "displayName": "软件版本",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "软件版本",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "protocolVersion",
+        "displayName": "协议版本",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "协议版本",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "timeUTCSec",
+        "displayName": "数据采集时间",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": "秒",
+        "description": "数据采集时间",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "indoorTemp",
+        "displayName": "室内温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "室内温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "outdoorTemp",
+        "displayName": "室外温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "室外温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "setTemp",
+        "displayName": "设定温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "设定温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "intoWaterTemp",
+        "displayName": "入水温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "入水温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "outWaterTemp",
+        "displayName": "出水温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "出水温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "switchState",
+        "displayName": "开关机状态",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "开关机状态",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "waterFlow",
+        "displayName": "水流量",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "水流量",
+        "metric": null,
+        "description": "水流量",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "usedPower",
+        "displayName": "已使用电量",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "电量",
+        "metric": null,
+        "description": "已使用电量",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "failureFlag",
+        "displayName": "故障标志",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "故障标志",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "failureWarning",
+        "displayName": "故障代码",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "故障代码",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "alarmTimeUTCSec",
+        "displayName": "告警产生时间",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "告警产生时间",
+        "readOnly": true,
+        "importantType": "2"
+    }]
+}
+</pre>
+</li>
+<li>
+<h2>获取热泵厂商的值列表</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"]}
+</pre>
+<h3>接口简称:7.5接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_manufacture</td><td>取值热泵属性manufacture的valuesEnumDefName</td></tr>
+<tr><td>"enum_device":["ReBeng"]</td><td>["ReBeng"]这个值中，ReBeng是取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: I2Tw5kz2Hf2gScdwhRYl0IvzRv8=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Content-Length: 26
+Origin: http://192.168.7.143:8080
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=4f4f65f8-073f-4a8c-9650-85ae4596d1d8&rpc_id=0
+Content-Type: application/json
+Date: Tue, 29 Jan 2019 07:11:22 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "北京华业新能源有限公司",
+    "metadata":
+    {
+        "contact": "李某某",
+        "telephone": "13325685588"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "354242be6a5149c5af7df6d6acecc603"
+},
+{
+    "value": "2",
+    "displayName": "深圳派沃新能源科技股份有限公司",
+    "metadata":
+    {
+        "contact": "王某某",
+        "telephone": "13388855669"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "ce41c1da6f13462ab981642fbb027025"
+},
+{
+    "value": "3",
+    "displayName": "浙江中广电器股份有限公司",
+    "metadata":
+    {
+        "contact": "张某某",
+        "telephone": "13355588776"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "6008c1a1d594470f859484be57302218"
+}]
+</pre>
+</li>
+<li>
+<h2>获取热泵告警的历史记录</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=ReBeng&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T08:00:48.076Z&start=0&end=13
+</pre>
+<h3>接口简称:4.4接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>namespace=mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>thingdefid=ReBeng</td><td>thingdefid, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: I2Tw5kz2Hf2gScdwhRYl0IvzRv8=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+Content-Type: application/json
+Date: Tue, 29 Jan 2019 07:57:11 GMT
+Transfer-Encoding: chunked
+Server: nginx
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"id": "5c5006d24c6750003c82595f",
+	"thing_id": "mgd.gehua.1.d896e0ff00012526",
+	"ext_id": "1.d896e0ff00012526",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:02:45+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:02:45+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277D66",
+		"model": "6"
+	}
+}, {
+	"id": "5c5006484c6750003c825862",
+	"thing_id": "mgd.gehua.1.d896e0ff00012044",
+	"ext_id": "1.d896e0ff00012044",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:02:41+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:02:41+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287541",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006ce4c6750003c825952",
+	"thing_id": "mgd.gehua.1.d896e0ff000123bd",
+	"ext_id": "1.d896e0ff000123bd",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:02:41+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:02:41+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "1",
+		"DTUID": "010010746B277BFD",
+		"model": "2"
+	}
+}, {
+	"id": "5c5005934c6750003c825713",
+	"thing_id": "mgd.gehua.1.d896e0ff00011e34",
+	"ext_id": "1.d896e0ff00011e34",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:02:35+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:02:35+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287362",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006f24c6750003c825996",
+	"thing_id": "mgd.gehua.1.d896e0ff000127f1",
+	"ext_id": "1.d896e0ff000127f1",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:02:17+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:02:17+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B278031",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006784c6750003c8258b9",
+	"thing_id": "mgd.gehua.1.d896e0ff000128b1",
+	"ext_id": "1.d896e0ff000128b1",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:44+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:44+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287415",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006d64c6750003c825967",
+	"thing_id": "mgd.gehua.1.d896e0ff000127ea",
+	"ext_id": "1.d896e0ff000127ea",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:43+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:43+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B27802A",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006ce4c6750003c825954",
+	"thing_id": "mgd.gehua.1.d896e0ff00012517",
+	"ext_id": "1.d896e0ff00012517",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:29+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:29+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277D57",
+		"model": "1"
+	}
+}, {
+	"id": "5c5006ba4c6750003c825937",
+	"thing_id": "mgd.gehua.1.d896e0ff00012515",
+	"ext_id": "1.d896e0ff00012515",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:20+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:20+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277D55",
+		"model": "6"
+	}
+}, {
+	"id": "5c5006c14c6750003c825940",
+	"thing_id": "mgd.gehua.1.d896e0ff000127e4",
+	"ext_id": "1.d896e0ff000127e4",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:13+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:13+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B278024",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006b64c6750003c82592e",
+	"thing_id": "mgd.gehua.1.d896e0ff0001267b",
+	"ext_id": "1.d896e0ff0001267b",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:09+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:09+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277EBB",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006b34c6750003c825925",
+	"thing_id": "mgd.gehua.1.d896e0ff00012512",
+	"ext_id": "1.d896e0ff00012512",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:05+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:05+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277D52",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006f24c6750003c825998",
+	"thing_id": "mgd.gehua.1.d896e0ff000123aa",
+	"ext_id": "1.d896e0ff000123aa",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:05+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:05+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "1",
+		"DTUID": "010010746B277BEA",
+		"model": "2"
+	}
+}, {
+	"id": "5c5006af4c6750003c82591b",
+	"thing_id": "mgd.gehua.1.d896e0ff0001267a",
+	"ext_id": "1.d896e0ff0001267a",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:01:04+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:01:04+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277EBA",
+		"model": "2"
+	}
+}]
+</pre>
+</li>
+<li>
+<h2>获取单个热泵的信息</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thing/1.d896e0ff00012526?namespace=mgd.gehua&user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T08:28:55.362Z
+</pre>
+<h3>接口简称:3.8接口(热泵)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>1.d896e0ff00012526</td><td>ext_id, 来自4.4接口返回</td></tr>
+<tr><td>mgd.gehua</td><td>namespace, 来自4.4接口返回</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: UhjZQ9dYRUDDSMLCdltiUvfBhaM=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=1453b6df-92e4-4241-b7de-6766e8d03641&rpc_id=0
+Content-Type: application/json
+Date: Tue, 29 Jan 2019 08:23:38 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<pre class="prettyprint"></pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "mgd.gehua.1.d896e0ff00012526",
+	"ext_id": "1.d896e0ff00012526",
+	"namespace": "mgd.gehua",
+	"def_id": "ReBeng",
+	"parent_ext_id": "d896e0ff00012526",
+	"name": "mgd.gehua.1.d896e0ff00012526",
+	"endpoint": null,
+	"status": "Offline",
+	"states": null,
+	"create_time": "2019-01-08T10:30:12+0800",
+	"last_modified_time": "2019-01-29T15:54:58+0800",
+	"last_event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:02:45+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"metadata": {
+		"devID": 1,
+		"devAddr": "674e22bc",
+		"stateAndMode": 0,
+		"rssi": -100,
+		"timeUTCSec": 1548748965,
+		"controlWord": 33,
+		"DTUID": "010010746B277D66",
+		"setTemp": 40,
+		"gwEui": "d896e0fff0100538",
+		"fcnt": 1504,
+		"outdoorTemp": 8,
+		"devEui": "d896e0ff00012526",
+		"indoorTemp": 15,
+		"dataMarker": 2,
+		"mtype": 2,
+		"manufacture": "2",
+		"intoWaterTemp": 15,
+		"datr": "SF9BW125",
+		"snr": 9.5,
+		"joinEui": "d896e0e000008296",
+		"fport": 11,
+		"model": "6",
+		"outWaterTemp": 15,
+		"switchState": 0
+	}
+}
+</pre>
+</li>
+<li>
+<h2>获取单个DTU的信息</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thing/d896e0ff00012526?namespace=mgd.gehua&user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:00:07.919Z
+</pre>
+<h3>接口简称:3.8接口(DTU)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>d896e0ff00012526</td><td>parent_ext_id, 来自3.8接口(热泵)返回</td></tr>
+<tr><td>namespace=mgd.gehua</td><td>namespace, 来自4.4接口返回</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thing/d896e0ff00012526?namespace=mgd.gehua&user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:00:07.919Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: 2cIE8Fzfw7XqktS+fUZ3W3d80VE=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=fa98b46b-4e50-48a1-b812-62dfed2acd7d&rpc_id=0
+Content-Type: application/json
+Date: Tue, 29 Jan 2019 08:54:50 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "mgd.gehua.d896e0ff00012526",
+	"ext_id": "d896e0ff00012526",
+	"namespace": "mgd.gehua",
+	"def_id": "DTU",
+	"parent_ext_id": null,
+	"name": "mgd.gehua.d896e0ff00012526",
+	"endpoint": null,
+	"status": "Normal",
+	"states": null,
+	"create_time": "2019-01-08T10:30:12+0800",
+	"last_modified_time": "2019-01-29T02:34:11+0800",
+	"last_event": null,
+	"metadata": {
+		"devAddr": "674e22bc",
+		"address_coord": "39.703125,116.863745",
+		"controlWord": 33,
+		"DTUID": "010010746B277D66",
+		"DTUWorkMode": 3,
+		"userPhone": "80590167",
+		"gwEui": "d896e0fff0100538",
+		"alarmCode": 0,
+		"devEui": "d896e0ff00012526",
+		"devEUI": "d896e0ff00012526",
+		"deviceInstallNum": 1,
+		"dataMarker": 3,
+		"deviceNum": 1,
+		"mtype": 2,
+		"rate": 0,
+		"installDate": "2018-10-26T17:03:14+0800",
+		"datr": "SF9BW125",
+		"joinEui": "d896e0e000008296",
+		"batteryPower": 255,
+		"enviTemp": 11,
+		"rssi": -103,
+		"DTUFunPos": 1,
+		"coordinate": "116.85525,39.696186",
+		"address": "通州区漷县镇军庄村135号",
+		"userName": "杨凤义",
+		"fcnt": 1477,
+		"intervalMin": 1441,
+		"snr": 11.5,
+		"fport": 61
+	}
+}
+</pre>
+</li>
+<li>
+<h2>搜索-根据热泵告警历史记录的返回字段，做一般搜索</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=ReBeng&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:22:27.099Z&start=0&end=13&DTUID=010010746B277C8E&DTUID_op=lk
+</pre>
+<h3>接口简称:4.4接口-一般搜索</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>namespace=mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>thingdefid=ReBeng</td><td>thingdefid, 取值已有配置项</td></tr>
+<tr><td>DTUID=010010746B277C8E&DTUID_op=lk</td><td>4.4接口返回数据中，DTUID里面包含"010010746B277C8E"字符串的条目</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=ReBeng&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:29:05.718Z&start=0&end=13&DTUID=010010746B277C8E&DTUID_op=lk HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: K8x5Q912RpX3TKpV3GwdhSJ2jn0=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 29 Jan 2019 09:25:29 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 253
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"id": "5c5017d24c6750003c8277bc",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:14:47+0800",
+	"status": "Normal",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "1",
+		"create_time": "2019-01-29T17:14:47+0800",
+		"payload": "",
+		"status": "Normal"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c5010c94c6750003c826b1e",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:44:47+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:44:47+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c5009c14c6750003c825eaa",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T16:14:46+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T16:14:46+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c5002b84c6750003c8251f0",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T15:44:44+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T15:44:44+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4ffbb04c6750003c824580",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T15:14:44+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T15:14:44+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4ff4a74c6750003c8238d4",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T14:44:43+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T14:44:43+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4fed9e64f2af003c583006",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T14:14:41+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T14:14:41+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4fe69664f2af003c582367",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T13:44:41+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T13:44:41+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4fdf8e64f2af003c5816eb",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T13:14:40+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T13:14:40+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4fd88564f2af003c580a4b",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T12:44:39+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T12:44:39+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4fd17c64f2af003c57fdc7",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T12:14:38+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T12:14:38+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4edb5064f2af003c566b83",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-28T18:44:04+0800",
+	"status": "Normal",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "1",
+		"create_time": "2019-01-28T18:44:04+0800",
+		"payload": "",
+		"status": "Normal"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4ed44764f2af003c565f93",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-28T18:14:02+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-28T18:14:02+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}, {
+	"id": "5c4ecd3f64f2af003c5653a5",
+	"thing_id": "mgd.gehua.1.d896e0ff0001244e",
+	"ext_id": "1.d896e0ff0001244e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-28T17:44:02+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-28T17:44:02+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "2",
+		"DTUID": "010010746B277C8E",
+		"model": "2"
+	}
+}]
+</pre>
+</li>
+<li>
+<h2>搜索-根据热泵告警历史记录的返回字段作为ThingEnum值在ThingEnumDef中定义的显示名进行模糊搜索</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=ReBeng&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:45:57.926Z&start=0&end=13&manufacture=浙江&manufacture_op=enum
+</pre>
+<h3>接口简称:4.4接口-作为ThingEnum值搜索</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>namespace=mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>thingdefid=ReBeng</td><td>thingdefid, 取值已有配置项</td></tr>
+<tr><td>manufacture=浙江&manufacture_op=enum</td><td>manufacture后面的manufacture_op=enum表示该字符作为ThingEnum值在ThingEnumDef中定义的显示名进行模糊搜索</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=ReBeng&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:45:57.926Z&start=0&end=13&manufacture=%E6%B5%99%E6%B1%9F&manufacture_op=enum HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: d+0WnB/hm+63s5KHzexyUfM3zZs=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 29 Jan 2019 09:42:21 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 49422
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"id": "5c501f054c6750003c828425",
+	"thing_id": "mgd.gehua.1.d896e0ff0001204b",
+	"ext_id": "1.d896e0ff0001204b",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:44:31+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:44:31+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287349",
+		"model": "2"
+	}
+}, {
+	"id": "5c501f534c6750003c8284af",
+	"thing_id": "mgd.gehua.1.d896e0ff00011da1",
+	"ext_id": "1.d896e0ff00011da1",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:44:08+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:44:08+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118092500282266",
+		"model": "2"
+	}
+}, {
+	"id": "5c501e824c6750003c82834d",
+	"thing_id": "mgd.gehua.1.d896e0ff000128e4",
+	"ext_id": "1.d896e0ff000128e4",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:43:35+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:43:35+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287443",
+		"model": "2"
+	}
+}, {
+	"id": "5c501f554c6750003c8284b4",
+	"thing_id": "mgd.gehua.1.d896e0ff00011ea2",
+	"ext_id": "1.d896e0ff00011ea2",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:41:30+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:41:30+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600286705",
+		"model": "2"
+	}
+}, {
+	"id": "5c501e3f4c6750003c8282d8",
+	"thing_id": "mgd.gehua.1.d896e0ff00011e33",
+	"ext_id": "1.d896e0ff00011e33",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:40:52+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:40:52+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287354",
+		"model": "2"
+	}
+}, {
+	"id": "5c501e464c6750003c8282e1",
+	"thing_id": "mgd.gehua.1.d896e0ff0001213e",
+	"ext_id": "1.d896e0ff0001213e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:40:31+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:40:31+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600286764",
+		"model": "2"
+	}
+}, {
+	"id": "5c501cbc4c6750003c82804f",
+	"thing_id": "mgd.gehua.1.d896e0ff00011ff8",
+	"ext_id": "1.d896e0ff00011ff8",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:40:00+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:40:00+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287380",
+		"model": "2"
+	}
+}, {
+	"id": "5c501de64c6750003c828246",
+	"thing_id": "mgd.gehua.1.d896e0ff0001284f",
+	"ext_id": "1.d896e0ff0001284f",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:39:40+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:39:40+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287355",
+		"model": "6"
+	}
+}, {
+	"id": "5c501dd64c6750003c828228",
+	"thing_id": "mgd.gehua.1.d896e0ff00011daf",
+	"ext_id": "1.d896e0ff00011daf",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:38:45+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:38:45+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118092500282280",
+		"model": "2"
+	}
+}, {
+	"id": "5c501d534c6750003c828149",
+	"thing_id": "mgd.gehua.1.d896e0ff000126d2",
+	"ext_id": "1.d896e0ff000126d2",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:38:26+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:38:26+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "010010746B277F12",
+		"model": "2"
+	}
+}, {
+	"id": "5c501d194c6750003c8280ed",
+	"thing_id": "mgd.gehua.1.d896e0ff00011e15",
+	"ext_id": "1.d896e0ff00011e15",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:38:16+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:38:16+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600286694",
+		"model": "2"
+	}
+}, {
+	"id": "5c501d394c6750003c828117",
+	"thing_id": "mgd.gehua.1.d896e0ff00011ffc",
+	"ext_id": "1.d896e0ff00011ffc",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:36:51+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:36:51+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287378",
+		"model": "3"
+	}
+}, {
+	"id": "5c501cab4c6750003c82802f",
+	"thing_id": "mgd.gehua.1.d896e0ff00011ee6",
+	"ext_id": "1.d896e0ff00011ee6",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:36:41+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:36:41+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287334",
+		"model": "2"
+	}
+}, {
+	"id": "5c501cc94c6750003c828067",
+	"thing_id": "mgd.gehua.1.d896e0ff00012041",
+	"ext_id": "1.d896e0ff00012041",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-29T17:36:05+0800",
+	"status": "Offline",
+	"thing_def_id": "ReBeng",
+	"event": {
+		"event_type": "2",
+		"create_time": "2019-01-29T17:36:05+0800",
+		"payload": "",
+		"status": "Offline"
+	},
+	"thing_metadata": {
+		"devID": 1,
+		"manufacture": "3",
+		"DTUID": "0020118102600287370",
+		"model": "2"
+	}
+}]
+</pre>
+</li>
+</ol>
+<h3>业务流程简介(仅供参考，以实际代码为准)</h3>
+<pre class="prettyprint">
+一、打开页面，页面发送thingdef接口。
+>>注意,和开发沟通后得结论:由于thingdef接口的数据一经定义，后台几乎很少去改变。
+所以在当前页面，此接口只要发送一次，并存下返回数据，当前页面任何部分需要用到这接口数据不要再次发送该接口。
+
+二、页面发送4.4接口。
+返回数据用途:
+(一)、字段名create_time的值:表格告警产生时间。
+(二)、thing_metadata下DTUID、devID、manufacture、model、failureWarning这些字段名:
+根据上面thingdef接口返回数据下properties里,分别找name为这些字段名的对象。
+在这些对象里,判断dataType是不是为5:
+1、如果不为5，那把当前4.4接口字段名对应的字段值填入表格。字段名对应表格列内容如下：
+DTUID:DTU编号、devID:热泵编号、manufacture:厂商名称、model:设备型号、failureWarning：故障代码。
+2、如果为5，在当前这个对象里，根据enumFilterFields、valuesEnumDefName等参数，发送7.5接口
+返回数组中检查每个对象value，当value等于当前4.4接口的字段名对应的值时，取这个7.5接口对象的displayName:
+(1)如果得到这个displayName的当前4.4接口字段名为DTUID，则表格DTU编号填入这个displayName。
+(2)如果当前4.4接口的字段名为devID，则表格热泵编号填入这个displayName。
+(3)如果当前4.4接口的字段名为manufacture，则表格厂商名称填入这个displayName。
+厂商信息弹出框中:
+厂商名称使用这个displayName。
+联系人使用当前7.5接口对象的metadata下面的contact。
+联系电话使用当前7.5接口对象的metadata下面的telephone。
+设备类型使用thingdef接口返回的name。
+(4)如果当前4.4接口的字段名为model，则设备型号填入这个displayName。
+(5)如果当前4.4接口的字段名为failureWarning，则表格故障代码填入这个displayName。
+
+三、手动点击安装信息,弹框出现后页面发送3.8接口(热泵)，返回字段填充安装信息弹框内容：
+(一)metadata下devID:热泵编号
+(二)metadata下installDate:安装时间
+(三)metadata下region:区域
+(四)metadata下softwareVersion:软件版本
+(五)metadata下protocolVersion:协议版本
+
+四、还是在这个弹框上，页面发送3.8接口(热泵)后，用3.8接口(热泵)返回的parent_ext_id，发送3.8接口(DTU)，返回字段填充安装信息弹框内容：
+(一)metadata下userName:用户名
+(二)metadata下userPhone:联系电话
+(三)metadata下coordinate:地理位置
+(四)metadata下address:安装地址
+
+五、发送7.5接口说明（此文字仅供参考，如大家接口调试有问题，请看我代码、或者问我或问后台):
+当4.4接口(列表)根据上面的流程，到达要发7.5接口时，
+(一)thingdef接口property中的当前条目里，enumFilterFields这个值：
+(1)当这个值只包括"/thingDefID"("/thingDefID":这是个固定的字符串),而不包括"/metadata/manufacture"字符串时:
+7.5接口的body体为:{enum_device:[rebengThingDefID]}(注：rebengThingDefID为前端项目config.js配置里的热泵thingdefid)
+(2)当这个值不仅包括"/thingDefID",还包括"/metadata/manufacture"字符串时:
+7.5接口的body体为:{enum_device:[rebengThingDefID],enum_manufacture:2}//这里enum_manufacture的值2表示的是4.4接口当前数据的manufacture value.
+这个接口的url说明举例：如果具体接口是POST /aquapaas/rest/thingenumdef/items/list/namespace1/enumDefName1     
+那么enumDefName1就是property中的当前条目里,valuesEnumDefName这个值。
+</pre>
+</body>
+</html>

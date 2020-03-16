@@ -1,0 +1,11 @@
+<!-- <div>异常订单详单页</div> -->
+<div class="_frame _flex abnormalOrder">
+    <div class="header _flex">
+      <div class="btn back">{{ABNORMAL_ORDER_BACK}}</div>
+      <div class="header_item logo"></div>
+    </div>
+    <div class="body">
+      <div class="list_table" id="abnormal_order_list_table"></div>
+    </div>
+  </div>
+  

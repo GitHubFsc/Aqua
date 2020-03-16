@@ -1,0 +1,22 @@
+* {margin: 0;padding: 0;list-style: none;}
+html, body {width: 1280px;height: 720px;}
+body {background-image: url(../resource/asset/bg.jpg);background-size: 100% 100%;}
+.menu {float: left;height: 156px;width: 156px;display: table-row;position: absolute;z-index: 2;}
+.menu.active {background-image: url(../resource/asset/active.png);}
+.menu .middle {display: table-cell;vertical-align: middle;text-align: center;font-size: 32px;line-height: 40px;height: 156px;width: 156px;color: #fff;}
+.menu .free {position: absolute;top: 0px;right: 0px;width: 51px;height: 61px;background-image: url(../resource/asset/free_menu.png);background-position: center;}
+.menu.active .middle {font-size: 45px;line-height: 54px;}
+.menu.active .free {top: 0px;right: 0;}
+.folder {position: absolute;background-repeat: no-repeat;z-index: 0;}
+.folder.large {width: 480px;height: 289px;margin-right: 21px;background-size: 100%;}
+.folder.small {height: 235px;width: 186px;}
+.text.small {position: absolute;color: #fff;text-align: center;width: 186px;font-size: 18px;}
+.folder.free .mask {background-image: url(../resource/asset/free.png);background-repeat: no-repeat;position: absolute;right: 0;bottom: 0;background-position: center;background-repeat: no-repeat;width: 43px;height: 45px;}
+
+#focus {transition-duration: 300ms;position: absolute;background-image: url(../resource/asset/menu_focus.png);width: 317px;height: 265px;-webkit-transition-duration: 300ms;display: none;z-index: 1;background-repeat: no-repeat;}
+#focus.f {width: 203px;height: 251px;background-image: url(../resource/asset/focus.png)}
+#focus.b {width: 497px;height: 306px;background-image: url(../resource/asset/focus_b.png)}
+
+.right_indicator {position:absolute; background-image:url(../resource/asset/right.png); width:40px; height:78px; top:321px; left:1220px;}
+
+#ad {position: absolute;top: 0;left: 0;width: 1280px;height: 720px;z-index: 999;}

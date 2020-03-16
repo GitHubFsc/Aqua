@@ -1,0 +1,20 @@
+var paasHost = "http://192.168.7.143:8080";
+var paasAppKey = 'aquaBO';
+var paasAppSecret = '9fa9c25876d865b086efb01d66630e746ea435d51db604fd9c90c6e24ffc';
+//AquaPaaS refresh_token 间隔，单位毫秒
+var paasTokenRefreshInterval = 10 * 60 * 1000;
+// daas config
+var daasHost = 'http://172.16.20.62:8118'
+
+
+//是否打印测试日志
+var printLog = false;
+//是否使用测试卡号
+var useDebugCard = true;
+//测试卡号
+var debugCardNumber = "0390813931";
+
+//首页树名称
+var naviTreeName = 'quanwangshi首页'
+//二级页面树名称
+var secondTreeName = 'quanwangshi'

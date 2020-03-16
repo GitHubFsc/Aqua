@@ -1,0 +1,9 @@
+.alert._dialog ._dialog_foot .btn._cancel {background-color: #5da1c0;}
+.alert._dialog ._dialog_foot .btn._confirm {background-color: #2ea2d7;}
+.asset_shelf #list_table {height: 615px;}
+
+.i-check {width: 15px;height: 15px;position: relative;margin: 11px auto;}
+.i-check label {width: 13px;height: 13px;position: absolute;top: 0;left: 0;background: #fff;border-radius: 1px;border: 1px solid #e4e4e4;margin: 0;}
+.i-check  label:after {content: '';width: 9px;height: 9px;position: absolute;top: 2px;left: 2px;background: #45d1f4;opacity: 0;border-radius: 1px;}
+.i-check input[type=checkbox]:checked + label:after {opacity: 1;}
+.i-check input[type=checkbox] {opacity: 0;position: absolute;z-index: 2;left: 0;top: 0;width: 100%;height: 100%;margin: 0;cursor: pointer;}

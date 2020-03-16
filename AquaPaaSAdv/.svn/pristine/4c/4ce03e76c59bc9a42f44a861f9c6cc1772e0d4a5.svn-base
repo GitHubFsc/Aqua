@@ -1,0 +1,179 @@
+<div class="editDialog">
+  <div class="editDialogTitle">
+    <div class="editDialogTitleText">{{ADPOLICYMANAGE_DIALOGTITLE_NEW}}</div>
+    <div class="editDialogCloseBtn popup_dialog_clear"></div>
+  </div>
+  <div class="editDialogBody">
+    <div class="controls">
+      <div class="btn focus" name='basic'>{{ADPOLICYMANAGE_BASIC}}</div>
+      <div class="btn" name='accurate'>{{ADPOLICYMANAGE_ACCURATE}}</div>
+    </div>
+    <div class="basic_info info_pane" style='display: block;padding-bottom: 15px;'>
+    <div class='row'>
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_CREATOR}}</div>
+        <input class="value" type="text" id="creator" disabled>
+      </div>
+      <div class="column2">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_POLICYTYPE}}</div>
+        <div class="value" id="policy_type"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_POLICYNAME}}</div>
+        <input class="value" type="text" id="policy_name">
+      </div>
+      <div class="column2 charge_type" style="display: none;">
+        <div class="text">{{ADPOLICYMANAGE_CHARGETYPE}}</div>
+        <div class="value" type="text" id="charge_type" ></div>
+        <label id='charge_type_info' for="" class="hint" style='height: 32px;line-height: 32px;margin-left: 10px;text-decoration: underline;color: #3c94bb;'>{{ADPOLICYMANAGE_CHARGETYPEINFO}}</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_PRIORITY}}</div>
+        <input type="text" class="value" id="policy_priority" placeholder="{{ADPOLICYMANAGE_DIALOG_PRIORITYHINT}}">
+      </div>
+      <div class="column2">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_WEIGHT}}</div>
+        <div class="value" id="policy_weight"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_VALIDTIME}}</div>
+        <div class="time_group" id="policy_validtime_container">
+          <div id="validtime_date" class="date"></div>
+          <div id="validtime_hour" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="validtime_minute" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="validtime_second" class="dropdown"></div>
+        </div>
+      </div>
+      <div class="column2">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_DURATIONSTARTTIME}}</div>
+        <div class="time_group" id="policy_duationstarttime_container">
+          <div id="duationstarttime_hour" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="duationstarttime_minute" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="duationstarttime_second" class="dropdown"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_INVALIDTIME}}</div>
+        <div class="time_group" id="policy_invalidtime_container">
+          <div id="invalidtime_date" class="date"></div>
+          <div id="invalidtime_hour" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="invalidtime_minute" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="invalidtime_second" class="dropdown"></div>
+        </div>
+      </div>
+      <div class="column2">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_DURATIONENDTIME}}</div>
+        <div class="time_group" id="policy_durationendtime_container">
+          <div id="durationendtime_hour" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="durationendtime_minute" class="dropdown"></div>
+          <div class="timesplit">:</div>
+          <div id="durationendtime_second" class="dropdown"></div>
+        </div>
+      </div>
+    </div>
+      <!-- <div class="row">
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_TABLE_TAG_TYPE}}</div>
+        <div id="tag_type" class="dropdown"></div>
+      </div>
+      <div class="column2">
+        <div class="text">{{ADPOLICYMANAGE_TABLE_CHANNEL}}</div>
+        <div class="policy_channel">
+          <div class="value" id="channel_type"></div>
+          <a class="policy_choose" id="policy_channel_choose">{{ADPOLICYMANAGE_CHOOSE}}</a>
+        </div>
+      </div>
+      </div> -->
+    <div class="row">
+      <div class="column1">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_BINDADV}}</div>
+        <div class="bindadv_container">
+          <div id="policy_bindadv"></div>
+          <a class="policy_choose" id="policy_adv_choose">{{ADPOLICYMANAGE_CHOOSE}}</a>
+          <div class="check_box" id="unbind_adv"></div>
+          <div class="bindadv_hint">{{ADPOLICYMANAGE_DIALOG_BINDADVHINT}}</div>
+        </div>
+      </div>
+      <div class="column2" style="display:none;">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_PATCHS}}</div>
+        <div class="value" id="policy_patchs"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column2">
+        <div class="text">{{ADPOLICYMANAGE_DIALOG_BIND}}</div>
+        <div class="policy_bind_container" style="width: 500px;">
+          <div class="radio" id="policy_bind_elgroup"></div>
+          <div class="hint">{{ADPOLICYMANAGE_DIALOG_BINDELGROUP}}</div>
+          <div class="radio" id="policy_bind_el"></div>
+          <div class="hint">{{ADPOLICYMANAGE_DIALOG_BINDEL}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style='height: 30px;'>
+      <div class="column2 policy_bind_container" style='padding-top: 0px;width: 500px;flex: none;'>
+          <div id="el_name"></div>
+          <a class="policy_choose" id="policy_sucai_choose">{{ADPOLICYMANAGE_CHOOSE}}</a>
+          </div>
+        </div>
+    </div>
+    <div class="accurate_info info_pane" style='padding-bottom: 35px;'>
+      <div class="column1" style='padding-top: 18px;'>
+        <label for="">{{ADPOLICYMANAGE_SOCIAL_ACCURATE}}</label>
+        <div class='row' style='height: 30px;line-height: 30px;display:flex;flex-flow: row;margin-top: 6px;'>
+          <input class='value' style='flex: 1;' disabled id='policy_addr'>
+          <input class='value' style='width: 126px;margin-left: 8px;' disabled id='policy_radius'>
+          <label for="" style='width: 30px;margin: 0 23px 0 14px;text-decoration: underline;cursor: pointer;' id='map_selector'>{{ADPOLICYMANAGE_MAP}}</label>
+        </div>
+      </div>
+      <div class="column1" style='padding-top: 18px;'>
+        <label for="">{{ADPOLICYMANAGE_CHANNEL_ACCURATE}}</label>
+        <div class='row' style='height: 30px;line-height: 30px;display:flex;flex-flow: row;margin-top: 6px;'>
+          <input class='value' style='flex: 1;' id='channel_tags' disabled>
+          <label for="" class='type_choosor' style='width: 30px;margin: 0 23px 0 14px;text-decoration: underline;cursor: pointer;' data-name='ADPOLICYMANAGE_TABLE_CHANNEL'>{{SUCAI_XUANZE}}</label>
+        </div>
+      </div>
+      <div class="column1" style='padding-top: 18px;'>
+        <label for="">{{ADPOLICYMANAGE_CATALOG_ACCURATE}}</label>
+        <div class='row' style='height: 30px;line-height: 30px;display:flex;flex-flow: row;margin-top: 6px;'>
+          <input class='value' style='flex: 1;' id='catalog_tags' disabled>
+          <label for="" class='type_choosor' style='width: 30px;margin: 0 23px 0 14px;text-decoration: underline;cursor: pointer;' data-name='ADPOLICYMANAGE_TABLE_CATEGORY'>{{SUCAI_XUANZE}}</label>
+        </div>
+      </div>
+      <div class="column1" style='padding-top: 18px;'>
+        <label for="">{{ADPOLICYMANAGE_AREA_ACCURATE}}</label>
+        <div class='row' style='height: 30px;line-height: 30px;display:flex;flex-flow: row;margin-top: 6px;'>
+          <input class='value' style='flex: 1;' id='area_tags' disabled>
+          <label for="" class='type_choosor' style='width: 30px;margin: 0 23px 0 14px;text-decoration: underline;cursor: pointer;' data-name='ADPOLICYMANAGE_TABLE_AREA'>{{SUCAI_XUANZE}}</label>
+        </div>
+      </div>
+      <div class="column1" style='padding-top: 0px;'>
+        <div class='row' style='height: 30px;line-height: 30px;display:flex;flex-flow: row;margin-top: 6px;margin-right: 67px;'>
+          <input class='value' style='flex: 1;' id='area_tags_2' placeholder="{{ADPOLICYMANAGE_AREA_ACCURATE_HINT}}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="editDialogFoot">
+    <div class="editDialogFlexDiv"></div>
+    <div class="editDialogConfirmBtn btn">{{ADPOLICYMANAGE_DIALOG_CONFIRM}}</div>
+    <div class="editDialogViewDeneyReasonBtn btn">{{ADPOLICYMANAGE_DIALOG_DENEYREASON}}</div>
+    <div class="editDialogCancelBtn btn">{{ADPOLICYMANAGE_DIALOG_CANCEL}}</div>
+    <div class="editDialogSubmitBtn btn">{{ADPOLICYMANAGE_DIALOG_ADD}}</div>
+  </div>
+</div>

@@ -1,0 +1,885 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<title>基础数据-型号管理</title>
+<link rel="stylesheet" href="../js/prettify/prettify.css">
+<script src="../js/prettify/run_prettify.js"></script>
+<link rel="stylesheet" href="../style/util.css" type="text/css"/>
+<script src="../js/nav.js"></script>
+</head>
+<body onload="setNav()">
+<h1>设备-热泵设备</h1>
+<hr />
+<ol id="navs"></ol>
+<hr />
+<ol>
+<li>
+<h2>获取设备类型</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.5 	LIST_Thing_Enum_Def_Items
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_device?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A11%3A05Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{}
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_device?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A11%3A05Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: zSc08EmKpdifll483FITNQNYWWY=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Content-Length: 2
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 07:06:01 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "DTU",
+    "displayName": "DTU",
+    "metadata": null,
+    "filterValues": null,
+    "id": "d52025c903be4eea8ca87453f08be6ec"
+},
+{
+    "value": "ReBeng",
+    "displayName": "ReBeng",
+    "metadata": null,
+    "filterValues": null,
+    "id": "0a856d9b94aa4c2db75692547cddcccc"
+}]
+</pre>
+</li>
+<li>
+<h2>获取设备DTU的厂商列表</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.5 	LIST_Thing_Enum_Def_Items
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A06%3A24Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["DTU"]}
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A11%3A07Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: bAwx1y5KyFu3qCeL36uTUOj/swQ=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Content-Length: 23
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 07:06:01 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[]
+</pre>
+</li>
+<li>
+	<h2>获取设备ReBeng的厂商列表</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.5 	LIST_Thing_Enum_Def_Items
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A22%3A01Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"]}
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A22%3A01Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: HhO0m36VmyVuGU8Ag02AGEMFYUY=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Content-Length: 26
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 07:16:55 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "北京华业新能源有限公司",
+    "metadata":
+    {
+        "contact": "李某某",
+        "telephone": "13325685588"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "c6b7a4a752c94a1f90ec638687dc0f3e"
+},
+{
+    "value": "2",
+    "displayName": "深圳派沃新能源科技股份有限公司",
+    "metadata":
+    {
+        "contact": "王某某",
+        "telephone": "13388855669"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "88b070a6d3824a28bafcf8a57e63074d"
+},
+{
+    "value": "3",
+    "displayName": "浙江中广电器股份有限公司",
+    "metadata":
+    {
+        "contact": "张某某",
+        "telephone": "13355588776"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "3568029a80b04cc1b904102432c83b56"
+}]
+</pre>
+</li>
+<li>
+<h2>获取设备的型号列表</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.5 	LIST_Thing_Enum_Def_Items
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_model?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A22%3A01Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"]}
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_model?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T07%3A22%3A01Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: CyXkFRsuqbI4sqBSTZJ2dxYu0Q8=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Content-Length: 26
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 07:16:55 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "1703",
+    "metadata":
+    {
+        "power": "100"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "bb3883c3fac947f7b83c73fbdaf5d9ac"
+},
+{
+    "value": "2",
+    "displayName": "1705",
+    "metadata":
+    {
+        "power": "200"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "fd94129d212d45b683659e3c54392004"
+},
+{
+    "value": "3",
+    "displayName": "1706",
+    "metadata":
+    {
+        "power": "300"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "ca964f4800894a3f8ddcaa927cab4180"
+},
+{
+    "value": "203",
+    "displayName": "B1",
+    "metadata":
+    {
+        "power": "5"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["3"]
+    },
+    "id": "cceaeda188674ea691f90e4226528903"
+},
+{
+    "value": "201",
+    "displayName": "A",
+    "metadata":
+    {
+        "power": "10"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["2"]
+    },
+    "id": "d093dbdbd1204f259546421e4cdb74cc"
+},
+{
+    "value": "205",
+    "displayName": "B2",
+    "metadata":
+    {
+        "power": "10"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["2"]
+    },
+    "id": "22387150c134421689b709250c47aa12"
+}]
+</pre>
+</li>
+<li>
+	<h2>添加型号</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.6 	Add_Thing_Enum_Def_Item
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/mgd.gehua/enum_model
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"metadata":{"power":"300"},"filterValues":{"enum_device":["ReBeng"],"enum_manufacture":["2"]},"value"
+:"301","displayName":"A1"}
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/mgd.gehua/enum_model HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Content-Length: 128
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 08:00:29 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+    "id": "5bf755c5954286003922f08d",
+    "enumDefID": "enum_model",
+    "namespace": "mgd.gehua",
+    "items": [
+    {
+        "value": "1",
+        "displayName": "1703",
+        "metadata":
+        {
+            "power": "100"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "bb3883c3fac947f7b83c73fbdaf5d9ac"
+    },
+    {
+        "value": "2",
+        "displayName": "1705",
+        "metadata":
+        {
+            "power": "200"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "fd94129d212d45b683659e3c54392004"
+    },
+    {
+        "value": "3",
+        "displayName": "1706",
+        "metadata":
+        {
+            "power": "300"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "ca964f4800894a3f8ddcaa927cab4180"
+    },
+    {
+        "value": "4",
+        "displayName": "1707",
+        "metadata":
+        {
+            "power": ""
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "0b83c038e0ff4fd78d654d7129b0a341"
+    },
+    {
+        "value": "5",
+        "displayName": "5",
+        "metadata":
+        {
+            "power": "15"
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["40"]
+        },
+        "id": "2fe8fcf2c14b4a20b9ccfded00e24667"
+    },
+    {
+        "value": "6",
+        "displayName": "6",
+        "metadata":
+        {
+            "power": "20"
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["40"]
+        },
+        "id": "fa0570cdd13b4b78a1b5278f7acf9521"
+    },
+    {
+        "value": "203",
+        "displayName": "B1",
+        "metadata":
+        {
+            "power": "5"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["3"]
+        },
+        "id": "cceaeda188674ea691f90e4226528903"
+    },
+    {
+        "value": "201",
+        "displayName": "A",
+        "metadata":
+        {
+            "power": "10"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "d093dbdbd1204f259546421e4cdb74cc"
+    },
+    {
+        "value": "205",
+        "displayName": "B2",
+        "metadata":
+        {
+            "power": "10"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "22387150c134421689b709250c47aa12"
+    },
+    {
+        "value": "301",
+        "displayName": "A1",
+        "metadata":
+        {
+            "power": "300"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "a340412899db4b57b72e4013095ab61a"
+    }]
+}
+</pre>
+</li>
+<li>
+	<h2>删除型号</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.7 	Delete_Thing_Enum_Def_Item
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+DELETE 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/mgd.gehua/enum_model/a340412899db4b57b72e4013095ab61a?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T08%3A19%3A30Z
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+DELETE /aquapaas/rest/thingenumdef/item/mgd.gehua/enum_model/a340412899db4b57b72e4013095ab61a?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-05T08%3A19%3A30Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: PXvPrVYAAsgLwA8fQUfw8C7oBWQ=
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 08:14:24 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+    "id": "5bf755c5954286003922f08d",
+    "enumDefID": "enum_model",
+    "namespace": "mgd.gehua",
+    "items": [
+    {
+        "value": "1",
+        "displayName": "1703",
+        "metadata":
+        {
+            "power": "100"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "bb3883c3fac947f7b83c73fbdaf5d9ac"
+    },
+    {
+        "value": "2",
+        "displayName": "1705",
+        "metadata":
+        {
+            "power": "200"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "fd94129d212d45b683659e3c54392004"
+    },
+    {
+        "value": "3",
+        "displayName": "1706",
+        "metadata":
+        {
+            "power": "300"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "ca964f4800894a3f8ddcaa927cab4180"
+    },
+    {
+        "value": "4",
+        "displayName": "1707",
+        "metadata":
+        {
+            "power": ""
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "0b83c038e0ff4fd78d654d7129b0a341"
+    },
+    {
+        "value": "5",
+        "displayName": "5",
+        "metadata":
+        {
+            "power": "15"
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["40"]
+        },
+        "id": "2fe8fcf2c14b4a20b9ccfded00e24667"
+    },
+    {
+        "value": "6",
+        "displayName": "6",
+        "metadata":
+        {
+            "power": "20"
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["40"]
+        },
+        "id": "fa0570cdd13b4b78a1b5278f7acf9521"
+    },
+    {
+        "value": "203",
+        "displayName": "B1",
+        "metadata":
+        {
+            "power": "5"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["3"]
+        },
+        "id": "cceaeda188674ea691f90e4226528903"
+    },
+    {
+        "value": "201",
+        "displayName": "A",
+        "metadata":
+        {
+            "power": "10"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "d093dbdbd1204f259546421e4cdb74cc"
+    },
+    {
+        "value": "205",
+        "displayName": "B2",
+        "metadata":
+        {
+            "power": "10"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "22387150c134421689b709250c47aa12"
+    }]
+}
+</pre>
+</li>
+<li>
+	<h2>编辑型号</h2>
+<h3>接口名称</h3>
+<pre class="prettyprint">
+7.10 	Modify_Thing_Enum_Def_Item
+</pre>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST 	http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/update/mgd.gehua/enum_model
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"value":"301","displayName":"A","metadata":{"power":"300"},"filterValues":{"enum_device":["ReBeng"]
+,"enum_manufacture":["2"]},"id":"a340412899db4b57b72e4013095ab61a"}
+</pre>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/update/mgd.gehua/enum_model HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Referer: http://127.0.0.1:8020/IoT/index.html?YXBwX2tleT00S1pRJmFwcF9zZWNyZXQ9NmEwMzE1ODRkMzk4YTU3NmYzM2RhN2YwNTMyODg0MjIwYTlhMTFjMWZhMTJlYzVhYjNmZTEyNzU5MWZmJnBhYXNfaG9zdD1odHRwOi8vMTkyLjE2OC43LjE0Mzo4MDgwJnVzZXJfaWQ9MDAwMDU5MzcwMDE4MTMyMTA3Mjk5OENCNDQzRkFBNDE4RThBQTQ5QjI3MzJERjVDNDMmYWNjZXNzX3Rva2VuPTZhNmQ0OGRhNDJhNTk2MWJjYTBkNDVkM2Y3MDFlNThjMWIyZGI4ZmJmNDI4OTI5ZTJmMzRiZjEzNjI5OCZ1c2VyX25hbWU9MDM5MDgxMzkzMSZ1c2VyX2RvbWFpbj1ib3NzJnByb3ZpZGVyX2lkPXNob3VsdWppZW11JnByb3ZpZGVyX2Fzc2V0X2lkPVNMSk0yMDAwMDAwMDAwMDA3NDAzJnJ0c3BfaG9zdD0xNzIuMTYuMTg4LjkwOjU1NCZBcHBsaWNhdGlvbklEPTYwMDEwMDAwJmZvbGRlcklkPSZzbWFydGNhcmQtaWQ9MTM3MDg4OTE4MiZkZXZpY2UtaWQ9MTM3MDg4OTE4MiZob21lLWlkPTEwMDAwOTQ5JnB1cmNoYXNlLWlkPQ==
+Content-Length: 167
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 05 Mar 2019 08:05:37 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+    "id": "5bf755c5954286003922f08d",
+    "enumDefID": "enum_model",
+    "namespace": "mgd.gehua",
+    "items": [
+    {
+        "value": "1",
+        "displayName": "1703",
+        "metadata":
+        {
+            "power": "100"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "bb3883c3fac947f7b83c73fbdaf5d9ac"
+    },
+    {
+        "value": "2",
+        "displayName": "1705",
+        "metadata":
+        {
+            "power": "200"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "fd94129d212d45b683659e3c54392004"
+    },
+    {
+        "value": "3",
+        "displayName": "1706",
+        "metadata":
+        {
+            "power": "300"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "ca964f4800894a3f8ddcaa927cab4180"
+    },
+    {
+        "value": "4",
+        "displayName": "1707",
+        "metadata":
+        {
+            "power": ""
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["1", "2", "3"]
+        },
+        "id": "0b83c038e0ff4fd78d654d7129b0a341"
+    },
+    {
+        "value": "5",
+        "displayName": "5",
+        "metadata":
+        {
+            "power": "15"
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["40"]
+        },
+        "id": "2fe8fcf2c14b4a20b9ccfded00e24667"
+    },
+    {
+        "value": "6",
+        "displayName": "6",
+        "metadata":
+        {
+            "power": "20"
+        },
+        "filterValues":
+        {
+            "enum_device": ["DTU"],
+            "enum_manufacture": ["40"]
+        },
+        "id": "fa0570cdd13b4b78a1b5278f7acf9521"
+    },
+    {
+        "value": "203",
+        "displayName": "B1",
+        "metadata":
+        {
+            "power": "5"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["3"]
+        },
+        "id": "cceaeda188674ea691f90e4226528903"
+    },
+    {
+        "value": "201",
+        "displayName": "A",
+        "metadata":
+        {
+            "power": "10"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "d093dbdbd1204f259546421e4cdb74cc"
+    },
+    {
+        "value": "205",
+        "displayName": "B2",
+        "metadata":
+        {
+            "power": "10"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "22387150c134421689b709250c47aa12"
+    },
+    {
+        "value": "301",
+        "displayName": "A",
+        "metadata":
+        {
+            "power": "300"
+        },
+        "filterValues":
+        {
+            "enum_device": ["ReBeng"],
+            "enum_manufacture": ["2"]
+        },
+        "id": "a340412899db4b57b72e4013095ab61a"
+    }]
+}
+</pre>
+</li>
+</ol>
+</body>
+</html>

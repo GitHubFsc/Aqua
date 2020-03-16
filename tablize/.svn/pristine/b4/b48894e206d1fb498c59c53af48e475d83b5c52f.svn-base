@@ -1,0 +1,19 @@
+<div class="_frame _flex asset_shelf">
+  <link rel="stylesheet" href="style/dialog.css">
+  <link rel="stylesheet" href="style/newSelect.css">
+  <link rel="stylesheet" href="style/frame.css">
+  <link rel="stylesheet" href="content/asset/shelf/main.css">
+  <div class="header _flex">
+    <div class="header_item logo">{{MENU_ASSET_SHELF}}</div>
+    <div class="header_item search_bar">
+      <input type="text" class="search_input">
+      <div class="search_btn"></div>
+    </div>
+    <div class="header_item span"></div>
+    <div class="header_item btn" name="on_off">{{ASSET_SHELF_ON_OFF}}</div>
+    <div class="header_item" style='width: 140px;' name="filter" id='assetShelf_type_filter'></div>
+  </div>
+  <div class="body">
+    <div id="assetShelf_list_table" class="list_table"></div>
+  </div>
+</div>

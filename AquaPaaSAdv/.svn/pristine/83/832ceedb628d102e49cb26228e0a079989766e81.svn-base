@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<meta charset="UTF-8"/>
+		<link rel="stylesheet" href="style/index.css"/>
+		<link rel="stylesheet" href="style/dvEvn.css"/>
+		<link rel="stylesheet" href="style/jquery.mCustomScrollbar.css" />
+		<link rel="stylesheet" href="style/sucai.css"/>
+		<link rel="stylesheet" href="style/adv_sys_management.css"/>
+		<link rel="stylesheet" href="style/myPlayer.css"/>
+		<link rel="stylesheet" href="style/jquery-ui.css"/>
+		<link rel="stylesheet" href="style/coupon.css"/>
+		<link rel="stylesheet" href="style/dialog.css"/>
+		<link rel="stylesheet" href="style/cropper.css"/>
+		<script src="config.js"></script>
+		<script src="js/lib/jquery-1.9.0.js"></script>
+		<script src="js/lib/old/common.js"></script>
+		<script src="js/lib/old/endecodebase64.js"></script>
+		<script src="js/lib/old/includepage.js"></script>
+		<script src="js/lib/old/sha1.js"></script>
+		<script src="js/my.host.js"></script>
+		<script src="js/common.js"></script>
+		<script src="js/index.js"></script>
+		<script src="content/pages/login.js"></script>
+		<script src="content/pages/mainPage.js"></script>
+		<script src="uiWidget/dropdownHelper.js"></script>
+		<script src="uiWidget/popupDialog.js"></script>
+		<script src="uiWidget/overlayDialog.js"></script>
+		<script src="uiWidget/newCalendar.js"></script>
+		<script src="uiWidget/datePicker.js"></script>
+        <script src="uiWidget/styledList.js"></script>
+        <script src="uiWidget/tabs_switch.js"></script>
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=0TkG4j8Oay99GyCGvI5Muf5b8tp3lxtC"></script>
+	</head>
+    <!-- v 1.0.0.84 -->
+	<body onload="MyPage.init();">
+		
+	</body>
+</html>

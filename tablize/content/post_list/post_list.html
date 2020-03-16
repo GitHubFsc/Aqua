@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="content/post_list/post_list.css">
+<link rel="stylesheet" href="style/newSelect.css">
+<link rel="stylesheet" href="content/sys_user_admin/main.css">
+<link rel="stylesheet" href="content/post_list/common_style_jquery.mCustomScrollbar.css">
+<div class ="announcement_topic_post_list" style="height:100%; width:100%;position: relative;">
+	<div class="user-complext-page" id="announcement_topic_list_container" style="display:block">
+		<div style="border-bottom:1px #eceddf solid;background-color:#ffffff" class="header">
+			<div class="announcement_post_list_page_head_left">
+				<div class="announcement_post_list_panel_page_head_title_lead"></div>
+				<div class="announcement_post_list_panel_page_head_title">{{POST_LIST_POST_ADMIN}}</div>
+				<div class="user-admin-search">
+					<input id="announcement_post_list_topic_search" style="padding-left:10px">
+					<div class="user-admin-search-icon"></div>
+				</div>
+			</div>
+			<div id="announcement_topic_list_add_topic" class="panel_page_add_btn cms_app_admin_page1" style="display:block">{{POST_LIST_CREATE_TOPIC}}</div>
+		</div>
+		<div class="page-rel-content">
+			<div id="announcement_topic_list_table_container" class="user-admin-user-list"></div>
+			<div id="announcement_topic_list_second_page_body" style="display:none;height:100%;background-color:#fdfdf3">
+			  <div class="common_mcsb_container_style" style="width:100%;height: calc(100% - 56px)">
+					<div style="margin-left:28px;margin-right:28px;margin-top:0px;height:36px;position:relative">
+						<div style="position:absolute;border-bottom:1px dashed #c0bfbb;width:100%;height:29px"></div>
+						<div class="announcement_post_list_dash_title">{{POST_LIST_BASIC_INFO}}</div>
+					</div>
+					<div class="announcement_post_list_row" style="margin-top:24px"><div class="announcement_post_list_row_unit_a" style="height:32px"><div class="announcement_post_list_row_lable">{{POST_LIST_TOPIC_ID}}</div><input data-key="topic_ext_id" readonly="readonly" class="announcement_post_list_row_input announcement_post_list_readonly"/></div><div class="announcement_post_list_row_unit_b announcement_post_list_row_adaption" style="height:32px;margin-left:40px;width: calc(100% - 499px)"><div class="announcement_post_list_row_lable" style="line-height:32px">{{POST_LIST_TOPIC_NAME}}</div><input data-key="name" class="announcement_post_list_row_adaption_left"/></div></div>
+					<div class="announcement_post_list_row" style="margin-top:24px"><div class="announcement_post_list_row_unit_a" style="height:32px"><div class="announcement_post_list_row_lable">{{POST_LIST_INDEX}}</div><input data-key="sequences" readonly="readonly" class="announcement_post_list_row_input announcement_post_list_readonly" style="width:163px"/></div><div class="announcement_post_list_row_unit_b announcement_post_list_row_adaption" style="height:32px;margin-left:217px;width: calc(100% - 499px)"><div class="announcement_post_list_row_lable" style="line-height:32px">{{POST_LIST_TITLE}}</div><input  data-key="title" class="announcement_post_list_row_adaption_left"/></div></div>
+					<div class="announcement_post_list_row" style="height:auto;overflow:visible;width: calc(100% - 74px);"><div class="announcement_post_list_row_lable" style="height:32px;line-height:32px;vertical-align:top">{{POST_LIST_TAG}}</div><div id="announcement_topic_list_tag_container" style="display:inline-block;height:auto;width: calc(100% - 118px);"><!--input class="announcement_post_list_row_input" style="width:165px"/--></div></div>
+					<div class="announcement_post_list_row" style="height:auto"><div class="announcement_post_list_row_lable" style="vertical-align:top;height:32px;margin-top:6px">{{POST_LIST_DESC}}</div><textarea data-key="description" class="announcement_post_list_row_input" style="width:calc(100% - 118px);height:62px;resize:none;"></textarea></div>			
+					<div style="margin-left:28px;margin-right:28px;margin-top:0px;height:36px;position:relative">
+						<div style="position:absolute;border-bottom:1px dashed #c0bfbb;width:100%;height:29px"></div>
+						<div class="announcement_post_list_dash_title">metadata</div>
+					</div>
+					<div id="announcement_topic_template_list_container"  style="width:calc(100% + 66px);height:auto">
+						
+					</div>
+				</div>
+				<div class="announcement_post_list_footer">
+					<div id="announcement_topic_list_create_confirm" class="btn_confirm" style="display:none">{{POST_LIST_CREATE}}</div>
+					<div id="announcement_topic_list_edit_confirm" class="btn_confirm" style="display:none">{{POST_LIST_UPDATE}}</div>
+					<div id="announcement_topic_list_edit_back" class="btn_confirm" style="display:none">{{POST_LIST_BACK_BUTTON}}</div>
+					<div id="announcement_topic_list_edit_cancel" class="btn_cancel" style="margin-right:15px;display:none">{{POST_LIST_CANCEL}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="user-complext-page" id="announcement_post_list_container" style="display:none">
+		<div class="header" style="border-bottom:1px #eceddf solid;background-color:#ffffff">
+			<div id="announcement_post_list_back_btn" class="backBtn">
+				<img src="./images/product_arrow_left.png">
+				{{POST_LIST_BACK}}
+			</div>
+			<div id="announcement_post_list_post_title" class="headertitle">
+			</div>
+			<div class="announcement_post_list_page_head_left" style="display:none">
+				<div class="announcement_post_list_panel_page_head_title_lead"></div>
+				<div class="announcement_post_list_panel_page_head_title">{{POST_LIST_POST_ADMIN}}</div>
+			</div>
+			<div id="announcement_topic_list_add_post" class="panel_page_add_btn cms_app_admin_page1" style="display:block">{{POST_LIST_CREATE_POST}}</div>
+		</div>
+		<div class="page-rel-content">
+			<div id="announcement_post_list_table_container" class="user-admin-user-list"></div>
+			<div name="announcement_post_list_second_page_body" style="display:none;height:100%">
+			  <div style="width:100%;height: calc(100% - 56px);max-height: calc(100% - 56px);overflow:auto">
+					<div style="margin-left:28px;margin-right:28px;margin-top:0px;height:36px;position:relative">
+							<div style="position:absolute;border-bottom:1px dashed #c0bfbb;width:100%;height:29px"></div>
+							<div class="announcement_post_list_dash_title">{{POST_LIST_BASIC_INFO}}</div>
+						</div>
+						<div class="announcement_post_list_row" style="margin-top:24px"><div class="announcement_post_list_row_unit_a" style="height:32px"><div class="announcement_post_list_row_lable">{{POST_LIST_POST_ID}}</div><input data-key="id" readonly="readonly" class="announcement_post_list_row_input announcement_post_list_readonly"/></div><div class="announcement_post_list_row_unit_b" style="height:32px"><div class="announcement_post_list_row_lable">{{POST_LIST_POST_SOURCE}}</div><input data-metadata="source" class="announcement_post_list_row_input"/></div></div>
+						<div class="announcement_post_list_row"><div class="announcement_post_list_row_lable">{{POST_LIST_LEFT_POST_TITLE}}</div><input data-key="title" id="announcement_post_information_title" class="announcement_post_list_row_input" style="width:calc(100% - 118px);"/></div>					
+						<div class="announcement_post_list_row"><div class="announcement_post_list_row_lable">{{POST_LIST_LEFT_PIC}}</div><div class="announcement_post_list_row_input" style="width:calc(100% - 118px);padding-left:0;background-color:#ebebeb"><input data-map="images_url-url" id="announcement_post_list_upload_file_input" class="announcement_post_list_row_input announcement_post_list_readonly" readonly="readonly" style="background-color:#ebebeb;width:calc(100% - 31px);border:0;color:#3693d0"/><img id="announcement_post_list_upload_file_icon" class="announcement_post_upload_file_icon" src="content/CMS/images/upload_img.png"/></div></div>
+						
+						<div class="announcement_post_list_row" style="overflow:visible">
+							<div class="announcement_post_list_row_unit_a" style="height:32px">
+								<div class="announcement_post_list_row_lable">{{POST_LIST_CREATE_TIME}}</div>
+								<input id="announcement_post_list_create_time" readonly="readonly"  data-key="create_time" data-time="data-time" class="announcement_post_list_row_input announcement_post_list_readonly"/></div>
+								<div class="announcement_post_list_row_unit_b" style="height:32px">
+									<div class="announcement_post_list_row_lable" style="margin-right:18px;vertical-align:middle;line-height:32px">{{POST_LIST_LEFT_PUBLISH_TIME}}</div>
+									
+									<div id="announcement_post_list_calendar" style="z-index:2;display:none;vertical-align:middle;height:32px;width:144px;box-sizing:border-box;display:inline-block;margin-right:13px"></div>
+									<div id="announcement_post_list_hour_menu" class="announcement_post_list_down_select" style="display:none"></div>
+									<div class="announcement_post_list_row_lable announcement_post_list_lable_short" style="vertical-align:middle">{{POST_LIST_HOUR}}</div>
+									<div id="announcement_post_list_select_minute" class="announcement_post_list_down_select" style="display:none"></div>
+									<div class="announcement_post_list_row_lable announcement_post_list_lable_short" style="vertical-align:middle">{{POST_LIST_MINUTE}}</div>
+									<div id="announcement_post_list_select_second" class="announcement_post_list_down_select" style="display:none"></div>
+									<div class="announcement_post_list_row_lable announcement_post_list_lable_short" style="vertical-align:middle">{{POST_LIST_SECOND}}</div>
+									
+									<div id="announcement_post_list_calendar_view" class="announcement_post_list_readonly_input" style="z-index:2;display:none;vertical-align:middle;box-sizing:border-box;display:inline-block;margin-right:13px;width:144px" readonly="readonly" ></div>
+									<div id="announcement_post_list_hour_menu_view" class="announcement_post_list_down_select announcement_post_list_readonly_input" readonly="readonly"></div>
+									<div class="announcement_post_list_row_lable announcement_post_list_lable_short" style="vertical-align:middle">{{POST_LIST_HOUR}}</div>
+									<div id="announcement_post_list_select_minute_view" class="announcement_post_list_down_select announcement_post_list_readonly_input" readonly="readonly"></div>
+									<div class="announcement_post_list_row_lable announcement_post_list_lable_short" style="vertical-align:middle">{{POST_LIST_MINUTE}}</div>
+									<div id="announcement_post_list_select_second_view" class="announcement_post_list_down_select announcement_post_list_readonly_input" readonly="readonly"></div>
+									<div class="announcement_post_list_row_lable announcement_post_list_lable_short" style="vertical-align:middle">{{POST_LIST_SECOND}}</div>
+									
+									
+								</div>
+							</div>
+						
+						<div class="announcement_post_list_row" style="width: calc(100% - 74px);height:auto;overflow:visible"><div class="announcement_post_list_row_lable" style="height:32px;line-height:32px;vertical-align:top">{{POST_LIST_TAG}}</div><div id="announcement_post_list_tag_container" style="height:auto;width: calc(100% - 118px);display:inline-block;"><!--input class="announcement_post_list_row_input" style="width:165px"/--></div></div>
+						<div style="margin-left:28px;margin-right:28px;margin-top:0px;height:60px;position:relative">
+							<div style="position:absolute;border-bottom:1px dashed #c0bfbb;width:100%;height:29px"></div>
+							<div class="announcement_post_list_dash_title">{{POST_LIST_DETAIL}}</div>
+						</div>
+						<div class="announcement_post_list_row" style="margin-top:-1px"><div class="announcement_post_list_row_lable">{{POST_LIST_RIGHT_TITLE}}</div><input id="announcement_post_list_details_title" data-key="description" class="announcement_post_list_row_input" style="width:calc(100% - 118px);"/></div>
+						<div class="announcement_post_list_row" style="overflow:visible"><div class="announcement_post_list_row_lable">{{POST_LIST_TMPLATE_STYLE}}</div><div id="announcement_post_list_template_style" class="announcement_post_list_down_select" style="display:none;width:165px"></div><input id="announcement_post_list_template_style_readonly" class="announcement_post_list_row_input announcement_post_list_readonly" readonly="readonly" style="display:none;width:165px"/></div>
+						<div class="announcement_post_list_row"><div class="announcement_post_list_row_lable">{{POST_LIST_DETAIL_URL}}</div><input id="announcement_post_list_detail_url" data-key="url" class="announcement_post_list_row_input announcement_post_list_readonly" readonly="readonly" style="width:calc(100% - 118px);"/></div>
+						<div id="announcement_post_template_list_container_outer"  style="width:100%;height:auto;margin-top:-2px;margin-bottom:56px">
+							<div id="announcement_post_template_list_container"  style="width:100%;height:auto;">
+								
+						
+						</div>
+					</div>
+				</div>
+				<div class="announcement_post_list_footer">
+					<div id="announcement_post_list_create_confirm" class="btn_confirm" style="display:none">{{POST_LIST_CREATE}}</div>
+					<div id="announcement_post_list_edit_confirm" class="btn_confirm" style="display:none">{{POST_LIST_UPDATE}}</div>
+					<div id="announcement_post_list_edit_back" class="btn_confirm" style="display:none">{{POST_LIST_BACK_BUTTON}}</div>
+					<div id="announcement_post_list_edit_cancel" class="btn_cancel" style="margin-right:15px;display:none">{{POST_LIST_CANCEL}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

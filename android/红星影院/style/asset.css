@@ -1,0 +1,26 @@
+* {margin: 0;padding: 0;list-style: none;}
+html, body{height: 720px;width: 1280px;position: relative;}
+body{background-image: url(../resource/asset/detail/bg.jpg);}
+
+#poster {position: absolute;left: 107px;top: 110px;width: 213px;height: 317px;background-repeat: no-repeat;background-position: center;background-size: 100% 100%;}
+#title {position: absolute;left: 60px;top: 45px;font-size: 30px;color: #fff;line-height: 30px;}
+#name {position: absolute;left: 346px;top: 110px;font-size: 23px;color: #fff;}
+#info {position: absolute;left: 346px;top: 155px;color: #fff;/*font-size: 15px;*/font-size: 18px;}
+#info span {margin-right: 20px;}
+#info span.director {margin-right: 2px;}
+.actors, #actors {position: absolute;left: 346px;top: 190px;/*font-size: 15px;*/font-size: 18px;color: #fff;width: 40px;}
+#actors {left: 396px;width: auto;}
+#summary {position: absolute;left: 346px;top: 253px;padding-left: 25px;padding-right: 15px;background-image: url(../resource/asset/detail/descri_transbg.png);font-size: 19px;overflow: hidden;width: 797px;height: 72px;text-overflow: ellipsis;white-space: normal;word-break: normal;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;color: #fff;line-height: 36px;}
+#play {position: absolute;left: 346px;top: 350px;height: 37px;width: 126px;line-height: 37px;font-size: 18px;color: #fff;text-align: center;border-radius: 16px;background-color: #383738;}
+#play.focus {background-color: #ffdc38;color: #000;}
+
+#asset_list {position: absolute;height: 720px;width: 0px;background-color: #1f1d1f;transition-duration: 300ms;right: 0;color: #fff;}
+#asset_list.show {width: 289px;}
+#asset_range {position: absolute;left: 24px;top: 73px;}
+#asset_ids {position: absolute;left: 136px;top: 68px;right: 0px;bottom: 0px;}
+.serial {width: 94px;height: 41px;border-radius: 4px;font-size: 18px;line-height: 41px;text-align: center;margin-bottom: 5px;}
+.serial.focus {background-color: #ffdc38;color: #000;}
+.asset {width: 133px;height: 60px;line-height: 60px;text-align: center;font-size: 18px;margin-bottom: 5px;}
+.asset.focus {background-color: #ffdc38;color: #000}
+
+#ad {width: 1114px;height: 237px;background-image: url(../resource/asset/detail/adv.jpg);position: absolute;top: 448px;left: 76px;background-repeat: no-repeat;background-position: center;}

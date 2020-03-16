@@ -1,0 +1,30 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div id="siteAdmin_neTitle" class="panel_dialog_title_text"></div>
+		<div class="panel_dialog_close popup_dialog_clear"></div>
+	</div>
+	<div style="position:absolute;top:38px;left:0;right:0;bottom:0;">
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_ID}}</div>
+			<input type="text" id="siteAdmin_siteId" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_NAME}}</div>
+			<input type="text" id="siteAdmin_siteName" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_IP}}</div>
+			<input type="text" id="siteAdmin_siteIP" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{SITE_ADMIN_SITEPORT}}</div>
+			<input type="text" id="siteAdmin_sitePort" class="site-admin-dialog-input" />
+		</div>
+		<div class="site-admin-dialog-item">
+			<div class="site-admin-dialog-ilabel">{{ADPOS_CNECT_SITE_MONITOR_LINK}}</div>
+			<input type="text" id="siteAdmin_MonitorLink" class="site-admin-dialog-input" />
+		</div>
+	</div>
+	<div class="panel_dialog_cancel popup_dialog_clear" style="right:138px;bottom:18px;">{{ADPOS_DIALOG_CANCEL}}</div>
+	<div id="siteAdmin_neSubmit" class="panel_dialog_submit" style="right:28px;bottom:18px;"></div>
+</div>

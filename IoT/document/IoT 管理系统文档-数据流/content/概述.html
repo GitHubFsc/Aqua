@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <link rel="stylesheet" href="../js/prettify/prettify.css">
+        <script src="../js/prettify/run_prettify.js"></script>
+		<title></title>
+	</head>
+	<body>
+        <h2>概述</h2>
+
+        <h3>为什么要写</h3>
+        <pre class="prettyprint">
+本次IoT的开发已经开始,但是后台太过于复杂.特别是在沟通成本这一块,消耗非常巨大.
+目前设立一个信息共享机制.用来分享相互之间的接口信息和架构中的数据流信息.
+        </pre>
+
+
+<h3>填写规则</h3>
+        <pre class="prettyprint">
+    1. 原则上使用真实的数据返回作为例子 
+        原因:  
+              1) 可以防止未来现场数据与调试数据的不符
+              2) 可以防止未来联调环境缺失,导致无法查找问题.
+    2. 尽可能的详细
+</pre>
+
+
+        <h3>填写方式</h3>
+        <pre class="prettyprint">
+以"设备-DTU.html"文件为蓝本进行填写
+原因: 放弃原有的EXECL,因为排版比较费力,且模块划分不明确会导致编辑的时候产生冲突
+
+
+&lt;h2&gt;列表请求接口&lt;/h2&gt;
+&lt;h3&gt;5.2章节 Search Thing接口&lt;/h3&gt;
+
+    &lt;pre class="prettyprint"&gt;
+    正文...
+    &lt;/pre&gt;
+
+&lt;h3&gt;关键参数说明&lt;/h3&gt;
+    &lt;pre class="prettyprint"&gt;
+    正文...
+    &lt;/pre&gt;
+
+&lt;h3&gt;请求头和响应头&lt;/h3&gt;
+
+    &lt;pre class="prettyprint"&gt;
+    正文...
+    &lt;/pre&gt;
+
+&lt;h3&gt;列表中字段与返回数据对应说明&lt;/h3&gt;
+    &lt;pre class="prettyprint"&gt;
+    正文...
+    &lt;/pre&gt;
+
+&lt;h3&gt;列表中字段与返回数据对应说明&lt;/h3&gt;
+    &lt;pre class="prettyprint"&gt;
+    正文...
+    &lt;/pre&gt;
+
+注:主要的代码美化库使用的是google-code-prettify
+        </pre>
+
+
+        <h3>本内容目录结构和命名规则</h3>
+        <pre class="prettyprint">
+/content               //为主要内容存放目录
+/content/设备-DTU.html //命名规则: 一级菜单-二级菜单-三级菜单....html 
+/js                    //js库的目录
+index.html             //以目录形式的入口文件
+        </pre>
+
+
+        <h3>关于后台提议的列表Title名称以及内容都从后台动态获取</h3>
+        <pre class="prettyprint">
+这一点争议比较多,所以写一下看法.
+1. 关于内容字段的动态,在解决以下问题前,我建议还是和UI保持一直.
+   1) 字段的宽度如何获取, 例如"安装地址"会比较长, "区域"可能比较短.
+   2) 字段的顺序,接口返回的序列是否和客户需求的一致.
+   3) 字段个数的多少, 接口返回的字段个数是否符合用户希望看到的,还是说有一部分用户是不希望看到的.
+
+    解决方案 version190131
+       和开发人员集中讨论后, 初步方案如下.
+    1) 后台数据(简单) -> 前端根据UI设立对应配置(含数据转换算法) + 抽象出来的基础模板 -> 生成最终符合UI的页面(复杂).
+       具体方案描述待补充...
+
+2. 关于Title的动态获取.在解决以下问题前,我建议还是和UI保持一直.
+   1) 我们现在应该有i18n的多语言机制,这点上后台动态获取的时候如何解决.
+   
+   解决方案 version190131 
+      利用原有的i18n()多语言机制,进行升级增加动态解析功能 (该方案目前还在征询意见中...)
+      1) 传统方案举例: 
+          a. 多语言文件zh-CN.json 
+             {
+                "HeatPump_List_DTUID": "DTU编号",
+                "HeatPump_List_HPID": "热泵编号"
+             }
+          b. js代码中 会有一个函数叫做  i18n(key)
+                        常规使用: i18n("HeatPump_List_DTUID")
+
+       2) 新的方案举例:   
+          a. 多语言文件zh-CN.json 
+             {
+                "HeatPump_List_DTUID": "#translateByDisplayName#DTU/mgd.gehua/DTUID"
+             }
+             
+                        解释下:
+                1. #translateByDisplayName# 特征字符串表示获取方式.
+                2. DTU/mgd.gehua/DTUID 获取的路径代表 thingDefID/namespace/properties.name
+                    {
+                        "thingDefID":"DTU",
+                        "namespace":"mgd.gehua",
+                        "name":"DTU",
+                        "description":"采集器通过内置LORAWAN无线传输模块与网关进行无线通信，把热泵出入水温、室内温度、开关机状态等信息无线传输到网关",
+                        "creator":"admin",
+                        "metadata":{"m1":"v1","m2":"v2"},
+                        "properties":[{
+                                "name":"DTUID",
+                                "displayName":"DTU编号",
+                                "description":"DTU编号",
+                                "fieldType":"1",
+                                "importantType":"2",
+                                "dataType":"3",
+                                "displayGroup":"基本信息",
+                                "path":"/metadata"
+                        }]
+                    }
+
+          b. js代码中 会有一个函数叫做  i18n(key)
+                        常规使用: i18n("HeatPump_List_DTUID")
+        </pre>
+
+
+
+	</body>
+</html>

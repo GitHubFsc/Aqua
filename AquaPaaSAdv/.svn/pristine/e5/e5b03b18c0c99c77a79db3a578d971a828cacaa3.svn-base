@@ -1,0 +1,901 @@
+var sucaizu = (function ($) {
+  var sucaizu = new Object();
+  var dmRoot = paasHost + paasDomain + '/dm';
+
+  var adpSiteNames = {};
+  var adpSites = [];
+  var filterSites = [];
+  //初定义
+  sucaizu.initParam = function () {
+    this.token = "user_id=" + my.paas.user_id +
+      "&user_type=" + my.paas.user_type +
+      "&access_token=" + my.paas.access_token +
+      "&app_key=" + paasAppKey +
+      "&timestamp=";
+    this.sucaizu_current_type = "img";
+    this.sucaizu_site = "";
+    this.sucaizu_datas = [];
+    this.systemType = 0;
+
+    this.platform_id = my.paas.platform_id;
+    this.platform_current_id = my.paas.platform_current_id;
+
+    if(window.AdvSystemType){
+      if(window.AdvSystemType == 'solo'){
+        this.systemType = 0;
+      } else if(window.AdvSystemType == 'central'){
+        this.systemType = 1;
+      }else if(window.AdvSystemType == 'local'){
+        this.systemType = 2;
+      }else{
+        this.systemType = 0;
+      }
+    }else{
+      this.systemType = 0;
+    }
+  };
+  sucaizu.initListenEvents = function () {
+    var that = this;
+    $("#sucaizu_menu_select_img").click(function () {
+      $(".sucai_head_center li").removeClass('sucai_menu_selected');
+      $(this).addClass('sucai_menu_selected');
+      that.sucaizu_current_type = "img";
+      that.createImgTable();
+    });
+    $("#sucaizu_menu_select_video").click(function () {
+      $(".sucai_head_center li").removeClass('sucai_menu_selected');
+      $(this).addClass('sucai_menu_selected');
+      that.sucaizu_current_type = "video";
+      that.createImgTable();
+    });
+    $("#sucaizu_menu_select_subtitle").click(function () {
+      $(".sucai_head_center li").removeClass('sucai_menu_selected');
+      $(this).addClass('sucai_menu_selected');
+      that.sucaizu_current_type = "subtitle";
+      that.createImgTable();
+    });
+    $('#sucaizu_list_search').unbind("click").on('keydown', function (ev) {
+      if(ev.keyCode == 13) {
+        initTableAfterSearch();
+      }
+    });
+    $('#sucaizu_list_search_bottom').click(function () {
+      initTableAfterSearch();
+    });
+    $('#sucaizu_list_search_username').unbind("click").on('keydown', function (ev) {
+      if(ev.keyCode == 13) {
+        initTableAfterSearchUserName();
+      }
+    });
+    $('#sucaizu_list_search_username_bottom').click(function () {
+      initTableAfterSearchUserName();
+    });
+
+    $('#sucaizu_add_class_btn').click(function () {
+      that.showcreateImgDialog();
+    });
+    if (my.paas.user_type == "1") {
+      //$('#sucaizu_add_class_btn').unbind("click").addClass("page_button_inactive");
+    }
+    $(window).on("resize", function () {
+      that.img_table_component && that.img_table_component.resize();
+      that.video_table_component && that.video_table_component.resize();
+    })
+
+    function initTableAfterSearch(){
+      var search_text = $("#sucaizu_list_search").val();
+      that.createImgTable(search_text, "");
+    }
+    function initTableAfterSearchUserName(){
+      var search_text = $("#sucaizu_list_search_username").val();
+      that.createImgTable("", search_text);
+    }
+  };
+  sucaizu.initPage = function () {
+    this.initParam();
+    this.getSiteList();
+    if(this.systemType == 1){
+      this.setSiteFilter();
+    }
+    this.initListenEvents();
+    this.createImgTable();
+  };
+  sucaizu.setSiteFilter = function () {
+    var that = this;
+    $("#sucaizu_site_filter").show();
+    var filter = getCombiSelector({
+      label: i18n('ADPOS_SITE_SELECTOR'),
+      container: '#sucaizu_site_filter',
+      channels: adpSites.map(function(site){
+        return {
+          label: site.name,
+          site: site,
+        };
+      }),
+      onChange: function(channels){
+        filterSites = channels.map(function(channel){
+          return channel.site && channel.site.id;
+        });
+        that.sucaizu_site = filterSites.join(",");
+        var table = that.img_table_component;
+        table.update();
+      }
+    });
+    filter.create();
+  };
+  sucaizu.createImgTable = function (search_text, search_username_text) {
+    var that = this;
+    this.video_table_component = null;
+    this.img_table_component = null;
+    if (this.img_table_component == null) {//判断班级表格是否实例化
+      var titles = [{
+        label: i18n('SUCAI_SUCAIZUMINGCHEN')
+      }, {
+        label: i18n('SUCAI_CHUANGJIANZHE')
+      }, {
+        label: i18n('SUCAI_CHUANGJIANSHIJIAN')
+      }, {
+        label: i18n('SUCAI_SUCAISHULIANG')
+      }, {
+        label: i18n('SUCAI_CAOZUO')
+      }];
+      var widths = [0.44, 0.11, 0.19, 0.11, 0.15];
+      if(this.systemType != 0){
+        titles = [{
+          label: i18n('SUCAI_SITE')
+        }, {
+          label: i18n('SUCAI_SUCAIZUMINGCHEN')
+        }, {
+          label: i18n('SUCAI_CHUANGJIANZHE')
+        }, {
+          label: i18n('SUCAI_CHUANGJIANSHIJIAN')
+        }, {
+          label: i18n('SUCAI_SUCAISHULIANG')
+        }, {
+          label: i18n('SUCAI_CAOZUO')
+        }];
+        widths = [0.1, 0.24, 0.11, 0.19, 0.11, 0.25];
+      }
+      this.img_table_component = new StyledList({
+        rows: 11,
+        columns: titles.length,
+        containerId: 'sucaizu_content_table',
+        titles: titles,
+        listType: 1,
+        data: [],
+        styles: {
+          borderColor: 'transparent',
+          borderWidth: 1,
+          titleHeight: 46,
+          titleBg: 'rgb(93,161,192)',
+          titleColor: 'white',
+          cellBg: 'white',
+          evenBg: 'rgb(245,245,245)',
+          cellColor: 'rgb(114,114,114)',
+          footBg: 'white',
+          footColor: 'rgb(121,121,121)',
+          iconColor: 'rgb(93,161,192)',
+          inputBorder: '1px solid rgb(203,203,203)',
+          inputBg: 'white',
+          columnsWidth: widths
+        }
+      });
+      if (search_text) {
+        this.img_table_component.search_text = search_text;
+      }
+      if (search_username_text) {
+        this.img_table_component.search_username_text = search_username_text;
+      }
+      this.img_table_component.getPageData = function (page) {
+        var listSelf = this;
+        var listData__origin = sucaizu.getDataforSucaizuIMGs(page, this.search_text, this.search_username_text);
+        that.sucaizu_datas = listData__origin;
+        sucaizu.img_table_component.onTotalCount(listData__origin.allCount);
+        var listData = sucaizu.formListDataForImg(listData__origin)
+        return listData;
+      };
+      this.img_table_component.create();
+    } else {
+      if (search_text) {
+        this.img_table_component.search_text = search_text;
+      } else {
+        this.img_table_component.search_text = null;
+      }
+      this.img_table_component.refreshList();
+    }
+  };
+  sucaizu.showcreateImgDialog = function (status, ad_group_id) {
+    var that = this;
+    this.createImgDialog = null;
+    if (!this.createImgDialog) {
+      this.createImgDialog = new PopupDialog({
+        url: 'content/su_cai_zu/create_img_dialog.html',
+        width: 800,
+        height: 570,
+        context: that,
+        callback: function () {
+          var label = {
+            img: i18n('SUCAI_TUWEN'),
+            video: i18n('SUCAI_SHIPIN'),
+            subtitle: i18n('SUCAI_ZIMU'),
+          };
+          var type_select = new newSelect(
+            "#sucai_dialog_create_sucaizu_type_select",
+            label,
+            {width: 335, height: 31, background: "#ffffff", selectbackground: "#d3d3d3"}
+          );
+          type_select.setDisable();
+          type_select.setValue(label[that.sucaizu_current_type]);
+
+          var selOptions = [];
+          var alldata = that.getDataforSucaiIMGs();
+          if (alldata.length != 0) {
+            for (var i = 0, len = alldata.length; i < len; i++) {
+              selOptions.push({
+                value: alldata[i].ad_id,
+                label: alldata[i].name
+              });
+            }
+          }
+          //$('#sucai_dialog_sucaizu_selectable_cotainer').mCustomScrollbar();
+          that.createImgDialog.left = new StyledFlowList({
+            container: '#sucai_dialog_sucaizu_selectable',
+            data: selOptions,
+            title: {
+              label: i18n('SUCAI_KEXUANZESUCAI')
+            },
+            minRows: 8
+          });
+          that.createImgDialog.left.create();
+
+          //处理搜索事件
+          $('#sucai_list_search_botton').click(function () {
+            var selOptions = [];
+            var alldata = that.getDataforSucaiIMGs(sucai_list_search.value);
+            if (alldata.length != 0) {
+              for (var i = 0, len = alldata.length; i < len; i++) {
+                selOptions.push({
+                  value: alldata[i].ad_id,
+                  label: alldata[i].name
+                });
+              }
+            }
+            that.createImgDialog.left = new StyledFlowList({
+              container: '#sucai_dialog_sucaizu_selectable',
+              data: selOptions,
+              title: {
+                label: i18n('SUCAI_KEXUANZESUCAI')
+              },
+              minRows: 8
+            });
+            that.createImgDialog.left.create();
+          });
+
+          //$('#sucai_dialog_sucaizu_selected_container').mCustomScrollbar();
+          that.createImgDialog.right = new StyledFlowList({
+            container: '#sucai_dialog_sucaizu_selected',
+            data: [],
+            title: {
+              label: i18n('SUCAI_YIXUANZESUCAI')
+            },
+            minRows: 8
+          });
+          that.createImgDialog.right.create();
+          if (that.createImgDialog.status === 'revise') {
+            //如何获取资源？
+            $("#sucai_dialog_title_text").text(i18n('SUCAI_BIANJISUCAIZU'))
+            var ad_group_id = that.createImgDialog.ad_group_id
+            var title = that.getSucaizuTitle(ad_group_id);
+            sucai_dialog_create_input_sucaizuname_value.value = title;
+            var img_datas = that.getsucaizuIMG({
+              ad_group_id: ad_group_id
+            });
+            var result = [];
+            var i;
+            for (i = 0; i < img_datas.length; i++) {
+              var one = that.getSucaifromSelOptions(img_datas[i].ad_id, selOptions);
+              if (one) {
+                result.push(one);
+              } else {
+                var data = {
+                  label: img_datas[i].name,
+                  value: img_datas[i].ad_id
+                }
+                result.push(data);
+              }
+            }
+            that.createImgDialog.right.update(result);
+          }
+          $("#sucai_dialog_create_move_add").click(function () {
+            var sels = that.createImgDialog.left.getChecked();
+            var retData = that.createImgDialog.right.getData();
+            for (var i = 0, len = sels.length; i < len; i++) {
+              var item = sels[i];
+              if (retData.indexOf(item) === -1) {
+                retData.push(item);
+              }
+            }
+            that.createImgDialog.right.update(retData);
+          });
+          $("#sucai_dialog_create_move_addall").click(function () {
+            var sels = that.createImgDialog.left.getData();
+            var retData = that.createImgDialog.right.getData();
+            for (var i = 0, len = sels.length; i < len; i++) {
+              var item = sels[i];
+              if (retData.indexOf(item) === -1) {
+                retData.push(item);
+              }
+            }
+            that.createImgDialog.right.update(retData);
+          });
+          $("#sucai_dialog_create_move_delete").click(function () {
+            var dels = that.createImgDialog.right.getChecked();
+            var data = that.createImgDialog.right.getData();
+            var retData = [];
+            for (var i = 0, len = data.length; i < len; i++) {
+              var item = data[i];
+              if (dels.indexOf(item) === -1) {
+                retData.push(item);
+              }
+            }
+            that.createImgDialog.right.update(retData);
+          });
+          $("#sucai_dialog_create_move_deleteall").click(function () {
+            var retData = [];
+            that.createImgDialog.right.update(retData);
+          });
+          $("#sucai_dialog_create_botton_click").click(function () {
+            var i;
+            var data = that.createImgDialog.right.getData();
+            var ad_id_data = [];
+            for (i = 0; i < data.length; i++) {
+              ad_id_data.push(data[i].value);
+            }
+            if (sucai_dialog_create_input_sucaizuname_value.value) {
+              if (that.createImgDialog.status == 'revise') {
+                var createobj = {
+                  "type": that.sucaizu_current_type,
+                  "title": sucai_dialog_create_input_sucaizuname_value.value,
+                  "ad_ids": ad_id_data,
+                  "create_time": that.getSucaizuCreateTime(that.createImgDialog.ad_group_id)
+                };
+                if(that.createImgDialog.data.platform_id_list){
+                  createobj["platform_id_list"] = that.createImgDialog.data.platform_id_list;
+                }
+              } else {
+                var createobj = {
+                  "type": that.sucaizu_current_type,
+                  "title": sucai_dialog_create_input_sucaizuname_value.value,
+                  "ad_ids": ad_id_data
+                };
+                if(that.platform_current_id){
+                  createobj["platform_id_list"] = [that.platform_current_id];
+                }
+              }
+
+              if (that.createImgDialog.status == 'revise') {
+                if (!that.revisesucaizu(that.createImgDialog.ad_group_id, createobj, function () {
+                    that.createImgDialog.close();
+                    var table_self = that.img_table_component;
+                    table_self.refreshList(table_self.getPageData(table_self.currPage));
+                  })) {
+                  alert(i18n('SUCAI_CHUANGJIANSHIBAI'));
+                }
+              } else {
+                if (!that.addsucaizu(createobj, function () {
+                    that.createImgDialog.close();
+                    var table_self = that.img_table_component;
+                    table_self.refreshList(table_self.getPageData(table_self.currPage));
+                  })) {
+                  alert(i18n('SUCAI_CHUANGJIANSHIBAI'));
+                }
+              }
+
+            }
+            else {
+              alert(i18n('SUCAI_QINGSHURUWANZHENGSHUJU'));
+            }
+          });
+        }
+      });
+    }
+    if (status) {
+      this.createImgDialog.status = status;
+    }
+    if (ad_group_id) {
+      this.createImgDialog.ad_group_id = ad_group_id;
+    }
+    this.createImgDialog.open();
+  };
+  sucaizu.showDeleteDialog = function (ad_group_id) {
+    var that = this;
+    if (!this.deleteDialog) {
+      this.deleteDialog = new PopupDialog({
+        url: 'content/su_cai_zu/delete_dialog.html',
+        width: 478,
+        height: 266,
+        context: that,
+        callback: function () {
+          $("#sucai_dialog_delete_botton_click").click(function () {
+            var deletestatus = that.deletesucaizu(that.deleteDialog.ad_group_id, function () {
+              that.deleteDialog.close();
+              if (that.sucaizu_current_type == 'img') {
+                var table_self = that.img_table_component;
+                table_self.refreshList(table_self.getPageData(table_self.currPage));
+              }
+              else {
+                var table_self = that.img_table_component;
+                table_self.refreshList(table_self.getPageData(table_self.currPage));
+              }
+            });
+            if (!deletestatus) {
+              alert(i18n('SUCAI_SHANCHUSHIBAI'));
+            }
+
+          });
+        }
+      });
+    }
+    this.deleteDialog.open();
+    this.deleteDialog.ad_group_id = ad_group_id;
+  };
+  sucaizu.showReviseImgDialog = function (ad_group_id) {
+    var that = this;
+    that.showcreateImgDialog("revise", ad_group_id);
+  };
+  sucaizu.showSeeImgDialog = function (ad_group_id) {
+    var that = this;
+    this.seeDialog = new PopupDialog({
+      url: 'content/su_cai_zu/see_img_dialog.html',
+      width: 800,
+      height: 510,
+      context: that,
+      callback: function () {
+        var widths = [0.39, 0.12, 0.12, 0.12, 0.12];
+        var StyledList_config = {
+          rows: 11,
+          columns: 5,
+          containerId: 'sucai_dialog_img_content',
+          titles: [{
+            label: i18n('SUCAI_SUCAIMINGCHEN')
+          }, {
+            label: i18n('SUCAI_ZHUANGTAI')
+          }, {
+            label: i18n('SUCAI_CHUANGJIANZHE')
+          }, {
+            label: i18n('SUCAI_CHICUNPX')
+          }, {
+            label: i18n('SUCAI_QUANZHONG')
+          }],
+          listType: 1,
+          data: [],
+          styles: {
+            borderColor: 'rgb(144,189,210)',
+            borderWidth: 1,
+            titleHeight: 46,
+            titleBg: 'rgb(160,200,219)',
+            titleColor: 'white',
+            cellBg: 'rgb(245,250,250)',
+            evenBg: 'rgb(245,250,250)',
+            cellColor: 'rgb(114,114,114)',
+            footBg: 'white',
+            footColor: 'rgb(121,121,121)',
+            iconColor: 'rgb(93,161,192)',
+            inputBorder: '1px solid rgb(203,203,203)',
+            inputBg: 'white',
+            columnsWidth: widths
+          }
+        }
+        if (that.sucaizu_current_type == "subtitle") {
+          StyledList_config.titles = [{
+            label: i18n('SUCAI_SUCAIMINGCHEN')
+          }, {
+            label: i18n('SUCAI_ZHUANGTAI')
+          }, {
+            label: i18n('SUCAI_CHUANGJIANZHE')
+          }];
+          StyledList_config.columns = 3;
+          StyledList_config.styles.columnsWidth = [0.39, 0.24, 0.24];
+        }
+        that.see_sucai_table_component = new StyledList(StyledList_config);
+        that.see_sucai_table_component.getPageData = function (page) {
+          var listSelf = this;
+          var state;
+          var listData__origin = sucaizu.getDataforIMGs(state, page, that.seeDialog.ad_group_id);
+          that.see_sucai_table_component.onTotalCount(listData__origin.allCount);
+          var listData = sucaizu.formListDataForSucaiImg(listData__origin)
+          return listData;
+        };
+        that.see_sucai_table_component.create();
+      }
+    });
+    this.seeDialog.ad_group_id = ad_group_id;
+    this.seeDialog.open();
+  }
+
+  //表格处理请求返回响应逻辑
+  sucaizu.formListDataForImg = function (data) {
+    var list_data = [];
+    for (var i = 0; i < data.length; i++) {
+      var record = this.formListRowDataForImg(data[i], i);
+      list_data.push(record);
+    }
+    return list_data;
+  };
+  sucaizu.formListRowDataForImg = function (Data) {
+    var arr0;
+    var arr1 = Data.title;
+    var arr2 = Data.user_name ? Data.user_name : ""
+    var time = new Date(Data.create_time);
+    var showtime = function (number) {
+      if (number < 10) {
+        number = '0' + number;
+      }
+      return number
+    }
+    var date = time.getYear() + 1900 + "-" + showtime(time.getMonth() + 1) + "-" + showtime(time.getDate()) + " " + showtime(time.getHours()) + ':' + showtime(time.getMinutes()) + ':' + showtime(time.getSeconds());
+    var arr3 = date;
+    var arr4 = Data.ad_ids.length;
+
+    var oprView = "<span class=\"sucai_smallWord_in_td\" style=\"margin-left:8px\" onclick = \"sucaizu.showSeeImgDialog('" + Data.ad_group_id + "')\">" + i18n("SUCAI_CHAKAN") + "</span>";
+    var oprEdit = "<span class=\"sucai_smallWord_in_td\" " + (((my.paas.user_type == "0") || (my.paas.user_type == "1")) ? "onclick=\"showPolicyBindingOperatingMsg({type:'ad_group',mode:'update',value:'" + Data.ad_group_id + "'}, function(){sucaizu.showReviseImgDialog('" + Data.ad_group_id + "')})\"" : " style=\"color:#797979;cursor:default;\"") + " \">" + i18n("SUCAI_BIANJI") + "</span>";
+    var oprDist = "<span class=\"sucai_smallWord_in_td\" " + "onclick=\"sucaizu.viewDistributeSites('" + Data.ad_group_id + "','"  + Data.title + "','"  + Data.site_id + "')\""  + " \">" + i18n("SUCAI_OPERATION_DIST") + "</span>";
+    var oprDelete = "<span " + (((my.paas.user_type == "0") || (my.paas.user_type == "1")) ? "onclick=\"showPolicyBindingOperatingMsg({type:'ad_group',mode:'delete',value:'" + Data.ad_group_id + "'}, function(){sucaizu.showDeleteDialog('" + Data.ad_group_id + "')})\"" : "style=\"color:#797979;cursor:default;\"") + " class=\"sucai_smallWord_in_td\">" + i18n("SUCAI_SHANCHU") + "</span>";;
+    var arr5 ;
+    var arr;
+
+    if(this.systemType == 0){
+      arr5 = oprView + oprEdit + oprDelete;
+      arr = [{label: arr1}, {label: arr2}, {label: arr3}, {label: arr4}, {label: arr5}];
+    }else{
+      if(this.systemType == 1){
+        if(Data.site_id == window.AdvSelfSiteId){
+          arr0 = (window.AdvSelfSiteName || '') + i18n('ADPOS_SITE_SELF_SUFFIX');
+          arr5 = oprView + oprEdit + oprDist + oprDelete;
+        } else {
+          arr0 = adpSiteNames[Data.site_id] || '';
+          arr5 = oprView;
+        }
+      } else if(this.systemType == 2){
+        if(Data.site_id == window.AdvSelfSiteId){
+          arr0 = (window.AdvSelfSiteName || '') + i18n('ADPOS_SITE_SELF_SUFFIX');
+          arr5 = oprView + oprEdit + oprDist + oprDelete;
+        } else {
+          arr0 = adpSiteNames[Data.site_id] || '';
+          arr5 = oprView;
+        }
+      }
+      arr = [{label: arr0}, {label: arr1}, {label: arr2}, {label: arr3}, {label: arr4}, {label: arr5}];
+    }
+    return arr;
+  };
+
+  sucaizu.formListDataForSucaiImg = function (data) {
+    var list_data = [];
+    for (var i = 0; i < data.length; i++) {
+      var record = this.formListRowDataForSucaiImg(data[i], i);
+      list_data.push(record);
+    }
+    return list_data;
+  };
+  sucaizu.formListRowDataForSucaiImg = function (Data) {
+    var result = [];
+    var i;
+    var arr1 = Data.name;
+    var state = Data.state;
+    var arr2;
+    switch (state) {
+      case "上传中":
+        arr2 = state;
+        break;
+      case "first_audit:prepare_audit":
+        arr2 = i18n('SUCAI_CHUSHEN');
+        break;
+      case "second_audit:prepare_audit":
+        arr2 = i18n('SUCAI_FUSHEN');
+        break;
+      case "third_audit:prepare_audit":
+        arr2 = i18n('SUCAI_ZHONGSHEN');
+        break;
+      case "deprecated":
+        arr2 = i18n('SUCAI_SHENHESHIBAI');
+        break;
+      case "enabled":
+        arr2 = i18n('SUCAI_YIQIYONG');
+        break;
+      case "disabled":
+        arr2 = i18n('SUCAI_JINYONG');
+        break;
+      case "发布中":
+        arr2 = i18n("SUCAI_PUBLISHING");
+        break;
+      case "发布失败":
+        arr2 = i18n("SUCAI_PUBLISHFAILED");
+        break;
+      case "已发布":
+        arr2 = i18n("SUCAI_PUBLISHED");
+        break;
+      case "上传失败":
+        arr2 = i18n("SUCAI_UPLOADFAILED");
+        break;
+      default:
+        arr2 = i18n('SUCAI_BUMING');
+        break;
+    }
+    var arr3 = Data.user_name;
+    var arr4, arr5, arr;
+    if (this.sucaizu_current_type == "subtitle") {
+      arr4 = Data.subtitle_content;
+      arr = [{label: arr1}, {label: arr2}, {label: arr3}, {label: arr4}];
+    } else {
+      arr4 = Data.width + " × " + Data.height;
+      arr5 = Data.level;
+      arr = [{label: arr1}, {label: arr2}, {label: arr3}, {label: arr4}, {label: arr5}];
+    }
+    return arr;
+  };
+  sucaizu.viewDistributeSites = function(id, name, site_id){
+    viewDistributeState('#ad-disites-layer', 'adgroup', {id: id, name: name, site_id: site_id});
+  };
+  //网络请求处理集合
+  sucaizu.addsucaizu = function (obj, callback) {
+    var data = obj;
+    var that = this;
+    var result = false;
+    var url = paasHost + paasAdvDomain + "/ads/adgroup?" + that.token + new Date().toISOString()+"&user_name="+my.paas.user_name+"";
+    $.ajax({
+      type: "POST",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('POST', url)
+      },
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(data),
+      complete: function (ajaxback) {
+        if (ajaxback.status == 200 || ajaxback.statusText == "OK") {
+          if (callback) {
+            callback();
+          }
+          result = true;
+        } else {
+          result = false;
+        }
+      }
+    })
+    return result;
+  };
+  sucaizu.deletesucaizu = function (ad_group_id, callback) {
+    var result = false;
+    var that = this;
+    var url = paasHost + paasAdvDomain + "/ads/adgroup/" + ad_group_id + "?" + that.token + new Date().toISOString();
+    $.ajax({
+      type: "DELETE",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('DELETE', url)
+      },
+      contentType: "application/json",
+      dataType: "json",
+      complete: function (ajaxback) {
+        if (ajaxback.status == 200 || ajaxback.statusText == "OK") {
+          if (callback) {
+            callback();
+          }
+          result = true;
+        }
+      }
+    });
+    return result;
+  };
+  sucaizu.revisesucaizu = function (ad_group_id, obj, callback) {
+    var data = obj;
+    var that = this;
+    var result = false;
+    var url = paasHost + paasAdvDomain + "/ads/adgroup/" + ad_group_id + "?" + that.token + new Date().toISOString()+"&user_name="+my.paas.user_name+"";
+    $.ajax({
+      type: "PUT",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('PUT', url)
+      },
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify(data),
+      complete: function (ajaxback) {
+        if (ajaxback.status == 200 || ajaxback.statusText == "OK") {
+          if (callback) {
+            callback();
+          }
+          result = true;
+        } else {
+          result = false;
+        }
+      }
+    });
+    return result;
+  };
+  sucaizu.getsucaizuIMG = function (pra, callback) {
+    var result = false;
+    var that = this;
+    var ad_group_id;
+    var url = paasHost + paasAdvDomain + "/ads/aditem/aditems?" + that.token + new Date().toISOString();
+    var name;
+    if (pra.ad_group_id) {
+      ad_group_id = pra.ad_group_id;
+      url = url + "&ad_group_id=" + ad_group_id;
+    }
+    if (pra.name) {
+      name = pra.name;
+      url = url + "&name=" + encodeURIComponent(name);
+    }
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('GET', url)
+      },
+      contentType: "application/json",
+      dataType: "json"
+    }).done(function (data) {
+      if (callback) {
+        callback();
+      }
+      console.log(data);
+      result = data;
+    });
+    return result;
+  };
+
+  sucaizu.getDataforSucaiIMGs = function (search_name) {
+    var that = this;
+    var url = paasHost + paasAdvDomain + "/ads/aditem/aditems?type=" + sucaizu.sucaizu_current_type + "&" + that.token + new Date().toISOString();
+    if (search_name) {
+      url = url + "&name=" + encodeURIComponent(search_name);
+    }
+    if(that.platform_current_id){
+      url = url + "&platform_id_list=" + encodeURIComponent(that.platform_current_id);
+    }
+    var result = [];
+    result.allCount = 0;
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('GET', url)
+      },
+      contentType: "application/json",
+      dataType: "json",
+    }).done(function (data, status, xhr) {
+      result = data;
+      var totalCount = xhr.getResponseHeader('x-aqua-total-count');
+      result.allCount = totalCount;
+    });
+    return result;
+  };
+  sucaizu.getDataforSucaizuIMGs = function (page, name, username) {
+    var that = this;
+    var url = paasHost + paasAdvDomain + "/ads/adgroup/adgroups?type=" + this.sucaizu_current_type + "&" + that.token + new Date().toISOString();
+    if (page) {
+      url = url + "&start=" + (page - 1) * 11 + "&end=" + (page) * 11;
+    }
+    if (name) {
+      url = url + "&name=" + encodeURIComponent(name);
+    }
+    if (username) {
+      url = url + "&user_name=" + encodeURIComponent(username);
+    }
+    if(that.sucaizu_site) {
+      url = url + "&site_id=" + encodeURIComponent(that.sucaizu_site);
+    }
+    if(that.platform_current_id){
+      url = url + "&platform_id_list=" + encodeURIComponent(that.platform_current_id);
+    }
+    var result = [];
+    result.allCount = 0;
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('GET', url)
+      },
+      contentType: "application/json",
+      dataType: "json"
+    }).done(function (data, status, xhr) {
+      result = data;
+      var totalCount = xhr.getResponseHeader('x-aqua-total-count');
+      result.allCount = totalCount;
+    });
+    return result;
+  };
+
+  //后台接口问题导致多出来的坑
+  sucaizu.getSucaizuTitle = function (ad_group_id) {
+    var data = this.sucaizu_datas;
+    var i = 0;
+    for (i = 0; i <= data.length; i++) {
+      if (data[i].ad_group_id == ad_group_id) {
+        return data[i].title;
+      }
+    }
+    console.log("没有找到该ad_group_id");
+    return false;
+  }
+  sucaizu.getSucaizuCreateTime = function (ad_group_id) {
+    var data = this.sucaizu_datas;
+    var i = 0;
+    for (i = 0; i <= data.length; i++) {
+      if (data[i].ad_group_id == ad_group_id) {
+        return data[i].create_time;
+      }
+    }
+    console.log("没有找到该ad_group_id");
+    return false;
+  }
+  sucaizu.getSucaifromSelOptions = function (ad_id, selOptions) {
+    var i;
+    for (i = 0; i < selOptions.length; i++) {
+      if (selOptions[i].value == ad_id) {
+        return selOptions[i];
+      }
+    }
+  }
+  sucaizu.getDataforIMGs = function (state, page, ad_group_id) {
+    var that = this;
+    if (state) {
+      var url = paasHost + paasAdvDomain + "/ads/aditem/aditems?state=" + state + "&type=" + sucaizu.sucaizu_current_type + "&" + that.token + new Date().toISOString();
+      ;
+    } else {
+      var url = paasHost + paasAdvDomain + "/ads/aditem/aditems?type=" + sucaizu.sucaizu_current_type + "&" + that.token + new Date().toISOString();
+      ;
+    }
+    if (page) {
+      url = url + "&start=" + (page - 1) * 11 + "&end=" + ((page) * 11 - 1);
+    }
+    if (ad_group_id) {
+      url = url + "&ad_group_id=" + ad_group_id;
+    }
+    var result = null;
+    $.ajax({
+      type: "GET",
+      async: false,
+      url: url,
+      headers: {
+        'x-aqua-sign': getPaaS_x_aqua_sign('GET', url)
+      },
+      contentType: "application/json",
+      dataType: "json"
+    }).done(function (data, status, xhr) {
+      result = data;
+      var totalCount = xhr.getResponseHeader('x-aqua-total-count');
+      result.allCount = totalCount;
+    });
+    return result;
+  };
+  sucaizu.getSiteList = function(){
+    $.ajax({
+      async: false,
+      url: dmRoot + '/site',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).done(function(data) {
+      adpSites = data;
+      data = $.makeArray(data);
+      data.forEach(function(site){
+        adpSiteNames[site.id] = site.name;
+      });
+    });
+  }
+
+
+  sucaizu.initPage();
+  return sucaizu;
+})(jQuery);

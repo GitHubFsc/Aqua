@@ -1,0 +1,72 @@
+.choose_self_adv_search_container{
+	border: 1px #e2e2e2 solid;
+	color: #737373;
+	background-color: #f4f4f4;
+	height: 28px;
+	border-radius: 2px;
+	position: relative;
+	width:471px
+}
+.choose_self_adv_search_container .filterSelect {
+	 display: inline-block;
+	 vertical-align: middle;
+	 width: 105px;
+	 height: 26px;
+	 margin-left: 0px;
+	 position: relative;
+	 padding-top: 0px;
+	 padding-left: 0px;
+ }
+.choose_self_adv_search_container .filterSelect .select-box{
+	border-radius: 5px;
+}
+.choose_self_adv_search_container .filterSelect .select-header{
+	border-radius: 4px;
+}
+.choose_self_adv_search_container .panel_top_search_box_input {
+	position: absolute;
+	width: calc(100% - 168px);
+	height: 28px;
+	border: 0px solid rgb(234, 234, 234);
+	background-color: rgb(244, 244, 244);
+	color: rgb(121, 121, 121);
+	padding-left: 10px;
+	padding-right: 50px;
+	font-size: 14px;
+	outline: none;
+}
+.choose_self_adv_search_container .panel_top_search_box_handle {
+	width: 49px;
+	height: 28px;
+	line-height: 28px;
+	cursor: pointer;
+	text-align:center;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	border-left:1px #e2e2e2 solid;
+	background-color:#7cb7d2;
+	color:#ffffff
+}
+#choose_self_adv_user_select .select-status .select-header {
+    background: #f9f9f9 url("../image/sucai/arrow.png") no-repeat scroll 95% 13px;
+    border: 1px solid #6d9fba;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    height: 38px;
+    line-height: 38px;
+    overflow: hidden;
+    padding-right: 26px;
+    text-indent: 10px;
+    width: 88px;
+}
+
+.choose_self_adv_user_table_container tr .opr {
+    color: #3b95ba;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 8px;
+    position: relative;
+    text-decoration: underline;
+}

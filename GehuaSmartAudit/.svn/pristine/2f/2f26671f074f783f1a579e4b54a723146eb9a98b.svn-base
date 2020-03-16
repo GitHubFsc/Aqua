@@ -1,0 +1,69 @@
+<div id="text_audit" class="text_audit">
+	<!-- 详情页(文本) -->
+	<link rel="stylesheet" href="content/menuVideoAudit/text_audit/text_audit.css">
+    <!-- title -->
+    <div class="title_head">
+        <div class="title" id="audit_text_audit_title"></div>
+        <div class="middle"></div>
+        <div class="right">
+            <div class="icon btn">{{PARTICULAR_CLOSE}}</div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- 审核结果 -->
+        <div class="audit_result">
+            <div class="title">{{PARTICULAR_AUDIT_RESULT}}</div>
+            <div class="info">
+                <div class="info_message">
+                    <div class="content result">
+                        <div class="label">{{PARTICULAR_AUDIT_RESULT}}</div>
+                        <div class="text status" id="audit_result_text"></div>
+                        <div class="check_text icon">{{PARTICULAR_AUDIT_TEXT}}</div>
+                    </div>
+                    <div class="content message">
+                        <div class="label">{{PARTICULAR_AUDIT_DESCRIPTION}}</div>
+                        <div class="text description" id="audit_message_description"></div>
+                    </div>
+                </div>
+                <div class="btn" id="text_audit_audit_result_btn">
+                    <div class="pass icon">{{PARTICULAR_AUDIT_PASS}}</div>
+                    <div class="block icon">{{PARTICULAR_AUDIT_BLOCK}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 识别结果明细 -->
+        <div class="result_detail">
+            <div class="title">{{PARTICULAR_RESULT_DETAIL}}</div>
+            <div class="content" id="result_detail_content">
+                <div class="list_table" id="detail_table"></div>
+            </div>
+        </div>
+        <!-- 识别详情内容 -->
+        <div class="text_audit_content">
+            <div class="header">
+                <div class="select" id="recognition_select"></div>
+                <div class="find_content" id="find_content">
+                    <div class="total_msg"></div>
+                    <div>{{PARTICULAR_AUDIT_TEXT_FINDMSG_1}}</div>
+                    <div class="current_msg"></div>
+                    <div>{{PARTICULAR_AUDIT_TEXT_FINDMSG_2}}</div>
+                </div>
+                <div class="find_btns" id="find_btns">
+                    <div class="find_prev find_btn" id="find_prev"></div>
+                    <div class="find_next find_btn" id="find_next"></div>
+                </div>
+                <div class="middle"></div>
+                <div class="btn" id="text_audit_content_btn">
+                    <div class="icon list list_checked"></div>
+                    <div class="icon json"></div>
+                </div>
+            </div>
+            <div class="content">
+                <!-- 列表式详情 -->
+                <div class="content_list" id="text_audit_list"></div>
+                <!-- json式列表 -->
+                <div class="content_json" id="text_audit_json"></div>
+            </div>
+        </div>
+    </div>
+</div>

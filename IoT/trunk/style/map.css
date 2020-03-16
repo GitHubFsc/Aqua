@@ -1,0 +1,128 @@
+.map_info_list_row{
+	padding-left: 30px;
+	width:209px;
+	height:22px;
+	line-height:22px;
+	background-position:center left;
+	background-repeat: no-repeat;
+	font-size:12px
+}
+.map_info_block{
+	border-bottom:1px #dfdfdf solid;
+	width:100%
+}
+.map_thin_color_array{
+	width:16px;
+	height:100%;
+	border-right:1px #dfdfdf solid;
+	float:left
+}
+.map_right_content_container{
+	float:left;
+	width:calc(100% - 19px);
+	height:100%;
+}
+.map_surplus_ellipsis{
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden
+}
+.map_info_block_title{
+	height:41px;
+	line-height:41px;
+	width:100%;
+	border-bottom:1px dashed #e5e5e5;
+}
+.map_info_block_title_left{
+	max-width:174px;
+	padding-left:16px;
+	float:left
+}
+.map_info_block_title_right{
+	font-size:12px;
+	float:right;
+	color:#50ccef;
+	margin-right:14px;
+	cursor:pointer
+}
+.map_info_list_row_style2{
+	height:24px;
+	line-height:24px;
+	margin-left:26px;
+	width:auto;
+	max-width:226px;
+	font-size:12px;
+} 
+.map_info_list_level{
+  position:absolute;
+	height:100%;
+	width:100%
+}
+.map_info_list_level_img{
+  position:absolute;
+	right:0;
+	bottom:0
+}
+.map_big_colored_div{
+	border-radius:8px;
+	margin-top:11px;
+	height:101px;
+	width:100%;
+	background-position:20px center;
+	background-repeat: no-repeat;
+	font-size:25.16px;
+	background-color:#83dff7;
+	position:relative
+}
+.map_big_colored_div_chinese{
+	height:36px;
+	line-height:36px;
+	position:absolute;
+	left:76px;
+	top:26px
+}
+.map_big_colored_div_english{
+	height:17px;
+	line-height:17px;
+	position:absolute;
+	left:75px;
+	top:61px;
+	font-size:11.74px
+}
+.map_big_colored_div_data{
+	right:33.54px;
+	font-size:33.54px;
+	line-height:101px;
+	position:absolute
+}
+.map_big_colored_div_degree{
+	right:16px;
+	font-size:25.16px;
+	line-height:101px;
+	position:absolute
+}
+.map_div_field{
+	width:100%;
+	height:155px;
+	border-radius:8px;
+	border:1px #b7b7b7 solid;
+	margin-top:15px;
+	position:relative
+}
+.map_div_field_button{
+	background-image:url("../image/map/view.png");
+  background-position: 10px center;
+  background-repeat: no-repeat;
+	border-radius: 6px;
+	color: #ffffff;
+	cursor: pointer;
+	height: 32px;
+	line-height: 32px;
+	width: 97px;
+	background-color:#44ccee;
+	border:1px #67bacf solid;
+	padding-left:38px;
+	font-size:14px
+}
+
+

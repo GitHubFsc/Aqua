@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="content/asset/assetTagLib/mCustomScrollbar.css ">
+<link rel="stylesheet" href="content/asset/assetTagLib/add.css">
+<link rel="stylesheet" href="content/asset/assetTagLib/assetTagLib.css">
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title" style="background-color:#2ea2d7;height:38px">
+		<div class="sucai_dialog_title_text" id ="sucai_dialog_title_text">
+			
+		</div>
+		<div class="sucai_dialog_close" id="sucai_dialog_close">
+		</div>
+	</div>
+	<div id="addTagToProduct_dialogTitle" class = "sucai_dialog_create_others" style="margin-top:11px">
+		<div class="sucai_dialog_create_size" style="width:100%">
+			<div class = "sucai_dialog_create_name_title_span">{{ASSET_TAG_LIB_ZIDINGYIJIEMUBIAOQIAN}}</div>
+			<div style="width:auto;height:32px;width:100%">
+				<input id="ChannelTag_name" class = "sucai_dialog_create_input" style="float:left;width:414px"/>
+				<div id="addTag_selfDefine" style="cursor:pointer;height:30px;line-height:30px;background-color:#2ea2d7;margin-left:9px;float:left;color:#ffffff;text-align:center;width:50px;">{{PRODUCT_ADD_LABEL_ADD_ORG}}</div>
+			</div>
+		</div>
+		<div class="sucai_dialog_clear"></div>
+	</div>
+	<div class = "sucai_dialog_create_search" style="width:474px;margin-top:13px;background-color:#1eb3db">
+		<div id="area_leve1" class="sucai_dialog_create_area" style = "margin-left: 4px;"></div>
+		<div id="area_leve2" class="sucai_dialog_create_area" ></div>
+		<div id="area_leve3" class="sucai_dialog_create_area" ></div>
+		<div class="sucai_dialog_create_search_title" style = "margin-left: 3px;width:280px">
+			<input id  = "config_list_search" class = "sucai_list_search" style = "height:30px;margin-top:3px;width:214px;background: white" placeholder = "" onkeyup = "" />
+			<div id  = "config_list_search_botton" style="background-color:#2ea2d7;left:10px;margin-top:3px;height:28px;line-height:28px" class = "sucai_list_search_botton_div">{{ASSET_TAG_LIB_CHAXUN}}</div>
+			<div style = "clear: both"></div>
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_move_sucai" id="addTagToProduct_tagChooseContainer" style="width:474px;height:349px">
+		<div id = "sucai_dialog_sucaizu_selectable_cotainer" class="sucai_dialog_create_move_sucai_one" style="width:100%">
+			<div id="sucai_dialog_sucaizu_selectable" class = "styled-flow-list-container"></div>
+		</div>
+		<div class="sucai_dialog_create_move_sucai_two" style="display:none">
+			<div id="sucai_dialog_create_move_add" style = "margin-top:60px">{{SUCAI_TIANJIA}} > </div>
+			<div id="sucai_dialog_create_move_addall"> {{SUCAI_TIANJIAQUANBU}} >> </div>
+			<div id="sucai_dialog_create_move_delete"  style = "margin-top:60px"> < {{SUCAI_SHANCHU}}</div>
+			<div id="sucai_dialog_create_move_deleteall"> << {{SUCAI_QUANBUSHANCHU}} </div>
+		</div>
+		<div style = "clear: both"></div>
+	</div>
+	<div style="width:100%;height:1px;background-color:#e5e5e5"></div>
+	<div style="margin-top:8px;height:26px;line-height:26px;margin-left:10px;text-align:left">{{ASSET_TAG_LIB_CHOOSED_PRODUCT_TAG}}</div>
+	<div id="addTagToProduct_choosedTagTitle" style="line-height:32px;height:32px;width:377px;margin-left:10px;background-color:#efefef;border:1px #c5c5c5 solid;padding-left:12px;"></div>
+	<div style="margin-top:5px;height:30px;line-height:30px;margin-left:10px;text-align:left">{{ASSET_TAG_LIB_YOUXIAOSHIJIAN}}</div>
+	
+	<div id="addTagPopup_po_time_box" class="po-time-box" style="z-index:900;margin-left:10px">
+		<div class="po-time-picker" id="addTagForProduct_Popup_validTimeBegin" style="width:150px;height:30px"></div>
+		<div class="po-time-picker" style="color:#8d8d8d;float:left;width:26px;height:32px;line-height:32px;text-align:center" id="addTagPopup_validTimeBegin">-</div>
+		<div class="po-time-picker" id="addTagForProduct_Popup_validTimeEnd" style="width:150px;height:30px"></div>
+		<div class="addTagsForMulti_checkBox" id="addTagForProduct_Popup_alwaysValid" style="float:left;margin-top:7px;margin-left:13px">
+			<div class="addTagsForMulti_checkBox_son" style="display: none;"></div>
+		</div>
+		<div style="width:auto;margin-left:8px;line-height:28px;float:left;color:#747474;font-size:14px">
+			{{ASSET_TAG_LIB_ALWAYSVALID}}
+		</div>
+	</div>
+
+	<div class = "sucai_dialog_create_opition" style="margin-top:14px">
+		<div class  = "option_bottom popup_dialog_clear addTagButtonStyle" id = "dialog_tagAdd_close_botton_click" style="background-color:#5ea0c0">{{COMMON_STYLE_CONFIRM_BUTTONC}}</div>
+		<div id = "dialog_tagAdd_confirm_botton_click" class  = "option_bottom confirm_bottom addTagButtonStyle"></div>
+	</div>
+	<div id="tagManage_toast" class = "toast" style="display: none">
+		<div class="mask_transition"></div>
+		<div style="position: absolute; left: calc(50% - 290px); top: calc(50% - 116px); width: 483px; height: 233px; z-index: 1001;">
+			<div class="sucai_create_dialog">
+				<div class="sucai_dialog_title">
+					<div class="sucai_dialog_title_text">
+						{{BIAOQIANGUANLI_TISHI}}
+					</div>
+				</div>
+				<div class="sucai_dialog_content">
+					<div class="sucai_dialog_content_IMG" style="width:40%;margin-top: 10px">
+						<img src="">
+					</div>
+					<div style="margin-top: 50px;float: left;width: 60%;text-align: left;height: 170px;font-size: 16px;font-family: 宋体;">
+						<p style="color:rgb(114,114,114);font-weight: bolder;">{{BIAOQIANGUANLITOAST_TITLE1}}<span id="tagManage_toast_type1"></span>{{BIAOQIANGUANLITOAST_TITLE2}}<br>{{BIAOQIANGUANLITOAST_TITLE3}}</p>
+						<span style="color:rgb(157,157,157);font-weight: bolder;">(<span id="tagManage_toast_type2"></span>{{BIAOQIANGUANLITOAST_TITLE4}})</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

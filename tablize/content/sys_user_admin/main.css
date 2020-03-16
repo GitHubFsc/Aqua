@@ -1,0 +1,49 @@
+.btn_cancel,.btn_confirm{
+	cursor: pointer;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  width: 149px;
+	text-align:center
+}
+.btn_cancel{
+	background-color: #5da1c0;
+	border: 1px solid #597f89;
+  color: #fff;
+}
+.btn_confirm {
+   background-color: #2ea2d7;
+   border: 1px solid #597f89;
+   color: #fff;
+}
+.menu_right_auth_div,.menu_right_auth_div_gray{
+	text-align: center;
+	font-size:16px;
+	display:inline-block;
+	width:177px;
+	color:#ffffff;
+	border-right:1px #e2e2e2 solid
+}
+.menu_right_auth_div{
+	background-color: #78bad8;
+}
+.menu_right_auth_div_gray{
+	background-color:#aaaaaa
+}
+.menu_right_auth_div_l2,.menu_right_auth_div_l2_gray{
+	text-align: center;
+	font-size:16px;
+	width:177px;
+	color:#ffffff;
+	border-right:1px #e2e2e2 solid
+}
+.menu_right_auth_div_l2{
+	background-color: #78bad8;
+}
+.menu_right_auth_div_l2_gray{
+ background-color:#aaaaaa
+}
+
+
+
+

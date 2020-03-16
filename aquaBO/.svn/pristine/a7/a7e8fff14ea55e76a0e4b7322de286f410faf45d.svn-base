@@ -1,0 +1,7 @@
+<div style = "width:100%;height:100%;background: rgb(252,252,242)">
+	<div style ="height: -webkit-calc((100% - 600px)/2);height: calc((100% - 600px)/2);">
+	</div>
+	<div style="width: 100%;height: 600px;background: rgb(252,252,242);text-align: center;">
+		<img src="images/Developing.png" style="margin-left: 2px;margin-right: 2px;height: 100%;max-width: -webkit-calc(100% - 4px);max-width: calc(100% - 4px);"/>
+	</div>
+</div>

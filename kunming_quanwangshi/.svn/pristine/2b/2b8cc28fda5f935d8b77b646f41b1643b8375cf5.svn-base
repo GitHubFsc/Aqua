@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>首页</title>
+	<link rel="stylesheet" href="style/common.css" type="text/css" charset="utf-8"/>
+	<link rel="stylesheet" href="style/home.css" type="text/css" charset="utf-8"/>
+	<script type="text/javascript" src="js/common/endecodebase64.js"></script>
+	<script type="text/javascript" src="js/common/sha1.js"></script>
+	<script type="text/javascript" src="js/common/keyvalue.js"></script>
+	<script type="text/javascript" src="js/common/util.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/my.paas.js"></script>
+	<script type="text/javascript" src="js/my.storage.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javascript" src="js/home.tabs.js"></script>
+	<script type="text/javascript" src="js/vtil.js"></script>
+	<script type="text/javascript" src="config.js"></script>
+</head>
+<!-- v 1.0.0.0 -->
+<body onload="init()">
+	<div class="app home">
+		<div class="logo"></div>
+		<div id="search"></div>
+		<div id="mine"></div>
+		<div id="tabs_header"></div>
+		<div id="tab_focus"></div>
+		<div id="tab_content"></div>
+		<div id="block_focus"></div>
+	</div>
+<!--
+	<div id="logBackground"></div>
+	<div id="log"></div>
+-->
+</body>
+</html>

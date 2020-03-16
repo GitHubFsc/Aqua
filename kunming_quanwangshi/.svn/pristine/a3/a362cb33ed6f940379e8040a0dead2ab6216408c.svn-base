@@ -1,0 +1,167 @@
+.home {
+	background-image: url(../img/home/bg.jpg);
+	background-repeat: no-repeat;
+}
+
+.home_logo {
+	position: absolute;
+	width: 150px;
+	height: 60px;
+	left: 1042px;
+	top: 10px;
+	background-image: url(../img/home/logo.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+#focus {
+	position: absolute;
+}
+
+.tab_hbg {
+	position: absolute;
+	left: 0;
+	top: 81px;
+	width: 1280px;
+	height: 41px;
+	background-color: #2d2d2d;
+}
+
+#tabs_header {
+	position: absolute;
+	height: 43px;
+	top: 80px;
+	left: 0;
+	width: 1116px;
+	padding: 0 82px;
+	white-space: nowrap;
+	word-break: keep-all;
+	overflow: hidden;
+}
+
+.tab_header {
+	display: inline-block;
+	font-size: 27px;
+	color: #757579;
+	height: 43px;
+	line-height: 43px;
+	text-align: center;
+	padding: 0 14px;
+	margin-right: 18px;
+}
+
+.tab_header:last-child {
+	margin-right: 82px;
+}
+
+.tab_header.tab_select {
+	color: #fff;
+}
+
+#tab_focus {
+	position: absolute;
+	height: 43px;
+	top: 79px;
+	border: 1px solid #fff;
+	border-radius: 2px;
+	visibility: hidden;
+}
+
+.tab_block {
+	position: absolute;
+}
+
+#block_focus {
+	position: absolute;
+	visibility: hidden;
+	border: 3px solid #fff;
+	border-radius: 3px;
+}
+
+#search {
+	position: absolute;
+	width: 42px;
+	height: 38px;
+	top: 26px;
+	left: 914px;
+	background-image: url(../img/home/search_dark.png);
+	background-repeat: no-repeat;
+}
+
+#search.focus {
+	background-image: url(../img/home/search_white.png);
+}
+
+#mine {
+	position: absolute;
+	width: 42px;
+	height: 38px;
+	top: 25px;
+	left: 982px;
+	background-image: url(../img/home/mine_dark.png);
+	background-repeat: no-repeat;
+}
+
+#mine.focus {
+	background-image: url(../img/home/mine_white.png);
+}
+
+.block_poster {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.folder {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background-repeat: no-repeat;
+	top: 0;
+}
+
+#folder_0 {
+	left: 85px;
+	background-image: url(../img/home/comp_dark.png);
+}
+#folder_0.folder_select {
+	background-image: url(../img/home/comp_white.png);
+}
+
+#folder_1 {
+	left: 196px;
+	background-image: url(../img/home/live_dark.png);
+}
+#folder_1.folder_select {
+	background-image: url(../img/home/live_white.png);
+}
+
+#folder_2 {
+	left: 308px;
+	background-image: url(../img/home/class_dark.png);
+}
+#folder_2.folder_select {
+	background-image: url(../img/home/class_white.png);
+}
+
+#folder_focus {
+	position: absolute;
+	width: 82px;
+	height: 74px;
+	border: 1px solid #fff;
+	border-radius: 2px;
+	left: 83px;
+	top: 2px;
+	visibility: hidden;
+}
+
+#tope_focus {
+	position: absolute;
+	width: 50px;
+	height: 46px;
+	border: 1px solid #fff;
+	border-radius: 2px;
+	top: 20px;
+	visibility: hidden;
+}

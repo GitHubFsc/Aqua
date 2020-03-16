@@ -1,0 +1,127 @@
+﻿<div id="exportTask_pageAllContainer" class="exportTask_pageAllContainer" style="font-size:14px">
+	<div class="pageTitleContainerB" id="exportTask_pageTitleContainerB">
+        <div class="small_blue_bar" style="margin-left:18px;margin-top:19px;float:left"></div>
+        <div class="pageTitleContainerTitleDiv" id="exportTask_pageTitle_export_" style="margin-top:18px;margin-left:9px;color:#494b58;font-size:16px;font-family:'微软雅黑';font-weight:bold">导出任务</div>
+		<!--div id = "BatchExport_Bottom" class="pageTitleContainerRightButt" style="width:164px;border-radius:10px;" onclick="batchExport.openQueryWin(this)">创建批量导出任务</div-->
+        <div id="exportTask_course_type_filter" class="downMenu_style select_" style="background-color:#0f84a1;margin-top:6px;display: block;float:right;margin-right:6px;width:165px;">
+            <div class="value" id="exportTask_downMenu_text" name="inputTitle" style="margin-left:10px" onclick="batchExport.mopen(this,'exportTask_downMenu','father')">创建任务</div>
+            <div id="exportTask_downMenu" style="left:0;width:100%" class="select_option downMenu">
+                <div onclick="batchExport.mopen(this,'exportTask_downMenu');batchExport.openQueryWin(this)" alt="new" data-type="detail">多人详单</div>
+                <div onclick="batchExport.mopen(this,'exportTask_downMenu');batchExport.openQueryWin(this)" alt="new" data-type="statistics">多人统计</div>
+                <div onclick="batchExport.mopen(this,'exportTask_downMenu');batchExport.openQueryWin(this)" alt="new" data-type="user">活跃/沉默用户</div>
+                <div onclick="batchExport.mopen(this,'exportTask_downMenu');batchExport.openQueryWin(this)" alt="new" data-type="broadcast">节目点播</div>
+            </div>
+        </div>
+	</div>
+	<div id="exportTask_pageAllBody" class="pageAllBodyContainer">
+		<div class="pageAllBodyContainerTitle" id="exportTask_pageAllBodyContainerTitle">
+			<div class="ContainerTitleLeftTitle">批量导出任务列表</div>
+		</div>
+		<div id="exportTask_resultTable" style="position:relative;top:5px;right:0px;bottom:0px;left:0px;">
+			<table class="brodecastRecordTable">
+				<thead>
+					<td width="10%">任务状态</td>
+					<td width="30%">任务描述</td>
+					<td width="14%">开始日期</td>
+					<td width="14%">结束日期</td>
+					<td width="32%">操作</td>
+				</thead>
+				<tbody>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+					<tr>
+						<td name="status">&nbsp;</td>
+						<td name="objectName">&nbsp;</td>
+						<td name="startTime">&nbsp;</td>
+						<td name="endTime">&nbsp;</td>
+						<td name="action">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="exportTask_page_spliter" style="width:100%;height:40px;">
+			</div>
+		</div>
+	</div>
+</div>

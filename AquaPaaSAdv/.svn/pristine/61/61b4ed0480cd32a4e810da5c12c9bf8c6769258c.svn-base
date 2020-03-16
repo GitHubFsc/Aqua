@@ -1,0 +1,1 @@
+self_service_adviser_manage.init("aduit")

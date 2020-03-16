@@ -1,0 +1,71 @@
+<style>
+	#sucai_dialog_sucaizu_selectable .mCSB_inside > .mCSB_container {
+		margin-right: 0px;
+	}
+</style>
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title">
+		<div class="sucai_dialog_title_text" id ="sucai_dialog_title_text">
+			{{BIAOQIANGUANLI_ADD}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_others">
+		<div class="sucai_dialog_create_size">
+			<div class = "sucai_dialog_create_name_title_span">{{BIAOQIANGUANLI_NAME}}</div>
+			<input id="ChannelTag_name" class = "sucai_dialog_create_input"/>
+		</div>
+		<div class="sucai_dialog_clear"></div>
+	</div>
+	<div class = "sucai_dialog_create_search" style="marign-top:8px">
+		<div id="area_leve1" class="sucai_dialog_create_area" style = "margin-left: 4px;"></div>
+		<div id="area_leve2" class="sucai_dialog_create_area" ></div>
+		<div id="area_leve3" class="sucai_dialog_create_area" ></div>
+		<div class="sucai_dialog_create_search_title" style = "margin-left: 2px;width:280px">
+			<input id  = "config_list_search" class = "sucai_list_search" style = "height:30px;margin-top:2px;width:214px;background: white" placeholder = "" onkeyup = "" />
+			<div id  = "config_list_search_botton" class = "sucai_list_search_botton_div">{{SUCAI_CHAXUN}}</div>
+			<div style = "clear: both"></div>
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_move_sucai">
+		<div id = "sucai_dialog_sucaizu_selectable_cotainer" class="sucai_dialog_create_move_sucai_one">
+			<div id="sucai_dialog_sucaizu_selectable" class = "styled-flow-list-container"></div>
+		</div>
+		<div class="sucai_dialog_create_move_sucai_two">
+			<div id="sucai_dialog_create_move_add" style = "margin-top:60px">{{SUCAI_TIANJIA}} > </div>
+			<div id="sucai_dialog_create_move_addall"> {{SUCAI_TIANJIAQUANBU}} >> </div>
+			<div id="sucai_dialog_create_move_delete"  style = "margin-top:60px"> < {{SUCAI_SHANCHU}}</div>
+			<div id="sucai_dialog_create_move_deleteall"> << {{SUCAI_QUANBUSHANCHU}} </div>
+		</div>
+		<div id = "sucai_dialog_sucaizu_selected_container" class="sucai_dialog_create_move_sucai_three">
+			<div id="sucai_dialog_sucaizu_selected" class = "styled-flow-list-container"></div>
+		</div>
+		<div style = "clear: both"></div>
+	</div>
+	<div class = "sucai_dialog_create_opition">
+		<div class  = "option_bottom popup_dialog_clear">{{SUCAI_QUXIAO}}</div>
+		<div id = "sucai_dialog_create_botton_click" class  = "option_bottom confirm_bottom">{{SUCAI_QUEREN}}</div>
+	</div>
+	<div id="tagManage_toast" class = "toast" style="display: none">
+		<div class="mask_transition"></div>
+		<div style="position: absolute; left: calc(50% - 290px); top: calc(50% - 116px); width: 483px; height: 233px; z-index: 1001;">
+			<div class="sucai_create_dialog">
+				<div class="sucai_dialog_title">
+					<div class="sucai_dialog_title_text">
+						{{BIAOQIANGUANLI_TISHI}}
+					</div>
+				</div>
+				<div class="sucai_dialog_content">
+					<div class="sucai_dialog_content_IMG" style="width:40%;margin-top: 10px">
+						<img src="image/tagManageWaitingIcon.png">
+					</div>
+					<div style="margin-top: 50px;float: left;width: 60%;text-align: left;height: 170px;font-size: 16px;font-family: 宋体;">
+						<p style="color:rgb(114,114,114);font-weight: bolder;">{{BIAOQIANGUANLITOAST_TITLE1}}<span id="tagManage_toast_type1"></span>{{BIAOQIANGUANLITOAST_TITLE2}}<br>{{BIAOQIANGUANLITOAST_TITLE3}}</p>
+						<span style="color:rgb(157,157,157);font-weight: bolder;">(<span id="tagManage_toast_type2"></span>{{BIAOQIANGUANLITOAST_TITLE4}})</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

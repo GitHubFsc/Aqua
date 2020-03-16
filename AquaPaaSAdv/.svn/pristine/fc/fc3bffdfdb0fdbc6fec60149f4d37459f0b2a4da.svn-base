@@ -1,0 +1,137 @@
+<div class="panel_dialog" style="font-family:'微软雅黑';color:#8a8a8a">
+	<div class="toufang_panel_dialog_title">
+		<div class="panel_dialog_title_text" style="font-size:16px">
+			{{TOUFANGBAOGAO_VIEW_REPORT}}
+		</div>
+		<div id="adPos_dialog_ne_close" class="panel_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div id="toufang_detail_dialog_container" style="height:auto;width:100%;overflow:auto">
+		<div class="toufang_dialog_row toufang_dialog_row_label" style="margin-top:3px">{{TOUFANGBAOGAO_INFO}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content" style="height:90px">
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_TOUFANGSHIJIAN}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_SHICHANG}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_SHIFOUDIANJI}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="placement_time"></div>
+				<div class="toufang_dialog_content_input" data-key="duration"></div>
+				<div class="toufang_dialog_content_input" data-key="charge_type"></div>
+			</div>
+		</div>
+		<div class="toufang_dialog_row toufang_dialog_row_label">{{TOUFANGBAOGAO_GGW_INFO}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content">
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_GGWNAME}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="adp_name" style="width:687px"></div>
+			</div>
+			<div class="toufang_dialog_content_label_container" style="height:42px">
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_GGWLEIXIN}}</div>
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_ADV_CREATER}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="adp_type"></div>
+				<div class="toufang_dialog_content_input" id="toufang_adp_creator"></div>
+			</div>
+		</div>
+		<div class="toufang_dialog_row toufang_dialog_row_label">{{TOUFANGBAOGAO_SC_INFO}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content">
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label" style="width:460px">{{TOUFANGBAOGAO_SUCAI_GGWNAME}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_AD_CREATER}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" style="width:448px" data-key="ad_name"></div>
+				<div class="toufang_dialog_content_input" id="toufang_ad_creator"></div>
+			</div>
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_SUCAI_GGWLEIXIN}}</div>
+				<div class="toufang_dialog_content_label" style="width:76px">{{TOUFANGBAOGAO_SUCAI_CHICUN}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="ad_type"></div>
+				<div class="toufang_dialog_content_input" data-key="dimension" data-value="dimension1" style="width:64px"></div>
+				<div class="toufang_dialog_content_input toufang_dialog_content_input_b" style="width:30px">px</div>
+				<div class="toufang_dialog_content_input toufang_dialog_content_input_b" style="width:20px">×</div>
+				<div class="toufang_dialog_content_input" data-key="dimension" data-value="dimension2" style="width:64px;margin-left:8px"></div>
+				<div class="toufang_dialog_content_input toufang_dialog_content_input_b" style="width:30px">px</div>
+			</div>
+		</div>
+		<div class="toufang_dialog_row toufang_dialog_row_label">{{TOUFANGBAOGAO_USER_INFO}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content">
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_USERNAME}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_EQUIP_ID}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_EQUIP_TYPE}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" id="toufang_adv_username"></div>
+				<div class="toufang_dialog_content_input" data-key="device_id"></div>
+				<div class="toufang_dialog_content_input" data-key="device_type"></div>
+			</div>
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_USERADDRESS}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_USERREIGION}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="ip"></div>
+				<div class="toufang_dialog_content_input" data-key="vistor_region"></div>
+				<div id="toufang_view_user_coordinate" class="toufang_dialog_content_label toufang_adPos_operation" style="margin-top:0px">{{TOUFANGBAOGAO_VIEWUSERZUOBIAO}}</div>
+			</div>
+		</div>
+		<div class="toufang_dialog_row toufang_dialog_row_label">{{TOUFANGBAOGAO_JC_INFO}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content" style="height:313px">
+			<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_JUECE_ID}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="decision_id"></div>
+			</div>
+			<div class="toufang_dialog_content_label_container" style="height:42px">
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_JUECE_MZBQ}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" style="width:687px" data-key="shot_tag"></div>
+			</div>
+			<div class="toufang_dialog_content_label_container" style="height:42px">
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_DANGQIAN_CHANNEL}}</div>
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_DANGQIAN_PROGRAM}}</div>
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_DANGQIAN_APP}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="channel_id"></div>
+				<div class="toufang_dialog_content_input" data-key="program"></div>
+				<div class="toufang_dialog_content_input" data-key="application_id"></div>
+			</div>
+			<div class="toufang_dialog_content_label_container" style="height:42px">
+				<div class="toufang_dialog_content_label" style="margin-top:9px">{{TOUFANGBAOGAO_APP_PATH}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="application_path" style="width:687px"></div>
+			</div>
+		</div>
+		<div class="toufang_dialog_row toufang_dialog_row_label">{{TOUFANGBAOGAO_JF_INFO}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content" style="height:90px">
+				<div class="toufang_dialog_content_label_container">
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_CONTRACT_ID}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_JINE}}</div>
+				<div class="toufang_dialog_content_label">{{TOUFANGBAOGAO_GUANGGAOZHU_YUE}}</div>
+			</div>
+			<div class="toufang_dialog_content_input_container">
+				<div class="toufang_dialog_content_input" data-key="contract_id"></div>
+				<div class="toufang_dialog_content_input" data-key="deductions"></div>
+				<div class="toufang_dialog_content_input" data-key="balance"></div>
+			</div>
+		</div>
+		<div class="toufang_dialog_row toufang_dialog_row_label" style="margin-top:5px">{{TOUFANGBAOGAO_RECORD_TIME}}</div>
+		<div class="toufang_dialog_row toufang_dialog_group_content" style="border:0;background-color:white;height:32px;margin-left:0px">
+			<div class="toufang_dialog_content_input" data-key="save_time" style="margin-left:31px"></div>
+		</div>
+		<div style="width:100%;height:30px"></div>
+	</div>
+	<div class="toufang_detail_panel_dialog_cancel popup_dialog_clear" style="background-color:rgb(93, 161, 192);border: 1px solid rgb(89, 127, 137);color:white;margin-left:674px">{{TOUFANGBAOGAO_GUANBI}}</div>
+	<div style="width:100%;height:20px"></div>
+</div>

@@ -1,0 +1,19 @@
+<div class="_dialog" id="navigation_add_asset">
+  <link rel="stylesheet" href="style/dialog.css">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{ASSET_ASSET_DIALOG_TITLE}}</div>
+    <div class="_dialog_span"></div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body _dialog_col">
+    <div class='search_bar'>
+      <input id='search_input' />
+      <div class='btn'>{{ASSET_ASSET_DIALOG_QUERY}}</div>
+    </div>
+    <div id='navigation_asset_list'></div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="btn _cancel">{{NAVIGATION_CANCEL}}</div>
+    <div class="btn _confirm">{{NAVIGATION_ADD}}</div>
+  </div>
+</div>

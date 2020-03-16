@@ -1,0 +1,757 @@
+define(['jquery', 'StyleableList', 'StyledSelector', 'PopupDialog', 'Alert', 'DatePicker','NewSelect','DatePickerVersionTwo', 'VideoPlayer',
+  'mCustomScrollbar','PosterAudit','TextAudit'],
+  function($, StyleableList, StyledSelector, PopupDialog, Alert, DatePicker, NewSelect, DatePickerVersionTwo,VideoPlayer, mCustomScrollbar,PosterAudit,TextAudit){
+  var VideoAudit = function(){};
+  VideoAudit.prototype = {
+    $root: null,
+    init(id) {
+      var _this = this;
+      this.$root = $('#' + id);
+      $.get('content/menuVideoAudit/index.html', function(data) {
+        var html = patchHTML(data);
+        _this.$root.empty().append(html);
+        _this.initParm();
+        _this.initOptions();
+        _this.initMCSB();
+        _this.bindEvent();
+      });
+    },
+    //制造变量
+    initParm: function () {
+      var that = this;
+      that.Data=[];//数据
+      that.currentPage = 1;//当前页 (默认第一页)
+      that.showRecordNum = 20;//页面容纳量(默认页面数据容纳量为20)
+      that.totalPage;//总页数
+      that.totalNum;//数据总数
+      that.backflag = false; //判断是否为点击搜索案按钮
+      that.tabswitchfalg = true;
+      that.legend_Violation={
+        "antispam":"<div class='legend_Violation'>语音</div>", "sface":"<div class='legend_Violation'>人脸</div>",
+        "tag":"<div class='legend_Violation'>标签</div>","terrorism":"<div class='legend_Violation'>暴恐</div>",
+        "porn":"<div class='legend_Violation'>涉黄</div>","ad":"<div class='legend_Violation'>广告</div>",
+        "live":"<div class='legend_Violation'>不良</div>","logo":"<div class='legend_Violation'>logo</div>"};
+      that.legend_Suspect={
+        "antispam":"<div class='legend_Suspect'>语音</div>","sface":"<div class='legend_Suspect'>人脸</div>",
+        "tag":"<div class='legend_Suspect'>标签</div>","terrorism":"<div class='legend_Suspect'>暴恐</div>",
+        "porn":"<div class='legend_Suspect'>涉黄</div>","ad":"<div class='legend_Suspect'>广告</div>",
+        "live":"<div class='legend_Suspect'>不良</div>","logo":"<div class='legend_Suspect'>logo</div>"};
+      that.table_pass='<span class="table_pass">通过</span>';
+      that.table_prepare='<span class="table_prepare">未审核</span>';
+      that.table_violation='<span class="table_violation">违规</span>';
+      that.RecognitionResultData = [
+      {
+        name: i18n("REVIEW_PASSED"),
+        key:"passed",
+        value: "0"
+      },{
+        name: i18n("REVIEW_VIOLATION"),
+        key:"deprecated",
+        value: "1"
+      }];
+      that.AuditResultsDataF = [
+      {
+        name: i18n("REVIEW_ALL"),
+        key:"",
+        value: '0'
+      }, {
+        name: i18n("REVIEW_PASSED"),
+        key:"passed",
+        value: "1"
+      }, {
+        name: i18n("REVIEW_VIOLATION"),
+        key:"deprecated",
+        value: "2"
+      },{
+        name: i18n("REVIEW_UNREVIEWED"),
+        key:"prepare_audit",
+        value: "3"
+      }];
+      that.AuditResultsDataT = [{
+        name: i18n("REVIEW_ALL"),
+        key:"",
+        value: "0"
+      }];
+      // this.ContentType = [{
+      //   name: i18n("REVIEW_IMAGRE"),
+      //   key:"image",
+      //   value: '0'
+      // }, {
+      //   name: i18n("REVIEW_VIDEO"),
+      //   key:"video",
+      //   value: "1"
+      // }, {
+      //   name: i18n("REVIEW_TEXT"),
+      //   key:"text",
+      //   value: "2"
+      // },{
+      //   name: i18n("REVIEW_AUDIO"),
+      //   key:"audio",
+      //   value: "3"
+      // }];
+      this.ContentType = [{
+        name: i18n("REVIEW_VIDEO"),
+        key:"video",
+        value: "0"
+      }, {
+        name: i18n("REVIEW_TEXT"),
+        key:"text",
+        value: "1"
+      }];
+      that.step1_status=null,step2_status=null,create_time=null,filter=null,description=null;
+    },
+      //下拉框,输入框,日期控件
+    initOptions: function () {
+      var that = this;
+      //下拉框数值
+      //下拉框css
+      var newSelect_style = {
+        width: "100%",
+        height: 34,
+        background: "#ffffff",
+        selectedBackground: "#F2FDFF",
+        selectedLiColor: "#92DEF5",
+        fontSize: 12,
+        liFontSize: 12,
+        headerColor: "#828282",
+        liColor: "#828282",
+        iconRight: 8,
+        headerBorderColor: "#D0D0D0",
+        headerBorderStyle: "solid",
+        headerBorderWidth: 1,
+        headerBorderRadius: 4,
+        liBorderColor: "#D0D0D0",
+        openIconUrl: "./uiWidget/images/select_open2.png"
+      };
+      //识别结果
+      var menuVideoAudit_RecognitionResult = new NewSelect("#menuVideoAudit_RecognitionResult", that.RecognitionResultData, newSelect_style, (value) => {
+        if(that.RecognitionResultData[value].key=="passed"){
+            $("#menuVideoAudit_AuditResults").html("");
+            //审核结果
+            let menuVideoAudit_AuditResults = new NewSelect("#menuVideoAudit_AuditResults", that.AuditResultsDataT, newSelect_style, (value) => {
+            });
+            that.menuVideoAudit_AuditResults = menuVideoAudit_AuditResults;
+        }else{
+          $("#menuVideoAudit_AuditResults").html("");
+          //审核结果
+          let menuVideoAudit_AuditResults = new NewSelect("#menuVideoAudit_AuditResults", that.AuditResultsDataF, newSelect_style, (value) => {
+          });
+          that.menuVideoAudit_AuditResults = menuVideoAudit_AuditResults;
+        }
+      });
+      that.menuVideoAudit_RecognitionResult = menuVideoAudit_RecognitionResult;
+      //审核结果
+      let menuVideoAudit_AuditResults = new NewSelect("#menuVideoAudit_AuditResults", that.AuditResultsDataF, newSelect_style, (value) => {
+      });
+      that.menuVideoAudit_AuditResults = menuVideoAudit_AuditResults;
+      //内容类型
+      let menuVideoAudit_ContentType = new NewSelect("#menuVideoAudit_ContentType", that.ContentType, newSelect_style, (value) => {
+      });
+      that.menuVideoAudit_ContentType = menuVideoAudit_ContentType;
+      //日期范围
+      var dateInputStyles = {
+        width:"140px",
+        height:"34px",
+        borderColor: "#d9d9d9",
+        borderRadius: "6px"
+      };
+      var calendarStyles = {
+        width: 432,
+        navTitleHeight:40,
+        navTitleBgColor: '#ffffff',
+        datesViewHeight: 160,
+        datesViewGridColor: '#ffffff',
+        datesViewCellColor: '#ffffff',
+        weekdaysHeight: 22,
+        weekdaysColor: '#a1a1a1',
+        currMonthColor: 'rgb(121,121,121)',
+        nonCurrMonthColor: 'rgb(200,200,200)',
+        align: 'right'
+      };
+      that.datePicker_start = new DatePickerVersionTwo({
+        containerId: "menuVideoAudit_DataRange_start",
+        editable: false,
+        iconImage: 'uiWidget/images/datepicker_calendaricon_1.png',
+        iconStyle: {
+          left: 120
+        },
+        dateInputStyles: dateInputStyles,
+        calendarStyles: calendarStyles
+      });
+      that.datePicker_end = new DatePickerVersionTwo({
+        containerId: 'menuVideoAudit_DataRange_end',
+        editable: false,
+        iconImage: 'uiWidget/images/datepicker_calendaricon_1.png',
+        iconStyle: {
+          left: 120
+        },
+        dateInputStyles: dateInputStyles,
+        calendarStyles: calendarStyles
+      });
+      var time = new Date();
+      that.datePicker_start.setCurrDate({
+        year: time.getFullYear(),
+        month: time.getMonth(),
+        date: 1
+      });
+      that.datePicker_end.setCurrDate({
+        year: time.getFullYear(),
+        month: time.getMonth(),
+        date: time.getDate()
+      });
+    },
+    initMCSB : function (){
+      $("#menuVideoAudit_table_content_poster").mCustomScrollbar({
+        axis: "y"
+      });
+      $("#menuVideoAudit_table_content_table").mCustomScrollbar({
+        axis: "y"
+      });
+    },
+    Inquire : function (){
+      var that = this;
+      if (that.backflag) {
+         that.currentPage = 1;
+      }
+      let step1_status = $("#menuVideoAudit_RecognitionResult .select-header-content").text();
+      let step2_status = $("#menuVideoAudit_AuditResults .select-header-content").text();
+      let filter = $("#menuVideoAudit_ContentType .select-header-content").text();
+      for (let item of that.RecognitionResultData) {
+        if (item.name==step1_status) {
+          step1_status=item.key;
+        }
+      }
+      for (let item of that.AuditResultsDataF) {
+        if (item.name==step2_status) {
+          step2_status=item.key;
+        }
+      }
+      for (let item of that.ContentType) {
+        if (item.name==filter) {
+          filter=item.key;
+        }
+      }
+      let description = $("#menuVideoAudit_MediaName").val();
+      let create_time = $("#menuVideoAudit_DataRange_start-datepicker-input").val()+"T00:00:00"+"%2B"+"0800"+","+$("#menuVideoAudit_DataRange_end-datepicker-input").val()+"T23:59:59"+"%2B"+"0800";
+      let step1 = $("#menuVideoAudit_DataRange_start-datepicker-input").val();
+      let step2 = $("#menuVideoAudit_DataRange_end-datepicker-input").val();
+      // step1 =new Date(step1).getTime(); step2 = new Date(step2).getTime();
+      // if (step1<=step2) {
+      // }else alert("日期格式不规范")
+      that.filter = filter; that.step1_status=step1_status; that.step2_status=step2_status; that.description=description; that.create_time=create_time;
+      that.initPagination(that.filter,that.step1_status,that.step2_status,that.create_time,that.description);
+    },
+    bindEvent: function () {
+      var that = this;
+      //搜索按钮
+      $("#menuVideoAudit_searchButton").bind("click", ()=>{
+        that.backflag = true; 
+        that.Inquire();//image, video, text, audio
+        if (that.filter =="video") {
+          $("#menuVideoAudit_title_header .right").show();
+          $("#menuVideoAudit_table_content_poster").show();
+          $("#menuVideoAudit_table_content_table").hide();
+          that.tabswitch(that.tabswitchfalg);
+        }else if(that.filter =="text"){
+          $("#menuVideoAudit_title_header .right").hide();
+          $("#menuVideoAudit_table_content_poster").hide();
+          $("#menuVideoAudit_table_content_table").show();
+          that.tabswitch(false);
+        }else{
+          $("#menuVideoAudit_title_header .right").show();
+          // $("#menuVideoAudit_table_content_poster").show();
+          // $("#menuVideoAudit_table_content_table").show();
+        }
+      });
+      //显示海报//显示列表
+      $("#menuVideoAudit_title_header .right .right_tab").bind("click", ({currentTarget, target }) => {
+        $(currentTarget).attr('id') == "right_tab_poster" ? that.tabswitch(true):that.tabswitch(false);
+      }),
+      //海报详情
+      $("#menuVideoAudit_table_content_poster").on("click",".RecognitionResult",({currentTarget, target }) => {
+       if (that.Data[$(currentTarget).attr("data-index")][7][1] != "prepare_audit") {
+        // 将id传递到详情页
+          that.backflag = false;
+          var callback = function(){that.Inquire()};
+          PosterAudit.prototype.bindEventsParticular(that.Data[$(currentTarget).attr("data-index")][0], callback);
+       }else console.log('等待机审')
+      });
+      //列表操作 //详情
+      $("#menuVideoAudit_table_content_table").on("click", "a[name=table_operating]", ({currentTarget, target }) => {
+       if (that.Data[$(currentTarget).attr("data-index")][7][1] != "prepare_audit") {
+        // 将id传递到详情页
+          that.backflag = false;
+          var callback = function(){that.Inquire()};
+          if (that.filter =="text" ) {
+            TextAudit.prototype.bindEventsParticular(that.Data[$(currentTarget).attr("data-index")][0], callback);
+          }else{
+            PosterAudit.prototype.bindEventsParticular(that.Data[$(currentTarget).attr("data-index")][0], callback);
+          }
+       }else console.log('等待机审')
+      });
+      //每页显示
+      $("#Pagination_Capacity span").bind("click",({currentTarget, target}) => {
+        if (target == currentTarget){
+          $(target).parent().children().removeClass("selected");
+          $(target).addClass("selected");
+          that.showRecordNum = $(target).text();
+          that.currentPage = 1;
+          that.initPagination(that.filter,that.step1_status,that.step2_status,that.create_time,that.description);
+        }
+      });
+      //分页操作
+      $("#Pagination_page").on("click", "a", ({currentTarget, target}) =>{
+        var currentPage = parseInt(that.currentPage);
+        var totalpage = parseInt(that.totalPage);
+        var ss = $(target).html();
+        if(ss == "&lt;" && currentPage != 1) {
+          that.currentPage = that.currentPage - 1;
+        } else if(ss == "&lt;" && currentPage == 1) {
+          that.currentPage = that.currentPage;
+        }
+        if(ss == "&gt;" && currentPage != totalpage) {
+          that.currentPage = that.currentPage + 1;
+        } else if(ss == "&gt;" && currentPage == totalpage) {
+          that.currentPage = totalpage;
+        }
+        if(ss != "&lt;" && ss != "&gt;") {
+          that.currentPage = parseInt(ss);
+        }
+        that.initPagination(that.filter,that.step1_status,that.step2_status,that.create_time,that.description);
+        $('#menuVideoAudit_table_content_table').mCustomScrollbar('scrollTo', 0);
+        $('#menuVideoAudit_table_content_poster').mCustomScrollbar('scrollTo', 0);
+      });
+    },
+
+    tabswitch : function(tabswitch){
+      var that = this;
+      let src = ["image/runningStatistic/right_tab_00.png","image/runningStatistic/right_tab_01.png",
+      "image/runningStatistic/right_tab_02.png","image/runningStatistic/right_tab_03.png"]
+      if (tabswitch) {
+        that.tabswitchfalg = true;
+        $("#right_tab_poster img").attr("src",src[0]).parent().next().children().attr("src",src[3]);
+        $("#menuVideoAudit_table_content_poster").show();
+        $("#menuVideoAudit_table_content_table").hide();
+      }else {
+        that.tabswitchfalg = false;
+        $("#right_tab_poster img").attr("src",src[1]).parent().next().children().attr("src",src[2]);
+        $("#menuVideoAudit_table_content_poster").hide();
+        $("#menuVideoAudit_table_content_table").show();
+      }
+    },
+    //分拣海报展示数据,刷新海报
+    refreshPoster : function () {
+      var that = this;
+      let OptionsData =[];
+      // console.log('海报this.Data===',this.Data);
+      for(let item of this.Data){
+        let data=[]; let category=[];
+        data.push(item[5]==null?"":item[5]);
+        data.push(item[3].slice(0,item[3].lastIndexOf(".")));
+        let day,time;day =item[2].substring(0,10);time = item[2].substring(11,19);
+        data.push(day+"  "+time);
+        data.push(item[6]);
+        if (item[7].length>1){
+          data.push(item[7][1]);
+          if (item[7][2]) {
+          for (let i =0;i<item[7][2].length;i++){
+              if (item[7][2][i].suggestion!="pass"){
+                category.push(item[7][2][i]);
+              }
+          }
+          }
+        }else{
+          category.push([]);
+        }
+        data.push(category);
+        data.push(item[8][1]);
+        OptionsData.push(data);
+      }
+      return OptionsData;
+    },
+    initPoster : function () {
+      var that = this;
+      $("#menuVideoAudit_table_content_poster .mCSB_container").html(" ");
+      that.OptionsData = this.refreshPoster();//海报使用数据
+      // console.log('海报that.OptionsData===',that.OptionsData);
+      for (var i = 0; i<that.OptionsData.length; i++) {
+        let item = that.OptionsData[i];
+        //机审待审核 鼠标手势变化为箭头
+        //机身已审核 鼠标手势变化为小手
+        let cursor = "pointer";
+        if (item[4] == "prepare_audit") {cursor = "default";}
+        let dom = `<div class='RecognitionResult RecognitionResult_`+i+`' id='RecognitionResult_`+i+`' data-index='`+i+`' style='cursor:`+cursor+`'>
+                  <div class='poster'><img src='`+item[0]+`' alt='海报'></div>
+                  <div class='AuditResults'>
+                    <div class='Audit_name_time'>
+                      <p class='Audit_name' title='`+item[1]+`'>`+item[1]+`</p>
+                      <p class='Audit_time'>`+item[2]+`</p>
+                      <div class='legend'></div>
+                    </div>
+                    <div class='HumanTrialResult'></div>
+                  </div>
+                </div>`;
+        $('#menuVideoAudit_table_content_poster .mCSB_container').append(dom);
+        //自动审核结果
+        let MachineAuditResult = item[5];
+        for (let item of MachineAuditResult){
+          if (item.suggestion=="block"){
+            let Scene =item.scene;
+            $('#RecognitionResult_'+i+' .legend').append(that.legend_Violation[Scene]);
+          }else{
+            let Scene =item.scene;
+            $('#RecognitionResult_'+i+' .legend').append(that.legend_Suspect[Scene]);
+          }
+        }
+        //人工审核结果
+        let HumanTrialResultImg;
+        if (item[3]=="passed") {//通过
+          HumanTrialResultImg = `<img src='image/runningStatistic/pass_audit.png'>`;
+        }else if (item[3]=="deprecated") {//违规
+          HumanTrialResultImg = `<img src='image/runningStatistic/violation_audit.png'>`;
+        }else{
+          if (item[6] == "prepare_audit") {//待审核
+            HumanTrialResultImg = `<img src='image/runningStatistic/prepare_audit.png'>`;
+          }else if(item[6] == "deprecated"){//违规
+            HumanTrialResultImg = `<img src='image/runningStatistic/violation_audit.png'>`;
+          }else{//通过
+            HumanTrialResultImg = `<img src='image/runningStatistic/pass_audit.png'>`;
+          }
+        }     
+        $('#RecognitionResult_'+i+' .HumanTrialResult').append(HumanTrialResultImg);
+      }
+    },
+    //分拣列表展示数据,刷新列表
+    refreshTable : function () {
+      var that = this;
+      let TableData =[];
+      // console.log('列表this.Data===',this.Data);
+      for(let item of this.Data){
+        let data=[]; let category=[];
+        data.push(item[3].slice(0,item[3].lastIndexOf(".")));
+        let day,time;day =item[2].substring(0,10);time = item[2].substring(11,19);
+        data.push(day+"  "+time);
+        data.push(item[6]);
+        if (item[7].length>1) {
+          data.push(item[7][1]);
+          if (item[7][2]) {
+        for (let i =0;i<item[7][2].length;i++){
+          if (item[7][2][i].suggestion!="pass"){
+            category.push(item[7][2][i]);
+           }
+        }
+          }
+        }else{
+          category.push([]);
+        }
+        data.push(category);
+        data.push(item[8][1]);
+        TableData.push(data);
+      }
+      return TableData;
+    },
+    initTable : function (rows) {
+      var that = this;
+      $("#menuVideoAudit_table_content_table .mCSB_container").html('<table class="menuVideoAudit_table_content_list" id="menuVideoAudit_table_content_list"></table>');
+      that.TableData = this.refreshTable();//tabel使用数据
+      // console.log('列表that.TableData===',that.TableData);
+      let titles = [
+        {label: i18n("REVIEW_MEDIA_NAME")},
+        {label: i18n("REVIEW_SUBMIT_REVIEW_TIME")},
+        {label: i18n("REVIEW_AUTOMATIC_AUDIT_RESULTS")},
+        {label: i18n("REVIEW_MANUAL_ANUAL_RESULTS")},
+        {label: i18n("REVIEW_OPERATION")}
+      ];
+      let style = {
+        columnsWidth: [0.33, 0.2, 0.21, 0.09, 0.17]
+      };
+      let data = [];
+      for (let i=0;i<that.TableData.length;i++){
+        let listdata = [], item=that.TableData[i];
+        listdata.push({label:"<div class='text_left'>"+item[0]+"</div>"});
+        listdata.push({label:item[1]});
+        let categorydata = ["<div class='legend'>"];
+        for (let category of item[4]){
+          if (category.suggestion=="block"){
+            let Scene =category.scene;
+            categorydata.push(that.legend_Violation[Scene]);
+          }else{
+            let Scene =category.scene;
+            categorydata.push(that.legend_Suspect[Scene]);
+          }
+        }
+        categorydata.push("</div>");
+        listdata.push({label:categorydata.join("")});
+        if (item[2]=="passed") {
+          listdata.push({label:that.table_pass});
+        }else if (item[2]=="deprecated") {
+          listdata.push({label:that.table_violation});
+        }else{
+          if (item[5] == "prepare_audit") {//待审核
+            listdata.push({label:that.table_prepare});
+          }else if(item[5] == "deprecated"){//违规
+            listdata.push({label:that.table_violation});
+          }else{//通过
+            listdata.push({label:that.table_pass});
+          }
+        }
+        //机审待审核 详情为span无绑定事件 无法跳转详情
+        //机身已审核 详情为span>a绑定事件 跳转详情
+        let table_operating ='<span class="table_operating"><a name="table_operating" data-index="'+i+'">'+i18n("PARTICULAR")+'</a></span>'
+        if (item[3]=="prepare_audit") {
+          table_operating ='<span class="table_operating" style="cursor:default">'+i18n("PARTICULAR")+'</span>'
+        }
+        listdata.push({label:table_operating});
+        data.push(listdata);
+      }
+      var list = new StyleableList({
+          container: $('#menuVideoAudit_table_content_list'),
+          rows: rows<20?20:rows,
+          columns: 5,
+          titles: titles,
+          styles: style,
+          listType: 0,
+          async: true,
+          data: data
+        });
+        list.create();
+        that.list = list;
+        $(".styleable_list_controls").hide();
+    },
+    //分页 Data paging
+    initPagination : function (filter,step1_status,step2_status,create_time,description) {
+      var that = this;
+      let url = paasHost+"/aquapaas/rest/auditflow/instance/instances/mediascreening";
+      let urlParam = [] , method = 'GET';
+      urlParam.push("user_type=1");
+      urlParam.push("filter="+filter);
+      if (step1_status&&step2_status) {
+          urlParam.push("status="+step1_status+","+step2_status);//识别结果+审核结果
+          urlParam.push("step_no=1,2");//序号
+      }else if(step1_status){
+          urlParam.push("status="+step1_status);//机审结果
+          urlParam.push("step_no=1");//机审序号
+      }else if(step2_status){
+          if (step2_status=="prepare_audit") {
+            urlParam.push("status=deprecated,"+step2_status);//识别结果+审核结果
+            urlParam.push("step_no=1,2");//序号
+          }else{
+            urlParam.push("status="+step2_status);//人审结果
+            urlParam.push("step_no=2");//人审序号
+          }
+      }
+      if (create_time!=""&&create_time!=undefined){
+        urlParam.push("create_time="+create_time);//时间范围
+      }
+      if (description!=""&&description!=undefined){
+        urlParam.push("description="+description);//节目名称
+      }
+      let start = 0;
+      let end = 19;
+      if(that.showRecordNum>=1&&that.currentPage>0){
+        start = (that.currentPage-1)*that.showRecordNum;
+        end = (that.currentPage*that.showRecordNum)-1;
+      }
+      urlParam.push("start="+start);
+      urlParam.push("end="+end);
+      urlParam.push("user_id="+my.paas.user_id);//用户级授权
+      urlParam.push("access_token="+my.paas.access_token);//用户级授权
+      urlParam.push('app_key=' + paasAppKey);//应用级授权
+      urlParam.push('timestamp=' + new Date().toISOString());//应用级授权
+      url += '?' + urlParam.join('&');
+      $.ajax({
+        type: method,
+        async: true,
+        url: url,
+        headers: {
+          'x-aqua-sign': getPaaS_x_aqua_sign(method, url),//应用级授权
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        data: JSON.stringify()
+      }).done(function (data, status, xhr) {
+        if (status=="success") {
+          that.Data=[...data];
+          that.totalNum = parseInt(xhr.getAllResponseHeaders().split(":").pop());
+          that.totalPage =((that.totalNum % that.showRecordNum == 0) ? Math.ceil(that.totalNum / that.showRecordNum) : Math.ceil(that.totalNum / that.showRecordNum));
+          if (isNaN(that.totalNum)) {
+            $("#Pagination_total span").text("0");
+          }else{
+            $("#Pagination_total span").text(that.totalNum);
+          };
+          that.createPage();//分页
+          that.getDataList();//处理数据
+        }
+      }).fail(function (jqXHR, textStatus) {
+        that.Data = [];
+      });
+    },
+    createPage : function () {
+      var that = this;
+      var arr = new Array();
+      var str = "";
+      var classStyle={'display':'inline-block','width':'27px','height':'27px','border':'1px solid #c9c9c9','color':'#9e9e9e'};
+      var string1="";
+      for(var ss in classStyle){
+        string1+=ss+':'+classStyle[ss]+';';
+      }
+      var backClass={'background-color':'#fe931f','color': '#fff','border': 'none','width':'28px','height':'28px',};
+      var string2="";
+      for(var ss in backClass){
+        string2+=ss+':'+backClass[ss]+';';
+      }
+      var currentPage = parseInt(that.currentPage);
+      var totalPage = parseInt(that.totalPage);
+      var totalNum = parseInt(that.totalNum);
+      if(isNaN(currentPage) || isNaN(totalPage) || isNaN(totalNum) || that.Data.length<=0) {
+         $("#Pagination_page").empty();
+      }else{
+        if(currentPage==1){
+          str = '<li class="disabled"><span style="'+string1+'">&lt</span></li>';
+          arr.push(str);
+        }else{
+          str = '<li><a href="javascript:void(0)" style="'+string1+'">&lt</a></li>';
+          arr.push(str);
+        }
+        //判断条件,
+        // 总页数小于6时:  1 2 3 4 5 6
+        // 总页数大于6时(假设为10):
+        //  当前页为4时: 1 ... 4 5 6 ... 10
+        //  当前页为(总页数-4)时: 1 ... 6 7 8 9 10
+        if(totalPage <= 6) {
+          for(var i = 0; i < totalPage; i++) {
+            if((i + 1) == currentPage) {
+              str = '<li class="active"><a  href="javascript:void(0)" style="'+string1+string2+'">' + (i + 1) + '</a></li>';
+              arr.push(str);
+            } else {
+              str = '<li><a href="javascript:void(0)" style="'+string1+'">' + (i + 1) + '</a></li>';
+              arr.push(str);
+            }
+          }
+        }else if(currentPage<4) {
+          for(var i = 1; i <= 5; i++) {
+            if(i == currentPage) {
+              str = '<li class="active"><a  href="javascript:void(0)" style="'+string1+string2+'">' + (i) + '</a></li>';
+            } else {
+              str = '<li><a  href="javascript:void(0)" style="'+string1+'">' + (i) + '</a></li>';
+            }
+            arr.push(str);
+          }
+          str = '<li><span style="'+string1+'">...</span></li>';
+          arr.push(str);
+          str = '<li><a  href="javascript:void(0)" style="'+string1+'">' + (totalPage) + '</a></li>';
+          arr.push(str);
+        }else if(currentPage>=4&&currentPage<=(totalPage-4))  {
+          str = '<li><a  href="javascript:void(0)" style="'+string1+'">1</a></li>';
+          arr.push(str);
+          str = '<li><span style="'+string1+'">...</span></li>';
+          arr.push(str);
+          for(var i = currentPage; i <= currentPage+2; i++) {
+            if(i == currentPage) {
+              str = '<li class="active"><a  href="javascript:void(0)" style="'+string1+string2+'">' + (i) + '</a></li>';
+            } else {
+              str = '<li><a  href="javascript:void(0)" style="'+string1+'">' + (i) + '</a></li>';
+            }
+            arr.push(str);
+          }
+          str = '<li><span style="'+string1+'">...</span></li>';
+          arr.push(str);
+          str = '<li><a  href="javascript:void(0)" style="'+string1+'">' + (totalPage) + '</a></li>';
+          arr.push(str);
+        }else if(currentPage>=(totalPage-4))  {
+          str = '<li><a  href="javascript:void(0)" style="'+string1+'">1</a></li>';
+          arr.push(str);
+          str = '<li><span style="'+string1+'">...</span></li>';
+          arr.push(str);
+          for(var i = totalPage-4; i <= totalPage; i++) {
+            if(i == currentPage) {
+              str = '<li class="active"><a  href="javascript:void(0)" style="'+string1+string2+'">' + (i) + '</a></li>';
+            } else {
+              str = '<li><a  href="javascript:void(0)" style="'+string1+'">' + (i) + '</a></li>';
+            }
+            arr.push(str);
+          }
+        }
+        if(currentPage==totalPage){
+          str = '<li class="disabled"><span style="'+string1+'">&gt</span></li>';
+          arr.push(str);
+        }else{
+          str = '<li><a href="javascript:void(0)" style="'+string1+'">&gt</a></li>';
+          arr.push(str);
+        }
+        str = arr.join("");
+        $("#Pagination_page").html(str);
+      }
+    },
+    getDataList : function () {
+      var that = this;
+      let data= [];
+      for (let item of that.Data){
+        let data1= [],step1=[],results1=[],step2=[];
+        // if (item.step[0].status=="passed"){
+        //   data1.push(item.id);
+        //   data1.push(item.type);
+        //   data1.push(item.create_time);
+        //   data1.push(item.metadata.description);
+        //   data1.push(item.metadata.source);
+        //   data1.push(item.metadata.poster);
+        //   data1.push(item.metadata.status);
+        //   step1.push(item.step[0].no);
+        //   step1.push(item.step[0].status);
+        // }else{
+          data1.push(item.id);
+          data1.push(item.type);
+          data1.push(item.create_time);
+          data1.push(item.metadata.description);
+          data1.push(item.metadata.source);
+          data1.push(item.metadata.poster);
+          data1.push(item.metadata.status);
+          for(let i =0;i<item.step.length-1;i++){
+            let antispam={},sface={},tag={};
+            step1.push(item.step[i].no);
+            step1.push(item.step[i].status);
+            if (!jQuery.isEmptyObject(item.step[i].reason)){
+              if (item.step[i].reason.metadata_audit){
+                if (item.step[i].reason.metadata_audit.audioScanResults) {
+                  antispam.scene=item.step[i].reason.metadata_audit.audioScanResults.scene;
+                  antispam.suggestion=item.step[i].reason.metadata_audit.audioScanResults.suggestion;
+                  results1.push(antispam);
+                }
+                if (item.step[i].reason.metadata_audit.results&&item.step[i].reason.metadata_audit.results.length>0) {
+                  for (let j=0; j<item.step[i].reason.metadata_audit.results.length;j++) {
+                    let obj={};
+                    obj.scene=item.step[i].reason.metadata_audit.results[j].scene;
+                    obj.suggestion=item.step[i].reason.metadata_audit.results[j].suggestion;
+                    results1.push(obj);
+                  }
+                }
+              }
+              if (item.step[i].reason.metadata_sface) {
+                sface.scene=item.step[i].reason.metadata_sface.results[0].scene;
+                sface.suggestion=item.step[i].reason.metadata_sface.results[0].suggestion;
+                results1.push(sface);
+              }
+              if (item.step[i].reason.metadata_tag) {
+                tag.scene=item.step[i].reason.metadata_tag.results[0].scene;
+                tag.suggestion=item.step[i].reason.metadata_tag.results[0].suggestion;
+                results1.push(tag);
+              }
+            }
+            step1.push(results1);
+          }
+        // }
+        
+        step2.push(item.step[1].no);
+        step2.push(item.step[1].status);
+        data1.push(step1);
+        data1.push(step2);
+        data.push(data1);
+      }
+      that.Data=[...data];
+      that.initPoster();
+      that.initTable(that.showRecordNum);
+    }
+  };
+  return VideoAudit;
+});
+

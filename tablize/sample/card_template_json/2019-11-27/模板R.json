@@ -1,0 +1,70 @@
+{
+	"name": "模板R",
+	"layoutType": "grid",
+	"width": 1740,
+	"height": 180,
+	"maxLineCount": 1,
+	"maxRowCount": 6,
+	"lineSpace": 0,
+	"rowSpace": 0,
+	"items": [
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 1,
+			"mergeRowCount": "6",
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.05,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+							"index": 0,
+							"type": "image",
+							"zIndex": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"url": "$posterUrl$",
+							"alignParent": "bottom"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+							"index": 0,
+							"type": "image",
+							"zIndex": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"url": "$posterUrl$",
+							"alignParent": "bottom"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		}
+	]
+}

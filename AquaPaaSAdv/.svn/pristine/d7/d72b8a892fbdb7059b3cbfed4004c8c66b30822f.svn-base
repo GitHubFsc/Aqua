@@ -1,0 +1,24 @@
+<div id="tagManage_container" class="manage_blue">
+	<div class="sucai_head">
+		<div class = "sucai_head_left">
+			<div class = "sucai_head_center">
+				<ul style = "margin:0;padding:0">
+					<li data-type="channel" id="select_channel" class="sucai_menu_selected">{{CHANNELBIAOQIAN}}</li>
+					<li data-type="area" id="select_area">{{AREABIAOQIAN}}</li>
+					<li data-type="catalog" id="select_category">{{CATEGORYBIAOQIAN}}</li>
+				</ul>
+			</div>
+			<div class = "sucai_search_Container" style="display:none">
+				<input id  = "tagManage_list_search" class = "sucai_list_search" placeholder = "" onkeyup = "" />
+				<div id = "tagManage_list_search_bottom" class = "sucai_search_icon" style = ""></div>
+			</div>
+		</div>
+		<div class="sucai_head_right">
+			<div id="tagManage_add_class_btn" class = "sucai_add_class_btn" onclick=""> <image style  = "height:100%" src = "image/sucai/sucai_add_btn.png"/> <span style = "height: 38px;line-height: 38px;float: right;"><span id="tagManage_add_class_btn_content">{{BIAOQIANGUANLI_ADDCHANNEL}}</span></span></div>
+		</div>
+	</div>
+	<div id = "tagManage_content" class = "panel_page_list_container" style="">
+		<div id = "tagManage_content_table" style = "height:100%">
+		</div>
+	</div>
+</div>

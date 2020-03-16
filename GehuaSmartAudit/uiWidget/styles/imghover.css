@@ -1,0 +1,50 @@
+.img_inner_container{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.img_control_container{
+    display: none;
+}
+
+.img_control_pre, .img_control_next{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	cursor: pointer;
+}
+
+.img_control_pre{
+    left: 0px;
+    background-image: url("../images/imghover_nav_pre.png");
+    background-repeat: no-repeat;
+	background-position: 1% center;
+}
+
+.img_control_next{
+    left: 50%;
+    background-image: url("../images/imghover_nav_next.png");
+    background-repeat: no-repeat;
+	background-position: 99% center;
+}
+
+.img_page_number_container{
+	min-width: 38px;
+	height: 18px;
+	font-family: "宋体";
+	font-size: 14px;
+	color: white;
+	text-align: center;
+	background-color: #86bcd1;
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -19px; 
+	border: 1px solid #85b0c2;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	border-radius: 5px 5px 0 0;
+}

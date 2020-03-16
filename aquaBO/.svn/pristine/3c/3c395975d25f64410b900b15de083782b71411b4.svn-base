@@ -1,0 +1,732 @@
+<body>
+	<div class="user-complext-page" id="user-admin-root" style="margin:0;padding:0;width:100%;min-width:100%;font-size:16px;color:#727272;font-family:'宋体'">
+		<link href="content/asset_import/index.css" rel="stylesheet">
+		<link href="content/CMS/index.css" rel="stylesheet">
+		<link href="content/CMS/zTreeStyleuserCMSAssetAdmin.css" rel="stylesheet">
+		<link href="content/post_list/common_style_jquery.mCustomScrollbar.css" rel="stylesheet">
+		<div class="user-simple-page" id="user-admin-index" style="width:100%;min-width:100%;">
+			<div class="page-rel-container" style="background-color:#fcfcf2;width:100%;min-width:100%;height:100%">
+				<div class="page-rel-header" id="sys-user-admin-page1-part1" style="width:100%;min-width:100%;display:block;border-bottom:1px #ededdb solid;background-color:#ffffff">
+					<div class="panel_page_head_left asset_import_page1">
+						<div class="panel_page_head_title_lead"></div>
+						<div class="panel_page_head_title" style="margin-left:5px">{{CMS_TITLE}}</div><div class="user-admin-search cms_app_admin_page1"><input id="cms_app_admin_search" style="padding-left:10px"><div class="user-admin-search-icon"></div></div>
+					</div>
+					<div id="cms_app_admin_add" style="display:block" class="panel_page_add_btn cms_app_admin_page1" id="cms_app_admin_add">
+					{{CMS_CREATE_APP}}
+					</div>
+					<div id="cms_app_admin_audit" class="panel_page_add_btn cms_app_admin_page2 cms_app_admin_save_img" style="display:none;">
+					{{CMS_SUBMIT_AUDIT}}
+					</div>
+				</div>
+				<div class="page-rel-content"  id="sys-user-admin-page1-part2"  style="padding-bottom:0;display:block;background-color:#f9f9f9">
+					<div class="page-inner-content" style="border-width:1px 1px 0 1px; margin:0;">
+						<div id="cms_app_admin_page1" class="cms_app_admin_page1" style="display:block;bottom:0;font-size: 14px;height: 615px;left: 6px;position: absolute;right: 6px;top: 8px;"></div>
+						<div id="cms_app_admin_page2" class="cms_app_admin_page2" style="display:none;font-size:14px;height:calc(100% - 91px);width:height:calc(100% - 40px);margin:19px;margin-bottom:0;border:1px #e2e2e2 solid">
+							<div style="border-right:1px #e2e2e2 solid;width:401px;height:100%;float:left;background-color:#ffffff">
+								<!--div class="cms_app_admin_table_head" style="width:100%;border-bottom:1px #e2e2e2 solid">
+									<div style="line-height:40px;margin-left:20px">应用名称-01</div>
+								</div-->
+								<div id="cms_app_admin_page2_left_body_container" style="position:relative;height:100%;max-height:100%;overflow-y:auto">
+									<div id="cms_app_admin_page2_left_body" style="visibility:hidden;position:absolute;width:100%"></div>
+									<div id="cms_app_admin_page2_left_tree_container" style="cursor:pointer;visibility:hidden;position:absolute;width:100%">
+										<div id="cms_app_admin_page2_left_tree_left" style="vertical-align:top;width:44px;height:100%;display:inline-block">
+											<div id="cms_app_admin_dash" class="cms_app_admin_dash" style="display:block;float:left;margin-top:30px;margin-left:23px;width:2px;height:calc(100% - 30px)"></div>
+											<div style="display:none;float:left;margin-top:30px;width:18px;height:calc(100% - 30px)">
+												<div id="cms_app_admin_dash_link" style="margin-top:-9px;height:calc(100% - 24px);width:100%">
+												</div>
+											</div>
+										</div><div id="cms_app_admin_page2_left_tree_right" class="ztree" style="vertical-align:top;padding:0;width:calc(100% - 44px);height:100%;display:inline-block"></div>
+									</div>
+								</div>
+							</div>
+						  <div style="width:calc(100% - 404px);height:100%;float:right;position:relative;background-color:#ffffff">
+							  <div id="cms_app_admin_page2_right_title" style="visibility:hidden;margin:15px;margin-bottom:0;height:28px"><div class="cms_app_admin_tab cms_app_admin_tab_focus cms_app_admin_tab_for_app" style="margin-left:0px;width:161px">应用名称-01属性</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_app"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_app">{{CMS_PAGE_LIST}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_app"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_app">{{CMS_VERSION_INFO}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_app"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_app" style="width:134px;">{{CMS_PUBLISH_HISTORY}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_app"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_app" style="width:134px;">{{CMS_HISTORY_VERSION}}</div><div class="cms_app_admin_tab_for_app cms_app_admin_tab_interval"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_page cms_app_admin_tab_focus" style="width:160px;display:none">页面名称-02属性</div><!--模拟--><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_page" style="display:none"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_page" style="width:106px;display:none">{{CMS_CARD_LIST}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_page" style="width:calc(100% - 277px);display:none"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_card cms_app_admin_tab_focus" style="width:160px;display:none">卡片名称-01属性</div><!--模拟--><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_card" style="display:none"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_card" style="width:106px;display:none">{{CMS_BUJU_LIST}}</div><!--模拟--><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_card" style="display:none;width:calc(100% - 277px);"></div><div class="cms_app_admin_tab cms_app_admin_tab_for_item" style="width:106px;display:none">{{CMS_ITEM_LIST}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_for_item" style="display:none;width:calc(100% - 109px);"></div><div class="cms_app_admin_tab cms_app_admin_tab_current_item" style="width:106px;display:none">{{CMS_ITEM_CONTENT}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_current_item"></div><div class="cms_app_admin_tab cms_app_admin_tab_current_item" style="width:106px;display:none">{{CMS_ITEM_DISPLAY}}</div><div class="cms_app_admin_tab_interval cms_app_admin_tab_current_item" style="display:none;width:calc(100% - 223px);"></div></div>
+								<div id="cms_app_admin_page2_body" style="visibility:hidden;position:absolute;border:1px solid #e2e2e2;border-top:0;top:44px;bottom:18px;left:15px;right:15px;background-color:#ffffff">
+									<div class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:block">
+										<div style="margin-left:28px;margin-right:28px;margin-top:10px;height:60px;position:relative">
+											<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+											<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_BASIC_INFO}}</div>
+										</div>
+										<div style="margin-left:28px;margin-right:28px;width:auto;margin-top:-3px">
+											<div style="overflow:hidden">
+												 <div style="float:left;width:100%">
+														<div class="inputTitlestyle">{{CMS_YINGYONGNAME}}</div>
+														<input id="cms_app_page_attr_app_name" readonly="readonly" class="adv_input_region" type="text" style="background-color:#e3e3e3;margin-top:7px;width:100%">
+												</div>
+											</div>
+											<div style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_SCREEN_WIDTH}}</div>
+													<input id="cms_app_page_attr_screen_width" class="adv_input_region" type="text" style="margin-top:7px">
+												</div>
+												<div style="float:right;width:242px">
+													<div class="inputTitlestyle_contacter">{{CMS_SCREEN_HEIGHT}}</div>
+													<input id="cms_app_page_attr_screen_height" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+												</div>
+											</div>
+											<div style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_NAV_WIDTH}}</div>
+													<input id="cms_app_page_attr_nav_width" class="adv_input_region" type="text" style="margin-top:7px">
+												</div>
+												<div style="float:right;width:242px">
+													<div class="inputTitlestyle_contacter">{{CMS_NAV_HEIGHT}}</div>
+													<input id="cms_app_page_attr_nav_height" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+												</div>
+											</div>
+											<div style="overflow:hidden;margin-top:18px">
+												 <div style="float:left;width:100%">
+														<div class="inputTitlestyle">{{CMS_DESC}}</div>
+														<input id="cms_app_page_attr_desc" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none;position:relative;color:#ffffff">
+										<div id="cms_app_admin_page_list_container" style="display:block;margin-left:15px;margin-top:15px;margin-right:15px;margin-bottom:0px">
+											<div style="width:100%;height:34px;line-height:34px;background-color:#1db4da">
+												<div style="float:left;margin-left:14px;height:34px;line-height:34px;">
+													{{CMS_PAGE_LIST}}
+												</div>
+													<div id="cms_app_admin_page_new_add_page"  class="cms_app_admin_button" style="float:right;margin-right:13px">
+													{{CMS_NEW_PAGE}}
+												</div>
+											</div>
+											
+										<div style="width:100%">
+											 <table cellspacing="1" cellpadding="0" style="width: 100%; background-color: rgb(226, 226, 226); table-layout: fixed;">
+												<thead>
+												 <tr>
+													<td class="cms_app_admin_thread" width="4%" ></td>
+													<td class="cms_app_admin_thread" width="63.8%">{{CMS_PAGE_NAME}}</td>
+													<td class="cms_app_admin_thread" width="31.6%">{{CMS_PAGE_OPER}}</td>												 
+												 </tr>
+												</thead>
+												<tbody class="cms_app_admin_second_td_align_left">
+												 
+												</tbody>
+											 </table>
+                     </div>
+	               		</div>
+									</div>
+									<div class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none">
+										<div style="margin-left:28px;margin-right:28px;margin-top:10px;height:60px;position:relative">
+											<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+											<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_PUBLISH_VERSION}}</div>
+										</div>
+										<div style="margin-left:28px;margin-right:28px;width:auto;margin-top:-3px">
+											<div style="overflow:hidden">
+												 <div style="float:left;width:240px">
+														<div class="inputTitlestyle">{{CMS_VERSION_NO}}</div>
+														<input id="cms_version_info_version_id" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:240px">
+												</div>
+												<div style="float:right;width:240px">
+													<div class="inputTitlestyle_contacter">{{CMS_PUBLISH_NAME}}</div>
+													<input id="cms_version_info_version_name" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:240px">
+												</div>
+											</div>
+											<div style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_PUBLISH_TIME}}</div>
+													<input id="cms_version_info_publish_name" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:240px">
+												</div>
+											</div>
+											<div style="width:100%;margin-top:10px;height:60px;position:relative">
+												<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+												<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_LAST_AUDIT_VERSION}}</div>
+											</div>
+											<div style="overflow:hidden;margin-top:1px">
+												<div style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_VERSION_NO}}</div>
+													<input id="cms_version_info_version_id2" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px">
+												</div>
+												<div style="float:right;width:242px">
+													<div class="inputTitlestyle_contacter">{{CMS_VERSION_NAME}}</div>
+													<input id="cms_version_info_version_name2" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+												</div>
+											</div>
+											<div style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_LAST_AUDIT_TIME}}</div>
+													<input id="cms_version_info_last_audit_time" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px">
+												</div>
+												<div style="float:right;width:242px">
+													<div class="inputTitlestyle_contacter">{{CMS_LAST_AUDIT_RESULT}}</div>
+													<input id="cms_version_info_audit_result" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="cms_app_admin_audit_publish_history" class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none">
+											<div id="cms_app_admin_audit_publish_history_container" style="display:block;margin-left:15px;margin-top:15px;margin-right:15px;margin-bottom:0px">
+												<div style="width:100%">
+												 <table cellspacing="1" cellpadding="0" style="width: 100%; background-color: rgb(226, 226, 226); table-layout: fixed;">
+													<thead>
+													 <tr>
+														<td class="cms_app_admin_thread" width="4.2%" ></td>
+														<td class="cms_app_admin_thread" width="21%">{{CMS_AUDIT_PUBLISH_TIME}}</td>
+														<td class="cms_app_admin_thread" width="14.88%">{{CMS_VERSION_NO}}</td>
+														<td class="cms_app_admin_thread" width="36.79%">{{CMS_VERSION_NAME}}</td>
+														<td class="cms_app_admin_thread" width="22.33%">{{CMS_AUDIT_VERSION_STATUS}}</td>
+													 </tr>
+													</thead>
+													<tbody id="cms_app_admin_audit_publish_table" class="cms_app_admin_audit_publish_table">
+													</tbody>
+												 </table>
+												</div>
+											</div>
+									</div>
+									<div id="cms_app_admin_audit_history_version" class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none">
+											<div id="cms_app_admin_audit_history_version_container" style="display:block;margin-left:15px;margin-top:15px;margin-right:15px;margin-bottom:0px">
+												<div style="width:100%">
+												 <table cellspacing="1" cellpadding="0" style="width: 100%; background-color: rgb(226, 226, 226); table-layout: fixed;">
+													<thead>
+													 <tr>
+														<td class="cms_app_admin_thread" width="4.2%" ></td>
+														<td class="cms_app_admin_thread" width="21%">{{CMS_AUDIT_VERSION_CREATE_TIME}}</td>
+														<td class="cms_app_admin_thread" width="14.74%">{{CMS_VERSION_NO}}</td>
+														<td class="cms_app_admin_thread" width="29.9%">{{CMS_VERSION_NAME}}</td>
+														<td class="cms_app_admin_thread" width="19.52%">{{CMS_AUDIT_LAST_PUBLISH_TIME}}</td>
+														<td class="cms_app_admin_thread" width="9.4%">{{CMS_PAGE_OPER}}</td>	
+													 </tr>
+													</thead>
+													<tbody class="cms_app_admin_audit_publish_table">
+													</tbody>
+												 </table>
+												</div>
+											</div>
+									</div>
+									<div class="cms_app_admin_display_container_after_click_tab" style="visibility:hidden;overflow-y:auto;width:100%;height:100%;display:none">
+										<div style="margin-left:28px;margin-right:28px;margin-top:10px;height:60px;position:relative">
+											<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+											<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_BASIC_INFO}}</div>
+										</div>
+										<div style="margin-left:28px;margin-right:28px;width:auto;margin-top:-3px">
+											<div style="overflow:hidden">
+												 <div class="cms_app_admin_resize_input" style="float:left;width:240px">
+														<div class="inputTitlestyle">{{CMS_PAGE_NAME}}</div>
+														<input id="cms_app_admin_page_attr_page_name" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+												</div>
+											</div>
+											<div style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:calc(100% - 80px);">
+													<div class="inputTitlestyle">{{CMS_PAGE_BG}}</div>
+													<input id="cms_app_admin_upload_bg_pic_input" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+												</div>
+												<img id="cms_app_admin_upload_bg_pic_button" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+											</div>
+											<div style="width:100%;margin-top:10px;height:60px;position:relative">
+												<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+												<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_TITLE_DEF}}</div>
+											</div>
+											<div style="height:56px;margin-top:1px">
+												<div class "cms_app_admin_resize_input" style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_TITLE_TYPE}}</div>
+													<div id="cms_app_admin_title_type" class="cms_app_admin_upload_pic_down_menu" style="width:100%">{{CMS_TEXT}}</div>
+												</div>
+											</div>				
+											<div class="cms_app_admin_page_title_item_define_none" style="overflow:hidden;margin-top:18px">
+												<div id="cms_app_admin_status_container1" style="float:left;width:calc(100% - 80px);">
+													<div class="inputTitlestyle">{{CMS_DAILY_STATUS}}</div>
+													<input id="cms_app_admin_upload_daily_status_pic_input1" class="adv_input_region cms_app_admin_title_type_pic" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+													<div class="cms_app_admin_grey_block cms_app_admin_title_type_text" style="margin-top:6px">
+														<div class="inputTitlestyle" style="margin-top:15px;margin-left:18px">{{CMS_TEXT}}</div>
+														<input id="cms_app_admin_page_upload_daily_status_text_input" class="cms_app_admin_middle_block adv_input_region" class="adv_input_region" type="text" style="margin-top:7px;color:#999999;">
+														<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;">
+															<div style="width:calc(50% - 15px);float:left">
+																<div class="inputTitlestyle">{{CMS_TEXT_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_daily_status_text_color_input" class="cms_app_admin_color_input_text"  type="text">
+																</div>
+															</div>
+															<div style="width:calc(50% - 15px);float:right">
+																<div class="inputTitlestyle">{{CMS_TEXT_BG_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_daily_status_text_bg_color_input"  class="cms_app_admin_color_input_text"  type="text">
+																</div>
+															</div>
+														</div>
+														<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;margin-bottom:15px">
+															<div style="width:calc(50% - 15px);float:left">
+																<div class="inputTitlestyle">{{CMS_TEXT_BORDER_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_daily_status_text_border_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="inputTitlestyle cms_app_admin_title_type_text" style="margin-top:18px">{{CMS_GET_FOCUS}}</div>
+													<div class="cms_app_admin_grey_block cms_app_admin_title_type_text" style="margin-top:6px">
+														<div class="inputTitlestyle" style="margin-top:15px;margin-left:18px">{{CMS_TEXT}}</div>
+														<input id="cms_app_admin_page_upload_focus_status_text_input" class="cms_app_admin_middle_block adv_input_region" type="text" style="margin-top:7px;color:#999999;">
+														<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;">
+															<div style="width:calc(50% - 15px);float:left">
+																<div class="inputTitlestyle">{{CMS_TEXT_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_focus_status_text_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+															<div style="width:calc(50% - 15px);float:right">
+																<div class="inputTitlestyle">{{CMS_TEXT_BG_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_focus_status_text_bg_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+														</div>
+														<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;margin-bottom:15px">
+															<div style="width:calc(50% - 15px);float:left">
+																<div class="inputTitlestyle">{{CMS_TEXT_BORDER_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_focus_status_text_border_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="inputTitlestyle cms_app_admin_title_type_text" style="margin-top:18px">{{CMS_CHOOSE_STATUS}}</div>
+													<div class="cms_app_admin_grey_block cms_app_admin_title_type_text" style="margin-top:6px">
+														<div class="inputTitlestyle" style="margin-top:15px;margin-left:18px">{{CMS_TEXT}}</div>
+														<input class="cms_app_admin_middle_block adv_input_region" id="cms_app_admin_page_upload_selected_status_text_input" type="text" style="margin-top:7px;color:#999999;">
+														<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;">
+															<div style="width:calc(50% - 15px);float:left">
+																<div class="inputTitlestyle">{{CMS_TEXT_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_selected_status_text_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+															<div style="width:calc(50% - 15px);float:right">
+																<div class="inputTitlestyle">{{CMS_TEXT_BG_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_selected_status_text_bg_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+														</div>
+														<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;margin-bottom:15px">
+															<div style="width:calc(50% - 15px);float:left">
+																<div class="inputTitlestyle">{{CMS_TEXT_BORDER_COLOR}}</div>
+																<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																	<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_page_upload_selected_status_text_border_color_input" class="cms_app_admin_color_input_text" type="text">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<img id="cms_app_admin_upload_daily_status_pic_button1" class="cms_app_admin_upload_pic cms_app_admin_title_type_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px;"/>
+											</div>
+											<div class="cms_app_admin_title_type_pic cms_app_admin_page_title_item_define_none" style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:calc(100% - 80px);">
+													<div class="inputTitlestyle">{{CMS_GET_FOCUS}}</div>
+													<input id="cms_app_admin_upload_focused_pic_input1" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+												</div>
+												<img id="cms_app_admin_upload_focused_pic_button1" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+											</div>
+											<div class="cms_app_admin_title_type_pic cms_app_admin_page_title_item_define_none" style="overflow:hidden;margin-top:18px">
+												<div style="float:left;width:calc(100% - 80px);">
+													<div class="inputTitlestyle">{{CMS_CHOOSE_STATUS}}</div>
+													<input id="cms_app_admin_upload_choosed_status_pic_input1" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+												</div>
+												<img id="cms_app_admin_upload_choosed_status_pic_button1" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+											</div>
+											<div style="margin-top:10px;height:60px;position:relative">
+												<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+												<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_TITLE_CONTENT}}</div>
+											</div>
+											<div id="cms_app_admin_title_item_content1" style="height:56px;margin-top:1px;margin-bottom:22px;">
+												<div class="cms_app_admin_resize_input" style="float:left;width:242px">
+													<div class="inputTitlestyle">{{CMS_CONTENT_TYPE}}</div>
+													<div id="cms_app_admin_content_type1" class="cms_app_admin_resize_input cms_app_admin_upload_pic_down_menu" style="width:100%"></div>
+												</div>
+												<div class="cms_app_admin_resize_input cms_app_admin_page_title_item_content_none" style="float:right;width:242px;height:56px">
+													<div id="cms_app_admin_choose_submit1" class="cms_app_admin_dialog_submit" style="margin-top:24px;border:1px #e2e2e2 solid;width:90px;height:30px;line-height:30px">{{CMS_CHOOSE}}</div>
+												</div>
+											</div>
+											<div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-bottom:29px">
+											 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+													<div class="inputTitlestyle">{{CMS_PROJECT_ID}}</div>
+													<input id="cms_app_admin_project_id1" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%;background-color:#f0f0f0">
+											</div>
+											<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle_contacter">{{CMS_PROJECT_NAME}}</div>
+												<input id="cms_app_admin_project_name1" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%;background-color:#f0f0f0">
+											</div>
+										 </div>
+										 <div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-top:22px;margin-bottom:29px">
+											<div style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle">{{CMS_ASSET_DISPLAY_POSTER}}</div>
+												<input id="cms_app_admin_item_upload_poster_page" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" type="text" style="margin-top:7px;width:100%;color:#0099cb">
+											</div>
+											<img id="cms_app_admin_item_upload_poster_button_page" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+										</div>
+									</div>
+								</div>
+								<div class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none;position:relative;color:#ffffff">
+									<div id="cms_app_admin_card_list_container" style="display:block;margin-left:15px;margin-top:15px;margin-right:15px">
+										<div style="width:100%;height:34px;line-height:34px;background-color:#1db4da">
+											<div style="float:left;margin-left:14px;height:34px;line-height:34px;">
+												{{CMS_CARD_LIST}}
+											</div>
+												<div id="cms_app_admin_page_new_add_card"  class="cms_app_admin_button" style="float:right;margin-right:13px">
+												{{CMS_NEW_CARD}}
+											</div>
+										</div>
+										
+									<div style="width:100%">
+										 <table cellspacing="1" cellpadding="0" style="width: 100%; background-color: rgb(226, 226, 226); table-layout: fixed;">
+											<thead>
+											 <tr>
+												<td class="cms_app_admin_thread" width="4.2%" ></td>
+												<td class="cms_app_admin_thread" width="16.59%">{{CMS_CARD_ID}}</td>
+												<td class="cms_app_admin_thread" width="46.9%">{{CMS_CARD_NAME}}</td>	
+												<td class="cms_app_admin_thread" width="31.64%">{{CMS_PAGE_OPER}}</td>						
+											 </tr>
+											</thead>
+											<tbody>
+											 
+											</tbody>
+										 </table>
+									 </div>
+									</div>
+								</div>
+								<div class="cms_app_admin_display_container_after_click_tab" style="overflow-y:auto;width:100%;height:100%;display:none">
+									<div style="margin-left:28px;margin-right:28px;margin-top:10px;height:60px;position:relative">
+										<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+										<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_BASIC_INFO}}</div>
+									</div>
+									<div style="margin-left:28px;margin-right:28px;width:auto;margin-top:-3px">
+										<div style="overflow:hidden;margin-top:6px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_CARD_ID}}</div>
+												<input id="cms_app_admin_card_id" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+										<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+											<div class="inputTitlestyle_contacter">{{CMS_CARD_NAME}}</div>
+											<input id="cms_app_admin_card_name" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+									 </div>
+									 <div style="overflow:hidden;margin-top:21px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_CARD_WIDTH}}</div>
+												<input id="cms_app_admin_card_width" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+										<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+											<div class="inputTitlestyle_contacter">{{CMS_CARD_HEIGHT}}</div>
+											<input id="cms_app_admin_card_height" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+									 </div>
+									 <div style="overflow:hidden;margin-top:21px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_CARD_MARGIN_TOP}}</div>
+												<input id="cms_app_admin_card_margin_top" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+										<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+											<div class="inputTitlestyle_contacter">{{CMS_CARD_MARGIN_LEFT}}</div>
+											<input id="cms_app_admin_card_margin_left" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+									 </div>
+									 <div style="overflow:hidden;margin-top:21px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_CARD_MARGIN_RIGHT}}</div>
+												<input id="cms_app_admin_card_margin_right" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+										<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+											<div class="inputTitlestyle_contacter">{{CMS_CARD_MARGIN_BOTTOM}}</div>
+											<input id="cms_app_admin_card_margin_bottom" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+										</div>
+									 </div>
+										<div style="width:100%;margin-top:10px;height:60px;position:relative">
+											<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+											<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_TITLE_DEF}}</div>
+										</div>
+										<div style="height:56px;margin-top:1px">
+											<div class "cms_app_admin_resize_input" style="float:left;width:242px">
+												<div class="inputTitlestyle">{{CMS_TITLE_TYPE}}</div>
+												<div id="cms_app_admin_title_type_card" class="cms_app_admin_upload_pic_down_menu " style="width:100%">{{CMS_TEXT}}</div>
+											</div>
+										</div>	
+										<div class="cms_app_admin_page_title_item_define_none" style="overflow:hidden;margin-top:18px">
+											<div id="cms_app_admin_status_container2" style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle cms_app_admin_title_type_exist">{{CMS_DAILY_STATUS}}</div>
+												<input id="cms_app_admin_upload_daily_status_pic_input2" class="adv_input_region cms_app_admin_title_type_pic" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+												<div class="cms_app_admin_grey_block cms_app_admin_title_type_text" style="margin-top:6px">
+													<div class="inputTitlestyle" style="margin-top:15px;margin-left:18px">{{CMS_TEXT}}</div>
+													<input id="cms_app_admin_card_upload_daily_status_text_input" class="cms_app_admin_middle_block adv_input_region" class="adv_input_region" type="text" style="margin-top:7px;color:#999999;">
+													<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;">
+														<div style="width:calc(50% - 15px);float:left">
+															<div class="inputTitlestyle">{{CMS_TEXT_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_daily_status_text_color_input" class="cms_app_admin_color_input_text"  type="text">
+															</div>
+														</div>
+														<div style="width:calc(50% - 15px);float:right">
+															<div class="inputTitlestyle">{{CMS_TEXT_BG_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_daily_status_text_bg_color_input" class="cms_app_admin_color_input_text"  type="text">
+															</div>
+														</div>
+													</div>
+													<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;margin-bottom:15px">
+														<div style="width:calc(50% - 15px);float:left">
+															<div class="inputTitlestyle">{{CMS_TEXT_BORDER_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_daily_status_text_border_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="inputTitlestyle cms_app_admin_title_type_text" style="margin-top:18px">{{CMS_GET_FOCUS}}</div>
+												<div class="cms_app_admin_grey_block cms_app_admin_title_type_text" style="margin-top:6px">
+													<div class="inputTitlestyle" style="margin-top:15px;margin-left:18px">{{CMS_TEXT}}</div>
+													<input id="cms_app_admin_card_upload_focus_status_text_input" class="cms_app_admin_middle_block adv_input_region" class="adv_input_region" type="text" style="margin-top:7px;color:#999999;">
+													<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;">
+														<div style="width:calc(50% - 15px);float:left">
+															<div class="inputTitlestyle">{{CMS_TEXT_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_focus_status_text_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+														<div style="width:calc(50% - 15px);float:right">
+															<div class="inputTitlestyle">{{CMS_TEXT_BG_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_focus_status_text_bg_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;margin-bottom:15px">
+														<div style="width:calc(50% - 15px);float:left">
+															<div class="inputTitlestyle">{{CMS_TEXT_BORDER_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_focus_status_text_border_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="inputTitlestyle cms_app_admin_title_type_text" style="margin-top:18px">{{CMS_CHOOSE_STATUS}}</div>
+												<div class="cms_app_admin_grey_block cms_app_admin_title_type_text" style="margin-top:6px">
+													<div class="inputTitlestyle" style="margin-top:15px;margin-left:18px">{{CMS_TEXT}}</div>
+													<input id="cms_app_admin_card_upload_selected_status_text_input" class="cms_app_admin_middle_block adv_input_region" class="adv_input_region" type="text" style="margin-top:7px;color:#999999;">
+													<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;">
+														<div style="width:calc(50% - 15px);float:left">
+															<div class="inputTitlestyle">{{CMS_TEXT_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_selected_status_text_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+														<div style="width:calc(50% - 15px);float:right">
+															<div class="inputTitlestyle">{{CMS_TEXT_BG_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_selected_status_text_bg_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+													</div>
+													<div class="cms_app_admin_middle_block" style="overflow:hidden;margin-top:15px;margin-bottom:15px">
+														<div style="width:calc(50% - 15px);float:left">
+															<div class="inputTitlestyle">{{CMS_TEXT_BORDER_COLOR}}</div>
+															<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+																<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_card_upload_selected_status_text_border_color_input" class="cms_app_admin_color_input_text" type="text">
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<img id="cms_app_admin_upload_daily_status_pic_button2" class="cms_app_admin_upload_pic cms_app_admin_title_type_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px;"/>
+										</div>
+										<div class="cms_app_admin_page_title_item_define_none cms_app_admin_title_type_pic" style="overflow:hidden;margin-top:18px">
+											<div style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle">{{CMS_GET_FOCUS}}</div>
+												<input id="cms_app_admin_upload_focused_pic_input2" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+											</div>
+											<img id="cms_app_admin_upload_focused_pic_button2" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+										</div>
+										<div class="cms_app_admin_page_title_item_define_none cms_app_admin_title_type_pic" style="overflow:hidden;margin-top:18px">
+											<div style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle">{{CMS_CHOOSE_STATUS}}</div>
+												<input id="cms_app_admin_upload_choosed_status_pic_input2" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#999999">
+											</div>
+											<img id="cms_app_admin_upload_choosed_status_pic_button2" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+										</div>
+										<div style="margin-top:10px;height:60px;position:relative">
+											<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:100%;height:29px"></div>
+											<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_TITLE_CONTENT}}</div>
+										</div>
+										<div id="cms_app_admin_title_item_content2" style="height:56px;margin-top:1px;margin-bottom:22px;">
+											<div class="cms_app_admin_resize_input" style="float:left;width:242px">
+												<div class="inputTitlestyle">{{CMS_CONTENT_TYPE}}</div>
+												<div id="cms_app_admin_content_type2" class="cms_app_admin_resize_input cms_app_admin_upload_pic_down_menu" style="width:100%"></div>
+											</div>
+											<div class="cms_app_admin_resize_input" style="float:right;width:242px;height:56px">
+												<div id="cms_app_admin_choose_submit2" class="cms_app_admin_page_title_item_content_none cms_app_admin_dialog_submit" style="margin-top:24px;border:1px #e2e2e2 solid;width:90px;height:30px;line-height:30px">{{CMS_CHOOSE}}</div>
+											</div>
+										</div>
+										<div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-bottom:29px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_PROJECT_ID}}</div>
+												<input id="cms_app_admin_project_id2" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%;background-color:#f0f0f0">
+										</div>
+										<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+											<div class="inputTitlestyle_contacter">{{CMS_PROJECT_NAME}}</div>
+											<input id="cms_app_admin_project_name2" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%;background-color:#f0f0f0">
+										</div>
+									 </div>
+									 <div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-top:22px;margin-bottom:29px">
+										<div style="float:left;width:calc(100% - 80px);">
+											<div class="inputTitlestyle">{{CMS_ASSET_DISPLAY_POSTER}}</div>
+											<input id="cms_app_admin_item_upload_poster_card" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" type="text" style="margin-top:7px;width:100%;color:#0099cb">
+										</div>
+										<img id="cms_app_admin_item_upload_poster_button_card" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+									</div>
+									</div>
+								</div>
+								<div class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none;position:relative;color:#ffffff">
+									<div id="cms_app_admin_layout_list_container" style="display:block;margin-left:15px;margin-top:15px;margin-right:15px">
+										<div style="width:100%;height:34px;line-height:34px;background-color:#1db4da">
+											<div style="float:left;margin-left:14px;height:34px;line-height:34px;">
+												{{CMS_BUJU_LIST}}
+											</div>
+										</div>
+									<div style="width:100%">
+										 <table cellspacing="1" cellpadding="0" style="width: 100%; background-color: rgb(226, 226, 226); table-layout: fixed;">
+											<thead>
+											 <tr>
+												<td class="cms_app_admin_thread" width="4.2%" ></td>
+												<td class="cms_app_admin_thread" width="95.6%">{{CMS_LAYOUT_NAME}}</td>				
+											 </tr>
+											</thead>
+											<tbody>
+											 
+											</tbody>
+										 </table>
+									 </div>
+									</div>
+								</div>
+								<div class="cms_app_admin_display_container_after_click_tab" style="width:100%;height:100%;display:none;position:relative;color:#ffffff">
+									<div id="cms_app_admin_item_list_container" style="display:block;margin-left:15px;margin-top:15px;margin-right:15px">
+										<div style="width:100%;height:34px;line-height:34px;background-color:#1db4da">
+											<div style="float:left;margin-left:14px;height:34px;line-height:34px;">
+												{{CMS_ITEM_LIST}}
+											</div>
+										</div>
+									<div style="width:100%">
+										 <table cellspacing="1" cellpadding="0" style="width: 100%; background-color: rgb(226, 226, 226); table-layout: fixed;">
+											<thead>
+											 <tr>
+												<td class="cms_app_admin_thread" width="4.3%" ></td>
+												<td class="cms_app_admin_thread" width="22.2%">{{CMS_CONTENT_TYPE}}</td>
+												<td class="cms_app_admin_thread" width="23.2%">{{CMS_PROJECT_ID}}</td>	
+												<td class="cms_app_admin_thread" width="50.2%">{{CMS_PROJECT_NAME}}</td>						
+											 </tr>
+											</thead>
+											<tbody>
+											 
+											</tbody>
+										 </table>
+									 </div>
+									</div>
+								</div>
+								<div class="cms_app_admin_display_container_after_click_tab" style="overflow-y:auto;width:100%;height:100%;display:none">
+									<div style="margin-left:28px;margin-right:28px;width:auto;margin-top:23px">			
+										<div style="height:56px;margin-top:1px">
+											<div class="cms_app_admin_resize_input" style="float:left;width:242px">
+												<div class="inputTitlestyle">{{CMS_CONTENT_TYPE}}</div>
+												<div id="cms_app_admin_item_content_type3" data-index="" class="cms_app_admin_resize_input cms_app_admin_upload_pic_down_menu" style="width:100%"></div>
+											</div>
+											<div class="cms_app_admin_resize_input" style="float:right;width:242px;height:56px">
+												<div id="cms_app_admin_choose_submit3" class="cms_app_admin_choose_submit cms_app_admin_dialog_submit cms_app_admin_page_title_item_content_none" style="margin-top:24px;border:1px #e2e2e2 solid;width:90px;height:30px;line-height:30px">{{CMS_CHOOSE}}</div>
+											</div>
+										</div>
+										<div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-top:21px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_CONTENT_ID}}</div>
+												<input id="cms_app_admin_item_project_id" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%;background-color:#f0f0f0">
+										</div>
+										<div style="float:right;width:242px" class="cms_app_admin_resize_input">
+											<div class="inputTitlestyle_contacter">{{CMS_CONTENT_NAME}}</div>
+											<input id="cms_app_admin_item_project_name" readonly="readonly" class="adv_input_region" type="text" style="margin-top:7px;width:100%;background-color:#f0f0f0">
+										</div>
+									 </div>
+									 <div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-top:22px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_ASSET_DISPLAY_NAME}}</div>
+												<input id="cms_app_admin_item_title" class="adv_input_region" type="text" style="margin-top:7px;width:100%;">
+										</div>
+									 </div>
+									 	<div class="cms_app_admin_page_title_item_content_none" style="overflow:hidden;margin-top:22px">
+											<div style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle">{{CMS_ASSET_DISPLAY_POSTER}}</div>
+												<input id="cms_app_admin_item_upload_poster" class="adv_input_region" placeholder="{{CMS_PLACEHOLDER1}}" type="text" style="margin-top:7px;width:100%;color:#0099cb">
+											</div>
+											<img id="cms_app_admin_item_upload_poster_button" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+										</div>
+								</div>
+							</div>
+							<div class="cms_app_admin_display_container_after_click_tab" style="overflow-y:auto;width:100%;height:100%;display:none">
+									<div style="margin-left:28px;margin-right:28px;width:auto;margin-top:23px">			
+										<div style="height:56px;margin-top:1px">
+											<div class="cms_app_admin_resize_input" style="float:left;width:242px">
+												<div class="inputTitlestyle">{{CMS_ASSET_CAN_BE_CHOOSE}}</div>
+												<div id="cms_app_admin_item_can_be_choose" data-index="" class="cms_app_admin_resize_input cms_app_admin_upload_pic_down_menu" style="width:100%"></div>
+											</div>
+										</div>
+										<div style="overflow:hidden;margin-top:22px">
+											<div style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle">{{CMS_ASSET_DEFAULT_BG}}</div>
+												<input id="cms_app_admin_item_default_bg" class="adv_input_region" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#0099cb">
+											</div>
+											<img id="cms_app_admin_item_default_bg_button" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+										</div>
+										<div style="overflow:hidden;margin-top:21px">
+										 <div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_ASSET_DEFAULT_BG_COLOR}}</div>
+												<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+													<div class="cms_app_admin_color_input_left">#</div><input  id="cms_app_admin_item_default_bg_color" type="text" class="cms_app_admin_color_input_text">
+												</div>
+										</div>
+									  </div>
+									  <div style="overflow:hidden;margin-top:22px">
+											<div style="float:left;width:calc(100% - 80px);">
+												<div class="inputTitlestyle">{{CMS_ASSET_DEFAULT_PIC_URL}}</div>
+												<input id="cms_app_admin_item_pic_url" class="adv_input_region" readonly="readonly" type="text" style="background-color:#ebebeb;margin-top:7px;width:100%;color:#0099cb">
+											</div>
+											<img id="cms_app_admin_item_pic_url_button" class="cms_app_admin_upload_pic" src="content/CMS/images/upload_img.png" style="float:left;margin-left:19px;margin-top:29px"/>
+									  </div>
+										<div style="overflow:hidden;margin-top:21px">
+											<div style="float:left;width:242px" class="cms_app_admin_resize_input">
+												<div class="inputTitlestyle">{{CMS_ASSET_SIZE_WHEN_GET_FOCUS}}</div>
+											  <input id="cms_app_admin_size_get_focus"  class="adv_input_region" type="text" style="margin-top:7px;color:#999999;">
+											</div>
+									  </div>
+										<div style="overflow:hidden;margin-top:21px">
+											<div style="width:calc(50% - 15px);float:left">
+												<div class="inputTitlestyle">{{CMS_ASSET_BORDER_COLOR_WHEN_GET_FOCUS}}</div>
+												<div style="border:1px solid #e2e2e2;background-color:#ffffff;margin-top:7px;height:30px;width: calc(100% - 2px)">
+													<div class="cms_app_admin_color_input_left">#</div><input id="cms_app_admin_border_color_get_focus"  class="cms_app_admin_color_input_text" type="text">
+												</div>
+											</div>
+											<div style="width:calc(50% - 15px);float:right">
+												<div class="inputTitlestyle">{{CMS_ASSET_BORDER_WIDTH_WHEN_GET_FOCUS}}</div>
+												<input id="cms_app_admin_border_width_get_focus"  class="adv_input_region" type="text" style="margin-top:7px;color:#999999;width:100%;">
+											</div>		
+										</div>
+										<div style="overflow:hidden;margin-top:21px;margin-bottom:18px">
+											<div style="width:calc(50% - 15px);float:left">
+												<div class="inputTitlestyle">{{CMS_ASSET_ARC_WHEN_GET_FOCUS}}</div>
+												<input id="cms_app_admin_arc_get_focus" class="adv_input_region" type="text" style="margin-top:7px;color:#999999;width:100%;">
+											</div>
+											<div style="width:calc(50% - 15px);float:right">
+												<div class="inputTitlestyle">{{CMS_ASSET_Z_HEIGHT_WHEN_GET_FOCUS}}</div>
+												<input  id="cms_app_admin_z_height_get_focus" class="adv_input_region" type="text" style="margin-top:7px;color:#999999;width:100%;">
+											</div>		
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+						</div>
+						<div id="cms_app_admin_page2_bottom" class="cms_app_admin_page2" style="display:none;position:relative;background-color:#ffffff;width:100%;height:56px;margin-top:15px">
+							 <div class="lecture_recommend_dialog_cancel popup_dialog_clear" id="cms_app_admin_cancel" style="right:226px;top:8px">{{CMS_CANCEL}}</div>
+							 <div class="lecture_recommend_dialog_submit" id="cms_app_admin_submit" style="right:55px;top:8px;">{{CMS_SAVE}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,30 @@
+<style>
+	@IMPORT url("content/chooseSelfAdvUser/index.css");
+	.sucai_dialog_img_content{
+		width: 464px;
+		margin: 16px auto;
+	}
+	#chooseUserList .sucai_dialog_img_content{
+		margin-left: 0px;
+	}
+</style>
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title" style="font-size:16px">
+		<div class="sucai_dialog_title_text">
+			{{SUCAI_XUANZEGUANGGAOZHU}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div style="position:absolute;width:842px;height:534px;top:42px;left:10px">
+		<div style="width:100%;background-color:#5da1c0;height:36px">
+			<div class="choose_self_adv_search_container" style="display:block;float:left;margin-top:3px;margin-left:8px;width:400px;">
+				<div id="choose_self_adv_user_select" class="filterSelect"></div>
+				<input id="choose_self_adv_user_search_input" class="panel_top_search_box_input" type="text">
+				<div id="choose_self_adv_user_search_button" class="panel_top_search_box_handle">{{CHOOSE_SELF_ADV_USER_SEARCH}}</div>
+			</div>
+		</div>
+		<div id="choose_self_adv_user_table_container" class="choose_self_adv_user_table_container" style="height:calc(100% - 36px);width:100%">
+		</div>
+	</div>
+</div>

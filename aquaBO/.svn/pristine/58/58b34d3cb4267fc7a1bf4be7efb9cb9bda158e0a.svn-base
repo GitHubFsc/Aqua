@@ -1,0 +1,14 @@
+<link href="content/asset/assetTagLib/add.css" rel="stylesheet">
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title" style="height:38px">
+    <div id="cms_app_admin_program_title" class="wp_panel_dialog_title_label">{{CMS_ASSET_CHOOSE_SERVICE_PACKAGE}}</div>
+    <div class="wp_panel_dialog_close" id="cms-app-admin-msg-close"></div>
+  </div>
+  <div class="wp_panel_dialog_content" style="font-family:'宋体';top:38px;font-size:14.01px;color:#ffffff">
+    <div id="cms_app_admin_service_package_container" style="position:absolute;top:11px;bottom:82px;left:19px;right:15px;border:1px #e2e2e2 solid;overflow:auto">
+			<div class="cms_app_admin_table_tr_firstRow" style="padding-left:18px;height:42px;line-height:42px">Tree名称01</div>
+		</div>
+		<div id="user-admin-dialog-cancel" class="lecture_recommend_dialog_cancel popup_dialog_clear" style="right:185px;bottom:18px">{{CMS_CANCEL}}</div>
+    <div class="lecture_recommend_dialog_submit" style="right:13px;bottom:18px;cursor:pointer">{{CMS_CHOOSE}}</div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+#producer_info {position: relative;}
+#producer_info .filter {min-height: 68px;box-shadow: 0px 0px 5px 0px rgba(12, 6, 14, 0.1);background-color: #fff;display: flex;position: absolute;left: 0;right: 0;top: 0;z-index: 2;background-color: #fff;flex-flow: column;}
+#producer_info .filter-ctn {height: 34px;line-height: 34px;display: flex;flex-flow: row;}
+#producer_info .filter.expand .filter-ctn {height: auto;}
+#producer_info .show_more {height: 34px;line-height: 34px;cursor: pointer;position: relative;color: rgb(153, 153, 153);font-size: 12px;}
+#producer_info .show_more::after {content: ' ';height: 6px;width: 12px;background-image: url('../uiWidget/images/selector_arrow_downward_v2.png');background-size: 12px 6px;background-position: center;position: absolute;right: -21px;top: calc(50% - 3px);}
+#producer_info .expand .show_more::after {transform: rotate(180deg);}
+#producer_info .filter-ctn > label {line-height: 34px;font-size: 16px;color: rgb(114, 114, 114);padding-left: 24px;padding-right: 29px;}
+#producer_info .filter .type_chooser {overflow: hidden;flex: 1;margin-right: 57px;display: flex;flex-wrap: wrap;}
+#producer_info .radio_box {line-height: 36px;color: rgb(130, 130, 130); font-size: 12px;width: 141px;height: 36px;text-indent: 28px;position: relative;}
+#producer_info .radio_box::before{ content:' ';height: 13px;width: 13px;border: 1px solid rgb(214, 214, 214);border-radius: 50%;background-image: linear-gradient(90deg, rgb(246, 246, 246) 0%);padding: 3px;background-clip: content-box;background-color: rgb(212, 212, 212);cursor: pointer;position: absolute;left: 0;top: calc(50% - 10px);}
+#producer_info .radio_box.check::before {background-color: rgb(50, 190, 234);}
+
+
+#producer_info .table_title {margin-top: 80px;}
+#producer_info .btn {height: 32px;line-height: 32px;padding: 0 10px;border-width: 1px;border-style: solid;border-color: #000;margin-right: 13px;color: #fff;cursor: pointer;border-radius: 4px;font-size: 14px;}
+#producer_info .btn.icon {padding-left: 33px;background-position: 9px center;background-repeat: no-repeat;}
+#producer_info .btn[name=import] {background-color: #fe931f;text-shadow: 0 0 1px #b56b1a;border-color: #c16c10;background-image: url(../image/device_dtu/import.png);}
+#producer_info .btn[name=info] {background-color: #44ccee;text-shadow: 0 0 1px #3597af;border-color: #279dbb;background-image: url(../image/device_dtu/info.png);}
+
+
+#producer_info .list_table span.op {display: block;width: 100%;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: space-evenly;-ms-flex-pack: space-evenly;justify-content: space-evenly;}
+#producer_info .list_table span.op a{color: #27b2d5; cursor: pointer;}
+
+#manufacture_info_edit label {color: #666666;padding-right: 30px;padding-left: 11px;width: 85px;text-align: right;font-size: 12px;}
+#manufacture_info_edit #type_chooser {overflow: hidden;flex: 1;margin-right: 57px;display: flex;flex-wrap: wrap;}
+#manufacture_info_edit .radio_box {line-height: 36px;color: rgb(130, 130, 130); font-size: 12px;width: 141px;height: 36px;text-indent: 28px;position: relative;text-align: left;}
+#manufacture_info_edit .radio_box::before{ content:' ';height: 13px;width: 13px;border: 1px solid rgb(214, 214, 214);border-radius: 50%;background-image: linear-gradient(90deg, rgb(246, 246, 246) 0%);padding: 3px;background-clip: content-box;background-color: rgb(212, 212, 212);cursor: pointer;position: absolute;left: 0;top: calc(50% - 10px);}
+#manufacture_info_edit .radio_box.check::before {background-color: rgb(50, 190, 234);}

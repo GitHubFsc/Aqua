@@ -1,0 +1,111 @@
+<div class="centerPopupStyle" id="singleQuery_centerPopupStyle" style="font-family:'微软雅黑';font-size:16px;height:388px">
+	<div class="popupCenterDivTop" style="background-color:#2ea2d7;font-weight:normal;font-family:'Hiragino'">
+		<div class="popupCenterDivTopLeft">查询条件</div>
+		<img src="images/cross.png" onclick="brodecaSingleSearch.closeCenterDiv()" style="cursor:pointer;float:right;margin-top:10px;margin-right:17px;" alt="关闭"/>
+	</div>
+	<div class="popupCenterDivBody" id="singleQuery_singleSearchPopBody" style="margin-left:36px;color:#545454;height:266px;">
+        <div class="popupCenterDivBodyRow popup_rowStyle" style="margin-top:32px">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" style="width:87px;float:left">日期范围&nbsp;:</div>
+                <div class="popupCenterDivRowInput" id="singleQuery_broSingle_dateRegion" style="background-color:'#ffffff'"onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu','father')">
+                    <div style="overflow:hidden">
+                        <div id="singleQuery_downMenuText" name="inputTitle" style="display:block;float:left;margin-left:16px;width:auto;height:100%">一个月</div>
+                        <img src="images/downArrow-SkyBlue.png" class="smallArrowInDiv" style="margin-top:4.5px">
+                    </div>
+                </div>
+                <span id="singleQuery_broSingle_selfDefine" onclick="brodecaSingleSearch.userDefined(this)" style="margin-top:2px;text-align:left;width:auto;margin-left:11px;float:left;text-decoration:underline;cursor:pointer;color:#2ea2d7">自定义</span>
+            </div>
+            <div class="downMenu" id="singleQuery_downMenu" style="width:190px;z-index:10010;left:87px">
+                <!--div style="height:30px;border-top:0" onclick="brodecaSingleSearch.mopen(this,'downMenu');brodecaSingleSearch.enddateAappear()">自定义</div-->
+                <div style="height:30px;border-top:0" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu');">一个月</div>
+                <div style="height:30px" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu');">二个月</div>
+                <div style="height:30px" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu');">三个月</div>
+                <div style="height:30px" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu');">六个月</div>
+                <div style="height:30px" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu');">一年</div>
+            </div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" id="singleQuery_broSingle_startEnd" style="display:none;height:74px;margin-top:20px">
+            <div class="popupCenterDivRowName" style="width:87px;position:absolute">开始日期&nbsp;:</div>
+            <div class="popupCenterDivRowInputB" style="left:87px;border:0;position:absolute">
+                <div style="z-index:10000;float:left;width:100%;height:100%;border:0;" class="begindate-input" id="singleQuery_date-input-from"></div>
+            </div>
+            <div class="popupCenterDivRowName" id="singleQuery_aquaBo_date_end_title" style="position:absolute;width:87px;top:39px">结束日期&nbsp;:</div>
+            <div class="popupCenterDivRowInputB" style="top:39px;left:87px;position:absolute;border:0">
+                <div style="z-index:9000;float:left;width:100%;height:100%;border:0;" class="begindate-input" id="singleQuery_date-input-to"></div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" id="singleQuery_singleSearch_broadType_containerCombine" style="margin-top:19px;">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" style="width:87px;float:left">组合类型&nbsp;:</div>
+                <!--div class="popupCenterDivRowInput" onclick="brodecaSingleSearch.mopen(this,'downMenu_bro_typeCombine','father')">
+                    <div style="overflow:hidden">
+                        <div id="singleSearch_broadTypeCombine"  name="inputTitle" style="float:left;margin-left:16px"></div>
+                        <img src="images/downArrow-SkyBlue.png" class="smallArrowInDiv">
+                    </div>
+                </div-->
+                <div class="radioContainer" id="singleQuery_radioB1" style="width:104px" onclick="brodecaSingleSearch.switchRedio(this)">
+                    <div class="radioB_selected" value="0" name="radio1"></div>
+                    预设组合
+                </div>
+                <div class="radioContainer" id="singleQuery_radioB2" style="width:104px" onclick="brodecaSingleSearch.switchRedio(this)">
+                    <div class="radioB_noSelected" value="1" name="radio1"></div>
+                    自定义
+                </div>
+            </div>
+         </div>
+         <div class="popupCenterDivBodyRow popup_rowStyle" id="singleQuery_broad_singleSearch_broadType_container" style="margin-top:18px">
+             <div style="overflow:hidden;width:300px">
+                 <!--div class="popupCenterDivRowName" id="combineType_title" style="width:87px;float:left">点播类型&nbsp;:</div-->
+                 <div class="popupCenterDivRowName" id="singleQuery_combineType_title" style="width:87px;float:left">预设组合&nbsp;:</div>
+                  <div class="popupCenterDivRowInput" id="singleQuery_preSetContainer" onclick="" style="display:block;height:auto;max-height:88px;overflow-x:hidden;overflow-y:auto" >
+                  </div>
+                  <div id="singleQuery_broSingle_broType" class="popupCenterDivRowInput" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu_bro_typeCombine','father')" style="display:none;background-color:'#ffffff'">
+                      <div style="overflow:hidden">
+                      <div id="singleQuery_downMenuText" style="display:block;float:left;margin-left:16px;width:auto;height:100%" name="inputTitle">服务包(SVOD)</div>
+                      <img class="smallArrowInDiv" style="margin-top:4.5px" src="images/downArrow-SkyBlue.png">
+                      </div>
+                  </div>
+             </div>
+             <div class="downMenu" id="singleQuery_downMenu_bro_typeCombine" style="display:none;width:190px;z-index:10010;left:87px">
+                 <div style="height:30px;border-top:0" id="singleQuery_typeCombin1" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu_bro_typeCombine')">服务包(SVOD)</div>
+                 <div style="height:30px" id="singleQuery_typeCombin2" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu_bro_typeCombine')">按次点播(RVOD)</div>
+                 <div style="height:30px" id="singleQuery_typeCombin3" onclick="brodecaSingleSearch.mopen(this,'singleQuery_downMenu_bro_typeCombine')">时移回看</div>
+             </div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" id="singleQuery_singleSearch_displayIfTypeSelfDefined" style="display:none;margin-top:16px;display:none">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" style="width:87px;float:left"></div>
+                <input type="text" id="singleQuery_singleSearch_inputIDregion" class="popupCenterDivRowInput" style="width:287px;color:#979797;padding-left:16px"/>
+            </div>
+        </div>
+        <div id="singleQuery_singleSearch_displayIfTypeSelfDefinedB" class="popupCenterDivBodyRow" style="display:none;margin-left:87px;margin-top:6px;width:auto;color: #bebebe;height: 15px;line-height: 15px;font-size:12px">请输入服务包代号(Service Package),用“,”号分隔</div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" style="margin-top:16px">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" style="width:87px;float:left">智能卡号&nbsp;:</div>
+                <input type="text" id="singleQuery_cardIDinput" class="popupCenterDivRowInput" style="color:#979797;padding-left:16px"/>
+            </div>
+        </div>
+        <div class="popupCenterDivBodyRow popup_rowStyle" id="singleQuery_broad_singleSearch_servicePackage_downMenu_container" style="display:none">
+            <div style="overflow:hidden">
+                <div class="popupCenterDivRowName" id ="singleQuery_broad_singleSearch_servicePackage_name" style="width:87px;float:left">服务包&nbsp;:</div>
+                <div class="popupCenterDivRowInput" id="singleQuery_broad_singleSearch_servicePackage_container" onclick="brodecaSingleSearch.mopen(this,'broad_singleSearch_servicePackage_downMenu','father')">
+                    <div style="overflow:hidden">
+                        <div id="singleQuery_broad_singleSearch_servicePackage" name="inputTitle" style="float:left;margin-left:16px"></div>
+                        <img src="images/downArrow-SkyBlue.png" class="smallArrowInDiv">
+                    </div>
+                </div>
+            </div>
+            <div class="downMenu" id="singleQuery_broad_singleSearch_servicePackage_downMenu" style="left:34.9%;width:180px;z-index:10010;">
+                <div id="singleQuery_id_type_1" style="height:30px;border-top:0"  onclick="brodecaSingleSearch.mopen(this,'broad_singleSearch_servicePackage_downMenu')">Service Package</div>
+                <div id="singleQuery_id_type_2" style="height:30px;border-top:0"  onclick="brodecaSingleSearch.mopen(this,'broad_singleSearch_servicePackage_downMenu')">PO ID</div>
+            </div>
+        </div>
+        <div id="singleQuery_broad_singleSearch_id_input_noteWords" class="popupCenterDivBodyRow popup_rowStyle" style="display:none;width:178px;color: #bebebe;height: 15px;line-height: 15px;font-size:12px">您可以输入多值，用","分割</div>
+        <div class="popupCenterDivbottom" id="singleQuery_broad_singleSearch_popupCenterDivbottom" style="float:right;margin-right:19px;width:100%;margin-top:19px;overflow:hidden">
+            <div class="pageTitleContainerRightButt" style="border-color:#597f89;width:149px;margin-right:0px;background-color:#2ea2d7" onclick="brodecaSingleSearch.singleSearch()">查询</div>
+            <div class="pageTitleContainerRightButt" style="border-color:#597f89;width:149px;margin-right:25px;background-color:#5da1c0" onclick="brodecaSingleSearch.closeCenterDiv()">取消</div>
+        </div>
+        <div style="clear:both"></div>
+	</div>
+</div>

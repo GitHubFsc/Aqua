@@ -1,0 +1,12 @@
+<div class="auditDialog">
+  <div class="auditDialogTitle">
+    <div class="auditDialogTitleText">{{ADPOLICYAUDIT_DIALOGTITLE_PASS}}</div>
+    <div class="auditDialogCloseBtn"></div>
+  </div>
+  <div class="auditDialogBody confirmIcon">{{ADPOLICYAUDIT_DIALOGTITLE_PASS_HINT}}</div>
+  <div class="auditDialogFoot">
+    <div class="auditDialogFlexDiv"></div>
+    <div class="auditDialogCancelBtn">{{ADPOLICYAUDIT_DIALOG_CANCEL}}</div>
+    <div class="auditDialogConfirmBtn">{{STATS_BTN_OK}}</div>
+  </div>
+</div>

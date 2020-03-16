@@ -1,0 +1,177 @@
+ <link rel="stylesheet" href="content/menuVideoAudit/index.css">
+ <link rel="stylesheet" href="content/menuVideoAudit/particular.css">
+<div class="menuVideoAudit" id="menuVideoAudit">
+	<div class="menuVideoAudit_content">
+	    <div class="menuVideoAudit_header" style="z-index: 1">
+	      <div class="header_options">
+	        <div class="left">
+	          <div id="left_container" class="left_container">
+	            <!--识别结果-->
+	            <div class="option">
+	              <div class="option_title">{{REVIEW_RECOGNITION_RESULT}}</div>
+	              <div class="option_content" id="menuVideoAudit_RecognitionResult">
+	              </div>
+	            </div>
+	            <!--审核结果-->
+	            <div class="option">
+	              <div class="option_title">{{REVIEW_AUDIT_RESULTS}}</div>
+	              <div class="option_content" id="menuVideoAudit_AuditResults">
+	              </div>
+	            </div>
+				<!--日期范围-->
+	            <div class="option date_input">
+	              <div class="option_title">{{REVIEW_DATE_RANGE}}</div>
+	              <div class="option_content" id="Date_option_content">
+	                <div id="menuVideoAudit_DataRange_start"></div>
+	                <div style="display: inline-block;margin-left: 5px;margin-right: 5px;height: 30px;line-height: 30px;font-size: 12px;">—</div>
+	                <div id="menuVideoAudit_DataRange_end"></div>
+	              </div>
+	            </div>
+	          </div>
+              <!--媒体名称-->
+              <div class="option">
+                <div class="option_title">{{REVIEW_MEDIA_NAME}}</div>
+                <div class="option_content">
+                  <input id="menuVideoAudit_MediaName"  class="menuVideoAudit_MediaName" name="menuVideoAudit_MediaName" />
+                </div>
+              </div>
+	        </div>
+	        <div class="middleLine"></div>
+	        <div class="right">
+	        	<!--查询-->
+				<div id="menuVideoAudit_searchButton" class="menuVideoAudit_searchButton">
+					<img src="image/runningStatistic/searchIcon.png">
+					<div class="label">{{REVIEW_INQUIRE}}</div>
+				</div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="menuVideoAudit_footer">
+		    <div class="menuVideoAudit_title_header" id="menuVideoAudit_title_header">
+		        <div class="left">
+		          <div class="title_">{{REVIEW_AUDIT_RESULTS_LIST}}</div>
+		          <div class="legend">
+		          	<div class="legend_Pass">{{REVIEW_PASSED}}</div>
+		          	<div class="legend_Suspect">{{REVIEW_SUSPECT}}</div>
+		          	<div class="legend_Violation">{{REVIEW_VIOLATION}}</div>
+		          </div>
+		        </div >
+		        <div class="right">
+		        	<div class="right_tab" id="right_tab_poster">
+		        		<img src="image/runningStatistic/right_tab_00.png" alt="节目海报">
+		        	</div>
+		        	<div class="right_tab" id="right_tab_list">
+		        		<img src="image/runningStatistic/right_tab_03.png" alt="节目列表">
+		        	</div>
+		        </div>
+		    </div>
+	      	<div class="menuVideoAudit_title_footer" id="menuVideoAudit_title_footer">
+		        <div class="menuVideoAudit_table_content" id="menuVideoAudit_table_content">
+		        	<div class="menuVideoAudit_table_content_poster" id="menuVideoAudit_table_content_poster"></div><!--审核详情-海报展示-->
+		        	<div class="menuVideoAudit_table_content_table" id="menuVideoAudit_table_content_table" style="display: none"></div><!--审核详情-列表展示-->
+		        </div>
+            </div>
+            <!--分页-->
+		    <div class="menuVideoAudit_table_Pagination" id="menuVideoAudit_table_Pagination">
+				<div class="Pagination_total" id="Pagination_total">{{REVIEW_TOTAL}}<span>0</span>{{REVIEW_RESULTS}}</div>
+				<ul class="Pagination_page" id="Pagination_page"></ul>
+				<div class="Pagination_Capacity" id="Pagination_Capacity">{{REVIEW_SHOW_EVERY_PAGE}}
+					<span class="selected">20</span>|<span>50</span>|<span>100</span>
+				</div>
+			</div>
+	    </div>
+  	</div>
+</div>
+
+<!-- 详情页 -->
+<div id="particular" class="particular">
+    <!-- title -->
+    <div class="title_head">
+        <div class="title" id="audit_particular_title"></div>
+        <div class="middle"></div>
+        <div class="right">
+            <div class="icon btn">{{PARTICULAR_CLOSE}}</div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- 审核结果 -->
+        <div class="audit_result">
+            <div class="title">{{PARTICULAR_AUDIT_RESULT}}</div>
+            <div class="video" id="video_player"></div>
+            <div class="info">
+                <div class="info_message">
+                    <div class="content result">
+                        <div class="label">{{PARTICULAR_AUDIT_RESULT}}</div>
+                        <div class="text status" id="audit_result_text"></div>
+                    </div>
+                    <div class="content message">
+                        <div class="label">{{PARTICULAR_AUDIT_DESCRIPTION}}</div>
+                        <div class="text description" id="audit_message_description"></div>
+                    </div>
+                </div>
+                <div class="btn" id="particular_audit_result_btn">
+                    <div class="pass icon">{{PARTICULAR_AUDIT_PASS}}</div>
+                    <div class="block icon">{{PARTICULAR_AUDIT_BLOCK}}</div>
+                </div>
+            </div>
+        </div>
+        <!-- 识别结果明细 -->
+        <div class="result_detail">
+            <div class="title">{{PARTICULAR_RESULT_DETAIL}}</div>
+            <div class="content" id="result_detail_content">
+                <div class="list_table" id="detail_table"></div>
+            </div>
+        </div>
+        <!-- 识别详情内容 -->
+        <div class="particular_content">
+            <div class="header">
+                <div class="select" id="recognition_select"></div>
+                <div class="middle"></div>
+                <div class="btn" id="particular_content_btn">
+                    <div class="icon poster poster_checked" id="particular_content_poster"></div>
+                    <div class="icon list"></div>
+                    <div class="icon json"></div>
+                </div>
+            </div>
+            <div class="content">
+                <!-- 海报式详情 -->
+                <div class="content_poster" id="particular_poster">
+                    <div class="poster_left" id="particular_poster_content"> </div>
+                    <div class="poster_right">
+                        <div class="right_img">
+                            <div class="poster_right_img_content" id="particular_poster_content_img"></div>
+                        </div>
+                        <div class="list_table right_list" id="particular_poster_content_list"></div>
+                    </div>
+                </div>
+                <!-- 列表式详情 -->
+                <div class="content_list" id="particular_list">
+                    <div class="tag_table_head" id="content_list_table_tag">
+                        <table>
+                            <tr>
+                                <td>{{PARTICULAR_TAG_START_TIME}}</td>
+                                <td>{{PARTICULAR_TAG_END_TIME}}</td>
+                                <td>{{PARTICULAR_TAG_CATEGORY}}</td>
+                                <td>{{PARTICULAR_TAG_ENGLISH}}</td>
+                                <td>{{PARTICULAR_TAG_RELIABILITY}}</td>
+                                <td>{{PARTICULAR_TAG_CN_LABEL}}</td>
+                                <td>{{PARTICULAR_TAG_EN_LABEL}}</td>
+                            </tr>
+                            <tr>
+                                <td>{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_CATEGORY}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_ENGLISH}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_RELIABILITY}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_CN_LABEL}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                                <td>{{PARTICULAR_TAG_EN_LABEL}}-{{PARTICULAR_TAG_SYNTHESIZE}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="list_table" id="content_list_table"></div>
+                </div>
+                <!-- json式列表 -->
+                <div class="content_json" id="particular_json"></div>
+            </div>
+        </div>
+    </div>
+</div>

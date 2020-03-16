@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./content/navigationSlider/index.css">
+<div id="navigationSlider">
+  <div class="panel_page_head">
+    <div class="panel_page_head_left">
+      <div class="module" id="panel_page_head_joblist">
+        <div class="panel_page_head_title_lead">
+        </div>
+        <div class="panel_page_head_title">
+          {{NAVMNGSLIDER_LUNBOBIANPAI}}
+        </div>
+      </div>
+      <div class="module" id="panel_page_head_jobHistory" style="display: none">
+        <div class="panel_page_head_button back">{{MNG_BACK}}</div>
+        <div class="panel_page_head_title_lead" style="width:1px;"></div>
+        <div class="panel_page_head_title"></div>
+      </div>
+    </div>
+    <div class="panel_page_head_right">
+      <div class="module list">
+        <div id="navigationSlider_import_btn" class="panel_page_head_button import">{{NAVMNGSLIDER_DAORU}}</div>
+        <div id="navigationSlider_viewLog_btn" class="panel_page_head_button log">{{NAVMNGSLIDER_PINDAODAORURIZHI}}</div>
+      </div>
+      <div class="module viewImportLog" style="display: none">
+        <div id="navigationSlider_refresh_btn" class="panel_page_head_button refresh">{{NAVMNGSLIDER_REFRESH}}</div>
+      </div>
+      <div class="module viewProgramList" style="display: none">
+        <div class="calendars">
+          <div id="viewProgramList_playing" class="button" data-type="playing" style="width:79px">{{NAVMNGSLIDER_PLAYING}}</div>
+          <div id="viewProgramList_today" class="button" data-type="today" style="width:54px">{{NAVMNGSLIDER_TODAY}}</div>
+          <div id="viewProgramList_yesterday" class="button" data-type="yesterday" style="width:66px">{{NAVMNGSLIDER_YESTERDAY}}</div>
+          <div id="viewProgramList_tomorrow" class="button" data-type="tomorrow" style="width:66px">{{NAVMNGSLIDER_TOMORROW}}</div>
+
+          <div id="viewProgramList_calendar_start" class="calendar"></div>
+          <div style="margin-left: 5px;margin-right: 5px;height: 30px;line-height: 30px">—</div>
+          <div id="viewProgramList_calendar_end" class="calendar"></div>
+        </div>
+      </div>
+      <div class="module editProgramList" style="display: none">
+        <div id="navigationSlider_add_btn" class="panel_page_head_button add">{{NAVMNGSLIDER_ADD}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="panel_page_body">
+    <div class="module" id="navigationSlider_list">
+      <div class="list_table" id="navigationSlider_list_table"></div>
+    </div>
+    <div class="module" id="navigationSlider_viewImportLog" style="display:none">
+      <div class="list_table" id="navigationSlider_viewImportLog_table"></div>
+    </div>
+    <div class="module" id="navigationSlider_viewProgramList" style="display:none">
+      <div class="list_table" id="navigationSlider_viewProgramList_table"></div>
+    </div>
+  </div>
+</div>

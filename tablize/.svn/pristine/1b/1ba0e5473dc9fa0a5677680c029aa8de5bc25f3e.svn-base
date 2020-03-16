@@ -1,0 +1,21 @@
+<div id="authe_info" class="_frame _authmng_dialog">
+  <link rel="stylesheet" href="content/authmng/main.css">
+  <link rel="stylesheet" href="content/authmng/dialog.css">
+  <link rel="stylesheet" href="content/authmng/authentication/info/main.css">
+  <div class="_frame_header">
+    <div class="_frame_title">{{AUTH_MNG_INFO_AUTHE}}</div>
+    <div class="_span"></div>
+    <div id="" class="_query _btn" style="margin-right: 5px;">{{AUTH_MNG_NEW_QUERY}}</div>
+  </div>
+  <div class="_frame_body">
+    <div class="_query_condition">
+      <div class="tip">{{AUTH_MNG_QUERY_CONDITION}}</div>
+      <div id="autheInfo_results"></div>
+      <div class="_btn _edit" style="display: none;">{{AUTH_MNG_EDIT}}</div>
+    </div>
+    <div id="autheInfo_list_table" class="authmng_list_table"></div>
+  </div>
+  <div class="_frame_foot">
+    <div class="_btn _download" style="margin-right: 43px;">{{AUTH_MNG_DOWNLOAD}}</div>
+  </div>
+</div>

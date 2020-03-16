@@ -1,0 +1,19 @@
+<div class="_authmng_dialog query_dialog_cancelAuthoSingle query_dialog">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{AUTH_MNG_QUERY_CONDITION}}</div>
+    <div class="_span"></div>
+    <div class="_dialog_close"></div>
+  </div>
+  <div class="_dialog_body">
+    <div class="_dialog_row"><label for="">{{AUTH_MNG_DIALOG_DATERANGE}}:</label><div id="cancelAuthoSingle_date_range" class="combo" style="z-index: 1;"></div><label for="" id="cancelAuthoSingle_self_define">{{AUTH_MNG_DIALOG_CANCELSELFDEFINE}}</label></div>
+    <div class="_dialog_row"><label for="">{{AUTH_MNG_DIALOG_STARTDATE}}:</label><div id="cancelAuthoSingle_date_start" class="date_picker" style="z-index: 2;"></div></div>
+    <div class="_dialog_row"><label for="">{{AUTH_MNG_DIALOG_ENDDATE}}:</label><div id="cancelAuthoSingle_date_end" class="date_picker" style="z-index: 1;"></div></div>
+    <div class="_dialog_row"><label for="">{{AUTH_MNG_DIALOG_OBJECTTYPE}}:</label><div id="cancelAuthoSingle_type_range" class="combo" ></div></div>
+    <div class="_dialog_row"><label for="">{{AUTH_MNG_DIALOG_APPKEY}}:</label><input type="text" id="cancelAuthoSingle_app_key"></div>
+    <div class="_dialog_row"><label for="">{{AUTH_MNG_DIALOG_SMARTCARDID}}:</label><input type="text" id="cancelAuthoSingle_smartcard_id"></div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="_btn _cancel">{{AUTH_MNG_DIALOG_CANCEL}}</div>
+    <div class="_btn _query">{{AUTH_MNG_DIALOG_QUERY}}</div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div id="OATrendWeek" class="page-rel-container">
+  <div class="page-rel-header">
+    <div class="panel_page_head_left">
+      <div class="panel_page_head_title_lead"></div>
+      <div class="panel_page_head_title">{{OA_TREND_WEEK}}</div>
+    </div>
+    <div class="panel_page_head_right">
+      <div id="oa-oaTrendWeek-start-datepicker" class="page-norm-calendar"></div>
+      <div class="oa-trend-picker-join"></div>
+      <div id="oa-oaTrendWeek-end-datepicker" class="page-norm-calendar"></div>
+    </div>
+  </div>
+  <div class="page-rel-content">
+    <div class="day-sum-block">
+      <div class="day-sum-ititle">
+        <div class="day-sum-ititle-main">{{OA_TREND_WEEK}}</div>
+        <div class="day-sum-ititle-tail">{{DAY_SUM_DP_TITLE_TAIL}}</div>
+      </div>
+      <div id="oaTrendWeek-sum-scale-select" class="operate-index-scale-select"></div>
+      <div id="oaTrendWeek-sum-pcount-indexes" class="operate-index-check-btn" style="position:absolute;left:1072px;top:16px;">{{DAY_SUM_INDEX_CHECKER}}</div>
+      <div id="oaTrendWeek-sum-pcount-chart" class="day-sum-chart"></div>
+      <div id="oaTrendWeek-sum-pcount-list" class="day-sum-list"></div>
+    </div>
+    <!-- <div class="day-sum-block">
+      <div class="day-sum-ititle">
+        <div class="day-sum-ititle-main">{{OA_TREND_CINDEX}}</div>
+        <div class="day-sum-ititle-tail">{{DAY_SUM_DT_TITLE_TAIL}}</div>
+      </div>
+      <div id="oaTrendWeek-sum-tcount-indexes" class="operate-index-check-btn" style="position:absolute;left:1072px;top:16px;">{{DAY_SUM_INDEX_CHECKER}}</div>
+      <div id="oaTrendWeek-sum-tcount-chart" class="day-sum-chart"></div>
+      <div id="oaTrendWeek-sum-tcount-list" class="day-sum-list"></div>
+    </div> -->
+  </div>
+</div>

@@ -1,0 +1,159 @@
+<!--   界面说明：左侧为拼音输入进行搜索，右侧为搜索结果显示。 -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Search</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <script type="text/javascript">
+    (function() {
+        var csses = ['style/search.css'];
+        var jses = ['config.js', 'js/search/utils.js', 'js/my.storage.js', 'js/search/index.js'];
+        for (var i = 0; i < csses.length; i++) {
+            var css = csses[i];
+            document.write('<link rel="stylesheet" href="' + css + '?t=' + new Date().getTime() + '" \/>')
+        }
+        for (var i = 0; i < jses.length; i++) {
+            var js = jses[i];
+            document.write('<script src="' + js+ '" charset="utf-8"><\/script>')
+        }// + '?t=' + new Date().getTime() 
+    }())
+    </script>
+</head>
+
+<body onload='app.init()'>
+    <div class="search" id="search">
+        <div class="search_left">
+            <!--输入框-->
+            <div class="search_input" id="search_input">
+                <img class="search_img" src="img/search/search.png">
+                <div class="searchBar" id="searchBar">输入影片或演员的首字母或全拼</div>
+            </div>
+            <!-- 按钮 -->
+            <img class="search_btn_clear" id="search_btn_clear" src="img/search/delete0.png">
+            <img class="search_btn_backspace" id="search_btn_backspace" src="img/search/backspace0.png">
+            <!-- 字母数字 -->
+            <div class="search_letter" id="search_letter">
+                <div class="search_letter_div" id="search_letter_div0" style="top: 0px; left: 0px">A</div>
+                <div class="search_letter_div" id="search_letter_div1" style="top: 0px; left: 57px">B</div>
+                <div class="search_letter_div" id="search_letter_div2" style="top: 0px; left: 115px">C</div>
+                <div class="search_letter_div" id="search_letter_div3" style="top: 0px; left: 173px">D</div>
+                <div class="search_letter_div" id="search_letter_div4" style="top: 0px; left: 230px">E</div>
+                <div class="search_letter_div" id="search_letter_div5" style="top: 0px; left: 288px">F</div>
+                <div class="search_letter_div" id="search_letter_div6" style="top: 56px; left: 0px">G</div>
+                <div class="search_letter_div" id="search_letter_div7" style="top: 56px; left: 57px">H</div>
+                <div class="search_letter_div" id="search_letter_div8" style="top: 56px; left: 115px">I</div>
+                <div class="search_letter_div" id="search_letter_div9" style="top: 56px; left: 173px">J</div>
+                <div class="search_letter_div" id="search_letter_div10" style="top: 56px; left: 230px">K</div>
+                <div class="search_letter_div" id="search_letter_div11" style="top: 56px; left: 288px">L</div>
+                <div class="search_letter_div" id="search_letter_div12" style="top: 112px; left: 0px">M</div>
+                <div class="search_letter_div" id="search_letter_div13" style="top: 112px; left: 57px">N</div>
+                <div class="search_letter_div" id="search_letter_div14" style="top: 112px; left: 115px">O</div>
+                <div class="search_letter_div" id="search_letter_div15" style="top: 112px; left: 173px">P</div>
+                <div class="search_letter_div" id="search_letter_div16" style="top: 112px; left: 230px">Q</div>
+                <div class="search_letter_div" id="search_letter_div17" style="top: 112px; left: 288px">R</div>
+                <div class="search_letter_div" id="search_letter_div18" style="top: 168px; left: 0px">S</div>
+                <div class="search_letter_div" id="search_letter_div19" style="top: 168px; left: 57px">T</div>
+                <div class="search_letter_div" id="search_letter_div20" style="top: 168px; left: 115px">U</div>
+                <div class="search_letter_div" id="search_letter_div21" style="top: 168px; left: 173px">V</div>
+                <div class="search_letter_div" id="search_letter_div22" style="top: 168px; left: 230px">W</div>
+                <div class="search_letter_div" id="search_letter_div23" style="top: 168px; left: 288px">X</div>
+                <div class="search_letter_div" id="search_letter_div24" style="top: 224px; left: 0px">Y</div>
+                <div class="search_letter_div" id="search_letter_div25" style="top: 224px; left: 57px">Z</div>
+                <div class="search_letter_div" id="search_letter_div26" style="top: 224px; left: 115px">1</div>
+                <div class="search_letter_div" id="search_letter_div27" style="top: 224px; left: 173px">2</div>
+                <div class="search_letter_div" id="search_letter_div28" style="top: 224px; left: 230px">3</div>
+                <div class="search_letter_div" id="search_letter_div29" style="top: 224px; left: 288px">4</div>
+                <div class="search_letter_div" id="search_letter_div30" style="top: 280px; left: 0px">5</div>
+                <div class="search_letter_div" id="search_letter_div31" style="top: 280px; left: 57px">6</div>
+                <div class="search_letter_div" id="search_letter_div32" style="top: 280px; left: 115px">7</div>
+                <div class="search_letter_div" id="search_letter_div33" style="top: 280px; left: 173px">8</div>
+                <div class="search_letter_div" id="search_letter_div34" style="top: 280px; left: 230px">9</div>
+                <div class="search_letter_div" id="search_letter_div35" style="top: 280px; left: 288px">0</div>
+            </div>
+            <!--字母数字聚焦框-->
+            <div class="search_letter_Selected" id="search_letter_Selected"></div>
+        </div>
+        <div class="search_right">
+            <!--热搜词-->
+            <div class="search_Hotsearch_top" id="search_Hotsearch_top">热搜词</div>
+            <div class="search_Hotsearch" id="search_Hotsearch">
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div0" style="top: 0px; left: 0px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div1" style="top: 0px; left: 338px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div2" style="top: 70px; left: 0px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div3" style="top: 70px; left: 338px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div4" style="top: 140px; left: 0px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div5" style="top: 140px; left: 338px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div6" style="top: 210px; left: 0px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div7" style="top: 210px; left: 338px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div8" style="top: 280px; left: 0px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div9" style="top: 280px; left: 338px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div10" style="top: 350px; left: 0px"></div>
+                <div class="search_Hotsearch_div" id="search_Hotsearch_div11" style="top: 350px; left: 338px"></div>
+            </div>
+            <!-- 热搜词聚焦 -->
+            <div class="search_Hotsearch_Selected" id="search_Hotsearch_Selected"></div>
+            <!--精选结果-->
+            <div class="search_Featuredresults_top" id="search_Featuredresults_top">精选结果</div>
+            <div class="search_Featuredresults" id="search_Featuredresults">
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film0" style="top: 1px; left: 1px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img0" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text0"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film1" style="top: 1px; left: 137px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img1" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text1"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film2" style="top: 1px; left: 275px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img2" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text2"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film3" style="top: 1px; left: 413px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img3" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text3"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film4" style="top: 1px; left: 550px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img4" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text4"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film5" style="top: 228px; left: 1px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img5" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text5"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film6" style="top: 228px; left: 137px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img6" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text6"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film7" style="top: 228px; left: 275px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img7" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text7"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film8" style="top: 228px; left: 413px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img8" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text8"></div>
+                </div>
+                <div class="search_Featuredresults_film" id="search_Featuredresults_film9" style="top: 228px; left: 550px">
+                    <img class="search_Featuredresults_img" id="search_Featuredresults_img9" src="">
+                    <div class="search_Featuredresults_text" id="search_Featuredresults_text9"></div>
+                </div>
+            </div>
+            <!-- 精选结果聚焦 -->
+            <div class="search_Featuredresults_Selected" id="search_Featuredresults_Selected"></div>
+            <!-- 分页 -->
+            <div class="search_Featuredresults_foot" id="search_Featuredresults_foot">
+                <div class="Previous" id="Previous"><img src="img/search/上方键.png" alt=""></div>
+                <div class="currentPage" id="currentPage">0</div>
+                <div class="search_Featuredresults_foot_Slash">/</div>
+                <div class="totalPages" id="totalPages">0</div>
+                <div class="NextPage" id="NextPage"><img src="img/search/下方键.png" alt=""></div>
+            </div>
+            <!-- 分页聚焦框 -->
+            <div class="search_Featuredresults_foot_Selected" id="search_Featuredresults_foot_Selected"></div>
+        </div>
+    </div>
+</body>
+
+</html>

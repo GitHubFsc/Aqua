@@ -1,0 +1,23 @@
+/**dialog model***/
+._dialog {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-flow: column;flex-flow: column;border: 1px solid #177ba9;background-color: #fff;font-size: 16px;height: 100%;}
+._dialog_flex {display: -webkit-box;display: -ms-flexbox;display: flex;}
+._dialog_title {height: 38px;background-color: #2ea2d7;line-height: 38px;color: #fff;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;font-size: 20px;}
+._dialog_title_label {-webkit-box-flex:1;-ms-flex:1;flex:1;padding-left: 10px;cursor: default;}
+._dialog_close {height: 100%;width: 38px;cursor: pointer;background-image: url(../image/psdAudit/closeBtn.png);background-repeat: no-repeat;background-position: center;}
+._dialog_body {-webkit-box-flex:1;-ms-flex:1;flex:1;}
+._dialog_row {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-flow: row;flex-flow: row;}
+._dialog_row input {border: 1px solid #c6c6c6;padding-left: 10px;}
+._dialog_row input[disabled] {background-color: #f6f6f6;color: #b3b3b3;border: 1px solid #c6c6c6;}
+._dialog_col {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-flow: column;flex-flow: column;}
+._dialog_context {color: #797979;margin-right: 13px;text-align: right;}
+._dialog_foot {height: 40px;margin: 0 15px 15px 15px;line-height: 40px;text-align: center;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;}
+._dialog_foot .btn {width: 151px;height: 100%;border: 1px solid #597f89;border-radius: 2px;margin-left: 20px;color: #fff;cursor: pointer;}
+._dialog_foot .cancel {background-color: #5da1c0;}
+._dialog_foot .confirm {background-color: #2ea2d7;}
+._dialog label {line-height: 30px;margin: 0 10px;}
+._dialog_loading {position: fixed; top: 0; left: 0;width: 100%;height: 100%;background-image: url(../image/loading.gif);background-position: center;background-repeat: no-repeat;}
+/**model end**/
+
+._dialog._del ._dialog_body {padding-top: 40px;padding-left: 200px;background-image: url(../image/dvEvn/adPos_dialog_del_bg.png);background-repeat: no-repeat;background-position: 46px center;font-size: 16px;line-height: 45px;color: #727272;}
+
+._dialog.alert ._dialog_body {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;padding-left: 146px;background-repeat: no-repeat;background-position: 20px 34px;background-image: url(../image/sucai/delete_sucai.png);font-size: 20px;padding-top: 62px;color: #797979;word-break: break-all;}

@@ -1,0 +1,48 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label" id="cms_user-admin-user-dialog-title">{{CMS_CREATE_APP}}</div>
+    <div class="wp_panel_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="wp_panel_dialog_content" style="margin-top:-2px;font-family:'宋体';color:#727272">
+	  <div style="height:60px;width:100%;position:relative">
+			<div style="position:absolute;border-bottom:1px dashed #bfbfbf;width:calc(100% - 67px);height:29px;left:36px;right:31px;"></div>
+			<div style="height:60px;line-height:60px;width:84px;position:absolute;left:50%;margin-left:-42px;color:#666666">{{CMS_BASIC_INFO}}</div>
+		</div>
+		<div style="width:auto;margin-left:36px;margin-right:47px;margin-top:-3px">
+			<div style="overflow:hidden">
+				 <div style="float:left;width:100%">
+						<div class="inputTitlestyle">{{CMS_YINGYONGNAME}}</div>
+						<input id="cms_app_admin_app_name" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+				</div>
+			</div>
+			<div style="overflow:hidden;margin-top:18px">
+				<div style="float:left;width:242px">
+					<div class="inputTitlestyle">{{CMS_SCREEN_WIDTH}}</div>
+					<input id="cms_app_admin_screen_width" class="adv_input_region" type="text" style="margin-top:7px">
+				</div>
+				<div style="float:right;width:242px">
+					<div class="inputTitlestyle_contacter">{{CMS_SCREEN_HEIGHT}}</div>
+					<input id="cms_app_admin_screen_height" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+				</div>
+			</div>
+			<div style="overflow:hidden;margin-top:18px">
+				<div style="float:left;width:242px">
+					<div class="inputTitlestyle">{{CMS_NAV_WIDTH}}</div>
+					<input id="cms_app_admin_nav_width" class="adv_input_region" type="text" style="margin-top:7px">
+				</div>
+				<div style="float:right;width:242px">
+					<div class="inputTitlestyle_contacter">{{CMS_NAV_HEIGHT}}</div>
+					<input id="cms_app_admin_nav_height" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+				</div>
+			</div>
+			<div style="overflow:hidden;margin-top:18px">
+				 <div style="float:left;width:100%">
+						<div class="inputTitlestyle">{{CMS_DESC}}</div>
+						<input id="cms_app_admin_desc" class="adv_input_region" type="text" style="margin-top:7px;width:100%">
+				</div>
+			</div>
+		</div>	
+    <div class="lecture_recommend_dialog_cancel popup_dialog_clear" id="cms_user-admin-dialog-cancel" style="right:205px;bottom:18px">{{CMS_CANCEL}}</div>
+    <div class="lecture_recommend_dialog_submit" id="cms_dialog_submit" style="right:34px;bottom:18px;">{{CMS_CREATE}}</div>
+  </div>
+</div>

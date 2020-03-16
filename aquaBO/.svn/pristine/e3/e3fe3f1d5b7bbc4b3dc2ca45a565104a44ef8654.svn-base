@@ -1,0 +1,64 @@
+<div id="operateDaySum" class="page-rel-container">
+  <div class="page-rel-header">
+    <div class="panel_page_head_left">
+      <div class="panel_page_head_title_lead"></div>
+      <div class="panel_page_head_title">{{DAY_SUM_TITLE}}</div>
+    </div>
+  </div>
+  <div class="page-rel-content">
+    <div class="day-sum-block">
+      <div class="day-sum-ititle">
+        <div class="day-sum-ititle-main">{{DAY_SUM_DS_TITLE}}</div>
+        <div class="day-sum-ititle-tail">{{DAY_SUM_DS_TITLE_TAIL}}</div>
+      </div>
+      <div id="day-sum-totals">
+      <!-- <table class="day-sum-total-table" cellpadding="0" cellspacing="20">
+        <tbody>
+          <tr>
+            <td colspan="2" rowspan="2"><div class="day-sum-act-deg"><div class="day-sum-act-deg-label"></div><div class="day-sum-act-deg-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+          </tr>
+          <tr>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+            <td><div class="day-sum-total-pcount"><div class="day-sum-total-label"></div><div class="day-sum-total-num"></div></div></td>
+          </tr>
+        </tbody>
+      </table> -->
+      </div>
+    </div>
+    <div class="day-sum-block">
+      <div class="day-sum-ititle">
+        <div class="day-sum-ititle-main">{{DAY_SUM_DA_TITLE}}</div>
+        <div class="day-sum-ititle-tail">{{DAY_SUM_DP_TITLE_TAIL}}</div>
+      </div>
+      <div id="day-sum-scale-select" class="operate-index-scale-select"></div>
+      <div id="day-sum-pcount-indexes" class="operate-index-check-btn" style="position:absolute;left:1072px;top:16px;">{{DAY_SUM_INDEX_CHECKER}}</div>
+      <div id="day-sum-pcount-chart" class="day-sum-chart"></div>
+      <div id="day-sum-pcount-list" class="day-sum-list"></div>
+    </div>
+    <!-- <div class="day-sum-block">
+      <div class="day-sum-ititle">
+        <div class="day-sum-ititle-main">{{DAY_SUM_DT_TITLE}}</div>
+        <div class="day-sum-ititle-tail">{{DAY_SUM_DT_TITLE_TAIL}}</div>
+      </div>
+      <div id="day-sum-tcount-indexes" class="operate-index-check-btn" style="position:absolute;left:1072px;top:16px;">{{DAY_SUM_INDEX_CHECKER}}</div>
+      <div id="day-sum-tcount-chart" class="day-sum-chart"></div>
+      <div id="day-sum-tcount-list" class="day-sum-list"></div>
+    </div> -->
+  </div>
+</div>

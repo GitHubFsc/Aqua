@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>音量</title>
+<script language="javascript">
+document.onkeypress = grabEvent;
+document.onirkeypress = grabEvent;
+window.resizeTo(680, 58);
+window.moveTo(300, 600);
+var user = users.currentUser;
+var channel = user.getOffChannel(1);
+var vol = 0;
+var timer = -1;
+
+function grabEvent(event){
+	var keyCode = event.which;
+	iPanel.debug("keyCode_volume1="+keyCode);
+	switch(keyCode){
+		case 1:
+		case 2:
+		case 13:
+		case 512:
+		case 832:
+		case 833:
+		case 834:
+		case 835:
+		case 49:
+		case 50:
+		case 51:
+		case 52:
+			return 0;
+			break;
+		//case 3:
+		case 596:
+			changeVol(-1);
+			return 0;
+			break;
+		//case 4:
+		case 595:
+			changeVol(1);
+			return 0;
+			break;
+		case 339:
+		case 340:
+			iPanel.pageWidgets.getByName("volume").minimize();
+			return 0;
+			break;
+	}
+}
+function init(){
+	iPanel.debug("___channel"+typeof(channel));
+	vol = media.sound.value;
+	iPanel.debug("vol"+vol);
+	$("vol").style.width = Math.floor(vol/100*522)+"px";
+	$("volNum").innerText = Math.floor(vol/4);
+	timer = window.setTimeout(iPanel.pageWidgets.getByName("volume").minimize(),4000);
+}
+
+function changeVol(__num){
+	window.clearTimeout(timer);
+	if(vol==100&&__num>0)return;
+	if(vol==0&&__num<0)return;
+	vol+=__num*4;
+	if(vol<0)vol=0;
+	if(vol>100)vol=100;
+	media.sound.value = vol;
+	$("vol").style.width = Math.floor(vol/100*522)+"px";
+	$("volNum").innerText = Math.floor(vol/4);
+	timer = window.setTimeout(iPanel.pageWidgets.getByName("volume").minimize(),4000);
+}
+
+function $(id){
+	return document.getElementById(id);
+}
+</script>
+</head>
+
+<body bgcolor="transparent" leftmargin="0" topmargin="0" onload="init()">
+<div style="position:absolute; left:0px; top:0px; width:680px; height:58px; background:url(audio_bg.png) no-repeat;">
+<div style="position:absolute; left:59px; top:13px; width:542px; height:27px;"><img src="audio_bar1.gif" width="10" height="27"><img id="vol" src="audio_bar2.gif" width="10" height="27"><img src="audio_bar3.gif" width="10" height="27"></div>
+
+<div style="position:absolute; left:605px; top:9px; width:60px; height:34px; line-height:34px; text-align:center; font-size:28px; color:#11476A" id="volNum"></div>
+</div>
+</body>
+</html>

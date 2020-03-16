@@ -1,0 +1,95 @@
+<div class="user-complext-page" id="user-admin-root">
+	<link href="style/frame.css" rel="stylesheet">
+	<link href="content/sys_user_admin/sys_user.css" rel="stylesheet">
+  <link href="content/sys_user_admin/main.css" rel="stylesheet">
+	<link href="content/sys_user_admin/zTreeStyleuser.css" rel="stylesheet">
+	<div class="user-simple-page" id="user-admin-index">
+		<div class="page-rel-container" style="height:100%">
+			<div class="page-rel-header" id="sys-user-admin-page1-part1" style="display:block">
+				<div class="panel_page_head_left">
+					<div class="panel_page_head_title_lead"></div>
+					<div class="panel_page_head_title">{{SYS_USER_USER_MANAGE}}</div>
+					<div class="user-admin-search">
+						<input id="user-admin-list-search" style="padding-left:10px"/>
+						<div class="user-admin-search-icon"></div>
+					</div>
+				</div>
+				<div class="panel_page_add_btn" id="user-admin-user-add">{{SYS_USER_ADDUSER}}</div>
+			</div>
+			<div class="page-rel-content"  id="sys-user-admin-page1-part2"  style="display:block">
+				<div class="page-inner-content" style="border-width:1px 1px 0 1px; margin:0;">
+					<div id="sys-user-admin-user-list"></div>
+				</div>
+			</div>
+			<div class="page-rel-header" id="sys-user-admin-page2-part1" style="display:none">
+				<div class="panel_page_head_left">
+					<div class="panel_page_head_title_lead"></div>
+					<div class="panel_page_head_title">{{SYS_USER_USER_MANAGE}}</div>
+				</div>
+				<div style="left:456px;margin-top:-18px;position:absolute;top:50%;height:36px;width:auto;text-align:center">
+					<div class="tab_switch_unit tab_switch_unit_focus" style="width:106px">{{SYS_USER_MENU_AUTH}}</div>
+					<div class="tab_switch_unit" >{{SYS_USER_PROGRAM_AUTH}}</div>
+					<div class="tab_switch_unit" >{{SYS_USER_NAVIGATE_AUTH}}</div>
+					</div>
+			</div>
+			<div id="sys-user-admin-page2-part2" class="sys-user-admin-page2-part2" style="display:none;position:relative;background-color:#fcfcf2">
+				<div id="sys-user-admin-page2-part2-container" style="height:calc(100% - 76px);position:absolute;top:14px;left:15px;right:15px;background-color:#ffffff;border:1px #e2e2e2 solid">
+					<div style="width:100%;height:100%">
+						<div style="float:left;width:467px;height:100%;overflow:auto;border-right:1px #e2e2e2 solid;visibility:visible;position:relative">
+							<div id="sys-user-admin-page2-part2-menu-tree-table" class="sys-user-admin-page2-part2-menu-tree-table" style="width:100%;height:auto;position:absolute;margin-left:0px;">
+								<!--div style="height:40px;width:100%"></div-->
+							</div>
+							<div id="sys-user-admin-page2-part2-menu-tree" class="ztree" style="width:auto;height:auto;margin-left:6px;position:absolute;margin-top:0;padding-top:0;">
+							
+							</div>
+							<div style="width:100%;height:13px;position:absolute;background-color:white"></div>
+						</div>
+						<div id="sys-user-admin-page2-part2-menu-tree-right" style="float:right;width:calc(100% - 471px);height:100%;overflow:auto;background-color:#eaeaea">
+							<div id="sys-user-admin-page2-part2-menu-tree-right_1"></div> 
+						</div>
+					</div>
+				</div>
+				<div style="display:none;height:calc(100% - 76px);position:absolute;top:14px;left:15px;right:15px;background-color:#ffffff;border:1px #e2e2e2 solid">
+					<div style="width:100%;height:100%">
+					  <div id="sys-user-admin-page2-part2-menu2-left-table_container" style="float:left;width:467px;height:100%;visibility:visible;position:relative">
+							<div style="width:100%;height:100%">
+								<div style="height:42px;width:calc(100% - 2px);background-color:#1db4da;border:1px #e2e2e2 solid">
+									<input class="sucai_list_search" onkeyup="" placeholder="" style="height:30px;margin-top:6px;width:231px;background:white;margin-left:14px" />
+									<div class="sucai_list_search_botton_div" style="background-color:#2ea2d7;left:10px;margin-top:6px;height:30px;line-height:28px">{{SYS_USER_SEABTN}}</div>
+									<div style="clear: both"></div>
+								</div>
+								<div id="sys-user-admin-page2-part2-menu2-left-table" class="sys_user_admin_table" style="border-right:1px solid #e2e2e2;visibility:hidden;height:calc(100% - 44px);width:calc(100% - 2px);background-color:#fbfbfb"> 
+								</div>
+							</div>
+						</div>
+						<div id="sys-user-admin-page2-part2-menu2-right" style="float:right;width:calc(100% - 471px);height:100%;overflow:auto;background-color:#eaeaea">
+						</div>
+					</div>
+				</div>
+				<div style="display:none;height:calc(100% - 76px);position:absolute;top:14px;left:15px;right:15px;background-color:#ffffff;border:1px #e2e2e2 solid">
+					<div style="width:100%;height:100%">
+					  <div id="sys-user-admin-page2-part2-menu3-left-table_container" style="float:left;width:467px;height:100%;visibility:visible;position:relative">
+							<div style="width:100%;height:100%">
+								<div style="height:42px;width:calc(100% - 2px);background-color:#1db4da;border:1px #e2e2e2 solid">
+									<input class="sucai_list_search" onkeyup="" placeholder="" style="height:30px;margin-top:6px;width:231px;background:white;margin-left:14px" />
+									<div class="sucai_list_search_botton_div" style="background-color:#2ea2d7;left:10px;margin-top:6px;height:30px;line-height:28px">{{SYS_USER_SEABTN}}</div>
+									<div style="clear: both"></div>
+								</div>
+								<div id="sys-user-admin-page2-part2-menu3-left-table" class="sys_user_admin_table" style="border-right:1px solid #e2e2e2;visibility:hidden;height:calc(100% - 44px);width:calc(100% - 2px);background-color:#fbfbfb"> 
+								</div>
+							</div>
+						</div>
+						<div id="sys-user-admin-page2-part2-menu3-right" style="float:right;width:calc(100% - 471px);height:100%;overflow:auto;background-color:#eaeaea">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="sys-user-admin-page2-bottom" style="display:none;border-top:1px #e2e2e2 solid;height:56px;bottom:0;position:absolute;width:100%;background-color:#ffffff">
+				<div id="sys-user-admin-page2-btn-confirm" class="btn_confirm" style="float:right;margin-right:43px;margin-top:8px">{{SYS_USER_SAVE}}</div>
+				<div id="sys-user-admin-page2-btn-cancel" class="btn_cancel" style="float:right;margin-right:15px;margin-top:8px">{{SYS_USER_CANCEL}}</div>
+				<div id="sys-user-admin-page2-part2-hiddenWords"  style="display:none;float:left;margin-left:15px;width:auto;margin-top:16px;color:#797979">注:没有选择表示都授权</div>
+			</div>
+		</div>
+	</div>
+</div>

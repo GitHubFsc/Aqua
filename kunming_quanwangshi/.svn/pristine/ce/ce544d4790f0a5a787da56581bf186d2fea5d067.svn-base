@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>历史记录</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<script type="text/javascript">
+		(function (){
+			var csses = [
+				'style/history.css'
+			];
+			var jses = [
+				'config.js',
+				'js/common/endecodebase64.js',
+				'js/common/sha1.js',
+				'js/common/keyvalue.js',
+				'js/common/util.js',
+				'js/common.js',
+				'js/my.paas.js',
+				'js/my.storage.js',
+				'js/home.js',
+				'js/home.tabs.js',
+				'js/vtil.js',
+				'js/history/utils.js',
+				'js/history/index.js',
+			];
+			for(var i = 0; i < csses.length; i++){
+				document.write('<link rel="stylesheet" href="'+ csses[i] + '" type="text/css" charset="utf-8"/>')
+			}
+			for (var i = 0; i < jses.length; i++) {
+				document.write('<script type="text/javascript" src="' + jses[i] + '"><\/script>')
+			}
+		})()
+	</script>
+</head>
+<body onload="app.init()">
+	<div class="history">
+		<div class="container">
+			<!-- title -->
+			<div class="header">
+				<div class="title">历史记录</div>
+				<div class="hint">按<span>菜单键</span>删除收藏</div>
+			</div>
+			<div class="header_between"></div>
+			<div class="content" id="history_poster_content">
+				<div id="history_poster_focus"></div>
+				<img class="history_poster_img" id="history_poster_img0"></img>
+			    <img class="history_poster_img" id="history_poster_img1"></img>
+			    <img class="history_poster_img" id="history_poster_img2"></img>
+			    <img class="history_poster_img" id="history_poster_img3"></img>
+				<img class="history_poster_img" id="history_poster_img4"></img>
+			    <img class="history_poster_img" id="history_poster_img5"></img>
+				<img class="history_poster_img" id="history_poster_img6"></img>
+			    <img class="history_poster_img" id="history_poster_img7"></img>
+			    <img class="history_poster_img" id="history_poster_img8"></img>
+			    <img class="history_poster_img" id="history_poster_img9"></img>
+				<img class="history_poster_img" id="history_poster_img10"></img>
+			    <img class="history_poster_img" id="history_poster_img11"></img>
+			</div>
+		</div>
+		<div class="paging">
+			<div id="history_page_focus"></div>
+			<div class="prev" style="left: 550px;top: 660px;"></div>
+			<div class="pages">
+				<div class="page current_page" id="history_current_page">0</div>
+				<div>/</div>
+				<div class="page total_page" id="history_total_page">0</div>
+			</div>
+			<div class="next" style="left: 690px;top: 660px;"></div>
+		</div>
+	</div>
+	<!-- 操作对话框 -->
+	<div class="histroy_dialog" id="histroy_dialog">
+		<div class="history_btn">
+			<div class="btn histroy_empty" id="histroy_empty"></div>
+			<div class="btn histroy_cancel" id="histroy_cancel"></div>
+		</div>
+	</div>
+</body>
+</html>

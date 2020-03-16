@@ -1,0 +1,65 @@
+.app_admin_input_grey,.app_admin_input_white{
+	box-sizing:border-box;
+	border:1px #e2e2e2 solid;
+	padding-left:13px
+}
+.app_admin_input_grey{
+	background-color:#ebebeb;
+}
+.select-box {
+	float: left;position: relative
+}
+.product_offering .select-status .select-header, .centerPopupStyle_appAdmin .dialog .select-status .select-header{width: 100%;line-height: 32px;padding-right: 0;border: 1px solid #e2e2e2;}
+.product_offering .select-status .select-content, .centerPopupStyle_appAdmin .dialog .select-status .select-content{width: 100%;}
+#appAdmin_app_admin_token_check_container .select-status .select-content li, .centerPopupStyle_appAdmin .dialog .select-status .select-content li{width: 100%;}
+#appAdmin_app_admin_token_check_container .select-status .select-header,#appAdmin_app_admin_token_check_container .select-status .select-header-arrow{
+   width: 91%;padding-right: 26px;background-repeat:no-repeat;background-position: 266px center;line-height: 32px;text-indent: 14px;font-size: 14px;color: #797979;cursor: pointer;overflow: hidden;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow: hidden;
+}
+#appAdmin_app_admin_token_check_container .select-status .select-header{
+	background-image:url(images/down_arrow.png)
+}
+#appAdmin_app_admin_token_check_container .select-status .select-arrow{
+	background-image:url(images/up_arrow.png)
+}
+.select-status .select-content {width:calc(100% - 2px);border-left: 1px solid #e2e2e2;border-right: 1px solid #e2e2e2;top: 38px;left: 0;z-index: 99;display:none;background-color: #f9f9f9;position: absolute;padding-left:0;margin-top:0;top:33px!important}
+.select-status .select-content li {list-style: none;height: 32px;margin: 0;border-bottom: 1px solid #e2e2e2;border-right: 1px solid #e2e2e2;line-height: 32px;text-indent: 14px;background-color: #f9f9f9;font-size: 16px;color: #a9a9a9;cursor: pointer;white-space:nowrap;text-overflow:ellipsis;-o-text-overflow:ellipsis;overflow: hidden;}
+#appAdmin_popup_app_tableRegion tr:nth-child(2n-1){
+	background-color:#ffffff
+}
+#appAdmin_popup_app_tableRegion tr:nth-child(2n){
+	background-color:#f5fdff
+}
+#appAdmin_lectureCreatePage_info_course_description_value {
+    resize: none;
+}
+
+#appAdmin_mainTable .mCSB_inside > .mCSB_container {
+    margin-right: 2px;
+}
+#appAdmin_mainTable .mCSB_scrollTools .mCSB_draggerRail {
+    border-radius: 16px;
+    height: 100%;
+    margin: 0 auto;
+    width: 5px;
+		background-color:#e6eff2;
+}
+#appAdmin_mainTable .mCSB_scrollTools {
+    bottom: 0;
+    height: auto;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5px;
+}
+#appAdmin_mainTable .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #5391a6!important;
+}
+#appAdmin_mainTable .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar:hover {
+    background-color: #5391a6!important;
+}
+
+#appAdmin_mainTable .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+	 border-radius: 2px;
+	 width:5px
+}

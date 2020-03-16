@@ -1,0 +1,129 @@
+
+#player_tool_object_container{
+    width:100%;
+    height:490px;
+    background:#000;
+}
+
+#player_tool_time_container{
+    width:100%;
+    height:30px;
+    color: white;
+    line-height: 30px;
+}
+#player_tool_btn_container{
+    background-color: #00736d;
+    width:100%;
+    height: 30px;
+    float: left;
+    overflow: hidden;
+}
+#player_tool_btn_container.tool_teacher{
+    background-color: #a54b88;
+}
+
+#player_tool_btn_container.tool_schedule{
+    background-color: #767ca0;
+}
+
+.player_tool_player_time{
+    float: left;
+}
+
+#player_tool_begin_time, #player_tool_end_time{
+    width: 80px;
+    text-align: center;
+    font-size:  12px;
+    float: left;
+}
+#player_tool_end_time{
+    float: right;
+}
+#player_tool_time_slider{
+    background-color: #009088;
+    cursor: pointer;
+    float: left;
+    height: 10px;
+    margin: -22px 90px 0 115px;
+    width: 520px;
+}
+#player_tool_time_slider.tool_teacher{
+    background-color: #8b2e6d;
+}
+
+#player_tool_time_slider.tool_schedule{
+    background-color: #5a6084;
+}
+
+#player_tool_time_slider.ui-slider{
+    background: #005f5b;
+    border-radius: 0px;
+    border: 0px;
+}
+#player_tool_time_slider.ui-slider.tool_teacher{
+    background: #8b2e6d;
+}
+
+#player_tool_time_slider.ui-slider.tool_schedule{
+    background: #5a6084;
+}
+
+#player_tool_time_slider .ui-slider-handle{
+    width: 12px;
+    height: 22px;
+    background: #02938c;
+    border-radius: 0px;
+    border: 0px;
+}
+#player_tool_time_slider.tool_teacher .ui-slider-handle{
+    background: #e279c0;
+}
+
+#player_tool_time_slider.tool_schedule .ui-slider-handle{
+    background: #8d94c1;
+}
+
+.player_tool_btn{
+    cursor: pointer;
+    height: 24px;
+    margin: 4px 5px 3px;
+    width: 24px;
+    float: left;
+}
+
+#player_tool_play_btn{
+    background-image: url("../image/sucai/player/player_play_pause.png");
+    background-position: 24px 0px;
+}
+#player_tool_pause_btn{
+    background-image: url("../image/sucai/player/player_play_pause.png");
+    background-position: 0px 0px;
+}
+#player_tool_resume_btn{
+    background-image: url("../image/sucai/player/player_play_pause.png");
+    background-position: 24px 0px;
+}
+
+#player_tool_play_btn.tool_teacher{
+    background-image: url("../image/sucai/player/player_play_pause_teacher.png");
+
+}
+#player_tool_pause_btn.tool_teacher{
+    background-image: url("../image/sucai/player/player_play_pause_teacher.png");
+
+}
+#player_tool_resume_btn.tool_teacher{
+    background-image: url("../image/sucai/player/player_play_pause_teacher.png");
+}
+
+#player_tool_play_btn.tool_schedule{
+    background-image: url("../image/sucai/player/player_play_pause_schedule.png");
+
+}
+#player_tool_pause_btn.tool_schedule{
+    background-image: url("../image/sucai/player/player_play_pause_schedule.png");
+
+}
+#player_tool_resume_btn.tool_schedule{
+    background-image: url("../image/sucai/player_play_pause_schedule.png");
+}

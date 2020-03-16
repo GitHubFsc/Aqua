@@ -1,0 +1,16 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div id="adPos_dialog_tp_patch_view_name" class="panel_dialog_title_text">
+			
+		</div>
+		<div id="adPos_dialog_tp_patch_view_close" class="panel_dialog_close popup_dialog_clear">
+
+		</div>
+	</div>
+	<div class="adPos_dialog_tp_patch_view_list_title">
+		{{ADPOS_DIALOG_TP_PATCH_VIEW_LIST_TITLE}}
+	</div>
+	<div id="adPos_dialog_tp_patch_view_list_block" class="adPos_dialog_tp_patch_view_list_block">
+		
+	</div>
+</div>

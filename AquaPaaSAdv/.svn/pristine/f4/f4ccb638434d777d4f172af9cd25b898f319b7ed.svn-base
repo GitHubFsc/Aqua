@@ -1,0 +1,140 @@
+( function($) {
+    function LoginPage() {
+        this.init();
+    }
+
+
+    LoginPage.prototype = {
+        init: function() {
+            var self = this;
+            $.ajax({
+                type: 'GET',
+                url: 'content/pages/login.html'
+            }).done(function(data) {
+                $(document.body).empty().append(patchHTML(data));
+                self.listenEvents();
+                self.rmbUser();
+            });
+        },
+
+        listenEvents: function() {
+            var self = this;
+
+            $('.login_dialog_checkbox ').on('click', function(){
+            	$(this).toggleClass('login_dialog_checkbox_checked');
+            });
+
+            $('#login_dialog_login_button').on('click', function() {
+                self._login();
+            });
+
+            var $userMail = $('#login_dialog_input_user_mail');
+            var $userPwd = $('#login_dialog_input_user_pwd');
+            $userMail.on('keyup', function(ev) {
+                if (ev.keyCode === 13) {
+                    this.blur();
+                    self._login();
+                }
+            });
+            $userPwd.on('keyup', function(ev) {
+                if (ev.keyCode === 13) {
+                    this.blur();
+                    self._login();
+                }
+            });
+            $userMail.parent().on('click', function(ev) {
+                if (ev.target !== $userMail[0]) {
+                    $userMail.focus();
+                }
+            });
+            $userPwd.parent().on('click', function(ev) {
+                if (ev.target !== $userPwd[0]) {
+                    $userPwd.focus();
+                }
+            });
+        },
+
+        rmbUser: function(){
+        	var user_name = localStorage['user_name'];
+        	if(user_name){
+        		$('#login_dialog_input_user_mail').val(user_name);
+        		$('#login_dialog_rmb_user').addClass('login_dialog_checkbox_checked');
+        	}
+
+        	var user_pwd = localStorage['user_pwd'];
+        	if(user_pwd){
+        		$('#login_dialog_input_user_pwd').val(user_pwd);
+        		$('#login_dialog_rmb_pwd').addClass('login_dialog_checkbox_checked');
+        	}
+        },
+
+        _login: function() {
+            var self = this;
+
+            var user_name = $('#login_dialog_input_user_mail').val();
+            var pwd = $('#login_dialog_input_user_pwd').val();
+
+            if (user_name === '' || pwd === '') {
+                alert(i18n('LOGIN_NEED_ACCOUNT_OR_PWD'));
+                return;
+            }
+
+            if($('#login_dialog_rmb_user').hasClass('login_dialog_checkbox_checked')){
+            	localStorage['user_name'] = user_name;
+            } else {
+            	localStorage['user_name'] = '';
+            }
+
+            if($('#login_dialog_rmb_pwd').hasClass('login_dialog_checkbox_checked')){
+            	localStorage['user_pwd'] = pwd;
+            } else {
+            	localStorage['user_pwd'] = '';
+            }
+
+            paasLogin(user_name, pwd, function(data) {
+                my.paas.user_id = data.user_id;
+                my.paas.access_token = data.access_token;
+                my.paas.refresh_token = data.refresh_token;
+
+                getPaaSUser(data.user_id, data.access_token, function(paasUser) {
+                    my.paas.user_name = paasUser.user_name;
+                    my.paas.user_type = (function(userRole){
+                      if(userRole != null){
+                        return userRole.toString();
+                      } else {
+                        return '';
+                      }
+                    }(paasUser.metadata.AquaPaaSAdv_UserRole));
+                    my.paas.userRight = (function(userRight){
+                      userRight = parseInt(userRight, 10);
+                      if(isNaN(userRight)){
+                        userRight = 0;
+                      }
+                      return userRight;
+                    })(paasUser.metadata.AquaPaaSAdv_UserRight);
+
+                    aquaLogin(storage_username, storage_password, storage_domain, function(user) {
+                        my.aqua.accessKeyId = user.objectID;
+                        my.aqua.secretAccessKey = user.secretAccessKey;
+                       //TODO 保存登录用户名密码
+                        my.userName = user_name;
+                        my.userPassword = pwd;
+                        sessionStorage.loginData = JSON.stringify({
+                          userName: user_name,
+                          userPassword: pwd
+                        });
+                        $(self).trigger('login');
+                    }, function() {
+                        alert(i18n('LOGIN_FAIL'));
+                    });
+                });
+
+            }, function() {
+                alert(i18n('LOGIN_FAIL'));
+            });
+
+        }
+    };
+
+    window.LoginPage = LoginPage;
+}(jQuery));

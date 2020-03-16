@@ -1,0 +1,68 @@
+<html>
+ <head>
+ </head>
+ <body>
+  <div id="popup_authorize_dialog_container" class="popup_dialog_v2" style="overflow:visible;"> 
+	 <div id="popup_authorize_equip_menu_body" class="popup_dialog_v2_menu_body"></div>
+	 <div id="popup_authorize_manufacture_menu_body" class="popup_dialog_v2_menu_body"></div>
+   <div class="popup_dialog_v2_header"> 
+    <div class="popup_dialog_v2_header_left"> 
+     <div class="popup_dialog_v2_header_left_bar"></div> 
+     <div id="popup_authorize_user_title" class="popup_dialog_v2_header_left_title">
+				
+     </div> 
+    </div> 
+    <div class="popup_dialog_v2_close popup_dialog_clear"></div> 
+   </div> 
+   <div class="popup_dialog_v2_body" style="left:0;right:0"> 
+		<div  id="popup_authorize_scroll_container" style="height:100%;width:100%;position:relative;overflow-y:auto">
+			<div style="width:642px;margin-left:auto;margin-right:auto;height:auto">
+				<div class="dashed_line_container">
+					<div class="dashed_line" style="float:left"></div>
+					<div class="dashed_line_container_text" style="float:left">{{USER_ADMIN_AUTHORIZE_MENU_RIGHT}}</div>
+					<div class="dashed_line" style="float:right"></div>
+				</div>
+				<div id="popup_authorize_menu_right_container" style="margin-top:-5px;height:auto;min-height:102px;width:100%;overflow:hidden">
+				</div>
+				<div class="dashed_line_container" style="margin-top:-21px">
+					<div class="dashed_line" style="float:left"></div>
+					<div class="dashed_line_container_text" style="float:left">{{USER_ADMIN_AUTHORIZE_EQUIP_RIGHT}}</div>
+					<div class="dashed_line" style="float:right"></div>
+				</div>
+				<div id="popup_authorize_equip_menu_container" style="margin-top:-17px;height:32px;width:100%">
+					<div id="popup_authorize_equip_menu_top" class="popup_dialog_v2_selector" style="margin-left:0"> 
+						<div id="popup_authorize_equip_menu_top_text" class="popup_dialog_v2_input_box_select" style="color:#777777;max-width:calc(100% - 51px);overflow:hidden;white-space:nowrap;text-overflow:ellipsis"></div> 
+						<div class="popup_dialog_v2_select_icon"></div> 
+					</div>
+					<div id="popup_authorize_manufacture_menu_top" class="popup_dialog_v2_selector" style="margin-left:0;width:426px;float:right"> 
+						<div id="popup_authorize_manufacture_menu_top_text" class="popup_dialog_v2_input_box_select" style="color:#777777;max-width:calc(100% - 51px);overflow:hidden;white-space:nowrap;text-overflow:ellipsis"></div> 
+						<div class="popup_dialog_v2_select_icon"></div> 
+					</div> 					
+				</div> 
+				<div id="popup_authorize_equip_right_container" style="margin-top:15px;height:auto;width:100%;overflow:hidden">
+				</div>
+			</div>
+		</div>
+   </div> 
+   <div class="popup_dialog_v2_foot"> 
+	  <div id="popup_authorize_user_all_right_button" class="checkbox_text_container" style="margin-left:18px;margin-top:20px">
+			<div class="checkbox_text_checkbox">
+				<div class="checkbox_text_checkbox_son_dark">
+				</div>
+			</div>
+			<div class="checkbox_text_text">{{USER_ADMIN_AUTHORIZE_ALL_RIGHT}}</div>
+		</div>
+    <div id="popup_authorize_user_operation_button" class="popup_dialog_v2_foot_button_light" style="margin-right:24px;background-image:url('uiWidget/images/button_icon_authorize.png');">
+     <div id="popup_authorize_user_operation_button_text" class="popup_dialog_v2_foot_content">
+      {{USER_ADMIN_AUTHORIZE_BUTTON}}
+     </div>
+    </div>
+		<div id="popup_authorize_user_cancel_button" class="popup_dialog_v2_foot_button_dark" style="margin-right:18px;background-image:url('uiWidget/images/button_icon_cancel.png');">
+     <div class="popup_dialog_v2_foot_content">
+      {{USER_ADMIN_CANCEL}}
+     </div>
+    </div> 		
+   </div> 
+  </div> 
+ </body>
+</html>

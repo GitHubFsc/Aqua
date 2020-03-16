@@ -1,0 +1,61 @@
+html, body {height: 720px;width: 1280px;margin: 0;padding: 0;}
+#bg {position: absolute;left: 0;top: 0;width: 1280px;height: 720px;}
+.tabs {position: absolute;left: 60px;top: 38px;font-size: 0;width: 1160px;}
+.tabs > div {height: 50px;line-height: 42px;width: 576px;font-size: 25px;color: #FFFFFF;text-align: center;display: inline-block;background-image: url(../img/mine/标签未选中.png);background-position: center;background-repeat: no-repeat;}
+.tabs > div.active {background-image: url(../img/mine/标签选中.png);}
+.tabs > div:last-child {position: absolute;right: 0;}
+
+.contents {position: absolute;left: 60px;top: 88px;width: 1160px;height: 572px;background-image: url(../img/search/搜索背景挡板.png);background-size: 1160px 572px;}
+.contents > div {display: none;}
+.contents > div.show {display: block;}
+span.buy {position: absolute;top: 257px;left: 0px;width: 100%;text-align: center;font-size: 30px;color: #ffffff;}
+#disorder {position: absolute;left: 509px;top: 342px;}
+.favor_hint {font-size: 26px;color: #FFF;margin: 4px 0 0 33px;position: absolute;}
+.favor_content {position: absolute;width: 1111px;height: 519px;left: 25px;top: 40px;}
+.favor_content > img {font-size: 0px;width: 173px;height: 245px;display: none;}
+#poster_1{position: absolute;left:4px;top:5px;}
+#poster_2{position: absolute;left:190px;top:5px;}
+#poster_3{position: absolute;left:375px;top:5px;}
+#poster_4{position: absolute;left:561px;top:5px;}
+#poster_5{position: absolute;left:747px;top:5px;}
+#poster_6{position: absolute;left:933px;top:5px;}
+#poster_7{position: absolute;left:4px;top:264px;}
+#poster_8{position: absolute;left:190px;top:264px;}
+#poster_9{position: absolute;left:375px;top:264px;}
+#poster_10{position: absolute;left:561px;top:264px;}
+#poster_11{position: absolute;left:747px;top:264px;}
+#poster_12{position: absolute;left:932.671875px;top:264px;}
+.favor_content > img.show {display: block;}
+#favor_focus {position: absolute;display: none;width: 182px;height: 255px;background-image: url(../img/mine/焦点.png);}
+
+.foots {position: absolute;top: 678px;left: 0;width: 100%;height: 19px;}
+.foots > div {display: none;}
+.foots > div.show {display: block;}
+.controls {text-align: center;font-size: 0px;color: #fff;}
+.controls > * {display: inline-block;vertical-align: middle;font-size: 20px;line-height: 20px;}
+.controls #cur_page {width: 48px;text-align: right;}
+.controls #total_page {width: 48px;text-align: left;}
+#btn_focus{background-image: url(../img/column/搜索节目焦点.png);position: absolute;width: 48px;height: 48px;display: none;}
+
+
+.alert {position: absolute;color: #FFF;background-image: url(../img/detail/选集方块.png);display: none;background-position: center;}
+.alert.show {display: block !important;}
+.alert > div {text-align: center;}
+.alert .title {font-size: 31px;}
+.alert .content {font-size: 24px;}
+.alert .confirm {height: 47px;background-image: url(../img/detail/确定.png);background-repeat: no-repeat;background-position: center;}
+
+.alert[name=order] {top: 269px;left: 360px;width: 580px;height: 240px;display: none;background-size: 578px 240px;background-color: #090909;border: 1px solid #FFF;}
+.alert[name=order] .title {margin-top: 22px;font-size: 30px;}
+.alert[name=order] .content {margin-top: 19px;font-size: 23px;}
+.alert[name=order] .content2 {margin-top: 7px;}
+.alert[name=order] .confirm {margin-top: 19px;height: 58px;}
+
+.alert[name=delete] {position: absolute;left: 390px;top: 239px;width: 582px;height: 220px;background-size: 580px 220px;}
+.alert[name=delete] > div {display: inline-block;width: 157px;height: 58px;background-repeat: no-repeat;background-position: center;position: absolute;top: 77px;}
+.alert[name=delete] > div:nth-child(1) {background-image: url(../img/mine/进入播放没有选中.png);left: 33px;}
+.alert[name=delete] > div:nth-child(1).focus {background-image: url(../img/mine/进入播放.png);}
+.alert[name=delete] > div:nth-child(2) {background-image: url(../img/mine/删除记录没有选中.png);left: 212px;}
+.alert[name=delete] > div:nth-child(2).focus {background-image: url(../img/mine/删除记录.png);}
+.alert[name=delete] > div:nth-child(3) {background-image: url(../img/mine/取消没有选中.png);left: 391px;}
+.alert[name=delete] > div:nth-child(3).focus {background-image: url(../img/mine/取消.png);}

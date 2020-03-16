@@ -1,0 +1,18 @@
+#navigation_create_folder input {height: 30px;outline: none;}
+#navigation_create_folder .basic_info ._dialog_row {min-height: 33px; height: auto;}
+#navigation_create_folder .basic_info ._dialog_row:nth-child(odd) {align-items: flex-end;}
+#navigation_create_folder .group {height: auto;border-width: 16px 0 0;border-style: solid;border-color: transparent;margin: 26px 35px 0;padding: 10px 0 0;}
+#navigation_create_folder .group.basic_info {border-image: url(../../images/navigation/basic.png) 16 0 repeat;}
+#navigation_create_folder .group.public_info {border-image: url(../../images/navigation/public.png) 16 0 repeat;}
+#navigation_create_folder .group.metadata_info {border-image: url(../../images/navigation/metadata.png) 16 0 repeat;}
+#navigation_create_folder ._dialog_body {overflow: auto;flex: 1;margin-bottom: 10px;}
+
+#navigation_create_folder ._dialog_body .group .row {display: flex;height: 40px;align-items: center;}
+#navigation_create_folder ._dialog_body .group .row label {border: 1px solid #e2e2e2;height: 30px;width: 30px;line-height: 30px;text-align: center;}
+#navigation_create_folder ._dialog_body .group .row input.metadata_key {width: 170px;margin-right: 13px;}
+#navigation_create_folder ._dialog_body .group .row input.metadata_val {width: 320px;margin-right: 13px;}
+#navigation_create_folder ._dialog_body .group .row svg.opr {width: 17px;height: 17px;margin-right: 10px;cursor: pointer;}
+#navigation_create_folder ._dialog_body .group .row svg[name=add] polygon {fill: #19fe00;}
+#navigation_create_folder ._dialog_body .group .row svg[name=del] polygon {fill: #ff0000;}
+
+#navigation_create_is_manul {width: 245px;}

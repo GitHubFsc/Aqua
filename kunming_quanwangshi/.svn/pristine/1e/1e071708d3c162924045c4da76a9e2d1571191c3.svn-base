@@ -1,0 +1,213 @@
+function getSmartCardId(){
+	if(window.useDebugCard){
+		return window.debugCardNumber;
+	}
+	if(typeof GHWEBAPI != 'undefined'){
+		var ret = GHWEBAPI.GetParam('CardID');
+		if(ret.ResultCode == 0){
+			return ret.ParamValue;
+		} else {
+			log(ret.Description);
+		}
+	} else if(typeof CA != 'undefined'){
+		return CA.card.serialNumber;
+	}
+	return '';
+}
+
+function isNotEmpty(val){
+	return val != null && val != '';
+}
+
+function setupPaaS(callback){
+	my.paas.host = paasHost;
+	my.paas.appKey = paasAppKey;
+	my.paas.appSecret = paasAppSecret;
+	my.paas.tokenRefreshInterval = paasTokenRefreshInterval;
+	var storage = MyStorage.getStorage();
+	storage.setNamespace('xor.kgqws');
+	my.paas.storage = storage;
+	var access_token = storage.getValue('access_token');
+	var refresh_token = storage.getValue('refresh_token');
+	var user_id = storage.getValue('user_id');
+	var user_name = getSmartCardId();
+	my.paas.user_name = user_name;
+	if(isNotEmpty(user_id) && isNotEmpty(access_token) && isNotEmpty(refresh_token)){
+		my.paas.user_id = user_id;
+		my.paas.access_token = access_token;
+		my.paas.refresh_token = refresh_token;
+		my.paas.checkToken(callback);
+	} else {
+		my.paas.directLogin(user_name, callback, true);
+	}
+}
+
+function parseAssetPoster(asset, index){
+	var poster = '';
+	var posters = asset && (typeof asset.posterboard == 'string') && asset.posterboard.split(',') || [];
+	index = index != null ? index : posters.length-1;
+	poster = posters[index];
+	if(poster == null){
+		poster = '';
+	}
+	return poster;
+}
+
+function parseBundlePoster(bundle, index){
+	var poster = '';
+	var posters = bundle && (typeof bundle.packageposterboard == 'string') && bundle.packageposterboard.split(',') || [];
+	index = index != null ? index : posters.length-1;
+	poster = posters[index];
+	if(poster == null){
+		poster = '';
+	}
+	return poster;
+}
+
+function getVodData(ids, callback, async){
+	var url = my.paas.host + '/aquapaas/rest/search/content_by_id/vod?ids=' + ids.join(',');
+	try{
+		my.paas.request({
+			type: 'GET',
+			url: url,
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			async: !!async,
+			done: function(vods){
+				vods = JSON.parse(vods);
+				if(typeof callback == 'function'){
+					callback(vods);
+				}
+			},
+			fail: function(){
+				if(typeof callback == 'function'){
+					callback(null);
+				}
+			}
+		}, ['app']);
+	}catch(e){
+		log(e.message);
+	}
+}
+/**
+ * 播放视频
+ * @param		{object}		opts								参数对象
+ * @param  	{string} 		opts.videoid       	影片id，asset.videoid字段
+ * @param  	{string} 		opts.name          	影片名称
+ * @param  	{boolean} 	opts.freeVideoFlag 	是否试看影片 true表示试看，false表示正片
+ */
+function playVideo(opts) {
+	try {
+		var playParam = LinuxPlayParam,
+				videoid = opts.videoid || '',
+				name = encodeURIComponent(opts.name||''),
+				freeVideoFlag = opts.freeVideoFlag || false,
+				checkBought = typeof opts.check == 'undefined' ? true: opts.check
+		//跳转播放器
+		function goPlayer(playParam) {
+			try {
+				console.log(JSON.stringify(playParam))
+				iPanel.eventFrame.playParam = playParam;
+				iPanel.eventFrame.gotoPage(LinuxPlayerUrl)
+			} catch (e) {
+				console.log('error:' + e.message)
+			} finally {
+
+			}
+		}
+		playParam.vodObj.videoId = videoid
+		playParam.vodObj.videoName = name
+		if (checkBought) {
+			isBought(function(resp) {
+				if (resp.is_purchased !== 1) {
+          playParam.freeVideoFlag = true
+        }
+				goPlayer(playParam)
+			});
+		} else {
+		playParam.freeVideoFlag = freeVideoFlag
+			goPlayer(playParam)
+		}
+	} catch (e) {
+		console.log('error:' + e.message)
+	} finally {
+
+	}
+}
+/**
+ * 用户是否购买了产品包
+ * @param  {Function} callback 回调函数
+ */
+function isBought(callback) {
+	var url = SPHost + ':' + SPPort + '/freemanager/spordermanager/check_product_purchased',
+			data = {
+				accesstoken: '',
+				cardid: getSmartCardId(),
+				productid: ProductId,
+				language: ''
+			};
+	try{
+		makeRequest({
+			type: 'POST',
+			url: url,
+			async: true,
+			data: data,
+			done: function(resp) {
+				if (resp.is_purchased == 1) {
+					callback && callback(true);
+				} else {
+					console.log('ret_msg is:' + resp.ret_msg);
+					callback && callback(false)
+				}
+
+			},
+			fail: function(xhr) {
+				console.log('Get purchased fail;');
+				callback && callback({});
+			}
+		});
+	}catch(e){
+		log(e.message);
+	}
+}
+/**
+ * 是否启用机顶盒debug模式
+ * @param  {boolean} enable true:启用 false:禁用
+ * @return {void}           无返回值
+ */
+function debug(enable) {
+	var logPane = document.querySelector('#log');
+	if (!logPane) {
+		var logPane = document.createElement('div');
+		logPane.id = 'log'
+		logPane.style.position = 'absolute';
+		logPane.style.height = '100%';
+		logPane.style.width = '100%';
+		logPane.style.backgroundColor = 'RGBA(1, 1, 1)';
+		logPane.style.opacity = '0.5'
+		logPane.style.color = '#fff';
+		logPane.style.zIndex = '999';
+		logPane.style.top = '0px';
+		logPane.style.display = 'none';
+		document.body.appendChild(logPane)
+	} else {
+		logPane.style.display = 'none';
+	}
+	if (enable) {
+		logPane.style.display = 'block';
+		if (!console) {
+			console = {};
+		}
+		console.log = function(str) {
+			var len = document.querySelectorAll('#log br').length
+			if (len > 15) {
+				logPane.innerHTML = '';
+				logPane.innerHTML += str + '<br>';
+			} else {
+				logPane.innerHTML += str + '<br>';
+			}
+		}
+	}
+}

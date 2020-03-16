@@ -1,0 +1,135 @@
+.td-date-title {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	height: 9%;
+	height: -webkit-calc(40px);
+	font-size: 11pt;
+}
+
+.non-curr-month {
+	color: rgb(210,210,210);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 26pt;
+}
+
+.curr-month {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 26pt;
+    background: white;
+}
+
+.curr-month:hover {
+	cursor: pointer;
+}
+
+.ctrl:hover {
+	cursor: pointer;
+}
+
+#ctrl-title {
+	width: 480px;
+	height: 30px;
+	background-color: rgb(118, 124, 159);
+	color: white;
+	font-weight: bold;
+}
+
+#ctrl-title td {
+	width: 16%;
+	text-align: center;
+}
+
+#grid {
+	border: rgb(203, 203, 203) solid;
+	border-width: 1px 0px 0px 1px;
+    height: 370px;
+    width: 480px;
+}
+
+#date-title {
+	
+}
+
+#dates {
+	font-family: "Arial";
+}
+
+.courseReleaseCustomize .td-date-title {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	height: 9%;
+	font-size: 11pt;
+}
+
+.courseReleaseCustomize .non-curr-month {
+	color: rgb(210,210,210);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.courseReleaseCustomize .curr-month {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 12px;
+    background: white;
+}
+
+
+.courseReleaseCustomize .curr-month:hover {
+	cursor: pointer;
+	background-color:#FFDDAA;
+	color: #ffffff;
+}
+
+.courseReleaseCustomize .ctrl:hover {
+	cursor: pointer;
+}
+
+.courseReleaseCustomize #ctrl-title{
+	width: 300px;
+	height: 30px;
+	background-color: rgb(118, 124, 159);
+	font-weight: bold;
+}
+
+.courseReleaseCustomize #ctrl-title td {
+	width: 16% !important;
+	text-align: center !important;
+	border-style:none !important;
+	height:28px !important;
+	border-style:none !important;
+	color: white !important;
+}
+
+.courseReleaseCustomize #grid {
+	border: rgb(203, 203, 203) solid;
+	border-width: 1px 0px 0px 1px;
+    width: 300px;
+	height:auto!important;
+}
+
+.courseReleaseCustomize #date-title {
+	
+}
+
+.courseReleaseCustomize #dates {
+	font-family: "Arial";
+}
+
+.courseReleaseCustomize #dates td{
+height:24px;!important}
+
+

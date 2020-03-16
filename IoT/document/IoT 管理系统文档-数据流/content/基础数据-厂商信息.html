@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../js/prettify/prettify.css">
+  <script src="../js/prettify/run_prettify.js"></script>
+  <title>厂商信息</title>
+</head>
+<body>
+  <h1>厂商信息</h1>
+  <hr>
+  <ol>
+    <li>
+      <a href='#n1'>获取厂商信息列表</a>
+    </li>
+    <li>
+      <a href='#n2'>获取设备类型</a>
+    </li>
+    <li>
+      <a href='#n3'>添加厂商信息</a>
+    </li>
+    <li>
+      <a href='#n4'>编辑厂商信息</a>
+    </li>
+    <li>
+      <a href='#n5'>删除厂商信息</a>
+    </li>
+  </ol>
+  <hr>
+  <fieldset id="n1">
+    <legend>获取厂商信息列表数据</legend>
+    <h3>7.5 章节 LIST_Thing_Enum_Def_Items接口</h3>
+    <pre class="prettyprint">
+      Post       http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/{namespace}/enum_manufacture
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {
+        "enum_device":["DTU"]   //可选，设备类型选择
+        "displayName": '??'            //可选，根据厂商名称搜索，由于后台接口不支持暂未实现
+      }
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+      POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture HTTP/1.1
+      Host: 172.16.20.201:8090
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+      Accept: application/json
+      Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+      Accept-Encoding: gzip, deflate
+      Referer: http://192.168.7.143:8080/iot_fyb/index.html
+      Content-Type: application/json
+      Content-Length: 2
+      Origin: http://192.168.7.143:8080
+      Connection: keep-alive
+
+      HTTP/1.1 200 OK
+      Server: nginx
+      Date: Thu, 07 Mar 2019 08:09:25 GMT
+      Content-Type: application/json
+      Transfer-Encoding: chunked
+      Access-Control-Allow-Origin: *
+      Access-Control-Allow-Credentials: true
+      Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+        [{
+          "value": "1",
+          "displayName": "北京华业新能源有限公司",
+          "metadata": {
+            "contact": "李某某",
+            "telephone": "13325685588"
+          },
+          "filterValues": {
+            "enum_device": ["ReBeng"]
+          },
+          "id": "c6b7a4a752c94a1f90ec638687dc0f3e"
+        }, {
+          "value": "2",
+          "displayName": "深圳派沃新能源科技股份有限公司",
+          "metadata": {
+            "contact": "王某某",
+            "telephone": "13388855669"
+          },
+          "filterValues": {
+            "enum_device": ["ReBeng"]
+          },
+          "id": "88b070a6d3824a28bafcf8a57e63074d"
+        }, {
+          "value": "3",
+          "displayName": "浙江中广电器股份有限公司",
+          "metadata": {
+            "contact": "张某某",
+            "telephone": "13355588776"
+          },
+          "filterValues": {
+            "enum_device": ["ReBeng"]
+          },
+          "id": "3568029a80b04cc1b904102432c83b56"
+        }, {
+          "value": "5",
+          "displayName": "上海第二建筑有限公司",
+          "metadata": {
+            "contact": "jonny",
+            "telephone": "11111111"
+          },
+          "filterValues": {
+            "enum_device": ["DTU"]
+          },
+          "id": "93e906530a79441fb272bc936bc9fe7a"
+        }, {
+          "value": "4",
+          "displayName": "上海第一建筑有限公司",
+          "metadata": {
+            "contact": "fuvking",
+            "telephone": "1231231231"
+          },
+          "filterValues": {
+            "enum_device": ["DTU"]
+          },
+          "id": "096b0b2bf1544923bd8eb483d5ffefa1"
+        }]
+    </pre>
+    <h3>列表中字段与返回数据对应说明</h3>
+    <pre class="prettyprint">
+      厂商编号        value
+      厂商名称        displayName
+      联系人           metadata.contact
+      联系电话        metadata.telephone
+      设备类型        filterValues.enum_device
+    </pre>
+  </fieldset>
+  <fieldset id="n2">
+    <legend>获取设备类型</legend>
+    <h3>7.5 章节 LIST_Thing_Enum_Def_Items接口</h3>
+    <pre class="prettyprint">
+      Post       http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/{namespace}/enum_device
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {}
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_device HTTP/1.1
+        Host: 172.16.20.201:8090
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Accept: application/json
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        Content-Type: application/json
+        Content-Length: 2
+        Origin: http://192.168.7.143:8080
+        Connection: keep-alive
+
+        HTTP/1.1 200 OK
+        Server: nginx
+        Date: Thu, 07 Mar 2019 08:21:37 GMT
+        Content-Type: application/json
+        Transfer-Encoding: chunked
+        Access-Control-Allow-Origin: *
+        Access-Control-Allow-Credentials: true
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      [{
+        "value": "DTU",
+        "displayName": "DTU",
+        "metadata": null,
+        "filterValues": null,
+        "id": "d52025c903be4eea8ca87453f08be6ec"
+      }, {
+        "value": "ReBeng",
+        "displayName": "ReBeng",
+        "metadata": null,
+        "filterValues": null,
+        "id": "0a856d9b94aa4c2db75692547cddcccc"
+      }]
+    </pre>
+  </fieldset>
+  <fieldset id="n3">
+    <legend>添加厂商信息</legend>
+    <h3>7.5 章节 LIST_Thing_Enum_Def_Items接口</h3>
+    <pre class="prettyprint">
+      Post     http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/{namespace}/enum_manufacture
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {
+        "value": "6",
+        "displayName": "test",
+        "metadata": {
+          "contact": "6",
+          "telephone": "6"
+        },
+        "filterValues": {
+          "enum_device": ["DTU"]
+        }
+      }
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      {
+        value,                       //String类型，UI上的厂商编号
+        displayName,            //String类型，UI上的厂商名称
+        metadata: {
+          contact,                 //String类型，UI上的联系人
+          telephone              //String类型，UI上的联系电话
+        },
+        filterValues: {
+          enum_device         //Array类型，UI上的设备类型
+        }
+      }
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        POST /aquapaas/rest/thingenumdef/item/mgd.gehua/enum_manufacture HTTP/1.1
+        Host: 172.16.20.201:8090
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Accept: application/json
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        Content-Type: application/json
+        Content-Length: 116
+        Origin: http://192.168.7.143:8080
+        Connection: keep-alive
+
+        HTTP/1.1 200 OK
+        Server: nginx
+        Date: Thu, 07 Mar 2019 08:29:37 GMT
+        Content-Type: application/json
+        Transfer-Encoding: chunked
+        Access-Control-Allow-Origin: *
+        Access-Control-Allow-Credentials: true
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+        {
+          "id": "5bf755ae954286003922f08c",
+          "enumDefID": "enum_manufacture",
+          "namespace": "mgd.gehua",
+          "items": [{
+            "value": "1",
+            "displayName": "北京华业新能源有限公司",
+            "metadata": {
+              "contact": "李某某",
+              "telephone": "13325685588"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "c6b7a4a752c94a1f90ec638687dc0f3e"
+          }, {
+            "value": "2",
+            "displayName": "深圳派沃新能源科技股份有限公司",
+            "metadata": {
+              "contact": "王某某",
+              "telephone": "13388855669"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "88b070a6d3824a28bafcf8a57e63074d"
+          }, {
+            "value": "3",
+            "displayName": "浙江中广电器股份有限公司",
+            "metadata": {
+              "contact": "张某某",
+              "telephone": "13355588776"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "3568029a80b04cc1b904102432c83b56"
+          }, {
+            "value": "5",
+            "displayName": "上海第二建筑有限公司",
+            "metadata": {
+              "contact": "jonny",
+              "telephone": "11111111"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "93e906530a79441fb272bc936bc9fe7a"
+          }, {
+            "value": "4",
+            "displayName": "上海第一建筑有限公司",
+            "metadata": {
+              "contact": "fuvking",
+              "telephone": "1231231231"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "096b0b2bf1544923bd8eb483d5ffefa1"
+          }, {
+            "value": "6",
+            "displayName": "test",
+            "metadata": {
+              "contact": "6",
+              "telephone": "6"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "7003a0290fd641e09d8efd0987aa6686"
+          }]
+        }
+    </pre>
+  </fieldset>
+  <fieldset id="n4">
+    <legend>编辑厂商信息</legend>
+    <h3>7.10 章节 Modify_Thing_Enum_Def_Item接口</h3>
+    <pre class="prettyprint">
+      Post     http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/update/{namespace}/enum_manufacture
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {
+        "value": "7",
+        "displayName": "test",
+        "metadata": {
+          "contact": "6",
+          "telephone": "6"
+        },
+        "filterValues": {
+          "enum_device": ["DTU"]
+        },
+        "id": "7003a0290fd641e09d8efd0987aa6686"
+      }
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      {
+        id,                             //String类型，主键，不可缺少
+        value,                       //String类型，UI上的厂商编号
+        displayName,            //String类型，UI上的厂商名称
+        metadata: {
+          contact,                 //String类型，UI上的联系人
+          telephone              //String类型，UI上的联系电话
+        },
+        filterValues: {
+          enum_device         //Array类型，UI上的设备类型
+        }
+      }
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        POST /aquapaas/rest/thingenumdef/item/update/mgd.gehua/enum_manufacture HTTP/1.1
+        Host: 172.16.20.201:8090
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Accept: application/json
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        Content-Type: application/json
+        Content-Length: 156
+        Origin: http://192.168.7.143:8080
+        Connection: keep-alive
+
+        HTTP/1.1 200 OK
+        Server: nginx
+        Date: Thu, 07 Mar 2019 08:39:46 GMT
+        Content-Type: application/json
+        Transfer-Encoding: chunked
+        Access-Control-Allow-Origin: *
+        Access-Control-Allow-Credentials: true
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+        {
+          "id": "5bf755ae954286003922f08c",
+          "enumDefID": "enum_manufacture",
+          "namespace": "mgd.gehua",
+          "items": [{
+            "value": "1",
+            "displayName": "北京华业新能源有限公司",
+            "metadata": {
+              "contact": "李某某",
+              "telephone": "13325685588"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "c6b7a4a752c94a1f90ec638687dc0f3e"
+          }, {
+            "value": "2",
+            "displayName": "深圳派沃新能源科技股份有限公司",
+            "metadata": {
+              "contact": "王某某",
+              "telephone": "13388855669"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "88b070a6d3824a28bafcf8a57e63074d"
+          }, {
+            "value": "3",
+            "displayName": "浙江中广电器股份有限公司",
+            "metadata": {
+              "contact": "张某某",
+              "telephone": "13355588776"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "3568029a80b04cc1b904102432c83b56"
+          }, {
+            "value": "5",
+            "displayName": "上海第二建筑有限公司",
+            "metadata": {
+              "contact": "jonny",
+              "telephone": "11111111"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "93e906530a79441fb272bc936bc9fe7a"
+          }, {
+            "value": "4",
+            "displayName": "上海第一建筑有限公司",
+            "metadata": {
+              "contact": "fuvking",
+              "telephone": "1231231231"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "096b0b2bf1544923bd8eb483d5ffefa1"
+          }, {
+            "value": "6",
+            "displayName": "test",
+            "metadata": {
+              "contact": "6",
+              "telephone": "6"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "7003a0290fd641e09d8efd0987aa6686"
+          }]
+        }
+    </pre>
+  </fieldset>
+  <fieldset id="n5">
+    <legend>删除厂商信息</legend>
+    <h3>7.7 章节 Modify_Thing_Enum_Def_Item接口</h3>
+    <pre class="prettyprint">
+      Delete     http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/{namespace}/enum_manufacture/{def_item_id}
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+      def_item_id = 7003a0290fd641e09d8efd0987aa6686 (当前厂商信息的id)
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        DELETE /aquapaas/rest/thingenumdef/item/mgd.gehua/enum_manufacture/7003a0290fd641e09d8efd0987aa6686 HTTP/1.1
+        Host: 172.16.20.201:8090
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Accept: application/json
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        Content-Type: application/json
+        Origin: http://192.168.7.143:8080
+        Connection: keep-alive
+
+        HTTP/1.1 200 OK
+        Server: nginx
+        Date: Thu, 07 Mar 2019 08:57:35 GMT
+        Content-Type: application/json
+        Transfer-Encoding: chunked
+        Access-Control-Allow-Origin: *
+        Access-Control-Allow-Credentials: true
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+        {
+          "id": "5bf755ae954286003922f08c",
+          "enumDefID": "enum_manufacture",
+          "namespace": "mgd.gehua",
+          "items": [{
+            "value": "1",
+            "displayName": "北京华业新能源有限公司",
+            "metadata": {
+              "contact": "李某某",
+              "telephone": "13325685588"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "c6b7a4a752c94a1f90ec638687dc0f3e"
+          }, {
+            "value": "2",
+            "displayName": "深圳派沃新能源科技股份有限公司",
+            "metadata": {
+              "contact": "王某某",
+              "telephone": "13388855669"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "88b070a6d3824a28bafcf8a57e63074d"
+          }, {
+            "value": "3",
+            "displayName": "浙江中广电器股份有限公司",
+            "metadata": {
+              "contact": "张某某",
+              "telephone": "13355588776"
+            },
+            "filterValues": {
+              "enum_device": ["ReBeng"]
+            },
+            "id": "3568029a80b04cc1b904102432c83b56"
+          }, {
+            "value": "5",
+            "displayName": "上海第二建筑有限公司",
+            "metadata": {
+              "contact": "jonny",
+              "telephone": "11111111"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "93e906530a79441fb272bc936bc9fe7a"
+          }, {
+            "value": "4",
+            "displayName": "上海第一建筑有限公司",
+            "metadata": {
+              "contact": "fuvking",
+              "telephone": "1231231231"
+            },
+            "filterValues": {
+              "enum_device": ["DTU"]
+            },
+            "id": "096b0b2bf1544923bd8eb483d5ffefa1"
+          }]
+        }
+    </pre>
+  </fieldset>
+  <div onclick='javascript:document.documentElement.scrollTop=0;' style='position: fixed; right: 5px;bottom: 10px;background-color: grey;color: #fff;cursor: pointer;padding: 5px;'>Top</div>
+</body>
+
+</html>

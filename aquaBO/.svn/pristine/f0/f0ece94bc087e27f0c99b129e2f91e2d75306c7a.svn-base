@@ -1,0 +1,15 @@
+<div class="_frameStyle _flex asset_meta">
+	<link rel="stylesheet" href="content/asset/assetTagLib/assetTagLib.css">
+  <div class="header _flex">
+    <div class="header_item logo">{{ASSET_SET_TAG_BY_TAG_TITLE}}</div>
+		<div class="header_item search_bar">
+			<input id="setAssetTagByTag_input" class="search_input" type="text">
+			<div id="setAssetTagByTag_searchButton" class="search_btn"></div>
+		</div>
+		<div class="header_item span"></div>
+		<div id="setAssetTagByTag_batchSetTag" class="header_item btn" data-type="create" style="background-image: url(images/batchsettag.png);background-position:8px 9px;width:138px;padding-left:34px;">{{ASSET_TAG_LIB_PILIANGSHEZHI}}</div>
+  </div>
+  <div class="body">
+    <div id="table_setAssetTagByTag" class="table_assetTagLib"></div>
+  </div>
+</div>

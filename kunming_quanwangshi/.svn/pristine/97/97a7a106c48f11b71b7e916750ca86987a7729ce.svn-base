@@ -1,0 +1,167 @@
+{
+	"background-image": "",
+	"blocks": [
+		{
+			"index": 0,
+			"dataIndex": 0,
+			"box": {
+				"position": {
+					"left": "95px",
+					"top": "130px",
+					"width": "430px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": -1,
+				"down": 3,
+				"left": null,
+				"right": 1
+			}
+		},
+		{
+			"index": 1,
+			"dataIndex": 1,
+			"box": {
+				"position": {
+					"left": "535px",
+					"top": "130px",
+					"width": "430px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": -1,
+				"down": 4,
+				"left": 0,
+				"right": 2
+			}
+		},
+		{
+			"index": 2,
+			"dataIndex": 2,
+			"box": {
+				"position": {
+					"left": "975px",
+					"top": "130px",
+					"width": "210px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": -1,
+				"down": 5,
+				"left": 1,
+				"right": null
+			}
+		},
+		{
+			"index": 3,
+			"dataIndex": 3,
+			"box": {
+				"position": {
+					"left": "95px",
+					"top": "320px",
+					"width": "430px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 0,
+				"down": 6,
+				"left": null,
+				"right": 4
+			}
+		},
+		{
+			"index": 4,
+			"dataIndex": 4,
+			"box": {
+				"position": {
+					"left": "535px",
+					"top": "320px",
+					"width": "430px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 1,
+				"down": 7,
+				"left": 3,
+				"right": 5
+			}
+		},
+		{
+			"index": 5,
+			"dataIndex": 5,
+			"box": {
+				"position": {
+					"left": "975px",
+					"top": "320px",
+					"width": "210px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 2,
+				"down": 8,
+				"left": 4,
+				"right": null
+			}
+		},
+		{
+			"index": 6,
+			"dataIndex": 6,
+			"box": {
+				"position": {
+					"left": "95px",
+					"top": "510px",
+					"width": "430px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 3,
+				"down": null,
+				"left": null,
+				"right": 7
+			}
+		},
+		{
+			"index": 7,
+			"dataIndex": 7,
+			"box": {
+				"position": {
+					"left": "535px",
+					"top": "510px",
+					"width": "430px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 4,
+				"down": null,
+				"left": 6,
+				"right": 8
+			}
+		},
+		{
+			"index": 8,
+			"dataIndex": 8,
+			"box": {
+				"position": {
+					"left": "975px",
+					"top": "510px",
+					"width": "210px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 5,
+				"down": null,
+				"left": 7,
+				"right": null
+			}
+		}
+	]
+}

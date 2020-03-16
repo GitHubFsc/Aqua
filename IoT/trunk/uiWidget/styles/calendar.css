@@ -1,0 +1,105 @@
+.calendar-month-label_container{
+	height:32px
+}
+.calendar-month-label{
+	font-size:16px;
+	height:78px;
+	float:left;
+	margin-left:29px;
+	width:auto;
+	color:#363636;
+	line-height:78px;
+	cursor:default
+}
+.back_forw_month_container{
+	width:78px;
+	height:31px;
+	float:right;
+	margin-right:29px;
+	margin-top:23px
+}
+.back_forw_month_button{
+	width:35px;
+	height:31px;
+	background-position: center;
+	background-repeat: no-repeat;
+	cursor:pointer
+}
+.back_forw_month_button_dark{
+	background-image:url("../images/arrow_dark.png");
+	background-color:#ebebeb
+}
+.back_forw_month_button_light{
+	background-image:url("../images/arrow_light.png");
+	background-color:#1ec3ec
+}
+.forw_month_button{
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg)	/* Opera */
+}
+.calendar-month-label_container{
+	background-color: #ffffff;
+	color: white;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+	table-layout: fixed;
+	text-align: center;
+	border:1px #d9d9d9 solid;
+	border-bottom:0
+}
+.calendar-dates-view{
+	 background-color: rgb(226, 226, 226);
+   position: absolute;
+   right: 0;
+	 font-size:13px;
+	 color:#323232;
+	 border:1px solid #d9d9d9;
+	 border-top:0
+}
+.calendar-curr-month-date{
+	position:relative;
+	cursor:pointer
+}
+.calendar-curr-month-date_button{
+	height:30px;
+	line-height:30px;
+	width:30px;
+	text-align:center;
+	border-radius:30px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-left:-15px;
+	margin-top:-15px
+}
+.calendar-curr-month-date_button:hover
+{ 
+	background-color:#fe931f;
+	color:#ffffff
+}
+.calendar-weekday,.calendar-non-curr-month-date,.calendar-curr-month-date{
+	text-align:center;
+	height:36px;
+	line-height:36px
+}
+.calendar-bottom{
+	height:26px;
+	width:100%
+}
+.datepicker-input{
+	border-style: solid;
+  border-width: 1px;
+  color: inherit;
+	padding-left:10px
+}
+.calendar-non-curr-month-date,.calendar-weekday{
+	cursor: default
+}
+	
+
+
+

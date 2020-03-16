@@ -1,0 +1,243 @@
+<style>
+  .package_search {
+    margin-top: 16px;
+    margin-left: 26px;
+    width: 760px;
+    background-color: #1EB3DB;
+    height: 36px;
+  }
+
+  .package_search_title {
+    float: left;
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    color: white;
+    text-align: center;
+  }
+
+  .package_search_input {
+    float: left;
+    height: 36px;
+    width: 195px;
+    line-height: 36px;
+    border: 1px #e2e2e2 solid;
+    font-size: 12px;
+    padding-left: 7px;
+    vertical-align: middle;
+    outline: none medium;
+    background: #f4f4f4;
+  }
+
+  .package_search_botton {
+    float: left;
+    height: 30px;
+    width: 50px;
+    border: 1px solid #FFF;
+    background: #32A1D6;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 2px;
+    position: relative;
+    left: 5px;
+  }
+
+  .package_move_container {
+    height: 200px;
+    margin-left: 25px;
+    width: 95%;
+    font-size: 14px;
+    font-family: 宋体;
+  }
+
+  .package_move_container_selectable {
+    float: left;
+    width: 40%;
+    height: 349px;
+  }
+
+  .package_move_container_operation {
+    float: left;
+    width: 20%;
+    height: 349px;
+  }
+
+  .package_move_container_operation div {
+    width: 70%;
+    margin-left: 15%;
+    height: 30px;
+    margin-top: 16px;
+    background: #2fa2d8;
+    color: #fff;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+  }
+
+  .package_selected_cotainer {
+    float: left;
+    width: 40%;
+    height: 349px;
+  }
+
+  .styled-flow-list-container table {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 1px;
+    background-color: rgb(226, 226, 226);
+  }
+
+  .styled-flow-list-container table > tbody > tr > th {
+    background-color: #45D1F4;
+    text-align: center;
+    height: 35px;
+  }
+
+  .styled-flow-list-content-container {
+    height: 300px
+  }
+
+  .styled-flow-list-container table > tbody > tr > th:nth-child(1) {
+    width: 40px;
+  }
+
+  .styled-flow-list-container table > tbody > tr > th:nth-child(2) {
+    width: 40px;
+  }
+
+  .styled-flow-list-container table > tbody > tr > th:nth-child(3) {
+    color: white;
+  }
+
+  .styled-flow-list-container table > tbody > tr > td {
+    height: 36px;
+    color: rgb(121, 121, 121);
+    background-color: white;
+  }
+
+  .styled-flow-list-container table > tbody > tr > td:nth-child(1) {
+    width: 40px;
+    text-align: center;
+  }
+
+  .styled-flow-list-container table > tbody > tr > td:nth-child(2) {
+    width: 40px;
+    text-align: center;
+  }
+
+  .styled-flow-list-container table > tbody > tr > td:nth-child(3) {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .mCS-my-theme.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: grey;
+  }
+
+  .mCS-my-theme.mCSB_scrollTools .mCSB_draggerRail {
+    background-color: white;
+  }
+
+  #exp_date_input_from {
+    color: rgb(121, 121, 121);
+    height: 32px;
+    width: 143px;
+    font-size: 14px;
+    text-indent: 13px;
+    font-family: '����,Arial';
+    border: 1px solid rgb(198, 198, 198);
+  }
+
+  .package_options{
+    width: 760px;margin-left:26px;
+  }
+  .package_options_content{
+    width: 100%;
+  }
+  .package_options_content .exp_date_select{
+    display: inline-block;width: 80px;height: 32px;vertical-align:top;margin-left:5px;margin-right:3px;
+  }
+  .package_options_content .exp_date_select_unit{
+    display: inline-block;font-size: 14px;vertical-align:middle;color: #7e7e7e;height:32px;line-height: 32px;
+  }
+  .package_options_content .styled-selector-dropbox{
+    z-index: 3000;
+  }
+  .user-admin-package-label {
+    display: block;
+    color: #7e7e7e;
+    line-height: 14px;
+    font-size: 14px;
+    height: 14px;
+    font-family: "宋体";
+    margin-bottom: 7px;
+    margin-top: 14px;
+  }
+
+  #package_selectable .mCSB_inside > .mCSB_container {
+    margin-right: 1px;
+  }
+
+  #package_selected .mCSB_inside > .mCSB_container {
+    margin-right: 1px;
+  }
+</style>
+
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label">{{USERPACKAGE_ADD}}</div>
+    <div class="wp_panel_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="wp_panel_dialog_content">
+    <div class="package_options">
+      <div><label for="" class="user-admin-package-label">{{USERPACKAGE_EXP_DATE}}</label></div>
+      <div class="package_options_content">
+        <div style="display: inline-block;height: 32px;vertical-align:top;">
+          <div class="date-container" style="    width: 143px;float: initial;">
+            <input id="exp_date_input_from" type="text" readonly="true">
+            <div class="date-icon-from" style="left: 110px;"></div>
+            <div id="exp_date_selector" class="date-selector"></div>
+          </div>
+        </div>
+        <div class="exp_date_select" id="exp_date_select_hour"></div>
+        <label class="exp_date_select_unit">小时</label>
+        <div class="exp_date_select" id="exp_date_select_minute"></div>
+        <label class="exp_date_select_unit">分</label>
+        <div class="exp_date_select" id="exp_date_select_second"></div>
+        <label class="exp_date_select_unit">秒</label>
+      </div>
+    </div>
+    <div class="package_search" style="marign-top:8px">
+      <div class="package_search_title" style="margin-left: 2px;width:280px">
+        <input id="package_search_input" class="package_search_input"
+               style="height:32px;margin-top:2px;width:214px;background: white" placeholder="" onkeyup=""/>
+        <div id="package_search_botton" class="package_search_botton">{{USERPACKAGE_FIND}}</div>
+        <div style="clear: both"></div>
+      </div>
+    </div>
+    <div class="package_move_container">
+      <div id="package_selectable_cotainer" class="package_move_container_selectable">
+        <div id="package_selectable" class="styled-flow-list-container"></div>
+      </div>
+      <div class="package_move_container_operation" id="package_move_container_operation">
+        <div data-op="add" class="operation" style="margin-top:60px">{{USERPACKAGE_OPERADD}} ></div>
+        <div data-op="addall" class="operation"> {{USERPACKAGE_OPERADDALL}} >></div>
+        <div data-op="delete" class="operation" style="margin-top:60px"> < {{USERPACKAGE_OPERDELETE}}</div>
+        <div data-op="deleteall" class="operation"> << {{USERPACKAGE_OPERDELETEALL}}</div>
+      </div>
+      <div id="package_selected_cotainer" class="package_selected_cotainer">
+        <div id="package_selected" class="styled-flow-list-container"></div>
+      </div>
+      <div style="clear: both"></div>
+    </div>
+    <div class="lecture_recommend_dialog_cancel popup_dialog_clear" style="bottom:15px;right:190px;">
+      {{DIALOG_CANCEL_DL}}
+    </div>
+    <div class="lecture_recommend_dialog_submit" id="package_action_confirm"
+         style="bottom:15px;right:14px;">{{DIALOG_OK_DL}}
+    </div>
+  </div>
+</div>

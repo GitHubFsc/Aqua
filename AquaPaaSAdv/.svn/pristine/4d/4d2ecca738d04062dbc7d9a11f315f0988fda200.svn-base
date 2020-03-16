@@ -1,0 +1,60 @@
+<div class="main_page main_expand">
+	<div class="main_left_block">
+		<div class="main_page_icon">
+			<div class="xor_logo_front main_expandable_front">
+				
+			</div>
+			<div class="xor_logo_back main_expandable_back">
+				
+			</div>
+		</div>
+		<div id="main_menu_toggle_button" class="main_menu_toggle_button">
+
+		</div>
+		<div class="main_page_menu">
+			
+		</div>
+	</div>
+	<div class="main_right_block">
+		<div class="main_page_head_bg">
+			
+		</div>
+		<div class="main_page_head">
+			<div id="main_page_content_title" class="main_page_content_title">
+				
+			</div>
+			<div id="main_page_user_platforms"></div>
+			<div class="main_page_user_container">
+				<div id="main_page_user_icon" class="main_page_user_icon">
+					
+				</div>
+				<div class="main_page_user_info">
+					<div id="main_page_user_info_name" class="main_page_user_info_name">
+						
+					</div>
+					<div id="main_page_user_info_role" class="main_page_user_info_role">
+						
+					</div>
+				</div>
+			</div>
+			<div id="main_page_user_dropdown" class="main_page_user_dropdown">
+				<div class="main_page_user_dropdown_icon">
+					
+				</div>
+				<div class="main_page_user_dropdown_block">
+					<div class="main_page_user_dropdown_block_content">
+						<div id="main_page_user_changePassword" class="main_page_user_dropdown_block_item" >
+							{{MAIN_PAGE_USER_CHANGEPASSWORD}}
+						</div>
+						<div id="main_page_user_logout" class="main_page_user_dropdown_block_item" >
+							{{MAIN_PAGE_USER_LOGOUT}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content_container" class="content_container">
+
+		</div>
+	</div>
+</div>

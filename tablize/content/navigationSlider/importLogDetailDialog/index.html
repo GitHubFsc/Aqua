@@ -1,0 +1,126 @@
+<style>
+  .wp_panel_dialog_content .content{
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 15px;
+  }
+  .oneRow{
+    width: 100%;
+  }
+  .oneRow .label{
+    color: rgb(121, 121, 121);
+    line-height: 32px;
+    height: 32px;
+    margin-right: 20px;
+    width: 100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  .oneRow .input {
+    color: rgb(121, 121, 121);
+    background-color: white;
+    border: 1px solid rgb(198, 198, 198);
+    height: 32px;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 14px;
+    outline: none;
+  }
+  .oneRow .input[readonly] {
+    background: #EBEBEB;
+    border: 1px solid #E3E3E3;
+  }
+  .oneRow .textarea {
+    color: rgb(121, 121, 121);
+    width: 100%;
+    border: 1px solid rgb(198, 198, 198);
+    height: 86px;
+    font-size: 14px;
+    outline: none;
+    padding: 0 10px;
+    background-color: white;
+    resize:none;
+    line-height: 28px;
+
+  }
+  .oneRow .textarea[readonly] {
+    background: #EBEBEB;
+    border: 1px solid #E3E3E3;
+  }
+  .oneRow .halfRow{
+    display: inline-block;
+    font-size: 0px;
+    line-height: 0px;
+    width: calc(50% - 75px);
+    vertical-align: top;
+    counter-reset: index;
+  }
+  .oneRow .halfRow:nth-child(2){
+    padding-left: 150px;
+  }
+</style>
+<div class="wp_panel_dialog" >
+  <div class="wp_panel_dialog_title" style = "background-color: rgb(46,161,215)">
+    <div class="wp_panel_dialog_title_label" id="navigationSlider_taskDialog_title">
+    </div>
+    <div class="wp_panel_dialog_close popup_dialog_clear">
+    </div>
+  </div>
+  <div class="wp_panel_dialog_content" style="font-size: 0px;line-height: 0px;">
+    <div class="content" style="">
+      <div class="oneRow">
+        <div class="halfRow">
+          <div class="label">导入记录ID</div>
+          <input id="navigationSlider_importLogDetail_id" class="input" type="text" readonly>
+        </div>
+      </div>
+      <div class="oneRow">
+        <div class="label">频道名称</div>
+        <input id="navigationSlider_importLogDetail_channel_name" class="input" type="text" readonly>
+      </div>
+      <div class="oneRow">
+        <div class="label">频道播放列表文件名称</div>
+        <input id="navigationSlider_importLogDetail_name" class="input" type="text" readonly>
+      </div>
+      <div class="oneRow">
+        <div class="halfRow">
+          <div class="label">来源</div>
+          <input id="navigationSlider_importLogDetail_source" class="input" type="text" readonly>
+        </div>
+        <div class="halfRow">
+          <div class="label">导入时间</div>
+          <input id="navigationSlider_importLogDetail_importtime" class="input" type="text" readonly>
+        </div>
+      </div>
+      <div class="oneRow">
+        <div class="halfRow">
+          <div class="label">播放列表开始时间</div>
+          <input id="navigationSlider_importLogDetail_starttime" class="input" type="text" readonly>
+        </div>
+        <div class="halfRow">
+          <div class="label">播放列表结束时间</div>
+          <input id="navigationSlider_importLogDetail_endtime" class="input" type="text" readonly>
+        </div>
+      </div>
+      <div class="oneRow">
+        <div class="halfRow">
+          <div class="label">当前状态</div>
+          <input id="navigationSlider_importLogDetail_state" class="input" type="text" readonly>
+        </div>
+        <div class="halfRow">
+          <div class="label">导入记录创建者</div>
+          <input id="navigationSlider_importLogDetail_appid" class="input" type="text" readonly>
+        </div>
+      </div>
+      <div class="oneRow">
+        <div class="label">简要描述</div>
+        <textarea id="navigationSlider_importLogDetail_message" class="textarea" type="text" readonly ></textarea>
+      </div>
+    </div>
+    <div class="jobManage_dialog_button submit popup_dialog_clear" id="navigationSlider_dialog_task_confirm" style="position: absolute;bottom: 20px;right: 20px;">关闭</div>
+  </div>
+</div>

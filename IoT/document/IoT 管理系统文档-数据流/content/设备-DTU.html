@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../js/prettify/prettify.css">
+  <script src="../js/prettify/run_prettify.js"></script>
+  <title>设备DTU</title>
+</head>
+<body>
+  <h1>设备DTU</h1>
+  <hr>
+  <ol>
+    <li>
+      <a href='#n1'>获取DTU列表数据</a>
+    </li>
+    <li>
+      <a href="#n2">添加DTU设备信息</a>
+    </li>
+    <li>
+      <a href="#n3">更新DTU设备信息</a>
+    </li>
+    <li>
+      <a href="#n4">删除DTU设备信息</a>
+    </li>
+    <li>
+      <a href="#n5">获取区域信息数据</a>
+    </li>
+    <li>
+      <a href="#n6">获取厂商信息数据</a>
+    </li>
+    <li>
+      <a href="#n7">获取下挂设备信息列表数据</a>
+    </li>
+    <li>
+      <a href="#n2">添加下挂设备</a>
+    </li>
+    <li>
+      <a href="#n3">更新下挂设备</a>
+    </li>
+    <li>
+      <a href="#n4">删除下挂设备</a>
+    </li>
+    <li>
+      <a href="#n3">录入安装信息</a>
+    </li>
+  </ol>
+  <hr>
+  <fieldset id='n1'>
+    <legend>获取DTU列表数据</legend>
+    <h3>5.2章节 Search Thing接口</h3>
+    <pre class="prettyprint">
+    GET     http://172.16.20.62:8200/aquapaas/rest/thingsearch/things?thing_def_id=DTU&namespace=mgd.gehua&user_id=001&app_key=thingcloud&start=994&end=1008
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      thingdefid = DTU
+        备注: 用thingdefid来区别设备类型
+        thingdefid=DTU
+        thingdefid=ReBeng
+      namespace = mgd.gehua (目前写死)
+      dtuid = 010010746B278040 (目前为搜索的DTU编号，可空缺)
+      dtuid_op = eq (根据DTU编号全匹配，与dtuid绑定使用，不传dtuid时可不传)
+      region = 大洋村 (目前为搜索的区域值)
+      region_op = eq(与region绑定使用，不传region时可不传)
+      status = Normal (Normal/Offline/Warning 告警状态)
+      status_op = eq (与status绑定使用，不传status时可不传)
+    </pre>
+    <h3>请求头和响应头</h3>
+
+    <pre class="prettyprint">
+          Host: 172.16.20.62:8200
+          User-Agent: Mozilla/5.0 (windows NT 6.1;rv:2.0.1) Gecko/20100101 Firefox/4.0.1
+          Accept: application/json
+          Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+          Accept-Encoding: gzip, deflate
+          Referer: http://192.168.7.143:8080/iot_fyb/index.html
+          Content-Type: application/json
+          x-aqua-sign: 9Z0AXOvp4vq9I0n4KW25PNCuyME=
+          Origin: http://192.168.7.143:8080
+          Connection: keep-alive
+
+          HTTP/1.1 200 OK
+          Access-Control-Allow-Origin: *
+          Access-Control-Allow-Credentials: true
+          Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+          x-trace-info: trace_id=c0cc4a00-b987-4664-a1b2-c0bb1cf02d26&rpc_id=0
+          x-aqua-total-count: 2600
+          Content-Type: application/json
+          Date: Wed, 23 Jan 2019 07:41:06 GMT
+          Transfer-Encoding: chunked
+          Server: Jetty(9.2.22.v20170606)
+      </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+[{
+  "address_coord": "39.803584,116.736879",
+  "installdate": "2018-11-19T09:58:38+0800",
+  "dateofmanufacture": "2019-02-01",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff00012800",
+  "rate": 0,
+  "datr": "SF7BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "pincode": "pincode3",
+  "rssi": -114,
+  "coordinate": "116.737915,39.79951",
+  "address": "通州区漷县镇中辛庄东区17号",
+  "visible": true,
+  "userphone": "80581013",
+  "gweui": "d896e0fff0100536",
+  "fcnt": 2273,
+  "envitemp": 10,
+  "deveui": "d896e0ff00012800",
+  "devicenum": 1,
+  "batterypower": 255,
+  "manufacture": "40",
+  "devaddr": "66326b28",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 1.2,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278040",
+  "namespace": "mgd.gehua",
+  "name": "d896e0ff00012800mgd.gehua",
+  "deviceinstallnum": 1,
+  "username": "高洪兴",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff00012800"
+}, {
+  "address_coord": "39.803584,116.736879",
+  "installdate": "2018-11-19T15:05:00+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127ff",
+  "rate": 0,
+  "datr": "SF7BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -112,
+  "coordinate": "116.73587799072266,39.799560546875",
+  "address": "通州区漷县镇中辛庄西区9号",
+  "visible": true,
+  "userphone": "15801309127",
+  "gweui": "d896e0fff0100539",
+  "fcnt": 539,
+  "envitemp": 11,
+  "deveui": "d896e0ff000127ff",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "662d879f",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 9,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B27803F",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127ff",
+  "deviceinstallnum": 1,
+  "username": "姚国庆",
+        "status": "Normal",
+        "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127ff"
+}, {
+        "address_coord": "39.703125,116.863745",
+  "installdate": "2018-12-16T14:51:47+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127fe",
+  "rate": 0,
+  "datr": "SF7BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -78,
+  "coordinate": "116.85934,39.695793",
+  "address": "通州区漷县镇军庄村296号",
+  "visible": true,
+  "userphone": "13260476534",
+  "gweui": "d896e0fff0100538",
+  "fcnt": 1824,
+  "envitemp": 6,
+  "deveui": "d896e0ff000127fe",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "6636835f",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 10.8,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B27803E",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127fe",
+  "deviceinstallnum": 1,
+  "username": "胡红军",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127fe"
+}, {
+  "address_coord": "39.803584,116.736879",
+  "installdate": "2018-11-19T11:25:27+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127fd",
+  "rate": 0,
+  "datr": "SF9BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -119,
+  "coordinate": "116.74045,39.798027",
+  "address": "通州区漷县镇中辛庄东区57号",
+  "visible": true,
+  "userphone": "80581015",
+  "gweui": "d896e0fff010053b",
+  "fcnt": 379,
+  "envitemp": 5,
+  "deveui": "d896e0ff000127fd",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "67762b5f",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": -2,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B27803D",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127fd",
+  "deviceinstallnum": 1,
+  "username": "曹俊超",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127fd"
+}, {
+  "address_coord": "39.697273,116.879965",
+  "installdate": "2018-12-18T09:41:49+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127fc",
+  "rate": 0,
+  "datr": "SF7BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -115,
+  "coordinate": "116.87002,39.683483",
+  "address": "通州区漷县镇边槐庄208号",
+  "visible": true,
+  "userphone": "13439187956",
+  "gweui": "d896e0fff0100538",
+  "fcnt": 2230,
+  "envitemp": 5,
+  "deveui": "d896e0ff000127fc",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "67be3ae5",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 5.2,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B27803C",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127fc",
+  "deviceinstallnum": 1,
+  "username": "汪静",
+        "status": "Normal",
+        "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127fc"
+}, {
+        "address_coord": "39.703125,116.863745",
+  "installdate": "2018-12-16T16:50:30+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127fb",
+  "rate": 0,
+  "datr": "SF10BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -125,
+  "coordinate": "116.8545,39.69512",
+  "address": "通州区漷县镇军庄村84号",
+  "visible": true,
+  "userphone": "13520819548",
+  "gweui": "d896e0fff0100538",
+  "fcnt": 286,
+  "envitemp": 9,
+  "deveui": "d896e0ff000127fb",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "6649d879",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": -16,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B27803B",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127fb",
+  "deviceinstallnum": 1,
+  "username": "李雪松",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127fb"
+}, {
+  "address_coord": "39.803584,116.736879",
+  "installdate": "2018-11-19T10:31:46+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127fa",
+  "rate": 0,
+  "datr": "SF10BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -110,
+  "coordinate": "116.73589324951172,39.79908752441406",
+  "address": "通州区漷县镇中辛庄西区40号",
+  "visible": true,
+  "userphone": "15110073205",
+  "gweui": "d896e0fff010053b",
+  "fcnt": 274,
+  "envitemp": 7,
+  "deveui": "d896e0ff000127fa",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "66b5d261",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": -8.2,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B27803A",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127fa",
+  "deviceinstallnum": 1,
+  "username": "田文龙",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127fa"
+}, {
+  "address_coord": "39.803584,116.736879",
+  "coordinate": "116.73814,39.797535",
+  "installdate": "2018-11-19T16:44:12+0800",
+  "address": "通州区漷县镇中辛庄东区48号",
+  "visible": true,
+  "userphone": "13681481480",
+  "deveui": "d896e0ff000127f9",
+  "ext_id": "d896e0ff000127f9",
+  "def_id": "DTU",
+  "dtuid": "010010746B278039",
+        "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f9",
+  "deviceinstallnum": 1,
+        "status": "Normal",
+  "username": "田文明",
+        "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f9"
+}, {
+        "address_coord": "39.703125,116.863745",
+  "installdate": "2018-12-12T08:54:14+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127f8",
+  "rate": 0,
+  "datr": "SF9BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -115,
+  "coordinate": "116.851364,39.69451",
+  "address": "通州区漷县镇军庄村90号",
+  "visible": true,
+  "userphone": "13910245502",
+  "gweui": "d896e0fff0100538",
+  "fcnt": 2157,
+  "envitemp": 8,
+  "deveui": "d896e0ff000127f8",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "675edb97",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 8.8,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278038",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f8",
+  "deviceinstallnum": 1,
+  "username": "杨淑英",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f8"
+}, {
+  "address_coord": "39.697273,116.879965",
+  "installdate": "2018-12-18T09:00:38+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127f6",
+  "rate": 0,
+  "datr": "SF7BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -76,
+  "coordinate": "116.871864,39.691784",
+  "address": "通州区漷县镇边槐庄2号",
+  "visible": true,
+  "userphone": "15001184591",
+  "gweui": "d896e0fff010053a",
+  "fcnt": 2182,
+  "envitemp": 8,
+  "deveui": "d896e0ff000127f6",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "66db79be",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 10.5,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278036",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f6",
+  "deviceinstallnum": 1,
+  "username": "李素艳",
+        "status": "Normal",
+        "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f6"
+}, {
+        "address_coord": "39.703125,116.863745",
+  "installdate": "2018-12-16T15:27:15+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 4,
+  "ext_id": "d896e0ff000127f5",
+  "rate": 0,
+  "datr": "SF9BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -120,
+  "coordinate": "116.85931,39.69641",
+  "address": "通州区漷县镇军庄村281号",
+  "visible": true,
+  "userphone": "13611060182",
+  "gweui": "d896e0fff010053a",
+  "fcnt": 1,
+  "envitemp": 7,
+  "deveui": "d896e0ff000127f5",
+  "batterypower": 255,
+  "devicenum": 1,
+  "devaddr": "67888aa8",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "snr": 7.8,
+  "joineui": "d896e0e000008296",
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278035",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f5",
+  "deviceinstallnum": 1,
+  "username": "候来元",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f5"
+}, {
+  "address_coord": "39.803584,116.736879",
+  "installdate": "2018-11-19T12:53:18+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127f4",
+  "rate": 0,
+  "datr": "SF7BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -96,
+  "coordinate": "116.737816,39.799446",
+  "address": "通州区漷县镇中辛庄东区7号",
+  "visible": true,
+  "userphone": "13261232896",
+  "gweui": "d896e0fff010053b",
+  "fcnt": 2122,
+  "envitemp": 4,
+  "deveui": "d896e0ff000127f4",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "663a1121",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 9,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278034",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f4",
+  "deviceinstallnum": 1,
+  "username": "郑启明",
+  "status": "Normal",
+  "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f4"
+}, {
+  "address_coord": "39.803584,116.736879",
+  "installdate": "2018-11-19T09:04:34+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 4,
+  "ext_id": "d896e0ff000127f3",
+  "rate": 0,
+  "datr": "SF9BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -103,
+  "coordinate": "116.73035,39.797638",
+  "address": "通州区漷县镇中辛庄西区80号",
+  "visible": true,
+  "userphone": "13671239338",
+  "gweui": "d896e0fff010053b",
+  "fcnt": 2220,
+  "envitemp": 9,
+  "deveui": "d896e0ff000127f3",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "661ed5cd",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": 12.2,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278033",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f3",
+  "deviceinstallnum": 1,
+  "username": "夏宝凤",
+        "status": "Normal",
+        "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f3"
+}, {
+        "address_coord": "39.703125,116.863745",
+  "installdate": "2018-12-12T11:54:48+0800",
+  "datamarker": 3,
+  "intervalmin": 1441,
+  "mtype": 2,
+  "ext_id": "d896e0ff000127f1",
+  "rate": 0,
+  "datr": "SF10BW125",
+  "dtuworkmode": 3,
+  "alarmcode": 0,
+  "rssi": -121,
+  "coordinate": "116.85618,39.69569",
+  "address": "通州区漷县镇军庄村181号",
+  "visible": true,
+  "userphone": "80590184",
+  "gweui": "d896e0fff0100538",
+  "fcnt": 888,
+  "envitemp": 3,
+  "deveui": "d896e0ff000127f1",
+  "devicenum": 1,
+  "batterypower": 255,
+  "devaddr": "676aebfd",
+  "controlword": 33,
+  "dtufunpos": 1,
+  "joineui": "d896e0e000008296",
+  "snr": -16.8,
+  "fport": 61,
+  "def_id": "DTU",
+  "dtuid": "010010746B278031",
+  "namespace": "mgd.gehua",
+  "name": "mgd.gehua.d896e0ff000127f1",
+  "deviceinstallnum": 1,
+  "username": "刘文东",
+        "status": "Normal",
+        "doc_type": "thing",
+  "doc_id": "mgd.gehua.d896e0ff000127f1"
+}]
+    </pre>
+
+    <h3>列表中字段与返回数据对应说明</h3>
+    <pre class="prettyprint">
+DTU编号： dtuid
+DevEUI： deveUI
+厂商名称： manufacture                   可能需要转换 thing.metadata.manufacture : "3", -> 6.5 List_Thing_Def_Property -> 7.5 LIST_Thing_Enum_Def_Items
+安装地址: address
+用户名: username
+联系电话：userphone
+区域：region
+下挂设备数： deviceinstallnum
+告警状态： status
+    </pre>
+    <h3>更改历史</h3>
+    <pre class="prettyprint">
+      所有字段由thingdef定义变成全小写 //zhao.jixiang 2019-2-14 邮件
+    </pre>
+  </fieldset>
+  <fieldset id='n2'>
+    <legend>添加DTU设备信息</legend>
+    <h3>3.3章节 Create Thing接口</h3>
+    <pre class="prettyprint">
+    POST     http://172.16.20.62:8200/aquapaas/rest/thing?
+                app_key=aquapaasadv&
+                timestamp=2019-01-31T07:16:16.120Z&
+                user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&
+                access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {
+        def_id: 'DTU',
+        ext_id: '2',
+        metadata: {
+          dtuid: '2',
+          dateofmanufacture: '2019-01-31',
+          deveuiUI: '2',
+          manufacture: '40',
+          pincode: '222'
+        },
+        name: '2mgd.gehua',
+        namespace: 'mgd.gehua'
+      }
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      ext_id=UI上的DevEUI
+      namespace=mgd.gehua //UI配置项
+      def_id=DTU //静态值，来自enum_device
+      name={ext_id}.{namespace} //即{devEUI.mgd.gehua}
+      metadata={
+        DTUID,//UI上的DTUID
+        devEUI,//UI上的DevEUI
+        manufacture,//UI上的manufacture的enum_manufacture的value
+        dateOfManufacture,//UI上的生产日期
+        pinCode//UI上的Pincode
+      }
+      备注： 这里metadata的值是大小写敏感的。
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+      Accept: application/json
+      Content-Type: application/json
+      Origin: http://192.168.7.143:8080
+      Referer: http://192.168.7.143:8080/iot_fyb/index.html
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+      x-aqua-sign: ETWNWlD6pekgodTAO0RtSkKfXrQ=
+
+      Access-Control-Allow-Credentials: true
+      Access-Control-Allow-Origin: *
+      Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+      Content-Length: 0
+      Date: Thu, 31 Jan 2019 07:13:45 GMT
+      Server: Jetty(9.2.22.v20170606)
+      x-trace-info: trace_id=a3593a5f-25c4-4448-a8c7-4b20fe5e170e&rpc_id=0
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      无
+    </pre>
+  </fieldset>
+  <fieldset id="n3">
+    <legend>更新DTU设备信息</legend>
+    <h3>3.4章节 Update Thing接口</h3>
+    <pre class="prettyprint">
+      PUT      http://172.16.20.62:8200/aquapaas/rest/thing/{ext_id}?
+                  app_key=aquapaasadv&
+                  timestamp=2019-02-14T06:23:14.103Z&
+                  user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&
+                  access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {
+        def_id: "DTU",
+        ext_id: "1",
+        metadata: {
+          DTUID: "11",
+          devEUI: "11",
+          manufacture: "40",
+          dateOfManufacture: "2019-02-02",
+          pinCode: "11"
+        },
+        name: "1mgd.gehua",
+        namespace: "mgd.gehua"
+      }
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      ext_id //原数据的ext_id
+      namespace//原数据的namespace
+      def_id//原数据的def_id
+      name//原数据的name
+      metadata={
+        DTUID,//UI上的DTUID
+        devEUI,//UI上的DevEUI
+        manufacture,//UI上的manufacture的enum_manufacture的value
+        dateOfManufacture,//UI上的生产日期
+        pinCode//UI上的Pincode
+      }
+      备注： 这里metadata的值是大小写敏感的，你创建的什么字段就只能更新什么字段。
+                例如：你创建metadata.dateOfManufacture 你更新的时候字段名称只能使用dateOfManufacture。如果使用了小写，则无法更新原有字段。
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        Accept: application/json
+        Content-Type: application/json
+        Origin: http://192.168.7.143:8080
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+        x-aqua-sign: +OwPnQ+qxWg2sUIPcqiBJyGb7+g=
+
+        Access-Control-Allow-Credentials: true
+        Access-Control-Allow-Origin: *
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+        Content-Length: 0
+        Date: Thu, 14 Feb 2019 06:22:55 GMT
+        Server: Jetty(9.2.22.v20170606)
+        x-trace-info: trace_id=72ea65b5-8057-4fc6-90b7-ec343beb2482&rpc_id=0
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      无
+    </pre>
+  </fieldset>
+  <fieldset id="n4">
+    <legend>删除DTU设备信息</legend>
+    <h3>3.8章节 Delete Thing接口</h3>
+    <pre class="prettyprint">
+      Delete       http://172.16.20.62:8200/aquapaas/rest/thing/{ext_id}?
+                      app_key=aquapaasadv&
+                      timestamp=2019-02-14T07:02:59.711Z&
+                      user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&
+                      access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&
+                      namespace=mgd.gehua
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        Accept: application/json
+        Content-Type: application/json
+        Origin: http://192.168.7.143:8080
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+        x-aqua-sign: l4zAQDoVrIXPecAycMML4xxRY7g=
+
+        Access-Control-Allow-Credentials: true
+        Access-Control-Allow-Origin: *
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+        Content-Length: 0
+        Date: Thu, 14 Feb 2019 07:02:41 GMT
+        Server: Jetty(9.2.22.v20170606)
+        x-trace-info: trace_id=13b4457d-3f33-45a0-9bec-f2e7e9ccc459&rpc_id=0
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      无
+    </pre>
+  </fieldset>
+  <fieldset id="n5">
+    <legend>获取区域数据</legend>
+    <h3>7.5章节 LIST_Thing_Enum_Def_Items接口</h3>
+    <pre class="prettyprint">
+      Post       http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/{namespace}/enum_region
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        Accept: application/json
+        Content-Type: application/json
+        Origin: http://192.168.7.143:8080
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+
+        Access-Control-Allow-Credentials: true
+        Access-Control-Allow-Origin: *
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+        Content-Length: 0
+        Date: Thu, 14 Feb 2019 07:02:41 GMT
+        Server: Jetty(9.2.22.v20170606)
+        Transfer-Encoding: chunked
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      [{
+        "value": "小沟村",
+        "displayName": "小沟村",
+        "metadata": {
+          "address": ""
+        },
+        "filterValues": null,
+        "id": "3cfd1cc8e3af440bb1d78eb373a389dc"
+      }, {
+        "value": "大洋村",
+        "displayName": "大洋村",
+        "metadata": {
+          "address": ""
+        },
+        "filterValues": null,
+        "id": "d1d6d42d392d48408244bb07caa483f1"
+      }]
+    </pre>
+  </fieldset>
+  <fieldset id="n6">
+    <legend>获取厂商信息数据</legend>
+    <h3>7.5章节 LIST_Thing_Enum_Def_Items接口</h3>
+    <pre class="prettyprint">
+      Post       http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/{namespace}/enum_manufacture
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求体</h3>
+    <pre class="prettyprint">
+      {
+        "enum_device": ["DTU"]
+      }
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">
+        Accept: application/json
+        Content-Type: application/json
+        Origin: http://192.168.7.143:8080
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36
+
+        Access-Control-Allow-Credentials: true
+        Access-Control-Allow-Origin: *
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+        Content-Length: 0
+        Date: Thu, 14 Feb 2019 07:02:41 GMT
+        Server: Jetty(9.2.22.v20170606)
+        Transfer-Encoding: chunked
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      []
+    </pre>
+  </fieldset>
+  <fieldset id="n7">
+    <legend>获取下挂设备信息列表数据</legend>
+    <h3>3.9 章节 GET_SUB_THING_LIST接口</h3>
+    <pre class="prettyprint">
+      Get       http://172.16.20.62:8200/aquapaas/rest/thing/sub/{parent_ext_id}?namespace=mdg.gehua&
+                                      app_key=IOT&
+                                      timestamp=2019-03-05T02:40:21.839Z&
+                                      user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&
+                                      access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26
+    </pre>
+    <h3>关键参数说明</h3>
+    <pre class="prettyprint">
+      namespace = mgd.gehua (目前该值从Config中获取)
+    </pre>
+    <h3>请求头和响应头</h3>
+    <pre class="prettyprint">GET /aquapaas/rest/thing/sub/d896e0ff00012800?namespace=mgd.gehua&app_key=IOT&timestamp=2019-03-05T03:05:56.961Z&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26 HTTP/1.1
+        Host: 172.16.20.201:8090
+        User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0
+        Accept: application/json
+        Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+        Accept-Encoding: gzip, deflate
+        Referer: http://192.168.7.143:8080/iot_fyb/index.html
+        Content-Type: application/json
+        x-aqua-sign: nsH/jt22FbA+rkvDtgdjMVJs4fA=
+        Origin: http://192.168.7.143:8080
+        Connection: keep-alive
+
+
+        HTTP/1.1 200 OK
+        Server: nginx
+        Date: Tue, 05 Mar 2019 03:03:45 GMT
+        Content-Type: application/json
+        Transfer-Encoding: chunked
+        Access-Control-Allow-Origin: *
+        Access-Control-Allow-Credentials: true
+        Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+    </pre>
+    <h3>响应数据</h3>
+    <pre class="prettyprint">
+      [{
+        "id": "mgd.gehua.2.d896e0ff00012800",
+        "ext_id": "2.d896e0ff00012800",
+        "namespace": "mgd.gehua",
+        "def_id": "ReBeng",
+        "parent_ext_id": "d896e0ff00012800",
+        "name": "2.d896e0ff00012800.mgd.gehua",
+        "endpoint": null,
+        "status": "Normal",
+        "states": null,
+        "create_time": "2019-02-27T09:48:03+0800",
+        "last_modified_time": "2019-02-27T09:48:03+0800",
+        "last_event": null,
+        "metadata": {
+          "devID": "2",
+          "manufacture": "3",
+          "DTUID": "010010746B278040",
+          "installDate": "2019-02-02 02:02:02",
+          "protocalVersion": "2",
+          "model": "2",
+          "softwareVersion": "2"
+        }
+      }]
+    </pre>
+    <h3>列表中字段与返回数据对应说明</h3>
+    <pre class="prettyprint">
+      设备类型：       def_id
+      设备ID：         metadata.devID
+      厂商名称：       metadata.manufacture                   可能需要转换 thing.metadata.manufacture : "3", -> 6.5 List_Thing_Def_Property -> 7.5 LIST_Thing_Enum_Def_Items
+      设备型号:         metadata.model
+      设备安装时间:   metadata.installDate
+      设备软件版本：  metadata.softwareVersion
+      设备协议版本：  metadata.protocalVersion
+    </pre>
+  </fieldset>
+  <div onclick='javascript:document.documentElement.scrollTop=0;' style='position: fixed; right: 5px;bottom: 10px;background-color: grey;color: #fff;cursor: pointer;padding: 5px;'>Top</div>
+</body>
+
+</html>

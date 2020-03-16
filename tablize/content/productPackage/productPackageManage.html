@@ -1,0 +1,283 @@
+<!--list product package page-->
+<div id="productMngContainer" class="productShow">
+    <div class="header">
+        <div class="headertitle"><span>{{PRODUCT_PACKAGE_HEADER_TITLE}}</span></div>
+        <div class="productPkgPageSearchCont">
+            <input id="productPkgPageSearch" placeholder="{{PRODUCT_PACKAGE_SEARCH_MES}}" />
+            <div id='productsearch' class="productsearch"></div>
+        </div>
+        <div class="productPkgAddBtnCont">
+            <div id="productPkgAddBtn">{{PRODUCT_PACKAGE_HEADER_ADD_BTN}}</div>
+        </div>
+    </div>
+    <div id="productMngTable">
+    </div>
+</div>
+<!--add product package page-->
+<div id="productAddContainer" class="productHidden">
+    <div class="header">
+        <div id="productbackBtn" class="backBtn"><img src="./images/product_arrow_left.png"> {{MNG_BACK}}</div>
+        <div class="headertitle"><span>{{PRODUCT_PACKAGE_HEADER_TITLE}}</span></div>
+    </div>
+    <div class="body">
+        <div class="col1">
+            <div class="row">
+                <label>{{PRODUCT_ADD_LABEL_NO}}</label>
+                <input id="product_id" />
+            </div>
+            <div class="row">
+                <label>{{PRODUCT_ADD_LABEL_NAME}}</label>
+                <input id="productName" />
+            </div>
+            <div class="row">
+                <label>{{PRODUCT_ADD_LABEL_TYPE}}</label>
+                <input type="text" id="productType" readonly="readonly"/>
+                <div id="productTypeSelect" class="div-form-select"></div>
+                <!--<select id="productType" class="selectItem">-->
+                    <!--<option value="JOIN_LIVEROOM_TIME">{{PRODUCT_ADD_LABEL_TYPE_OPT1}}</option>
+                    <option value="magazine">{{PRODUCT_ADD_LABEL_TYPE_OPT2}}</option>
+                    <option value="USER_IAP_COIN">{{PRODUCT_ADD_LABEL_TYPE_OPT3}}</option>-->
+                <!--</select>-->
+            </div>
+            <div class="row">
+                <label>{{PRODUCT_ADD_PKG_TAGS}}</label>
+                <input type="text" id="productTags" placeholder="{{PRODUCT_ADD_PKGTAG_PLACEHOLDER}}"/>
+            </div>
+            <div class="row contA">
+                <label>{{PRODUCT_ADD_LABEL_TIME_START}}</label>
+                <div class="timeCont">
+                    <div class="inputCont">
+                        <input id="productStartTime" type="text" readonly/>
+                        <div id="productStartTime_icon"></div>
+                    </div>
+                    <div id="timeContStart" class="date-selector"></div>
+                </div>
+            </div>
+            <div class="row contB">
+                <label></label>
+                <select id="productStartH" class="selectItem hour"><option>1</option></select>{{PRODUCT_PACKAGE_HOUR}}&nbsp;
+                <select id="productStartM" class="selectItem minute"><option>1</option></select>{{PRODUCT_PACKAGE_MINUTES}}&nbsp;
+                <select id="productStartS" class="selectItem second"><option>1</option></select>{{PRODUCT_PACKAGE_SECOND}}&nbsp;
+            </div>
+            <div class="row  contA">
+                <label>{{PRODUCT_ADD_LABEL_TIME_END}}</label>
+                <div class="timeCont">
+                    <div class="inputCont">
+                        <input id="productEndTime" type="text" readonly/>
+                        <div id="productEndTime_icon"></div>
+                    </div>
+                    <div id="timeContEnd" class="date-selector"></div>
+                </div>
+            </div>
+            <div class="row contB">
+                <label></label>
+                <select id="productEndH" class="selectItem hour"><option>1</option></select>{{PRODUCT_PACKAGE_HOUR}}&nbsp;
+                <select id="productEndM" class="selectItem minute"><option>1</option></select>{{PRODUCT_PACKAGE_MINUTES}}&nbsp;
+                <select id="productEndS" class="selectItem second"><option>1</option></select>{{PRODUCT_PACKAGE_SECOND}}&nbsp;
+            </div>
+            <div class="row">
+                <label>{{PRODUCT_ADD_LABEL_PART}}</label>
+                <input id="productAddQuota" type="text" />
+                <span>{{PRODUCT_ADD_LABEL_OVERPART}}</span>
+                <input id="productAddOvQuota" type="text" />
+            </div>
+            <div class="row contA">
+                <label>{{PRODUCT_ADD_LABEL_ASSET_MES}}</label>
+                <input type="text" id="product_courseID" readonly="readonly" placeholder="{{PRODUCT_CHOICE_PROPERTY_TYPE}}"/>
+                <div id="product_courseID_Select" class="div-form-select"></div>
+                <!--<select id="product_courseID" class="selectItem">-->
+                    <!--<option value="CourseCode">{{PRODUCT_ADD_ASSERT_OPT1}}</option>
+                    <option value="CourseHourID">{{PRODUCT_ADD_ASSERT_OPT2}}</option>-->
+                    <!--<option value="livecourse">{{PRODUCT_ADD_ASSERT_OPT3}}</option>-->
+                <!--</select>-->
+                <!-- <input id="product_courseID_input" placeholder="{{PRODUCT_ADD_LABEL_DES_ID_PLACEHOLDER}}" /> -->
+                <input type="text" id="product_property_list_choice" readonly="readonly" data-type="" placeholder="{{PRODUCT_CHOICE_PROPERTY_LIST_TYPE}}"/>
+                <div id="product_property_list_type" class="div-form-select">
+                    <div data-type="id">{{PRODUCT_PROPERTY_LIST_TYPE_ID}}</div>
+                    <div data-type="tag">{{PRODUCT_PROPERTY_LIST_TYPE_TAG}}</div>
+                    <div data-type="code">{{PRODUCT_PROPERTY_LIST_TYPE_CODE}}</div>
+                </div>
+            </div>
+            <div class="row contB">
+                <label></label>
+                <input id="productAddAssetTags" placeholder="" />
+            </div>
+        </div>
+        <div class="col2">
+            <div class="row colums-2">
+                <label>Metadata</label>
+                <div id="productAddOrgCont"></div>
+                <span id="productAddOrgCont_btn">{{PRODUCT_ADD_LABEL_ADD_ORG}}</span>
+            </div>
+            <div class="row  contA">
+                <label>{{PRODUCT_ADD_LABEL_TICKET_LOST}}</label>
+                <div class="radio_component focus" id="by_date">
+                  <div class="radio"></div>
+                  <label>{{PRODUCT_ADD_LABEL_TICKET_LOST_BY_DATE}}</label>
+                </div>
+                <div class="timeCont">
+                    <div class="inputCont">
+                        <input id="productTicketEndTime" type="text" readonly/>
+                        <div id="productTicketEndTime_icon"></div>
+                    </div>
+                    <div id="productTicketEnd" class="date-selector"></div>
+                </div>
+            </div>
+            <div class="row contB">
+                <label></label>
+                <select id="productTEndH" class="selectItem hour"><option>1</option></select>{{PRODUCT_PACKAGE_HOUR}}&nbsp;
+                <select id="productTEndM" class="selectItem minute"><option>1</option></select>{{PRODUCT_PACKAGE_MINUTES}}&nbsp;
+                <select id="productTEndS" class="selectItem second"><option>1</option></select>{{PRODUCT_PACKAGE_SECOND}}&nbsp;
+            </div>
+            <div class="row">
+                <label></label>
+                <div class="radio_component" id="by_days">
+                  <div class="radio"></div>
+                  <label>{{PRODUCT_ADD_LABEL_TICKET_LOST_BY_DAYS}}</label>
+                </div>
+                <input id="productTicketValid" type="text"> {{LECTRUECREATE_TIAN}}
+            </div>
+            <div class="row">
+                <label>{{PRODUCT_ADD_LABEL_BUYS}}</label>
+                <select id="productBuyLimit" class="selectItem">
+                    <option value="1">{{PRODUCT_ADD_LABEL_BUYS_OPT1}}</option>
+                    <option value="0">{{PRODUCT_ADD_LABEL_BUYS_OPT2}}</option>
+                </select>
+            </div>
+            <div class="row">
+                <label>{{PRODUCT_ADD_PKG_PAYTYPE}}</label>
+                <div class="check-box" data-tag="GET_BY_PRICE">
+                    <input type="checkbox" name="pkgPayType" id="pkgPayTypePrice" />
+                    <div class="check-box-focus"></div>
+                </div>
+                <span>{{PRODUCT_ADD_LABEL_PRICE}}</span>
+                <input id="product_Price" type="text" />{{PRODUCT_ADD_LABEL_YUAN}}
+                <div class="check-box" style="margin-left: 25px;" data-tag="GET_BY_ALT_PRICE">
+                    <input type="checkbox" name="pkgPayType" id="pkgPayTypeAltPrice" />
+                    <div class="check-box-focus"></div>
+                </div>
+                <span>{{PRODUCT_ADD_LABEL_PRICE_DISCOUNT}}</span>
+                <input id="product_Price_c" type="text" />{{PRODUCT_ADD_LABEL_YUAN}}
+            </div>
+            <div class="row">
+                <label></label>
+                <div class="check-box" data-tag="GET_BY_CREDIT_POINTS">
+                    <input type="checkbox" name="pkgPayType" id="pkgPayTypePoint" />
+                    <div class="check-box-focus"></div>
+                </div>
+                <span>{{PRODUCT_ADD_LABEL_DUIHUAN_POINT}}</span>
+                <input id="product_exchange_points" type="text" />{{PRODUCT_ADD_PKG_POINT_UNIT}}
+            </div>
+            <div class="row colums-2">
+                <label>{{PRODUCT_ADD_LABEL_DES}}</label>
+                <textarea id="productDescription" placeholder="{{PRODUCT_ADD_INPUT_MES}}"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div id="productAdd_ok">{{DIALOG_OK_DL}}</div>
+        <div id="productAdd_cancel">{{DIALOG_CANCEL_DL}}</div>
+    </div>
+</div>
+<!--select orgnization add product package page-->
+<!--
+<div id="productAddorgBack" style="display:none"></div>
+<div id="productAddorg" style="display:none">
+    <div class="header">
+        {{PRODUCT_ADD_ORG_DIALOG_TITLE}}<span id='productAddorg_close' class="closeIcon"></span>
+    </div>
+    <div class="body">
+        <div class="table-header"></div>
+        <div id="productAddorgItems" class="table-body">
+        </div>
+    </div>
+    <div class="footer">
+        <div id="productAddorg_ok">{{DIALOG_OK_DL}}</div>
+        <div id="productAddorg_cancel">{{DIALOG_CANCEL_DL}}</div>
+    </div>
+</div>
+-->
+<!--delete comfirm page-->
+<div id="productDelBack" style="display: none"></div>
+<div id="productDel" style="display: none">
+    <div class="header">
+        {{MENU_MNG_PLATFORM_PAGES_DEL_TITLE}}<span id='productDel_close' class="closeIcon"></span>
+    </div>
+    <div class="body">
+        <div class="platformdelnotice"><img src='./images/platformDel.png' /></div>
+        <div id="productDelMes" class='productDelMes'>{{MENU_MNG_PLATFORM_PAGES_DEL_MES}}</div>
+    </div>
+    <div class="footer">
+        <div id="productDel_ok">{{DIALOG_OK_DL}}</div>
+        <div id="productDel_cancel">{{DIALOG_CANCEL_DL}}</div>
+    </div>
+</div>
+<!--error message page-->
+<div id="productErrorBack" style="display: none"></div>
+<div id="productError" style="display: none">
+    <div class="header">
+        {{MENU_MNG_PLATFORM_PAGES_DEL_TITLE}}<span id='productError_close' class="closeIcon"></span>
+    </div>
+    <div class="body">
+        <div class="platformdelnotice"><img src='./images/platformDel.png' /></div>
+        <div id="productErrorMes" class='productDelMes'>{{MENU_MNG_PLATFORM_PAGES_DEL_MES}}</div>
+    </div>
+    <div class="footer">
+        <div id="productError_ok">{{DIALOG_OK_DL}}</div>
+        <div id="productError_cancel">{{DIALOG_CANCEL_DL}}</div>
+    </div>
+</div>
+<!--use a common temple-->
+<!--Inventory open confirm page-->
+<div id="ErrorMSGBack" style="display: none"></div>
+<div id="ErrorMSG" style="display: none">
+    <div class="header">
+        {{MENU_MNG_PLATFORM_PAGES_DEL_TITLE}}
+        <div id='ErrorMSG_close' class="closeIcon"></div>
+    </div>
+    <div class="body">
+        <div class="icon">
+            <img src='./images/platformDel.png' />
+        </div>
+        <div id="ErrorMes" class='mes'>
+            {{LECTURECATEGORY_LOG_MES_1}}
+        </div>
+    </div>
+    <div class="footer">
+        <div id="ErrorMSG_ok">{{DIALOG_OK_DL}}</div>
+        <div id="ErrorMSG_cancel" class="cancel">{{DIALOG_CANCEL_DL}}</div>
+    </div>
+</div>
+
+<!--Inventory config page-->
+<!--
+<div id="productInventoryBack" style="display: none"></div>
+<div id="productInventory" style="display: none">
+    <div class="header">
+        {{PRODUCTPKG_INVENTIORY_OPT_2}}
+        <div id='productInventory_close' class="closeIcon"></div>
+    </div>
+    <div class="body">
+        <div class="table">
+            <div>
+                <div class="th">{{PRODUCTPKG_INVENTIORY_TH_1}}</div>
+                <div class="th">{{PRODUCTPKG_INVENTIORY_TH_2}}</div>
+                <div class="th">{{PRODUCTPKG_INVENTIORY_TH_3}}</div>
+            </div>
+            <div>
+                <div id="inventory_mes1" class="td">0</div>
+                <div id="inventory_mes2" class="td">0</div>
+                <div id="inventory_mes3" class="td">0</div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="invenorySelector" class="tselector"></div>
+            <input id="invenorySelectorDetail" placeholder="{{PRODUCTPKG_INVENTIORY_PLACE_MES_1}}" />
+        </div>
+    </div>
+    <div class="footer">
+        <div id="productInventory_ok">{{DIALOG_OK_DL}}</div>
+        <div id="productInventory_cancel" class="cancel">{{DIALOG_CANCEL_DL}}</div>
+    </div>
+</div>
+-->

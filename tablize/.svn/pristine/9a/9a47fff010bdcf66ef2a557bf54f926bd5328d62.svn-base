@@ -1,0 +1,522 @@
+{
+	"name": "模板E",
+	"layoutType": "grid",
+	"width": 1740,
+	"height": 130,
+	"maxLineCount": 1,
+	"maxRowCount": 6,
+	"lineSpace": 0,
+	"rowSpace": 36,
+	"items": [
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 1,
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.25,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		},
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 2,
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.25,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		},
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 3,
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.25,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		},
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 4,
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.25,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		},
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 5,
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.25,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		},
+		{
+			"type": "standard",
+			"line": 1,
+			"row": 6,
+			"focusEnable": true,
+			"defaultBgColor": "#80000000",
+			"defaultFocusScale": 1.25,
+			"defaultFocusBorderColor": "#ffffffff",
+			"defaultFocusBorderWidth": 4,
+			"defaultFocusBorderRadius": 1,
+			"defaultFocusZ": 20,
+			"dataItem": {
+				"normal": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"focus": {
+					"type": "relative",
+					"elements": [
+						{
+						    "type": "image",
+							"zIndex": 0,
+							"index": 0,
+							"top": 0,
+							"left": 0,
+							"width": -1,
+							"height": -1,
+							"alignParent": "bottom",
+							"url": "$posterUrl$"
+						},
+						{
+							"type": "text",
+							"zIndex": 1,
+							"index": 1,
+							"top": 0,
+							"left": 0,
+							"bottom": 0,
+							"width": -2,
+							"height": -2,
+							"alignParent": "center",
+							"textColor": "#ffffffff",
+							"textSize": 40,
+							"text":"$title$"
+						}
+					]
+				},
+				"actionIntent": {
+					"intentName": "OpenRecommand",
+					"slots": {
+						"type": "$type$",
+						"folderFullPath": "$folderFullPath$",
+						"templateId": "$templateId$",
+						"pid": "$pid$",
+						"paid": "$paid$",
+						"r_object_name": "$title$"
+					}
+				}
+			}
+		}
+	]
+}

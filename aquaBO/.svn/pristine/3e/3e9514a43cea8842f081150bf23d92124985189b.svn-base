@@ -1,0 +1,138 @@
+<div class="liveanylise dialog">
+  <div class="dialog-title">
+    <div class="dialog-title-context">实时动态</div>
+    <div class="dialog-close-btn popupdialogclear"></div>
+  </div>
+  <div class="dialog-body">
+    <div class="pane flex">
+      <div class="info request">
+        <div class="info-header">请求数量</div>
+        <div class="info-value">34567</div>
+      </div>
+      <div class="info response">
+        <div class="info-header">平均响应时间</div>
+        <div class="info-value">23</div>
+      </div>
+      <div class="info size">
+        <div class="info-header">平均响应大小</div>
+        <div class="info-value">11</div>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="pane-titlebar">
+        <div>按API类型分组</div>
+        <div class="pane-englishname">Grouping</div>
+      </div>
+      <div class="pane-ctn">
+        <table class="api-table table">
+          <tr>
+            <td width="134px;"></td>
+            <td>Asset</td>
+            <td>User</td>
+            <td>Transaction</td>
+            <td>Common</td>
+          </tr>
+          <tr>
+            <td class="table-label">请求数量</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">平均反应时间</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">平均反映大小</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="pane-titlebar">
+        <div>按响应时间分组</div>
+        <div class="pane-englishname">Grouping</div>
+      </div>
+      <div class="pane-ctn">
+        <div class="chart" id="time-chart"></div>
+        <table class="table time-table">
+          <tr>
+            <td width="134px;"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">请求数量</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">平均反应时间</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">平均反应大小</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="pane-titlebar">
+        <div>按响应状态分组</div>
+        <div class="pane-englishname">Grouping</div>
+      </div>
+      <div class="pane-ctn">
+        <div class="chart" id="status-chart"></div>
+        <table class="table status-table">
+          <tr>
+            <td width="134px;"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">请求数量</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">平均反应时间</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="table-label">平均反应大小</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div style="background-color:white;padding-bottom:23px" class="adv_page_main_style adv_dialog_container" >
+	<div class="advUserManage_sysManage_popupContainer" style="width:760px;background-color:white">
+		<div class="adv_popupDialogue_title_container">
+			<span>编辑系统用户</span>
+			<div id="manage_dialog_warn_close_btn" class="adv_popupDialogue_title_close" onclick="system_user_management.close_popup_create_system_user()"></div>
+		</div>
+		<div id="adv_popupDialogue_body"style="position:relative;margin-top:7px;margin-left:26px;margin-right:26px;font-size:14px">
+            <div style="overflow:hidden;">
+                <div style="float:left;width:300px">
+                    <div class="inputTitlestyle">用户名</div>
+                    <input id="adv_input_region_userID" class="adv_input_region" type="text" readonly="readonly" style="background-color:#f0f0f0;margin-top:7px">
+                </div>
+            </div>
+			<div style="overflow:hidden;margin-top:17px;">
+                <div id="downMenu_role_container" style="float:left;width:300px;margin-left:0px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_JIAOSE}}</div>
+                    <div id="adv_input_region_role" onclick="system_user_management.downMeun_disappear('downMenu_role_container_')" class="adv_input_region" type="text" style="line-height:31px;background-image:url('image/download_menu.png');background-repeat: no-repeat;background-position:258px 8px; margin-top:7px"></div>
+                </div>
+            </div>
+			<div id="advUserManage_sysManage_categoryContainer_edit" style="display:none;position:relative;width:calc(100% - 22px);height:130px;margin-top:9px;background-color:#f5f9fa;border:1px #90bdd2 solid">
+				
+			</div>
+			<div style="overflow:hidden;margin-top:17px;">
+               <div style="float:left;width:100%">
+					<div class="inputTitlestyle">{{ADV_SYSUSER_GONGSIMINGCHENG}}</div>
+                    <input id="adv_input_region_companyName" class="adv_input_region" type="text" style="margin-top:7px;width:calc(100% - 22px)">
+				</div>
+            </div>
+            <div style="overflow:hidden;margin-top:17px;">
+                <div style="float:left;width:300px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_GONGSIFAREN}}</div>
+                    <input id="adv_input_region_company_legalMan" class="adv_input_region" type="text" style="margin-top:7px">
+                </div>
+                <div style="float:left;width:300px;margin-left:102px">
+                    <div class="inputTitlestyle_contacter">{{ADV_SYSUSER_LIANXIREN}}</div>
+                    <input id="adv_input_region_contactMan" class="adv_input_region" type="text" style="margin-top:7px">
+                </div>
+            </div>
+            <div style="margin-top:17px;height:60px;">
+                <div style="float:left;width:300px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_HEYUEKAISHIRIQI}}</div>
+                    <div id="adv_input_region_company_contractStartTime" class="adv_input_region" style="z-index:1000;margin-top:7px;border:0;padding-left: 0px;width:296px"></div>
+                </div>
+                <div style="float:left;width:300px;margin-left:102px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_DIANHUAHAOMA}}</div>
+                    <div style="overflow:hidden;margin-top:7px">
+                        <input id="adv_input_region_phone1" class="adv_input_region" style="float:left;width:77px"/>
+                        <div style="float:left;width:17px;height:31px;line-height:31px;text-align:center">-</div>
+                        <input id="adv_input_region_phone2" class="adv_input_region" style="float:left;width:176px"/>
+                    </div>
+                </div>
+            </div>
+            <div style="height:60px;margin-top:17px;">
+                <div style="float:left;width:300px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_HEYUEJIESHURIQI}}</div>
+                    <div id="adv_input_region_company_contractEndTime" class="adv_input_region" style="z-index:100;margin-top:7px;border:0;padding-left: 0px;width:296px"></div>
+                </div>
+                <div style="float:left;width:300px;margin-left:102px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_CHUANZHEN}}</div>
+                    <div style="overflow:hidden;margin-top:7px">
+                        <input id="adv_input_region_fax1" class="adv_input_region" style="float:left;width:77px"/>
+                        <div style="float:left;width:17px;height:31px;line-height:31px;text-align:center">-</div>
+                        <input id="adv_input_region_fax2" class="adv_input_region" style="float:left;width:176px"/>
+                    </div>
+                </div>
+            </div>
+            <div style="overflow:hidden;margin-top:17px;">
+                <div style="float:left;width:300px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_YOUXIANG}}</div>
+                    <input id="adv_input_region_company_email" class="adv_input_region" type="text" style="margin-top:7px">
+                </div>
+                <div style="float:left;width:300px;margin-left:102px">
+                    <div class="inputTitlestyle_contacter">{{ADV_SYSUSER_DIZHI}}</div>
+                    <input id="adv_input_region_address" class="adv_input_region" type="text" style="margin-top:7px">
+                </div>
+            </div>
+            <div style="overflow:hidden;margin-top:17px;">
+                <div style="float:left;width:578px">
+                    <div class="inputTitlestyle">{{ADV_SYSUSER_SHANGCHUANZIZHIWENJIAN}}</div>
+                    <input id="adv_input_region_company_uploadFile" value="{{ADV_SYSUSER_SHANGCHUANZIZHIWENJIAN_NOTE}}" readonly="readonly" class="adv_input_region" type="text" style="color:#a8a8a8;background-color:#f0f0f0;width:578px;margin-top:7px">
+                </div>
+                <div id="adv_browserFile" class="adv_small_button_light"  style="margin-top: 27px;float:left;margin-left:30px">{{ADV_SYSUSER_LIURAN}}</div>
+            </div>
+            <div style="overflow:hidden;margin-top:21px;margin-buttom:17px">
+                <div class="adv_small_button_dark" onclick="system_user_management.close_popup_create_system_user()" style="float:left;margin-left:498px">{{ADV_SYSUSER_QUXIAO}}</div>
+                <div class="adv_small_button_light" id="adv_upload_submit"  onclick="system_user_management.edit_new_system_user()" style="float:left;margin-left:18px">确定</div>
+            </div>
+        </div>
+	</div>
+</div>

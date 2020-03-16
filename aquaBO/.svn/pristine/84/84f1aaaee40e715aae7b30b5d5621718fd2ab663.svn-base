@@ -1,0 +1,526 @@
+var node_attr = (function($, Combo, Metas) {
+ var Pane = {
+   widget: {},
+   init(el, type) {
+     var dom = `<div class='attr'>
+      <div class='basic_info group'>${
+        type == 'tree' ?
+          `<div class="row" style="height: 40px;align-items: center;">
+            <label class="col">${i18n('NAVIGATE_TREEID')}</label>
+            <label class="col">${i18n('NAVIGATE_TREE_NEEDRELEASE2')}</label>
+          </div>
+          <div class="row" style="height: 40px;align-items: center;">
+            <div class="col">
+              <input id="tree_id">
+            </div>
+            <div class="col">
+              <input id='need_release' disabled/>
+            </div>
+          </div>
+          <div class="row" style="height: 40px;align-items: center;">
+            <label class="col">${i18n('NAVIGATE_TREE_NAME')}</label>
+          </div>
+          <div class="row" style="height: 40px;align-items: center;">
+            <div class='col' style='width: 100%;'>
+              <input id="tree_name" style='width: calc(50% + 232px)'>
+            </div>
+          </div>
+          <div class="row" style="height: 40px;align-items: center;">
+            <label class="col">${i18n('NAVIGATE_TREE_IS_PUBLIC2')}</label>
+            <label class="col">${i18n('NAVIGATE_TREE_APP')}</label>
+          </div>
+          <div class="row" style="height: 40px;align-items: center;">
+            <div class="col">
+              <div class="combo" id="is_public"></div>
+            </div>
+            <div class="col">
+              <input id="tree_app_key">
+            </div>
+          </div>
+          <div class='row'>
+            <label class='col'>${i18n('NAVIGATE_TREE_SETNAVPATH2')}</label>
+            <label class='col'>${i18n('NAVIGATE_TREE_TAGS')}</label>
+          </div>
+          <div class='row'>
+            <div class='col'>
+              <div id='set_nav_path'></div>
+            </div>
+            <div class='col'>
+              <input id='tags' />
+            </div>
+          </div>
+          <div class='row'>
+            <label class='col'>${i18n('NAVIGATE_CREATE_FOLDER_APPTYPE')}</label>
+            <label class='col'></label>
+          </div>
+          <div class='row'>
+            <div class='col'>
+              <div id="node_app_type"></div>
+            </div>
+            <div class='col'></div>
+          </div>
+          `
+        :
+          `<div class="row">
+            <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_NODETYPE')}</label>
+            <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_APPTYPE')}</label>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input id="node_type" disabled>
+            </div>
+            <div class="col">
+              <div id="node_app_type"></div>
+            </div>
+          </div>
+          <div class="row">
+            <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_FOLDERNAME')}</label>
+            <label class="col">${i18n('NAVIGATE_EDITOR_NODECLASS')}</label>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input id="folder_name" disabled>
+              <label id="change_name">${i18n('NAVIGATE_EDITOR_MODIFY')}</label>
+            </div>
+            <div class="row">
+              <input id="node_id">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col">${i18n('NAVIGATE_EDIT_ASSET_TITLE')}</label>
+          </div>
+          <div class="row">
+            <input id="title"/>
+          </div>
+          <div class="row">
+            <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_ISMANUAL')}</label>
+            <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_NODEINDEX')}</label>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="combo" id="is_manul"></div>
+            </div>
+            <div class="row">
+              <input id="node_no">
+            </div>
+          </div>
+          <div class="manual">
+            <div class="row" name="manual">
+              <label class="col">${i18n('NAVIGATE_EDIT_ASSET_DESC')}</label>
+            </div>
+            <div class="row" name="manual">
+              <input id="desc" />
+            </div>
+            <div class="row" name="auto">
+              <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_OBJECTSURL')}</label>
+            </div>
+            <div class="row" name="auto">
+              <input id="objects_url" />
+            </div>
+            <div class="row" name="auto">
+              <label class="col">${i18n('NAVIGATE_CREATE_FOLDER_OBJECTSURLSCRIPT')}</label>
+            </div>
+            <div class="row" name="auto">
+              <textarea id="objects_url_script"></textarea>
+            </div>
+          </div>`
+      }</div>
+      ${type == 'tree' ? `` : `<div class='public_info group metadata'></div>`}
+      <div class='metadata_info group metadata'></div>
+     </div>`
+     $(el).empty().append($(dom))
+     Pane.initFrame(type);
+     Pane.bindEvents();
+   },
+   initFrame(type){
+     switch (type) {
+       case 'tree':
+       this.widget.public = new Combo('#is_public', [{
+         key: i18n('NAVIGATE_YES'),
+         value: true
+       }, {
+         key: i18n('NAVIGATE_NO'),
+         value: false
+       }], {
+        backgroundIMGStyle: 2,
+         width: 244,
+        height: 30,
+        background: "#ffffff",
+        selectbackground: "#ffffff",
+        disablebackground: "#f6f6f6",
+        disableborder: "#c6c6c6"
+       }, (value) => {})
+       this.widget.setNavPath = new Combo('#set_nav_path', [{
+            key: i18n('NAVIGATE_YES'),
+            value: true
+          }, {
+            key: i18n('NAVIGATE_NO'),
+            value: false
+          }], {
+           backgroundIMGStyle: 2,
+         width: 244,
+           height: 30,
+           background: "#ffffff",
+           selectbackground: "#ffffff",
+           disablebackground: "#f6f6f6",
+           disableborder: "#c6c6c6"
+         }, (value) => {})
+         break;
+       default:
+          this.widget.manul = new Combo('#is_manul', [{
+            key: i18n('NAVIGATE_YES'),
+            value: true
+          }, {
+            key: i18n('NAVIGATE_NO'),
+            value: false
+          }], {
+           backgroundIMGStyle: 2,
+           width: '100%',
+           height: 30,
+           background: "#ffffff",
+           selectbackground: "#ffffff",
+           disablebackground: "#f6f6f6",
+           disableborder: "#c6c6c6"
+         }, (value) => {});
+          this.widget.manul.setDisable();
+       var public = new Metas({
+         el: '[name=attr] .public_info',
+         type: 'default',
+         metas: utils.ObjectFilter([], function(key, val) {
+           return key.indexOf('FILE_') == -1 ? (key !== 'app_type' ? val: null) : null
+         })
+       })
+       this.widget.metadata_public = public
+     }
+     var appType = API.getAppType();
+     this.widget.appType = new Combo('#node_app_type', appType.map((item, index) => {
+       return {
+         key: item.appKey,
+         value: index
+       }
+     }), {
+       backgroundIMGStyle: 2,
+       width: 242,
+       height: 30,
+       background: "#ffffff",
+       selectbackground: "#ffffff",
+       disablebackground: "#f6f6f6",
+       disableborder: "#c6c6c6"
+     }, (value) => {
+       meta.updateKeyOption(appType[value].keys.filter(item => item.indexOf('FILE_') == -1))
+       if (type !== 'tree') {
+         public.updateKeyOption(appType[value].keys.filter(item => item.indexOf('FILE_') == -1))
+     }
+     });
+     var meta = new Metas({
+       el: '[name=attr] .metadata_info',
+       type: 'default',
+       metas: utils.ObjectFilter([], function(key, val) {
+         return key.indexOf('FILE_') == -1 ? val : null
+       })
+     })
+     this.widget.metadata = meta
+   },
+   loadFrame({type, data = {}}) {
+     if (type == 'tree') {
+       var {name, metadata_public: {need_release}} = data;
+       $('.attr .basic_info #tree_id').val(data.id||"");
+       $('.attr .basic_info #tree_name').val(data.name||"");
+       $('.attr .basic_info #tree_app_key').val(data.creator_app_key || Model.tree.creator_app_key || "");
+       $('.attr .basic_info #need_release').val(typeof need_release == 'boolean' ? i18n('NAVIGATION_' + String(data.metadata_public.need_release).toUpperCase()) : "");
+       $('.attr .basic_info #tags').val((data.metadata_public.tags||[]).join(',')||"");
+       Pane.widget.public.setValue(data.is_public||false);
+       Pane.widget.setNavPath.setValue(data.metadata_public.needSetNavPath||false);
+     } else {
+       $('.attr .basic_info #node_type').val(i18n('NAVIGATE_CREATE_FOLDER_FOLDER'));
+       $('.attr .basic_info #folder_name').val(data.name||"");
+       $('.attr .basic_info #node_id').val(data.ext_id||"");
+       $('.attr .basic_info #title').val(data.title||"");
+       $('.attr .basic_info #node_no').val(data.index||"");
+       Pane.widget.manul.setValue(data.is_manual);
+       switch (data.is_manual) {
+         case true:
+          $('.attr .basic_info .manual').addClass('active');
+          $('.attr .basic_info #desc').val(data.description||"");
+           break;
+         default:
+          $('.attr .basic_info .manual').removeClass('active');
+          $('.attr .basic_info #objects_url').val(data.objects_url||"");
+          $('.attr .basic_info #objects_url_script').val(data.objects_url_script.join(',')||"");
+       }
+     }
+     if (this.widget.metadata_public) {
+      this.widget.metadata_public.setValue(utils.ObjectFilter(data.metadata_public, function(key, val) {
+        return key.indexOf('FILE_') == -1 ? (key !== 'app_type' ? val: null) : null
+      }))
+     }
+      this.widget.metadata.setValue(utils.ObjectFilter(data.metadata, function(key, val) {
+        return key.indexOf('FILE_') == -1 ? val : null
+      }))
+      var appType = API.getAppType();
+      var appTypeIndex = appType.findIndex(item => item.appKey == data.metadata_public.app_type)
+      if (appTypeIndex !== 0) {//非默认
+        this.widget.appType.setValue(appTypeIndex < 0 ? 0 : appTypeIndex, data.metadata_public.app_type)
+       if (this.widget.metadata_public) {
+        this.widget.metadata_public.updateKeyOption(appType[this.widget.appType.getValue()].keys.filter(item => item.indexOf('FILE_') == -1))
+       }
+        this.widget.metadata.updateKeyOption(appType[this.widget.appType.getValue()].keys.filter(item => item.indexOf('FILE_') == -1))
+      } else {//默认apptype
+        this.widget.appType.setValue(appTypeIndex, data.metadata_public.app_type)
+       if (this.widget.metadata_public) {
+        this.widget.metadata_public.updateKeyOption()
+       }
+        this.widget.metadata.updateKeyOption()
+      }
+   },
+    load({type, group, data}) {
+     var index = 0;
+     switch (type) {
+       case 'tree':
+       if (group == 'public') {
+         var source = Model.metadata(index, 'source', data.source, true).appendTo($('#tree_editor .group.public_info'));
+         index++;
+         var readonly = Model.metadata(index, 'readonly', data.readonly, true).appendTo($('#tree_editor .group.public_info'));
+         index++;
+         delete data.source
+         delete data.readonly
+       }
+         break;
+       default:
+       if (group == 'public') {
+         var entryType = Model.metadata(index, 'entryType', data.entryType, true).appendTo($('#tree_editor .group.public_info'));
+         index++;
+         delete data.entryType;
+       }
+     }
+     for (var item in data) {
+       if (data.hasOwnProperty(item) && data[item] && item) {
+         Model.metadata(index, item, data[item], false).appendTo($('#tree_editor .group.' + group + '_info'));
+         index++;
+       }
+     }
+     Model.metadata(index, '', '').appendTo($('#tree_editor .group.' + group + '_info'));
+   },
+   bindEvents(){
+     // metadata add
+     $('#tree_editor .tab-ctn [name=attr] .group')
+     .on('click', 'svg[name=add]',(e) => {
+       var parent = $(e.currentTarget).parents('.group')
+       var idx = $(e.currentTarget).data('index');
+       Model.metadata(idx, '', '').insertAfter(parent.find('.row:eq('+idx+')'));
+       parent.find('.row').map((idx, item) => {
+         $(item).find('label').html(idx+1);
+         $(item).find('input.metadata_key, input.metadata_val, svg').data('index', idx);
+       })
+     })
+     .on('click', 'svg[name=del]', (e) => {
+       var parent = $(e.currentTarget).parents('.group')
+       var idx = $(e.currentTarget).data('index');
+       var removable = parent.find('.row').find('input:not(:disabled)').parent('.row').length > 1 ? true: false;
+       if (removable) {
+         parent.find('.row:eq(' + idx +')').remove();
+       }
+       parent.find('.row').map((idx, item) => {
+         $(item).find('label').html(idx+1);
+         $(item).find('input.metadata_key, input.metadata_val, svg').data('index', idx);
+       })
+     })
+     .on('click', '#change_name', ({currentTarget, target}) => {
+       if (target ==currentTarget) {
+         var isActive = $(currentTarget).hasClass('active');
+         if (isActive) {
+              API.updateName({
+                name: $(currentTarget).siblings('#folder_name').val()
+              }, () => {
+             $(currentTarget).removeClass('active').html(i18n('NAVIGATE_EDITOR_MODIFY')).siblings('#folder_name').attr('disabled', 'disabled');
+             API.getNode((resp) => {
+               Pane.loadFrame({
+                 type: Pane.type,
+                 data: resp
+               });
+             });
+             API.confirmFn && API.confirmFn();
+           })
+         } else {
+           $(currentTarget).addClass('active').html(i18n('NAVIGATE_EDITOR_FINISH')).siblings('#folder_name').attr('disabled', null);
+         }
+       }
+     });
+    },
+    getValue() {
+      var ret = {
+        metadata: {},
+        metadata_public: {}
+      }
+      if (this.widget.metadata_public) {
+        ret.metadata_public = this.widget.metadata_public.getValue()
+      }
+      ret.metadata = this.widget.metadata.getValue()
+      if (this.type !== 'tree') {
+        ret.node_class = 'folder'
+        ret.ext_id = $('#tree_editor .tab-ctn [name=attr] #node_id').val()
+        ret.title = $('#tree_editor .tab-ctn [name=attr] #title').val()
+        var is_manual = this.widget.manul.getValue() == 'true' ? true : false;
+        ret.index = parseInt($('#tree_editor .tab-ctn [name=attr] #node_no').val())
+        if (is_manual) {
+          ret.description = $('#tree_editor .tab-ctn [name=attr] #desc').val()
+          ret.objects_url = '';
+          ret.objects_url_script=[]
+        } else {
+          ret.description=''
+          ret.objects_url = $('#tree_editor .tab-ctn [name=attr] #objects_url').val()
+          ret.objects_url_script = $('#tree_editor .tab-ctn [name=attr] #objects_url_script').val().split(',').filter(item => item)
+        }
+      } else {
+        ret.is_public = this.widget.public.getValue() == 'true' ? true : false;
+        ret.creator_app_key = $('#tree_editor .tab-ctn [name=attr] #tree_app_key').val();
+        ret.metadata_public.needSetNavPath = this.widget.setNavPath.getValue() == 'true' ? true : false;
+        ret.metadata_public.tags = $('#tree_editor .tab-ctn [name=attr] #tags').val().split(',').filter(item => item)
+      }
+      ret.metadata_public.app_type = this.widget.appType.getKey();
+      return ret;
+   }
+ };
+ var API = {
+   getNode(callback){
+     let {name, creator_app_key} = Model.tree,
+         {data: {id}} = Model.node
+         method = 'Get',
+         url = aquapaas_host + '/aquapaas/rest/navigation/trees/' + name + '/by_id:'+id,
+         urlParam = [];
+      urlParam.push('app_key=' + creator_app_key)
+      urlParam.push('timestamp=' + new Date().toISOString())
+      urlParam.push('tree_version=00')
+      url += '?' + urlParam.join('&')
+     $.ajax({
+       type: method,
+       url: url,
+       async: true,
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json',
+         'x-aqua-sign': getPaaS_x_aqua_sign(method, url)
+       }
+     }).always((resp, status, xhr) => {
+       if (status == 'success') {
+         callback && callback(resp);
+       }
+     })
+   },
+   updateName(data, callback){
+     let method = 'Put',
+         {name, creator_app_key} = Model.tree,
+         {data: {id}} = Model.node,
+         path = Model.node.getPath().map(item => item.name).join('/'),
+         url = aquapaas_host + '/aquapaas/rest/navigation/trees/' + name + '/by_id:' + id + '?updatefield=name&app_key=' + creator_app_key;
+     $.ajax({
+       type: method,
+       url: url,
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json',
+         'x-aqua-sign': getPaaS_x_aqua_sign(method, url)
+       },
+       data: JSON.stringify(data)
+     }).always((resp, status, xhr) => {
+       if (status == 'success') {
+         API.updateFolder(path, data.name, callback)
+       }
+     })
+    },
+    updateFolder(path, name, callback) {
+      var old_name = path,
+          new_name = path.slice(0, path.lastIndexOf('/') + 1) + name
+      if (old_name !== new_name) {
+        var aqua = new AquaUtil({
+          host: aqua_host
+        })
+        aqua.login({
+          path: '/cdmi_users/',
+          name: LOGIN_AQUA_USERNAME,
+          password: LOGIN_AQUA_PWD,
+          domainURI: LOGIN_AQUA_DOMAIN_URI
+        })
+        aqua.getContainer({
+          path: 'default/netdisk/' + LOGIN_AQUA_USERNAME + '/' + NAVIGATION_TREE_ROOT,
+          name: old_name
+        }).rename(new_name);
+         callback && callback();
+       }
+    },
+    getAppType() {
+      var ret = []
+      $.ajax({
+        type: 'Get',
+        async: false,
+        url: './appType.config',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        dataType: 'json'
+      }).always((resp, status, xhr) => {
+        if (status == 'success') {
+          ret = ret.concat(resp);
+        }
+      })
+      return ret;
+   }
+ };
+ var Model = {
+   metadata(idx, key, value, isDisabled) {
+     var row = $('<div>').addClass('row')
+     .append($('<label>').html(idx+1))
+     .append($('<input class="metadata_key" index="' + idx + '" value="' + key + '">').attr('placeholder', i18n('NAVIGATE_METADATA_KEYINFO')))
+     .append($('<input class="metadata_val" index="' + idx + '" value="' + value + '">').attr('placeholder', i18n('NAVIGATE_METADATA_VALUEINFO')))
+     if (isDisabled) {
+       row.find('input').attr('disabled', 'true');
+     } else {
+       row
+       .append('<svg class="opr" name="add" id="rule_add_' + idx + '" data-index="' + idx + '">' + '<polygon points="7,0 10,0 10,7 17,7 17,10 10,10 10,17 7,17 7,10 0,10 0,7 7,7"></polygon>' + '</svg>')
+       .append('<svg class="opr" name="del" id="rule_del_' + idx + '" data-index="' + idx + '">' + '<polygon points="0,0 2,0 8.5,7 15,0 17,0 17,2 11,8.5 17,15 17,17 15,17 8.5,11 2,17 0,17 0,15 7,8.5 0,2"></polygon>' + '</svg>')
+     }
+     return row;
+   }
+ };
+ function a({el, type, tree, node, confirmFn, data}) {
+   Pane.type = API.confirmFn = Model.tree = Model.node = Model.data = null;
+   Pane.init(el, type)
+   Pane.type = type;
+   API.confirmFn = confirmFn;
+   Model.tree = tree;
+   Model.node = node;
+   if (data) {
+     Pane.loadFrame({
+       type: Pane.type,
+       data: data
+     });
+   } else {
+     API.getNode((resp) => {
+       Pane.loadFrame({
+         type: Pane.type,
+         data: resp
+       });
+     });
+   }
+    this.getValue = ()=>{return Pane.getValue()}
+   this.appType = () => {
+     return Pane.widget.appType.getValue();
+   }
+  }
+  var utils = {
+    ObjectFilter(obj, filter) {
+      var ret = {}
+      for (var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          var item = filter(key, obj[key])
+          if (item !== null) {
+            ret[key] = item
+          }
+        }
+      }
+      return ret;
+    }
+ }
+return a;
+})(jQuery, newSelect, metas)

@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.history {
+	width: 1280px;
+	height: 720px;
+	padding: 50px 60px 68px;
+	box-sizing: border-box;
+	background-image: url('../img/history/background.png');
+}
+.history .container {
+	height: 600px;
+	padding: 25px 30px 13px;
+	background-image: url('../img/history/content_background.png');
+	box-sizing: border-box;
+}
+.history .container .header {
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+}
+.history .container .header .title {
+	margin-left: 20px;
+	position: absolute;
+	font-size: 25px;
+	color: #fff;
+}
+.history .container .header .hint {
+	margin-right: 20px;
+	position: absolute;
+	left: 970px;
+	font-size: 25px;
+	color: #fff;
+}
+.history .container .header .hint span {
+	color: #a6a81a;
+}
+.history .container .header_between {
+	height: 1px;
+	margin: 10px auto 0;
+	background-color: #fff;
+}
+.history .container #history_poster_content {
+	width: 1220px;
+	height: 600px;
+}
+.history .container #history_poster_content #history_poster_focus {
+	width: 178px;
+    height: 250px;
+	position: absolute;
+	background-image: url('../img/history/poster_focus.png');
+	background-size: 182px 255px;
+    background-position: center;
+	background-repeat: no-repeat;
+	z-index: 9;
+	display: none;
+}
+.history .container #history_poster_content .history_poster_img {
+	width: 175px;
+	height: 245px;
+	position: absolute;
+	display: none;
+}
+.history .paging {
+	margin-top: 15px;
+}
+.history .paging .pages {
+	width: 80px;
+	height: 48px;
+	line-height: 48px;
+	margin: 0 auto;
+	text-align: center;
+}
+.history .paging .pages .page {
+	width: 20px;
+}
+.history .paging .pages div {
+	width: 5px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	display: inline-block;
+	font-size: 24px;
+	color: #fff;
+}
+.history .paging #history_page_focus {
+	width: 48px;
+	height: 48px;
+	position: absolute;
+	background-image: url('../img/history/page_focus.png');
+	background-size: 48px;
+    background-position: center;
+    background-repeat: no-repeat;
+	z-index: 10;
+	display: none;
+}
+.history .paging .prev, .history .paging .next {
+	width: 48px;
+	height: 48px;
+	line-height: 48px;
+	position: absolute;
+	background-size: 38px;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+.history .paging .prev {
+	background-image: url('../img/history/prev.png');
+}
+.history .paging .next {
+	background-image: url('../img/history/next.png');
+}
+
+/*历史记录操作对话框*/
+.histroy_dialog {
+	width: 580px;
+	height: 180px;
+	border: 1px solid #fff;
+	justify-content: space-around;
+	background-image: url('../img/history/delete_bg.png');
+	background-position: center;
+    background-repeat: no-repeat;
+	position: absolute;
+    top: 245px;
+    left: 370px;
+	display: none;
+	z-index: 9;
+}
+.histroy_dialog .history_btn {
+	margin: 60px auto;
+	text-align: center;
+}
+.histroy_dialog .history_btn .btn {
+	width: 160px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 11px;
+	text-align: center;
+	display: inline-block;
+	background-position: center;
+    background-repeat: no-repeat;
+	background-image: url('../img/history/btn.png');
+	z-index: 99;
+	font-size: 28px;
+	color: #fff;
+}
+.histroy_dialog .history_btn .btn_checked {
+	background-image: url('../img/history/btn_checked.png');
+}
+.histroy_dialog .history_btn .btn.histroy_video, .histroy_dialog .history_btn .btn.histroy_empty {
+	margin-right: 20px;
+}

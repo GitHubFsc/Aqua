@@ -1,0 +1,367 @@
+/*-------------------------------------
+zTree Style
+
+version:	3.5.19
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+
+-------------------------------------*/
+
+.ztree * {padding:0; margin:0; font-size:14px; color:#797979;font-family:'宋体'}
+.ztree {margin:0; padding:5px; color:#333}
+/*.ztree li{position:relative;padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0;background:rgba(0, 0, 0, 0) url("images/continue_line.png") repeat-y scroll 0 0;background-size:calc(100% - 28px)}*/
+/*.ztree li{position:relative;padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0;background:rgba(0, 0, 0, 0) url("images/continue_line.png") repeat-y scroll 0 0; background-attachment:fixed;background-position:0px 28px;}*/
+.ztree li{position:relative;padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0;background:rgba(0, 0, 0, 0) url("images/continue_line.png") repeat-y scroll 0 0; background-position:0px 28px;margin-left:9px;}
+.ztree li ul{ margin:0; padding:0 0 0 18px}
+.ztree li ul.line{ background:url(images/continue_line.png) 0 0 repeat-y;}
+.ztree li a {padding:1px 3px 0 0; margin:0; height:17px; color:#333; background-color: transparent;
+	text-decoration:none; vertical-align:middle; display: inline-block;height:41px;padding-top:0}/*调整行高*/
+/*.ztree li a:hover {text-decoration:underline}*/
+/*.ztree li a.curSelectedNode {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}*/
+.ztree li a.curSelectedNode {}
+.ztree li a.curSelectedNode_Edit {padding-top:0px; background-color:#FFE6B0; color:black; height:16px; border:1px #FFB951 solid; opacity:0.8;}
+.ztree li a.tmpTargetNode_inner {padding-top:0px; background-color:#316AC5; color:white; height:16px; border:1px #316AC5 solid;
+	opacity:0.8; filter:alpha(opacity=80)}
+.ztree li a.tmpTargetNode_prev {}
+.ztree li a.tmpTargetNode_next {}
+.ztree li a input.rename {height:14px; width:80px; padding:0; margin:0;
+	font-size:12px; border:1px #7EC4CC solid; *border:0px}
+.ztree li span {line-height:41px; margin-right:2px}
+.ztree li span.button {line-height:0; margin:0; width:16px; height:16px; display: inline-block; vertical-align:middle;
+	border:0 none; cursor: pointer;outline:none;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-image:url("images/zTree/zTreeStandard.png"); *background-image:url("images/zTree/zTreeStandard.gif")}
+.ztree li span.button.chk {width:13px; height:13px; margin:0 3px 0 0; cursor: auto}
+.ztree li span.button.chk.checkbox_false_full,.ztree li span.button.chk.checkbox_false_full_focus,.ztree li span.button.chk.checkbox_false_full_focus,.ztree li span.button.chk.checkbox_false_part,.ztree li span.button.chk.checkbox_false_part_focus{
+	background-image:url("images/checkbox_unchoose.png");background-repeat:no-repeat;cursor:pointer
+} 
+.ztree li span.button.chk.checkbox_false_disable {background-position:0 -56px}
+.ztree li span.button.chk.checkbox_true_full,.ztree li span.button.chk.checkbox_true_full_focus,.ztree li span.button.chk.checkbox_true_part,.ztree li span.button.chk.checkbox_true_part_focus{
+	background-image:url("images/checkbox_choose.png");background-repeat:no-repeat;
+}
+.ztree li span.button.chk.checkbox_true_disable {background-position:-14px -56px}
+.ztree li span.button.chk.radio_false_full {background-position:-28px 0}
+.ztree li span.button.chk.radio_false_full_focus {background-position:-28px -14px}
+.ztree li span.button.chk.radio_false_part {background-position:-28px -28px}
+.ztree li span.button.chk.radio_false_part_focus {background-position:-28px -42px}
+.ztree li span.button.chk.radio_false_disable {background-position:-28px -56px}
+.ztree li span.button.chk.radio_true_full {background-position:-42px 0}
+.ztree li span.button.chk.radio_true_full_focus {background-position:-42px -14px}
+.ztree li span.button.chk.radio_true_part {background-position:-42px -28px}
+.ztree li span.button.chk.radio_true_part_focus {background-position:-42px -42px}
+.ztree li span.button.chk.radio_true_disable {background-position:-42px -56px}
+.ztree li span.button.switch {width:18px; height:22px;display:none}
+.ztree li span.button.root_open{background-position:-92px -54px}
+.ztree li span.button.root_close{background-position:-74px -54px}
+.ztree li span.button.roots_open{background-position:-92px 0}
+.ztree li span.button.roots_close{background-position:-74px 0}
+.ztree li span.button.center_open{background-position:-92px -18px}
+.ztree li span.button.center_close{background-position:-74px -18px}
+.ztree li span.button.bottom_open{background-position:-92px -36px}
+.ztree li span.button.bottom_close{background-position:-74px -36px}
+.ztree li span.button.noline_open{background-position:-92px -72px}
+.ztree li span.button.noline_close{background-position:-74px -72px}
+.ztree li span.button.root_docu{ background:none;}
+.ztree li span.button.roots_docu{background-position:-56px 0}
+.ztree li span.button.center_docu{background-image:url("images/center_turn.png")}
+.ztree li span.button.bottom_docu{background-image:url("images/bottom_turn.png")}
+.ztree li span.button.noline_docu{ background:none;}
+.ztree li span.button.ico_open{background-image:none;margin-right:2px; vertical-align:top; *vertical-align:middle;width:6px}
+.ztree li span.button.ico_close{margin-right:2px; background-position:-110px 0; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_docu{background-image:none;width:6px;margin-right:2px; background-position:-110px -32px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.edit {margin-right:2px; background-position:-110px -48px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.remove {margin-right:2px; background-position:-110px -64px; vertical-align:top; *vertical-align:middle}
+.ztree li span.button.ico_loading{margin-right:2px; c scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
+ul.tmpTargetzTree {background-color:#FFE6B0; opacity:0.8; filter:alpha(opacity=80)}
+span.tmpzTreeMove_arrow {width:16px; height:16px; display: inline-block; padding:0; margin:2px 0 0 1px; border:0 none; position:absolute;
+	background-color:transparent; background-repeat:no-repeat; background-attachment: scroll;
+	background-position:-110px -80px; background-image:url("images/zTree/zTreeStandard.png"); *background-image:url("images/zTree/zTreeStandard.gif")}
+
+ul.ztree.zTreeDragUL {margin:0; padding:0; position:absolute; width:auto; height:auto;overflow:hidden; background-color:#cfcfcf; border:1px #00B83F dotted; opacity:0.8; filter:alpha(opacity=80)}
+.zTreeMask {z-index:10000; background-color:#cfcfcf; opacity:0.0; filter:alpha(opacity=0); position:absolute}
+
+/* level style*/
+/*.ztree li span.button.level0 {
+	display:none;
+}
+.ztree li ul.level0 {
+	padding:0;
+	background:none;
+}*/
+
+#sys-user-admin-page2-part2-menu-tree_12,#sys-user-admin-page2-part2-menu-tree_3_ul li,#sys-user-admin-page2-part2-menu-tree_10_ul li,#sys-user-admin-page2-part2-menu-tree_13_ul li,#sys-user-admin-page2-part2-menu-tree_18_ul li,#sys-user-admin-page2-part2-menu-tree_18_ul li,#sys-user-admin-page2-part2-menu-tree_24_ul li,#sys-user-admin-page2-part2-menu-tree_28_ul li,#sys-user-admin-page2-part2-menu-tree_37_ul li,#sys-user-admin-page2-part2-menu-tree_42_ul li,#sys-user-admin-page2-part2-menu-tree_49_ul li,#sys-user-admin-page2-part2-menu-tree_55_ul li,#sys-user-admin-page2-part2-menu-tree_9,#sys-user-admin-page2-part2-menu-tree_61,#sys-user-admin-page2-part2-menu-tree_62,#sys-user-admin-page2-part2-menu-tree_63,#sys-user-admin-page2-part2-menu-tree_64{
+	background-image:none
+}
+#sys-user-admin-page2-part2-menu-tree_8{
+	background-image:url("images/buttom_img.png")!important;
+	background-repeat:no-repeat;
+	background-position:-20px 0px
+}
+/*.ztree ul:nth-child(1) {border:1px red solid}*/
+#sys-user-admin-page2-part2-menu-tree_66_ul,#sys-user-admin-page2-part2-menu-tree_60_ul,#sys-user-admin-page2-part2-menu-tree_64_ul,#sys-user-admin-page2-part2-menu-tree_62_ul,#sys-user-admin-page2-part2-menu-tree_33_ul,#sys-user-admin-page2-part2-menu-tree_34_ul,#sys-user-admin-page2-part2-menu-tree_12_ul,#sys-user-admin-page2-part2-menu-tree_61_ul,#sys-user-admin-page2-part2-menu-tree_24,#sys-user-admin-page2-part2-menu-tree_18,#sys-user-admin-page2-part2-menu-tree_54_ul,#sys-user-admin-page2-part2-menu-tree_52,#sys-user-admin-page2-part2-menu-tree_41,#sys-user-admin-page2-part2-menu-tree_40,#sys-user-admin-page2-part2-menu-tree_36_ul,#sys-user-admin-page2-part2-menu-tree_36,#sys-user-admin-page2-part2-menu-tree_27_ul,#sys-user-admin-page2-part2-menu-tree_30_ul,#sys-user-admin-page2-part2-menu-tree_22,#sys-user-admin-page2-part2-menu-tree_21,#sys-user-admin-page2-part2-menu-tree_3_ul,#sys-user-admin-page2-part2-menu-tree_2_ul,#sys-user-admin-page2-part2-menu-tree_10_ul,#sys-user-admin-page2-part2-menu-tree_13_ul,#sys-user-admin-page2-part2-menu-tree_18_ul,#sys-user-admin-page2-part2-menu-tree_24_ul,#sys-user-admin-page2-part2-menu-tree_28_ul,#sys-user-admin-page2-part2-menu-tree_31_ul,#sys-user-admin-page2-part2-menu-tree_22_ul,#sys-user-admin-page2-part2-menu-tree_37_ul,#sys-user-admin-page2-part2-menu-tree_42_ul,#sys-user-admin-page2-part2-menu-tree_49_ul,#sys-user-admin-page2-part2-menu-tree_47,#sys-user-admin-page2-part2-menu-tree_48,#sys-user-admin-page2-part2-menu-tree_54,#sys-user-admin-page2-part2-menu-tree_55_ul,#sys-user-admin-page2-part2-menu-tree_53_ul,#sys-user-admin-page2-part2-menu-tree_73{
+	background-image:url("images/buttom_img.png"),url("images/continue_line.png");
+	background-repeat: no-repeat,repeat-y 
+}
+#sys-user-admin-page2-part2-menu-tree_11_ul{
+	 background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+   background-repeat: no-repeat, repeat-y;
+	background-position: 3px 63px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_70,#sys-user-admin-page2-part2-menu-tree_71,#sys-user-admin-page2-part2-menu-tree_72,#sys-user-admin-page2-part2-menu-tree_59,#sys-user-admin-page2-part2-menu-tree_61,#sys-user-admin-page2-part2-menu-tree_57,#sys-user-admin-page2-part2-menu-tree_55,#sys-user-admin-page2-part2-menu-tree_45,#sys-user-admin-page2-part2-menu-tree_46,#sys-user-admin-page2-part2-menu-tree_18,#sys-user-admin-page2-part2-menu-tree_54,#sys-user-admin-page2-part2-menu-tree_14,#sys-user-admin-page2-part2-menu-tree_56,#sys-user-admin-page2-part2-menu-tree_50,#sys-user-admin-page2-part2-menu-tree_51,#sys-user-admin-page2-part2-menu-tree_44,#sys-user-admin-page2-part2-menu-tree_19,#,#sys-user-admin-page2-part2-menu-tree_20,#sys-user-admin-page2-part2-menu-tree_39,#sys-user-admin-page2-part2-menu-tree_58,#sys-user-admin-page2-part2-menu-tree_60,#sys-user-admin-page2-part2-menu-tree_62{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 28px, 0 0;
+  background-size: 10px 13px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_64,#sys-user-admin-page2-part2-menu-tree_62,#sys-user-admin-page2-part2-menu-tree_58,#sys-user-admin-page2-part2-menu-tree_51,#sys-user-admin-page2-part2-menu-tree_50,#sys-user-admin-page2-part2-menu-tree_46,#sys-user-admin-page2-part2-menu-tree_40,#sys-user-admin-page2-part2-menu-tree_33,#sys-user-admin-page2-part2-menu-tree_48{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 0px, 0 0;
+  background-size: 10px 13px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_43{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 0px, 0 0;
+  background-size: 10px 13px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_14_ul{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 63px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_19_ul,#sys-user-admin-page2-part2-menu-tree_38_ul{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 105px, 0 0;
+  background-size: 10px 18px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_10{
+  background-image:none
+}
+#sys-user-admin-page2-part2-menu-tree_3_ul{
+	background-position: 3px 308px,0 0;  
+	background-size: 10px 20px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_2_ul{
+  background-position: 3px 391px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_32_ul,#sys-user-admin-page2-part2-menu-tree_10_ul,#sys-user-admin-page2-part2-menu-tree_38_ul{
+  background-position: 3px 63px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_13_ul{
+  background-position: 3px 63px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_53_ul,#sys-user-admin-page2-part2-menu-tree_18_ul{
+  background-position: 3px 104px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_24_ul{
+  background-position: 3px 104px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_31_ul{
+  background-position: 3px 555px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_22_ul{
+	background-position: 3px 144px,0 0;  
+	background-size: 10px 20px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_42_ul{
+	background-position: 3px 105px,0 0;  
+	background-size: 10px 18px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_37_ul,#sys-user-admin-page2-part2-menu-tree_49_ul{
+	background-position: 3px 63px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_41_ul{
+	background-image:url("images/buttom_img2.png"),url("images/continue_line.png");
+	background-repeat: no-repeat,repeat-y;
+	background-position: 3px 103px,0 0
+}
+#sys-user-admin-page2-part2-menu-tree_45_ul{
+	background-image:url("images/buttom_img2.png"),url("images/continue_line.png");
+	background-repeat: no-repeat,repeat-y;
+	background-position: 3px 308px,0 0
+}
+#sys-user-admin-page2-part2-menu-tree_54{
+	background-position: 3px 19px,0 0;  
+  background-size: 10px 22px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_55_ul{
+  background-position: 3px 104px,0 0;  
+  background-size: 10px 19px,auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_25{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png")!important;
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 152px, 0 0;
+  background-size: 10px 12px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_25_ul{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png")!important;
+  background-repeat: no-repeat, repeat-y;
+	background-position: 3px 104px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_23_ul,#sys-user-admin-page2-part2-menu-tree_58_ul,#sys-user-admin-page2-part2-menu-tree_51_ul,#sys-user-admin-page2-part2-menu-tree_48_ul,#sys-user-admin-page2-part2-menu-tree_65,#sys-user-admin-page2-part2-menu-tree_67,#sys-user-admin-page2-part2-menu-tree_59_ul,#sys-user-admin-page2-part2-menu-tree_57_ul,#sys-user-admin-page2-part2-menu-tree_46_ul,#sys-user-admin-page2-part2-menu-tree_52,#sys-user-admin-page2-part2-menu-tree_49,#sys-user-admin-page2-part2-menu-tree_42,#sys-user-admin-page2-part2-menu-tree_32_ul,#sys-user-admin-page2-part2-menu-tree_35_ul,#sys-user-admin-page2-part2-menu-tree_37,#sys-user-admin-page2-part2-menu-tree_26_ul,#sys-user-admin-page2-part2-menu-tree_33,#sys-user-admin-page2-part2-menu-tree_29,#sys-user-admin-page2-part2-menu-tree_21_ul,#sys-user-admin-page2-part2-menu-tree_17_ul,#sys-user-admin-page2-part2-menu-tree_56_ul,#sys-user-admin-page2-part2-menu-tree_29_ul,#sys-user-admin-page2-part2-menu-tree_43_ul{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png")!important;
+  background-repeat: no-repeat, repeat-y;
+}
+#sys-user-admin-page2-part2-menu-tree_32_ul{
+	background-position: 3px 596px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_29_ul{
+	background-position: 3px 473px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_15_ul{
+	background-position: 3px 266px, 0 0,3px 287px,3px 327px,3px 328px,3px 368px,3px 369px,3px 409px,3px 410px;
+  background-size: 10px 20px, auto auto,10px 40px,auto auto,10px 40px,auto auto,10px 40px,auto auto,10px 40px;
+	background-image: url("images/white.png"), url("images/grey.png"),url("images/white.png"), url("images/grey.png"),url("images/white.png"), url("images/grey.png"),url("images/white.png"), url("images/grey.png"),url("images/white.png")!important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+#sys-user-admin-page2-part2-menu-tree_16_ul{
+	background-position: 3px 266px, 0 0,3px 287px,3px 327px,3px 328px,3px 368px,3px 369px,3px 409px,3px 410px;
+  background-size: 10px 20px, auto auto,10px 40px,auto auto,10px 40px,auto auto,10px 40px,auto auto,10px 40px;
+	background-image: url("images/white.png"), url("images/grey.png"),url("images/white.png"), url("images/grey.png"),url("images/white.png"), url("images/grey.png"),url("images/white.png"), url("images/grey.png"),url("images/white.png")!important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+#sys-user-admin-page2-part2-menu-tree_47_ul{
+  background-position: 3px 309px,3px 329px,3px 369px,3px 410px;
+  background-size: 10px 17px,10px 39px,10px 40px,10px 39px;
+	background-image: url("images/white.png"),url("images/white.png"),url("images/white.png"),url("images/white.png")!important;
+  background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
+}
+/*#sys-user-admin-page2-part2-menu-tree_38,#sys-user-admin-page2-part2-menu-tree_73,#sys-user-admin-page2-part2-menu-tree_74,#sys-user-admin-page2-part2-menu-tree_75,#sys-user-admin-page2-part2-menu-tree_76{*/
+#sys-user-admin-page2-part2-menu-tree_73{
+  background-position: 3px 28px, 0 0;
+  background-size: 10px 13px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_74,#sys-user-admin-page2-part2-menu-tree_75,#sys-user-admin-page2-part2-menu-tree_76{
+	background-image: url("images/buttom_img.png"), url("images/continue_line.png");
+    background-position: 3px 28px, 0 0;
+    background-repeat: no-repeat, repeat-y;
+    background-size: 10px 13px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_60_ul,#sys-user-admin-page2-part2-menu-tree_48_ul,#sys-user-admin-page2-part2-menu-tree_53_ul,#sys-user-admin-page2-part2-menu-tree_43_ul{
+	background-position: 3px 104px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_50_ul{
+	background-position: 3px 309px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+
+#sys-user-admin-page2-part2-menu-tree_50_ul,#sys-user-admin-page2-part2-menu-tree_52_ul{
+	background-position: 3px 309px,  3px 328px,  3px 369px,  3px 410px, 3px 452px;
+  background-size: 10px 18px,10px 40px,10px 40px,10px 40px;
+	background-image: url("images/white.png"), url("images/white.png"),url("images/white.png"),url("images/white.png"),url("images/grey.png")!important;
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+}
+
+/*
+#sys-user-admin-page2-part2-menu-tree_50_ul{
+	background-position: 3px 309px;
+  background-size: 10px 20px;
+	background-image: url("images/white.png")!important;
+  background-repeat: no-repeat;
+}
+*/
+
+#sys-user-admin-page2-part2-menu-tree_56_ul{
+	 background-position: 3px 183px, 0 0;
+   background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_17_ul{
+	background-position: 3px 145px, 0 0;
+  background-size: 10px 19px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_28_ul{
+  background-position: 3px 101px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_19,#sys-user-admin-page2-part2-menu-tree_20,#sys-user-admin-page2-part2-menu-tree_22{
+	background-position: 3px 19px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_21_ul{
+	background-position: 3px 552px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_30_ul{
+	background-position: 3px 101px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_29,#sys-user-admin-page2-part2-menu-tree_33_ul{
+	background-position: 3px 511px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_27_ul{
+	background-position: 3px 101px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_36_ul,#sys-user-admin-page2-part2-menu-tree_35_ul{
+	background-position: 3px 101px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_40_ul{
+	background-image:url("images/buttom_img2.png"),url("images/continue_line.png");
+	background-repeat: no-repeat,repeat-y;
+	background-position: 3px 103px,0 0
+}
+#sys-user-admin-page2-part2-menu-tree_12_ul,#sys-user-admin-page2-part2-menu-tree_12_ul,#sys-user-admin-page2-part2-menu-tree_41{
+	background-position: 3px 60px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_26_ul,#sys-user-admin-page2-part2-menu-tree_52{
+	background-position: 3px 552px, 0 0;
+  background-size: 10px 22px, auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_54_ul{
+	background-position: 3px 183px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_70,#sys-user-admin-page2-part2-menu-tree_71,#sys-user-admin-page2-part2-menu-tree_79,#sys-user-admin-page2-part2-menu-tree_78,#sys-user-admin-page2-part2-menu-tree_77,#sys-user-admin-page2-part2-menu-tree_72,#sys-user-admin-page2-part2-menu-tree_62,#sys-user-admin-page2-part2-menu-tree_59,#sys-user-admin-page2-part2-menu-tree_58,#sys-user-admin-page2-part2-menu-tree_57,#sys-user-admin-page2-part2-menu-tree_56,#sys-user-admin-page2-part2-menu-tree_55,#sys-user-admin-page2-part2-menu-tree_50,#sys-user-admin-page2-part2-menu-tree_51,#sys-user-admin-page2-part2-menu-tree_46,#sys-user-admin-page2-part2-menu-tree_45,#sys-user-admin-page2-part2-menu-tree_44,#sys-user-admin-page2-part2-menu-tree_39,#sys-user-admin-page2-part2-menu-tree_40,#sys-user-admin-page2-part2-menu-tree_37,#sys-user-admin-page2-part2-menu-tree_27,#sys-user-admin-page2-part2-menu-tree_47,#sys-user-admin-page2-part2-menu-tree_43,#sys-user-admin-page2-part2-menu-tree_35,#sys-user-admin-page2-part2-menu-tree_29,#sys-user-admin-page2-part2-menu-tree_30,#sys-user-admin-page2-part2-menu-tree_26,#sys-user-admin-page2-part2-menu-tree_24,#sys-user-admin-page2-part2-menu-tree_25,#sys-user-admin-page2-part2-menu-tree_68,#sys-user-admin-page2-part2-menu-tree_69,#sys-user-admin-page2-part2-menu-tree_65,#sys-user-admin-page2-part2-menu-tree_67,#sys-user-admin-page2-part2-menu-tree_49,#sys-user-admin-page2-part2-menu-tree_42,#sys-user-admin-page2-part2-menu-tree_21,#sys-user-admin-page2-part2-menu-tree_36,#sys-user-admin-page2-part2-menu-tree_11{
+	background-position: 3px 19px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_23_ul{
+	background-position: 3px 142px, 0 0;
+	background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_58_ul,#sys-user-admin-page2-part2-menu-tree_51_ul,#sys-user-admin-page2-part2-menu-tree_46_ul{
+	background-position: 3px 101px, 0 0;
+  background-size: 10px 22px, auto auto;
+}
+#sys-user-admin-page2-part2-menu-tree_57_ul{
+	background-position: 3px 391px, 0 0;
+  background-size: 10px 22px, auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_59_ul,#sys-user-admin-page2-part2-menu-tree_62_ul{
+	background-position: 3px 388px, 0 0;
+  background-size: 10px 22px, auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_61_ul,#sys-user-admin-page2-part2-menu-tree_66_ul{
+	background-position: 3px 183px, 0 0;
+  background-size: 10px 22px, auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_34_ul{
+	background-position: 3px 101px, 0 0;
+  background-size: 10px 22px, auto auto
+}
+#sys-user-admin-page2-part2-menu-tree_64_ul{
+	background-position: 3px 388px, 0 0;
+  background-size: 10px 22px, auto auto
+}

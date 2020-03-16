@@ -1,0 +1,44 @@
+<style>
+	.td_outString{
+		width:100%;
+		text-align:left;
+		padding-left:20px;
+	}
+
+	.td_outString input{
+		border: none;
+		text-align:left;
+		zoom:1;
+		outline: medium;
+		width:calc(100% - 20px);
+		height:100%;
+		font-family: inherit;
+		font-size: inherit;
+		color: inherit;
+	}
+	#user-group-admin-user-list td{
+		padding: 0px;
+	}
+</style>
+<div class="user-complext-page" id="user-admin-root">
+	<div class="user-simple-page" id="user-admin-index">
+		<div class="page-rel-container">
+			<div class="page-rel-header">
+				<div class="panel_page_head_left">
+					<div class="panel_page_head_title_lead"></div>
+					<div class="panel_page_head_title">{{USERGROUP_GROUP}}</div>
+					<div class="user-admin-search">
+						<input id="user-group-admin-list-search" />
+						<div class="user-admin-search-icon"></div>
+					</div>
+				</div>
+				<div class="panel_page_add_btn" id="user-group-admin-add">{{USERGROUP_ADDUSERGROUP}}</div>
+			</div>
+			<div class="page-rel-content">
+				<div class="page-inner-content" style="border-width:1px 1px 0 1px; margin:0;">
+					<div id="user-group-admin-user-list"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

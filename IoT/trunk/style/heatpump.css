@@ -1,0 +1,680 @@
+@font-face {
+	font-family: "DIGITAL";
+	src: url("./font/DS-Digital-BoldItalic.woff") format("woff");
+}
+
+.page_heat_pump {
+	position: relative;
+	background-color: #f5f5f5;
+	padding: 19px 20px 20px 15px;
+}
+
+.pump_info_list {
+	position: relative;
+	background-color: #fbfbfb;
+	box-shadow: 0 0 2px 2px #ededed;
+}
+
+.pump_info_list_top {
+	height: 52px;
+	background-color: #fbfbfb;
+	border-bottom: 1px solid #e8e8e8;
+	position: relative;
+}
+
+.pump_info_list_main {
+	position: relative;
+	padding-top: 13px;
+	padding-left: 14px;
+	padding-right: 13px;
+	background-color: #ffffff;
+}
+
+.lead_title {
+	height: 16px;
+	/*width: 120px;*/
+	float: left;
+	margin-left: 19px;
+	margin-top: 19px;
+}
+
+.lead_title_icon {
+	float: left;
+	width: 6px;
+	height: 14px;
+	background-color: #1ec3ec;
+	border: 1px solid #ededed;
+}
+
+.lead_title_text {
+	float: left;
+	height: 16px;
+	line-height: 14px;
+	font-size: 14px;
+	color: #777777;
+	margin-left: 5px;
+}
+
+.pump_info_search {
+	float: left;
+	margin-left: 35px;
+	width: 300px;
+	height: 32px;
+	margin-top: 10px;
+	position: relative;
+}
+
+.pump_search_input {
+	padding-left: 14px;
+	width: 284px;
+	border: 1px solid #d9d9d9;
+	height: 30px;
+	color: #666666;
+	font-size: 12px;
+	border-radius: 6px;
+}
+
+.pump_search_icon {
+	position: absolute;
+	width: 29px;
+	height: 18px;
+	border-left: 1px solid #e2e2e2;
+	background-image: url(../image/heatpump/search.png);
+	background-repeat: no-repeat;
+	background-position: 8px 2px;
+	right: 0;
+	top: 7px;
+	cursor: pointer;
+}
+
+.pump_status_select {
+	position: absolute;
+	width: 140px;
+	height: 32px;
+	right: 14px;
+	top: 10px;
+	z-index: 99;
+}
+
+.page_overlayer {
+	position: relative;
+	display: none;
+}
+
+.pump_page_detail {
+	position: relative;
+	background-color: #fff;
+}
+
+.pump_detail_top {
+	background-color: #e8eeef;
+	height: 40px;
+	border-bottom: 1px solid #dfdfdf;
+	position: relative;
+}
+
+.detail_title_device {
+	width: 150px;
+	white-space: nowrap;
+	margin-left: 24px;
+	height: 40px;
+	line-height: 40px;
+	color: #434343;
+}
+
+.detail_close_btn {
+	width: 68px;
+	padding-left: 30px;
+	height: 30px;
+	border: 1px solid #b4b6b6;
+	background-color: #efefef;
+	color: #8a8a8a;
+	border-radius: 3px;
+	cursor: pointer;
+	position: absolute;
+	right: 15px;
+	top: 4px;
+	background-image: url(../image/heatpump/detail_close.png);
+	background-repeat: no-repeat;
+	background-position: 9px 8px;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.pump_detail_main {
+	padding-left: 15px;
+	padding-right: 20px;
+	padding-top: 17px;
+	padding-bottom: 30px;
+}
+
+.pump_detail_field {
+	border: 1px solid #b7b7b7;
+	border-radius: 3px;
+	padding-top: 24px;
+}
+
+.pump_detail_legend {
+	width: 106px;
+	text-align: center;
+	color: #434343;
+	margin-left: 35px;
+	font-size: 14px;
+}
+
+.field_item {
+	white-space: nowrap;
+	height: 54px;
+	min-width: 399px;
+	position: relative;
+}
+
+.field_label {
+	width: 85px;
+	text-align: right;
+	color: #666666;
+	height: 32px;
+	line-height: 32px;
+	font-size: 12px;
+	display: inline-block;
+}
+
+.field_value {
+	width: 225px;
+	padding-left: 15px;
+	height: 30px;
+	border: 1px solid #cccccc;
+	border-radius: 2px;
+	background-color: #f5f5f5;
+	color: #777777;
+	line-height: 30px;
+	display: inline-block;
+	margin-left: 28px;
+	vertical-align: middle;
+	font-size: 12px;
+}
+
+.field_oper {
+	display: inline-block;
+	margin-left: 14px;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle;
+	font-size: 12px;
+	color: #1ec3ec;
+	cursor: pointer;
+	width: 90px;
+}
+
+.field_oper_disabled {
+	display: inline-block;
+	margin-left: 14px;
+	cursor: default;
+	height: 32px;
+	line-height: 32px;
+	vertical-align: middle;
+	font-size: 12px;
+	color: #d4d4d4;
+	width: 90px;
+}
+
+.pump_detail_table_layout {
+	margin-right: 70px;
+}
+
+.pump_detail_last_left {
+	display: inline-block;
+	width: 310px;
+	margin-left: 24px;
+	vertical-align: top;
+}
+
+.pump_detail_temp_look {
+	position: relative;
+	width: 310px;
+	height: 100px;
+	border-radius: 4px;
+	color: #fff;
+	margin-bottom: 16px;
+}
+
+.pump_detail_temp_out {
+	background-color: #83dff7;
+	background-image: url(../image/heatpump/icon_temp_out.png);
+	background-repeat: no-repeat;
+	background-position: 15px 25px;
+}
+
+.pump_detail_temp_in {
+	background-color: #f76856;
+	background-image: url(../image/heatpump/icon_temp_in.png);
+	background-repeat: no-repeat;
+	background-position: 17px 24px;
+}
+
+.pump_detail_temp_set {
+	background-color: #f9aa4c;
+	background-image: url(../image/heatpump/icon_temp_set.png);
+	background-repeat: no-repeat;
+	background-position: 17px 24px;
+}
+
+.pump_detail_last_right {
+	display: inline-block;
+	margin-left: 25px;
+	vertical-align: top;
+}
+
+.pump_detail_digit_looks {
+	white-space: nowrap;
+	height: 234px;
+}
+
+.pump_detail_digit_look {
+	width: 222px;
+	height: 230px;
+	display: inline-block;
+	border-radius: 3px;
+	border: 2px solid #cef1fb;
+	background-color: #e8faff;
+	margin-right: 20px;
+	position: relative;
+	vertical-align: middle;
+}
+
+.pump_detail_last_info {
+	width: 976px;
+	height: 83px;
+	border: 1px solid #b7b7b7;
+	border-radius: 3px;
+	margin-top: 15px;
+}
+
+.pump_detail_digit_name {
+	height: 61px;
+	font-size: 24px;
+	line-height: 61px;
+	color: #60b1c8;
+	padding-left: 10px;
+}
+
+.pump_detail_digit_numbox {
+	width: 195px;
+	height: 108px;
+	background-image: url(../image/heatpump/digit_screen.png);
+	background-repeat: no-repeat;
+	position: relative;
+	margin-left: 8px;
+	padding-top: 20px;
+	padding-right: 12px;
+}
+
+.pump_detail_digit_num {
+	font-family: 'DIGITAL';
+	color: #fff;
+	height: 94px;
+	line-height: 94px;
+	margin-right: 26px;
+	font-size: 60px;
+	text-align: right;
+	position: relative;
+}
+
+.pump_detail_digit_unit {
+	text-align: center;
+	font-size: 20px;
+	color: #51a8c4;
+	line-height: 41px;
+}
+
+.pump_detail_multi_text {
+	margin-left: 78px;
+	position: relative;
+	top: 30px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+}
+
+.pump_detail_temp_label {
+	font-size: 25px;
+	line-height: 25px;
+}
+
+.pump_detail_temp_sublabel {
+	font-size: 12px;
+	line-height: 12px;
+	margin-top: 7px;
+}
+
+.pump_detail_multi_val {
+	position: absolute;
+	right: 17px;
+	text-align: right;
+	top: 30px;
+}
+
+.pump_detail_val_unit {
+	display: inline-block;
+	font-size: 25px;
+	vertical-align: bottom;
+	line-height: 25px;
+}
+
+.pump_detail_val_num {
+	display: inline-block;
+	font-size: 33px;
+	vertical-align: bottom;
+	line-height: 33px;
+}
+
+.help_info {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 11px;
+	border: 1px solid #bababa;
+	color: #bababa;
+	cursor: pointer;
+	line-height: 20px;
+	text-align: center;
+}
+
+.pump_detail_digit_look .help_info {
+	border-color: #36d2fe;
+	color: #36d2fe;
+}
+
+.pump_detail_temp_look .help_info {
+	color: #fff;
+	border-color: #fff;
+}
+
+.field_item .help_info {
+	color: #bababa;
+	border-color: #bababa;
+}
+
+.help_popup {
+	position: absolute;
+	width: 406px;
+	height: 90px;
+	background-image: url(../image/heatpump/tip_bg.png);
+	background-repeat: no-repeat;
+	top: -100px;
+	left: -193px;
+	z-index: 199;
+}
+
+.help_content {
+	border: 1px solid transparent;
+	width: 379px;
+	padding-left: 19px;
+	height: 63px;
+	line-height: 63px;
+	color: #666666;
+	font-size: 16px;
+	text-align: left;
+}
+
+.dialog .row .label.align_right {
+	white-space: nowrap;
+	text-align: right;
+	width: 90px;
+	margin-left: 0;
+	margin-right: 23px;
+}
+
+.field_btn_oper {
+	width: 97px;
+	height: 32px;
+	line-height: 32px;
+	padding-left: 38px;
+	border: 1px solid #67bacf;
+	border-radius: 4px;
+	background-color: #44ccee;
+	color: #fff;
+	font-size: 14px;
+	background-image: url(../image/heatpump/btn_oper_icon.png);
+	background-position: 9px 7px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.list_date_pickers {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	width: 287px;
+	height: 32px;
+	z-index: 99;
+}
+
+.list_date_picker {
+	height: 32px;
+	width: 135px;
+	position: relative;
+	float: left;
+	color: #777777;
+}
+
+.list_picker_spacer {
+	width: 10px;
+	height: 1px;
+	float: left;
+	margin-top: 16px;
+	margin-left: 4px;
+	margin-right: 3px;
+	background-color: #999999;
+}
+
+.detail_warning_bar {
+	position: absolute;
+	top: -1px;
+	left: 0;
+	right: 0;
+	height: 44px;
+	background-image: url(../image/heatpump/warning_tb.png);
+	background-position: center;
+	text-align: center;
+	white-space: nowrap;
+	display: none;
+}
+
+.detail_warning_bar > div {
+	display: inline-block;
+	vertical-align: middle;
+	height: 44px;
+	line-height: 44px;
+}
+
+.warning_bar_icon {
+	width: 24px;
+	background-image: url(../image/heatpump/warning_icon.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 14px;
+}
+
+.warning_bar_code {
+	font-size: 14px;
+	color: #fff;
+	margin-right: 50px;
+}
+
+.warning_bar_time {
+	font-size: 14px;
+	color: #fff;
+	margin-right: 30px;
+}
+
+.warning_bar_oper {
+	font-size: 12px;
+	color: #fff830;
+	cursor: pointer;
+}
+
+.model_device_types {
+	height: 68px;
+	background-color: #ffffff;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.model_device_types_layout {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	background-color: #fff;
+}
+
+.model_device_types_layout.bottom_shadowed {
+	box-shadow: 0 2px 2px 0 #ededed;
+}
+
+.model_device_types_label {
+	float: left;
+	padding-top: 15px;
+	padding-left: 24px;
+	width: 105px;
+	font-size: 16px;
+	color: #727272;
+	line-height: 16px;
+}
+
+.model_device_type_items {
+	float: left;
+	overflow: hidden;
+	height: 16px;
+	padding-top: 15px;
+	width: calc(100% - 129px);
+}
+
+.option_radio {
+	display: inline-block;
+	height: 16px;
+	margin-right: 43px;
+	margin-bottom: 20px;
+}
+
+.option_radio_check {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	background-color: #fff;
+	border: 1px solid #d7d7d7;
+	border-radius: 7px;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.option_radio_check_color {
+	width: 10px;
+	height: 10px;
+	margin: 2px;
+	border-radius: 5px;
+	background-color: #d4d4d4;
+}
+
+.option_radio_checked .option_radio_check_color {
+	background-color: #32beea;
+}
+
+.option_radio_label {
+	color: #8b8b8b;
+	display: inline-block;
+	margin-left: 12px;
+	font-size: 12px;
+	height: 16px;
+	line-height: 16px;
+	vertical-align: top;
+}
+
+.model_btn.btn_with_icon.model_add {
+	background-color: #44ccee;
+    background-image: url("../image/device_dtu/info.png");
+    border-color: #279dbb;
+    text-shadow: 0 0 1px #3597af;
+}
+
+.model_btn.btn_with_icon.model_import {
+	background-color: #fe931f;
+    background-image: url("../image/device_dtu/import.png");
+    border-color: #c16c10;
+    text-shadow: 0 0 1px #b56b1a;
+}
+
+.model_btn.btn_with_icon {
+	background-position: 9px center;
+    background-repeat: no-repeat;
+    padding-left: 33px;
+}
+
+.model_btn {
+	border-color: #000;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px;
+    margin-right: 13px;
+    padding: 0 10px;
+}
+
+.model_oper_btns {
+	position: absolute;
+	width: 235px;
+	right: 0;
+	padding-top: 9px;
+	top: 0;
+}
+
+.model_oper_btns>div {
+	float: left;
+}
+
+.dialog .row .combo.heatpump_edit_datepicker {
+	line-height: normal;
+}
+
+.models_more_device_types {
+	text-align: center;
+	float: left;
+	width: 100%;
+	display: none;
+	margin-top: 14px;
+}
+
+.models_more_device_btn {
+	display: inline-block;
+	height: 12px;
+}
+
+.models_more_device_btn .dir_label {
+	font-size: 12px;
+	line-height: 12px;
+	padding-right: 9px;
+	color: #999999;
+	display: inline-block;
+	height: 12px;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.models_more_device_btn .dir_arrow {
+	background-image: url(../image/models/more_down_arw.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 12px;
+	width: 12px;
+	display: inline-block;
+	vertical-align: top;
+	cursor: pointer;
+}
+
+.models_more_device_btn.more_open .dir_arrow {
+	transform: rotate(180deg);
+}

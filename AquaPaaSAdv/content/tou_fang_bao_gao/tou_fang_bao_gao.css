@@ -1,0 +1,237 @@
+.input_search_container_ {
+    background-color: #f4f4f4;
+    border: 1px solid #eaeaea;
+    border-radius: 2px;
+    color: #737373;
+    height: 34px;
+    position: relative;
+}
+.input_search_container_ .filterSelect {
+    display: inline-block;
+    height: 30px;
+    margin-left: 0;
+    padding-left: 2px;
+    padding-top: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 108px;
+}
+.input_search_container_ .panel_top_search_box_input {
+    background-color: rgb(244, 244, 244);
+    border: 0 solid rgb(234, 234, 234);
+    color: rgb(121, 121, 121);
+    font-size: 14px;
+    height: 34px;
+    outline: medium none;
+    padding-left: 10px;
+    padding-right: 30px;
+    position: absolute;
+    width: calc(300px - 20px - 40px - 5px);
+}
+.input_search_container_ .panel_top_search_box_handle {
+    background-image: url("../../image/search_handle.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    height: 16px;
+    margin-top: -8px;
+    position: absolute;
+    right: 11px;
+    top: 50%;
+    width: 16px;
+}
+.input_search_container_ .filterSelect .select-box {
+    border-radius: 5px;
+}
+.input_search_container_ .filterSelect .select-header {
+    border-radius: 4px;
+}
+.toufang_tab_toggle_unit{
+	border-radius: 2px;
+  cursor: pointer;
+  display: inline-block;
+  height: 34px;
+	line-height: 34px;
+  text-align: center;
+	width:34px;
+	font-size: 16px;
+  font-weight: bold;
+}
+.toufang_tab_focus_style{
+	background-color: #75b8d6;
+  border: 1px solid #4488a7;
+	color: #ffffff;
+}
+.toufang_tab_unfocus_style{
+	/*background-image: url("images/tab_white_shadow.png");*/
+	background: rgba(0, 0, 0, 0) linear-gradient(#f7f7f7, #e4e4e4) repeat scroll 0 0;
+  border: 1px solid #d1d1d1;
+  color: #494b58;
+}
+.toufang_next_pre_button{
+	text-align:left;
+	border:1px #4488a7 solid;
+	height:34px;
+	padding-left:25px;
+	line-height:34px;
+	width:28px;
+	background-size: auto 100%;
+	cursor:pointer;
+	color:#ffffff
+}
+#adv_toufang_baogao_top_start_time-datepicker-input {
+  border-radius: 3px;
+  padding-left: 4px;
+	background-color:#f4f4f4
+}
+.toufang_dropdown{
+	height: 34px;
+  position: relative;
+  width: 133px;
+}
+#toufang_validtime_hour_begin .select-header{f
+	border-radius:3px;
+	background-color: #f4f4f4;
+}
+#toufang_validtime_hour_begin .select-header img{
+	top:8px;
+	right:8px;
+	position:absolute
+}
+.panel_calendar_container {
+    float: left;
+    height: 36px;
+    margin-top: 0px;
+    position: relative;
+    width: 148px;
+}
+.panel_timesel_container {
+    float: left;
+    height: 36px;
+    margin-left: 8px;
+    margin-top: 0px;
+    position: relative;
+    width: 134px;
+}
+.panel_calendar_input {
+    background-color: #f4f4f4;
+    border: 1px solid #eaeaea;
+    border-radius: 3px;
+    color: #494b58;
+    font-size: 14px;
+    height: 34px;
+    padding-left: 8px;
+    width: 140px;
+		border-radius:3px
+}
+.panel_calendar_dash {
+    color: #494b58;
+    float: left;
+    height: 36px;
+    line-height: 36px;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 0px;
+    padding: 0;
+    width: 8px;
+}
+#adv_toufang_report_container .calendar-month-label, #adv_toufang_report_container .calendar-year-label, .calendarStyle_ .calendar-month-label, .calendarStyle_ .calendar-year-label {
+   font-size: 14px;
+}
+#adv_toufang_report_container .calendar-weekday, .calendarStyle_ .calendar-weekday {
+    font-size: 14px;
+}
+.calendar-curr-month-date,.calendar-non-curr-month-date{
+	 font-size: 14px;
+}
+.panel_time_picker_tlabel {
+    color: #797979;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+		font-size:14px
+}
+.panel_time_picker_times .styled-selector-down-arrow {
+    background-image: url("../../image/dvEvn/stats_time_selector_icon.png");
+    background-repeat: no-repeat;
+    height: 24px;
+    width: 24px;
+}
+.toufang_panel_calendar_selectors{
+ float:right;
+ position:relative;
+ z-index: 99;
+ margin-right:8px
+}
+.toufang_adPos_operation{
+	color: rgb(60, 148, 187);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.toufang_panel_dialog_title {
+  background-color: rgb(93, 161, 192);
+  height: 34px;
+  width: 100%;
+}
+.toufang_dialog_row{
+	margin-left:31px;
+	margin-right:24px;
+}
+.toufang_dialog_row_label{
+	height:38px;
+	line-height:38px;
+	text-align:left;
+	margin-top:11px
+}
+.toufang_dialog_group_content {
+	background-color: #f6f9fa;
+	border: 1px solid #90bdd2;
+	box-sizing: border-box;
+	height:164px
+}
+.toufang_dialog_content_label_container{
+	width:100%;
+	height:33px
+}
+.toufang_dialog_content_label{
+	margin-top:7px;
+	height:26px;
+	line-height:26px;
+	margin-left:18px;
+	float:left;
+	width:221px;
+}
+.toufang_dialog_content_input_container{
+	width:100%;
+	overflow:hidden
+}
+.toufang_dialog_content_input{
+	width:209px;
+	height:30px;
+	line-height:30px;
+	margin-left:18px;
+	float:left;
+	background-color:#f0f0f0;
+	border:1px #e2e2e2 solid;
+	padding-left:12px
+}
+.toufang_dialog_content_input_b{
+	background-color:white;
+	border:0;
+	margin-left:0px;
+	padding-left:0;
+	text-align:center
+}
+
+.toufang_detail_panel_dialog_cancel{
+	background-color: rgb(136, 197, 224);
+  border: 1px solid rgb(111, 170, 196);
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 90px;
+}

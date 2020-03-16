@@ -1,0 +1,231 @@
+<style>
+  .trendAnalysis_dialog {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 0px solid rgba(0, 0, 0, 0.5);
+    background-color: white;
+    font-family: 微软雅黑;
+    font-size: 14px;
+    color: #727272;
+    border-radius: 9px;
+  }
+  .trendAnalysis_dialog_title {
+    width: 100%;
+    height: 48px;
+    background-color: rgb(43, 188, 233);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .trendAnalysis_dialog_title_text {
+    position: absolute;
+    left: 20px;
+    height: 48px;
+    line-height: 48px;
+    color: white;
+    cursor: default;
+    color: white;
+    font-size: 18px;
+  }
+  .trendAnalysis_dialog_content {
+    padding-top: 20px;
+    padding-bottom: 20px
+  }
+  .trendAnalysis_dialog_close {
+    position: absolute;
+    background-image: url(./images/trendAnalysis/sucai_dialog_close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 48px;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
+  }
+  .trendAnalysis_dialog_FootButtons {
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    height: 35px;
+    line-height: 35px;
+    text-align: right;
+  }
+  .trendAnalysis_dialog_FootButtons .other_option_type1 {
+    display: inline-block;
+    width: 65px;
+    height: 35px;
+    line-height: 35px;
+    color: #38C1EF;
+    text-align: center;
+    font-family: 微软雅黑;
+    margin-right: 14px;
+    font-size: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .trendAnalysis_dialog_FootButtons .option_botton {
+    display: inline-block;
+    width: 89px;
+    height: 35px;
+    line-height: 35px;
+    border: 1px solid #2CBDEA;
+    border-radius: 4px;
+    color: white;
+    text-align: center;
+    background-color: #2CBDEA;
+    font-family: 微软雅黑;
+    margin-right: 14px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .trendAnalysis_dialog_FootButtons .option_botton.popup_dialog_clear {
+    border: 1px solid #DFDFDF;
+    color: #B7B7B7;
+    background-color: #F6F6F6;
+  }
+  .trendAnalysis_dialog_content .option {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  .trendAnalysis_dialog_content .option .option_title {
+    color: #707070;
+    font-size: 12px;
+    line-height: 30px;
+    height: 30px;
+  }
+  .trendAnalysis_dialog_content .option .option_input {
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 28px;
+    border: 1px #C6C6C6 solid;
+    font-size: 12px;
+    padding-left: 7px;
+    vertical-align: middle;
+    outline: none medium;
+    color: #707070;
+  }
+  .trendAnalysis_dialog_content .option .option_input::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #e2e2e2;
+  }
+  .trendAnalysis_dialog_content .option_search {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #2CBDEA;
+    height: 37px;
+    box-sizing: border-box;
+    border-top: 1px solid #E2E2E2;
+    border-left: 1px solid #E2E2E2;
+    border-right: 1px solid #E2E2E2;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .trendAnalysis_dialog_content .option_search .option_search_select {
+    width: 120px;
+    height: 30px;
+    box-sizing: border-box;
+    margin-right: 2px;
+  }
+  .trendAnalysis_dialog_content .option_search .option_search_inputModel {
+    width: 286px;
+    height: 30px;
+    font-size: 0px;
+    line-height: 0px;
+  }
+  .trendAnalysis_dialog_content .option_search .option_search_inputModel .option_search_inputModel_input {
+    height: 30px;
+    width: 214px;
+    line-height: 30px;
+    border: 1px #e2e2e2 solid;
+    font-size: 12px;
+    padding-left: 7px;
+    vertical-align: top;
+    outline: none medium;
+    background: #f4f4f4;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-right: 10px;
+  }
+  .trendAnalysis_dialog_content .option_search .option_search_inputModel .option_search_inputModel_button {
+    height: 30px;
+    width: 60px;
+    border: 1px solid #FFF;
+    background: #18AAD7;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    line-height: 28px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  #ResultList td .scrollBarList_span {
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+  }
+  #ResultList td .scrollBarList_span input {
+    border: none;
+    text-align: left;
+    zoom: 1;
+    outline: medium;
+    width: calc(100% - 15px);
+    height: 100%;
+    font-family: 宋体;
+    font-size: 13px;
+    color: rgb(114, 114, 114);
+  }
+
+  .trendAnalysis_dialog .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  .trendAnalysis_dialog .mCSB_scrollTools .mCSB_draggerRail {
+    background-color: #e8edef;
+  }
+  .trendAnalysis_dialog .mCSB_scrollTools .mCSB_dragger:hover .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  .trendAnalysis_dialog .mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+    background-color: #a6dff1;
+  }
+  .trendAnalysis_dialog  .mCSB_inside > .mCSB_container{
+    margin-right: 0px;
+  }
+</style>
+<div class="trendAnalysis_dialog">
+  <div class="trendAnalysis_dialog_title">
+    <div class="trendAnalysis_dialog_title_text" id="trendAnalysis_dialog_title_text">
+      {{TRENDANALYSIS_FILTER}}
+    </div>
+    <div class="trendAnalysis_dialog_close popup_dialog_clear">
+    </div>
+  </div>
+  <div class="trendAnalysis_dialog_content">
+    <div class="option">
+      <div class="option_title">{{TRENDANALYSIS_FILTER_DETAIL}}</div>
+      <input id="FilterInput" class="option_input" placeholder="{{TRENDANALYSIS_FILTER_CONTENT1}}">
+    </div>
+    <div class="option_search">
+      <div id="option_search_select" class="option_search_select"></div>
+      <div id="option_search_inputModel" class="option_search_inputModel" style="width:340px">
+        <input class="option_search_inputModel_input" style="width:214px;background: white" placeholder="" onkeyup="">
+        <div class="option_search_inputModel_button">{{TRENDANALYSIS_FILTER_SEARCH}}</div>
+      </div>
+    </div>
+    <div class="option" id="ResultList"></div>
+  </div>
+  <div class="trendAnalysis_dialog_FootButtons">
+    <div class="option_botton  popup_dialog_clear">{{TRENDANALYSIS_CANCEL}}</div>
+    <div id="trendAnalysis_dialog_confirm" class="option_botton confirm_bottom">{{TRENDANALYSIS_SELECT}}</div>
+  </div>
+</div>

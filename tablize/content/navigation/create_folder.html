@@ -1,0 +1,32 @@
+<div class="_dialog" id="navigation_create_folder">
+  <link rel="stylesheet" href="style/dialog.css">
+  <link rel="stylesheet" href="style/newSelect.css">
+  <link rel="stylesheet" href="content/navigation/create_folder.css">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{NAVIGATE_CREATE_FOLDER}}</div>
+    <div class="_dialog_span"></div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body">
+    <div class="group basic_info">
+      <div class="_dialog_row"><label style='width: 257px;'>{{NAVIGATE_CREATE_FOLDER_NODETYPE}}</label><label>{{NAVIGATE_CREATE_FOLDER_PARENTPATH}}</label></div>
+      <div class="_dialog_row"><input value="{{NAVIGATE_CREATE_FOLDER_FOLDER}}" disabled style='width: 234px;margin-right: 44px;margin-left: 10px;'><input id="navigation_path" disabled style='flex: 1;'></div>
+      <div class="_dialog_row"><label style='width: 375px;'>{{NAVIGATE_CREATE_FOLDER_FOLDERNAME}}</label><label>节点ID</label></div>
+      <div class="_dialog_row"><input id="navigation_folder_name" style='width: 362px; margin-left: 10px;margin-right: 33px;'><input id="navigation_node_id" style='flex: 1;'></div>
+      <div class="_dialog_row"><label>{{NAVIGATE_CREATE_FOLDER_TITLE}}</label></div>
+      <div class="_dialog_row"><input id="navigation_title" style="flex: 1;margin-left: 10px;"></div>
+      <div class="_dialog_row"><label style='width: 376px;margin-left: 10px;'>{{NAVIGATE_CREATE_FOLDER_ISMANUAL}}</label><label>{{NAVIGATE_CREATE_FOLDER_NODEINDEX}}</label></div>
+      <div class="_dialog_row"><div id="navigation_create_is_manul" style='margin-left: 10px;margin-right: 153px;'></div><input id="navigation_node_seq" style='flex: 1'></div>
+      <div class="_dialog_row"><label>{{NAVIGATE_CREATE_FOLDER_OBJECTSURL}}</label></div>
+      <div class="_dialog_row"><input id="navigation_object_url" style='flex: 1;margin-left: 10px;'></div>
+      <div class="_dialog_row"><label>{{NAVIGATE_CREATE_FOLDER_OBJECTSURLSCRIPT}}</label></div>
+      <div class="_dialog_row"><textarea id="navigation_objects_url_script" style='flex: 1;height: 79px;resize: none;margin-left: 10px;border-color: #e2e2e2;'></textarea></div>
+    </div>
+    <div class="group public_info"></div>
+    <div class="group metadata_info"></div>
+  </div>
+  <div class="_dialog_foot">
+    <div class="btn _cancel">{{AUTH_MNG_DIALOG_CANCEL}}</div>
+    <div class="btn _confirm">{{NAVIGATION_CREATE}}</div>
+  </div>
+</div>

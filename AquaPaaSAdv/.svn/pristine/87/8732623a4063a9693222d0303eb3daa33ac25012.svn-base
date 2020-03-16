@@ -1,0 +1,15 @@
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label" id="user-admin-coupon-title"></div>
+    <div class="wp_panel_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="wp_panel_dialog_content">
+		<div class="user-admin-coupon-ins">
+			<input type="text" id="user-admin-coupon-id" placeholder="{{COUPON_PLEASEINPUTCOUPON}}"/>
+			<div class="user-admin-coupon-btn" id="user-admin-coupon-add">{{COUPON_FAFANGCOUPON}}</div>
+		</div>
+		<div id="user-admin-coupon-list"></div>
+    <div class="lecture_recommend_dialog_cancel popup_dialog_clear" style="right:195px;bottom:18px;">{{COUPON_CANCEL}}</div>
+    <div class="lecture_recommend_dialog_submit popup_dialog_clear" style="right:19px;bottom:18px;">{{COUPON_CONFIRM}}</div>
+  </div>
+</div>

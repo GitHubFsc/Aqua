@@ -1,0 +1,183 @@
+<div class="panel_dialog">
+	<div class="panel_dialog_title">
+		<div class="panel_dialog_title_text">
+			{{ADPOS_DIALOG_TITLE_XINJIAN}}
+		</div>
+		<div id="adPos_dialog_ne_close" class="panel_dialog_close popup_dialog_clear">
+
+		</div>
+	</div>
+	<div class="panel_dialog_body">
+		<table class="panel_dialog_body_layout">
+			<tbody>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_ID}}
+							</div>
+							<input id="adPos_dialog_ne_id" class="panel_dialog_block_space_input" type="text"/>
+							<div class="adPos_admaster_ifopen">
+								<div id="adPos_admaster_check"></div>
+								<span>{{ADPOS_ADMASTER_IF_OPEN}}</span>
+							</div>
+							<div class="adPos_is_starting">
+								<input type="checkbox" id="adPos_is_starting_up" class="adPos_checkbox_aligned"/>
+								<span class="adPos_span_aligned">{{ADPOS_DIALOG_IS_STARTING_UP}}</span>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_NAME}}
+							</div>
+							<input id="adPos_dialog_ne_name" class="panel_dialog_block_space_input" type="text"/>
+						</div>
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_AD_COUNT}}
+							</div>
+							<input id="adPos_dialog_ne_count" class="panel_dialog_block_space_input" type="text"/>
+						</div>s
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_DEFAULT_AD}}
+							</div>
+							<div id="adPos_dialog_ne_dfAd_selector" class="panel_dialog_block_selector adPos_dialog_ne_dfAd_selector panel_dialog_block_selector_space">
+
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr></tr>
+				<tr>
+					<td>
+						<div class="adPos_dialog_ne_size_tw panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_SIZE}}
+							</div>
+							<span>{{ADPOS_SIZE_WIDTH}}</span>
+							<input id="adPos_dialog_ne_size_width" style="padding-left:12px;width:48px;" class="panel_dialog_block_input" type="text"/>
+							<span>px</span>
+							<span>×</span>
+							<span>{{ADPOS_SIZE_HEIGHT}}</span>
+							<input id="adPos_dialog_ne_size_height" style="padding-left:12px;width:48px;" class="panel_dialog_block_input" type="text"/>
+							<span>px</span>
+						</div>
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_DIALOG_LABEL_ADAPT_ADVICE}}
+							</div>
+							<div id="adPos_dialog_ne_adapt_selector" class="panel_dialog_block_selector adPos_dialog_ne_adapt_selector panel_dialog_block_selector_space">
+
+							</div>
+						</div>
+					</td><td></td>
+					<td>
+						<div class="panel_dialog_block">
+							<div class="panel_dialog_block_label">
+								{{ADPOS_MAX_PLACEMENT_COUNT}}
+							</div>
+							<input id="adPos_dialog_ne_max_placement_count" class="panel_dialog_block_space_input" type="text"/>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="adPos_dialog_group">
+			<div class="adPos_dialog_group_name">{{ADPOS_SLIDE_SETTING}}</div>
+			<div class="adPos_dialog_group_content" style="height:90px;">
+				<div class="adPos_dialog_align_block">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_TUWEN_PLAY_MODE}}
+					</div>
+					<input id="adPos_dialog_tuwen_ne_play_mode" class="panel_dialog_block_space_input" type="text" style="width:227px;"/>
+				</div>
+				<div class="adPos_dialog_align_block" style="margin-left:16px;">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_TUWEN_PLAY_DELAY}}
+					</div>
+					<input id="adPos_dialog_tuwen_ne_play_delay" class="panel_dialog_block_space_input" type="text" style="width:130px;"/>
+					<span>{{ADPOS_DIALOG_SECOND}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="adPos_dialog_group">
+			<div class="adPos_dialog_group_name">{{ADPOS_FLOATING_SETING}}</div>
+			<div class="adPos_dialog_group_content" style="height:240px;overflow: auto;">
+				<div class="adPos_dialog_align_block">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_DIALOG_FLOATLAYER_DISPLAY_TIME}}
+					</div>
+					<input id="adPos_dialog_tuwen_floatLayer_duration" class="panel_dialog_block_space_input" type="text" style="width:138px"/>
+					<span>{{ADPOS_DIALOG_SECOND}}</span>
+				</div>
+				<div class="adPos_dialog_align_block" style="margin-left:25px;">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_DIALOG_LABEL_FLOATING_MININTERVAL}}
+					</div>
+					<input id="adPos_dialog_tuwen_floating_mininterval" class="panel_dialog_block_space_input" type="text" style="width:138px;"/>
+					<span>{{ADPOS_DIALOG_SECOND}}</span>
+				</div>
+				<div class="adPos_dialog_align_block" style="margin-left:16px;padding-top:19px;line-height:32px;">
+					<div class="adPos_dialog_checkbox" id="adPos_ne_floating_isopen"></div>
+					<span>{{ADPOS_FLOATING_ISOPEN}}</span>
+				</div>
+				<div class="adPos_dialog_align_block">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_DIALOG_FLOATLAYER_TIMESETTING}}
+					</div>
+					<textarea id="adPos_dialog_tuwen_floatLayer_Timesetting" class="panel_dialog_block_padded_textarea"></textarea>
+				</div>
+				<div class="adPos_dialog_align_block" style="width:702px;height:195px;">
+					<div class="adPos_floating_heads">
+						<div class="adPos_floating_name_label">{{ADPOS_FLOATING_STRATEGY}}</div>
+						<div class="adPos_floating_choice">
+							<div class="adPos_dialog_radio" id="adPos_floating_whitelist">
+								<div class="adPos_dialog_radio_icon"></div>
+							</div>
+							<div class="adPos_dialog_radio_label">{{ADPOS_FLOATING_WHITELIST}}</div>
+						</div>
+						<div class="adPos_floating_choice">
+							<div class="adPos_dialog_radio adPos_dialog_radio_checked" id="adPos_floating_blacklist">
+								<div class="adPos_dialog_radio_icon"></div>
+							</div>
+							<div class="adPos_dialog_radio_label">{{ADPOS_FLOATING_BLACKLIST}}</div>
+						</div>
+					</div>
+					<div class="adPos_floating_list_add" id="adPos_floating_namelist_add">{{ADPOS_FLOATING_ACCLIST_ADD}}</div>
+					<div class="adPos_floating_list_box" id="adPos_floating_namelist"></div>
+				</div>
+				<div class="adPos_dialog_align_block">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_DIALOG_LABEL_APP_POLL}}
+					</div>
+					<input id="adPos_floating_app_poll" class="panel_dialog_block_space_input" type="text" style="width:138px;"/>
+					<span>{{ADPOS_DIALOG_SECOND}}</span>
+				</div>
+				<div class="adPos_dialog_align_block">
+					<div class="panel_dialog_block_label">
+						{{ADPOS_DIALOG_LABEL_APP_WHITELIST}}
+					</div>
+					<textarea id="adPos_floating_app_whitelist" class="panel_dialog_block_padded_textarea" style="margin-bottom:23px;"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="adPos_dialog_ne_cancel" class="panel_dialog_cancel popup_dialog_clear" style="bottom:18px">
+		{{ADPOS_DIALOG_CANCEL}}
+	</div>
+	<div id="adPos_dialog_ne_submit" class="panel_dialog_submit" style="bottom:18px">
+		{{ADPOS_DIALOG_SUBMIT_XINJIAN}}
+	</div>
+</div>

@@ -1,0 +1,35 @@
+<div id="appAdmin_pageAllContainer" class="pageAllContainer" style="font-size:16px;font-family:'微软雅黑';">
+    <div id="appAdmin_boRecord_pageSingleSearch" class="pageTitleContainer">
+        <div class="small_blue_bar" style="margin-left:18px;margin-top:19px;float:left"></div>
+        <div class="pageTitleContainerTitleDiv" style="margin-top:18px;margin-left:9px;color:#494b58;font-size:16px;font-weight:bold">应用管理</div>
+        <div id="appAdmin_add" class="pageTitleContainerRightButt" onclick="addAdmin.popup_App()" style="overflow:hidden;width:124px;height:36px;font-weight:bold;font-size:16px;background-color:#2ea1d7">
+            <img style="float:left;margin-top:9px;margin-left:11px" src="images/newAdd.png">
+            <span style="height:19px;float:left;line-height:36px;width:auto;text-align:left;color:#ffffff;margin-left:11px">新增应用</span>
+        </div>
+        <div class="header_item search_bar">
+            <input class="search_input_" id="appAdmin_search_input_" type="text" onkeyup="addAdmin.refreshTable_search(event)">
+            <div class="search_btn" onclick="addAdmin.refreshTable_search('button')"></div>
+        </div>
+    </div>
+    <div id="appAdmin_mainTableContainer" style="font-size:14px;font-family:'宋体'">
+    </div>
+</div>
+<div id="appAdmin_ErrorMSG_cancelOrderBack" style="display: none"></div>
+<div id="appAdmin_ErrorMSG_cancelOrder" style="display: none;width:492px">
+    <div class="header" style="height:37px;line-height:37px">
+        提醒
+        <div id='appAdmin_ErrorMSG_close_cancelOrder' class="closeIcon"></div>
+    </div>
+    <div class="body">
+        <div class="icon" style="width:106px">
+            <img src='images/platformDel.png' />
+        </div>
+        <div id="appAdmin_ErrorMes_cancelOrder" class='mes' style="justify-content:flex-start;margin-top:-8px">
+
+        </div>
+    </div>
+    <div class="footer" style="margin-top:-4px">
+        <div id="appAdmin_ErrorMSG_ok_cancelOrder">确定</div>
+        <div id="appAdmin_ErrorMSG_cancel_cancelOrder" class="cancel">取消</div>
+    </div>
+</div>

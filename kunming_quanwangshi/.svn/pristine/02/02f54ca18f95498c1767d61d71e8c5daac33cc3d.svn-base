@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>栏目</title>
+	<script type="text/javascript">
+		(function() {
+			var printLog;
+			var csses = ['style/column.css']
+			var jses = [
+				'config.js',
+				'js/common.js',
+				'js/my.paas.js',
+				'js/common/endecodebase64.js',
+				'js/common/sha1.js',
+				'js/common/keyvalue.js',
+				'js/common/util.js',
+				// 'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js',
+				// '../bigdata/reportData.js',
+				'js/my.storage.js',
+				'js/column/utils.js',
+				'js/column/index.js']
+				if (navigator.userAgent.lastIndexOf('iPanel') == -1) {
+					// jses = ['http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js', '../bigdata/stream/collect.js'].concat(jses)
+				} else {
+					// jses = ['../bigdata/ipanel/collect.js'].concat(jses)
+				}
+				for (var i = 0; i < jses.length; i++) {
+					document.write('<script type="text/javascript" src="' + jses[i] + (!!printLog ? '?t=' + new Date().getTime() : '') + '"><\/script>')
+				}
+				for (var i = 0; i < csses.length; i++) {
+					document.write('<link rel="stylesheet" href="' + csses[i] + (!!printLog ? '?t=' + new Date().getTime() : '') + '">')
+				}
+		}())
+	</script>
+</head>
+<body onload="app.init()">
+	<div class="logo app"></div>
+	<div class="logo area"></div>
+	<div id="search" name='search' class='logo jump'></div>
+	<div id="mine" name='mine' class='logo jump'></div>
+	<div class="column_header">
+
+	</div>
+	<div class="column_header_focus"></div>
+	<img src="" alt="" name= 'vod' class="poster" id="vod_1">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_2">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_3">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_4">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_5">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_6">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_7">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_8">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_9">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_10">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_11">
+	<img src="" alt="" name= 'vod' class="poster" id="vod_12">
+	<div class="column_content_focus"></div>
+	<div class="page_split">
+		<div class="page" name="page_up"></div>
+		<div id="cur_page"></div>
+		<span class='split'>/</span>
+		<div id="tot_page"></div>
+		<div class="page" name="page_down"></div>
+	</div>
+	<div class="page_focus"></div>
+</body>
+</html>

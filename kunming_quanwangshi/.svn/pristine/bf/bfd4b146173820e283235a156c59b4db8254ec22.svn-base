@@ -1,0 +1,758 @@
+(function(global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? exports.module = factory(utils) :
+        typeof define === 'function' && define.amd ? define(['utils'], factory) : (global.app = factory(utils))
+})(this, (function() {
+    deepClone = utils.deepClone;
+    getJson = utils.getJson;
+    postJson = utils.postJson;
+    addEvent = utils.addEvent;
+    getUrlParam = utils.getUrlParam;
+    getStrByLen = utils.getStrByLen;
+    useMarquee = utils.useMarquee;
+    search_store = MyStorage.getStorage({ type: 'search' }),
+        store_data = search_store.getValue('searchData');
+    var frame = function() {
+        var pane = deepClone({}, Pane);
+        var api = deepClone({}, API);
+        var model = deepClone({}, Model);
+        pane.api = api;
+        pane.model = model;
+        pane.init();
+    };
+    var Pane = {
+        /*通过该值判断那块区域聚焦
+         * true 字母数字
+         * false 清空 退格*/
+        Updownposition: true,
+        /*输入框的值*/
+        InputValue: "",
+        /*清空 退格*/
+        btnid: 0,
+        /*字母数字键盘*/
+        letterPos: [
+            { left: 15, top: 207 }, { left: 72, top: 207 }, { left: 130, top: 207 }, { left: 188, top: 207 }, { left: 245, top: 207 }, { left: 303, top: 207 },
+            { left: 15, top: 263 }, { left: 72, top: 263 }, { left: 130, top: 263 }, { left: 188, top: 263 }, { left: 245, top: 263 }, { left: 303, top: 263 },
+            { left: 15, top: 319 }, { left: 72, top: 319 }, { left: 130, top: 319 }, { left: 188, top: 319 }, { left: 245, top: 319 }, { left: 303, top: 319 },
+            { left: 15, top: 375 }, { left: 72, top: 375 }, { left: 130, top: 375 }, { left: 188, top: 375 }, { left: 245, top: 375 }, { left: 303, top: 375 },
+            { left: 15, top: 431 }, { left: 72, top: 431 }, { left: 130, top: 431 }, { left: 188, top: 431 }, { left: 245, top: 431 }, { left: 303, top: 431 },
+            { left: 15, top: 487 }, { left: 72, top: 487 }, { left: 130, top: 487 }, { left: 188, top: 487 }, { left: 245, top: 487 }, { left: 303, top: 487 }
+        ],
+        letterid: 0,
+        /*热搜词*/
+        HotsearchPos: [
+            { left: 40, top: 116 }, { left: 378, top: 116 },
+            { left: 40, top: 186 }, { left: 378, top: 186 },
+            { left: 40, top: 256 }, { left: 378, top: 256 },
+            { left: 40, top: 326 }, { left: 378, top: 326 },
+            { left: 40, top: 396 }, { left: 378, top: 396 },
+            { left: 40, top: 466 }, { left: 378, top: 466 }
+        ],
+        Hotsearchid: 0,
+        /*精选节目*/
+        posterPos: [
+            { left: 24, top: 72 }, { left: 160, top: 72 }, { left: 298, top: 72 }, { left: 436, top: 72 }, { left: 573, top: 72 },
+            { left: 24, top: 299 }, { left: 160, top: 299 }, { left: 298, top: 299 }, { left: 436, top: 299 }, { left: 573, top: 299 }
+        ],
+        posterid: 0,
+        /*上下页*/
+        PageurningTPos: [
+            { left: 243, top: 530 }, { left: 409, top: 530 }
+        ],
+        PageurningTid: 0,
+        curIndex: 0, //当前页
+        datasun: 0, //当前页面节目数
+        backUrl: "",
+        init: function() {
+            // console.log("2019.12.19版本 黑底白字");
+            // console.log("~~~~~~~~~~~~~~~~~~~~~");
+            // console.log("浏览器版本号=" + navigator.userAgent);
+            // console.log("浏览器插件")
+            // var plugins = navigator.plugins;
+            // for (var i = 0; plugins.length > i; i++) {
+            //     console.log(plugins[i].name);
+            // }
+            // console.log("~~~~~~~~~~~~~~~~~~~~~");
+            if (getUrlParam('?backUrl')) {
+                this.backUrl = decodeURIComponent(getUrlParam('?backUrl'));
+            }
+            if (this.backUrl) {
+                this.backUrl = this.backUrl;
+            } else {
+                this.backUrl = location.href.slice(0, location.href.lastIndexOf('/') + 1) + "index.html";
+            }
+            this.letterbindEvents(); //字母按键
+            this.loadHotsearchData(); //获取热搜词数据
+        },
+        /*获取热搜词 渲染*/
+        loadHotsearchData: function() {
+            var self = this;
+            if (document.getElementById("searchBar").value) {
+                document.getElementById("search_Featuredresults").style.display = "black";
+                document.getElementById("search_Hotsearch").style.display = "none";
+            } else {
+                document.getElementById("search_Featuredresults").style.display = "none";
+                document.getElementById("search_Hotsearch").style.display = "black";
+            }
+            this.api.HotsearchList(function(resp) {
+                if (resp.length > 2) {
+                    resp.sort(function(a, b) {
+                        return parseInt(a.play_count) - parseInt(b.play_count);
+                    });
+                }
+                self.model.HotsearchList(resp);
+                self.renderHotsearch();
+            });
+            if (JSON.parse(store_data).InputValue) {
+                var searchData = JSON.parse(store_data);
+                self.InputValue = searchData.InputValue;
+                if (self.InputValue) {
+                    self.curIndex = searchData.curIndex;
+                    self.posterid = searchData.posterid;
+                    self.Updownposition = searchData.Updownposition;
+                    self.btnid = searchData.btnid;
+                    self.letterid = searchData.letterid;
+                    self.backUrl = searchData.backUrl
+                    self.setInputValue(self.InputValue);
+                    self.loadFeaturedresultsData();
+                    self.posterbindEvents(self.posterid);
+                }
+            }
+        },
+        renderHotsearch: function() {
+            var data = this.model.HotsearchData;
+            for (var i = 0; i < data.length; i++) {
+                var item = data[i];
+                if (item) {
+                    document.getElementById('search_Hotsearch_div' + i).style.display = 'block';
+                    document.getElementById('search_Hotsearch_div' + i).innerHTML = (i + 1) + "." + getStrByLen(item.title, 25);
+                    document.getElementById('search_Hotsearch_div' + i).style.textIndent = "10px";
+                } else {
+                    document.getElementById('search_Hotsearch_div' + i).style.display = 'none';
+                }
+            }
+        },
+
+
+        /*获取节目数据 渲染*/
+        loadFeaturedresultsData: function() {
+            var self = this;
+            this.api.FeaturedresultsList(self.InputValue, function(resp) {
+                self.model.FeaturedresultsList(resp);
+                self.loadPosterPage(self.curIndex);
+                document.getElementById("totalPages").innerHTML = Math.ceil(self.model.FeaturedresultsData.length / 10);
+            });
+        },
+        loadPosterPage: function(curIndex) {
+            var self = this,
+                data = self.model.FeaturedresultsData;
+            if (curIndex < 0 || curIndex >= Math.ceil(data.length / 10)) {
+                curIndex = self.curIndex
+            }
+            self.curIndex = curIndex;
+            document.getElementById('currentPage').innerHTML = (self.curIndex + 1);
+            var set = data.slice(curIndex * 10, (curIndex + 1) * 10);
+            self.renderPosterPage(curIndex, set)
+            if(document.getElementById('search_Featuredresults_Selected').style.display == 'block'){
+                self.posterFocus(self.posterid);
+            }
+        },
+        emptyPage: function() {
+            for (var i = 0; i < 10; i++) {
+                document.getElementById('search_Featuredresults_img' + i).src = '';
+                document.getElementById('search_Featuredresults_text' + i).innerHTML = ''
+                document.getElementById('search_Featuredresults_film' + i).style.display = 'none';
+            }
+        },
+        renderPosterPage: function(curIndex, data) {
+            this.emptyPage();
+            this.datasun = data.length;
+            if (this.datasun > 0) {
+                for (var i = 0; i < data.length; i++) {
+                    var item = data[i];
+                    if (item) {
+                        document.getElementById('search_Featuredresults_film' + i).style.display = 'block';
+                        document.getElementById('search_Featuredresults_img' + i).src = item.bg;
+                        document.getElementById('search_Featuredresults_text' + i).innerHTML = getStrByLen(item.title, 11);
+
+                    } else {
+                        document.getElementById('search_Featuredresults_film' + i).style.display = 'none';
+                    }
+                }
+            } else {
+                document.getElementById('currentPage').innerHTML = "0";
+                document.getElementById("totalPages").innerHTML = "0";
+            }
+        },
+
+        /*按键事件*/
+        /*字母数字按键事件*/
+        letterbindEvents: function() {
+            var self = this;
+            document.getElementById("search_letter_Selected").style.display = 'black';
+            document.getElementById("search_Hotsearch_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_foot_Selected").style.display = 'none';
+            document.getElementById("search_btn_clear").src = "img/search/delete0.png";
+            document.getElementById("search_btn_backspace").src = "img/search/backspace0.png";
+            addEvent({
+                left: function() {
+                    self.letterFocus(self.letterid - 1)
+                },
+                right: function() {
+                    if ((self.letterid + 1) % 6 == 0) {
+                        if (self.InputValue.length > 0) {
+                            if (self.model.FeaturedresultsData.length > 0) {
+                                self.posterFocus(0);
+                                self.posterbindEvents();
+                            }
+                        } else {
+                            if (self.model.HotsearchData.length > 0) {
+                                self.HotsearchFocus(0);
+                                self.HotsearchbindEvents()
+                            }
+                        }
+                    } else {
+                        self.letterFocus(self.letterid + 1)
+                    }
+                },
+                up: function() {
+                    if (self.letterid < 6) {
+                        self.Updownposition = false;
+                        if (self.letterid < 3) {
+                            self.btnid = 0;
+                            self.btnFocus(self.btnid);
+                            self.btnbindEvents();
+                        }
+                        if (self.letterid > 2 && self.letterid < 6) {
+                            self.btnid = 1;
+                            self.btnFocus(self.btnid);
+                            self.btnbindEvents();
+                        }
+                    } else {
+                        self.letterFocus(self.letterid - 6)
+                    }
+                },
+                down: function() {
+                    self.letterFocus(self.letterid + 6)
+                },
+                enter: function() {
+                    var letterList = document.getElementById("search_letter").getElementsByTagName('div');
+                    self.InputValue += letterList[self.letterid].innerText;
+                    // console.log(self.InputValue);
+                    self.setInputValue(self.InputValue);
+                    self.curIndex = 0;
+                    self.loadFeaturedresultsData();
+                },
+                back: function() {
+                    var searchData = {
+                        InputValue: "",
+                        curIndex: 0,
+                        posterid: 0,
+                        Updownposition: false,
+                        btnid: 0,
+                        letterid: 0,
+                        backUrl: self.backUrl
+                    };
+                    search_store.setValue('searchData', JSON.stringify(searchData));
+                    // alert("backUrl===="+self.backUrl);
+                    location.href = self.backUrl;
+                }
+            })
+        },
+        letterFocus: function(idx) {
+            var index;
+            if (idx > -1 && idx < 42) {
+                if (idx > 35) {
+                    idx = idx - 36;
+                }
+                index = idx;
+            } else {
+                index = this.letterid
+            }
+            document.getElementById('search_letter_Selected').style.display = 'block';
+            document.getElementById('search_letter_Selected').style.left = this.letterPos[index].left + 'px';
+            document.getElementById('search_letter_Selected').style.top = this.letterPos[index].top + 'px';
+            var Hotsearch = this.model.HotsearchData[this.Hotsearchid];
+            if (Hotsearch) {
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).innerHTML = getStrByLen(this.Hotsearchid + 1 + "." + Hotsearch.title, 25);
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).style.textIndent = "10px";
+            }
+            var program = this.model.FeaturedresultsData[this.curIndex * 10 + this.posterid];
+            if (program) {
+                document.getElementById('search_Featuredresults_text' + this.posterid).innerHTML = getStrByLen(program.title, 11);
+            }
+            this.letterid = index;
+            // console.log(this.letterid);
+        },
+        /*清空,退格按键事件*/
+        btnbindEvents: function() {
+            var self = this;
+            document.getElementById("search_letter_Selected").style.display = 'none';
+            document.getElementById("search_Hotsearch_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_foot_Selected").style.display = 'none';
+            addEvent({
+                left: function() {
+                    self.btnFocus(self.btnid - 1 < 0 ? 0 : self.btnid - 1)
+                },
+                right: function() {
+                    if (self.btnid + 1 > 1) {
+                        if (self.InputValue.length > 0) {
+                            if (self.model.FeaturedresultsData.length > 0) {
+                                self.posterFocus(0);
+                                self.posterbindEvents();
+                            }
+                        } else {
+                            if (self.model.HotsearchData.length > 0) {
+                                self.HotsearchFocus(0);
+                                self.HotsearchbindEvents()
+                            }
+                        }
+                    } else {
+                        self.btnFocus(self.btnid + 1)
+                    }
+                },
+                up: function() {
+                    self.btnFocus(self.btnid)
+                },
+                down: function() {
+                    self.Updownposition = true;
+                    self.letterFocus(self.letterid);
+                    self.letterbindEvents();
+                },
+                enter: function() {
+                    if (self.btnid == 0) {
+                        self.InputValue = "";
+                        self.setInputValue(self.InputValue)
+                    } else {
+                        self.InputValue = self.InputValue.slice(0, self.InputValue.length - 1);
+                        self.setInputValue(self.InputValue)
+                    }
+                    if (self.InputValue) {
+                        self.curIndex = 0;
+                        self.loadFeaturedresultsData();
+                    }
+                },
+                back: function() {
+                    var searchData = {
+                        InputValue: "",
+                        curIndex: 0,
+                        posterid: 0,
+                        Updownposition: false,
+                        btnid: 0,
+                        letterid: 0,
+                        backUrl: self.backUrl
+                    };
+                    search_store.setValue('searchData', JSON.stringify(searchData));
+                    // alert("backUrl===="+self.backUrl);
+                    location.href = self.backUrl;
+                }
+            })
+        },
+        btnFocus: function(idx) {
+            if (idx == 0) {
+                document.getElementById("search_btn_clear").src = "img/search/delete1.png";
+                document.getElementById("search_btn_backspace").src = "img/search/backspace0.png";
+            } else {
+                document.getElementById("search_btn_clear").src = "img/search/delete0.png";
+                document.getElementById("search_btn_backspace").src = "img/search/backspace1.png";
+            }
+            var Hotsearch = this.model.HotsearchData[this.Hotsearchid];
+            if (Hotsearch) {
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).innerHTML = getStrByLen(this.Hotsearchid + 1 + "." + Hotsearch.title, 25);
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).style.textIndent = "10px";
+            }
+            var program = this.model.FeaturedresultsData[this.curIndex * 10 + this.posterid];
+            if (program) {
+                document.getElementById('search_Featuredresults_text' + this.posterid).innerHTML = getStrByLen(program.title, 11);
+            }
+            this.btnid = idx;
+        },
+        /*热搜词按键事件*/
+        HotsearchbindEvents: function() {
+            var self = this;
+            document.getElementById("search_letter_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_foot_Selected").style.display = 'none';
+            document.getElementById("search_btn_clear").src = "img/search/delete0.png";
+            document.getElementById("search_btn_backspace").src = "img/search/backspace0.png";
+            addEvent({
+                left: function() {
+                    if ((self.Hotsearchid - 1 + 1) % 2 == 0) {
+                        if (!self.Updownposition) {
+                            self.btnFocus(1);
+                            self.btnbindEvents();
+                        } else {
+                            self.letterFocus(self.letterid);
+                            self.letterbindEvents();
+                        }
+                    } else {
+                        self.HotsearchFocus(self.Hotsearchid - 1)
+                    }
+                },
+                right: function() {
+                    self.HotsearchFocus(self.Hotsearchid + 1)
+                },
+                up: function() {
+                    self.HotsearchFocus(self.Hotsearchid - 2)
+                },
+                down: function() {
+                    self.HotsearchFocus(self.Hotsearchid + 2)
+                },
+                enter: function() {
+                    self.InputValue = self.model.HotsearchData[self.Hotsearchid].titleabbreviate.toUpperCase();
+                    self.setInputValue(self.InputValue);
+                    self.curIndex = 0;
+                    self.loadFeaturedresultsData();
+                    self.posterbindEvents()
+                },
+                back: function() {
+                    var searchData = {
+                        InputValue: "",
+                        curIndex: 0,
+                        posterid: 0,
+                        Updownposition: false,
+                        btnid: 0,
+                        letterid: 0,
+                        backUrl: self.backUrl
+                    };
+                    search_store.setValue('searchData', JSON.stringify(searchData));
+                    // alert("backUrl===="+self.backUrl);
+                    location.href = self.backUrl;
+                }
+            })
+        },
+        HotsearchFocus: function(idx) {
+            var index;
+            if (idx > -1 && idx < 12) {
+                index = idx;
+            } else {
+                index = this.Hotsearchid
+            }
+            // console.log(this.model.HotsearchData.length);
+            while (index >= this.model.HotsearchData.length) {
+                index--;
+            }
+            document.getElementById('search_Hotsearch_Selected').style.display = 'block';
+            document.getElementById('search_Hotsearch_Selected').style.left = this.HotsearchPos[index].left + 'px';
+            document.getElementById('search_Hotsearch_Selected').style.top = this.HotsearchPos[index].top + 'px';
+
+            if (index != this.Hotsearchid && typeof this.Hotsearchid == "number") {
+                var Hotsearch = this.model.HotsearchData[this.Hotsearchid].title;
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).innerHTML = getStrByLen(this.Hotsearchid + 1 + "." + Hotsearch, 25);
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).style.textIndent = "10px";
+            }
+            var Hotsearch_title = this.model.HotsearchData[index].title;
+            if (Hotsearch_title.length>=9) {
+                document.getElementById('search_Hotsearch_div' + index).style.textIndent = "0px";
+            }
+            document.getElementById('search_Hotsearch_div' + index).innerHTML = useMarquee(index + 1 + "." + Hotsearch_title, 25);
+
+            var program = this.model.FeaturedresultsData[this.curIndex * 10 + this.posterid];
+            if (program) {
+                document.getElementById('search_Featuredresults_text' + this.posterid).innerHTML = getStrByLen(program.title, 11);
+            }
+            this.Hotsearchid = index;
+            // console.log(this.Hotsearchid);
+        },
+        /*精选结果按键事件*/
+        posterbindEvents: function() {
+            var self = this;
+            document.getElementById('search_Featuredresults_Selected').style.display = 'block';
+            document.getElementById("search_letter_Selected").style.display = 'none';
+            document.getElementById("search_Hotsearch_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_foot_Selected").style.display = 'none';
+            document.getElementById("search_btn_clear").src = "img/search/delete0.png";
+            document.getElementById("search_btn_backspace").src = "img/search/backspace0.png";
+            addEvent({
+                left: function() {
+                    if ((self.posterid) % 5 == 0) {
+                        // console.log("self.Updownposition===" + self.Updownposition);
+                        if (!self.Updownposition) {
+                            self.btnFocus(1);
+                            self.btnbindEvents();
+                        } else {
+                            // console.log("self.letterid===" + self.letterid);
+                            self.letterFocus(self.letterid);
+                            self.letterbindEvents();
+                        }
+                    } else {
+                        self.posterFocus(self.posterid - 1)
+                    }
+                },
+                right: function() {
+                    if ((self.posterid + 1) > self.datasun - 1) {
+                        self.PageurningTFocus(self.PageurningTid);
+                        self.PageurningTbindEvents();
+                    } else {
+                        self.posterFocus(self.posterid + 1)
+                    }
+                },
+                up: function() {
+                    self.posterFocus(self.posterid - 5)
+                },
+                down: function() {
+                    if ((self.posterid + 5) > self.datasun - 1) {
+                        self.PageurningTFocus(self.PageurningTid);
+                        self.PageurningTbindEvents();
+                    } else {
+                        self.posterFocus(self.posterid + 5);
+                    }
+                },
+                enter: function() {
+                    var searchData = {
+                        InputValue: self.InputValue,
+                        curIndex: self.curIndex,
+                        posterid: self.posterid,
+                        Updownposition: self.Updownposition,
+                        btnid: self.btnid,
+                        letterid: self.letterid,
+                        backUrl: self.backUrl
+                    };
+                    search_store.setValue('searchData', JSON.stringify(searchData));
+                    /*跳转到详情*/
+                    var url = location.href.slice(0, location.href.lastIndexOf('/') + 1);
+                    location.href = 'detail.html?provider_id=' + self.model.FeaturedresultsData[self.curIndex].pid + '&provider_asset_id=' + self.model.FeaturedresultsData[self.curIndex].paid + '&backUrl=' + url + "search.html";
+                },
+                back: function() {
+                    var searchData = {
+                        InputValue: "",
+                        curIndex: 0,
+                        posterid: 0,
+                        Updownposition: false,
+                        btnid: 0,
+                        letterid: 0,
+                        backUrl: self.backUrl
+                    };
+                    search_store.setValue('searchData', JSON.stringify(searchData));
+                    // alert("backUrl===="+self.backUrl);
+                    location.href = self.backUrl;
+                }
+            })
+        },
+        posterFocus: function(idx) {
+            var index;
+            if (idx > -1 && idx < 10) {
+                index = idx;
+            } else {
+                index = this.posterid;
+            }
+            while (index >= self.datasun) {
+                index--;
+            }
+            // console.log("index===" + index);
+            document.getElementById('search_Featuredresults_Selected').style.left = this.posterPos[index].left + 'px';
+            document.getElementById('search_Featuredresults_Selected').style.top = this.posterPos[index].top + 'px';
+
+            var Hotsearch = this.model.HotsearchData[this.Hotsearchid];
+            if (Hotsearch) {
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).innerHTML = getStrByLen(this.Hotsearchid + 1 + "." + Hotsearch.title, 25);
+                document.getElementById('search_Hotsearch_div' + this.Hotsearchid).style.textIndent = "10px";
+            }
+            if (index != this.posterid && typeof this.posterid == "number") {
+                var program = this.model.FeaturedresultsData[this.curIndex * 10 + this.posterid].title;
+                document.getElementById('search_Featuredresults_text' + this.posterid).innerHTML = getStrByLen(program, 11);
+            }
+            console.log('index==',index);
+            document.getElementById('search_Featuredresults_text' + index).innerHTML = useMarquee(this.model.FeaturedresultsData[this.curIndex * 10 + index].title, 11);
+            // document.getElementById('search_Featuredresults_text' + this.posterid).innerHTML =this.model.FeaturedresultsData[this.posterid].title;
+            // for (var i = 0; i < 10; i++) {
+            // document.getElementById('search_Featuredresults_img' + i).style.width = "126px";
+            // document.getElementById('search_Featuredresults_img' + i).style.height = "182px";
+            // }
+            // document.getElementById('search_Featuredresults_img' + index).style.width = "130px";
+            // document.getElementById('search_Featuredresults_img' + index).style.height = "184px";
+            this.posterid = index;
+            // console.log(this.posterid);
+        },
+        /*分页按键事件*/
+        PageurningTbindEvents: function() {
+            var self = this;
+            document.getElementById("search_Featuredresults_foot_Selected").style.display = 'black';
+            document.getElementById("search_letter_Selected").style.display = 'none';
+            document.getElementById("search_Featuredresults_Selected").style.display = 'none';
+            document.getElementById("search_Hotsearch_Selected").style.display = 'none';
+            document.getElementById("search_btn_clear").src = "img/search/delete0.png";
+            document.getElementById("search_btn_backspace").src = "img/search/backspace0.png";
+            addEvent({
+                left: function() {
+                    self.PageurningTFocus(self.PageurningTid - 1 < 0 ? 0 : self.PageurningTid - 1)
+                },
+                right: function() {
+                    self.PageurningTFocus(self.PageurningTid + 1)
+                },
+                up: function() {
+                    self.posterFocus(self.posterid);
+                    self.posterbindEvents()
+                },
+                enter: function() {
+                    self.posterid = 0;
+                    if (self.PageurningTid == 1) {
+                        if (self.curIndex < document.getElementById("totalPages").innerHTML) {
+                            self.loadPosterPage(self.curIndex + 1);
+                            self.posterFocus(0);
+                            self.posterbindEvents()
+                        }
+                    } else {
+                        self.loadPosterPage(self.curIndex - 1);
+                        self.posterFocus(0);
+                        self.posterbindEvents()
+                    }
+                },
+                back: function() {
+                    var searchData = {
+                        InputValue: "",
+                        curIndex: 0,
+                        posterid: 0,
+                        Updownposition: false,
+                        btnid: 0,
+                        letterid: 0,
+                        backUrl: self.backUrl
+                    };
+                    search_store.setValue('searchData', JSON.stringify(searchData));
+                    // alert("backUrl===="+self.backUrl);
+                    location.href = self.backUrl;
+                }
+            })
+        },
+        PageurningTFocus: function(idx) {
+            var index;
+            if (idx > -1 && idx < 2) {
+                index = idx;
+            } else {
+                index = this.PageurningTid
+            }
+            document.getElementById('search_Featuredresults_foot_Selected').style.display = 'block';
+            document.getElementById('search_Featuredresults_foot_Selected').style.left = this.PageurningTPos[index].left + 'px';
+            document.getElementById('search_Featuredresults_foot_Selected').style.top = this.PageurningTPos[index].top + 'px';
+            var program = this.model.FeaturedresultsData[this.curIndex * 10 + this.posterid];
+            if (program) {
+                document.getElementById('search_Featuredresults_text' + this.posterid).innerHTML = getStrByLen(program.title, 11);
+            }
+            this.PageurningTid = index;
+            // console.log(this.PageurningTid);
+        },
+        /*处理页面输入内容*/
+        setInputValue: function(InputValue) {
+            if (InputValue) {
+                document.getElementById("search_Hotsearch_top").style.display = 'none';
+                document.getElementById("search_Hotsearch").style.display = 'none';
+                document.getElementById("search_Featuredresults_top").style.display = 'block';
+                document.getElementById("search_Featuredresults").style.display = 'block';
+                document.getElementById("search_Featuredresults_foot").style.display = 'block';
+                document.getElementById("searchBar").innerHTML = InputValue;
+            } else {
+                document.getElementById("search_Hotsearch_top").style.display = 'block';
+                document.getElementById("search_Hotsearch").style.display = 'block';
+                document.getElementById("search_Featuredresults_top").style.display = 'none';
+                document.getElementById("search_Featuredresults").style.display = 'none';
+                document.getElementById("search_Featuredresults_foot").style.display = 'none';
+                document.getElementById("searchBar").innerHTML = '输入影片或演员的首字母或全拼';
+            }
+        }
+    };
+    var API = {
+        HotsearchList: function(callback) {
+            /*查询热搜词 假定只有12条*/
+            var url = "http://172.16.20.201:8031/aquapaas/rest/search/contents/searchkeyword",urlParam = [],data = []; //本地测试接口
+            // var url = paasHost + "/aquapaas/rest/search/contents/searchkeyword", urlParam = [], data = [];
+            urlParam.push('sort_by=title');
+            urlParam.push('sort_mode=d');
+            urlParam.push('app_key=' + paasAppKey); //应用级授权
+            urlParam.push('timestamp=' + new Date().toISOString()); //应用级授权
+            url += '?' + urlParam.join('&');
+            postJson(url, data, function(resp) {
+                callback && callback(resp);
+            })
+        },
+        FeaturedresultsList: function(InputValue, callback) {
+            /*输入框有值 调用传递 影片或演员的首字母或全拼 的API*/
+            var url = "http://api.xor-live.io/aquapaas/rest/search/contents/vod",urlParam = [],data = []; //本地测试接口
+            // var url = paasHost + "/aquapaas/rest/search/contents/vod", urlParam = [], data = [];
+            urlParam.push('sort_by=title');
+            urlParam.push('sort_mode=d');
+            urlParam.push("start=0");
+            urlParam.push("end=999");
+            urlParam.push('app_key=' + paasAppKey); //应用级授权
+            urlParam.push('timestamp=' + new Date().toISOString()); //应用级授权
+            data.push("title=" + InputValue + '&title_op=lk'); //影片标题
+            data.push("titleabbreviation=" + InputValue + "&titleabbreviation_op=lk"); //影片缩拼
+            data.push("actors=" + InputValue + "&actors_op=lk"); //演员
+            url += '?' + urlParam.join('&');
+            postJson(url, data, function(resp) {
+                callback && callback(resp);
+            })
+        },
+        // getPosters: function(data, callback) {
+        //     var _data = data,
+        //         ids = _data.map(function(item) {
+        //             return item.pid + '_' + item.paid
+        //         }),
+        //         // url = 'http://api.xor-live.io/aquapaas/rest/search/content_by_id/vod?ids=' + ids.join(',') + '&app_key=' + paasAppKey + '&timestamp=' + new Date().toISOString()//本地测试接口
+        //         url = paasHost + '/aquapaas/rest/search/content_by_id/vod?ids=' + ids.join(',') + '&app_key=' + paasAppKey + '&timestamp=' + new Date().toISOString()
+        //     if (ids.length > 0) {
+        //         getJson(url, function(resp) {
+        //             var tmp = [];
+        //             for (var i = 0; i < _data.length; i++) {
+        //                 var target = _data[i];
+        //                 for (var j = 0; j < resp.length; j++) {
+        //                     var vod = resp[j];
+        //                     if (target.pid == vod.provider_id && target.paid == vod.provider_asset_id) {
+        //                         var posters = vod.packageposterboard || vod.posterboard;
+        //                         // target.bg = posters.split(',').pop();
+        //                         target.bg = posters.split(',').shift();
+        //                     }
+        //                 }
+        //                 if (!!!target.bg) {
+        //                     target.bg = ''
+        //                 }
+        //                 tmp.push(target)
+        //             }
+        //             callback && callback(tmp)
+        //         })
+        //     } else {
+        //         callback && callback(_data)
+        //     }
+        // }
+    };
+    var Model = {
+        HotsearchData: [],
+        HotsearchList: function(set) {
+            var ret = [];
+            for (var i = 0; i < set.length; i++) {
+                var item = set[i];
+                ret.push({
+                    title: item.title,
+                    titleabbreviate: item.titleabbreviate,
+                    actors: item.actors ? item.actors : ""
+                })
+            }
+            this.HotsearchData = ret;
+        },
+        FeaturedresultsData: [],
+        FeaturedresultsList: function(set) {
+            var ret = [];
+            for (var i = 0; i < set.length; i++) {
+                var item = set[i];
+                var pid = item.provider_id;
+                var paid = item.provider_asset_id;
+                var posters = item.packageposterboard || item.posterboard;
+                ret.push({
+                    pid: pid,
+                    paid: paid,
+                    title: item.title,
+                    titleabbreviation: item.titleabbreviation,
+                    actors: item.actors ? item.actors : "",
+                    bg: posters.split(',').shift()
+                })
+            }
+            this.FeaturedresultsData = ret;
+        }
+    };
+    return {
+        init: function() {
+            utils.debug(printLog);
+            var app = new frame();
+        }
+    }
+}));

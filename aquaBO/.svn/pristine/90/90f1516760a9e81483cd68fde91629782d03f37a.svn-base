@@ -1,0 +1,94 @@
+<body>
+	<div class="user-complext-page" id="user-admin-root" style="margin:0;padding:0;width:100%;min-width:100%;font-size:16px;color:#727272;font-family:'宋体'">
+		<link href="content/asset_import/index.css" rel="stylesheet">
+		<div class="user-simple-page" id="user-admin-index" style="width:100%;min-width:100%;">
+			<div class="page-rel-container" style="background-color:#fcfcf2;width:100%;min-width:100%;height:100%">
+				<div class="page-rel-header" id="sys-user-admin-page1-part1" style="width:100%;min-width:100%;display:block;border-bottom:1px #ededdb solid;background-color:#ffffff">
+					<div class="panel_page_head_left asset_import_page1">
+						<div class="panel_page_head_title_lead"></div>
+						<div class="panel_page_head_title" style="margin-left:5px">{{ASSET_IMPORT_TITLE}}</div>
+					</div>
+					<div id="asset_import_back_to_page1" class="asset_import_back_btn asset_import_page2" style="display:none">
+						<img src="./images/product_arrow_left.png">
+						{{ASSET_IMPORT_RETURN}}
+					</div>
+					<div class="asset_import_header_title asset_import_page2" style="display:none">
+						<span>{{ASSET_IMPORT_LOG}}</span>
+					</div>
+					<div id="asset_import_refresh_log" class="asset_import_panel_page_add_btn asset_import_page2" style="display:none;background-image:url('images/asset_import/refresh.png');background-position: 12px 8px; float: right;margin-right: 13px; margin-top: 11px;width:48px;">
+						<span>{{ASSET_IMPORT_REFRESH}}</span>
+					</div>
+					<div class="asset_import_grey_words asset_import_page2" style="color:#aaaaaa;margin-top:11px;float:right;margin-right:16px;font-size:14px;display:none">
+						{{ASSET_IMPORT_REFRESH_MORE}}
+					</div>
+					<div id="asset_import_log_entry_button" class="asset_import_panel_page_add_btn asset_import_page1" style="float:right;margin-right:13px;margin-top:11px;background-image: url('images/asset_import/import_log_icon.png');width:117px;background-position:12px 8px">{{ASSET_IMPORT_LOG}}</div>
+				</div>
+				<div id="asset_import_panel_page_1_container" class="asset_import_page1" class="page-rel-content" style="visibility:hidden;background-color:#fcfcf2;height:calc(100% - 71px);margin-top:10px;padding-top:0;padding-bottom:0;width:100%">
+					<div id="asset_import_panel_page_1_first_part" style="background-color:#ffffff;height:142px;padding-top:12px;margin-left:12px;margin-right:12px;border-bottom:1px #dbdbd3 solid">
+						<div style="height:32px;line-height:32px;width:auto;white-space: nowrap;font-size:0">
+							<div id="asset_import_import_method_selector_label" class="asset_import_input_label" style="width:94px;margin-left:24px">
+								{{ASSET_IMPORT_IMPORT_METHOD}}:
+							</div>
+							<div id="asset_import_import_method_selector" class="asset_import_method_selector" style="vertical-align:middle;display:inline-block;height:32px;line-height:32px;width:188px"></div>
+							<div id="asset_import_import_source_path_label" class="asset_import_input_label" style="width:110px;margin-left:72px">
+								{{ASSET_IMPORT_IMPORT_SOURCE_PATH}}:
+							</div>
+							<div id="asset_import_import_source_path_label_input" class="asset_import_border_div" data_value="" style="padding-left:13px;vertical-align:middle;display:inline-block;width:auto"></div>
+						</div>
+						<div style="margin-top:16px;height:32px;line-height:32px;width:auto;white-space:nowrap;font-size:0">
+							<div id="asset_import_import_scope" class="asset_import_input_label" style="width:94px;margin-left:24px">
+								{{ASSET_IMPORT_IMPORT_SCOPE}}:
+							</div>
+							<div id="asset_import_import_scope_selector" class="asset_import_method_selector" style="vertical-align:middle;display:inline-block;height:32px;line-height:32px;width:188px"></div>
+							<div id="asset_import_sub_path_label" class="asset_import_input_label asset_import_sub_path_element" style="width:77px;margin-left:72px">
+								{{ASSET_IMPORT_SUB_PATH}}:
+							</div>
+							<input id="asset_import_sub_path_input" class="asset_import_border_div asset_import_sub_path_element" placeholder={{ASSET_IMPORT_PLACEHOLDER_TEXT}} style="color: #727272;padding-left:13px;vertical-align:middle;display:inline-block;width:274px"/>
+							<div id="asset_import_sub_path_calendar" class="asset_import_input_label asset_import_sub_path_element" style="color:#727272;margin-left:54px;width:102px;display:inline-block">
+								{{ASSET_IMPORT_BEGIN_END}}:
+							</div>
+							<input id="asset_import_date_picker_begin" class="asset_import_border_div asset_import_sub_path_element" style="z-index:2;padding-left:13px;vertical-align:middle;display:inline-block;width:120px;color: #727272"/>
+							<div class="asset_import_sub_path_element" style="width:34px;height:32px;line-height:32px;text-align:center;display:inline-block;font-size:16px;vertical-align:middle">-</div>
+							<input id="asset_import_date_picker_end" class="asset_import_border_div asset_import_sub_path_element" style="z-index:2;padding-left:13px;vertical-align:middle;display:inline-block;width:120px;margin-right:24px;color: #727272">
+							<div id="asset_import_program_path_label" class="asset_import_input_label asset_import_program_path_element" style="width:92px;margin-left:76px;display:none">
+								{{ASSET_IMPORT_PROGRAM_PATH}}:
+							</div>
+							<input id="asset_import_program_path_input" class="asset_import_border_div asset_import_program_path_element" placeholder={{ASSET_IMPORT_PLACEHOLDER_TEXT}} style="padding-left:13px;vertical-align:middle;display:inline-block;width:690px;display:none;color:#727272"/>
+						</div>
+						<div style="margin-top:9px;height:40px;width:100%;white-space:nowrap;font-size:0">
+							<div id="asset_import_attention1_grey_words" class="asset_import_grey_words" style="float:left;margin-left:calc(100% - 449px)">{{ASSET_IMPORT_ATTENTION_1}}</div>
+							<div id="asset_import_check_preview" class="asset_import_button" style="float:left;margin-left:29px">{{ASSET_IMPORT_CHECK_PREVIEW}}</div>
+						</div>
+						<div style="height:11px;width:100%"></div>
+					</div>
+					<div style="margin-top:6px;height:432px;width:100%;font-size:14px">
+						<div id="asset_import_preview_title"  class="asset_import_title_container" style="margin-left:12px;margin-right:12px">
+						</div>
+						<div style="overflow-y:auto;max-height:341px;height:341px;margin-left:12px;margin-right:12px;width:calc(100% - 24px)">
+							<table cellspacing="1" cellpadding="0" style="width: 100%;table-layout: fixed; font-size: 14px; background-color: rgb(226, 226, 226);">
+								<thead>
+									<td class="asset_import_title_container_thread_id" width="11.97%">{{ASSET_IMPORT_ASSET_TYPE}}</td>
+									<td class="asset_import_title_container_thread_id" width="19.26%">{{ASSET_IMPORT_ASSET_PATH}}</td>
+									<td class="asset_import_title_container_thread_id" width="28.47%">{{ASSET_IMPORT_ASSET_NAME}}</td>
+									<td class="asset_import_title_container_thread_id" width="19.84%">PID</td>
+									<td class="asset_import_title_container_thread_id" width="20.43%">PAID</td>
+								</thead>
+								<tbody id="asset_import_asset_table">
+								</tbody>
+							</table>
+						</div>
+						<div style="width:100%;height:calc(100% - 385px);border-top:1px #ededdb solid;background-color:#ffffff">
+							<div id="asset_import_run" class="asset_import_button" style="float:right;margin-right:43px;margin-top:8px">{{ASSET_IMPORT_RUN}}</div>
+							<div class="asset_import_grey_words" style="float:right;margin-right:15px;margin-top:8px">
+								<div id="asset_import_forbidden_run_notice1" style="height:22px;line-height:22px">{{ASSET_IMPORT_ATTENTION_2}}</div>
+								<div id="asset_import_forbidden_run_notice2" style="height:22px;line-height:22px;margin-top:-4px">{{ASSET_IMPORT_ATTENTION_3}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="asset_import_panel_page_2_container" class="page-rel-content asset_import_page2" style="display:none;background-color:#fcfcf2;height:calc(100% - 71px);margin-top:10px;padding-top:0;padding-bottom:0;width:100%">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

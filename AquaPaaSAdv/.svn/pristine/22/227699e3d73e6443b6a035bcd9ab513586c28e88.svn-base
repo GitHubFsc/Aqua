@@ -1,0 +1,23 @@
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title">
+		<div class="sucai_dialog_title_text">
+			{{SUCAI_SHANCHUSUCAIZU}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear">
+		</div>
+	</div>
+	<div class="sucai_dialog_content">
+		<div class="sucai_dialog_content_IMG">
+			<img src = 'image/sucai/delete_sucai.png'/>
+		</div>
+		<div class="sucai_dialog_content_text">
+			{{SUCAI_NINSHIFUQUEDINGYAOSHANCHU}} <span id = "delete_dialog_sucai_name"></span>
+		</div>
+		<div class="sucai_dialog_content_clear">
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_opition">
+		<div class  = "option_bottom">{{SUCAI_QUXIAO}}</div>
+		<div id = "sucai_dialog_delete_botton_click" class  = "option_bottom confirm_bottom">{{SUCAI_QUEREN}}</div>
+	</div>
+</div>

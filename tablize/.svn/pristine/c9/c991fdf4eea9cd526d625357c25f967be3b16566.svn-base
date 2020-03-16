@@ -1,0 +1,39 @@
+<div class="_frame _flex asset_manage">
+  <link rel="stylesheet" href="style/dialog.css">
+  <link rel="stylesheet" href="style/newSelect.css">
+  <link rel="stylesheet" href="style/zTreeStyle.css">
+  <link rel="stylesheet" href="style/frame.css">
+  <link rel="stylesheet" href="content/asset/manage/main.css">
+  <div class="header _flex">
+    <div class="header_item logo">{{MENU_ASSET_MANAGE}}</div>
+    <div class="header_item search_bar" style='border: 1px solid #E2E2E2;cursor: pointer;'>
+      <input type="text" class="search_input" disabled style='cursor: inherit;'>
+      <div class="search_btn" style='cursor: inherit;'></div>
+      <!-- <input class='condition' placeholder='{{ASSET_INPUT_PLACEHOLDER_TITLE}}' name='title'/>
+      <input class='condition' placeholder='{{ASSET_INPUT_PLACEHOLDER_NAME}}' name='name'/>
+      <input class='condition' placeholder='{{ASSET_INPUT_PLACEHOLDER_PID}}' name='pid'/>
+      <input class='condition' placeholder='{{ASSET_INPUT_PLACEHOLDER_PAID}}' name='paid'/>
+      <div class='header_item icon btn'>{{ASSET_SEARCH}}</div> -->
+    </div>
+    <!-- <div class="header_item dropdown" id="filter"></div> -->
+    <div class="header_item span"></div>
+    <div class="header_item btn" id="output" data-type="output">{{LECTURETICKET_DAOCHU}}</div>
+    <div class="header_item btn" id="batch_tag" data-type="create">{{ASSET_BTN_BATCHTAG}}</div>
+    <div class="header_item btn" id="create_asset" data-type="create">{{ASSET_BTN_ASSET}}</div>
+    <div class="header_item btn" id="create_bundle" data-type="create">{{ASSET_BTN_BUNDLE}}</div>
+  </div>
+  <div class="body">
+    <div class="filter">
+      <span>{{ASSET_ASSET_LIST}}</span>
+      <div class='combo_filter' id="asset_tag_filter"></div>
+      <div class='combo_filter' id="asset_category_filter"></div>
+      <div class='combo_filter' id="asset_type_filter"></div>
+      <div class='combo_filter' id="asset_visible_filter"></div>
+      <div class='combo_filter' id="asset_area_filter"></div>
+      <div class='combo_filter' id="asset_year_filter"></div>
+      <div class='combo_filter' id="asset_cp_filter"></div>
+      <div class='combo_filter' id="asset_price_filter"></div>
+    </div>
+    <div id="asset_list_table" class="list_table"></div>
+  </div>
+</div>

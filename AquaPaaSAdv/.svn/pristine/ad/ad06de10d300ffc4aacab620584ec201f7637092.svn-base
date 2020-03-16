@@ -1,0 +1,43 @@
+input {padding-left: 10px;}
+._border_radius_default {border-radius: 1px;}
+
+#search_widget {width: 421px;border: 1px solid #eaeaea;background-color: #eaeaea;margin-left: 9px;display: -webkit-box;display: -ms-flexbox;display: flex;position: relative;}
+#search_widget  > input {height: 100%;width: 371px;border: none;background-color: transparent;}
+#search_widget  .search_btn {background-image: url(../../image/adPolicyAudit/searchBtn.png);background-position: center;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;background-size: contain;background-repeat: no-repeat;}
+
+._query._btn {background-color: #8fc31f;padding-left: 32px;padding-right: 9px;background-image: url(../../image/adPolicyManage/add.png);background-position: 10px center;background-repeat: no-repeat;color: #fff;cursor: pointer;}
+.clear_condition {margin-left: 20px;color: #646464;text-decoration: underline;cursor: default;}
+
+#list_table {height: 100%;width: 100%;}
+
+#contracts_management ._frame_body {margin-left: 4px;padding-left: 4px;padding-top: 4px;padding-right: 4px;}
+
+.contract {font-size: 14px;}
+.contract ._dialog_row > label {line-height: 40px;width: 300px !important;margin: 0;}
+.contract ._dialog_row {-webkit-box-pack: justify;-ms-flex-pack: justify;justify-content: space-between;padding: 0 28px;}
+.contract ._dialog_row label, .contract ._dialog_row input {width: 288px;height: 30px;color: #727272;}
+.contract ._dialog_row input #contract_file_url {background-color: #eaeaea;}
+.contract ._btn {height: 30px;line-height: 30px;text-align: center;padding: 0 28px;cursor: pointer;color: #fff;border: 1px solid #597f89;margin-left: 18px;}
+.contract #file_uploader {background-color: #5da1c0;}
+.contract #active_time {height: 30px;width: 120px;margin-right: 180px;}
+.contract #expire_time {height: 30px;width: 120px;margin-right: 180px;}
+.contract ._dialog_row.select {justify-content: normal;}
+.contract #contract_type .select-status .select-header {border: 1px solid #c6c6c6;color: #727272;}
+.contract #contract_type .select-status .select-content {border-left: 1px solid #c6c6c6; border-right: 1px solid #c6c6c6;}
+.contract #contract_type .select-status .select-content li:first-child {border-top: 1px solid #c6c6c6; color: #727272;}
+.contract #contract_type .select-status .select-content li {border-bottom: 1px solid #c6c6c6; color: #727272;}
+.contract #contract_info {height: 15px;line-height: 30px;color: #f40200;margin-left: 15px;display: none;}
+
+.contract #pdf_viewer {height: 100%;width: 100%;}
+
+._dialog.query {top: 36px;position: absolute;left: -1px;z-index: 1;width: 545px;height: 270px;border: 1px solid #d5d5d5;}
+._dialog.query ._dialog_row {padding-left: 20px;}
+._dialog.query ._dialog_row > input {-webkit-box-flex:1;-ms-flex:1;flex:1;margin-right: 60px;height: 30px;}
+._dialog.query label {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;color: #727272;margin-left: 0;}
+._dialog.query .date_picker {width: 172px;height: 32px;}
+._dialog.query span {padding: 0 17px;height: 32px;}
+._dialog.query ._btn.search {height: 30px;border: 1px solid #597f88;line-height: 30px;background-color: #5ea0c0;color: #fff;padding: 0 28px;margin-left: 28px;cursor: pointer;}
+._dialog.query #query_contract_type .select-header {border: 1px solid #c6c6c6;color: #727272;}
+._dialog.query #query_contract_type .select-status .select-content {border-left: 1px solid #c6c6c6; border-right: 1px solid #c6c6c6;}
+._dialog.query #query_contract_type .select-status .select-content li:first-child {border-top: 1px solid #c6c6c6; color: #727272;}
+._dialog.query #query_contract_type .select-status .select-content li {border-bottom: 1px solid #c6c6c6; color: #727272;text-indent: 0;}

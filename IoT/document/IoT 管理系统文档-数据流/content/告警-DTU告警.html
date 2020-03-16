@@ -1,0 +1,1190 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../js/prettify/prettify.css">
+<script src="../js/prettify/run_prettify.js"></script>
+<title>告警-DTU告警</title>
+<link rel="stylesheet" href="../style/util.css" type="text/css"/>
+<script src="../js/nav.js"></script>
+</head>
+<body onload="setNav()">
+<h1>告警-DTU告警</h1>
+<hr />
+<ol id="navs"></ol>
+<hr />
+<ol>
+<li>
+<h2>获取DTU的属性</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thingdef/single/mgd.gehua/DTU?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:04:28.606Z
+</pre>
+<h3>接口简称:thingdef接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>DTU</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingdef/single/mgd.gehua/DTU?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:04:28.606Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: gWLtQrWDpJNUN/N5sQKkva5ckMo=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=8969ff83-a424-41fc-953b-5e1acb9e9ae6&rpc_id=0
+Content-Type: application/json
+Date: Wed, 30 Jan 2019 01:59:15 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "5c21846bb5024800399c3f60",
+	"thingDefID": "DTU",
+	"namespace": "mgd.gehua",
+	"name": "DTU",
+	"description": "采集器通过内置LORAWAN无线传输模块与网关进行无线通信，把热泵出入水温、室内温度、开关机状态等信息无线传输到网关",
+	"creator": "admin",
+	"createTime": "2018-12-25T09:14:19+0800",
+	"lastUpdateTime": "2018-12-25T09:34:32+0800",
+	"metadata": {
+		"m1": "v1",
+		"m2": "v2"
+	},
+	"events": null,
+	"actions": null,
+	"properties": [{
+		"name": "DTUID",
+		"displayName": "DTU编号",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU编号",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "devEUI",
+		"displayName": "devEUI",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU在LORAWAN协议中的唯一编号",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "pinCode",
+		"displayName": "pinCode",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "pinCode",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "manufacture",
+		"displayName": "厂商编号",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "5",
+		"values": null,
+		"valuesEnumDefName": "enum_manufacture",
+		"enumFilterFields": ["/thingDefID"],
+		"appDataType": null,
+		"metric": null,
+		"description": "厂商编号",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "dateOfManufacture",
+		"displayName": "生产日期",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "5",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "生产日期",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "installDate",
+		"displayName": "安装日期",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "安装日期",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "userName",
+		"displayName": "用户名",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "用户名",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "userPhone",
+		"displayName": "联系电话",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "联系电话",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "region",
+		"displayName": "区域",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": "enum_region",
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "区域",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "address",
+		"displayName": "安装地址",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "address",
+		"metric": null,
+		"description": "安装地址(门牌号)",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "coordinate",
+		"displayName": "地理位置",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "地理位置(经纬度)",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "address_coord",
+		"displayName": "百度摩卡托坐标",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "coord_bd09mc",
+		"metric": null,
+		"description": "百度摩卡托坐标",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "deviceInstallNum",
+		"displayName": "下挂设备数量",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "下挂设备数量",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "smartcard",
+		"displayName": "智能卡号",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "智能卡号",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "hardwareVersion",
+		"displayName": "硬件版本",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "硬件版本",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "softwareVersion",
+		"displayName": "软件版本",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "软件版本",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "DTUWorkMode",
+		"displayName": "DTU工作模式",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU工作模式",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "DTUFunPos",
+		"displayName": "DTU功能位",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU功能位",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "rate",
+		"displayName": "射频波特率",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "射频波特率",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "intervalMin",
+		"displayName": "心跳时间间隔",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "心跳时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "intervalReportMin",
+		"displayName": "上报时间间隔",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "上报时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "deviceNum",
+		"displayName": "当前设备数量",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "当前设备数量",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "enviTemp",
+		"displayName": "设备环境温度",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "2",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "温度",
+		"metric": "摄氏度",
+		"description": "设备环境温度",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "batteryPower",
+		"displayName": "电池电量",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "电量",
+		"metric": null,
+		"description": "电池电量",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "timeUTCSec",
+		"displayName": "数据采集时间",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "秒",
+		"description": "数据采集时间",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "alarmCode",
+		"displayName": "DTU告警代码",
+		"displayGroup": "告警信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU告警代码",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "alarmTimeUTCSec",
+		"displayName": "告警产生时间",
+		"displayGroup": "告警信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "告警产生时间",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "cfg_DTUWorkMode",
+		"displayName": "DTU工作模式",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU工作模式",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_DTUFunPos",
+		"displayName": "DTU功能位",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU功能位",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_rate",
+		"displayName": "射频波特率",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "射频波特率",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_intervalMin",
+		"displayName": "心跳时间间隔",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "心跳时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_intervalReportMin",
+		"displayName": "上报时间间隔",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "上报时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}]
+}
+</pre>
+</li>
+<li>
+<h2>获取DTU厂商的值列表</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:04:29.910Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["DTU"]}
+</pre>
+<h3>接口简称:7.5接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_manufacture</td><td>取值热泵属性manufacture的valuesEnumDefName</td></tr>
+<tr><td>enum_device</td><td>enumFilterFields /thingDefID对应的过滤条件，取值DTUthingDefID</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:24:50.347Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: RRF7bjXHm7IEhPDE+LZ2NeNcORE=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Content-Length: 23
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=f23b4028-2678-44a5-951d-3f452ce5f217&rpc_id=0
+Content-Type: application/json
+Date: Wed, 30 Jan 2019 02:19:37 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"value": "40",
+	"displayName": "北京新华业阳光新能源有限公司",
+	"metadata": {
+		"contact": "",
+		"telephone": ""
+	},
+	"filterValues": {
+		"enum_device": ["DTU"]
+	},
+	"id": "4796bf6eb3e742d2a04f3551e11ffa63"
+}]
+</pre>
+</li>
+<li>
+<h2>获取DTU告警的历史记录</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=DTU&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:24:48.911Z&start=0&end=13
+</pre>
+<h3>接口简称:4.4接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>DTU</td><td>thingdefid, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: I2Tw5kz2Hf2gScdwhRYl0IvzRv8=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+Content-Type: application/json
+Date: Tue, 29 Jan 2019 07:57:11 GMT
+Transfer-Encoding: chunked
+Server: nginx
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"id": "5c3d87f3087b01003ce5522d",
+	"thing_id": "mgd.gehua.d896e0ff00011eef",
+	"ext_id": "d896e0ff00011eef",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:12:20+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:12:20+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286603",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011eef"
+	}
+}, {
+	"id": "5c3d87f2087b01003ce5521c",
+	"thing_id": "mgd.gehua.d896e0ff00012090",
+	"ext_id": "d896e0ff00012090",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:12:05+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:12:05+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287468",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00012090"
+	}
+}, {
+	"id": "5c3d87f2087b01003ce5521d",
+	"thing_id": "mgd.gehua.d896e0ff00011e41",
+	"ext_id": "d896e0ff00011e41",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:12:05+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:12:05+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287110",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011e41"
+	}
+}, {
+	"id": "5c3d87de087b01003ce551ef",
+	"thing_id": "mgd.gehua.d896e0ff0001280b",
+	"ext_id": "d896e0ff0001280b",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:50+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:50+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287107",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff0001280b"
+	}
+}, {
+	"id": "5c3d87d4087b01003ce551e2",
+	"thing_id": "mgd.gehua.d896e0ff00012121",
+	"ext_id": "d896e0ff00012121",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:45+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:45+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286836",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00012121"
+	}
+}, {
+	"id": "5c3d87d4087b01003ce551e3",
+	"thing_id": "mgd.gehua.d896e0ff00011f54",
+	"ext_id": "d896e0ff00011f54",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:45+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:45+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287330",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011f54"
+	}
+}, {
+	"id": "5c3d87c0087b01003ce551b1",
+	"thing_id": "mgd.gehua.d896e0ff00011f4e",
+	"ext_id": "d896e0ff00011f4e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:35+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:35+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286550",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011f4e"
+	}
+}, {
+	"id": "5c3d87c0087b01003ce551b2",
+	"thing_id": "mgd.gehua.d896e0ff0001288e",
+	"ext_id": "d896e0ff0001288e",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:35+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:35+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286574",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff0001288e"
+	}
+}, {
+	"id": "5c3d87c0087b01003ce551b3",
+	"thing_id": "mgd.gehua.d896e0ff00011e93",
+	"ext_id": "d896e0ff00011e93",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:35+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:35+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286494",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011e93"
+	}
+}, {
+	"id": "5c3d87c0087b01003ce551a3",
+	"thing_id": "mgd.gehua.d896e0ff00011fa1",
+	"ext_id": "d896e0ff00011fa1",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:25+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:25+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286566",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011fa1"
+	}
+}, {
+	"id": "5c3d87b6087b01003ce55193",
+	"thing_id": "mgd.gehua.d896e0ff000121e2",
+	"ext_id": "d896e0ff000121e2",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:20+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:20+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "010010746B277A22",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff000121e2"
+	}
+}, {
+	"id": "5c3d87ac087b01003ce55175",
+	"thing_id": "mgd.gehua.d896e0ff00011e04",
+	"ext_id": "d896e0ff00011e04",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:10+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:10+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118092500282365",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011e04"
+	}
+}, {
+	"id": "5c3d87ac087b01003ce55170",
+	"thing_id": "mgd.gehua.d896e0ff000128ca",
+	"ext_id": "d896e0ff000128ca",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:11:05+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:11:05+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600286780",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff000128ca"
+	}
+}, {
+	"id": "5c3d8798087b01003ce55137",
+	"thing_id": "mgd.gehua.d896e0ff00011e34",
+	"ext_id": "d896e0ff00011e34",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:10:40+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:10:40+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287362",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011e34"
+	}
+}]
+</pre>
+</li>
+<li>
+<h2>获取单个DTU的信息</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thing/d896e0ff00012526?namespace=mgd.gehua&user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-29T09:00:07.919Z
+</pre>
+<h3>接口简称:3.8接口(DTU)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>d896e0ff00012526</td><td>ext_id, 来自"/aquapaas/rest/thinghistory/event"接口返回</td></tr>
+<tr><td>mgd.gehua</td><td>namespace, 来自"/aquapaas/rest/thinghistory/event"接口返回</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thing/d896e0ff00012090?namespace=mgd.gehua&user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:55:11.960Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: yO+ZRePqkj6xJCUTHJb5kg7n31c=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=79e47a7a-57b9-4d8a-85d4-974e9461e89f&rpc_id=0
+Content-Type: application/json
+Date: Wed, 30 Jan 2019 02:49:59 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "mgd.gehua.d896e0ff00012090",
+	"ext_id": "d896e0ff00012090",
+	"namespace": "mgd.gehua",
+	"def_id": "DTU",
+	"parent_ext_id": null,
+	"name": "mgd.gehua.d896e0ff00012090",
+	"endpoint": null,
+	"status": "Normal",
+	"states": null,
+	"create_time": "2019-01-08T10:34:35+0800",
+	"last_modified_time": "2019-01-30T07:32:40+0800",
+	"last_event": null,
+	"metadata": {
+		"devAddr": "673d8cb4",
+		"address_coord": "39.88278,116.793628",
+		"controlWord": 33,
+		"DTUID": "0020118102600287468",
+		"DTUWorkMode": 3,
+		"userPhone": "13126959975",
+		"gwEui": "d896e0fff0000283",
+		"alarmCode": 0,
+		"devEui": "d896e0ff00012090",
+		"devEUI": "d896e0ff00012090",
+		"deviceInstallNum": 1,
+		"dataMarker": 3,
+		"deviceNum": 1,
+		"mtype": 2,
+		"rate": 0,
+		"installDate": "2018-11-22T13:42:44+0800",
+		"datr": "SF10BW125",
+		"joinEui": "d896e0e0000039a8",
+		"batteryPower": 255,
+		"enviTemp": 27,
+		"rssi": -87,
+		"DTUFunPos": 1,
+		"coordinate": "116.83478,39.850597",
+		"address": "通州区潞城镇兴各庄村264号",
+		"userName": "朱洪",
+		"fcnt": 1456,
+		"intervalMin": 60,
+		"snr": 11.2,
+		"fport": 61
+	}
+}
+</pre>
+</li>
+<li>
+<h2>搜索-根据DTU告警历史记录的返回字段，做一般搜索</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+http://172.16.20.62:8200/aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=DTU&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T03:07:19.142Z&start=0&end=13&DTUID=0020118102600287110&DTUID_op=lk
+</pre>
+<h3>接口简称:4.4接口-一般搜索</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>DTU</td><td>thingdefid, 取值已有配置项</td></tr>
+<tr><td>0020118102600287110</td><td>DTUID, 后面的DTUID_op=lk表示DTUID中包含指定的字符串就符合条件</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=DTU&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T03:07:19.142Z&start=0&end=13&DTUID=0020118102600287110&DTUID_op=lk HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: 7WFZywUwDTbpu0DSdP1JnVMrgEY=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=ea0e99b8-d4ec-4bf1-a023-61daf6902f16&rpc_id=0
+x-aqua-total-count: 2
+Content-Type: application/json
+Date: Wed, 30 Jan 2019 03:02:07 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"id": "5c3d87f2087b01003ce5521d",
+	"thing_id": "mgd.gehua.d896e0ff00011e41",
+	"ext_id": "d896e0ff00011e41",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-15T15:12:05+0800",
+	"status": "Warning",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "5",
+		"create_time": "2019-01-15T15:12:05+0800",
+		"heartbeat": "1",
+		"payload": "DTUHeartBeatTimeOut",
+		"status": "Warning"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287110",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011e41"
+	}
+}, {
+	"id": "5c3c001b761888003c30fc91",
+	"thing_id": "mgd.gehua.d896e0ff00011e41",
+	"ext_id": "d896e0ff00011e41",
+	"namespace": "mgd.gehua",
+	"create_time": "2019-01-12T10:23:08+0800",
+	"status": "Normal",
+	"thing_def_id": "DTU",
+	"event": {
+		"event_type": "1",
+		"create_time": "2019-01-12T10:23:08+0800",
+		"payload": "",
+		"status": "Normal"
+	},
+	"thing_metadata": {
+		"DTUID": "0020118102600287110",
+		"alarmCode": 0,
+		"devEUI": "d896e0ff00011e41"
+	}
+}]
+</pre>
+</li>
+<li>
+<h2>搜索-根据DTU告警历史记录的返回字段作为ThingEnum值在ThingEnumDef中定义的显示名进行模糊搜索</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=DTU&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T03:52:58.503Z&start=0&end=13&manufacture=%E5%8C%97%E4%BA%AC&manufacture_op=enum
+</pre>
+<h3>接口简称:4.4接口-作为ThingEnum值搜索</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>DTU</td><td>thingdefid, 取值已有配置项</td></tr>
+<tr><td>北京</td><td>manufacture后面的manufacture_op=enum表示该字符作为ThingEnum值在ThingEnumDef中定义的显示名进行模糊搜索</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thinghistory/event?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&namespace=mgd.gehua&thingdefid=DTU&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T03:52:58.503Z&start=0&end=13&manufacture=%E5%8C%97%E4%BA%AC&manufacture_op=enum HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: n46uwJbK2AV6h22kI30jP2fq6RM=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=9f00ba63-335e-46c5-8b8a-ed0daadd7d4d&rpc_id=0
+x-aqua-total-count: 0
+Content-Type: application/json
+Date: Wed, 30 Jan 2019 03:47:46 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+返回为空
+</pre>
+</li>
+</ol>
+<h3>业务流程简介(仅供参考，以实际代码为准)</h3>
+<pre class="prettyprint">
+一、打开页面，页面发送thingdef接口。
+>>注意,和开发沟通后得结论:由于thingdef接口的数据一经定义，后台几乎很少去改变。
+所以在当前页面，此接口只要发送一次，并存下返回数据，当前页面任何部分需要用到这接口数据不要再次发送该接口。
+
+二、页面发送4.4接口。
+返回数据用途:
+(一)、字段名create_time的值:表格告警产生时间。
+(二)、thing_metadata下DTUID、devEUI、manufacture、region、alarmCode这些字段名:
+根据上面thingdef接口返回数据下properties里,分别找name为这些字段名的对象。
+在这些对象里,判断dataType是不是为5:
+1、如果不为5，那把当前4.4接口字段名对应的字段值填入表格。字段名对应表格列内容如下：
+DTUID:DTU编号、devEUI:DevEUI、manufacture:厂商名称、region:区域、alarmCode：告警代码。
+2、如果为5，在当前这个对象里，根据enumFilterFields、valuesEnumDefName等参数，发送7.5接口
+返回数组中检查每个对象value，当value等于当前4.4接口的字段名对应的值时，取这个7.5接口对象的displayName:
+(1)如果得到这个displayName的当前4.4接口字段名为DTUID，则表格DTU编号填入这个displayName。
+(2)如果当前4.4接口的字段名为devEUI，则表格DevEUI填入这个displayName。
+(3)如果当前4.4接口的字段名为manufacture，则表格厂商名称填入这个displayName。
+厂商信息弹出框中:
+厂商名称使用这个displayName。
+联系人使用当前7.5接口对象的metadata下面的contact。
+联系电话使用当前7.5接口对象的metadata下面的telephone。
+设备类型使用thingdef接口返回的name。
+(4)如果当前4.4接口的字段名为region，则表格区域填入这个displayName。
+(5)如果当前4.4接口的字段名为alarmCode，则表格告警代码填入这个displayName。
+(6)另外上面结果得出的DTUID还用于填充安装信息弹框中的DTU编号。
+
+三、手动点击安装信息,弹框出现后页面发送3.8接口(DTU)，返回字段填充安装信息弹框内容：
+(一)metadata下installDate:安装时间
+(二)metadata下userName:用户名
+(三)metadata下userPhone:联系电话
+(四)metadata下region:区域
+(五)metadata下coordinate:地理位置
+(六)metadata下address:安装地址
+(七)metadata下deviceInstallNum:下挂设备数量
+(八)metadata下smartcard:智能卡号
+
+四、发送7.5接口说明（此文字仅供参考，如大家接口调试有问题，请看我代码、或者问我或问后台):
+当4.4接口(列表)根据上面的流程，到达要发7.5接口时，
+(一)thingdef接口property中的当前条目里，enumFilterFields这个值：
+(1)当这个值只包括"/thingDefID"("/thingDefID":这是个固定的字符串),而不包括"/metadata/manufacture"字符串时:
+7.5接口的body体为:{enum_device:[DTUThingDefID]}(注：DTUThingDefID为前端项目config.js配置里的DTUthingdefid)
+(2)当这个值不仅包括"/thingDefID",还包括"/metadata/manufacture"字符串时:
+7.5接口的body体为:{enum_device:[DTUThingDefID],enum_manufacture:2}//这里enum_manufacture的值2表示的是4.4接口当前数据的manufacture value.
+这个接口的url说明举例：如果具体接口是POST /aquapaas/rest/thingenumdef/items/list/namespace1/enumDefName1     
+那么enumDefName1就是property中的当前条目里,valuesEnumDefName这个值。
+</pre>
+</body>
+</html>

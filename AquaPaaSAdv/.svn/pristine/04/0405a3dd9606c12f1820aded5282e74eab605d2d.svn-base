@@ -1,0 +1,15 @@
+<div class="panel-layer-container">
+	<div class="panel-layer-head">
+		<div id="adCntBckBtn" class="layer-btn-head-left">{{OPS_TEXT_BACK}}</div>
+		<div class="layer-head-spacer"></div>
+		<div id="adCntTitle" class="layer-head-title"></div>
+	</div>
+	<div class="panel-layer-body">
+		<div class="ad-site-list">{{ADPOS_CNECT_SITE_LIST}}</div>
+		<div id="adSiteList" class="ad-site-flow-list"></div>
+		<div class="ad-site-connected">{{ADPOS_CNECT_SITE_CNCTED}}</div>
+		<div id="adSiteConnected" class="ad-site-flow-list"></div>
+		<div id="adSiteAddBtn">{{ADPOS_CNECT_SITE_ADD}}</div>
+		<div id="adSiteRmvBtn">{{ADPOS_CNECT_SITE_RMV}}</div>
+	</div>
+</div>

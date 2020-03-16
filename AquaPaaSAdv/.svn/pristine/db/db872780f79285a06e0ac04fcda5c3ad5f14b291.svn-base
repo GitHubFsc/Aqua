@@ -1,0 +1,49 @@
+<style>
+    #sucaizu_container .sucai_list_search{
+        background: white;
+        font-size: 16px;
+        padding-left: 15px;
+        width: 150px;
+        padding-right: 30px;
+    }
+    #sucaizu_container input.sucai_list_search::-webkit-input-placeholder {
+        color: #cccccc;
+    }
+    #sucaizu_container input.sucai_list_search::-moz-input-placeholder {
+        color: #cccccc;
+    }
+    #sucaizu_container input.sucai_list_search::-ms-input-placeholder {
+        color: #cccccc;
+    }
+</style>
+<div id="sucaizu_container" class="manage_blue">
+    <div class="sucai_head">
+        <div class = "sucai_head_left">
+            <div class = "sucai_head_center">
+                <ul style = "margin:0;padding:0">
+                    <li id="sucaizu_menu_select_img" class="sucai_menu_selected">{{SUCAI_TUPIAN}}</li>
+                    <li id="sucaizu_menu_select_video">{{SUCAI_SHIPIN}}</li>
+                    <li id="sucaizu_menu_select_subtitle">{{SUCAI_ZIMU}}</li>
+                </ul>
+            </div>
+            <div id="sucaizu_site_filter" class="sucai-site-filter" style="margin-right: 0px;display: none"></div>
+            <div class = "sucai_search_Container">
+                <input id  = "sucaizu_list_search" class = "sucai_list_search" placeholder = "输入名称搜索" onkeyup = "" />
+                <div id = "sucaizu_list_search_bottom" class = "sucai_search_icon" style = ""></div>
+            </div>
+            <div class = "sucai_search_Container">
+                <input id  = "sucaizu_list_search_username" class = "sucai_list_search" placeholder = "输入创建者搜索" onkeyup = "" />
+                <div id = "sucaizu_list_search_username_bottom" class = "sucai_search_icon" style = ""></div>
+            </div>
+        </div>
+        <div class="sucai_head_right">
+            <div id="sucaizu_add_class_btn" class = "sucai_add_class_btn" onclick=""> <image style  = "height:100%" src = "image/sucai/sucai_add_btn.png"/> <span style = "height: 38px;line-height: 38px;float: right;">{{SUCAI_XINJIANSUCAIZU}}</span></div>
+        </div>
+
+    </div>
+    <div id = "sucaizu_content" class = "panel_page_list_container" style="">
+        <div id = "sucaizu_content_table" style = "height:100%;position: relative;padding-top: 5px;padding-left: 5px;padding-right: 5px;">
+        </div>
+    </div>
+    <div id="ad-disites-layer" style="display:none;"></div>
+</div>

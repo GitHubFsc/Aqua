@@ -1,0 +1,11 @@
+<div class="_dialog contract _del">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{CONTRACTS_DIALOG_DELETE}}</div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body">{{CONTRACTS_DIALOG_DELETE_INFO}}</div>
+  <div class="_dialog_foot">
+    <div class="_btn cancel">{{CONTRACTS_DIALOG_BTN_CANCEL}}</div>
+    <div class="_btn confirm">{{DIALOG_OK}}</div>
+  </div>
+</div>

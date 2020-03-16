@@ -1,0 +1,17 @@
+<div class="_frame _flex asset_export_all">
+  <link rel="stylesheet" href="style/frame.css">
+  <link rel="stylesheet" href="content/asset/asset_export_all/index.css">
+  <div class="header _flex">
+    <div class="header_item logo">{{MENU_ASSET_EXPORT_ALL}}</div>
+  </div>
+  <div class="body">
+    <div id="asset_export_all">
+      <div class="alltextdiv">全量节目导出</div>
+      <div>
+          <p class="alltextp">点击按钮可以导出</p>
+          <p class="alltextp">全量固定字段的节目</p>
+      </div>
+      <div class="asset_export_all_btn" id="asset_export_all_btn">全量节目导出</div>
+    </div>
+  </div>
+</div>

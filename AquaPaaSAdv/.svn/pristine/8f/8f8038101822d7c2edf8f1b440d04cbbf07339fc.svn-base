@@ -1,0 +1,26 @@
+<div class="panel_container">
+	<div class="float_panel_title_pref"></div>
+	<div class="float_page_title_text">{{SITE_ADMIN_LIST}}</div>
+	<div class="float_page_v_splitter"></div>
+	<div class="float_search_input_container">
+		<input id="siteAdmin_search_input" class="panel_search_input" type="text"/>
+		<div id="siteAdmin_search_input_icon" class="panel_search_input_icon">
+
+		</div>
+	</div>
+	<div id="siteAdmin_centralMonitorLink" class="changedColorButton" style="display:none;right:166px;position:absolute;top:14px;border-radius:2px">
+		{{OPS_CENTRAL_SITE_MONITOR}}
+	</div>
+	<div id="siteAdmin_addBtn" class="panel_page_button">
+		<div class="panel_page_button_icon">
+
+		</div>
+		<div class="panel_page_button_text" style="font-size:16px;">{{SITE_ADMIN_ADDBTN}}</div>
+	</div>
+	<div class="panel_page_list_container" >
+		<div id="siteAdmin_siteList" class="panel_page_list">
+
+		</div>
+	</div>
+	<div id="siteAdminSiteLayer" style="display:none;"></div>
+</div>

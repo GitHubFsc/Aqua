@@ -1,0 +1,33 @@
+.dialog {background-color: #fff;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-flow: column;flex-flow: column;height: 100%;width: 100%;border-radius: 9px;border: 1px solid #bfbfbf;-webkit-box-shadow: 0px 1px 3px 0px #787878;box-shadow: 0px 1px 3px 0px #787878;font-family: 'Microsoft YaHei';overflow: visible;}
+.dialog .title {height: 51px;width: 100%;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;background-color: rgba(241, 241, 241, 0.3);-webkit-box-shadow: 0.5px 0.866px 0px 0px rgb(68, 68, 68, 0.3);box-shadow: 0.5px 0.866px 0px 0px rgb(68, 68, 68, 0.3);cursor: default;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;border-top-left-radius: 9px;border-top-right-radius: 9px;}
+.dialog .title .label {margin-left: 17px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;color: #777777;display: -webkit-box;display: -ms-flexbox;display: flex;font-size: 14px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;font-weight: bold;}
+.dialog .title .label.icon {padding-left: 13px;}
+.dialog .title .label.icon::before{width: 6px;height: 14px;background-color: #1ec3ec;border: 1px solid #e9e9e9;border-radius: 2px;content: ' ';margin-right: 5px;}
+.dialog .title .close {width: 49px;height: 32px;background-image: url(../uiWidget/images/popup_dialog_v2_close.png);cursor: pointer;}
+.dialog .body {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;padding-top: 19px;cursor: default;}
+.dialog .row {display: -webkit-box;display: -ms-flexbox;display: flex;height: 53px;-webkit-box-align: center;-ms-flex-align: center;align-items: center;padding-right: 12px;}
+.dialog .row .col {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.dialog .row .label {font-size: 12px;color: #666666;width: 65px;margin-left: 35px;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.dialog .row .input {outline: none;border: 1px solid RGBA(183, 183, 183, 0.7);border-radius: 2px;height: 35px;padding-left: 15px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;margin-right: 26px;font-size: 12px;color: #777777;}
+.dialog .row .combo {outline: none;border: 1px solid RGBA(183, 183, 183, 0.7);border-radius: 2px;height: 35px;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;margin-right: 26px;font-size: 12px;color: #777777;background-color: #fff;line-height: 33px;}
+/* .select-header-content */
+.dialog .row .combo input {border: none;outline: none;padding-left: 10px;color: inherit;}
+
+.dialog .foot{background-color: #ededed;height: 60px;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-flow: row;flex-flow: row;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;width: 100%;border-bottom-left-radius: 9px;border-bottom-right-radius: 9px;}
+.dialog .foot .btn {font-size: 14px;text-shadow: 0px 0px 1px #8ba2a8;color: #ffffff;padding: 0 11px;height: 30px;border-style: solid;border-width: 1px;border-color: #ffffff;-webkit-box-shadow: 0px 0px 5px 0px rgba(190, 190, 190, 0.7);box-shadow: 0px 0px 5px 0px rgba(190, 190, 190, 0.7);line-height: 30px;margin-right: 19px;cursor: pointer;border-radius: 4px;}
+.dialog .foot .btn.icon {padding-left: 41px;background-position: 10px center;background-repeat: no-repeat;}
+.dialog .foot .btn.cancel {border-color: rgba(107, 186, 205, 0.7);background-color: rgba(125, 216, 239, 0.7);}
+.dialog .foot .btn.add {border-color: rgba(39, 157, 187, 0.7);background-color: rgba(30, 195, 236, 0.7);}
+.dialog .foot .btn.update {border-color: rgba(39, 157, 187, 0.7);background-color: rgba(30, 195, 236, 0.7);}
+
+.dialog .foot .btn.icon.cancel {background-image: url(../image/dialog/cancel.png);}
+.dialog .foot .btn.icon.add {background-image: url(../image/dialog/add.png);}
+.dialog .foot .btn.icon.confirm {background-image: url(../image/dialog/confirm.png);}
+.dialog .foot .btn.icon.update {background-image: url(../image/dialog/update.png);}
+
+/********** Alert Dialog ***********/
+.alert.dialog {background-image: url(../image/dialog/alert_icon.png);background-position: center 43px;background-repeat: no-repeat;-webkit-box-align: center;-ms-flex-align: center;align-items: center;}
+.alert.dialog .title {border-bottom: none;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;-webkit-box-shadow: none;box-shadow: none;background: transparent;}
+.alert.dialog .body {padding-top: 84px;font-size: 18px;line-height: 1.67;text-align: center;color: #434343;width: 229px;word-break: break-all;}
+.alert.dialog .foot .btn.cancel {border-color: rgba(206, 133, 53, 0.7);background-color: rgba(247, 185, 118, 0.7);}
+.alert.dialog .foot .btn.confirm {border-color: rgba(204, 118, 25, 0.7);background-color: rgba(254, 147, 31, 0.7);}

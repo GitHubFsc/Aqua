@@ -1,0 +1,40 @@
+.app {
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	color: #fff;
+}
+
+#tab_focus {
+	position: absolute;
+	width: 534px;
+	height: 303px;
+	left: 78px;
+	top: 122px;
+	z-index: 20;
+	background-repeat: no-repeat;
+	background-image: url(../img/cut/tab_focus.png);
+	visibility: hidden;
+}
+
+#tab_0 {
+	position: absolute;
+	width: 514px;
+	height: 283px;
+	left: 88px;
+	top: 132px;
+}
+
+#tab_1 {
+	position: absolute;
+	width: 514px;
+	height: 283px;
+	left: 692px;
+	top: 132px;
+}
+
+.vid_poster {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+

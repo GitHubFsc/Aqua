@@ -1,0 +1,1663 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="../js/prettify/prettify.css">
+<script src="../js/prettify/run_prettify.js"></script>
+<title>地图分布</title>
+<link rel="stylesheet" href="../style/util.css" type="text/css"/>
+<script src="../js/nav.js"></script>
+</head>
+<body onload="setNav()">
+<h1>地图分布</h1>
+<hr />
+<ol id="navs"></ol>
+<hr />
+<ol>
+<li>
+<h2>获取DTU的地理位置(经度纬度)、设备信息等</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thingsearch/things?thing_def_id=DTU&namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T02:35:33.886Z
+</pre>
+<h3>接口简称:thingsearch接口(DTU)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>namespace</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>thing_def_id</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thingsearch/things/aquapaas/rest/thingsearch/things?thing_def_id=DTU&namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T00:59:21.657Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: J/iBgUIYMF6t129wbLR/jFagG3Q=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/bak_iot_mq/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1800
+Access-Control-Allow-Methods: GET,POST,DELETE,PUT,OPTIONS,HEAD
+Access-Control-Allow-Headers: x-aqua-sign
+x-trace-info: trace_id=69add6d3-03b2-4dbe-a839-78be96a873e7&rpc_id=0
+Allow: DELETE,POST,GET,PUT,OPTIONS,HEAD
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Content-Length: 0
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"address_coord": "39.811024,116.773013",
+	"address": "通州区漷县镇吴营村二区甲72号",
+	"coordinate": "116.756935,39.805000",
+	"installdate": "2018-10-22T10:00:02+0800",
+	"visible": true,
+	"userphone": "82583804",
+	"deveui": "d896e0ff00012379",
+	"states": "",
+	"parent_ext_id": "",
+	"endpoint": "",
+	"ext_id": "d896e0ff00012379",
+	"def_id": "DTU",
+	"dtuid": "010010746B277BB9",
+	"namespace": "mgd.gehua",
+	"name": "mgd.gehua.d896e0ff00012379",
+	"deviceinstallnum": "1",
+	"username": "李书明",
+	"status": "Normal",
+	"doc_type": "thing",
+	"doc_id": "mgd.gehua.d896e0ff00012379"
+}, {
+	"address_coord": "39.811024,116.773013",
+	"address": "通州区漷县镇吴营村二区60号",
+	"coordinate": "116.757960,39.804733",
+	"installdate": "2018-10-22T13:46:59+0800",
+	"visible": true,
+	"userphone": "18210498398",
+	"deveui": "d896e0ff0001222e",
+	"states": "",
+	"parent_ext_id": "",
+	"endpoint": "",
+	"ext_id": "d896e0ff0001222e",
+	"def_id": "DTU",
+	"dtuid": "010010746B277A6E",
+	"namespace": "mgd.gehua",
+	"name": "mgd.gehua.d896e0ff0001222e",
+	"deviceinstallnum": "1",
+	"username": "禹桂玉",
+	"status": "Normal",
+	"doc_type": "thing",
+	"doc_id": "mgd.gehua.d896e0ff0001222e"
+}, {
+	"address_coord": "39.811024,116.773013",
+	"address": "通州区漷县镇吴营村一区21号",
+	"coordinate": "116.758865,39.803562",
+	"installdate": "2018-10-24T08:59:39+0800",
+	"visible": true,
+	"userphone": "80583353",
+	"deveui": "d896e0ff00012367",
+	"states": "",
+	"parent_ext_id": "",
+	"endpoint": "",
+	"ext_id": "d896e0ff00012367",
+	"def_id": "DTU",
+	"dtuid": "010010746B277BA7",
+	"namespace": "mgd.gehua",
+	"name": "mgd.gehua.d896e0ff00012367",
+	"deviceinstallnum": "1",
+	"username": "朱向峰",
+	"status": "Normal",
+	"doc_type": "thing",
+	"doc_id": "mgd.gehua.d896e0ff00012367"
+}]
+</pre>
+<h3><a href='data/thingSeach(DTU)返回数据.json' target="_blank">由于本请求返回数据太多，约有98374行数据,所以请点击下载</a></h3>
+</li>
+<li>
+<h2>获取热泵的地理位置(经度纬度)、设备信息等</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thingsearch/things?thing_def_id=ReBeng&namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T02:37:45.767Z
+</pre>
+<h3>接口简称:thingsearch接口(热泵)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>namespace</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>thing_def_id</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingsearch/things?thing_def_id=ReBeng&namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T02:37:45.767Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: UfyBHDUWmV1JmaMwnETtPXXpJ48=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/bak_iot_mq/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 02:32:54 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+access-control-allow-origin: *
+access-control-allow-credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-aqua-total-count: 2519
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"devid": "1",
+	"stateandmode": "8",
+	"datamarker": "2",
+	"states": "",
+	"parent_ext_id": "d896e0ff00012804",
+	"mtype": "2",
+	"endpoint": "",
+	"ext_id": "1.d896e0ff00012804",
+	"datr": "SF7BW125",
+	"switchstate": "0",
+	"model": "2",
+	"rssi": "-79",
+	"visible": true,
+	"gweui": "d896e0fff0000290",
+	"fcnt": "2377",
+	"deveui": "d896e0ff00012804",
+	"manufacture": "1",
+	"devaddr": "67707f03",
+	"controlword": "33",
+	"joineui": "d896e0e0000039a8",
+	"snr": "9",
+	"fport": "11",
+	"def_id": "ReBeng",
+	"dtuid": "0020118102600286656",
+	"namespace": "mgd.gehua",
+	"name": "mgd.gehua.1.d896e0ff00012804",
+	"timeutcsec": "1550189928",
+	"status": "Offline",
+	"doc_type": "thing",
+	"doc_id": "mgd.gehua.1.d896e0ff00012804"
+}, {
+	"devid": "1",
+	"outwatertemp": "45.1",
+	"stateandmode": "1",
+	"datamarker": "2",
+	"states": "",
+	"parent_ext_id": "d896e0ff00011e9f",
+	"mtype": "2",
+	"endpoint": "",
+	"ext_id": "1.d896e0ff00011e9f",
+	"datr": "SF7BW125",
+	"switchstate": "1",
+	"model": "1",
+	"intowatertemp": "45",
+	"rssi": "-73",
+	"visible": true,
+	"settemp": "43",
+	"gweui": "d896e0fff000028f",
+	"fcnt": "3429",
+	"deveui": "d896e0ff00011e9f",
+	"manufacture": "1",
+	"devaddr": "661a4198",
+	"controlword": "33",
+	"joineui": "d896e0e0000039a8",
+	"snr": "6.5",
+	"fport": "11",
+	"def_id": "ReBeng",
+	"dtuid": "0020118102600286490",
+	"namespace": "mgd.gehua",
+	"name": "mgd.gehua.1.d896e0ff00011e9f",
+	"timeutcsec": "1550171958",
+	"outdoortemp": "2",
+	"status": "Normal",
+	"doc_type": "thing",
+	"doc_id": "mgd.gehua.1.d896e0ff00011e9f"
+}, {
+	"devid": "1",
+	"stateandmode": "8",
+	"datamarker": "2",
+	"states": "",
+	"parent_ext_id": "d896e0ff000128f2",
+	"mtype": "2",
+	"endpoint": "",
+	"ext_id": "1.d896e0ff000128f2",
+	"datr": "SF7BW125",
+	"switchstate": "0",
+	"model": "2",
+	"rssi": "-85",
+	"visible": true,
+	"gweui": "d896e0fff0000290",
+	"fcnt": "1285",
+	"deveui": "d896e0ff000128f2",
+	"manufacture": "1",
+	"devaddr": "66749537",
+	"controlword": "33",
+	"joineui": "d896e0e0000039a8",
+	"snr": "8.8",
+	"fport": "11",
+	"def_id": "ReBeng",
+	"dtuid": "0020118102600286691",
+	"namespace": "mgd.gehua",
+	"name": "mgd.gehua.1.d896e0ff000128f2",
+	"timeutcsec": "1550182629",
+	"status": "Offline",
+	"doc_type": "thing",
+	"doc_id": "mgd.gehua.1.d896e0ff000128f2"
+}]
+</pre>
+<h3><a href='data/thingSeach(热泵)返回数据.json' target="_blank">由于本请求返回数据太多，约有84137行数据,所以请点击下载</a></h3>
+</li>
+<li>
+<h2>获取DTU的属性</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thingdef/single/mgd.gehua/DTU?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:04:28.606Z
+</pre>
+<h3>接口简称:thingdef接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>DTU</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingdef/single/mgd.gehua/DTU?user_id=000059370018C27307C767910FBD1549FA8F4DB771087D79AC&access_token=499e306427515933c35d5f7f9e955cdcc0c18dbf3a155d327015857fa9a0&app_key=aquapaasadv&timestamp=2019-01-30T02:04:28.606Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: gWLtQrWDpJNUN/N5sQKkva5ckMo=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=8969ff83-a424-41fc-953b-5e1acb9e9ae6&rpc_id=0
+Content-Type: application/json
+Date: Wed, 30 Jan 2019 01:59:15 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "5c21846bb5024800399c3f60",
+	"thingDefID": "DTU",
+	"namespace": "mgd.gehua",
+	"name": "DTU",
+	"description": "采集器通过内置LORAWAN无线传输模块与网关进行无线通信，把热泵出入水温、室内温度、开关机状态等信息无线传输到网关",
+	"creator": "admin",
+	"createTime": "2018-12-25T09:14:19+0800",
+	"lastUpdateTime": "2018-12-25T09:34:32+0800",
+	"metadata": {
+		"m1": "v1",
+		"m2": "v2"
+	},
+	"events": null,
+	"actions": null,
+	"properties": [{
+		"name": "DTUID",
+		"displayName": "DTU编号",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU编号",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "devEUI",
+		"displayName": "devEUI",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU在LORAWAN协议中的唯一编号",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "pinCode",
+		"displayName": "pinCode",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "pinCode",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "manufacture",
+		"displayName": "厂商编号",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "5",
+		"values": null,
+		"valuesEnumDefName": "enum_manufacture",
+		"enumFilterFields": ["/thingDefID"],
+		"appDataType": null,
+		"metric": null,
+		"description": "厂商编号",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "dateOfManufacture",
+		"displayName": "生产日期",
+		"displayGroup": "基本信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "5",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "生产日期",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "installDate",
+		"displayName": "安装日期",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "安装日期",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "userName",
+		"displayName": "用户名",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "用户名",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "userPhone",
+		"displayName": "联系电话",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "联系电话",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "region",
+		"displayName": "区域",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "1",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": "enum_region",
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "区域",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "address",
+		"displayName": "安装地址",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "address",
+		"metric": null,
+		"description": "安装地址(门牌号)",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "coordinate",
+		"displayName": "地理位置",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "地理位置(经纬度)",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "address_coord",
+		"displayName": "百度摩卡托坐标",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "coord_bd09mc",
+		"metric": null,
+		"description": "百度摩卡托坐标",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "deviceInstallNum",
+		"displayName": "下挂设备数量",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "下挂设备数量",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "smartcard",
+		"displayName": "智能卡号",
+		"displayGroup": "安装信息",
+		"path": "/metadata",
+		"fieldType": "2",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "智能卡号",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "hardwareVersion",
+		"displayName": "硬件版本",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "硬件版本",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "softwareVersion",
+		"displayName": "软件版本",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "软件版本",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "DTUWorkMode",
+		"displayName": "DTU工作模式",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU工作模式",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "DTUFunPos",
+		"displayName": "DTU功能位",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU功能位",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "rate",
+		"displayName": "射频波特率",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "射频波特率",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "intervalMin",
+		"displayName": "心跳时间间隔",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "心跳时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "intervalReportMin",
+		"displayName": "上报时间间隔",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "上报时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "deviceNum",
+		"displayName": "当前设备数量",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "当前设备数量",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "enviTemp",
+		"displayName": "设备环境温度",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "2",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "温度",
+		"metric": "摄氏度",
+		"description": "设备环境温度",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "batteryPower",
+		"displayName": "电池电量",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": "电量",
+		"metric": null,
+		"description": "电池电量",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "timeUTCSec",
+		"displayName": "数据采集时间",
+		"displayGroup": "状态信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "3",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "秒",
+		"description": "数据采集时间",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "alarmCode",
+		"displayName": "DTU告警代码",
+		"displayGroup": "告警信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU告警代码",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "alarmTimeUTCSec",
+		"displayName": "告警产生时间",
+		"displayGroup": "告警信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "告警产生时间",
+		"readOnly": true,
+		"importantType": "2"
+	}, {
+		"name": "cfg_DTUWorkMode",
+		"displayName": "DTU工作模式",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU工作模式",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_DTUFunPos",
+		"displayName": "DTU功能位",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "DTU功能位",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_rate",
+		"displayName": "射频波特率",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": null,
+		"description": "射频波特率",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_intervalMin",
+		"displayName": "心跳时间间隔",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "心跳时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}, {
+		"name": "cfg_intervalReportMin",
+		"displayName": "上报时间间隔",
+		"displayGroup": "配置信息",
+		"path": "/metadata",
+		"fieldType": "3",
+		"dataType": "1",
+		"values": null,
+		"valuesEnumDefName": null,
+		"enumFilterFields": null,
+		"appDataType": null,
+		"metric": "分",
+		"description": "上报时间间隔",
+		"readOnly": true,
+		"importantType": "1"
+	}]
+}
+</pre>
+</li>
+<li>
+<li>
+<h2>获取热泵的属性</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.62:8200/aquapaas/rest/thingdef/single/mgd.gehua/ReBeng?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>接口简称:thingdef接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>ReBeng</td><td>thingDefID, 取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thingdef/single/mgd.gehua/ReBeng?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: */*
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: EdWJIF62QxsKBrMVcXkMp5YNqVg=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Max-Age: 1800
+Access-Control-Allow-Methods: GET,POST,DELETE,PUT,OPTIONS,HEAD
+Access-Control-Allow-Headers: x-aqua-sign
+x-trace-info: trace_id=69add6d3-03b2-4dbe-a839-78be96a873e7&rpc_id=0
+Allow: DELETE,POST,GET,PUT,OPTIONS,HEAD
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Content-Length: 0
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+    "id": "5c218987dafd8e003881ba10",
+    "thingDefID": "ReBeng",
+    "namespace": "mgd.gehua",
+    "name": "热泵",
+    "description": "空气源热泵",
+    "creator": "admin",
+    "createTime": "2018-12-25T09:36:07+0800",
+    "lastUpdateTime": "2018-12-25T09:44:04+0800",
+    "metadata":
+    {
+        "m1": "v1",
+        "m2": "v2"
+    },
+    "events": null,
+    "actions": null,
+    "properties": [
+    {
+        "name": "DTUID",
+        "displayName": "DTU编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "DTU编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "region",
+        "displayName": "区域",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": "enum_region",
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "区域",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "address_coord",
+        "displayName": "百度摩卡托坐标",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "coord_bd09mc",
+        "metric": null,
+        "description": "百度摩卡托坐标",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "devID",
+        "displayName": "设备编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "设备编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "manufacture",
+        "displayName": "厂商编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "5",
+        "values": null,
+        "valuesEnumDefName": "enum_manufacture",
+        "enumFilterFields": ["/thingDefID"],
+        "appDataType": null,
+        "metric": null,
+        "description": "厂商编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "model",
+        "displayName": "设备型号编号",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "1",
+        "dataType": "5",
+        "values": null,
+        "valuesEnumDefName": "enum_model",
+        "enumFilterFields": ["/thingDefID", "/metadata/manufacture"],
+        "appDataType": null,
+        "metric": null,
+        "description": "设备型号编号",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "installDate",
+        "displayName": "安装日期",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "安装日期",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "softwareVersion",
+        "displayName": "软件版本",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "软件版本",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "protocolVersion",
+        "displayName": "协议版本",
+        "displayGroup": "基本信息",
+        "path": "/metadata",
+        "fieldType": "2",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "协议版本",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "timeUTCSec",
+        "displayName": "数据采集时间",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": "秒",
+        "description": "数据采集时间",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "indoorTemp",
+        "displayName": "室内温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "室内温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "outdoorTemp",
+        "displayName": "室外温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "室外温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "setTemp",
+        "displayName": "设定温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "设定温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "intoWaterTemp",
+        "displayName": "入水温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "入水温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "outWaterTemp",
+        "displayName": "出水温度",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "2",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "温度",
+        "metric": "摄氏度",
+        "description": "出水温度",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "switchState",
+        "displayName": "开关机状态",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "开关机状态",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "waterFlow",
+        "displayName": "水流量",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "水流量",
+        "metric": null,
+        "description": "水流量",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "usedPower",
+        "displayName": "已使用电量",
+        "displayGroup": "状态信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": "电量",
+        "metric": null,
+        "description": "已使用电量",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "failureFlag",
+        "displayName": "故障标志",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "故障标志",
+        "readOnly": true,
+        "importantType": "1"
+    },
+    {
+        "name": "failureWarning",
+        "displayName": "故障代码",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "3",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "故障代码",
+        "readOnly": true,
+        "importantType": "2"
+    },
+    {
+        "name": "alarmTimeUTCSec",
+        "displayName": "告警产生时间",
+        "displayGroup": "告警信息",
+        "path": "/metadata",
+        "fieldType": "3",
+        "dataType": "1",
+        "values": null,
+        "valuesEnumDefName": null,
+        "enumFilterFields": null,
+        "appDataType": null,
+        "metric": null,
+        "description": "告警产生时间",
+        "readOnly": true,
+        "importantType": "2"
+    }]
+}
+</pre>
+</li>
+<li>
+<h2>获取热泵厂商的值列表</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"]}
+</pre>
+<h3>接口简称:7.5接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_manufacture</td><td>取值热泵属性manufacture的valuesEnumDefName</td></tr>
+<tr><td>"enum_device":["ReBeng"]</td><td>["ReBeng"]这个值中，ReBeng是取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: I2Tw5kz2Hf2gScdwhRYl0IvzRv8=
+Referer: http://192.168.7.143:8080/IotB/index.html
+Content-Length: 26
+Origin: http://192.168.7.143:8080
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=4f4f65f8-073f-4a8c-9650-85ae4596d1d8&rpc_id=0
+Content-Type: application/json
+Date: Tue, 29 Jan 2019 07:11:22 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "北京华业新能源有限公司",
+    "metadata":
+    {
+        "contact": "李某某",
+        "telephone": "13325685588"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "354242be6a5149c5af7df6d6acecc603"
+},
+{
+    "value": "2",
+    "displayName": "深圳派沃新能源科技股份有限公司",
+    "metadata":
+    {
+        "contact": "王某某",
+        "telephone": "13388855669"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "ce41c1da6f13462ab981642fbb027025"
+},
+{
+    "value": "3",
+    "displayName": "浙江中广电器股份有限公司",
+    "metadata":
+    {
+        "contact": "张某某",
+        "telephone": "13355588776"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "6008c1a1d594470f859484be57302218"
+}]
+</pre>
+</li>
+<li>
+<h2>获取热泵型号的值列表</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+http://172.16.20.62:8200/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_model?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"],"enum_manufacture":["1"]}
+</pre>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_model</td><td>取值热泵属性model的valuesEnumDefName</td></tr>
+<tr><td>enum_device</td><td>enumFilterFields /thingDefID对应的过滤条件，取值热泵thingDefID</td></tr>
+<tr><td>enum_manufacture</td><td>enumFilterFields /metadata/manufacture对应的过滤条件，取值对应热泵的manufacture</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_model?user_id=0000593700182895073F3E8A45D1574E34B00598691F31675C&access_token=25e388ef0e84a0baa8dab3ea0090a3395b21aad63f3d2c8a368d52f93a90&app_key=aquapaasadv&timestamp=2019-01-24T08%3A45%3A02Z HTTP/1.1
+Host: 172.16.20.62:8200
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:49.0) Gecko/20100101 Firefox/49.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: rrTncY1nrQPeD2EgdAxwKmriLe8=
+Referer: http://127.0.0.1:8020/IoT/index.html
+Content-Length: 51
+Origin: http://127.0.0.1:8020
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+x-trace-info: trace_id=daeec722-4827-43cd-83de-536f3077153f&rpc_id=0
+Content-Type: application/json
+Date: Thu, 24 Jan 2019 08:39:26 GMT
+Transfer-Encoding: chunked
+Server: Jetty(9.2.22.v20170606)
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "1703",
+    "metadata":
+    {
+        "power": "100"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "bb3883c3fac947f7b83c73fbdaf5d9ac"
+},
+{
+    "value": "2",
+    "displayName": "1705",
+    "metadata":
+    {
+        "power": "200"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "fd94129d212d45b683659e3c54392004"
+},
+{
+    "value": "3",
+    "displayName": "1706",
+    "metadata":
+    {
+        "power": "300"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"],
+        "enum_manufacture": ["1", "2", "3"]
+    },
+    "id": "ca964f4800894a3f8ddcaa927cab4180"
+}]
+</pre>
+<li>
+<h2>获取热泵厂商的值列表</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+POST http://172.16.20.201:8090/aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T02:47:41.806Z
+</pre>
+<h3>请求体</h3>
+<pre class="prettyprint">
+{"enum_device":["ReBeng"]}
+</pre>
+<h3>接口简称:7.5接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>mgd.gehua</td><td>namespace, 取值已有配置项</td></tr>
+<tr><td>enum_manufacture</td><td>取值热泵属性manufacture的valuesEnumDefName</td></tr>
+<tr><td>"enum_device":["ReBeng"]</td><td>["ReBeng"]这个值中，ReBeng是取值已有配置项</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 02:42:49 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+access-control-allow-origin: *
+access-control-allow-credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+POST /aquapaas/rest/thingenumdef/item/list/mgd.gehua/enum_manufacture?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T02:47:41.806Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+x-aqua-sign: QJUuAmD6Bb0nC2n/CLtbCTHIOjk=
+Referer: http://192.168.7.143:8080/bak_iot_mq/index.html
+Content-Length: 26
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[
+{
+    "value": "1",
+    "displayName": "北京华业新能源有限公司",
+    "metadata":
+    {
+        "contact": "李某某",
+        "telephone": "13325685588"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "354242be6a5149c5af7df6d6acecc603"
+},
+{
+    "value": "2",
+    "displayName": "深圳派沃新能源科技股份有限公司",
+    "metadata":
+    {
+        "contact": "王某某",
+        "telephone": "13388855669"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "ce41c1da6f13462ab981642fbb027025"
+},
+{
+    "value": "3",
+    "displayName": "浙江中广电器股份有限公司",
+    "metadata":
+    {
+        "contact": "张某某",
+        "telephone": "13355588776"
+    },
+    "filterValues":
+    {
+        "enum_device": ["ReBeng"]
+    },
+    "id": "6008c1a1d594470f859484be57302218"
+}]
+</pre>
+</li>
+<h2>获取DTU下的热泵</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+GET http://172.16.20.201:8090/aquapaas/rest/thing/sub/d896e0ff00011e07?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:08:06.299Z&namespace=mgd.gehua
+</pre>
+<h3>接口简称:3.9接口</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>d896e0ff00011e07</td><td>DTU的ext_id</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thing/sub/d896e0ff00011e07?user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:08:06.299Z&namespace=mgd.gehua HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: UDm/eeWYqf2QYVoNfGcRS9XH54I=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/bak_iot_mq/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 03:03:17 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+[{
+	"id": "mgd.gehua.1.d896e0ff00011e07",
+	"ext_id": "1.d896e0ff00011e07",
+	"namespace": "mgd.gehua",
+	"def_id": "ReBeng",
+	"parent_ext_id": "d896e0ff00011e07",
+	"name": "mgd.gehua.1.d896e0ff00011e07",
+	"endpoint": null,
+	"status": "Normal",
+	"states": null,
+	"create_time": "2019-02-18T09:59:09+0800",
+	"last_modified_time": "2019-02-18T10:51:40+0800",
+	"last_event": null,
+	"metadata": {
+		"devID": "1",
+		"manufacture": "1",
+		"DTUID": "0020118092500282368",
+		"model": "2"
+	}
+}]
+</pre>
+</li>
+<li>
+<h2>获取单个DTU的信息</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+http://172.16.20.201:8090/aquapaas/rest/thing/d896e0ff00011e07?namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:14:59.848Z
+</pre>
+<h3>接口简称:3.8接口(DTU)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>d896e0ff00012526</td><td>DTU ext_id</td></tr>
+<tr><td>mgd.gehua</td><td>namespace</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thing/d896e0ff00011e07?namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:14:59.848Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: iB40veOnvVMy2b0FWZX2hJeiff0=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/bak_iot_mq/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 03:10:09 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "mgd.gehua.d896e0ff00011e07",
+	"ext_id": "d896e0ff00011e07",
+	"namespace": "mgd.gehua",
+	"def_id": "DTU",
+	"parent_ext_id": null,
+	"name": "mgd.gehua.d896e0ff00011e07",
+	"endpoint": null,
+	"status": "Normal",
+	"states": null,
+	"create_time": "2019-02-18T09:59:09+0800",
+	"last_modified_time": "2019-02-18T10:51:40+0800",
+	"last_event": null,
+	"metadata": {
+		"address_coord": "39.88278,116.793628",
+		"address": "通州区潞城镇兴各庄村204号",
+		"coordinate": "116.840004,39.85919",
+		"DTUID": "0020118092500282368",
+		"installDate": "2018-11-22T14:12:03+0800",
+		"userPhone": "13681380350",
+		"userName": "王淑丽",
+		"devEUI": "d896e0ff00011e07",
+		"deviceInstallNum": "1"
+	}
+}
+</pre>
+</li>
+<li>
+<h2>获取单个热泵的信息</h2>
+<h3>请求地址</h3>
+<pre class="prettyprint">
+http://172.16.20.201:8090/aquapaas/rest/thing/1.d896e0ff00011e07?namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:22:52.427Z
+</pre>
+<h3>接口简称:3.8接口(热泵)</h3>
+<h3>参数说明</h3>
+<table class="table">
+<tr><td>1.d896e0ff00011e07</td><td>热泵 ext_id</td></tr>
+<tr><td>mgd.gehua</td><td>namespace</td></tr>
+</table>
+<h3>请求与响应头</h3>
+<pre class="prettyprint">
+GET /aquapaas/rest/thing/1.d896e0ff00011e07?namespace=mgd.gehua&user_id=000059370018376607EAB037B5A0B942EFB64EC83F0C71C9B9&access_token=30efc813570246bdff138b7c012503e1027388ea32bc0a2c6b1c25d53e26&app_key=IOT&timestamp=2019-03-04T03:22:52.427Z HTTP/1.1
+Host: 172.16.20.201:8090
+User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0
+Accept: application/json
+Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+x-aqua-sign: Kxlpiki2DzpbCc7jHtQn9gxlj58=
+Content-Type: application/json
+Referer: http://192.168.7.143:8080/bak_iot_mq/index.html
+Origin: http://192.168.7.143:8080
+Connection: keep-alive
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Mon, 04 Mar 2019 03:18:01 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+Access-Control-Expose-Headers: Content-Type,x-requested-with,x-aqua-error-code,x-aqua-total-count,x-aqua-error-message
+
+</pre>
+<h3>响应数据</h3>
+<pre class="prettyprint">
+{
+	"id": "mgd.gehua.1.d896e0ff00011e07",
+	"ext_id": "1.d896e0ff00011e07",
+	"namespace": "mgd.gehua",
+	"def_id": "ReBeng",
+	"parent_ext_id": "d896e0ff00011e07",
+	"name": "mgd.gehua.1.d896e0ff00011e07",
+	"endpoint": null,
+	"status": "Normal",
+	"states": null,
+	"create_time": "2019-02-18T09:59:09+0800",
+	"last_modified_time": "2019-02-18T10:51:40+0800",
+	"last_event": null,
+	"metadata": {
+		"devID": "1",
+		"manufacture": "1",
+		"DTUID": "0020118092500282368",
+		"model": "2"
+	}
+}
+</pre>
+</li>
+</ol>
+<h3>业务流程简介(仅供参考，以实际代码为准)</h3>
+<pre class="prettyprint">
+一、DTU：
+1、打开页面，页面发送thingsearch接口(DTU)接口。
+2、目前页面使用返回字段的coordinate的经度纬度作为坐标点，在地图上标注。
+3、点击标注，打开DTU(概括)。
+使用之前的thingsearch接口(DTU)返回数据,填充DTU(概括)的DTU相关数据。
+使用thingsearch接口(DTU)返回的DTU ext_id发送3.9接口,填充DTU(概括)的热泵相关数据。
+4、点击DTU(概括)上面的DTU部分的查看详情，打开DTU详情,发送3.8接口(DTU),补充DTU详情上面的数据。
+5、点击DTU(概括)上面的热泵部分的查看详情，打开热泵详情,发送3.8接口(热泵),补充热泵详情上面的数据。
+
+二、热泵：
+1、切换地图上方的下拉菜单，当切换到热泵时，页面发送thingsearch接口(热泵)接口。
+2、目前页面使用返回字段的coordinate的经度纬度作为坐标点，在地图上标注。
+3、点击标注，打开热泵(概括)。
+使用之前的thingsearch接口(热泵)返回数据,填充热泵(概括)的热泵相关数据。
+使用thingsearch接口(热泵)返回的parent_ext_id发送3.8接口(DTU),填充热泵(概括)的DTU相关数据。
+4、点击热泵(概括)上面的DTU部分的查看详情，打开DTU详情,发送3.8接口(DTU),补充DTU详情上面的数据。
+5、点击热泵(概括)上面的热泵部分的查看详情，打开热泵详情,发送3.8接口(热泵),补充热泵详情上面的数据。
+</pre>
+</body>
+</html>

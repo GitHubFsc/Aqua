@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>红星影院详情页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script type="text/javascript">
+    (function() {
+      var csses = ['style/asset.css']
+      var jses = [
+        'config.js',
+        'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js',
+        '../bigdata/reportData.js',
+        'js/utils.js',
+        'js/asset.js']
+        if (navigator.userAgent.lastIndexOf('iPanel') == -1) {
+          jses = ['http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js', '../bigdata/stream/collect.js'].concat(jses)
+        } else {
+          jses = ['../bigdata/ipanel/collect.js'].concat(jses)
+        }
+        for (var i = 0; i < csses.length; i++) {
+          document.write('<link rel="stylesheet" href="' + csses[i] + '?t=' + new Date().getTime() + '">')
+        }
+        for (var i = 0; i < jses.length; i++) {
+          document.write('<script type="text/javascript" src="' + jses[i] + '?t=' + new Date().getTime() + '"><\/script>')
+        }
+    }())
+    </script>
+  </head>
+  <body onload="app.init()">
+    <div id="title"></div>
+    <div id="poster"></div>
+    <div id="name"></div>
+    <div id="info">
+      <span id="year"></span>
+      <span id="type"></span>
+      <span class='director'>导演</span>
+      <span id="director"></span>
+    </div>
+    <div class="actors">演员</div>
+    <div id="actors"></div>
+    <div id="summary"></div>
+    <div id="play" class="play">播&nbsp;&nbsp;放</div>
+    <div id="ad"></div>
+    <div id="asset_list">
+      <div id="asset_range">
+      </div>
+      <div id="asset_ids">
+      </div>
+    </div>
+  </body>
+</html>

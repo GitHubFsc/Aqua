@@ -1,0 +1,303 @@
+.chorus {
+	background-image: url(../img/chorus/bg.jpg);
+	background-repeat: no-repeat;
+}
+
+.chor_page_p {
+	position: absolute;
+	left: 669px;
+	top: 630px;
+	width: 124px;
+	height: 64px;
+	background-image: url(../img/chorus/page_up.png);
+	background-repeat: no-repeat;
+}
+
+.chor_page_n {
+	position: absolute;
+	left: 541px;
+	top: 630px;
+	width: 124px;
+	height: 64px;
+	background-image: url(../img/chorus/page_down.png);
+	background-repeat: no-repeat;
+}
+
+.chor_info_box {
+	position: absolute;
+	left: 90px;
+	top: 198px;
+	width: 1092px;
+	height: 404px;
+	background-image: url(../img/chinfo/info_bg.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+}
+
+.chor_info_name {
+	font-size: 32px;
+	line-height: 32px;
+	width: 662px;
+	height: 32px;
+	margin-top: 96px;
+	margin-bottom: 36px;
+	margin-left: 42px;
+	color: #fff;
+}
+
+.chor_info_txt {
+	line-height: 32px;
+	width: 662px;
+	margin-left: 42px;
+	font-size: 22px;
+	color: #fff;
+}
+
+.chor_reg_box {
+	position: absolute;
+	left: 90px;
+	top: 198px;
+	width: 670px;
+	height: 404px;
+	overflow: hidden;
+	color: #fff;
+}
+
+.chor_reg_name {
+	font-size: 44px;
+	line-height: 44px;
+	height: 44px;
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+.chor_reg_subname {
+	font-size: 32px;
+	line-height: 32px;
+	height: 32px;
+	margin-top: 34px;
+	margin-bottom: 34px;
+	margin-left: 5px;
+}
+
+.chor_reg_txt {
+	font-size: 22px;
+	line-height: 32px;
+	margin-left: 5px;
+}
+
+.chor_reg_qrc {
+	position: absolute;
+	width: 402px;
+	height: 402px;
+	left: 793px;
+	top: 219px;
+}
+
+.chor_reg_qrc>img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 3px;
+}
+
+.chor_info_container{
+	position: absolute;
+	left: 90px;
+	top: 225px;
+	width: 1092px;
+}
+.chor_info_container .chor_info_container_left{
+	line-height: 35px;
+	font-size: 25px;
+	color: #fff;
+	position: absolute;
+	right: 524px;
+}
+.chor_info_container .chor_info_container_right{
+	position: absolute;
+	right: 0px;
+	width: 502px;
+	height: 333px;
+}
+.chor_info_container .chor_info_container_right img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.chor_reg_container{
+	position: absolute;
+	left: 0px;
+	top: 180px;
+	width: 1280px;
+	height: 540px;
+}
+.chor_reg_container img{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+
+.chor_music_container{
+	position: absolute;
+	left: 91px;
+	top: 183px;
+	width: 1114px;
+	height: 440px;
+	background-image: url(../img/chmusic/bg.png);
+	background-repeat: no-repeat;
+}
+.chor_music_container .music_title{
+	position: absolute;
+	top: 2px;
+	left: 20px;
+	width: 295px;
+	height: 40px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 40px;
+	color: white;
+	font-size: 22px;
+}
+.chor_music_container .music_grid{
+	position: absolute;
+	top: 56px;
+	left: 57px;
+	width: 999px;
+	height: 357px;
+	text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	line-height: 40px;
+	color: white;
+}
+.chor_music_container .music_grid .grid_row:nth-child(1){
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 368px;
+	height: 357px;
+	color: white;
+}
+.chor_music_container .music_grid .grid_row:nth-child(2){
+	position: absolute;
+	top: 0px;
+	left: 500px;
+	width: 368px;
+	height: 357px;
+	color: white;
+}
+.chor_music_container .music_grid .grid_row .grid_item{
+	height: 57px;
+	width: 368px;
+	line-height: 57px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
+	position: relative;
+}
+.chor_music_container .music_grid .grid_row .grid_item .grid_item_txt{
+	position: absolute;
+	width: 100%;
+	height: 57px;
+	background-size: 100%;
+	bottom: 0;
+	font-size: 22px;
+	color: #fff;
+	line-height: 57px;
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+.music_grid_focus {
+	background-image: url(../img/chmusic/focus.png);
+	background-repeat: no-repeat;
+	width: 368px;
+	height: 10px;
+	position: absolute;
+	display: none;
+	left: 58px;
+	top: 98px;
+}
+.music_page_p {
+	position: absolute;
+	left: 669px;
+	top: 630px;
+	width: 124px;
+	height: 64px;
+	background-image: url(../img/uistar/page_up.png);
+	background-repeat: no-repeat;
+}
+.music_page_n {
+	position: absolute;
+	left: 541px;
+	top: 630px;
+	width: 124px;
+	height: 64px;
+	background-image: url(../img/uistar/page_down.png);
+	background-repeat: no-repeat;
+}
+.chor_music_detail .mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/chmusic/detail_bg.jpg);
+	background-repeat: no-repeat;
+}
+.chor_music_detail .grp_det_caro_p {
+	position: absolute;
+	width: 80px;
+	height: 60px;
+	background-repeat: no-repeat;
+	top: 329px;
+	left: 0px;
+	background-image: url(../img/chmusic/leftArrow.png);
+}
+.chor_music_detail .grp_det_caro_n {
+	position: absolute;
+	width: 86px;
+	height: 60px;
+	background-repeat: no-repeat;
+	top: 329px;
+	left: 1194px;
+	background-image: url(../img/chmusic/rightArrow.png);
+}
+.chor_music_detail .grp_det_caro_picpos_1{
+	position: absolute;
+	left: 85px;
+	top: 10px;
+	width: 550px;
+	height: 700px;
+}
+.chor_music_detail .grp_det_caro_picpos_1 img{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	display: block;
+	max-width: 100%;
+	height: 100%;
+}
+.chor_music_detail .grp_det_caro_picpos_2{
+	position: absolute;
+	left: 645px;
+	top: 10px;
+	width: 550px;
+	height: 700px;
+}
+.chor_music_detail .grp_det_caro_picpos_2 img{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: block;
+	max-width: 100%;
+	height: 100%;
+}

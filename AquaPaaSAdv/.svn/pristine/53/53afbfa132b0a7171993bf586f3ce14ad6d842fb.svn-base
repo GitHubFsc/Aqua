@@ -1,0 +1,92 @@
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title">
+		<div class="sucai_dialog_title_text" id = "sucai_dialog_title_text">
+			{{SUCAI_TIANJIASUCAI}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear_">
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_name" >
+		<div class = "sucai_dialog_create_name_title_span">创建人</div>
+		<input id="sucai_dialog_create_input_creatUser_name_value" class = "sucai_dialog_create_input readonly" readonly/>
+	</div>
+	<div class = "sucai_dialog_create_others">
+		<div class="sucai_dialog_create_morenguanggaowei" style="height:57px;">
+			<div class = "sucai_dialog_create_name_title_span">{{SUCAI_SUCAIMINGCHEN}}</div>
+			<input id="sucai_dialog_create_input_name_value" class = "sucai_dialog_create_input" style="width:240px"/>
+		</div>
+		<div class="sucai_dialog_create_isCDN checkbox_content_">
+			<div class = "sucai_dialog_create_name_title_span" style="height:20px;"> </div>
+			<div style="display: flex">
+				<div class="check_box select" id="sucai_dialog_create_input_isCDN"></div>
+				<div style="height:30px;line-height: 30px;">{{SUCAI_PUBLISHTOCDN}}</div>
+			</div>
+		</div>
+		<div class="sucai_dialog_create_size checkbox_content_" id = "sucai_dialog_create_isCDN_type" style="display: none;height:57px;">
+			<div class = "sucai_dialog_create_name_title_span" style="height:20px;"> </div>
+			<div style="display: flex">
+				<div class="check_box select" id="sucai_dialog_create_input_isCDN_type"></div>
+				<div style="height:30px;line-height: 30px;">{{SUCAI_ISTRANSCODING}}</div>
+			</div>
+		</div>
+		<div class="sucai_dialog_create_isFSsucai checkbox_content_" style="display: none">
+			<div class = "sucai_dialog_create_name_title_span" style="height:20px;"> </div>
+			<div style="display: flex">
+				<div class="check_box" id="sucai_dialog_create_input_isFSsucai"></div>
+				<div style="height:30px;line-height: 30px;">{{SUCAI_ISFENGSHANGSUACI}}</div>
+			</div>
+		</div>
+		<div class="sucai_dialog_clear"></div>
+	</div>
+	<div id = "sucai_CDN_options" style="display: none;">
+
+	</div>
+	<div class = "sucai_dialog_create_others">
+		<div class="sucai_dialog_create_size">
+			<div class = "sucai_dialog_create_name_title_span">{{SUCAI_SUCAISHICHANGS}}</div>
+			<input id="sucai_dialog_create_input_time_value" class = "sucai_dialog_create_input"/>
+		</div>
+		<div class="sucai_dialog_create_morenguanggaowei">
+			<div class = "sucai_dialog_create_name_title_span">{{SUCAI_QUANZHONG}}</div>
+			<div id="sucai_dialog_create_morenguanggaowei_select"></div>
+		</div>
+		<div class="sucai_dialog_clear"></div>
+	</div>
+	<div class = "sucai_dialog_create_others">
+		<div class="sucai_dialog_create_size">
+			<div class = "sucai_dialog_create_name_title_span">{{ADPOS_DIALOG_LABEL_SIZE}}</div>
+			<input id="sucai_dialog_create_input_size_width" class = "sucai_dialog_create_input" style="width:95px"/> px ×
+			<input id="sucai_dialog_create_input_size_height" class = "sucai_dialog_create_input" style="width:95px"/> px
+		</div>
+		<div class="sucai_dialog_create_size">
+			<div class = "sucai_dialog_create_name_title_span">{{SUCAI_DEALBIANHAO}}</div>
+			<div id="sucai_dialog_create_dealid_select" style="width:327px;height: 34px;"></div>
+		</div>
+		<div class="sucai_dialog_clear"></div>
+	</div>
+
+	<div class = "sucai_dialog_create_source">
+		<div class = "sucai_dialog_create_name_title_span">{{SUCAI_XUANZESUCAI}}</div>
+		<div id="sucai_dialog_create_uploadfile_source">
+			<input id="sucai_dialog_create_video_uploadfile_url" class = "sucai_dialog_create_input" placeholder="{{SUCAI_QINGDIANJIYOUCEDELIULANANNIULAIXUANZEYAOSHANGCHUANDESUCAI}}" style="background:#f0f0f0;width : 590px"/>
+			<div id = "sucai_dialog_create_uploadfile_click" class  = "option_bottom confirm_bottom" style="float: right"> {{SUCAI_LIULAN}} </div>
+			<div style="clear : both"></div>
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_source">
+		<div class = "sucai_dialog_create_name_title_span">{{SUCAI_SUCAIURI}}</div>
+		<div id="sucai_dialog_create_url_source">
+			<input id="sucai_dialog_create_link" class = "sucai_dialog_create_input" style="width : 710px"/>
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_source">
+		<div class = "sucai_dialog_create_name_title_span">{{SUCAI_ADMASTER_MONITOR_CODE}}</div>
+		<div id="sucai_dialog_admaster_monitor_code_source">
+			<input id="sucai_dialog_admaster_monitor_code" class = "sucai_dialog_create_input" style="width : 710px"/>
+		</div>
+	</div>
+	<div class = "sucai_dialog_create_opition">
+		<div class  = "option_bottom popup_dialog_clear_">{{SUCAI_QUXIAO}}</div>
+		<div id = "sucai_dialog_create_botton_click" class  = "option_bottom confirm_bottom">{{SUCAI_QUEREN}}</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title">
+		<div class="sucai_dialog_title_text">
+			{{SUCAI_REVIEWSUCAI}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear_">
+		</div>
+	</div>
+	<div id = "ViewSucaiZuContent" class="sucai_dialog_img_content" style="margin-left:18px;margin-top:5px;width:calc(100% - 36px);height:calc(100% - 36px)">
+
+	</div>
+</div>

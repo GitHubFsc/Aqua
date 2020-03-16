@@ -1,0 +1,432 @@
+
+.jobManage_dialog_button {
+    width: 149px;
+    height: 38px;
+    bottom: 23px;
+    color: white;
+    border: 1px solid rgb(89, 127, 137);
+    cursor: pointer;
+    line-height: 38px;
+    text-align: center;
+    font-size: 16px;
+    display: inline-block;
+}
+.jobManage_dialog_button.cancel {
+    margin-top: 20px;
+    background: rgb(94, 160, 192);
+    margin-left: 130px;
+}
+.jobManage_dialog_button.submit {
+    margin-top: 20px;
+    background: rgb(46, 161, 215);
+}
+.jobManage_dialog_button.disable {
+    background: #CCCCCC;
+}
+
+
+
+#navigationSlider .viewProgramList .calendars {
+    width: 819px;
+    height: 36px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+}
+#navigationSlider .viewProgramList .calendars .calendar {
+    position: relative;
+    width: 253px;
+    height: 31px;
+    display: inline-block;
+    z-index: 99;
+    color: #848484;
+    text-align: left;
+}
+#navigationSlider .viewProgramList .calendars .calendar input[data-type=date] {
+    background-image: url(../../images/navigationSlider/oa-dp-ibg.png);
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    padding-right: 35px;
+    font-size: 14px;
+    outline: none;
+    margin-right: 5px;
+}
+#navigationSlider .viewProgramList .calendars .calendar input[data-type=hms] {
+    background-image: url(../../images/navigationSlider/hms-input-bg.png);
+    background-repeat: no-repeat;
+    padding-left: 12px;
+    font-size: 14px;
+    outline: none;
+    padding-right: 30px;
+}
+#navigationSlider .viewProgramList .calendars .button{
+    width: 79px;
+    height: 31px;
+    line-height: 27px;
+    box-sizing: border-box;
+    background: white;
+    border: 2px solid #EAEFF0 ;
+    border-radius: 7px;
+    margin-right: 6px;
+    text-align: center;
+    font-weight: bold;
+    color: #797979;
+    cursor: pointer;
+}
+#navigationSlider .viewProgramList .calendars .button.force{
+    color: white;
+    background: #43B8EF;
+    border: 2px solid #0074B0;
+}
+
+#navigationSlider .panel_calendar_time_container {
+    width: 298px;
+    position: absolute;
+    top: 36px;
+    right: 5px;
+    background-color: #efefef;
+    border: 1px solid #cbcbcb;
+    display: none;
+}
+#navigationSlider .panel_time_picker_calender {
+    width: 282px;
+    height: 185px;
+    position: relative;
+    margin: 5 auto;
+}
+#navigationSlider .panel_time_picker_times {
+    position: relative;
+    height: 38px;
+    margin: 0 8px;
+}
+#navigationSlider .panel_content_line_split {
+    height: 1px;
+    border-style: solid;
+    border-color: #ffffff;
+    background-color: #d0d0d0;
+    border-width: 1px 0 0 0;
+    margin: 0 8px;
+}
+#navigationSlider .panel_normal_btn {
+    width: 86px;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #2e88b7;
+    background-color: #5da1c0;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 8px 10px 8px auto;
+    text-align: center;
+}
+#navigationSlider .panel_time_picker_selector {
+    width: 110px;
+    height: 30px;
+    float: left;
+    position: relative;
+    color: #797979;
+    background-color: #ffffff;
+    z-index: 99;
+    margin-left: 1px;
+}
+#navigationSlider .panel_time_picker_tlabel {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    color: #797979;
+    float: left;
+}
+
+
+#navigationSlider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+#navigationSlider .panel_page_head {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 60px;
+}
+#navigationSlider .panel_page_head_left {
+    position: absolute;
+    left: 18px;
+    height: 36px;
+    top: 50%;
+    margin-top: -18px;
+}
+#navigationSlider .panel_page_head_title_lead {
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 22px;
+    background-color: rgb(44, 167, 222);
+}
+#navigationSlider .panel_page_head_title {
+    display: inline-block;
+    vertical-align: middle;
+    height: 36px;
+    line-height: 36px;
+    color: rgb(73, 75, 88);
+    margin-left: 9px;
+    margin-right: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#navigationSlider .panel_page_body {
+    position: absolute;
+    top: 61px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-color: rgb(237, 237, 219);
+    border-width: 1px 1px 0 1px;
+    background-color: rgb(252, 252, 242);
+}
+#navigationSlider .panel_top_search_box {
+    display: inline-block;
+    vertical-align: middle;
+    width: 300px;
+    height: 36px;
+    margin-left: 0px;
+    position: relative;
+}
+#navigationSlider .panel_top_search_box_input {
+    position: absolute;
+    width: 298px;
+    height: 34px;
+    border: 1px solid rgb(234, 234, 234);
+    background-color: rgb(244, 244, 244);
+    color: rgb(121, 121, 121);
+    padding-left: 10px;
+    padding-right: 30px;
+    font-size: 14px;
+    outline: none;
+}
+#navigationSlider .panel_page_head_right {
+    position: absolute;
+    right: 8px;
+    height: 36px;
+    top: 50%;
+    margin-top: -18px;
+    text-align: right;
+}
+#navigationSlider .panel_page_head_right > div {
+    vertical-align: middle;
+    display: inline-block;
+}
+#navigationSlider .panel_page_head_button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 115px;
+    background-color: rgb(46, 162, 215);
+    color: white;
+    height: 36px;
+    border: 1px solid #597F88;
+    line-height: 34px;
+    padding: 0 0 0 35px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 3px;
+
+    background-image: url(../../images/offering/create.png);
+    background-repeat: no-repeat;
+    background-position: 10px 9px;
+}
+#navigationSlider .panel_page_head_button.create {
+    background-image: url(../../images/offering/create.png);
+    background-repeat: no-repeat;
+    background-position: 10px 9px;
+}
+#navigationSlider .panel_page_head_button.back {
+    width: 110px;
+    padding-left: 50px;
+    background-image: url(../../images/lecture_list/left_arrow.png);
+    background-position: 19px center;
+    background-repeat: no-repeat;
+}
+#navigationSlider .panel_page_head_button.import {
+    width: 84px;
+    padding-left: 36px;
+    background-image: url(../../images/navigationSlider/logo_import.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+#navigationSlider .panel_page_head_button.log {
+    width: 153px;
+    padding-left: 36px;
+    background-image: url(../../images/navigationSlider/logo_log.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+#navigationSlider .panel_page_head_button.refresh {
+    width: 86px;
+    padding-left: 36px;
+    background-image: url(../../images/navigationSlider/logo_refresh.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+#navigationSlider .panel_page_head_button.add {
+    width: 86px;
+    padding-left: 36px;
+    background-image: url(../../images/navigationSlider/logo_add.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+}
+
+
+#navigationSlider .panel_page_body {
+}
+#navigationSlider_list{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    padding: 11px 6px;
+}
+#navigationSlider_viewImportLog{
+    position: absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    padding: 11px 6px;
+}
+#navigationSlider_list .list_table {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 600px;
+    top: 12px;
+    font-size: 14px;
+}
+#navigationSlider_list .list_table > table > tbody > tr > td:last-child {
+    overflow: visible !important;
+}
+#navigationSlider_list .list_table tbody tr td:nth-child(1) {
+    padding: 6px;
+}
+#navigationSlider_list .list_table tbody tr td:nth-child(3) {
+    text-align: left !important;
+    padding-left: 20px;
+}
+#navigationSlider_list .list_table td .maxPic{
+    width:100%;
+    height: 92px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navigationSlider_list .list_table td .maxPic img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+}
+#navigationSlider_list .list_table td .pic{
+    width:100%;
+    height: 92px;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navigationSlider_list .list_table td .pic img{
+    display: block;
+}
+#navigationSlider_list .list_table tr .opr {
+    color: rgb(46, 162, 215);
+    margin: 0 18px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+#navigationSlider_list .list_table tr .maxPic.opr {
+    margin: 0 0px;
+    cursor: pointer;
+    display: flex;
+}
+#navigationSlider_list .list_table tr .opr:last-child {
+    margin: 0 0px;
+}
+#navigationSlider_list .list_table tr .opr img {
+    vertical-align: middle;
+}
+#navigationSlider_list .list_table tr .opr_more {
+    display: inline-block;
+    background: inherit;
+    position: relative;
+}
+#navigationSlider_list .list_table tr .opr_more .opr_more_detail {
+    display: none;
+    position: absolute;
+    width: 73px;
+    box-sizing: border-box;
+    border: 1px solid #E2E2E2;
+    z-index: 2;
+    background: inherit;
+    top: -3px;
+    right: 7px;
+    text-align: right;
+}
+#navigationSlider_list .list_table tr .opr_more .opr_more_detail .opr {
+    height: 24px;
+    line-height: 24px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #E2E2E2;
+    display: block;
+    margin: 0px;
+    padding-right: 10px;
+}
+#navigationSlider_list .list_table tr .opr_more .opr_more_detail .opr:last-child {
+    border-bottom: 0px solid #E2E2E2;
+}
+#navigationSlider_list .list_table tr .opr_more.open .opr_more_detail {
+    display: block;
+}
+#navigationSlider_viewImportLog .list_table {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 600px;
+    top: 12px;
+    font-size: 14px;
+}
+#navigationSlider_viewImportLog .list_table tbody tr td:nth-child(3) {
+    text-align: left !important;
+    padding-left: 20px;
+}
+#navigationSlider_viewImportLog .list_table tr .opr {
+    color: rgb(46, 162, 215);
+    margin: 0 8px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+#navigationSlider_viewImportLog .list_table tr .opr:last-child {
+    margin: 0 0px;
+}
+#navigationSlider_viewProgramList .list_table {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 600px;
+    top: 12px;
+    font-size: 14px;
+}
+#navigationSlider_viewProgramList .list_table tbody tr td:nth-child(3) {
+    text-align: left !important;
+    padding-left: 20px;
+}
+#navigationSlider_viewProgramList .list_table tr .opr {
+    color: rgb(46, 162, 215);
+    margin: 0 13px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+

@@ -1,0 +1,15 @@
+.asset_manage .btn[data-type='create'] {background-image: url(../../../images/offering/create.png);padding-left: 37px;background-position: 10px 9px;}
+.asset_meta #assetMeta_list_table {height: 615px;}
+
+.alert._dialog ._dialog_foot .btn._cancel {background-color: #5da1c0;}
+.alert._dialog ._dialog_foot .btn._confirm {background-color: #2ea2d7;}
+
+.asset_meta._dialog ._dialog_body {padding-top: 4px;padding-bottom: 19px;}
+.asset_meta._dialog ._dialog_body ._dialog_row {-ms-flex-pack: distribute;justify-content: space-around;}
+.asset_meta._dialog ._dialog_body ._dialog_row > * {width: 298px;height: 33px;}
+.asset_meta._dialog ._dialog_body label {line-height: 36px;}
+.asset_meta._dialog ._dialog_body .select-status .select-header {width: 100%;line-height: 30px;padding-right: 0;border: 1px solid #e4e4e4;}
+.asset_meta._dialog ._dialog_body .select-status .select-content {width: 100%;}
+.asset_meta._dialog ._dialog_body .select-status .select-content li {width: 100%;}
+.asset_meta._dialog ._dialog_foot .btn._cancel {background-color: #5da1c0;}
+.asset_meta._dialog ._dialog_foot .btn._confirm {background-color: #2ea2d7;}

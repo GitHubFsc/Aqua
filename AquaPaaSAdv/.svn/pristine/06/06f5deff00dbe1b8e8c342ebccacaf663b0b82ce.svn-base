@@ -1,0 +1,9 @@
+<div class="_dialog contract">
+  <div class="_dialog_title">
+    <div class="_dialog_title_label">{{CONTRACTS_DIALOG_VIEW}}</div>
+    <div class="_dialog_close popup_dialog_clear"></div>
+  </div>
+  <div class="_dialog_body">
+    <embed id="pdf_viewer" src="" type="">
+    </div>
+</div>

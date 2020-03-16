@@ -1,0 +1,162 @@
+.opr-default {
+	color: #58b5e0;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.opr-disabled {
+	color: #797979;
+	font-size: 14px;
+	opacity: 0.6;
+}
+
+.opr-more {
+	position: relative;
+}
+
+#user-admin-coupon-list {
+	position: absolute;
+	left: 8px;
+	top: 51px;
+	right: 20px;
+	bottom: 78px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.user-admin-coupon-ins {
+	position: relative;
+	margin-left: 8px;
+	margin-top: 10px;
+	margin-right:20px;
+}
+
+#user-admin-coupon-id {
+  float: left;
+	width: 666px;
+	height: 31px;
+	border: 1px solid #c6c6c6;
+	padding-left: 11px;
+	color: #797979;
+	font-size: 16px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.user-admin-coupon-btn {
+	float: left;
+	margin-left: 30px;
+	width: 112px;
+	height: 29px;
+	line-height: 29px;
+	border: 1px solid #217da7;
+	background-color: #2ea2d7;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.wp_panel_dialog {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid #177ba9;
+  font-size: 14px;
+  font-family:"微软雅黑"
+}
+
+.wp_panel_dialog_title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40px;
+  background-color: #2ea2d7;
+}
+
+.wp_panel_dialog_title_label {
+  position: absolute;
+  height: 40px;
+  line-height: 40px;
+  top: 0;
+  left: 20px;
+  font-size: 19px;
+  color: white;
+}
+
+.wp_panel_dialog_content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 40px;
+  background-color: white;
+}
+
+.wp_panel_dialog_close {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  right: 15px;
+  background-image: url('../image/manage_dialog_close.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.lecture_recommend_dialog_cancel, .lecture_recommend_dialog_submit{
+	position: absolute;
+	width: 149px;
+	height: 38px;
+	bottom: 23px;
+	color: white;
+	border: 1px solid rgb(89,127,137);
+	cursor: pointer;
+	line-height: 38px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.lecture_recommend_dialog_cancel {
+	right: 201px;
+	background-color: rgb(93,161,192);
+}
+
+.lecture_recommend_dialog_submit {
+	right: 25px;
+	background-color: rgb(46,162,215);
+}
+
+.wp_panel_dialog.lecture_recommend_dialog {
+	border: 1px solid rgb(23,123,169);
+}
+
+.wp_panel_dialog_title.lecture_recommend_dialog_title {
+	background-color: rgb(46,162,215);
+}
+
+.dialog-msg-icon {
+	position: absolute;
+	left: 36px;
+	top: 33px;
+	width: 108px;
+	height: 96px;
+	background-image: url(../image/users/dialog-msg-icon.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.dialog-msg-content {
+	position: absolute;
+	top: 40px;
+	left: 185px;
+	right: 30px;
+	line-height: 35px;
+	color: #797979;
+	font-size: 20px;
+}
+

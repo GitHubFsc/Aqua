@@ -1,0 +1,20 @@
+<head>
+  <style type="text/css">
+    @IMPORT url("content/self_service_adviser_manage/self_service_adviser_manage.css");
+  </style>
+</head>
+<div style="background-color:white;" class="adv_page_main_style adv_dialog_container" >
+	<div class="advUserManage_sysManage_popupContainer" style="width:375px;background-color:white">
+		<div class="adv_popupDialogue_title_container">
+			<span id="popupAudit_title">{{SELF_SERVICE_ADVISER_MANAGE_HUIDOUYUE}}</span>
+			<div id="popup_beans_close_icon" class="adv_popupDialogue_title_close"></div>
+		</div>
+		<div id="popupAudit_part1" style="height:91px;width:100%;margin-top:19px;margin-left:30px">
+			<div>{{SELF_SERVICE_ADVISER_MANAGE_HUIDOUYUE}}</div>
+			<input id="popupScore_text" class="adv_input_region" type="text" disabled="true" style="width:224px;margin-top:6px;display:block;height:30px;line-height:30px;width:296px">
+		</div>
+		<div style="height:33px">
+			<div id="popup_beans_close_button" class="adv_small_button_light" style="float:left;margin-left:268px;border-radius:2px;display:block;" onclick="">{{SELF_SERVICE_ADVISER_MANAGE_GUANBI}}</div>
+		</div>
+	</div>
+</div>

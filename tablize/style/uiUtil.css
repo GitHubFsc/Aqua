@@ -1,0 +1,50 @@
+.ChartBar_main{
+	float:left;
+	height:28px;
+	margin:2px 0px 2px 0px;
+	background:#80d2fc;
+	text-align:center;
+	-moz-border-top-rightradius		: 3px;      /* Gecko browsers */
+	-webkit-border-top-right-radius		: 3px;   	/* Webkit browsers */
+    border-top-right-radius: 3px;	/* W3C syntax */
+	border-bottom-right-radius: 3px;
+	-moz-border-bottom-rightradius		: 3px;      /* Gecko browsers */
+	-webkit-border-bottom-right-radius	: 3px;		/* Webkit browsers */
+	border-bottom-right-radius	: 3px;		/* W3C syntax */
+	-ms-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-ms-touch-action: none;
+}
+
+.ChartBar_main span{
+	color:#2687ba;
+	line-height: 26px
+}
+
+.ChartBarDetail_head{
+	width:100%;
+	height:29px;
+	line-height:29px;
+	color:white;
+	background:#12a0ea;
+	overflow: hidden;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.ChartBarDetail_lefttd{
+	height : 30px;
+}
+
+.ChartBarDetail_table {
+	table-layout: fixed;
+}
+
+.ChartBarDetail_table td {
+	overflow: hidden;
+	word-break: keep-all;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}

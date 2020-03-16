@@ -1,0 +1,46 @@
+<div class="_frame _flex asset">
+  <div class="header _flex">
+    <div class="header_item logo">{{MENU_ASSET_MANAGE}}</div>
+  </div>
+  <div class="body">
+  <div class="_dialog_col" style="flex: 1;">
+    <div class="_dialog_row">
+      <label for="">ID</label>
+      <input type="text" disabled style="width: 162px;" id="id">
+      <div class="check_box" id="is_package"></div>
+      <label for="">节目包</label>
+    </div>
+    <div class="_dialog_row">
+      <label for="">供应商(PID)</label><input type="text" id="provider_id">
+    </div>
+    <div class="_dialog_row">
+      <label for="">节目标识符(PAID)</label><input type="text" id="provider_asset_id">
+    </div>
+    <div class="_dialog_row">
+      <label for="">节目名称</label><input type="text" id="name">
+    </div>
+    <div class="_dialog_row">
+      <label for="">生效时间</label>
+      <div id="activatetime"></div>
+      <label for="" style="text-align: right;">失效时间</label>
+      <div id="deactivatetime"></div>
+    </div>
+    <div class="_dialog_row">
+      <label for="">删除时间</label>
+      <div id="deletetime"></div>
+    </div>
+    <div class="_dialog_row">
+      <label for="">资产用途</label><input type="text" id="usage">
+    </div>
+    <div class="_dialog_row">
+      <label for="">创建者</label><input type="text" disabled id="creator">
+    </div>
+  </div>
+  <div class="split"></div>
+  <div class="" style="flex: 1;padding-left: 35px;height: 534px;overflow: auto;margin-top: 16px;" id="metadata"></div>
+  </div>
+  <div class="foot">
+    <div class="btn cancel">取消</div>
+    <div class="btn confirm">保存</div>
+  </div>
+</div>

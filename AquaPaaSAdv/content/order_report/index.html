@@ -1,0 +1,50 @@
+<head>
+  <style type="text/css">
+      @IMPORT url("content/order_report/index.css");
+  </style>
+</head>
+<div id="order_report_page_container" style="display:block;position:relative;height:100%;width:100%;font-family:'微软雅黑'">
+	<div style="height:60px;width:100%;position:absolute:top:0">
+		<div name="order_report_search_name_container" class="order_report_search_container"><input type="text" placeholder="{{ORDER_REPORT_SEARCH_PLACEHOLDER_SUCAI}}"/><div></div></div><div name="order_report_search_user_name_container" class="order_report_search_container"><input type="text" placeholder="{{ORDER_REPORT_SEARCH_PLACEHOLDER_CREATOR}}"/><div></div></div><div name="order_report_search_contract_id_container" class="order_report_search_container"><input type="text" placeholder="{{ORDER_REPORT_SEARCH_PLACEHOLDER_COTRACT_ID}}"/><div></div></div>
+	</div>
+	<div class="panel_page_list_container">
+		<div class="panel_page_list" id="order_report_report_list" style="background-color:#ebebeb">
+
+		</div>
+	</div>
+</div>
+<div id="order_report_order_list_page_container" style="display:none;position:relative;height:100%;width:100%;font-family:'微软雅黑'">
+	<div style="height:60px;width:100%;position:absolute:top:0">
+		<div name="order_report_return_first_page" class="layer-btn-head-left" style="font-family:'宋体'">{{ORDER_REPORT_RETURN}}</div>
+		<div class="layer-head-spacer"></div>
+        <div name="order_report_second_page_title" class="layer-head-title" style="font-family:'宋体'"></div>
+		<div name="order_report_export_order_list" class="order_report_gradient_blue_button" style="border-radius: 2px;font-family:'宋体';background-image:url('content/order_report/images/gradient_color_button.png');border: 1px #4488a7 solid;height:34px;line-height:34px;width:90px">{{ORDER_REPORT_EXPORT_LIST}}</div>
+		<div class="order_report_panel_calendar_selectors">
+			<div class="panel_calendar_selitem">
+				<div class="panel_calendar_container" style="margin-top:0">
+					<input type="text" class="panel_calendar_input" readonly="readonly" name="date-from"/>
+					<div class="panel_calendar_icon"></div>
+				</div>
+			</div>
+			<div class="panel_calendar_dash" style="margin-top:0">
+				-
+			</div>
+			<div class="panel_calendar_selitem">
+				<div class="panel_calendar_container" style="margin-top:0">
+					<input type="text" class="panel_calendar_input" readonly="readonly" name="date-to"/>
+					<div class="panel_calendar_icon"></div>
+				</div>
+			</div>
+			<div class="panel_calendar_time_container" style="z-index:99">
+				<div id="order_report_panel_time_picker_calendar"></div>
+				<div class="panel_content_line_split"></div>
+				<div class="panel_normal_btn" id="order_report_stattrend_timepicker_confirm">{{STATS_BTN_OK}}</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel_page_list_container">
+		<div class="panel_page_list" id="order_report_order_list" style="background-color:#ebebeb">
+
+		</div>
+	</div>
+</div>

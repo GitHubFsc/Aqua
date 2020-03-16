@@ -1,0 +1,323 @@
+<html>
+	<head>
+		<title>Aqua PaaS</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+		<style type="text/css">
+			@import "style/index.css";
+			@import "style/broadcast.css";
+			@import "style/jquery.mCustomScrollbar.css";
+			@import "style/nanoscroller.css";
+			@import "style/uiUtil.css";
+			@import "style/au_analysis.css";
+			@import "style/norm.css";
+			@import "style/productPkg.css";
+			@import "style/history_records.css";
+			@import "style/operate-analyze.css";
+			@import "content/productPackage/newCalendar.css";
+			@import "content/productPackage/newMeetingInvit.css";
+			@import "menu/menu.css";
+		</style>
+		<script type="text/javascript" src="js/jquery-1.9.0.js"></script>
+		<script type="text/javascript" src="config.js"></script>
+		<script type="text/javascript" src="js/i18n.js"></script>
+		<script type="text/javascript" src="js/lib/others/endecoldbase64.js"></script>
+		<script src="js/my.host.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/common/common.js"></script>
+		<script type="text/javascript" src="js/common/includepage.js"></script>
+		<script type="text/javascript" src="js/common/ChinesePY.js"></script>
+		<script type="text/javascript" src="js/include.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/tif_aqua.js"></script>
+		<script type="text/javascript" src="js/dojotoolkit/dojo/dojo.js"></script>
+		<script type="text/javascript" src="js/lib/others/sha1.js"></script>
+		<script type="text/javascript" src="js/lib/my.js"></script>
+		<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+		<script type="text/javascript" src="uiWidget/JS.js"></script>
+		<script type="text/javascript" src="uiWidget/dropdownHelper.js"></script>
+		<script type="text/javascript" src="uiWidget/popupDialog.js"></script>
+		<script type="text/javascript" src="uiWidget/overlayDialog.js"></script>
+		<script type="text/javascript" src="uiWidget/newCalendar.js"></script>
+		<script type="text/javascript" src="uiWidget/datePicker.js"></script>
+		<script type="text/javascript" src="uiWidget/uiUtil.js"></script>
+		<script type="text/javascript" src="uiWidget/styledSelector.js"></script>
+		<script type="text/javascript" src="menu/menu.js"></script>
+	</head>
+	<body>
+		<div id="part1">
+			<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+				<tr>
+					<td height="59px">
+						<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+							<tr>
+								<td>
+									<div class="login_title_bar"></div>
+								</td>
+							</tr>
+							<!--tr>
+								<td id="logo" class="" width="0">&nbsp;</td>
+								<td>
+									<div class="login_title_blank"></div>
+								</td>
+							</tr-->
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td align="center" height="603px" style="background-color:#f2f2f2;border-top: 1px solid #c5c5c5;">
+						<div class="login_panel" style="background-color:#f8f8f8">
+							<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+								<tr height="12px" width="100%">
+									<!--td class="lgin_left_up_corner"></td>
+									<td class="lgin_top_line"></td>
+									<td class="lgin_right_up_corner"></td>
+									</tr-->
+								<tr>
+									<td class="lgin_left_line"></td>
+									<td style="background-color:#f8f8f8;">
+										<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+											<tr>
+												<td height="50px">
+													<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
+														<tr>
+															<td width="30%">
+																<span style="color:#5e5f64;font-size:36px;font-family:微软雅黑;font-color:#6d6d6d;font-weight:bold;">登录</span>
+															</td>
+															<td align="right" valign="bottom">
+																<!-- span style="font-size:14px;color:#828282;">新用户，请点击</span><span onclick="" style="font-size:14px;color:#0090ff;cursor:pointer;">注册</span -->
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td height="3px" class="lgin_x_line" style="background: url('images/login/lgin_panel_x_line.png')">
+													&nbsp;
+												</td>
+											</tr>
+											<tr>
+												<td height="75px" valign="bottom">
+													<div style="margin-top:30px;width:100%;height:100%;position:relative;">
+														<div style="width:90px;height:21px;left:230px;top:40px;position:absolute;">
+															<span style="color:#6d6d6d;font-size:16px;">用&nbsp;户&nbsp;名：</span>
+														</div>
+														<div style="width:235px;height:36px;left:331px;top:32px;position:absolute;">
+															<input id="un"  value="" type="text" style="width:233px;height:35px;border:1px solid #c7c7c7;background-color:#ffffff;font-size:20px;color:#6d6d6d;" onkeyup="if(event.keyCode == 13){this.blur(); login.go();}"/>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td height="59px" valign="bottom" style="position:relative;">
+													<div style="width:100%;height:100%;position:relative;">
+														<div style="width:90px;height:21px;left:230px;top:30px;position:absolute;">
+															<span style="color:#6d6d6d;font-size:16px;">用户密码：</span>
+														</div>
+														<div style="width:235px;height:36px;left:331px;top:20px;position:absolute;">
+															<input id="pwd" type="password" style="width:233px;height:35px;border:1px solid #c7c7c7;background-color:#ffffff;font-size:20px;color:#6d6d6d;" onkeyup="if(event.keyCode == 13){this.blur(); login.go();}"/>
+														</div>
+														<div style="position:absolute;height:100px;width:100px">
+															<div style="width:100%;height:100%;position:relative;left:590px;top:22px;">
+																<div style="position:absolute;width:32px;height:32px;">
+																	<img id="rmb_pwd" onclick="login.changeRmbFlag();" src="images/login/lgin_rmb_pwd_nocheck.png" style="cursor:pointer;"/>
+																</div>
+																<div style="position:absolute;top:4px;left:42px;width:80px;height:20px;">
+																	<span style="color:#6d6d6d;">记住用户名</span>
+																</div>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<!--tr>
+											<td height="59px" valign="bottom" style="position:relative;">
+											<div style="width:100%;height:100%;position:relative;">
+											<div style="width:90px;height:21px;left:230px;top:30px;position:absolute;"><span style="color:#6d6d6d;">域&nbsp;&nbsp;&nbsp;&nbsp;名:</span></div>
+											<div style="width:235px;height:36px;left:331px;top:20px;position:absolute;">
+											<input id="login_domain_value"  type="text" style="width:233px;height:35px;border:1px solid #c7c7c7;background-color:#ffffff;font-size:20px;color:#6d6d6d;" onkeyup="if(event.keyCode == 13){this.blur(); login.go();}"/>
+											</div>
+											</div>
+											</td>
+											</tr-->
+											<tr>
+												<td height="46px" valign="bottom">
+													<!--div style="width:100%;height:100%;position:relative;">
+													<div style="position:absolute;left:330px;top:16px;width:32px;height:32px;"><img id="rmb_pwd" onclick="login.changeRmbFlag();" src="images/login/lgin_rmb_pwd_nocheck.png" style="cursor:pointer;"/></div>
+													<div style="position:absolute;left:365px;top:20px;width:80px;height:20px;"><span style="color:#6d6d6d;">记住用户名</span></div>
+													</div-->
+												</td>
+											</tr>
+											<tr>
+												<td height="81px" valign="bottom">
+													<div style="width:100%;height:100%;position:relative;">
+														<div style="position:absolute;left:330px;top:36px;width:184px;height:45px;">
+															<img onclick="login.go();" src="images/login/aquapaas/lgin-aquapaas.png" style="cursor:pointer;"/>
+														</div>
+														<!--div style="position:absolute;left:490px;top:36px;width:8px;height:45px;">
+														<img src="images/login/aquapaas/lgin_v_line.png">
+														</div-->
+														<!--div style="color:#3b99b0;position:absolute;left:506px;top:34px;width:70px;line-height:45px;height:45px;">
+														忘记密码
+														<!-- span onclick="" style="font-size:14px;color:#0090ff;cursor:pointer;">忘记密码</span -->
+														<!--/div-->
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td align="right" valign="bottom">
+													<span style="color:#6d6d6d;font-size:14px;font-weight:bold;">Ver.1.0.0.92</span>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td class="lgin_right_line"></td>
+								</tr>
+								<tr>
+									<td class="lgin_left_down_corner"></td>
+									<td class="lgin_bottom_line"></td>
+									<!--td class="lgin_right_down_corner"></td-->
+								</tr>
+								<!--tr>
+								<td colspan="3" class="lgin_down_shadow"></td>
+								</tr-->
+							</table>
+							<div style="margin-top:1px">
+								<img src="images/login/aquapaas/shadow.png" width="90%" alt="shadow样式"/>
+							</div>
+						</div>
+					</td>
+				</tr>
+				<tr style="background-color:#f2f2f2">
+					<td align="center" valign="top">
+						<span style="font-size:14px;color:#6d6d6d">Copyright 2018. All Rights Reserved.</span>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="part2" style="position:relative;display:none">
+			<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+				<tr>
+					<td style="height:55px;">
+						<div id="page_head_container" style="visibility:hidden;">
+							<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+								<tr>
+									<td id="logo" class="index_logo"></td>
+									<td id="second_menu_container"></td>
+									<td id="top_right" style="visibility:hidden;">
+										<table cellspacing="0" cellpadding="0" border="0" style="float:right">
+											<tr>
+												<td id="user_photo" valign="middle">
+													<img src="images/user_photo.jpg"/>
+												</td>
+												<td class="user_info" valign="middle" style="text-align:center">
+													<div id="user_name" style="width: 90px;" class="text_ellipsis">测试用户</div>
+													<!--div id="user_role">管理员</div-->
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td style="visibility:hidden;width: 3px; cursor: pointer; background-image: url('images/split.png')"></td>
+									<td valign="middle" style="visibility:hidden;width: 50px; text-align: center; /*cursor: pointer;*/">
+										<img src="images/logout.png" style="cursor:pointer" onclick="navigate.logout();"/>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr><td>
+					<table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%">
+						<tr>
+							<td style="width:53px;">
+								<div id="menu" style="visibility:hidden;">
+									<div id="menu_top" style="cursor: pointer;"></div>
+									<div id="menu_bottom" style="cursor: pointer;"></div>
+									<div id="menu_move">
+										<span class="menu_v_row">
+											<img src="images/menu_v.png"/>
+										</span>
+										<div class="menu_v_background"></div>
+									</div>
+								</div>
+							</td>
+							<td class="panel_spacer">
+								<div class="panel_spacer" style="height:100%;width:1px;"></div>
+							</td>
+							<td>
+								<!-- 网页内容页 -->
+								<!-- <table id="page_container"> -->
+								<table class='main_page_tabs' cellpadding='0' cellspacing='0'>
+									<tr>
+										<!-- tab -->
+										<td>
+											 <div id='tabs_header'></div>
+										</td>
+									</tr>
+									<tr>
+										<!-- tab content -->
+										<td id="tabs_content"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td></tr>
+			</table>
+			<div>
+				<div id="panel_top">
+					<div class="main_page_user_container">
+						<div id="main_page_user_icon" class="main_page_user_icon">
+
+						</div>
+						<div class="main_page_user_info">
+							<div id="main_page_user_info_name" class="main_page_user_info_name">
+
+							</div>
+							<div id="main_page_user_info_role" class="main_page_user_info_role">
+
+							</div>
+						</div>
+					</div>
+					<div id="main_page_user_dropdown" class="main_page_user_dropdown">
+						<div class="main_page_user_dropdown_icon">
+
+						</div>
+						<div class="main_page_user_dropdown_block">
+							<div class="main_page_user_dropdown_block_content">
+								<div id="main_page_user_logout" class="main_page_user_dropdown_block_item" >退出</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="panel_main" class="master_expand">
+					<div id="panel_shrinkable_master">
+						<div id="panel_logo">
+							<div class="xor_logo_front master_expandable_front"></div>
+							<div class="xor_logo_back master_expandable_back"></div>
+						</div>
+						<div id="panel_master_control">
+
+						</div>
+						<div id="panel_menu_container">
+
+						</div>
+					</div>
+					<div id="panel_content">
+						<div id="panel_shrinkable_servant">
+							<div id="panel_submenu_container">
+
+							</div>
+							<div id="panel_servant_control">
+
+							</div>
+						</div>
+						<div id="panel_servant_shrink_expand">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

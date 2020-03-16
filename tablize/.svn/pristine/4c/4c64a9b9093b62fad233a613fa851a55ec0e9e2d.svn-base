@@ -1,0 +1,19 @@
+/**dialog model***/
+._authmng_dialog.query_dialog  {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-flow: column;flex-flow: column;border: 1px solid #177ba9;background-color: #fff;font-size: 16px;height: 100%;}
+._authmng_dialog ._dialog_span {-webkit-box-flex: 1;-ms-flex: 1;flex: 1;}
+._authmng_dialog ._dialog_flex {display: -webkit-box;display: -ms-flexbox;display: flex;}
+._authmng_dialog ._dialog_title {height: 38px;background-color: #2ea2d7;line-height: 38px;color: #fff;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-align: center;-ms-flex-align: center;align-items: center;position: relative;font-size: 20px;}
+._authmng_dialog ._dialog_title_label {-webkit-box-flex:1;-ms-flex:1;flex:1;padding-left: 10px;cursor: default;}
+._authmng_dialog ._dialog_close {height: 100%;width: 38px;cursor: pointer;background-image: url(../../images/history_records/dialog_close.png);background-repeat: no-repeat;background-position: center;}
+._authmng_dialog ._dialog_body {height: auto;}
+._authmng_dialog ._dialog_row {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: horizontal;-webkit-box-direction: normal;-ms-flex-flow: row;flex-flow: row;}
+._authmng_dialog ._dialog_row input {border: 1px solid #c6c6c6;padding-left: 10px;}
+._authmng_dialog ._dialog_row input[disabled] {background-color: #f6f6f6;color: #b3b3b3;border: 1px solid #c6c6c6;}
+._authmng_dialog ._dialog_col {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-flow: column;flex-flow: column;}
+._authmng_dialog ._dialog_context {color: #797979;margin-right: 13px;text-align: right;}
+._authmng_dialog ._dialog_foot {height: 40px;margin: 0 15px 15px 15px;line-height: 40px;text-align: center;display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;}
+._authmng_dialog ._dialog_foot .btn {width: 151px;height: 100%;border: 1px solid #597f89;border-radius: 2px;margin-left: 20px;color: #fff;cursor: pointer;}
+._authmng_dialog ._dialog_foot .cancel {background-color: #5da1c0;}
+._authmng_dialog ._dialog_foot .confirm {background-color: #2ea2d7;}
+._authmng_dialog label {line-height: 30px;margin: 0 10px;}
+/**model end**/

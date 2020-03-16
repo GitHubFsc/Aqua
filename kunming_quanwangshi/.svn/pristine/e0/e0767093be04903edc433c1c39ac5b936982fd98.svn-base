@@ -1,0 +1,80 @@
+var paasHost = "http://192.168.7.143:8080";
+var paasAppKey = 'aquaBO';
+var paasAppSecret = '9fa9c25876d865b086efb01d66630e746ea435d51db604fd9c90c6e24ffc';
+//AquaPaaS refresh_token 间隔，单位毫秒
+var paasTokenRefreshInterval = 10 * 60 * 1000;
+// daas config
+var daasHost = 'http://172.16.20.62:8118'
+
+
+//是否打印测试日志
+var printLog = false;
+//是否使用测试卡号
+var useDebugCard = true;
+//测试卡号
+var debugCardNumber = "0390813931";
+
+//首页树名称
+var naviTreeName = 'quanwangshi首页'
+//二级页面树名称
+var secondTreeName = 'quanwangshi'
+var onlineOrder = false;
+
+//vsp 反查相关参数
+var VSP_Host = 'http://172.16.188.87:8080';
+//参数 key
+var VSP_AppKey = 'ahokshqmx1kpg21';
+//参数 栏目id, 年华栏目的id
+var VSP_ProgramId = '10065676';
+
+//机顶盒类型 3：Linux(2200) 视频播放页地址
+var LinuxPlayerUrl = "http://172.16.188.87:8080/vsp_outlet/player/load/page";
+//机顶盒类型 3：Linux(2200) 视频播放页参数
+var LinuxPlayParam = {
+	//pid: '10003;FTIT0120190424229518', //此参数正式无用，仅作测试视频播放配置用
+	key: 'ajqou6u1i8bftj',
+	ip: 'http://172.16.88.50'
+};
+
+//安卓、瘦终端播放视频相关参数
+//播放附加参数 app
+var PlayParamExtApp = 'nianhua';
+//GHWEBAPI.PlayVedioOnDemand_VSP参数
+var PlayParam = {
+	//是否采用思迁新 VSP 接口（8 区合一）
+	// NewVSP: true,
+	//VSP分配给应用的key
+	AppKey: "ahokshqmx1kpg21",
+	//提供商标识，暨 PID
+	//ProviderID: "10056", //此参数正式无用，仅作测试视频播放配置用
+	//影片 paid ， GTIT 开头，若无 MovieID 或 EpisodeID，此项必选
+	//ProviderAssetID: "GTIT0120181122200157", //此参数正式无用，仅作测试视频播放配置用
+	//资产标识
+	// AssetID: "",
+	//是否显示回看标志 true 显示、 false 不显示
+	ReplayFlag: false,
+	//类型，未指定则不会有上下节目的提示 1 为电视剧类型、 2 为电影类型
+	Type: 1,
+	//是否为回看节目， 采用新 VSP 接口调用回看节目时必传。 true 是、 false 不是
+	// Review: false,
+	//退出时是否显示推荐列表 true 显示、 false 不显示（默认）
+	// Recommend: false,
+	//透传给通用播放器的字段，预留（需转码）
+	// ExtParam: "",
+	//表示播放类型， 1 表示点播， 3 表示回看， 4 表示时移 如果终端类型为瘦终端， 则该参数为必选参数。
+	// PlayType: "1",
+	PlayerURL : {
+		Linux:"",
+		Android:"",
+		ThinClient:"",
+	},
+};
+//调用GHWEBAPI的BackAppParam, （返回）本应用的部分参数, 适用于调启视频播放, 适用于安卓、瘦终端盒子
+var AppBackParam = {
+	//应用模式，取值范围： Local： 本地模式应用 Stream： 流化模式应用 Mixed：混合模式应用
+	AppMode: "Mixed",
+	//流化应用 ID，如果返回的应用是流化模式或者混合模式的应 用，此字段必传； 如果返回的应用是本地模式的应用，此字段 不传；
+	AppID: 56,
+	//应用类型，取值范围：WEB： WEB 应用 APK： Android 应用,暂不支持此类应用，待扩展；
+	AppType: "WEB"
+};

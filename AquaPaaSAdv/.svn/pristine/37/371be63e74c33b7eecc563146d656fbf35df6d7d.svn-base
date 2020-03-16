@@ -1,0 +1,1 @@
+<div class="panel-layer-container">	<div class="panel-layer-head">		<div id="compSiteHstBack" class="layer-btn-head-left">{{OPS_TEXT_BACK}}</div>		<div class="layer-head-spacer"></div>		<div id="compSiteHstTitle" class="layer-head-title"></div>	</div>	<div class="panel-layer-body">		<div id="compSiteHstList" class="panel_page_list">		</div>	</div></div>

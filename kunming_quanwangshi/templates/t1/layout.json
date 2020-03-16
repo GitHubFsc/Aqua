@@ -1,0 +1,96 @@
+{
+	"background-image": "",
+	"blocks": [
+		{
+			"index": 0,
+			"dataIndex": 0,
+			"box": {
+				"position": {
+					"left": "95px",
+					"top": "130px",
+					"width": "650px",
+					"height": "370px"
+				}
+			},
+			"navigation": {
+				"up": -1,
+				"down": 2,
+				"left": null,
+				"right": 1
+			}
+		},
+		{
+			"index": 1,
+			"dataIndex": 1,
+			"box": {
+				"position": {
+					"left": "755px",
+					"top": "130px",
+					"width": "430px",
+					"height": "560px"
+				}
+			},
+			"navigation": {
+				"up": -1,
+				"down": null,
+				"left": 0,
+				"right": null
+			}
+		},
+		{
+			"index": 2,
+			"box": {
+				"image": "templates/t1/b2.png",
+				"position": {
+					"left": "95px",
+					"top": "510px",
+					"width": "210px",
+					"height": "180px"
+				}
+			},
+			"func": "goHistory()",
+			"navigation": {
+				"up": 0,
+				"down": null,
+				"left": null,
+				"right": 3
+			}
+		},
+		{
+			"index": 3,
+			"dataIndex": 2,
+			"box": {
+				"position": {
+					"left": "315px",
+					"top": "510px",
+					"width": "210px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 0,
+				"down": null,
+				"left": 2,
+				"right": 4
+			}
+		},
+		{
+			"index": 4,
+			"dataIndex": 3,
+			"box": {
+				"position": {
+					"left": "535px",
+					"top": "510px",
+					"width": "210px",
+					"height": "180px"
+				}
+			},
+			"navigation": {
+				"up": 0,
+				"down": null,
+				"left": 3,
+				"right": 1
+			}
+		}
+	]
+}

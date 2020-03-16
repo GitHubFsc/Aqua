@@ -1,0 +1,4079 @@
+FOR ALL VERSIONS
+
+A. 关于浏览器支持：
+
+  1. 目前只能运行于支持HTML 5的浏览器，推荐浏览器是 FireFox和IE 10
+     IE9 不能完全支持CROS方案来进行跨域访问与文件上传。
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.91
+    RELEASE DATE: 2020-03-13
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][素材]将顶部的视频更改为贴片
+      [广告位]去掉贴片、字幕浮层设置，移动开机广告设置位置
+      [广告系统][策略终审]，[广告系统][策略启停]规范input查询框对回车按键的判断
+      [广告位]修改浮层设置对话高度并滚动
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.90
+    RELEASE DATE: 2020-03-05
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][广告位] 增加应用切换浮层设置
+      [广告系统][素材发布]
+          1. 当SUCAI_ENHANCE=false的时候不查询数据
+      [广告系统][策略]
+          1. 广告位查询，平台参数更改为platform_id
+      [广告系统][统计报告][预约报表]
+        1. 预约报表：列表按多平台过滤。
+
+    - Fixed Bug List
+      [广告系统][策略启停] 去除启用/禁用的 alert提示信息
+      [广告系统][素材终审] 修复没有识别到SUCAI_ENHANCE的问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.89
+    RELEASE DATE: 2020-03-03
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][广告位] 增加平台过滤platform_id
+      [广告系统] 页面拆分
+          1.增加 [素材初审]、[素材终审]、[策略初审]、[策略终审] 的内容模块
+      [广告排期]广告排期中，广告位列表按照平台过滤。
+      [广告系统][统计报告][投放报告]需求：投放报告列表按平台过滤。
+      [广告系统][系统用户]问题：编辑用户平台提交后，会清空用户菜单的权限。
+      增加[广告系统][素材启停]
+      增加[广告系统][策略启停] 
+      [广告系统][合同管理]platform_id_list参数处理；
+      [广告系统][素材][素材组][计数报表][人数报表]递交多平台支持
+
+    - Fixed Bug List
+      [广告系统][策略管理]修复编辑策略 设置曝光计费和点击计费 报ids is undefined
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.88
+    RELEASE DATE: 2020-02-24
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统]用户平台切换相关内容
+      [广告系统][菜单]根据UI修改菜单样式
+      [广告系统][系统用户] 
+          1. 用户菜单项权限修改算法。
+          2. 素材策略、素材审核中子菜单调整。
+      [广告系统][系统用户]用户多平台设置功能
+      [广告系统][合同管理] 新建合同、查询 增加URL传递参数 platform_id_list；
+      [广告系统][审核历史]
+        1. 不根据配置项，而是根据返回的审核类型来判断显示的文字内容
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.87
+    RELEASE DATE: 2020-02-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][素材 增强审核]
+      1. 根据sucai_enhance配置项来决定素材审核走ad_item_2还是ad_item
+      2. 素材发布时更新sucai的link以及aqua_url
+      3. 素材查看页面增加列表状态显示        
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.86
+    RELEASE DATE: 2020-02-17
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][系统用户]新版用户权限。
+      
+      [广告系统][平台id]
+      1. 策略审核和策略管理增加平台id的支持
+
+      [广告系统]素材审核增强
+      1. config.js中增加配置项SUCAI_ENHANCE，是否启用素材增强
+      2. config.js中增加配置项LocalImageServer，本地素材库服务器地址（用于素材发布）
+      3. 递交素材发布页面
+      4. 根据素材增强，修改素材审核页面逻辑
+
+      [广告系统][素材]素材在编辑时可以重新上传素材
+
+      [广告系统][策略管理] 新增广告主允许选择计费方式
+      1.广告主允许选择计费方式，当选择计费方式为合同计费时，所有策略绑定的合同都是线下合同，才允许提交策略。
+
+      [广告系统][系统用户]需求：根据后台要求，系统用户列表请求start从1开始计数。
+
+      [广告系统][合同管理] 内容新增
+      1.列表内新增合同类型列；
+      2.搜索条件新增合同类型查询；
+      3.新建合同新增合同类型（只有供应商才允许创建线下合同）；
+      4.在上传附加文件时判断，只允许上传PDF文件
+        
+    - Fixed Bug List
+      [广告系统][合同管理] bug修复
+      1.修复点击编辑按钮时，合同类型下拉框显示不正确的问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.85
+    RELEASE DATE: 2020-01-14
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35737
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][统计报告][预约报表]:
+        1. 问题：预约报表的备注不能显示英文逗号后面的内容。
+        2. 需求：后台创建预约接口修改：comment_text改为以"#"分割内容(当碰到"\#"不分割,当成字符串中输入的"#")
+      [广告系统][素材]放开素材的编辑限制
+        
+    - Fixed Bug List
+
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.84
+    RELEASE DATE: 2020-01-06
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.15.0-35598
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][素材]
+        1. 图文类型素材 单文件上传 CDN情况下 素材ID/素材ID.扩展名
+        2. 图文类型素材 单文件上传 非CDN情况下 素材ID/原文件名
+        3. 图文类型素材 模板上传 由两层目录改为一层目录，时间戳+6位随机数字，保留.tmp和移除.tmp的逻辑
+      [广告系统][统计报告][预约报表]:
+        1) 增加预约报表。
+        
+    - Fixed Bug List
+
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.83
+    RELEASE DATE: 2019-12-10
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][素材][足迹相关]
+        1. 图文素材新增足迹相关的功能
+        2. config.js新增配置项
+            //素材 足迹相关 上传存放足迹海报的目录地址配置
+            var storage_footprint_poster_folder        = "footprintposter/";
+      2. [广告系统][素材] 新增 根据创建者查询 的搜索框
+      3. [广告系统][素材组] 新增 根据创建者查询 的搜索框
+      4. [广告系统][策略管理] 增加根据创建者查询，并且查询结果名称和创建者满足任意一条件即可。
+
+    - Fixed Bug List
+      1. 修复用户没有角色时菜单权限未做判断的问题
+      2. [广告系统][人数报表][计数报表] 修复站点配置为中央或地方情况下，选择站点的下拉框 会和 选择分类（按照广告位，按素材，按合同）重合的bug
+      3. [广告系统][人数报表][趋势报表] 修复列表组件 宽度没对齐的bug
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.82
+    RELEASE DATE: 2019-11-22
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][广告位] 增加"查看"
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.81
+    RELEASE DATE: 2019-11-21
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][人数报表]和[趋势报表]
+          1.列表的滚动条修改
+          1).纵向滚动条的位置应该固定在可见窗口的右侧, 一直可以滚动 
+          2).第一列在横向滚动的时候可以冻结在可见窗口的左侧
+          3).滚动条改用浏览器原生的滚动条，方便用户操作
+          2.列表合计行中，曝光人数, 点击人数, 人数点点击率, 千人曝光, 单人点击都没有值
+
+    - Fixed Bug List
+      [广告系统][自助用户]
+          1. 问题：修正慧豆为0时input界面无法显示问题。
+      [广告系统][素材组]
+          1.修复创建对话框列表在有滚动条的情况下，宽度没100%自适应的错误样式]
+      [广告系统][标签管理]
+          1.修复创建对话框列表在有滚动条的情况下，宽度没100%自适应的错误样式]
+      [广告系统][素材]
+          1.修复 “点击操作一列的更多，展出菜单后再点击页面别处无法回收菜单”的bug
+      [广告系统][计数报表]
+          1.时间选择由 昨天/上周/上月 修改为 今/昨/周/30天/月。日历组件不再写死，改为可灵活选择日期
+          2.在标题过长被截位的情况下，支持鼠标移上去浮框显示完整标题
+          3.优化表格内容过长出省略号的样式
+      [广告系统][人数报表]
+          1.修复广告位标题过长，导致页面显示格式不对的bug
+          2.在标题过长被截位的情况下，支持鼠标移上去浮框显示完整标题
+          3.优化表格内容过长出省略号的样式
+      [广告系统][人数报表]和[趋势报表]
+          1.兼容火狐浏览器47版本下的width:max-content
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.80
+    RELEASE DATE: 2019-10-29
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends aquapaas-1.1.14.0-34172(或以上)，docker版
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][计数报表]
+        1.列表增加2列: 千次曝光￥, 单次点击￥
+      [广告系统][人数报表]
+        1.列表增加4列, 千次曝光￥, 单次点击￥, 千人曝光￥, 单人点击￥ 
+        2.表格过宽，支持横滚动条
+      [广告系统][趋势报表]
+        1.列表增加4列, 千次曝光￥, 单次点击￥, 千人曝光￥, 单人点击￥ 
+        2.表格过宽，支持横滚动条
+    
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.79
+    RELEASE DATE: 2019-10-22
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.55-33634或以上
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][素材]
+      1, 素材对话框的合同ID的名称修改为合同编号 (和合同管理保持一致)
+      2, 合同编号变成下拉框, 只能从当前用户自己的合同列表中选择一个
+
+    - Fixed Bug List
+      1. [广告系统][策略审核] 修复跳页问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.78
+    RELEASE DATE: 2019-10-15
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.55-33634或以上
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      [广告系统][计数报表]
+        1.去除后来增加的3个人数列, 其它的功能都保留。
+        2.按广告位/按素材, 增加按合同
+      [广告系统][人数报表]
+        1.列可以保留现在计数报表中的列
+        2.时间只支持过去。今/昨/周/30天/月 修改为 昨/上周/上月，选择后自动计算出开始日期——结束日期(开始日期, 结束日期不能修改)，可以支持前后 
+        3.按广告位/按素材, 增加按合同
+      [广告系统][趋势报表]
+        1.按广告位/按素材, 增加按合同
+      [广告系统][策略管理]
+        添加合同计费
+      [投放报告]需求：
+        (1). 用户位置不存在或空值时，"查看用户坐标"隐藏。
+        (2). "按中心地点显示"下拉框隐藏、地图支持手工选择scale。
+        (3). 中心点显示用户地址。
+
+    - Fixed Bug List
+      [系统用户]问题：
+        1. 系统用户管理 电话传真 有效时间为空时，表格区域应显示空而不是横杠。
+        2. 用户列表奇数行和偶数行应该颜色不一样。
+      [投放报告]问题：
+        广告主和出版者打开投放报告页面时，会出现弹框“你好, 你没有权限查看这里"。 并且投放报告页面没有任何内容。 
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.77
+    RELEASE DATE: 2019-09-26
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][计数报表]列表 根据曝光比例倒排序
+
+    - Fixed Bug List
+      1. [广告排期]UI、功能问题修改：
+        1) 修正选择广告位区域样式：
+          (1),checkbox右侧文字折行，行距应小于与下方的数据的间距。
+        2) 修正已选广告位区域样式(使其和上方选择广告位区域样式一致)：
+          (1),每列垂直对齐。
+          (2),可选择数据区域在checkbox右侧。
+        3) 切换广告位的首字母筛选时，已选广告位区域不应该变化。
+        4) 选择广告位和已选广告位的滚动条样式和UI不符。
+        5) 修改日历样式，使其和UI一致  
+        6) 筛选站点弹框中，站点名称过长时应该折行，和筛选广告位效果一致。
+        7) 筛选站点弹框的滚动条样式，和UI不一致。
+        8) 站点和广告位列表框打开时，按钮箭头图标应方向向上。
+        9) 每次切换打开广告位列表时，不需要重复绑定广告位列表上的事件。
+        10)在全部里去勾选选择全部广告位后，然后按字母筛选，发现dataid中包含空格的广告位依然是勾选上的。
+        11)筛选站点去除取消按钮（和UI一致）。
+        12)筛选站点checkbox，鼠标移上应出现手（cursor）的样式。
+
+      2. [广告系统][投放报告]问题修改:
+        1) 1280*720分辨率下，顶部元素会折行。
+        2) 用户点击除日历外的空白处，无法关闭日历，只能点击日历上的确定关闭日历。（点击确定会发送查询请求）
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.76
+    RELEASE DATE: 2019-09-11
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37.0.0-33524或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [素材、策略管理]广告主身份创建素材策略功能修改:
+        1) 增加供按商家名称, 联系姓名, 推广代码查询 搜索功能。
+        2) 表格样式内容修改，并支持分页。
+      2. [广告系统][素材] 素材 剩余次数一列 如果小于0，则显示为空
+      3. [投放报告] 根据需求修改:
+        1) 素材的名称空间不足, 根据需求适当减少减小投放时长, 是否点击列宽，增加素材名称列宽。
+        2) 详情页面超出一页高度时，应增加滚动条  
+      4. [广告排期]根据需求改动:
+        1) 开始时间不能早于今天、打开页面默认本月。
+        2) 默认选择今天。
+        3) 支持广告位多选和全选。
+        4) 默认选择所有的广告位。
+        5) 去除筛选站点。
+        6) 广告位折行显示效果调整。
+        7) 筛选广告位要有重置/清理功能。
+        8) 筛选广告位后重新查询。
+        9) 命中策略详情BAR补充广告位和日期。
+        10) 去除广告位查询条件的BAR。
+        11) 策略列表, 补充社区精准。投放时间格式不需要+0800。
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.75
+    RELEASE DATE: 2019-09-05
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37.0.0-33334或以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][审核历史] 补充语言包
+      2. [广告系统][投放报告] 新版投放报告
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.74
+    RELEASE DATE: 2019-09-04
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [自助用户]：自助用户页面的操作中, 第一列”启用”/”封禁”移入更多中. 
+      2. [广告系统][策略管理] 添加审核历史查看弹出框
+      3. [广告系统][策略审核|素材审核] 添加审核历史查看弹出框
+      4. [广告系统][策略审核|素材审核] 调整审核历史入口样式
+      5. [广告系统][计数报表]
+        1.如果开始结束时间都是今天时[快捷的”今天”的按钮 ，前一天后一天按钮，直接输入开始日期结束日期], 查询条件中sum_fileds 去除人数相关的字段. 页面上”曝光人数”, “点击人数”, “人数点击率”为空, 列不用去除
+      6. [广告系统][素材]
+        1.素材 操作项 新增 “更多”下拉框，“更多”下拉框里包含审核历史
+      7. [广告系统][策略审核] 添加点击查询按钮搜索功能。
+      8. [广告系统][素材审核] 添加点击查询按钮搜索功能。
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.73
+    RELEASE DATE: 2019-08-27
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][自助用户]  增加搜索（商家名称、联系姓名、推广代码）和查看、修改推荐代码功能。
+      2. [广告系统][用户审核]  增加搜索（商家名称、联系姓名、推广代码）功能。
+      3. [自助用户]、[自助用户审核]:增加全屏
+      4. [广告系统][计数报表 趋势报表]列表头新增 曝光人数 点击人数 人数点击率
+      
+    - Fixed Bug List
+      1. [自助用户]  修复待审核状态在自助用户页面亮的问题.
+      2. [广告系统][计数报表 趋势报表]
+        修复页面逻辑
+        1, 点击率%, 保留小数点后2位
+        1, 所有的次数和人数使用三位逗号的格式显示, 便于查看
+        2, 总计条上, 趋势表中的分组小计上, 点击率%都不应该相加. 应该用点击次数/曝光次数单独计算.
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.72
+    RELEASE DATE: 2019-08-21
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][素材审核] 增加用户信息显示
+      2. [广告系统]素材查看组件 的全屏查看功能
+      3. [广告系统][自助用户]查看详情页里详细地址右侧增加推广代码的显示
+      4. [广告系统][策略管理] 更改区域精准策略的数据保存格式
+
+    - Fixed Bug List
+      
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.71
+    RELEASE DATE: 2019-08-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][策略管理] 区域精准支持直接输入
+      2. [广告系统][修改自己密码的功能 和 自助用户的改动]
+      3. 自助用户的改动如下
+         1.所有状态 修改为 包含“正常启用”“封禁”“欠费” 
+      4. [广告系统][用户审核和系统用户的重置密码功能]
+
+    - Fixed Bug List
+      
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.70
+    RELEASE DATE: 2019-08-14
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][递交 自助用户的改动 和 用户审核]
+         自助用户的改动如下
+1.操作 “更多”里 新增 设备和重置密码
+2.状态支持: 正常启用, 封禁, 欠费
+3.进入默认选择“正常启用”
+
+    - Fixed Bug List
+      1. [广告系统][自助用户]按照UI修改查看/审查对话框的高度，同时去除滚动条
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.69
+    RELEASE DATE: 2019-08-08
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][自助用户]根据需求修改：优惠券框：标题 “XX的优惠券” 修改为 “优惠券”。
+      2. [广告系统][趋势报表]列表点击率保留两位小数
+      3. [广告系统][自助用户]查看详情以及审核对话框里新增营业执照照片
+
+    - Fixed Bug List
+      1. [广告系统][策略管理]修正”基本策略”, “精准策略”TAB的字体问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.68
+    RELEASE DATE: 2019-07-26
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.54
+          3)  depends AquaPaas_Adv-1.37(svn32597)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][计数报表和趋势报表]列表头新增点击次数和点击率
+      2. [广告系统][策略管理]
+          对自主用户创建策略增加计费方式下拉框
+          config.js配置项增加ChargeTypeLink 为计费说明链接
+          //计费说明链接地址
+          var ChargeTypeLink = 'http://api.xor-live.io/aqua/rest/cdmi/default/netdisk/adsadmin/charge.html';
+
+    - Fixed Bug List
+      1. [广告系统][策略管理]
+        1. 修复删除策略时，提示页面折行的问题
+        2. 搜索时，页面回到第一页
+        3. 查看策略时，行为与策略审核查看策略一致
+      2. [广告系统][素材审核]
+        1. 修改刷新页面逻辑，当前页没有数据时自动跳到上一页
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.67
+    RELEASE DATE: 2019-07-08
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+        [广告系统][策略管理]地图
+        1. 增加根据中心地点显示、按半径显示的功能
+        2. 加载地图信息的时候，不会重新根据地点信息来重新查找地址信息造成的覆盖原本地址信息的问题
+        3. 加载数据时，判断如果不是lnglat类型的时候转换成lnglat再加载，以免造成摩卡托地址加载地图信息有误的问题
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.66
+    RELEASE DATE: 2019-07-05
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][合同管理] 添加兼容低版本浏览器的String.prototype.padEnd以及String.prototype.padStart方法
+      2. [广告系统][策略管理]地图 半径下拉框更换成复合下拉框，可以输入可以选择
+      3. [广告系统][素材]新增“是否风尚素材”checkbox
+
+    - Fixed Bug List
+      1. [广告系统][系统用户] 修改问题：
+         编辑系统用户时，修改某系统用户的菜单权限值，修改无效，重新刷新列表后，发现前面修改的用户菜单权限没有变化。
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.65
+    RELEASE DATE: 2019-06-06
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1. [广告系统][策略管理]添加遗漏的脚本引用
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.64
+    RELEASE DATE: 2019-06-05
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][策略管理] 精准策略-地图 范围输入框更改成下拉框
+      2. [广告系统][素材]根据template.json 来判断是否有属性 如果有则实现素材查看界面以及素材模板编辑界面箭头翻页，可以来回切换
+
+    - Fixed Bug List
+      1. [广告系统][素材][修复编辑模板素材时，会导致url和aqua_url会被修改]
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.63
+    RELEASE DATE: 2019-04-26
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+          6)  depends Picture Creator 1.0.0 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][H5素材模板][添加文字转化成图片的功能]
+      2. [广告系统][素材]二次审核
+        1. 二次审核时 素材状态列表增加终审选择框
+        2. 二审时素材列表状态栏内容 修改 初审状态：审核->初审  终审状态：不明->终审
+      独立站点：
+        1. 独立站点时，不会去读取sitelist，避免了因读取sitelist请求而造成页面的假死
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.62
+    RELEASE DATE: 2019-04-24
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+          5)  depends CloudAqua-1.4.8.0
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][素材]增加H5素材模板功能
+          config.js 配置
+          //广告系统 素材H5模板的aqua网盘地址
+          //storage_htmltemplate_origin_folder 对应初始模板地址，仅供用户选择模板并预览
+          //   有两级目录
+          //   第一级目录对应模板分类。
+          //   第二级目录对应模板名称，里面存放index.html，template.json等文件
+          //storage_htmltemplate_save_folder 对应正在编辑中或者已编辑完成的模板存放地址，供用户编辑模板。
+          //   默认存放到图片素材路径下，也可以如下额外设置
+          //   var storage_htmltemplate_save_folder = "htmltemplate_save/";
+          var storage_htmltemplate_origin_folder = "htmltemplate/";
+          var storage_htmltemplate_save_folder = storage_images_folder;
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.61
+    RELEASE DATE: 2019-04-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1. [广告系统][策略] 修复 由于删除dialog.css导致的社区精准样式问题.
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.60
+    RELEASE DATE: 2019-04-17
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+          4)  depends user:v1.1.14.0-31307
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][素材审核] 增加素材的二级审核。
+         config.js 增加配置项
+         //素材页面审核 1:启用一次审核 2:二次审核.值表示几次审核，目前只支持二次审核
+         var SUCAI_AUDIT_LEVEL = 2;
+
+    - Fixed Bug List
+      1. [广告系统][素材] 修复独立站点素材限次更改模式会导致页面无法加载的问题.
+      2. [广告系统][系统用户]系统用户中过滤掉其他系统用户, 例如: IOT用户user_type为3, 新闻审看的用户user_type为4,只应该列出广告系统的用户(user_type为0,1,2)
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.59
+    RELEASE DATE: 2019-04-16
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][优惠券][隐藏入口]
+      2. [广告系统][策略] 独立站点 素材限次更改模式
+      3. [广告系统][自助用户]在自助用户的启用、禁用和审核三个操作都需要调用一下charging/refresh接口刷新用户状态
+      4. [广告系统][系统用户]修改功能：用户应该能编辑或删除 除自己以外的其他用户。
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.58
+    RELEASE DATE: 2019-04-11
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 自助用户：增加用户优惠券功能。
+
+    - Fixed Bug List
+      1. [广告系统][策略] 区域精准
+        修复区域精准中，当区域标签中中没有绑定任何标签时会显示所有区域的问题    
+      2. 广告排期：修复以下问题：
+        1、当 dm/site 请求失败时，无法选择广告位，流程无法继续。
+      3. [广告系统][策略审核] 修复：
+        1.当启用里有两页策略时，在启用的第一页任意禁用一个策略，操作完成后，自动跳转到启用的第二页
+        2.当禁用里有两页策略时，在禁用的第一页任意启用一个策略，操作完成后，自动跳转到禁用的第二页
+      4. [广告系统][素材审核] 修复：
+        1.当启用里有两页素材时，在启用的第一页任意禁用一个素材，操作完成后，自动跳转到启用的第二页
+        2.当禁用里有两页素材时，在禁用的第一页任意启用一个素材，操作完成后，自动跳转到禁用的第二页
+      5. 投放报告-按素材中，当表格中数据数量较多时，滚动条没有出现
+      6. [广告系统][策略] 修复
+        问题8：策略管理页面》》”新建策略“按键，少了一个字“略”
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.57
+    RELEASE DATE: 2019-04-04
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 增加[广告系统][优惠券]
+      2. 图文广告位黑名单添加筛除，修复频道长时的表格样式
+      3. [广告系统][素材]限次 独立站点去除与站点相关的文字提示
+      4. [广告系统][策略] 社区精准 设置社区精准地址的时候增加设置community_policy = 0
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.56
+    RELEASE DATE: 2019-04-02
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 增加[广告系统][素材]限次增加solo(独立版本)限次.
+
+    - Fixed Bug List
+      1. 修复[广告系统][策略管理]社区精准修复更改查询半径时，社区精准地址会被置空的问题.
+      2. [广告系统][管理][合同管理]增加对网盘contract目录的保护。 
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.55
+    RELEASE DATE: 2019-04-01
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.37(svn31094)(含)以上
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 使用中的广告位确认后可继续编辑
+      2. 增加[广告系统][策略管理]社区精准
+      3. 增加[广告系统]图文广告位黑白名单
+
+    - Fixed Bug List
+      1. [广告系统][素材]修复素材页面的搜索功能不工作，点击无响应.
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.54
+    RELEASE DATE: 2019-03-06
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.36.0.0-29513
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 广告系统-素材-图片类型: 新增上传多个素材功能
+      2. 图文类型素材不显示CDN选项
+        /*
+         IMG_CDN_SITE 图文类型素材发送到CDN的配置
+         如果直接删去IMG_CDN_SITE配置这一行 或者 IMG_CDN_SITE="",则图文类型素材不显示CDN选项
+         如果IMG_CDN_SITE="国安",则是中信国安广视云南电信CDN发布(只有“是否需要切片”选项)
+        * */
+        var IMG_CDN_SITE = "国安";
+
+    - Fixed Bug List
+      1.  [广告系统][素材]修复视频类型素材长宽互换的BUG
+      2.  [广告系统][自助用户]修复以下问题：
+          由于后台前后两次给小程序及web端的tag type有些差异，使小程序和web端tag type不一致。
+          现在web端自助广告主页面配合小程序端，修改了tag type 为 selfregadvuser
+      3.  [广告系统]修复以下问题：
+          列出自助广告主组件的列表请求参数selfadvuser，改成selfregadvuser
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.53
+    RELEASE DATE: 2019-01-03
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.36.0.0-29513
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][策略] 新增
+         1. 运营商在创建策略的时候可以选择指定广告主.
+         2. 创建/编辑策略中列广告位的地方也同样只能选择开放给广告主的广告位.
+      2. 图文素材发布到CDN的功能
+         config.js 配置
+         /*
+          IMG_CDN_SITE 图文类型素材发送到的CDN
+          如果没有CDN_SITE配置,则图文类型素材不显示CDN设置
+          如果IMG_CDN_SITE="国安",则是中信国安广视云南电信CDN发布(只有是否需要切片选项)
+         */
+         var IMG_CDN_SITE = "国安";
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.52
+    RELEASE DATE: 2018-12-13
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.35
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 增加"自助用户"管理页面
+         config.js 配置
+         //自助广告主管理页面上传门脸照片和身份证等照片的路径。
+         var storage_self_service_adviser_images_folder ="users/"
+      2. 广告位管理-在所有类型的广告位上都增加: 
+           Checkbox: 是否开放给广告主 (默认是不选中)
+      3  素材管理, 运营商在创建素材的时候可以选择指定广告主.
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+     1.以下内容尚未包含在本次版本中
+       1.策略管理, 运营商在创建策略的时候可以选择指定广告主.
+       2.创建/编辑策略中列广告位的地方也同样只能选择开放给广告主的广告位.
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.51
+    RELEASE DATE: 2018-09-11
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.52
+          3)  depends AquaPaas_Adv-1.35
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 中信广视中央广告系统数据监测CR(站点管理页面) 
+         ADS-CITIC-CR034-ADS of Data Monitoring.doc  
+         config.js 配置
+           //中央站点的广告系统管理界面上，
+           //由于中央站点不在DM的Site表中，所以需要在站点管理的页面上找一个入口是给中央站点自己的监控入口的.
+           //点击此入口跳转至中央站点的监控Zabbix页面。此入口的地址由管理页面配置，不从服务器获取。
+           var AdvCentralSiteMonitorAddress = 'http://172.16.20.155:8080/zabbix/';
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.50
+    RELEASE DATE: 2018-09-07
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.49
+          3)  depends AquaPaas_Adv-1.35
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. [广告系统][广告位]浮层广告需求：广告位的轮转模式中增加定时浮层选项和相关定义。
+         注:"mode": "timingfloating",    //轮转模式：定时浮层
+
+    - Fixed Bug List
+      1. [广告系统][策略管理]Bug 23952 - 策略管理界面操作选项显示不完全，“删除”选项缺失.
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.49
+    RELEASE DATE: 2018-06-27
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.49
+          3)  depends AquaPaas_Adv-1.33.0.0-25602
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. ADS-CITIC-CR028-ADS &EVM CMS Integration
+         1) 增加支持广视CDN视频素材的发布. 
+            请根据实际情况配置config.js 
+
+            CDN_SITE 视频类型素材发送到的CDN
+            如果CDN_SITE="",或者没有CDN_SITE配置,则是默认设置(通用风格)
+            如果CDN_SITE="广视",则是广视cdn发布(采用通用风格，但要去掉首帧图片选项)
+            如果CDN_SITE="佳创",则是佳创cdn发布(只有是否需要切片选项)
+            
+            var CDN_SITE = "佳创";
+
+    - Fixed Bug List
+      1. 地方站点: 18 创建素材组，不显示创建者；查看所创建素材组时，创建者显示为uuid。
+      2. 地方站点: 19 地方站点UI上广告位、势报表显示的“筛选站点”框
+      3. 中央站点: 37 策略权重下拉框的值01-10重复出现两次
+      4. 中央站点: 46 首次进入合同管理页面，合同管理页面的按钮点击无效；点击其他页面后，再次进入合同管理页面，按钮才能生效.
+      5. 中央站点: 47 编辑合同时，合同的“生效时间”和“失效时间”相同，都显示为“生效时间” 
+      6. 中央站点: 48 创建合同时，“生效日期”能够大于“失效日期” 
+      7. 中央站点: 51 合同管理，按“合同期限”筛选，筛选不管用。不论”合同期限“选择什么日期，所有的合同全部被筛选出
+      8. 中央站点: 39  "中央根据广告位下发策略到地方，广告位能够成功下发，但是素材和策略并未下发，查看策略的分发状态，一直显示分发排队中。
+      9. 中央站点: 45  新增合同管理后，站点管理位置超出左侧模块范围，背景色为白色。
+      10. 中央站点: 52  "按策略分站点分发时，策略在审核状态下关联地方站点，策略审核通过后不会下发策略至地方
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.48
+    RELEASE DATE: 2018-06-15
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.49
+          3)  depends AquaPaas_Adv-1.33
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 增加合同管理, ADS-CITIC-CR024-ADS of contract management
+      2. 系统用户管理 - 编辑除自己（登录用户）以外的用户时，提示语言：“当前用户无权限修改 ” 
+
+    - Fixed Bug List
+      1. 修复素材和素材组创建者为空的问题。 
+      2. 修复“在系统用户管理页面由“角色说明”变更为“站点用户”，但该页面显示为空白”的bug
+      3. [广告系统][策略管理]修复bug[Request 22054] [中信国安中央广告系统]--[BUG]--分发问题 (comment8
+         广告管理界面，列出策略上已关联站点的接口不变, 在修改策略关联站点列表时，调用服务端提供的该新策略关联站点更新接口，不调用服务端其他接口)
+      4. [广告系统][策略管理]修复bug 地方问题19：地方站点UI上也显示筛选站点框
+      5. [广告系统][策略管理]修复bug 主站点问题33以及分站点问题16的问题：中央站点分发至地方的素材存在限次配置，但是没有限次选项进行查看限次配置信息
+      6. [广告系统][策略管理]修复 素材限次查看页面弹框标题不正确的bug
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.47
+    RELEASE DATE: 2018-05-15
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.48
+          3)  depends AquaPaas_Adv-1.32
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. ADS-CITIC-CR031-ADS of User Management
+         config.js增加配置项
+          var JumpSiteUrlPrefix = [
+            {siteId:"02", url:"http://172.16.20.157:8080/paasadv_local/index.html"},
+            {siteId:"03", url:"http://172.16.20.157:8080/paasadv_local/"},
+            {siteId:"003", url:"http://172.16.20.157:8080/paasadv_local/"},
+            {siteId:"16", url:"http://172.16.20.157:8080/paasadv_local/"},
+          ];
+      2. ADS-CITIC-CR032-ADS of Permission Management 
+         1. 广告系统权限管理
+
+    - Fixed Bug List
+       
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.46
+    RELEASE DATE: 2018-05-03
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.48
+          3)  depends AquaPaas_Adv-1.32
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. ADS-CITIC-CR023-ADS of  Function optimization of central advertising system
+          1.1 Requirement (003)：信息分站点查看管理
+              1， 广告位查看分站点：在中央系统查看广告位或新建策略选择广告位时，均需要按站点列表；
+              2， 素材的查看分站点：在中央系统中，点击“素材”及“素材组”素材可分站点查看、新建策略绑定素材时，素材可分站点列表显示并被选择绑定；
+                  a) 素材 分站点筛选
+                  b) 素材组 分站点筛选
+                  c) 另希望在中央创建策略选择素材的素材列表界面中，只显示中央的素材，不需要显示地方同步到中央的素材，避免误选择了地方的素材
+              3， 策略管理分站点：在中央系统中，点开“策略管理”时，可筛选站点查看策略
+              4， 数据统计报表分站点统计：中央下发的素材、中央可以按素材统一统计播放数据；可以按站点统计地方播放数据
+                  a) 趋势报表
+                  b) 计数报表
+
+          1.2 Requirement (004)：中央增加按策略分发到地方站点规则 
+              1.中央策略管理增加关联站点功能
+
+          1.3 Requirement (005)：地方数据强制同步到中央
+              1.地方-创建的策略管理保存后增加自动关联中央功能
+
+    - Fixed Bug List
+       1) 中央&地方问题整理
+          中央站点
+              排期 
+                  21  进行站点筛选时，站点名称不能过长，否则在选中时下一行不能正常显示。且在未选中时，会与其他站点名称重叠
+                  25  "站点和广告位筛选，选中字母不会高亮显示，而且点击全部时无响应，且在进行广告位筛选时，点击某个字母，若没有广告位命中，则还是会显示之前广告位信息，不会置空。"
+                  26  排期查询填写时间段时，起始时间可以大于结束时间。
+                  28  筛选站点和筛选广告位时，选中站点或广告位，点击取消按钮，广告位或站点仍处于选中状态。
+                  29  筛选站点和筛选广告位后进行排期查询，结果正常显示。再次选中其他的广告位，取消后，点击查询，广告位查询条件与下面明珠策略详情不匹配
+                  30  "地方站点同一广告位在不同时间段建立两个策略。一个策略为中央下发，一个本地建立。中央和地方广告排期查看时，中央下发的策略生效时间段内，广告位筛选条件下显示的是1，但是呈现白色状态，不能点击查看命中策略详情。"
+
+              素材限次
+                  27  素材总次数消耗完毕后依旧可以添加站点分配次数，且不同的创建方式UI呈现出的异常现象也不同。
+                       素材限次配置页面配置，“已分配次数”参数未在同一行显示。
+
+          地方站点
+              素材限次
+                  5   对一个已启用的本地素材进行限次配置后，素材不会进入审核状态
+                  12  地方站点UI视频/字母素材上传后无限次配置选项。（中央站点可以配置）
+                  13  素材限次，开启限次，单终端次数和终端周期次数为否，素材审核通过后，将素材限次“分配次数”增大，但是终端周期次数会自动从否变为是
+        
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.45
+    RELEASE DATE: 2018-03-28
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.47
+          3)  depends AquaPaas_Adv-1.30.0.0
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 地方广告系统创建广告位时默认关联到中央并去出列表上关联操作.
+
+    - Fixed Bug List
+      1) 在进行排期查询设置起始时间与结束时间时，应当是仅可以选择某一具体时间，而不是一个时间段
+      2) 排期查询时，在连续两次选中某一精确日期后，第三次就无法正常选中了
+      3) 中央站点查询本地广告位排期信息无法正常命中策略
+      4) 在中央针对 素材进行限次配置，首次配置完成后无法进行变更
+      5) 在中央站点进行站点素材限次配置，点击编辑站点时会直接弹出保存成功的对话框
+      6) 修复附属站点素材限次编辑数值不正确的问题
+      7) 地方-首次进行广告位筛选中央下发的广告位于本地广告位均可以正常显示,但是在查询过后再次筛选时，广告位列表中中央下发的广告位就消失了。
+      8) 修复问题：在进行排期查询时，如果有命中策略，策略信息上方的标注信息会消失。
+      9) 修复问题：素材上传失败的BUG
+      10) 添加站点限次信息以后，应该使用站点名称替换站点ID
+      11) 站点添加完成后吗，再次进行编辑时，单终端总次数的参数值与添加时所配置的不一致
+      12) 对于一个一天假完成的站点，进行编辑确认后，会增加一个新的站点素材限次配置
+      13) 针对素材进行限次时，给地方站点设置分配次数为100后，UI上该素材的已分配次数不能正常呈现
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.44
+    RELEASE DATE: 2018-02-07
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.47
+          3)  depends AquaPaas_Adv-1.30.0.0
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) AquaPaaS ADV增加了中央站点删除下发功能,支持广告位,策略,素材组,素材的删除.
+
+    - Fixed Bug List
+      1) 修复现场完成广告系统投放数据问题修复后，在后台管理页面创建标签有几率创建失败的问题
+      2) 修改了两个日历中选择的开始和结束时间转换成毫秒数的方法,用以解决现场在表格区域里选中10月1日后命中策略就消失了的问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.43
+    RELEASE DATE: 2018-02-01
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.46-22532 以上(含)
+          3)  depends AquaPaas_Adv-1.30.0.0-23442(tmp)以上
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 广告两级增加素材限次功能.
+      2) 中央站点开放菜单“素材审核”、“策略审核”
+
+    - Fixed Bug List
+      1) 广告排期查询时间选中后无法正常显示(日历日期选择后input框空白)
+      2) 广告排期选择广告位和相应时间点击查询后只会显示两个月的排期情况分别为起始时间所在月份与结束时间所在月份，不能时间按时间段查询，无论选择那一天都会从该月1号开始显示。"
+      3) 广告排期在中央站点击站点筛选选择任意地方站点后，进行广告位筛选时不会显示地方站点广告位，显示为本地广告位
+      4) 广告排期地方站点不需要进行站点筛选，只需查询本地广告排期情况，
+      5) [广告系统]策略管理-修复新建策略时，点击“绑定广告位”下“选择”选项时无响应
+      6) [广告系统]策略管理-修复删除按钮不被显示的问题
+      7) 中央站点素材组下发至地方站点的素材组，在地方站点的素材组列表中无法显示中央站点名称   
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.42
+    RELEASE DATE: 2017-12-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1
+          2)  depends Aqua PaaS 0.4.46-22532 以上(含)
+          3)  depends AquaPaas_Adv-1.29.0.0-22053 
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      A. 广告两级
+       1, 系统配置项由人工进行配置, 不需要管理页面, 但是页面上应有明确的标识了解现在是中央广告系统, 地方广告系统还是独立广告系统
+        config.js 配置
+        //分级广告系统类型： 中央 central, 地方local, 独立solo
+        var AdvSystemType = 'central';
+        //当前站点的site id
+        var AdvSelfSiteId = '01';
+        //当前站点名称
+        var AdvSelfSiteName = '中央';
+        //中央站点Id
+        var AdvCentralSiteId = '01';
+        //dm模块的主uri
+        var dmRootUri="http://172.16.20.157:8080/aquapaas/rest/dm";
+
+       2, 中央广告系统需要增加”站点管理”, 地方广告系统需要增加”中央站点”
+       3, 广告位是和站点关联的直接对象
+       4, 素材, 素材组和策略
+       5, 素材/素材组和策略的审核
+       6, 广告排期新功能
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.41
+    RELEASE DATE: 2017-11-20
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.45-21650以上
+          3)  depends AquaPaas_Adv-1.25 (截止发布,尚未得到后台版本号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 素材管理图片/视频/字幕模块,新增/编辑页面,增加合同ID字段
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.40
+    RELEASE DATE: 2017-11-14
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.45-21650以上
+          3)  depends AquaPaas_Adv-1.25 (截止发布,尚未得到后台版本号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) [中信-广视]-统计报表功能问题跟踪
+         a) 计数报表 
+            10) 按广告位曝光次数汇总，有两个广告位名称没有显示出来
+            11) 按素材曝光次数汇总，有两个素材名称没有显示出来
+         b) 趋势报表
+            4) 按广告位和按素材，查询结果数据报表，名称没有显示出来 
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.39
+    RELEASE DATE: 2017-10-31
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.44
+          3)  depends AquaPaas_Adv-1.25 (截止发布,尚未得到后台版本号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) [Ticket 21343]签名算法更新到3.0
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.38
+    RELEASE DATE: 2017-10-26
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.42
+          3)  depends AquaPaas_Adv-1.25 (截止发布,尚未得到后台版本号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 修改广告系统 - 计数报表
+         1.图标从左至右的顺序依次为表格=》饼状图=》柱形图
+         2.客户需要将“广告位”和“素材”所属列宽度增加一倍，减少“合计:曝光次数”和“访问次数占比”所属列宽度但要保持一致
+      2) 修改广告系统 - 趋势报表
+         1.图表按钮与内容对应问题；
+         2.折线图名称显示不全
+      3) 趋势统计报表添加参数sum_fields
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.37
+    RELEASE DATE: 2017-10-20
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.42
+          3)  depends AquaPaas_Adv-1.25 (截止发布,尚未得到后台版本号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 修改广告系统 - 计数报表
+        5.广告位名称字体重叠，无法看清
+        6.素材名称字体重叠，无法看清
+        7.点击"表格"按钮显示出来的是柱状图数据;点击"柱状图"按钮显示出来的是表格数据；"柱状图"按钮图标方向是横向
+       12.背景色修改,以及布局调整.
+      2) 修改广告系统 - 趋势报表
+        1.按广告位和按素材，查询结果数据报表，名称超过四个字，字体会被掩盖 (增加折线图和柱状图部分)
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.36
+    RELEASE DATE: 2017-10-16
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.42
+          3)  depends AquaPaas_Adv-1.25 (截止发布,尚未得到后台版本号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 修改广告系统 - 计数报表
+        1."广告位名称"的位置及命名待完善
+        2."素材名称"的位置及命名待完善
+        3.广告位曝光次数汇总的“Y”轴刻度单位不规整
+        4.素材曝光次数汇总的“Y”轴刻度单位不规整
+        5.广告位名称字体重叠，无法看清
+        6.素材名称字体重叠，无法看清
+        7.点击"表格"按钮显示出来的是柱状图数据;点击"柱状图"按钮显示出来的是表格数据；"柱状图"按钮图标方向是横向
+      2) 修改广告系统 - 趋势报表
+        1.按广告位和按素材，查询结果数据报表，名称超过四个字，字体会被掩盖
+        2."广告位"和"素材"本周趋势柱状图的图例字体重叠，看不清楚
+        3."广告位"和"素材"本周趋势折线图的图例数量太大，在观感上存在不足
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.35
+    RELEASE DATE: 2017-08-30
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.42
+          3)  depends AquaPaas_Adv-1.25
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 广告系统 - 计数报表
+      2) 广告系统 - 趋势报表
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.34
+    RELEASE DATE: 2017-07-20
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.37
+          3)  depends AquaPaas_Adv-1.25
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 素材上传后 除了视频CDN上传到aqua需要改名成id之外 其他情况上传到aqua全部都保持原来的名字
+
+    - Fixed Bug List
+      1) 修复创建素材 发送创建审核请求重复的bug
+      2) 修复策略管理、策略审核、素材审核请求没有发送到getaway的bug
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.33
+    RELEASE DATE: 2017-07-03
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.37
+          3)  depends AquaPaas_Adv-1.25
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1) 修复广告位调用字幕素材上传与预览问题
+      2) 修复策略管理中栏目查看以及区域查看的问题
+      3) 修复旧策略更新无法是通过的问题
+      4) 修复创建策略失败的bug
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.32
+    RELEASE DATE: 2017-06-09
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.37
+          3)  depends AquaPaas_Adv-1.25
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 中信广视多标签同时匹配CR和区域码管理页面修改CR
+         补充config.js文件更新
+         /*
+         区域标签管理
+         区域第一级的配置
+         */
+         var AREA_LEVE1 = [
+            {id:"10001", name:"中国"}
+         ];         
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.31
+    RELEASE DATE: 2017-06-09
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.37
+          3)  depends AquaPaas_Adv-1.25
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 中信广视多标签同时匹配CR和区域码管理页面修改CR
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.30
+    RELEASE DATE: 2017-06-06
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.35
+          3)  depends AquaPaas_Adv-1.24
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 图片以及视频素材上传后自动重命名为ad_id，保留后缀名
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.29
+    RELEASE DATE: 2017-06-02
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.35
+          3)  depends AquaPaas_Adv-1.24
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 广告素材添加"监测代码"
+
+    - Fixed Bug List
+      1) 修复素材没有经过审核，在策略管理中能够被选择的问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.28
+    RELEASE DATE: 2017-04-13
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.35
+          3)  depends AquaPaas_Adv-1.23
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 增加AquaPaaS,AquaPaaSAdv请求授权检验.
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.27
+    RELEASE DATE: 2017-03-23
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.26
+          3)  depends AquaPaas_Adv-1.20
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR011-ADS of Video AD Place baiding different material :广告策略绑定贴片位
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.26
+    RELEASE DATE: 2017-02-23
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.26
+          3)  depends AquaPaas_Adv-1.19
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1. 修复贴片广告列表获取不到,"策略管理","标签管理"后台栏目数据接口由原来category改为catalog
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.25
+    RELEASE DATE: 2017-02-17
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.26
+          3)  depends AquaPaas_Adv-1.19
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. ADS-CITIC-CR008-ADS of CDN Integration & JiaChuang (佳创CDN集成)
+         config.js 增加配置项     
+          /*
+          CDN_SITE 视频类型素材发送到的CDN
+          如果CDN_SITE="佳创",则是佳创cdn发布
+          如果CDN_SITE="",或者没有CDN_SITE配置,则是默认设置
+          * */
+         var CDN_SITE = "佳创";
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.24
+    RELEASE DATE: 2017-02-15
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.26
+          3)  depends AquaPaas_Adv-1.17
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 广告位静态背景图片（不支持gif图片，图片将在广告位中作拉升摆放），增加提示：背景图需为PNG格式，不上传图片则广告位背景为透明
+      2、广告位如果没有背景图片存在的情况下,页面增加判断：当不上传背景图片时，图片透明度默认为0，图片透明度框只能读不能写
+      3、字幕素材增加查看按钮，与贴片、图片保持一致。
+      4、视频素材发布到CDN时，需要转码的字段需要添加中文备注,并且需要显示默认值
+      5、策略管理页面按状态筛选时，增加审核打回的状态
+      6、策略管理页面，所有的栏目字段修改为：标签详情
+      7、修改广告位、素材、策略，修改提示为：没有生效的策略使用此广告位，请确认页面UI和广告位参数，确定重新编辑吗？
+      8、修改策略时间冲突的提示有相同广告排期，将以设置权重和优先级投放，确定投放吗？
+      9、如果策略被否决了需要增加显示否决的页面或者窗口 
+      10、如果素材被否决了需要增加显示否决的页面或者窗口 
+      11、被否决的素材重新编辑或者删除时，不要提示“没有策略使用此广告位，请确认页面UI和广告位参数，确定重新编辑吗？”，
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.23
+    RELEASE DATE: 2017-02-08
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.26
+          3)  depends AquaPaas_Adv-1.17
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1. Bug 23534 - 新建策略页面，标签类型选择频道标签和区域标签，在频道标签和区域标签点击【选择】会弹出栏目选择页面
+      2. Bug 23537 - 【策略审核】->【贴片】页面，点击【查看】在查看策略页面标签类型显示有误 
+      3. 修复选择素材/素材组后返回编辑策略页面时 素材、素材组的焦点不正确的问题
+      4. 修改生效时间、失效时间更改完成后不需要回车就可以保存时间。
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.22
+    RELEASE DATE: 2017-01-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.26
+          3)  depends AquaPaas_Adv-1.17 (截止版本发布尚未得到后台版本依赖号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. "区域标签" 数据获取方式改为从后台接口获取
+      2. "栏目标签" config.js 配置增加 
+        var category_list = [{
+            category_name:"category1",
+            category_value:"1"
+        },{
+            category_name:"category2",
+            category_value:"2"
+        },{
+            category_name:"category3",
+            category_value:"3"
+        },{
+            category_name:"category4",
+            category_value:"4"
+        },{
+            category_name:"category5",
+            category_value:"5"
+        },{
+            category_name:"category6",
+            category_value:"6"
+        }];
+
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.21
+    RELEASE DATE: 2017-01-10
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.17 (截止版本发布尚未得到后台版本依赖号)
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1, 管理下面目前有"标签管理", "受众管理", "系统用户管理"
+      将"系统用户管理" 修改为"系统用户", "受众管理"现在没有开发, 可以直接去除
+
+      2, 标签管理
+      左上角"频道标签管理", 替换成3个TAB的样式, "频道标签", "区域标签", "栏目标签" (和素材, 策略中的TAB样式一致)
+      区域标签和栏目标签中的管理功能和频道标签完全一致, 只是在文字上进行相应的调整. 
+
+      3, 策略创建和编辑页面
+      现在页面上有一个"栏目选择", 选择后弹出的列表也是"栏目列表", "可选择的栏目",  因为这里选择的是频道标签
+      所以需要在页面上需要有"频道标签", "栏目标签", "区域标签"的选择, 点击选择后出现不同的选择页面
+      这样原来频道标签的选择就不会再使用"栏目"的名称了. 
+
+    - Fixed Bug List
+      1) Bug 23495 - 删除广告位时，没有实现焦点记忆功能
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.20
+    RELEASE DATE: 2017-01-03
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.17
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1、广告系统优化素材审核、策略审核、策略管理的数据读取（采取分页）
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.19
+    RELEASE DATE: 2016-12-23
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.15
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1、去掉素材管理页面，复审、终审状态.
+      2、去掉策略管理页面，复审状态是否应该去掉.
+      3、ADV素材, 广告位, 策略列表中名称的列的宽度不够宽
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.18
+    RELEASE DATE: 2016-12-20
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.15
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR004-ADS of  Subtitle
+         a) 素材审核增加字幕
+         b) 策略管理增加字幕
+         c) 策略审核增加字幕
+
+    - Fixed Bug List
+      1) 修复标签管理：查看/删除 数据请求错误,参数value标签名称添加前缀 channel:
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.17 
+    RELEASE DATE: 2016-12-12
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.15
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR004-ADS of  Subtitle
+         a) 素材组增加字幕
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.16 
+    RELEASE DATE: 2016-12-01
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.15
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR004-ADS of  Subtitle
+         a) Requirement (001): 字幕广告位管理
+
+      2) ADS-CITIC-CR005-ADS of  WebPage Modify
+         a) Requirement (002):绑定素材、素材组、广告位大屏幕显示可选项
+         b) Requirement (003):策略审核增加素材、素材组的预览
+         c) Requirement (009):新建策略绑定素材增加素材、素材组的预览
+         d) Requirement (010):增加编辑、删除广告位进行风险提示
+         e) Requirement (012):字号调整
+         f) Requirement (017):焦点记忆功能
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.15 
+    RELEASE DATE: 2016-11-23
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.24
+          3)  depends AquaPaas_Adv-1.15
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) 素材管理 增加 字幕类型
+      2) ADS-CITIC-CR005-ADS of  WebPage Modify
+         2.1 Requirement (001):策略名称显示框拉长
+         2.7 Requirement (007):审核步骤调整素材为一级审核，策略为二级审核
+         2.13 Requirement (013):策略管理页面下拉菜单“启用／禁用”拆分为“启用”、“禁用”
+         2.14 Requirement (014):策略审核页面 “启用／禁用”拆分为“启用”、“禁用
+         2.15 Requirement (015):素材审核页面 “启用／禁用”拆分为“启用”、“禁用”
+         2.16 Requirement (016):策略管理页面进入默认显示“所有状态”
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.14 
+    RELEASE DATE: 2016-11-11
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.16-12707
+          3)  depends AquaPaas_Adv-1.14
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR002-ADS of CDN Integration.doc
+         上传视频素材的时候,增加发布到CDN选项,如果勾选能够传递视频转换参数.
+
+    - Fixed Bug List
+      1) 修复策略管理运营商无法创建策略的bug
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.13 
+    RELEASE DATE: 2016-11-08
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.16-12707
+          3)  depends AquaPaas_Adv-1.13.0.0-14214
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR003-ADS of User Authority Management.doc
+         根据CR的最新要求.运营商拥有所有权限
+
+    - Fixed Bug List
+      1 ) 修复在新建策略时，配置策略生效时间时进行校验，生效开始时间不能晚于生效结束时间。开始时间配置的晚于结束时间时，也能提交策略
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.12 
+    RELEASE DATE: 2016-10-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.16-12707
+          3)  depends AquaPaas_Adv-1.13.0.0-14214
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1 ) 修复运营商管理角色（usertype=1）不应该具有创建素材和素材组的权限
+      2 ) 修复BUG 23178 广告主用户在新建策略时，不绑定广告位无法创建策略
+      3 ) 修复BUG 23186 运营商用户无法启用素材的问题
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.11 
+    RELEASE DATE: 2016-09-29
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.16-12707
+          3)  depends Aqua PaaS Adv 1.11
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+
+    - Fixed Bug List
+      1 ) 广告系统 - 修复QA报的Bug adv1.9【素材】->【视频】页面无法进行状态筛选 
+      2 ) 广告系统 - 修复QA报的Bug【策略管理】->【图文】页面，无法查看策略的禁用和启用状态
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.10 
+    RELEASE DATE: 2016-09-23
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.16-12707
+          3)  depends Aqua PaaS Adv 1.11
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1) ADS-CITIC-CR003-ADS of User Authority Management
+         Phase 1：实现Requirement 001中的2.1.1、2.1.3、2.1.4、2.1.5
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.9
+    RELEASE DATE: 2016-07-13
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.16-12707
+          3)  depends Aqua PaaS Adv 1.5-12420
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) 修复login 后台aquapaas接口多了 user_id 导致的登陆失败.
+      2) 增加频道管理.
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.8
+    RELEASE DATE: 2016-06-29
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.11-11824
+          3)  depends Aqua PaaS Adv 1.5.0.0-12420
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) ADS-XYZD-CR002-Max placement count.doc
+         a) 001 最多投放次数限制
+         b) 002 素材URL属性
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.7
+    RELEASE DATE: 2016-05-09
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.11-11824
+          3)  depends Aqua PaaS Adv 1.2.0.0-11911
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1. 为广告策略生效时间/失效时间/投放开始时间/投放结束时间,增加时区功能
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.6
+    RELEASE DATE: 2016-04-27
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.11-11824
+          3)  depends Aqua PaaS Adv 1.2.0.0-11829
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1. 新建图文广告位-尺寸，标示“高”“宽”，其他页面有尺寸的地方同样进行标示。
+      2. 左侧栏目“一般”按钮修改为“基本功能”或者别的名字
+      3. 添加前插贴片位相对偏移量为0的贴片位后，再添加其他贴片位时初始选项框会覆盖相对偏移量为0的贴片位，视觉上不清晰。
+      4. 素材审核—启用禁用—查看素材，不能显示图片，
+      5. 策略管理中，绑定素材（组）右边选择素材（组）没有根据图文或贴片筛选，
+         在这个下拉框中呈现出全部的素材（组），该下拉框的位置及系统正式上线后素材（组）很多的时候会造成这里可操作性不佳，并且出现排版错乱问题。
+      6. 广告位增加用来控制多个图文广告的切换显示方式的功能
+      7. 策略中增加频道选择.
+      8. config.js增加如下配置项 (请根据现场内容配置)
+          var channel_list = [{
+              channel_name:"上海频道",
+              channel_value:"1"
+          },{
+              channel_name:"杭州频道",
+              channel_value:"2"
+          },{
+              channel_name:"广东频道",
+              channel_value:"3"
+          },{
+              channel_name:"蒙古频道",
+              channel_value:"4"
+          },{
+              channel_name:"北京频道",
+              channel_value:"5"
+          },{
+              channel_name:"香港频道",
+              channel_value:"6"
+          }]
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.5
+    RELEASE DATE: 2016-03-15
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.1（已发布，并高于环境中小号10517）
+          3)  depends Aqua PaaS Adv 1.0.0（已发布，并高于环境中小号10498）
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) 广告管理页面上，配置广告位(贴片广告位)时，增加一个图标来提示“是否开机广告”（默认为“不是”）
+
+    - Fixed Bug List
+      1) Bug 22329 - 页面上删除别的用户，结果将自己删除
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.4
+    RELEASE DATE: 2016-01-22
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.1（已发布，并高于环境中小号10517）
+          3)  depends Aqua PaaS Adv 1.0.0（已发布，并高于环境中小号10498）
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) 广告管理页面上，配置广告位(只有图片广告位)时，增加一个图标来提示“是否开机广告”（默认为“不是”）
+
+    - Fixed Bug List
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.3
+    RELEASE DATE: 2016-01-19
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.1（已发布，并高于环境中小号10517）
+          3)  depends Aqua PaaS Adv 1.0.0（已发布，并高于环境中小号10498）
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) 去除素材上传后保存url中的token.
+      2) 在登录页面增加“记住用户名”和“记住密码”功能.
+      3) 登录后左侧默认展开功能列表.
+
+    - Fixed Bug List
+      1) 修复素材查看，图片超出预览框.
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.2
+    RELEASE DATE: 2016-01-15
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 1.1.1（截止版本发布SA尚未发布，应高于环境中小号9903）
+          2)  depends Aqua PaaS 0.4.1（已发布，并高于环境中小号10517）
+          3)  depends Aqua PaaS Adv 1.0.0（已发布，并高于环境中小号10498）
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) ads系列接口调整：/aquapaas/rest/ads/ 改为：/aquapaas_adv/rest/ads/
+              
+              
+    - Fixed Bug List
+      1) Bug 22160 - 系统用户管理页面，新建运营商后，没有显示用户信息
+      2) Bug 22154 - 素材组页面，新建素材组对话框中点击“取消”按钮，对话框没有关闭。此行为和其他页面不一致
+      3) Bug 22155 - UI问题：添加素材对话框，“默认广告”的值是素材列表里的“权重”。两项描述不一致
+      4) Bug 22153 - 广告位页面，搜索框中的搜索按钮多点击几下之后，光标移动到“贴片”按钮后面
+      5) Bug 22190 - 创建策略后，绑定的adp_list不是广告位id。导致STB使用广告位ID请求后，获取不到正确的广告列表
+      6) Bug 22158 - 新建素材组对话框，鼠标点击到添加按钮上的文字“添加”，会变成光标，不是箭头（素材和素材组页面的新建按钮也是这样）
+      7) Bug 22159 - 屏幕小的显示器上，在素材审核的的操作列，没有“通过”按钮。
+      8) Bug 22156 - 素材和素材组页面的查询按钮无效
+      9) Bug 22193 - 策略页面显示创建出的策略权重都是1 
+      10) Bug 22157 - 素材组/新建素材组对话框中“可选素材”和“已选素材”没有固定，拖动滚动条会跟着滚上去
+      11) Bug 22194 - UI问题：策略管理和策略审核页面，“视频”按钮的名称不一致。前者是“贴片”后者是“视频”
+      12) Bug 22192 - 系统用户管理页面没有显示用户的用户名 
+
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.1
+    RELEASE DATE: 2015-12-14
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 0.20.0.0-9903
+          2)  depends Aqua PaaS 0.3.1-10262
+          3)  depends Aqua PaaS Adv 0.3.1-10262
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+
+    - NEW FEATURE LIST
+      1) 新增投放广告页面
+              
+    - Fixed Bug List
+ 
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备
+
+
+================================================================================================
+PRODUCTION NAME: AquaPaaSAdv
+    VERSION NO.: 1.0.0.0
+    RELEASE DATE: 2015-11-30
+    RELEASER: Ma Qi
+
+
+* PRECONDITION FOR THE INSTALLATION/UPGRADE
+
+    - PRECONDITION
+          1） depends Aqua 0.20.0.0-9903
+          2)  depends Aqua PaaS 0.3.1-10156
+          3)  depends Aqua PaaS Adv 0.3.1-10156
+
+    - OPERATION STEPS
+
+            1) 解压，将aquapaasdev复制到aqua 所在%Tomcat%的ZQ-Apps/目录下 
+            2) 根据实际的应用，修改ZQ-Apps\aquapaasdev\config.js
+
+
+    - CONFIGURATION AND PARAMETERS CHECKING
+
+    - NEW FEATURE LIST
+      1. 广告系统
+        1) 广告位
+        2) 素材
+        3) 素材组
+        4) 策略管理
+        5) 素材审核
+        6) 策略审核
+        7) 系统用户管理 
+              
+    - Fixed Bug List
+ 
+
+    - SUGGEST RANGE
+   
+        1. 测试AquaPaaSAdv Web UI的全部功能
+
+* OTHER REMARKS
+
+  1. 已知问题
+
+  2. 测试该版本的前期准备

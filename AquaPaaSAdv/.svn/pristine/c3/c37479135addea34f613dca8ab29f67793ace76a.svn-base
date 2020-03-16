@@ -1,0 +1,57 @@
+<div class="login_page">
+	<div class="login_head">
+		<div class="login_head_icon">
+
+		</div>
+	</div>
+	<div class="login_body">
+		<div class="login_dialog">
+			<div class="login_dialog_icon">
+
+			</div>
+			<div class="login_dialog_title">
+				<div class="login_dialog_title_icon">
+
+				</div>
+				<div class="login_dialog_title_text">
+					{{LOGIN_DIALOG_TITLE_TEXT}}
+				</div>
+			</div>
+			<div class="login_dialog_inputs">
+				<div class="login_dialog_user_mail">
+					<div class="login_dialog_user_mail_icon">
+
+					</div>
+					<input id="login_dialog_input_user_mail" type="text" placeholder="{{LOGIN_DIALOG_INPUT_USER_NAME}}"/>
+				</div>
+				<div class="login_dialog_user_pwd">
+					<div class="login_dialog_user_pwd_icon">
+
+					</div>
+					<input id="login_dialog_input_user_pwd" type="password" placeholder="{{LOGIN_DIALOG_INPUT_USER_PWD}}"/>
+				</div>
+			</div>
+			<div class="login_dialog_rmb_user_block">
+				<div>
+					<div id="login_dialog_rmb_user" class="login_dialog_checkbox">
+						<div></div>
+					</div>
+					<span>{{LOGIN_DIALOG_REMEMBER_USER}}</span>
+				</div>
+				<div>
+					<div id="login_dialog_rmb_pwd" class="login_dialog_checkbox">
+						<div></div>	
+					</div>
+					<span>{{LOGIN_DIALOG_REMEMBER_PWD}}</span>
+				</div>
+			</div>
+			<div id="login_dialog_login_button" class="login_dialog_login_button">
+				{{LOGIN_DIALOG_LOGIN_BUTTON_TEXT}}
+			</div>
+			<div class="login_dialog_register_option">
+				<span class="login_dialog_register_ask">{{LOGIN_DIALOG_NO_ACCOUNT_ASK}}</span>
+				<span id="login_dialog_register_link" class="login_dialog_register_link">{{LOGIN_DIALOG_REGISTER_LINK}}</span>
+			</div>
+		</div>
+	</div>
+</div>

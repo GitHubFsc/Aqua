@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>节目详情页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="pragma" content="no-cache"/>
+    <meta http-equiv="Cache-Control" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script type="text/javascript">
+    (function() {
+      var printLog;
+      var csses = ['style/detail.css']
+      var jses = [
+        'config.js',
+				'js/common.js',
+				'js/my.paas.js',
+				'js/common/endecodebase64.js',
+				'js/common/sha1.js',
+				'js/common/keyvalue.js',
+				'js/common/util.js',
+        'js/my.storage.js',
+        // 'http://172.16.188.78:8080/aquapaas/resource/js/sendReport.js',
+        // '../bigdata/reportData.js',
+        'js/detail/utils.js',
+        'js/detail/index.js']
+        if (navigator.userAgent.lastIndexOf('iPanel') == -1) {
+          // jses = ['http://webapi.ott.yun.gehua.net.cn/GHWEBAPI/GHWEBAPI.js', '../bigdata/stream/collect.js'].concat(jses)
+        } else {
+          // jses = ['../bigdata/ipanel/collect.js'].concat(jses)
+        }
+        for (var i = 0; i < jses.length; i++) {
+          document.write('<script type="text/javascript" src="' + jses[i] + (!!printLog ? '?t=' + new Date().getTime() : '') + '"><\/script>')
+        }
+        for (var i = 0; i < csses.length; i++) {
+          document.write('<link rel="stylesheet" href="' + csses[i] + (!!printLog ? '?t=' + new Date().getTime() : '') + '">')
+        }
+    }())
+    </script>
+</head>
+  <body onload="app.init()">
+    <div id="title"></div>
+    <img id="poster">
+    <div id="name"></div>
+    <div id="info">
+      <!-- <span id="year"></span> -->
+      <span id="type"></span>
+      <span id="director"></span>
+      <span id='actors'></span>
+      <span id="summary"></span>
+    </div>
+    <div class="btns">
+      <div name='order'></div>
+      <div name='preview'></div>
+      <div name='play'></div>
+      <div name='choose'></div>
+      <div name='favorite' class='visible'></div>
+    </div>
+    <span class='recommend_hint'>相关推荐</span>
+    <div class="recommend">
+    </div>
+    <div id="asset_list">
+      <table id="asset_ids">
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+      </table>
+      <div id="asset_range">
+      </div>
+    </div>
+		<div class="alert" name="online">
+			<div class='title'>试看已结束！</div>
+			<div class='content'>如需观看完整影片请订购套餐包</div>
+			<div class="confirm"></div>
+		</div>
+		<div class="alert" name="offline">
+			<div class='title'>试看结束！如需观看完整影片</div>
+			<div class='content'>请到甘肃广电营业厅办理“全往事基础点播”业务。</div>
+			<div class='content content2'>咨询电话：96333</div>
+			<div class="confirm"></div>
+		</div>
+		<div class="alert" name='buy'>
+			<div class='title'>温馨提示：订购方式</div>
+			<div class='content'>请到甘肃广电营业厅办理“全往事基础点播”业务。</div>
+			<div class='content content2'>咨询电话：96333</div>
+			<div class="confirm"></div>
+		</div>
+</body>
+</html>

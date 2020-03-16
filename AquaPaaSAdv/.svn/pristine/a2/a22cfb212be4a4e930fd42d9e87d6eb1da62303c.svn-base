@@ -1,0 +1,50 @@
+<style>
+	#ViewSucaiContent .leftArrow{
+		position: absolute;
+		width: 46px;
+		height: 55px;
+		left: 15px;
+		top: 160px;
+		background: url("./image/sucai/template/leftArrow.png");
+		background-repeat: no-repeat;
+		display: none;
+		cursor: pointer;
+	}
+	#ViewSucaiContent .rightArrow{
+		position: absolute;
+		width: 46px;
+		height: 55px;
+		right: 15px;
+		top: 160px;
+		background: yellow;
+		background: url("./image/sucai/template/rightArrow.png");
+		background-repeat: no-repeat;
+		display: none;
+		cursor: pointer;
+	}
+	#ViewSucaiContent.okhtml .leftArrow{
+		display: block;
+	}
+	#ViewSucaiContent.okhtml .rightArrow{
+		display: block;
+	}
+</style>
+<div class="sucai_create_dialog">
+	<div class="sucai_dialog_title">
+		<div class="sucai_dialog_title_text">
+			{{SUCAI_CHAKANSUCAI}}
+		</div>
+		<div class="sucai_dialog_close popup_dialog_clear_">
+		</div>
+	</div>
+	<div id = "ViewSucaiContent" class="sucai_dialog_img_content">
+		<div id="htmlContent" class="html" style="display: none"></div>
+		<div class="leftArrow"></div>
+		<div class="rightArrow"></div>
+		<textarea id="subtitleContent" class="sucai_dialog_create_input" style="display:none;width : 692px;height:286px;resize: none;line-height: 20px;margin:8px" name="subtitle_area" cols="30" rows="10"></textarea>
+	</div>
+	<div class="sucai_dialog_create_opition" style="display: none;margin-top: 9px">
+		<div id="ViewSucaiHTMLFullScreen" class="option_bottom confirm_bottom" style="margin-right: 11px; padding-left: 16px; padding-right: 16px;display: none">{{SUCAI_QUANPINGCHAKAN}}</div>
+		<div id="ViewSucaiDennyMsg" class="option_bottom confirm_bottom popup_dialog_clear_" style="margin-right: 11px; padding-left: 16px; padding-right: 16px;display: none">{{SUCAI_QUEREN}}</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+<style>
+  .lecture_recommend_dialog .container{
+    position: absolute;
+    top: 0px;
+    left: 185px;
+    right: 30px;
+    bottom: 70px;
+    display: flex;
+    align-items: center;
+  }
+  .lecture_recommend_dialog .container .content{
+    width: 100%;
+    line-height: 35px;
+    color: #797979;
+    font-size: 20px;
+  }
+</style>
+<div class="wp_panel_dialog lecture_recommend_dialog">
+  <div class="wp_panel_dialog_title lecture_recommend_dialog_title">
+    <div class="wp_panel_dialog_title_label">{{USERGROUP_TIXING}}</div>
+    <div class="wp_panel_dialog_close" id="user-admin-msg-close"></div>
+  </div>
+  <div class="wp_panel_dialog_content">
+    <div class="dialog-msg-icon"></div>
+    <div class="container">
+      <div class="content" id="user-admin-msg-content"></div>
+    </div>
+    <div class="lecture_recommend_dialog_cancel" id="user-admin-msg-cancel" style="right:186px;bottom:15px;">{{NAVMNGSLIDER_CANCEL}}</div>
+    <div class="lecture_recommend_dialog_submit" id="user-admin-msg-submit" style="right:15px;bottom:15px;">{{USERGROUP_QUEDING}}</div>
+  </div>
+</div>

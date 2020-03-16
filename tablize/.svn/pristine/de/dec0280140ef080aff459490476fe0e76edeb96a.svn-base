@@ -1,0 +1,472 @@
+.date-container {
+	position: relative;
+}
+
+.date-icon-from {
+	position: absolute;
+	background:url("../../images/date_icon.png");
+	width: 16px;
+	height: 16px;
+	top: 9px;
+	left: 120px;
+	z-index: 2;
+}
+
+.date-icon-to {
+	position: absolute;
+	background:url("../../images/date_icon.png");
+	width: 16px;
+	height: 16px;
+	top: 9px;
+	left: 120px;
+	z-index: 99;
+}
+
+#date-input-from {
+	width: 150px;
+	height: 35px;
+	color: rgb(121, 121, 121);
+}
+
+#date-input-to {
+	width: 150px;
+	height: 35px;
+	color: rgb(121, 121, 121);
+}
+
+#search-container {
+	position: relative;
+}
+
+#search-icon {
+	position: absolute;
+	background:url("../../images/invit_search_icon.png");
+	width: 25px;
+	height: 25px;
+	top: 5px;
+	left: 270px;
+	z-index: 99;
+}
+
+#search-input {
+	height: 35px;
+	width: 300px;
+	border: 1px #cfcfcf solid;
+	padding-left: 20px;
+	color: rgb(121, 121, 121);
+}
+
+#meeting-invit {
+	width: 100%;
+	height: 100%;
+	font-family: Microsoft YaHei,微软雅黑,MS Song,宋体;
+}
+
+#find-records {
+	height: 60px;
+	width: 100%;
+}
+
+#find-records td {
+	text-align: center;
+}
+
+#meeting-invit-list-body {
+	height: 90%;
+	font-size: 14px;
+	border: 1px rgb(226, 226, 226) solid;
+	background-color: rgb(242, 242, 242);
+    padding: 20px 10px 20px 20px;
+    box-sizing: border-box;
+}
+
+#meeting-invit-list-body .column0 {
+	width: 22%;
+}
+
+#meeting-invit-list-body .column1 {
+	width: 11%;
+}
+
+#meeting-invit-list-body .column2 {
+	width: 11%;
+}
+
+#meeting-invit-list-body .column3 {
+	width: 11%;
+}
+
+#meeting-invit-list-body .column4 {
+	width: 30%;
+}
+
+#meeting-invit-list-body .column5 {
+	width: 15%;
+}
+
+.record-ctrl-icons {
+	text-align: center;
+	width: 100%;
+}
+
+.record-ctrl-icons td{
+	width: 10%;
+}
+
+#from-date-selector {
+	position: absolute;
+	z-index: 99;
+	background-color: white;
+}
+
+#to-date-selector {
+	position: absolute;
+	z-index: 99;
+	background-color: white;
+	left: -150px;
+}
+
+
+.date-selector .td-date-title {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	height: 9%;
+	font-size: 8pt;
+}
+
+.date-selector .non-curr-month {
+	color: rgb(210,210,210);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.date-selector .curr-month {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.date-selector .curr-month:hover {
+	cursor: pointer;
+}
+
+.date-selector .ctrl:hover {
+	cursor: pointer;
+}
+
+.date-selector #ctrl-title {
+	width: 300px;
+}
+
+.data-selector #ctrl-title td {
+	width: 30px;
+}
+
+.date-selector #ctrl-title tr td:nth-child(3){
+	width: 100px;
+}
+
+.date-selector #ctrl-title tr td:nth-child(4){
+	width: 80px;
+}
+
+.date-selector #grid {
+	border: rgb(203, 203, 203) solid;
+	border-width: 1px 0px 0px 1px;
+	width: 300px;
+	height: 200px;
+}
+
+.date-selector #grid td {
+	width: 14%;
+}
+
+
+
+
+
+
+
+
+
+/*日历控件单独样式*/
+
+ .courseReleaseCustomize .date-container {
+	position: relative;
+}
+
+ .courseReleaseCustomize .date-icon-from {
+	position: absolute;
+	background:url("../../images/date_icon.png");
+	width: 16px;
+	height: 16px;
+	top: 9px;
+	left: 120px;
+	z-index: 99;
+}
+
+ .courseReleaseCustomize .date-icon-to {
+	position: absolute;
+	background:url("../../images/date_icon.png");
+	width: 16px;
+	height: 16px;
+	top: 9px;
+	left: 120px;
+	z-index: 99;
+}
+
+ .courseReleaseCustomize #date-input-from {
+	width: 150px;
+	height: 35px;
+	color: rgb(121, 121, 121);
+}
+
+ .courseReleaseCustomize #date-input-to {
+	width: 150px;
+	height: 35px;
+	color: rgb(121, 121, 121);
+}
+
+ .courseReleaseCustomize #search-container {
+	position: relative;
+}
+
+ .courseReleaseCustomize #search-icon {
+	position: absolute;
+	background:url("../../images/invit_search_icon.png");
+	width: 25px;
+	height: 25px;
+	top: 5px;
+	left: 270px;
+	z-index: 99;
+}
+
+ .courseReleaseCustomize #search-input {
+	height: 35px;
+	width: 300px;
+	border: 1px #cfcfcf solid;
+	padding-left: 20px;
+	color: rgb(121, 121, 121);
+}
+
+ .courseReleaseCustomize #meeting-invit {
+	width: 95%;
+	height: 100%;
+	font-family: Microsoft YaHei,微软雅黑,MS Song,宋体;
+}
+
+.courseReleaseCustomize #find-records {
+	height: 60px;
+	width: 100%;
+}
+
+.courseReleaseCustomize #find-records td {
+	text-align: center;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body {
+	width: 100%;
+	height: 90%;
+	border: 1px rgb(226, 226, 226) solid;
+	background-color: rgb(242, 242, 242);
+	padding: 20px;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body .column0 {
+	width: 22%;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body .column1 {
+	width: 11%;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body .column2 {
+	width: 11%;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body .column3 {
+	width: 11%;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body .column4 {
+	width: 30%;
+}
+
+.courseReleaseCustomize #meeting-invit-list-body .column5 {
+	width: 15%;
+}
+
+.courseReleaseCustomize .record-ctrl-icons {
+	text-align: center;
+	width: 100%;
+}
+
+.courseReleaseCustomize .record-ctrl-icons td{
+	width: 10%;
+}
+
+.courseReleaseCustomize #from-date-selectorTwo {
+	position: absolute;
+	z-index: 99;
+	background-color: white;
+	z-index:25000;
+}
+
+
+
+.courseReleaseCustomize #to-date-selector {
+	position: absolute;
+	z-index: 99;
+	background-color: white;
+	width:315px;
+	left:0px !important;
+	z-index:25000;
+}
+
+
+.courseReleaseCustomize .date-selector .td-date-title, .courseReleaseCustomize .date-selectorTwo .td-date-title {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	height: 10px;
+	font-size: 10pt;
+}
+
+.courseReleaseCustomize.date-selector .non-curr-month, .courseReleaseCustomize.date-selectorTwo .non-curr-month {
+	color: rgb(210,210,210);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 10pt;
+	background: none repeat scroll 0 0 white;
+}
+
+.courseReleaseCustomize.date-selector .curr-month, .courseReleaseCustomize.date-selectorTwo .curr-month {
+	color: rgb(121, 121, 121);
+	border: rgb(226, 226, 226) solid;
+	border-width: 0px 1px 1px 0px;
+	text-align: center;
+	font-size: 10pt;
+}
+
+.courseReleaseCustomize.date-selector .curr-month:hover, .courseReleaseCustomize.date-selectorTwo .curr-month:hover {
+	cursor: pointer;
+}
+
+.courseReleaseCustomize.date-selector .ctrl:hover, .courseReleaseCustomize.date-selectorTwo .ctrl:hover {
+	cursor: pointer;
+}
+
+.courseReleaseCustomize.date-selector #ctrl-title{
+	width: 100%;
+}
+.courseReleaseCustomize.date-selectorTwo #ctrl-title {
+	width: 100%;
+}
+
+.courseReleaseCustomize.date-selector, .courseReleaseCustomize.date-selectorTwo{z-index:21000 !important;}
+
+.courseReleaseCustomize.date-selector #back-year, .courseReleaseCustomize.date-selectorTwo #back-year {
+	padding-left: 24px;
+	padding-right: 10px;
+	height: 30px !important;
+	background-color: #796c9a;	
+	color: white;
+	font-weight: bold;
+}
+
+.courseReleaseCustomize.date-selector #back-month, .courseReleaseCustomize.date-selectorTwo #back-month {
+	padding-left: 14px;
+	padding-right: 20px;
+	background-color: #796c9a;
+	color: white;
+	font-weight: bold;
+}
+
+.courseReleaseCustomize.date-selector #forw-month, .courseReleaseCustomize.date-selectorTwo #forw-month {
+	padding-left: 20px;
+	padding-right: 14px;
+	background-color: #796c9a;
+	color: white;
+	font-weight: bold;
+}
+
+.courseReleaseCustomize.date-selector #forw-year, .courseReleaseCustomize.date-selectorTwo #forw-year {
+	padding-right: 40px;
+	padding-left: 10px;
+	background-color: #796c9a;
+	color: white;
+	font-weight: bold;
+}
+
+.courseReleaseCustomize.date-selector #month-box, .courseReleaseCustomize.date-selectorTwo #month-box {
+	background-color: #796c9a;
+	color: white;
+	font-weight: bold;
+	width: 75px !important;
+	font-size:12px;
+}
+
+.courseReleaseCustomize.date-selector #year-box, .courseReleaseCustomize.date-selectorTwo #year-box {
+	padding-right: 2px;
+	background-color: #796c9a;
+	color: white;
+	font-weight: bold;
+}
+
+.courseReleaseCustomize.date-selector #grid{
+	border: rgb(203, 203, 203) solid;
+	border-width: 1px 0px 0px 1px;
+	width: 100%;
+	height: 200px;
+	background: none repeat scroll 0 0 white; 
+	margin-top:0px;
+	
+}
+
+.courseReleaseCustomize.date-selectorTwo #grid {
+	border: rgb(203, 203, 203) solid;
+	border-width: 1px 0px 0px 1px;
+	width: 100%;
+	height: 193px;
+	background: none repeat scroll 0 0 white; 
+	margin-top:0px;
+	
+}
+
+
+
+.courseReleaseCustomize.date-selector #grid td, .courseReleaseCustomize.date-selectorTwo #grid td {
+	width: 14%;
+}
+
+
+.courseReleaseCustomize.date-selector  td, .courseReleaseCustomize.date-selectorTwo td {
+	border-style: none;
+}
+
+.courseReleaseCustomize.data-selector #ctrl-title td {
+	width: 30px;
+}
+.courseReleaseCustomize.date-selector #ctrl-title tr td:nth-child(3){
+	width: 100px;
+}
+
+.courseReleaseCustomize.date-selector #ctrl-title tr td:nth-child(4){
+	width: 80px;
+}
+
+
+
+
+
+
+
+
